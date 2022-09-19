@@ -1,0 +1,58 @@
+//
+//  SubdivisionsNetherlands.swift
+//  
+//
+//  Created by Evan Anderson on 6/22/22.
+//
+
+import Foundation
+
+public enum SubdivisionsNetherlands : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_the_Netherlands
+    case drenthe
+    case flevoland
+    case friesland
+    case gelderland
+    case groningen
+    case limburg
+    case north_brabant
+    case north_holland
+    case overijssel
+    case south_holland
+    case utrecht
+    case zeeland
+    
+    case bonaire
+    case saba
+    case sint_eustatius
+    
+    public func getCountry() -> Country {
+        return Country.netherlands
+    }
+    
+    public func getDefaultType() -> SovereignStateSubdivisionType {
+        return SovereignStateSubdivisionType.provinces
+    }
+    
+    public func getType() -> SovereignStateSubdivisionType? {
+        switch self {
+        case .bonaire,
+                .saba,
+                .sint_eustatius:
+            return SovereignStateSubdivisionType.special_municipalities
+        default:
+            return nil
+        }
+    }
+    
+    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+        switch self {
+        case .groningen,
+                .utrecht:
+            return "_(province)"
+        case .limburg:
+            return "_(Netherlands)"
+        default:
+            return nil
+        }
+    }
+}

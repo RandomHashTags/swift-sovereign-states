@@ -1,0 +1,128 @@
+//
+//  SovereignStateSubdivisionType.swift
+//  
+//
+//  Created by Evan Anderson on 6/16/22.
+//
+
+import Foundation
+
+public enum SovereignStateSubdivisionType : String, CaseIterable {
+    case autonomous_cities
+    case autonomous_communities
+    case autonomous_regions
+    case autonomous_republics
+    case cantons
+    case chartered_cities
+    case cities
+    case communes
+    case counties
+    case departments
+    case dependencies
+    case districts
+    case federal_districts
+    case federal_entities
+    case federal_territories
+    case freely_associated_states
+    case governorates
+    case incorporated_areas
+    case independent_cities
+    case indigenous_province
+    case metropolitan_cities
+    case municipalities
+    case oblasts
+    case parishes
+    case prefectures
+    case provinces
+    case regions
+    case special_cities
+    case special_municipalities
+    case special_self_governing_cities
+    case special_self_governing_dependencies
+    case states
+    case subdivisions
+    case territories
+    case union_territories
+    case voivodeships
+    
+    public func getSingularName() -> String {
+        switch self {
+        case .autonomous_cities: return "Autonomous City"
+        case .autonomous_communities: return "Autonomous Community"
+        case .autonomous_regions: return "Autonomous Region"
+        case .autonomous_republics: return "Autonomous Republic"
+        case .cantons: return "Canton"
+        case .chartered_cities: return "Charter City"
+        case .cities: return "City"
+        case .communes: return "Commune"
+        case .counties: return "County"
+        case .departments: return "Department"
+        case .dependencies: return "Dependency"
+        case .districts: return "District"
+        case .federal_districts: return "Federal District"
+        case .federal_entities: return "Federal Entity"
+        case .federal_territories: return "Federal Territory"
+        case .freely_associated_states: return "Freely Associated State"
+        case .governorates: return "Governorate"
+        case .incorporated_areas: return "Incorporated Area"
+        case .independent_cities: return "Independent City"
+        case .indigenous_province: return "Indigenous Province"
+        case .metropolitan_cities: return "Metropolitan City"
+        case .municipalities: return "Municipality"
+        case .oblasts: return "Oblast"
+        case .parishes: return "Parish"
+        case .prefectures: return "Prefecture"
+        case .provinces: return "Province"
+        case .regions: return "Region"
+        case .special_cities: return "Special City"
+        case .special_municipalities: return "Special Municipality"
+        case .special_self_governing_cities: return "Special self-governing City"
+        case .special_self_governing_dependencies: return "Special self-governing Dependency"
+        case .states: return "State"
+        case .subdivisions: return "Subdivision"
+        case .territories: return "Territory"
+        case .union_territories: return "Union Territory"
+        case .voivodeships: return "Voivodeship"
+        }
+    }
+    public func getPluralName() -> String {
+        switch self {
+        case .autonomous_cities: return "Autonomous Cities"
+        case .autonomous_communities: return "Autonomous Communities"
+        case .autonomous_regions: return "Autonomous Regions"
+        case .autonomous_republics: return "Autonomous Republics"
+        case .cantons: return "Cantons"
+        case .chartered_cities: return "Charter Cities"
+        case .cities: return "Cities"
+        case .communes: return "Communes"
+        case .counties: return "Counties"
+        case .departments: return "Departments"
+        case .dependencies: return "Dependencies"
+        case .districts: return "Districts"
+        case .federal_districts: return "Federal Districts"
+        case .federal_entities: return "Federal Entities"
+        case .federal_territories: return "Federal Territories"
+        case .freely_associated_states: return "Freely Associated States"
+        case .governorates: return "Governorates"
+        case .incorporated_areas: return "Incorporated Areas"
+        case .independent_cities: return "Independent Cities"
+        case .indigenous_province: return "Indigenous Provinces"
+        case .metropolitan_cities: return "Metropolitan Cities"
+        case .municipalities: return "Municipalities"
+        case .oblasts: return "Oblasts"
+        case .parishes: return "Parishes"
+        case .prefectures: return "Prefectures"
+        case .provinces: return "Provinces"
+        case .regions: return "Regions"
+        case .special_cities: return "Special Cities"
+        case .special_municipalities: return "Special Municipalities"
+        case .special_self_governing_cities: return "Special self-governing Cities"
+        case .special_self_governing_dependencies: return "Special self-governing Dependencies"
+        case .states: return "States"
+        case .subdivisions: return "Subdivisions"
+        case .territories: return "Territories"
+        case .union_territories: return "Union Territories"
+        case .voivodeships: return "Voivodeships"
+        }
+    }
+}
