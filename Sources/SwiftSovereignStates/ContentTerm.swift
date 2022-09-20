@@ -8,11 +8,10 @@
 import Foundation
 
 internal struct ContentTerm {
-    let term:String, isCaseSensitive:Bool
+    let term:String
     
-    init(_ term: String, isCaseSensitive: Bool = false) {
+    init(_ term: String) {
         self.term = term
-        self.isCaseSensitive = isCaseSensitive
     }
     
     static func doesEqual(string: String, values: [ContentTerm]) -> Bool {

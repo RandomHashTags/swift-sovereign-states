@@ -63,7 +63,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .brest:
             return [SubdivisionsBelarus.grodno, SubdivisionsBelarus.minsk, SubdivisionsBelarus.gomel]

@@ -59,7 +59,7 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         case .galicia:
             return "_(Spain)"
         default:
-            return nil
+            return ""
         }
     }
 }

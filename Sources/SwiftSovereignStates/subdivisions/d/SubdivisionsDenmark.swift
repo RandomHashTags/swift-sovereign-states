@@ -33,7 +33,7 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .hovedstaden:
             return [SubdivisionsDenmark.sjaelland]

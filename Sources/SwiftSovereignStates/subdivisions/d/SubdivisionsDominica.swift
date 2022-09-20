@@ -31,7 +31,7 @@ public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https:
         return typeSuffix + ",_Dominica"
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .saint_andrew:
             return [SubdivisionsDominica.saint_john, SubdivisionsDominica.saint_peter, SubdivisionsDominica.saint_joseph, SubdivisionsDominica.saint_david]

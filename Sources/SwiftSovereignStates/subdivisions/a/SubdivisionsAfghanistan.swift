@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum SubdivisionsAfghanistan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Afghanistan
+public enum SubdivisionsAfghanistan : String, SovereignStateSubdivision {
+    // https://en.wikipedia.org/wiki/Provinces_of_Afghanistan
     case badakhshan
     case badghis
     case baghlan

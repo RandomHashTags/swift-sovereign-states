@@ -58,7 +58,7 @@ public enum SubdivisionsUzbekistan : String, SovereignStateSubdivision { // http
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .andijan:
             return [SubdivisionsUzbekistan.namangan, SubdivisionsUzbekistan.fergana]

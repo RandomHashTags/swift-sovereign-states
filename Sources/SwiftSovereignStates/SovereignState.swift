@@ -7,9 +7,8 @@
 
 import Foundation
 
-public protocol SovereignState : RawRepresentable, CaseIterable {
+public protocol SovereignState : RawRepresentable, CaseIterable where RawValue == String {
     func getCacheID() -> String
-    func getKeywords() -> [String]
     func getAdditionalKeywords() -> [String]?
     func isMentioned(in string: String, exact: Bool) -> Bool
     func getShortName() -> String
@@ -38,13 +37,9 @@ public extension SovereignState {
         }).joined(separator: " ")
     }
     
-    func getKeywords() -> [String] {
-        let id:String = getCacheID()
-        if let keywords:[String] = SwiftSovereignStateCacheSubdivision.keywords[id] {
-            return keywords
-        }
+    private func getKeywords() -> [String] {
         let shortName:String = getShortName()
-        var keywords:[String] = ["\(self)", shortName]
+        var keywords:[String] = [shortName]
         if let realName:String = getRealName() {
             keywords.append(realName)
         }
@@ -66,7 +61,6 @@ public extension SovereignState {
         if let additional:[String] = getAdditionalKeywords() {
             keywords.append(contentsOf: additional)
         }
-        SwiftSovereignStateCacheSubdivision.keywords[id] = keywords
         return keywords
     }
     func getAdditionalKeywords() -> [String]? {
@@ -77,7 +71,7 @@ public extension SovereignState {
         if let terms:[ContentTerm] = SwiftSovereignStateCacheSubdivision.keywordTerms[id] {
             return terms
         }
-        let terms:[ContentTerm] = getKeywords().map({ ContentTerm($0, isCaseSensitive: true) })
+        let terms:[ContentTerm] = getKeywords().map({ ContentTerm($0) })
         SwiftSovereignStateCacheSubdivision.keywordTerms[id] = terms
         return terms
     }

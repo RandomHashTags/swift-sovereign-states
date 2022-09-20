@@ -9,14 +9,6 @@ import Foundation
 
 internal struct SwiftSovereignStatesCache<Key: Hashable, Value> {
     private let wrapped:NSCache<WrappedKey, Entry> = NSCache<WrappedKey, Entry>()
-    private let lifetime:TimeInterval!
-    
-    init() {
-        lifetime = nil
-    }
-    init(lifetime: TimeInterval?) {
-        self.lifetime = lifetime
-    }
     
     subscript(key: Key) -> Value? {
         get {
@@ -52,18 +44,11 @@ internal struct SwiftSovereignStatesCache<Key: Hashable, Value> {
         insert(val, forKey: key)
     }
     private func insert(_ value: Value, forKey key: Key) {
-        let expiration:Date? = lifetime != nil ? Date(timeIntervalSinceNow: lifetime) : nil
-        let entry:Entry = Entry(value: value, expiration: expiration)
+        let entry:Entry = Entry(value: value)
         wrapped.setObject(entry, forKey: WrappedKey(key))
     }
     private func value(forKey key: Key) -> Value? {
         guard let entry:Entry = wrapped.object(forKey: WrappedKey(key)) else { return nil }
-        let expiration:Date? = entry.expiration
-        guard let expiration:Date = expiration else { return entry.value }
-        guard Date() < expiration else {
-            removeValue(forKey: key)
-            return nil
-        }
         return entry.value
     }
     func removeValue(forKey key: Key) {
@@ -93,11 +78,10 @@ private extension SwiftSovereignStatesCache {
     }
     
     final class Entry {
-        let value:Value, expiration:Date?
+        let value:Value
         
-        init(value: Value, expiration: Date?) {
+        init(value: Value) {
             self.value = value
-            self.expiration = expiration
         }
     }
 }
@@ -106,7 +90,7 @@ public enum SwiftSovereignStateCacheType {
     case sovereign_state_actualShortNames
     case countries_cachedValueOf
     case countries_cachedMentioned
-    case subdivisions_keywords
+    case subdivisions_wrapped
     case subdivisions_keywordTerms
     case subdivisions_cachedMentioned
     case subdivisions_cachedValueOf
@@ -118,14 +102,16 @@ public enum SwiftSovereignStateCache {
         guard let type:SwiftSovereignStateCacheType = type else {
             actualShortNames.removeAll()
             
-            SwiftSovereignStateCacheCountries.cachedValueOf.removeAll()
-            SwiftSovereignStateCacheCountries.cachedMentioned.removeAll()
+            SwiftSovereignStateCacheCountries.valueOf.removeAll()
+            SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
-            SwiftSovereignStateCacheSubdivision.keywords.removeAll()
+            #if swift(<5.7)
+            SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
+            #endif
             SwiftSovereignStateCacheSubdivision.keywordTerms.removeAll()
-            SwiftSovereignStateCacheSubdivision.cachedMentioned.removeAll()
-            SwiftSovereignStateCacheSubdivision.cachedValueOf.removeAll()
-            SwiftSovereignStateCacheSubdivision.cachedValueOfAll.removeAll()
+            SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
+            SwiftSovereignStateCacheSubdivision.valueOf.removeAll()
+            SwiftSovereignStateCacheSubdivision.valueOfAll.removeAll()
             return
         }
         switch type {
@@ -133,25 +119,27 @@ public enum SwiftSovereignStateCache {
             actualShortNames.removeAll()
             return
         case .countries_cachedValueOf:
-            SwiftSovereignStateCacheCountries.cachedValueOf.removeAll()
+            SwiftSovereignStateCacheCountries.valueOf.removeAll()
             return
         case .countries_cachedMentioned:
-            SwiftSovereignStateCacheCountries.cachedMentioned.removeAll()
+            SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
-        case .subdivisions_keywords:
-            SwiftSovereignStateCacheSubdivision.keywords.removeAll()
+        case .subdivisions_wrapped:
+            #if swift(<5.7)
+            SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
+            #endif
             return
         case .subdivisions_keywordTerms:
             SwiftSovereignStateCacheSubdivision.keywordTerms.removeAll()
             return
         case .subdivisions_cachedMentioned:
-            SwiftSovereignStateCacheSubdivision.cachedMentioned.removeAll()
+            SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
             return
         case .subdivisions_cachedValueOf:
-            SwiftSovereignStateCacheSubdivision.cachedValueOf.removeAll()
+            SwiftSovereignStateCacheSubdivision.valueOf.removeAll()
             return
         case .subdivisions_cachedValueOfAll:
-            SwiftSovereignStateCacheSubdivision.cachedValueOfAll.removeAll()
+            SwiftSovereignStateCacheSubdivision.valueOfAll.removeAll()
             return
         }
     }
@@ -159,13 +147,20 @@ public enum SwiftSovereignStateCache {
     internal static var actualShortNames:SwiftSovereignStatesCache<String, String> = SwiftSovereignStatesCache<String, String>()
 }
 internal enum SwiftSovereignStateCacheCountries {
-    static var cachedValueOf:SwiftSovereignStatesCache<String, Country> = SwiftSovereignStatesCache<String, Country>()
-    static var cachedMentioned:SwiftSovereignStatesCache<String, [Country]> = SwiftSovereignStatesCache<String, [Country]>()
+    static var valueOf:SwiftSovereignStatesCache<String, Country> = SwiftSovereignStatesCache<String, Country>()
+    static var mentioned:SwiftSovereignStatesCache<String, [Country]> = SwiftSovereignStatesCache<String, [Country]>()
 }
 internal enum SwiftSovereignStateCacheSubdivision {
-    static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
     static var keywordTerms:SwiftSovereignStatesCache<String, [ContentTerm]> = SwiftSovereignStatesCache<String, [ContentTerm]>()
-    static var cachedMentioned:SwiftSovereignStatesCache<String, [Any]> = SwiftSovereignStatesCache<String, [Any]>()
-    static var cachedValueOf:SwiftSovereignStatesCache<String, Any?> = SwiftSovereignStatesCache<String, Any?>()
-    static var cachedValueOfAll:SwiftSovereignStatesCache<String, [Any]> = SwiftSovereignStatesCache<String, [Any]>()
+    
+    #if swift(<5.7)
+    static var wrapped:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper>()
+    static var mentioned:SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]> = SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]>()
+    static var valueOf:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper?> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper?>()
+    static var valueOfAll:SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]> = SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]>()
+    #else
+    static var mentioned:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
+    static var valueOf:SwiftSovereignStatesCache<String, (any SovereignStateSubdivision)?> = SwiftSovereignStatesCache<String, (any SovereignStateSubdivision)?>()
+    static var valueOfAll:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
+    #endif
 }

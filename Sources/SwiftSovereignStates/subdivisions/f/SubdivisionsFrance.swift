@@ -58,7 +58,7 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
         case .brittany,
                 .normandy,
                 .occitania:
-            return "(administrative region)"
+            return "(administrative_region)"
         default:
             return ""
         }

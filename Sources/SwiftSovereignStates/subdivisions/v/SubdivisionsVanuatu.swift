@@ -45,7 +45,7 @@ public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .malampa:
             return [SubdivisionsVanuatu.sanma, SubdivisionsVanuatu.penama, SubdivisionsVanuatu.shefa]

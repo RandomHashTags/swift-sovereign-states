@@ -98,7 +98,7 @@ public enum SubdivisionsUruguay : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .artigas:
             return [SubdivisionsUruguay.salto, SubdivisionsUruguay.rivera]

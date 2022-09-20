@@ -52,7 +52,7 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .bulawayo:
             return [SubdivisionsZimbabwe.matabeleland_north, SubdivisionsZimbabwe.matabeleland_south]

@@ -73,6 +73,8 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
     
     public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
         switch self {
+        case .buenos_aires:
+            return ""
         case .cordoba,
                 .la_rioja,
                 .san_juan,

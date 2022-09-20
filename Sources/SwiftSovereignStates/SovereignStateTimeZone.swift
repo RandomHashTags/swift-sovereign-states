@@ -155,7 +155,7 @@ public enum SovereignStateTimeZone : String {
         return TimeZone(identifier: rawValue) ?? TimeZone(abbreviation: rawValue)
     }
     
-    internal static func get(_ country: Country) -> Array<SovereignStateTimeZone>? {
+    internal static func get(_ country: Country) -> [SovereignStateTimeZone]? {
         switch country {
         case .afghanistan: return getAfghanistan()
         case .albania,

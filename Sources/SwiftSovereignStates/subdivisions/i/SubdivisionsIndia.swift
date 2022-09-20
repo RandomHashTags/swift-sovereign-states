@@ -76,7 +76,7 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
             return ",_India"
         case .jammu_and_kashmir,
                 .puducherry:
-            return "(union territory)"
+            return "(union_territory)"
         default:
             return ""
         }

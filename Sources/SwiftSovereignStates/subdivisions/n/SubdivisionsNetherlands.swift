@@ -51,6 +51,10 @@ public enum SubdivisionsNetherlands : String, SovereignStateSubdivision { // htt
             return "_(province)"
         case .limburg:
             return "_(Netherlands)"
+        case .bonaire,
+                .saba,
+                .sint_eustatius:
+            return ""
         default:
             return nil
         }

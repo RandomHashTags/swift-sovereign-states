@@ -274,29 +274,29 @@ public enum Country : String, SovereignState {
     
     public static func getAllMentioned(_ string: String, cache: Bool = true) -> [Country]? {
         let stringLowercase:String = string.lowercased()
-        if let cached:[Country] = SwiftSovereignStateCacheCountries.cachedMentioned[stringLowercase] {
+        if let cached:[Country] = SwiftSovereignStateCacheCountries.mentioned[stringLowercase] {
             return cached
         }
         let countries:[Country] = Country.allCases.filter({ $0.isMentioned(in: string) })
         if cache {
-            SwiftSovereignStateCacheCountries.cachedMentioned[stringLowercase] = countries
+            SwiftSovereignStateCacheCountries.mentioned[stringLowercase] = countries
         }
         return countries.isEmpty ? nil : countries
     }
     public static func valueOf(_ string: String, cache: Bool = true) -> Country? {
         let stringLowercase:String = string.lowercased()
-        if let cached:Country = SwiftSovereignStateCacheCountries.cachedValueOf[stringLowercase] {
+        if let cached:Country = SwiftSovereignStateCacheCountries.valueOf[stringLowercase] {
             return cached
         }
         let country:Country? = Country.allCases.first(where: { $0.isMentioned(in: string, exact: true) })
         if cache {
-            SwiftSovereignStateCacheCountries.cachedValueOf[stringLowercase] = country
+            SwiftSovereignStateCacheCountries.valueOf[stringLowercase] = country
         }
         return country
     }
     
     public func getCacheID() -> String {
-        return "\(self)"
+        return rawValue
     }
     
     public func getAdditionalKeywords() -> [String]? {
@@ -511,6 +511,13 @@ public enum Country : String, SovereignState {
         return SovereignStateISOAlpha3.get(self)
     }
     
+    public func getNeighbors() -> [Country]? {
+        return SovereignStateNeighbors.get(self)
+    }
+    public func getGovernmentWebsite() -> String? {
+        return SovereignStateGovernmentWebsite.get(self)
+    }
+    
     public func getFlagEmoji() -> String? {
         return SovereignStateFlagEmoji.get(self)
     }
@@ -599,10 +606,12 @@ public enum Country : String, SovereignState {
 }
 
 public extension Country {
-    func getSubdivisions<T: SovereignStateSubdivision>() -> [T]? {
-        return getAllSubdivisions() as? [T]
+    #if swift(<5.7)
+    func getSubdivisions() -> [SovereignStateSubdivisionWrapper]? {
+        guard let array:[Any] = getAllSubdivisions() else { return nil }
+        return array.compactMap({ ($0 as? SovereignStateSubdivision)?.wrapped() })
     }
-    internal func getAllSubdivisions() -> [Any]? {
+    private func getAllSubdivisions() -> [Any]? {
         switch self {
         case .afghanistan: return SubdivisionsAfghanistan.allCases
         case .algeria: return SubdivisionsAlgeria.allCases
@@ -717,4 +726,121 @@ public extension Country {
         default: return nil
         }
     }
+    #else
+    func getSubdivisions() -> [any SovereignStateSubdivision]? {
+        switch self {
+        case .afghanistan: return SubdivisionsAfghanistan.allCases
+        case .algeria: return SubdivisionsAlgeria.allCases
+        case .angola: return SubdivisionsAngola.allCases
+        case .argentina: return SubdivisionsArgentina.allCases
+        case .australia: return SubdivisionsAustralia.allCases
+        case .azerbaijan: return SubdivisionsAzerbaijan.allCases
+        
+        case .belarus: return SubdivisionsBelarus.allCases
+        case .brazil: return SubdivisionsBrazil.allCases
+        case .bulgaria: return SubdivisionsBulgaria.allCases
+        
+        case .canada: return SubdivisionsCanada.allCases
+        case .chile: return SubdivisionsChile.allCases
+        case .costa_rica: return SubdivisionsCostaRica.allCases
+        case .cuba: return SubdivisionsCuba.allCases
+        
+        case .denmark: return SubdivisionsDenmark.allCases
+        case .djibouti: return SubdivisionsDjibouti.allCases
+        case .dominica: return SubdivisionsDominica.allCases
+        case .dominican_republic: return SubdivisionsDominicanRepublic.allCases
+            
+        case .ecuador: return SubdivisionsEcuador.allCases
+        case .egypt: return SubdivisionsEgypt.allCases
+        case .ethiopia: return SubdivisionsEthiopia.allCases
+        
+        case .fiji: return SubdivisionsFiji.allCases
+        case .france: return SubdivisionsFrance.allCases
+            
+        case .germany: return SubdivisionsGermany.allCases
+        case .greece: return SubdivisionsGreece.allCases
+        case .guadeloupe: return SubdivisionsGuadeloupe.allCases
+        case .guatemala: return SubdivisionsGuatemala.allCases
+            
+        case .haiti: return SubdivisionsHaiti.allCases
+        case .honduras: return SubdivisionsHonduras.allCases
+        case .hungary: return SubdivisionsHungary.allCases
+        
+        case .india: return SubdivisionsIndia.allCases
+        case .indonesia: return SubdivisionsIndonesia.allCases
+        case .ireland: return SubdivisionsIreland.allCases
+        case .iran: return SubdivisionsIran.allCases
+        case .italy: return SubdivisionsItaly.allCases
+        
+        case .jamaica: return SubdivisionsJamaica.allCases
+        case .japan: return SubdivisionsJapan.allCases
+        case .jersey: return SubdivisionsJersey.allCases
+        case .jordan: return SubdivisionsJordan.allCases
+        
+        case .kazakhstan: return SubdivisionsKazakhstan.allCases
+        
+        case .latvia: return SubdivisionsLatvia.allCases
+        case .lebanon: return SubdivisionsLebanon.allCases
+        case .liberia: return SubdivisionsLiberia.allCases
+        case .libya: return SubdivisionsLibya.allCases
+        case .liechtenstein: return SubdivisionsLiechtenstein.allCases
+        case .lithuania: return SubdivisionsLithuania.allCases
+        case .luxembourg: return SubdivisionsLuxembourg.allCases
+        
+        case .madagascar: return SubdivisionsMadagascar.allCases
+        case .malaysia: return SubdivisionsMalaysia.allCases
+        case .mexico: return SubdivisionsMexico.allCases
+        case .mongolia: return SubdivisionsMongolia.allCases
+        case .montenegro: return SubdivisionsMontenegro.allCases
+        
+        case .namibia: return SubdivisionsNamibia.allCases
+        case .nepal: return SubdivisionsNepal.allCases
+        case .netherlands: return SubdivisionsNetherlands.allCases
+        case .new_zealand: return SubdivisionsNewZealand.allCases
+        case .nicaragua: return SubdivisionsNicaragua.allCases
+        case .niger: return SubdivisionsNiger.allCases
+        case .norway: return SubdivisionsNorway.allCases
+            
+        case .oman: return SubdivisionsOman.allCases
+            
+        case .pakistan: return SubdivisionsPakistan.allCases
+        case .palestine: return SubdivisionsPalestine.allCases
+        case .panama: return SubdivisionsPanama.allCases
+        case .papua_new_guinea: return SubdivisionsPapuaNewGuinea.allCases
+        case .peru: return SubdivisionsPeru.allCases
+        case .poland: return SubdivisionsPoland.allCases
+        case .portugal: return SubdivisionsPortugal.allCases
+        
+        case .qatar: return SubdivisionsQatar.allCases
+        
+        case .rwanda: return SubdivisionsRwanda.allCases
+        
+        case .senegal: return SubdivisionsSenegal.allCases
+        case .south_korea: return SubdivisionsSouthKorea.allCases
+        case .spain: return SubdivisionsSpain.allCases
+        case .sri_lanka: return SubdivisionsSriLanka.allCases
+        case .suriname: return SubdivisionsSuriname.allCases
+        case .sweden: return SubdivisionsSweden.allCases
+        case .switzerland: return SubdivisionsSwitzerland.allCases
+        case .syria: return SubdivisionsSyria.allCases
+        
+        case .tonga: return SubdivisionsTonga.allCases
+        case .tunisia: return SubdivisionsTunisia.allCases
+        case .turkmenistan: return SubdivisionsTurkmenistan.allCases
+        
+        case .ukraine: return SubdivisionsUkraine.allCases
+        case .united_states: return SubdivisionsUnitedStates.allCases
+        case .uruguay: return SubdivisionsUruguay.allCases
+        case .uzbekistan: return SubdivisionsUzbekistan.allCases
+        
+        case .vanuatu: return SubdivisionsVanuatu.allCases
+        
+        case .yemen: return SubdivisionsYemen.allCases
+        
+        case .zambia: return SubdivisionsZambia.allCases
+        case .zimbabwe: return SubdivisionsZimbabwe.allCases
+        default: return nil
+        }
+    }
+    #endif
 }

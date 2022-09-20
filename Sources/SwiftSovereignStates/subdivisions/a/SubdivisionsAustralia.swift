@@ -62,12 +62,12 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getWikipediaURL() -> String {
+    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
         switch self {
         case .victoria:
-            return "https://en.wikipedia.org/wiki/Victoria_(Australia)"
+            return "_(Australia)"
         default:
-            return getActualWikipediaURL()
+            return ""
         }
     }
     
@@ -106,7 +106,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .new_south_wales:
             return [SubdivisionsAustralia.queensland, SubdivisionsAustralia.south_australia, SubdivisionsAustralia.victoria, SubdivisionsAustralia.australian_capital_territory, SubdivisionsAustralia.jervis_bay_territory, SubdivisionsAustralia.coral_sea_islands]

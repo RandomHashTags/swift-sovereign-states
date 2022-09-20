@@ -233,7 +233,7 @@ public enum Currency : String, CaseIterable {
     case ZWB = "Zimbabwean bonds"
     
     public static func valueOf(_ string: String) -> Currency? {
-        return Currency.allCases.first(where: { string.elementsEqual($0.rawValue) || string.caseInsensitiveCompare("\($0)") == .orderedSame })
+        return Currency.allCases.first(where: { string.elementsEqual($0.rawValue) || string.elementsEqual("\($0)") })
     }
     
     public func isOfficial() -> Bool {

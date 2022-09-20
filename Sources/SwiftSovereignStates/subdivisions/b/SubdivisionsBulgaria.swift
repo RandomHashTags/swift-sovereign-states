@@ -45,7 +45,7 @@ public enum SubdivisionsBulgaria : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.provinces
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .blagoevgrad:
             return [SubdivisionsBulgaria.kyustendil, SubdivisionsBulgaria.sofia, SubdivisionsBulgaria.pazardzhik, SubdivisionsBulgaria.smolyan]

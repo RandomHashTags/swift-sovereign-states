@@ -61,6 +61,8 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
     
     public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
         switch self {
+        case .bougainville:
+            return ""
         case .central,
                 .western:
             return typeSuffix + "_(Papua_New_Guinea)"

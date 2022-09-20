@@ -23,7 +23,7 @@ public enum SubdivisionsDjibouti : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.regions
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .ali_sabieh:
             return [SubdivisionsDjibouti.dikhil, SubdivisionsDjibouti.arta]

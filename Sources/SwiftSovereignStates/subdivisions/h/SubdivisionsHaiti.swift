@@ -40,13 +40,13 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
     public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
         switch self {
         case .nord:
-            return "(Haitian department)"
+            return "(Haitian_department)"
         default:
             return "(department)"
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .artibonite:
             return [SubdivisionsHaiti.nord_ouest, SubdivisionsHaiti.nord, SubdivisionsHaiti.centre, SubdivisionsHaiti.ouest]

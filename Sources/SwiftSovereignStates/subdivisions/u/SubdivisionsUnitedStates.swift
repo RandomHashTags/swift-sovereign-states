@@ -321,7 +321,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    func getNeighbors() -> [Any]? {
+    func returnNeighbors() -> [Any]? {
         switch self {
         case .arizona:
             return [
