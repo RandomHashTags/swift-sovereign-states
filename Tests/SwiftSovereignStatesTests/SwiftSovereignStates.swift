@@ -3,9 +3,6 @@ import XCTest
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
         let unitedStates:Country = Country.united_states
         let targetSubdivision:String = "Minnesota", swiftVersion:String
         

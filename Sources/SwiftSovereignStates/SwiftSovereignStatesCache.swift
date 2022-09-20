@@ -88,13 +88,15 @@ private extension SwiftSovereignStatesCache {
 
 public enum SwiftSovereignStateCacheType {
     case sovereign_state_actualShortNames
-    case countries_cachedValueOf
-    case countries_cachedMentioned
+    case countries_valueOf
+    case countries_mentioned
+    #if swift(<5.7)
     case subdivisions_wrapped
+    #endif
     case subdivisions_keywordTerms
-    case subdivisions_cachedMentioned
-    case subdivisions_cachedValueOf
-    case subdivisions_cachedValueOfAll
+    case subdivisions_mentioned
+    case subdivisions_valueOf
+    case subdivisions_valueOfAll
 }
 
 public enum SwiftSovereignStateCache {
@@ -118,27 +120,27 @@ public enum SwiftSovereignStateCache {
         case .sovereign_state_actualShortNames:
             actualShortNames.removeAll()
             return
-        case .countries_cachedValueOf:
+        case .countries_valueOf:
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             return
-        case .countries_cachedMentioned:
+        case .countries_mentioned:
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
+        #if swift(<5.7)
         case .subdivisions_wrapped:
-            #if swift(<5.7)
             SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
-            #endif
             return
+        #endif
         case .subdivisions_keywordTerms:
             SwiftSovereignStateCacheSubdivision.keywordTerms.removeAll()
             return
-        case .subdivisions_cachedMentioned:
+        case .subdivisions_mentioned:
             SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
             return
-        case .subdivisions_cachedValueOf:
+        case .subdivisions_valueOf:
             SwiftSovereignStateCacheSubdivision.valueOf.removeAll()
             return
-        case .subdivisions_cachedValueOfAll:
+        case .subdivisions_valueOfAll:
             SwiftSovereignStateCacheSubdivision.valueOfAll.removeAll()
             return
         }

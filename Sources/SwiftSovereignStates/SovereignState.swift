@@ -9,6 +9,7 @@ import Foundation
 
 public protocol SovereignState : RawRepresentable, CaseIterable where RawValue == String {
     func getCacheID() -> String
+    func getKeywords() -> [String]
     func getAdditionalKeywords() -> [String]?
     func isMentioned(in string: String, exact: Bool) -> Bool
     func getShortName() -> String
@@ -37,7 +38,7 @@ public extension SovereignState {
         }).joined(separator: " ")
     }
     
-    private func getKeywords() -> [String] {
+    func getKeywords() -> [String] {
         let shortName:String = getShortName()
         var keywords:[String] = [shortName]
         if let realName:String = getRealName() {
