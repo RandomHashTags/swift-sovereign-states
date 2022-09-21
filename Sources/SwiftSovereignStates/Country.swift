@@ -723,6 +723,7 @@ public extension Country {
         case .uzbekistan: return SubdivisionsUzbekistan.allCases
         
         case .vanuatu: return SubdivisionsVanuatu.allCases
+        case .vietnam: return SubdivisionsVietnam.allCases
         
         case .yemen: return SubdivisionsYemen.allCases
         
@@ -839,6 +840,7 @@ public extension Country {
         case .uzbekistan: return SubdivisionsUzbekistan.allCases
         
         case .vanuatu: return SubdivisionsVanuatu.allCases
+        case .vietnam: return SubdivisionsVietnam.allCases
         
         case .yemen: return SubdivisionsYemen.allCases
         

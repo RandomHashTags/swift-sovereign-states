@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SubdivisionsVietnam : String, SovereignStateSubdivision {
+public enum SubdivisionsVietnam : String, SovereignStateSubdivision {
     case an_giang
     case ba_ria_vung_tau
     case bac_giang
@@ -72,15 +72,15 @@ enum SubdivisionsVietnam : String, SovereignStateSubdivision {
     case vinh_phuc
     case yen_bai
     
-    func getCountry() -> Country {
+    public func getCountry() -> Country {
         return Country.vietnam
     }
     
-    func getDefaultType() -> SovereignStateSubdivisionType {
+    public func getDefaultType() -> SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
     
-    func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType? {
         switch self {
         case .can_tho,
                 .da_nang,
@@ -93,7 +93,7 @@ enum SubdivisionsVietnam : String, SovereignStateSubdivision {
         }
     }
     
-    func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
         switch self {
         case .can_tho,
                 .da_nang,
@@ -106,7 +106,7 @@ enum SubdivisionsVietnam : String, SovereignStateSubdivision {
         }
     }
     
-    func getRealName() -> String? {
+    public func getRealName() -> String? {
         switch self {
         case .ba_ria_vung_tau: return "Bà Rịa–Vũng Tàu"
         case .bac_giang: return "Bắc Giang"
@@ -167,7 +167,7 @@ enum SubdivisionsVietnam : String, SovereignStateSubdivision {
         }
     }
     
-    func getGovernmentWebsite() -> String? {
+    public func getGovernmentWebsite() -> String? {
         switch self {
         case .an_giang: return "https://www.angiang.gov.vn"
         case .ba_ria_vung_tau: return "https://baria-vungtau.gov.vn"
