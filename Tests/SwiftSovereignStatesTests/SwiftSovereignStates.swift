@@ -4,19 +4,23 @@ import XCTest
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() throws {
         let unitedStates:Country = Country.united_states
-        let targetSubdivision:String = "Minnesota", swiftVersion:String
+        let targetSubdivision:String = "Minnesota", swiftVersion:String, equalMinnesotas:Bool
         
         #if swift(<5.7)
-        let _:SovereignStateSubdivisionWrapper = SubdivisionsUnitedStates.minnesota.wrapped()
-        let _:SovereignStateSubdivisionWrapper? = unitedStates.valueOfSubdivision(targetSubdivision)
         swiftVersion = "<5.7"
+        let test1:SovereignStateSubdivisionWrapper = SubdivisionsUnitedStates.minnesota.wrapped()
+        let test2:SovereignStateSubdivisionWrapper! = unitedStates.valueOfSubdivision(targetSubdivision)
+        equalMinnesotas = test1.isEqual(test2)
         var failed:[SovereignStateSubdivisionWrapper] = [SovereignStateSubdivisionWrapper]()
         #else
-        let _:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
-        let _:(any SovereignStateSubdivision)? = unitedStates.valueOfSubdivision(targetSubdivision)
         swiftVersion = ">=5.7"
+        let test1:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
+        let test2:(any SovereignStateSubdivision)! = unitedStates.valueOfSubdivision(targetSubdivision)
+        equalMinnesotas = test1.isEqual(test2)
         var failed:[any SovereignStateSubdivision] = [any SovereignStateSubdivision]()
         #endif
+        
+        XCTAssert(equalMinnesotas)
         
         let countries:[Country] = Country.allCases
         for country in countries {
@@ -30,11 +34,10 @@ final class SwiftSovereignStatesTests: XCTestCase {
             }
         }
         
+        print("SwiftSovereignStatesTests;" + swiftVersion + ";failed=" + failed.count.description)
         for subdivision in failed {
             print("SwiftSovereignStatesTests;failed;" + swiftVersion + ";" + subdivision.getCountry().rawValue + ";" + subdivision.rawValue + ";shortName=" + subdivision.getShortName() + ";wikipediaURL=" + subdivision.getWikipediaURL())
         }
-        
-        print("SwiftSovereignStatesTests;" + swiftVersion + ";failed=" + failed.count.description)
         XCTAssert(failed.count == 0)
         
         failed.removeAll()

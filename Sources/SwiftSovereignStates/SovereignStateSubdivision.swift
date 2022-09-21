@@ -105,7 +105,6 @@ public enum SovereignStateSubdivisions {
     #endif
 }
 
-#if swift(<5.7)
 public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision {
     public typealias RawValue = String
     
@@ -113,27 +112,51 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision {
     private let country:Country, defaultType:SovereignStateSubdivisionType, type:SovereignStateSubdivisionType?, wikipediaURL:String
     private let shortName:String, realName:String?, conditionalName:String?, officialNames:[String]?, aliases:[String]?
     private let isoAlpha2:String?, isoAlpha3:String?
+    #if swift(<5.7)
     private let neighbors:[SovereignStateSubdivisionWrapper]?
-    private let flagURLWikipediaSVGID:String?
+    #else
+    private let neighbors:[any SovereignStateSubdivision]?
+    #endif
+    private let flagURL:String?
     private let timeZones:[SovereignStateTimeZone]?
     
-    init(rawValue: String, country: Country, defaultType: SovereignStateSubdivisionType, type: SovereignStateSubdivisionType?, wikipediaURL: String, shortName: String, realName: String?, conditionalName: String?, officialNames: [String]?, aliases: [String]?, isoAlpha2: String?, isoAlpha3: String?, neighbors: [SovereignStateSubdivisionWrapper]?, flagURLWikipediaSVGID: String?, timeZones: [SovereignStateTimeZone]?) {
-        self.rawValue = rawValue
-        self.country = country
-        self.defaultType = defaultType
-        self.type = type
-        self.wikipediaURL = wikipediaURL
-        self.shortName = shortName
-        self.realName = realName
-        self.conditionalName = conditionalName
-        self.officialNames = officialNames
-        self.aliases = aliases
-        self.isoAlpha2 = isoAlpha2
-        self.isoAlpha3 = isoAlpha3
-        self.neighbors = neighbors
-        self.flagURLWikipediaSVGID = flagURLWikipediaSVGID
-        self.timeZones = timeZones
+    #if swift(<5.7)
+    init<T: SovereignStateSubdivision>(_ subdivision: T) {
+        self.rawValue = subdivision.rawValue
+        self.country = subdivision.getCountry()
+        self.defaultType = subdivision.getDefaultType()
+        self.type = subdivision.getType()
+        self.wikipediaURL = subdivision.getWikipediaURL()
+        self.shortName = subdivision.getShortName()
+        self.realName = subdivision.getRealName()
+        self.conditionalName = subdivision.getConditionalName()
+        self.officialNames = subdivision.getOfficialNames()
+        self.aliases = subdivision.getAliases()
+        self.isoAlpha2 = subdivision.getISOAlpha2()
+        self.isoAlpha3 = subdivision.getISOAlpha3()
+        self.neighbors = subdivision.getNeighbors()?.map({ $0.wrapped() })
+        self.flagURL = subdivision.getFlagURL()
+        self.timeZones = subdivision.getTimeZones()
     }
+    #else
+    init(_ subdivision: any SovereignStateSubdivision) {
+        self.rawValue = subdivision.rawValue
+        self.country = subdivision.getCountry()
+        self.defaultType = subdivision.getDefaultType()
+        self.type = subdivision.getType()
+        self.wikipediaURL = subdivision.getWikipediaURL()
+        self.shortName = subdivision.getShortName()
+        self.realName = subdivision.getRealName()
+        self.conditionalName = subdivision.getConditionalName()
+        self.officialNames = subdivision.getOfficialNames()
+        self.aliases = subdivision.getAliases()
+        self.isoAlpha2 = subdivision.getISOAlpha2()
+        self.isoAlpha3 = subdivision.getISOAlpha3()
+        self.neighbors = subdivision.getNeighbors()
+        self.flagURL = subdivision.getFlagURL()
+        self.timeZones = subdivision.getTimeZones()
+    }
+    #endif
     
     public init?(rawValue: String) {
         self.rawValue = rawValue
@@ -149,7 +172,7 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision {
         isoAlpha2 = nil
         isoAlpha3 = nil
         neighbors = nil
-        flagURLWikipediaSVGID = nil
+        flagURL = nil
         timeZones = nil
     }
     
@@ -165,7 +188,6 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision {
     public func getWikipediaURL() -> String {
         return wikipediaURL
     }
-    
     
     public func getShortName() -> String {
         return shortName
@@ -189,32 +211,43 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision {
     public func getISOAlpha3() -> String? {
         return isoAlpha3
     }
+    #if swift(<5.7)
     public func getNeighbors() -> [SovereignStateSubdivisionWrapper]? {
         return neighbors
     }
-    public func getFlagURLWikipediaSVGID() -> String? {
-        return flagURLWikipediaSVGID
+    #else
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
+        return neighbors
+    }
+    #endif
+    public func getFlagURL() -> String? {
+        return flagURL
     }
     public func getTimeZones() -> [SovereignStateTimeZone]? {
         return timeZones
     }
     
+    public func wrapped() -> SovereignStateSubdivisionWrapper {
+        return self
+    }
+    
     public static var allCases: [SovereignStateSubdivisionWrapper] = []
 }
+
+
 public extension Country {
+    #if swift(<5.7)
     func valueOfSubdivision(_ string: String?) -> SovereignStateSubdivisionWrapper? {
         guard let string:String = string else { return nil }
         return SovereignStateSubdivisions.valueOf(string, country: self)
     }
-}
-#else
-public extension Country {
+    #else
     func valueOfSubdivision(_ string: String?) -> (any SovereignStateSubdivision)? {
         guard let string:String = string else { return nil }
         return SovereignStateSubdivisions.valueOf(string, country: self)
     }
+    #endif
 }
-#endif
 
 public protocol SovereignStateSubdivision : SovereignState {
     func getCountry() -> Country
@@ -225,10 +258,11 @@ public protocol SovereignStateSubdivision : SovereignState {
     
     #if swift(<5.7)
     func getNeighbors() -> [SovereignStateSubdivisionWrapper]?
-    func wrapped() -> SovereignStateSubdivisionWrapper
     #else
     func getNeighbors() -> [any SovereignStateSubdivision]?
     #endif
+    
+    func wrapped() -> SovereignStateSubdivisionWrapper
 }
 
 public extension SovereignStateSubdivision {
@@ -239,6 +273,10 @@ public extension SovereignStateSubdivision {
         return nil
     }
     func getISOAlpha3() -> String? {
+        return nil
+    }
+    
+    func getGovernmentWebsite() -> String? {
         return nil
     }
     
@@ -271,34 +309,19 @@ public extension SovereignStateSubdivision {
     func getNeighbors() -> [SovereignStateSubdivisionWrapper]? {
         return returnNeighbors()?.compactMap({ ($0 as? SovereignStateSubdivision)?.wrapped() })
     }
-    func wrapped() -> SovereignStateSubdivisionWrapper {
-        let id:String = getCacheID()
-        if let cached:SovereignStateSubdivisionWrapper = SwiftSovereignStateCacheSubdivision.wrapped[id] {
-            return cached
-        }
-        let wrapped:SovereignStateSubdivisionWrapper = SovereignStateSubdivisionWrapper(
-            rawValue: rawValue,
-            country: getCountry(),
-            defaultType: getDefaultType(),
-            type: getType(),
-            wikipediaURL: getWikipediaURL(),
-            shortName: getShortName(),
-            realName: getRealName(),
-            conditionalName: getConditionalName(),
-            officialNames: getOfficialNames(),
-            aliases: getAliases(),
-            isoAlpha2: getISOAlpha2(),
-            isoAlpha3: getISOAlpha3(),
-            neighbors: getNeighbors(),
-            flagURLWikipediaSVGID: getFlagURLWikipediaSVGID(),
-            timeZones: getTimeZones()
-        )
-        SwiftSovereignStateCacheSubdivision.wrapped[id] = wrapped
-        return wrapped
-    }
     #else
     func getNeighbors() -> [any SovereignStateSubdivision]? {
         return returnNeighbors() as? [any SovereignStateSubdivision]
     }
     #endif
+    
+    func wrapped() -> SovereignStateSubdivisionWrapper {
+        let id:String = getCacheID()
+        if let cached:SovereignStateSubdivisionWrapper = SwiftSovereignStateCacheSubdivision.wrapped[id] {
+            return cached
+        }
+        let wrapped:SovereignStateSubdivisionWrapper = SovereignStateSubdivisionWrapper(self)
+        SwiftSovereignStateCacheSubdivision.wrapped[id] = wrapped
+        return wrapped
+    }
 }

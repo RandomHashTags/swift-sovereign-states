@@ -528,6 +528,11 @@ public enum Country : String, SovereignState {
         return SovereignStateCurrencies.get(self)
     }
     
+    public func getFlagURL() -> String? {
+        guard let isoAlpha2:String = getISOAlpha2()?.lowercased() else { return nil }
+        return "https://raw.githubusercontent.com/stsrki/country-flags/master/png1000px/" + isoAlpha2 + ".png"
+    }
+    
     public func getUNStatus() -> String? {
         switch self {
         case .abkhazia,

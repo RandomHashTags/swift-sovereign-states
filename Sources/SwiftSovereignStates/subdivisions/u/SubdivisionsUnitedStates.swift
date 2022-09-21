@@ -182,6 +182,53 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
+    public func getGovernmentWebsite() -> String? {
+        switch self {
+        case .alabama,
+                .alaska,
+                .arkansas,
+                .colorado,
+                .delaware,
+                .georgia,
+                .hawaii,
+                .idaho,
+                .illinois,
+                .iowa,
+                .kansas,
+                .kentucky,
+                .louisiana,
+                .maine,
+                .maryland,
+                .michigan,
+                .nebraska,
+                .ohio,
+                .oklahoma,
+                .oregon,
+                .texas,
+                .utah,
+                .vermont,
+                .virginia,
+                .wisconsin:
+            return "https://" + rawValue + ".gov"
+        case .florida: return "https://www.myflorida.com"
+        case .massachusetts: return "https://www.mass.gov"
+        case .west_virginia: return "https://www.wv.gov"
+        case .wyoming: return "https://www.wyo.gov"
+        case .american_samoa,
+                .guam,
+                .northern_mariana_islands,
+                .puerto_rico,
+                .united_states_virgin_islands:
+            return nil
+        case .marshall_islands: return Country.marshall_islands.getGovernmentWebsite()
+        case .micronesia: return Country.micronesia.getGovernmentWebsite()
+        case .palau: return Country.palau.getGovernmentWebsite()
+        default:
+            guard let isoAlpha2:String = getISOAlpha2() else { return nil }
+            return "https://" + isoAlpha2 + ".gov"
+        }
+    }
+    
     public func getFlagURLWikipediaSVGID() -> String? {
         switch self {
         case .alabama: return "5/5c/Flag_of_Alabama"

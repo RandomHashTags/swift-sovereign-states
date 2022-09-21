@@ -90,9 +90,7 @@ public enum SwiftSovereignStateCacheType {
     case sovereign_state_actualShortNames
     case countries_valueOf
     case countries_mentioned
-    #if swift(<5.7)
     case subdivisions_wrapped
-    #endif
     case subdivisions_keywordTerms
     case subdivisions_mentioned
     case subdivisions_valueOf
@@ -107,9 +105,7 @@ public enum SwiftSovereignStateCache {
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
-            #if swift(<5.7)
             SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
-            #endif
             SwiftSovereignStateCacheSubdivision.keywordTerms.removeAll()
             SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
             SwiftSovereignStateCacheSubdivision.valueOf.removeAll()
@@ -126,11 +122,9 @@ public enum SwiftSovereignStateCache {
         case .countries_mentioned:
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
-        #if swift(<5.7)
         case .subdivisions_wrapped:
             SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
             return
-        #endif
         case .subdivisions_keywordTerms:
             SwiftSovereignStateCacheSubdivision.keywordTerms.removeAll()
             return
@@ -154,9 +148,9 @@ internal enum SwiftSovereignStateCacheCountries {
 }
 internal enum SwiftSovereignStateCacheSubdivision {
     static var keywordTerms:SwiftSovereignStatesCache<String, [ContentTerm]> = SwiftSovereignStatesCache<String, [ContentTerm]>()
+    static var wrapped:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper>()
     
     #if swift(<5.7)
-    static var wrapped:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper>()
     static var mentioned:SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]> = SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]>()
     static var valueOf:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper?> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper?>()
     static var valueOfAll:SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]> = SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]>()

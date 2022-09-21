@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SovereignState : RawRepresentable, CaseIterable where RawValue == String {
+public protocol SovereignState : RawRepresentable, CaseIterable, Hashable where RawValue == String {
     func getCacheID() -> String
     func getKeywords() -> [String]
     func getAdditionalKeywords() -> [String]?
@@ -20,6 +20,9 @@ public protocol SovereignState : RawRepresentable, CaseIterable where RawValue =
     func getISOAlpha2() -> String?
     func getISOAlpha3() -> String?
     
+    func getGovernmentWebsite() -> String?
+    
+    func getFlagURL() -> String?
     func getFlagURLWikipediaSVGID() -> String?
     func getWikipediaURL() -> String
     
@@ -38,9 +41,22 @@ public extension SovereignState {
         }).joined(separator: " ")
     }
     
+    #if swift(<5.7)
+    func isEqual<T: SovereignState>(_ sovereignState: T) -> Bool {
+        return getCacheID().elementsEqual(sovereignState.getCacheID())
+    }
+    #else
+    func isEqual(_ sovereignState: any SovereignState) -> Bool {
+        return getCacheID().elementsEqual(sovereignState.getCacheID())
+    }
+    #endif
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(getCacheID())
+    }
+    
     func getKeywords() -> [String] {
         let shortName:String = getShortName()
-        var keywords:[String] = [shortName]
+        var keywords:[String] = [getCacheID(), rawValue, shortName]
         if let realName:String = getRealName() {
             keywords.append(realName)
         }
