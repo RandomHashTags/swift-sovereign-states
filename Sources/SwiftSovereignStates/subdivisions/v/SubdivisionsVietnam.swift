@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsVietnam : String, SovereignStateSubdivision {
+public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vietnam
     case an_giang
     case ba_ria_vung_tau
     case bac_giang

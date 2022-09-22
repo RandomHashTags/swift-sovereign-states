@@ -688,6 +688,7 @@ public extension Country {
         case .new_zealand: return SubdivisionsNewZealand.allCases
         case .nicaragua: return SubdivisionsNicaragua.allCases
         case .niger: return SubdivisionsNiger.allCases
+        case .nigeria: return SubdivisionsNigeria.allCases
         case .norway: return SubdivisionsNorway.allCases
             
         case .oman: return SubdivisionsOman.allCases
@@ -806,6 +807,7 @@ public extension Country {
         case .new_zealand: return SubdivisionsNewZealand.allCases
         case .nicaragua: return SubdivisionsNicaragua.allCases
         case .niger: return SubdivisionsNiger.allCases
+        case .nigeria: return SubdivisionsNigeria.allCases
         case .norway: return SubdivisionsNorway.allCases
             
         case .oman: return SubdivisionsOman.allCases

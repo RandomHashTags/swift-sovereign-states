@@ -127,7 +127,7 @@ public extension SovereignState {
         let idLowercase:String = id.lowercased()
         let values:[String] = id.components(separatedBy: "/")
         let type:String = id.starts(with: "en") ? "en" : "commons"
-        let hasExtension:Bool = idLowercase.hasPrefix(".png") || idLowercase.hasPrefix(".jpg")
+        let hasExtension:Bool = idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif")
         return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + id.replacingOccurrences(of: "en/", with: "") + (hasExtension ? "" : ".svg") + "/%quality%px-" + values[values.count-1].description + (hasExtension ? "" : ".svg.png")
     }
     
