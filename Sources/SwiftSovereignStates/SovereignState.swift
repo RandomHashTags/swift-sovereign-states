@@ -60,6 +60,9 @@ public extension SovereignState {
             return cached
         }
         var keywords:[String] = [rawValue, getShortName()]
+        if self is (any SovereignStateSubdivision) {
+            keywords.append(getCacheID())
+        }
         if let realName:String = getRealName() {
             keywords.append(realName)
         }
