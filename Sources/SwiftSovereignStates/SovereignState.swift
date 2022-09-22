@@ -55,8 +55,11 @@ public extension SovereignState {
     }
     
     func getKeywords() -> [String] {
-        let shortName:String = getShortName()
-        var keywords:[String] = [getCacheID(), rawValue, shortName]
+        let id:String = getCacheID()
+        if let cached:[String] = SwiftSovereignStateCacheSubdivision.keywords[id] {
+            return cached
+        }
+        var keywords:[String] = [rawValue, getShortName()]
         if let realName:String = getRealName() {
             keywords.append(realName)
         }
@@ -78,23 +81,15 @@ public extension SovereignState {
         if let additional:[String] = getAdditionalKeywords() {
             keywords.append(contentsOf: additional)
         }
+        SwiftSovereignStateCacheSubdivision.keywords[id] = keywords
         return keywords
     }
     func getAdditionalKeywords() -> [String]? {
         return nil
     }
-    internal func getKeywordTerms() -> [ContentTerm] {
-        let id:String = getCacheID()
-        if let terms:[ContentTerm] = SwiftSovereignStateCacheSubdivision.keywordTerms[id] {
-            return terms
-        }
-        let terms:[ContentTerm] = getKeywords().map({ ContentTerm($0) })
-        SwiftSovereignStateCacheSubdivision.keywordTerms[id] = terms
-        return terms
-    }
     func isMentioned(in string: String, exact: Bool = false) -> Bool {
-        let terms:[ContentTerm] = getKeywordTerms()
-        return exact ? ContentTerm.doesEqual(string: string, values: terms) : ContentTerm.doesSatisfy(string: string, values: terms)
+        let values:[String] = getKeywords()
+        return exact ? SovereignStates.doesEqual(string: string, values: values) : SovereignStates.doesSatisfy(string: string, values: values)
     }
     
     func getOfficialNames() -> [String]? {
@@ -137,5 +132,41 @@ public extension SovereignState {
     
     func getTimeZones() -> [SovereignStateTimeZone]? {
         return nil
+    }
+}
+
+private enum SovereignStates {
+    static func doesEqual(string: String, values: [String]) -> Bool {
+        return values.first(where: { $0.elementsEqual(string) }) != nil
+    }
+    static func doesSatisfy(string: String, values: [String]) -> Bool {
+        let regex:String = "(" + values.joined(separator: "|") + ")" + suffixRegex
+        return doesContain(string: string, regex: prefixRegex + regex) || doesContain(string: string, regex: "^" + regex)
+    }
+    private static let prefixRegex:String = {
+        let string:String = [
+            " ",
+            "-", "–",
+            "\\(",
+            "/",
+            "\""
+        ].joined(separator: "|")
+        return "(" + string + ")"
+    }()
+    private static let suffixRegex:String = {
+        let string:String = [
+            " ",
+            "\\.", "\\?", "\\!",
+            ",",
+            ";", ":",
+            "-", "–",
+            "'", "\"",
+            "\\)",
+            "/"
+        ].joined(separator: "|")
+        return "(" + string + ")"
+    }()
+    private static func doesContain(string: String, regex: String) -> Bool {
+        return string.range(of: regex, options: .regularExpression) != nil
     }
 }

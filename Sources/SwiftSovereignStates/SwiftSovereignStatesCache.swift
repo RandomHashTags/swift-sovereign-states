@@ -91,7 +91,7 @@ public enum SwiftSovereignStateCacheType {
     case countries_valueOf
     case countries_mentioned
     case subdivisions_wrapped
-    case subdivisions_keywordTerms
+    case subdivisions_keywords
     case subdivisions_mentioned
     case subdivisions_valueOf
     case subdivisions_valueOfAll
@@ -106,7 +106,7 @@ public enum SwiftSovereignStateCache {
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
             SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
-            SwiftSovereignStateCacheSubdivision.keywordTerms.removeAll()
+            SwiftSovereignStateCacheSubdivision.keywords.removeAll()
             SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
             SwiftSovereignStateCacheSubdivision.valueOf.removeAll()
             SwiftSovereignStateCacheSubdivision.valueOfAll.removeAll()
@@ -125,8 +125,8 @@ public enum SwiftSovereignStateCache {
         case .subdivisions_wrapped:
             SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
             return
-        case .subdivisions_keywordTerms:
-            SwiftSovereignStateCacheSubdivision.keywordTerms.removeAll()
+        case .subdivisions_keywords:
+            SwiftSovereignStateCacheSubdivision.keywords.removeAll()
             return
         case .subdivisions_mentioned:
             SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
@@ -147,7 +147,7 @@ internal enum SwiftSovereignStateCacheCountries {
     static var mentioned:SwiftSovereignStatesCache<String, [Country]> = SwiftSovereignStatesCache<String, [Country]>()
 }
 internal enum SwiftSovereignStateCacheSubdivision {
-    static var keywordTerms:SwiftSovereignStatesCache<String, [ContentTerm]> = SwiftSovereignStatesCache<String, [ContentTerm]>()
+    static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
     static var wrapped:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper>()
     
     #if swift(<5.7)

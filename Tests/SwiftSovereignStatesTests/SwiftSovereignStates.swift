@@ -41,5 +41,21 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(failed.count == 0)
         
         failed.removeAll()
+        testMentions()
+    }
+    
+    private func testMentions() {
+        let targetCountries:[Country] = [Country.japan, Country.united_states, Country.canada, Country.russia, Country.china, Country.taiwan, Country.kenya, Country.mexico, Country.luxembourg, Country.switzerland, Country.egypt, Country.poland, Country.bahamas, Country.sao_tome_and_principe, Country.zambia]
+        let mentionedString:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, the Bahamas, Sao Tome and Principe, and Zambia. Case Sensitive! Will not find New zealand, central african republic, el Salvador, latv.a, FINLAND, OMan, [Romania], Dominican, and Ire?and."
+        let mentioned:[Country] = Country.getAllMentioned(mentionedString) ?? [Country]()
+        let notFound:[Country] = targetCountries.filter({ !mentioned.contains($0) })
+        if !notFound.isEmpty {
+            print("SwiftSovereignStatesTests;testMentions;missing=[" + notFound.map({ $0.rawValue }).joined(separator: ",") + "]")
+        }
+        let notMentioned:[Country] = mentioned.filter({ !targetCountries.contains($0)})
+        if !notMentioned.isEmpty {
+            print("SwiftSovereignStatesTests;testMentions;shouldn't be=[" + notMentioned.map({ $0.rawValue }).joined(separator: ",") + "]")
+        }
+        XCTAssert(mentioned.count == targetCountries.count)
     }
 }
