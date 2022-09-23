@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsTonga : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Tonga
+public enum SubdivisionsTonga : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Tonga
     case eua
     case ha_apai
     case niua_islands
@@ -31,7 +31,7 @@ public enum SubdivisionsTonga : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         return ""
     }
 }

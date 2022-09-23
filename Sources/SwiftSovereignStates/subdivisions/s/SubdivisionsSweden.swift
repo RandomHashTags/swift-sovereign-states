@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Sweden
+public enum SubdivisionsSweden : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Sweden
     case blekinge
     case dalarna
     case gotland
@@ -56,7 +56,7 @@ public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         return "_County"
     }
     

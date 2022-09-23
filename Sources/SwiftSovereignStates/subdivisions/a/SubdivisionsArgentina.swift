@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Argentina
+public enum SubdivisionsArgentina : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Argentina
     case autonomous_city_of_buenos_aires
     case buenos_aires
     case catamarca
@@ -71,7 +71,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .buenos_aires:
             return ""
@@ -80,7 +80,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
                 .san_juan,
                 .santa_cruz,
                 .tierra_del_fuego_antartida_e_islas_del_atlantico_sur:
-            return typeSuffix + ",_Argentina"
+            return getTypeSuffix() + ",_Argentina"
         default:
             return nil
         }

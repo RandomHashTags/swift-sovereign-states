@@ -90,11 +90,15 @@ public enum SwiftSovereignStateCacheType {
     case sovereign_state_actualShortNames
     case countries_valueOf
     case countries_mentioned
-    case subdivisions_wrapped
     case subdivisions_keywords
     case subdivisions_mentioned
     case subdivisions_valueOf
     case subdivisions_valueOfAll
+    case cities_keywords
+    case cities_mentionedAll
+    case cities_mentionedSubdivision
+    case cities_valueOf
+    case cities_valueOfAll
 }
 
 public enum SwiftSovereignStateCache {
@@ -105,11 +109,16 @@ public enum SwiftSovereignStateCache {
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
-            SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
-            SwiftSovereignStateCacheSubdivision.keywords.removeAll()
-            SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
-            SwiftSovereignStateCacheSubdivision.valueOf.removeAll()
-            SwiftSovereignStateCacheSubdivision.valueOfAll.removeAll()
+            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
+            SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
+            SwiftSovereignStateCacheSubdivisions.valueOf.removeAll()
+            SwiftSovereignStateCacheSubdivisions.valueOfAll.removeAll()
+            
+            SwiftSovereignStateCacheCities.keywords.removeAll()
+            SwiftSovereignStateCacheCities.mentionedAll.removeAll()
+            SwiftSovereignStateCacheCities.mentionedSubdivision.removeAll()
+            SwiftSovereignStateCacheCities.valueOf.removeAll()
+            SwiftSovereignStateCacheCities.valueOfAll.removeAll()
             return
         }
         switch type {
@@ -122,20 +131,32 @@ public enum SwiftSovereignStateCache {
         case .countries_mentioned:
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
-        case .subdivisions_wrapped:
-            SwiftSovereignStateCacheSubdivision.wrapped.removeAll()
-            return
         case .subdivisions_keywords:
-            SwiftSovereignStateCacheSubdivision.keywords.removeAll()
+            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
             return
         case .subdivisions_mentioned:
-            SwiftSovereignStateCacheSubdivision.mentioned.removeAll()
+            SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
             return
         case .subdivisions_valueOf:
-            SwiftSovereignStateCacheSubdivision.valueOf.removeAll()
+            SwiftSovereignStateCacheSubdivisions.valueOf.removeAll()
             return
         case .subdivisions_valueOfAll:
-            SwiftSovereignStateCacheSubdivision.valueOfAll.removeAll()
+            SwiftSovereignStateCacheSubdivisions.valueOfAll.removeAll()
+            return
+        case .cities_keywords:
+            SwiftSovereignStateCacheCities.keywords.removeAll()
+            return
+        case .cities_mentionedAll:
+            SwiftSovereignStateCacheCities.mentionedAll.removeAll()
+            return
+        case .cities_mentionedSubdivision:
+            SwiftSovereignStateCacheCities.mentionedSubdivision.removeAll()
+            return
+        case .cities_valueOf:
+            SwiftSovereignStateCacheCities.valueOf.removeAll()
+            return
+        case .cities_valueOfAll:
+            SwiftSovereignStateCacheCities.valueOfAll.removeAll()
             return
         }
     }
@@ -146,17 +167,18 @@ internal enum SwiftSovereignStateCacheCountries {
     static var valueOf:SwiftSovereignStatesCache<String, Country> = SwiftSovereignStatesCache<String, Country>()
     static var mentioned:SwiftSovereignStatesCache<String, [Country]> = SwiftSovereignStatesCache<String, [Country]>()
 }
-internal enum SwiftSovereignStateCacheSubdivision {
+internal enum SwiftSovereignStateCacheSubdivisions {
     static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
-    static var wrapped:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper>()
     
-    #if swift(<5.7)
-    static var mentioned:SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]> = SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]>()
-    static var valueOf:SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper?> = SwiftSovereignStatesCache<String, SovereignStateSubdivisionWrapper?>()
-    static var valueOfAll:SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]> = SwiftSovereignStatesCache<String, [SovereignStateSubdivisionWrapper]>()
-    #else
     static var mentioned:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
-    static var valueOf:SwiftSovereignStatesCache<String, (any SovereignStateSubdivision)?> = SwiftSovereignStatesCache<String, (any SovereignStateSubdivision)?>()
+    static var valueOf:SwiftSovereignStatesCache<String, Any?> = SwiftSovereignStatesCache<String, Any?>()
     static var valueOfAll:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
-    #endif
+}
+internal enum SwiftSovereignStateCacheCities {
+    static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
+    
+    static var mentionedAll:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
+    static var mentionedSubdivision:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
+    static var valueOfAll:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
+    static var valueOf:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
 }

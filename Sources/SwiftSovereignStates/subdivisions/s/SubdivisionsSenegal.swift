@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSenegal : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Senegal
+public enum SubdivisionsSenegal : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Senegal
     case dakar
     case diourbel
     case fatick

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Yemen
+public enum SubdivisionsYemen : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Yemen
     case amran
     case abyan
     case dhale
@@ -56,12 +56,12 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .sanaa_city:
             return nil
         default:
-            return "_" + typeSuffix
+            return "_" + getTypeSuffix()
         }
     }
 }

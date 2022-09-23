@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIreland : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Ireland
+public enum SubdivisionsIreland : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Ireland
     case connacht
     case leinster
     case munster
@@ -21,7 +21,7 @@ public enum SubdivisionsIreland : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.provinces
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         return ""
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Ukraine
+public enum SubdivisionsUkraine : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Ukraine
     case cherkasy
     case chernihiv
     case chernivtsi
@@ -62,18 +62,20 @@ public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https:/
         switch self {
         case .crimea:
             return "Autonomous_Republic_of_"
+        case .sevastopol:
+            return ""
         default:
             return nil
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .crimea,
                 .kyiv_city:
             return ""
         default:
-            return "_" + typeSuffix
+            return "_" + getTypeSuffix()
         }
     }
     

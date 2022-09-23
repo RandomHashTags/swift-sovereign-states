@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea
+public enum SubdivisionsSouthKorea : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea
     case busan
     
     case north_chungcheong
@@ -58,7 +58,7 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .busan,
                 .daegu,
@@ -69,7 +69,7 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
                 .ulsan:
             return ""
         case .gangwon:
-            return typeSuffix + ",_South_Korea"
+            return getTypeSuffix() + ",_South_Korea"
         case .sejong:
             return "City"
         default:

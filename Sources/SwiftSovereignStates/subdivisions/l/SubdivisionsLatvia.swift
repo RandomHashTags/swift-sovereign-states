@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Latvia
+public enum SubdivisionsLatvia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Latvia
     case adazi
     case aizkraukle
     case aluksne
@@ -76,7 +76,7 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .daugavpils,
                 .jurmala,
@@ -87,9 +87,9 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
                 .ventspils_city:
             return ""
         case .saldus:
-            return "_" + typeSuffix + "_(2021–present)"
+            return "_" + getTypeSuffix() + "_(2021–present)"
         default:
-            return "_" + typeSuffix
+            return "_" + getTypeSuffix()
         }
     }
     

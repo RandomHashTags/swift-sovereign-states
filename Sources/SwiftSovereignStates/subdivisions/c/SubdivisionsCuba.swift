@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Cuba
+public enum SubdivisionsCuba : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Cuba
     case artemisa
     case camaguey
     case ciego_de_avila
@@ -54,7 +54,7 @@ public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .isla_de_la_juventud:
             return ""

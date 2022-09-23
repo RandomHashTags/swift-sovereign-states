@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Jersey
+public enum SubdivisionsJersey : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Jersey
     case grouville
     case saint_lawrence
     case saint_brelade
@@ -29,7 +29,7 @@ public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.parishes
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .saint_lawrence,
                 .saint_clement,
@@ -40,7 +40,7 @@ public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://
                 .saint_saviour,
                 .saint_mary,
                 .trinity:
-            return typeSuffix + ",_Jersey"
+            return getTypeSuffix() + ",_Jersey"
         default:
             return nil
         }

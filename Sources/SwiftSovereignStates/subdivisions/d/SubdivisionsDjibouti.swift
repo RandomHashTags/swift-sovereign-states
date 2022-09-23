@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsDjibouti : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Djibouti
+public enum SubdivisionsDjibouti : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Djibouti
     case ali_sabieh
     case arta
     case dikhil
@@ -23,7 +23,7 @@ public enum SubdivisionsDjibouti : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.regions
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .ali_sabieh:
             return [SubdivisionsDjibouti.dikhil, SubdivisionsDjibouti.arta]

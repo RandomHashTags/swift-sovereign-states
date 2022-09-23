@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsChile : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Chile
+public enum SubdivisionsChile : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Chile
     case antofagasta
     case araucania
     case arica_and_parinacota

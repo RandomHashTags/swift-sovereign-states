@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_units_of_Pakistan
+public enum SubdivisionsPakistan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_units_of_Pakistan
     case azad_jammu_and_kashmir
     case balochistan
     case gilgit_baltistan
@@ -50,7 +50,7 @@ public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .balochistan,
                 .punjab:

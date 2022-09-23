@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zambia
+public enum SubdivisionsZambia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zambia
     case central
     case copperbelt
     case eastern
@@ -36,7 +36,7 @@ public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .central,
                 .eastern,
@@ -50,7 +50,7 @@ public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .central:
             return [SubdivisionsZambia.western, SubdivisionsZambia.north_western, SubdivisionsZambia.copperbelt, SubdivisionsZambia.luapula, SubdivisionsZambia.muchinga, SubdivisionsZambia.eastern, SubdivisionsZambia.lusaka, SubdivisionsZambia.southern]

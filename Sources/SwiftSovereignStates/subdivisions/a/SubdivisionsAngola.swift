@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAngola : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Angola
+public enum SubdivisionsAngola : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Angola
     case bengo
     case benguela
     case bie

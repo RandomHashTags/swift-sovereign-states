@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vanuatu
+public enum SubdivisionsVanuatu : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vanuatu
     case malampa
     case penama
     case sanma
@@ -45,7 +45,7 @@ public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .malampa:
             return [SubdivisionsVanuatu.sanma, SubdivisionsVanuatu.penama, SubdivisionsVanuatu.shefa]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Belarus
+public enum SubdivisionsBelarus : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Belarus
     case brest
     case gomel
     case grodno
@@ -42,12 +42,12 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .minsk_city:
             return ""
         default:
-            return "_" + typeSuffix
+            return "_" + getTypeSuffix()
         }
     }
     
@@ -63,7 +63,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .brest:
             return [SubdivisionsBelarus.grodno, SubdivisionsBelarus.minsk, SubdivisionsBelarus.gomel]

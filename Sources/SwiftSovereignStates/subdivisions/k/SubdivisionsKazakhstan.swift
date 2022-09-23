@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Kazakhstan
+public enum SubdivisionsKazakhstan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Kazakhstan
     case akmola
     case aktobe
     case almaty
@@ -42,7 +42,7 @@ public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .almaty,
                 .almaty_region,

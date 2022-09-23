@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada
+public enum SubdivisionsCanada : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada
     case alberta
     case british_columbia
     case manitoba
@@ -78,7 +78,7 @@ public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .alberta: return [SubdivisionsCanada.northwest_territories, SubdivisionsCanada.saskatchewan, SubdivisionsCanada.british_columbia, SubdivisionsUnitedStates.montana]
         case .british_columbia:

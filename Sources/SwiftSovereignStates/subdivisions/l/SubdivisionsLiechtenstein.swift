@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
+public enum SubdivisionsLiechtenstein : String, CaseIterable, SovereignStateSubdivision {
     case balzers
     case eschen
     case gamprin
@@ -28,7 +28,7 @@ public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
         return SovereignStateSubdivisionType.municipalities
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         default:
             return ""

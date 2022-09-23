@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_New_Zealand
+public enum SubdivisionsNewZealand : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_New_Zealand
     case auckland
     case bay_of_plenty
     case canterbury
@@ -41,7 +41,7 @@ public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .bay_of_plenty,
                 .manawatu_whanganui,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Guadeloupe#Governance
+public enum SubdivisionsGuadeloupe : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Guadeloupe#Governance
     case anse_bertrand
     case baie_manhault
     case baillif
@@ -78,7 +78,7 @@ public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .la_desirade:
             return "(commune)"

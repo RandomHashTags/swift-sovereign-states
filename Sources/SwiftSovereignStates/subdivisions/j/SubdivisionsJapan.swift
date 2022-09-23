@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Japan | https://en.wikipedia.org/wiki/Prefectures_of_Japan
+public enum SubdivisionsJapan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Japan | https://en.wikipedia.org/wiki/Prefectures_of_Japan
     case aichi
     case akita
     case aomori
@@ -76,7 +76,7 @@ public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .hokkaido,
                 .tokyo:

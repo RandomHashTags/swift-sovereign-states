@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsHonduras : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Honduras
+public enum SubdivisionsHonduras : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Honduras
     case atlantida
     case choluteca
     case colon
@@ -51,13 +51,13 @@ public enum SubdivisionsHonduras : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .colon,
                 .la_paz:
-            return typeSuffix + "_(Honduras)";
+            return getTypeSuffix() + "_(Honduras)";
         case .santa_barabara:
-            return typeSuffix + ",_Honduras";
+            return getTypeSuffix() + ",_Honduras";
         default:
             return nil
         }

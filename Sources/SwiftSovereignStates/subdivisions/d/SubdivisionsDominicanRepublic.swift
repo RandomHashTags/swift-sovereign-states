@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision {
+public enum SubdivisionsDominicanRepublic : String, CaseIterable, SovereignStateSubdivision {
     case azua
     case baoruco
     case barahona
@@ -74,7 +74,7 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision {
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .la_romana:
             return ",_Dominican_Republic"

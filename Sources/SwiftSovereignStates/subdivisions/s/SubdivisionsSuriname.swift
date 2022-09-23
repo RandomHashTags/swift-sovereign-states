@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSuriname : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Suriname
+public enum SubdivisionsSuriname : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Suriname
     case brokopondo
     case commewijne
     case coronie

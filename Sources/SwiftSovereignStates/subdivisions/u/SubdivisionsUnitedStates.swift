@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States
+public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States
     case alabama
     case alaska
     case arizona
@@ -104,12 +104,12 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
-        case .georgia: return "(U.S._" + typeSuffix.lowercased() + ")"
+        case .georgia: return "(U.S._" + getTypeSuffix().lowercased() + ")"
         case .new_york,
                 .washington:
-            return "(" + typeSuffix.lowercased() + ")"
+            return "(" + getTypeSuffix().lowercased() + ")"
         default:
             return ""
         }
@@ -368,7 +368,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .arizona:
             return [
@@ -483,6 +483,19 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         case .west_virginia: return [SubdivisionsUnitedStates.ohio, SubdivisionsUnitedStates.pennsylvania, SubdivisionsUnitedStates.maryland, SubdivisionsUnitedStates.virginia, SubdivisionsUnitedStates.kentucky]
         case .wisconsin: return [SubdivisionsUnitedStates.minnesota, SubdivisionsUnitedStates.michigan, SubdivisionsUnitedStates.illinois, SubdivisionsUnitedStates.iowa]
         case .wyoming: return [SubdivisionsUnitedStates.montana, SubdivisionsUnitedStates.south_dakota, SubdivisionsUnitedStates.nebraska, SubdivisionsUnitedStates.colorado, SubdivisionsUnitedStates.utah, SubdivisionsUnitedStates.idaho]
+        default: return nil
+        }
+    }
+    
+    public func getCities() -> [any SovereignStateCity]? {
+        switch self {
+        case .idaho: return CitiesUnitedStatesIdaho.allCases
+        case .iowa: return CitiesUnitedStatesIowa.allCases
+        case .minnesota: return CitiesUnitedStatesMinnesota.allCases
+        case .montana: return CitiesUnitedStatesMontana.allCases
+        case .north_dakota: return CitiesUnitedStatesNorthDakota.allCases
+        case .south_dakota: return CitiesUnitedStatesSouthDakota.allCases
+        case .texas: return CitiesUnitedStatesTexas.allCases
         default: return nil
         }
     }

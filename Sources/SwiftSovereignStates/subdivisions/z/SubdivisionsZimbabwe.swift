@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zimbabwe
+public enum SubdivisionsZimbabwe : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zimbabwe
     case bulawayo
     case harare
     case manicaland
@@ -52,7 +52,7 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .bulawayo:
             return [SubdivisionsZimbabwe.matabeleland_north, SubdivisionsZimbabwe.matabeleland_south]

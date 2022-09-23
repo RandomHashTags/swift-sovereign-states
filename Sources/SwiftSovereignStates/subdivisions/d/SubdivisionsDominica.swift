@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Dominica
+public enum SubdivisionsDominica : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Dominica
     case saint_andrew
     case saint_david
     case saint_george
@@ -27,11 +27,11 @@ public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.parishes
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
-        return typeSuffix + ",_Dominica"
+    public func getWikipediaURLSuffix() -> String? {
+        return getTypeSuffix() + ",_Dominica"
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .saint_andrew:
             return [SubdivisionsDominica.saint_john, SubdivisionsDominica.saint_peter, SubdivisionsDominica.saint_joseph, SubdivisionsDominica.saint_david]

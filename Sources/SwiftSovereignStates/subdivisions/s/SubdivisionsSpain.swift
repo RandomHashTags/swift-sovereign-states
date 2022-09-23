@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Autonomous_communities_of_Spain
+public enum SubdivisionsSpain : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Autonomous_communities_of_Spain
     case andalusia
     case aragon
     case asturias
@@ -52,7 +52,7 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .basque_country:
             return "_(autonomous_community)"

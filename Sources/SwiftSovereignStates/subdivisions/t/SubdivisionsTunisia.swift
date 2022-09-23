@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsTunisia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Tunisia
+public enum SubdivisionsTunisia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Tunisia
     case ariana
     case beja
     case ben_arous

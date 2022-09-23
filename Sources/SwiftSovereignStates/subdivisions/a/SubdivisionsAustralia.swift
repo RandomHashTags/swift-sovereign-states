@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_territories_of_Australia
+public enum SubdivisionsAustralia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_territories_of_Australia
     case new_south_wales
     case queensland
     case south_australia
@@ -62,7 +62,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .victoria:
             return "_(Australia)"
@@ -106,7 +106,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .new_south_wales:
             return [SubdivisionsAustralia.queensland, SubdivisionsAustralia.south_australia, SubdivisionsAustralia.victoria, SubdivisionsAustralia.australian_capital_territory, SubdivisionsAustralia.jervis_bay_territory, SubdivisionsAustralia.coral_sea_islands]

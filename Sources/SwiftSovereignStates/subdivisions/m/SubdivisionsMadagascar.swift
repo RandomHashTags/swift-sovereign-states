@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Madagascar
+public enum SubdivisionsMadagascar : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Madagascar
     case alaotra_mangoro
     case amoron_i_mania
     case analamanga
@@ -51,7 +51,7 @@ public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .diana,
                 .itasy,

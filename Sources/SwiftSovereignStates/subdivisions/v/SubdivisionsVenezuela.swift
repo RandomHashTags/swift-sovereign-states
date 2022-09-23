@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Venezuela
+public enum SubdivisionsVenezuela : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Venezuela
     case amazonas
     case anzoategui
     case apure
@@ -63,7 +63,7 @@ public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .amazonas:
             return "_(Venezuelan_state)"
@@ -78,7 +78,7 @@ public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https
                 .portuguesa,
                 .sucre,
                 .trujillo:
-            return "_(" + typeSuffix.lowercased() + ")"
+            return "_(" + getTypeSuffix().lowercased() + ")"
         default:
             return ""
         }

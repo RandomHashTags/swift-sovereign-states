@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsCostaRica : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Costa_Rica
+public enum SubdivisionsCostaRica : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Costa_Rica
     case alajuela
     case cartago
     case guanacaste
@@ -44,7 +44,7 @@ public enum SubdivisionsCostaRica : String, SovereignStateSubdivision { // https
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .alajuela:
             return [SubdivisionsCostaRica.guanacaste, SubdivisionsCostaRica.puntarenas, SubdivisionsCostaRica.san_jose, SubdivisionsCostaRica.heredia]

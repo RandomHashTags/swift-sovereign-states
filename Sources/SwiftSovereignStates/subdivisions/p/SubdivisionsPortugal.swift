@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPortugal : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Portugal
+public enum SubdivisionsPortugal : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Portugal
     case acores
     case aveiro
     case beja

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIran : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Iran
+public enum SubdivisionsIran : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Iran
     case alborz
     case ardabil
     case east_azerbaijan
@@ -56,7 +56,7 @@ public enum SubdivisionsIran : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
-        return typeSuffix.lowercased()
+    public func getWikipediaURLSuffix() -> String? {
+        return getTypeSuffix().lowercased()
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSyria : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Tunisia
+public enum SubdivisionsSyria : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Tunisia
     case al_hasaka
     case aleppo
     case as_suwayda
@@ -40,7 +40,7 @@ public enum SubdivisionsSyria : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         return "_Governorate"
     }
 }

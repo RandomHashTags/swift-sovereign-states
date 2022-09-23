@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUruguay : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Uruguay
+public enum SubdivisionsUruguay : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Uruguay
     case artigas
     case canelones
     case cerro_largo
@@ -46,8 +46,8 @@ public enum SubdivisionsUruguay : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
-        return "_" + typeSuffix
+    public func getWikipediaURLSuffix() -> String? {
+        return "_" + getTypeSuffix()
     }
     
     public func getISOAlpha2() -> String? {
@@ -98,7 +98,7 @@ public enum SubdivisionsUruguay : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .artigas:
             return [SubdivisionsUruguay.salto, SubdivisionsUruguay.rivera]

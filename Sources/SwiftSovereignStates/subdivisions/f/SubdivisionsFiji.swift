@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Fiji
+public enum SubdivisionsFiji : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Fiji
     case ba
     case bua
     case cakaudrove
@@ -49,7 +49,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .rotuma:
             return ""
@@ -58,7 +58,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .ba:
             return [SubdivisionsFiji.rotuma, SubdivisionsFiji.ra, SubdivisionsFiji.naitasiri, SubdivisionsFiji.nadroga_navosa]

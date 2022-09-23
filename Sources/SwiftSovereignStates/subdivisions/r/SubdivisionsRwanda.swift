@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsRwanda : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Rwanda
+public enum SubdivisionsRwanda : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Rwanda
     case eastern
     case kigali
     case northern
@@ -22,12 +22,12 @@ public enum SubdivisionsRwanda : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.provinces
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .kigali:
             return nil
         default:
-            return "_" + typeSuffix + ",_Rwanda"
+            return "_" + getTypeSuffix() + ",_Rwanda"
         }
     }
 }

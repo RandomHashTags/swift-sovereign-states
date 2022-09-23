@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPalestine : String, SovereignStateSubdivision {
+public enum SubdivisionsPalestine : String, CaseIterable, SovereignStateSubdivision {
     case bethlehem
     case deir_al_balah
     case gaza
@@ -41,7 +41,7 @@ public enum SubdivisionsPalestine : String, SovereignStateSubdivision {
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         return "_Governorate"
     }
 }

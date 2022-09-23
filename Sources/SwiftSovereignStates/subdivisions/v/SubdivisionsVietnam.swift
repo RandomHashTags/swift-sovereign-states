@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vietnam
+public enum SubdivisionsVietnam : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vietnam
     case an_giang
     case ba_ria_vung_tau
     case bac_giang
@@ -93,7 +93,7 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .can_tho,
                 .da_nang,
@@ -102,7 +102,7 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
                 .ho_chi_minh_city:
             return ""
         default:
-            return "_" + typeSuffix.lowercased()
+            return "_" + getTypeSuffix().lowercased()
         }
     }
     

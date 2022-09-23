@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAlgeria : String, SovereignStateSubdivision {  // https://en.wikipedia.org/wiki/Provinces_of_Algeria
+public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivision {  // https://en.wikipedia.org/wiki/Provinces_of_Algeria
     case adrar
     case ain_delfa
     case ain_temouchent

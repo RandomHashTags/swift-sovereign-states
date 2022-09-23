@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLithuania : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Lithuania
+public enum SubdivisionsLithuania : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Lithuania
     case alytus
     case kaunas
     case klaipeda

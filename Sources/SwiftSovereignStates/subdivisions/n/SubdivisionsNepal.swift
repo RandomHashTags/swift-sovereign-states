@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsNepal : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Nepal
+public enum SubdivisionsNepal : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Nepal
     case bagmati
     case gandaki
     case karnali
@@ -31,7 +31,7 @@ public enum SubdivisionsNepal : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .madhesh,
                 .province_1:

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Papua_New_Guinea
+public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Papua_New_Guinea
     case bougainville
     case central
     case chimbu
@@ -59,13 +59,13 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .bougainville:
             return ""
         case .central,
                 .western:
-            return typeSuffix + "_(Papua_New_Guinea)"
+            return getTypeSuffix() + "_(Papua_New_Guinea)"
         case .national_capital_district:
             return "(Papua_New_Guinea)"
         default:

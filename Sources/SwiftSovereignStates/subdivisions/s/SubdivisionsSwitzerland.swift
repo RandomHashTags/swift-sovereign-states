@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Cantons_of_Switzerland
+public enum SubdivisionsSwitzerland : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Cantons_of_Switzerland
     case aargau
     case appenzell_ausserrhoden
     case appenzell_innerhoden
@@ -74,7 +74,7 @@ public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         return ""
     }
 }

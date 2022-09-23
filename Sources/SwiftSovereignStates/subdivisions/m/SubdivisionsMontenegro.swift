@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Municipalities_of_Montenegro
+public enum SubdivisionsMontenegro : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Municipalities_of_Montenegro
     case andrijevica
     case bar
     case berane
@@ -53,7 +53,7 @@ public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .old_royal_capital_cetinje,
                 .podgorica_capital_city:

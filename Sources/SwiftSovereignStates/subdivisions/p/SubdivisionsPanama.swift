@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPanama : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Panama
+public enum SubdivisionsPanama : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Panama
     case borcas_del_toro
     case chiriqui
     case cocle
@@ -70,7 +70,7 @@ public enum SubdivisionsPanama : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .embera,
                 .ngabe_bugle,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Azerbaijan
+public enum SubdivisionsAzerbaijan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Azerbaijan
     case absheron
     case agdam
     case agdash
@@ -123,7 +123,7 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .baku,
                 .khankendi,
@@ -142,9 +142,9 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         case .jalilabad,
                 .quba,
                 .salyan:
-                return "_" + typeSuffix + "_(Azerbaijan)"
+                return "_" + getTypeSuffix() + "_(Azerbaijan)"
             default:
-                return "_" + typeSuffix
+                return "_" + getTypeSuffix()
         }
     }
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Subdivisions_of_Ethiopia
+public enum SubdivisionsEthiopia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Subdivisions_of_Ethiopia
     case afar
     case amhara
     case benishangul_gumuz
@@ -58,7 +58,7 @@ public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .oromia,
                 .addis_ababa,

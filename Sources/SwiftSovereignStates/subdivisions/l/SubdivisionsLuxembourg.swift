@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Cantons_of_Luxembourg
+public enum SubdivisionsLuxembourg : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Cantons_of_Luxembourg
     case capellen
     case clervaux
     case diekirch
@@ -41,7 +41,7 @@ public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // http
     public func getWikipediaURLPrefix() -> String? {
         return "Canton_of_"
     }
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         return ""
     }
     

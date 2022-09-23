@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsJordan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Jordan
+public enum SubdivisionsJordan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Jordan
     case ajloun
     case amman
     case aqaba

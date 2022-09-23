@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Federative_units_of_Brazil
+public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Federative_units_of_Brazil
     case acre
     case alagoas
     case amapa
@@ -80,16 +80,16 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .acre,
                 .parana,
                 .rio_de_janerio,
                 .santa_catarina,
                 .sao_paulo:
-            return "_(" + typeSuffix + ")"
+            return "_(" + getTypeSuffix() + ")"
         case .amazonas:
-            return "_(Brazilian_" + typeSuffix + ")"
+            return "_(Brazilian_" + getTypeSuffix() + ")"
         case .distrito_federal:
             return "_(Brazil)"
         default:
@@ -129,7 +129,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .acre:
             return [SubdivisionsBrazil.amazonas, SubdivisionsBrazil.rondonia]

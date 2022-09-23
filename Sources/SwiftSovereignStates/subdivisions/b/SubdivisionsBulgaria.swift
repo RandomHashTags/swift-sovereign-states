@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBulgaria : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Bulgaria
+public enum SubdivisionsBulgaria : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Bulgaria
     case blagoevgrad
     case burgas
     case dobrich
@@ -45,7 +45,7 @@ public enum SubdivisionsBulgaria : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.provinces
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .blagoevgrad:
             return [SubdivisionsBulgaria.kyustendil, SubdivisionsBulgaria.sofia, SubdivisionsBulgaria.pazardzhik, SubdivisionsBulgaria.smolyan]

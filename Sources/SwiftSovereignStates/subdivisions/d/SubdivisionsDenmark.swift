@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Denmark
+public enum SubdivisionsDenmark : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Denmark
     case hovedstaden
     case midtjylland
     case nordjylland
@@ -33,7 +33,7 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .hovedstaden:
             return [SubdivisionsDenmark.sjaelland]

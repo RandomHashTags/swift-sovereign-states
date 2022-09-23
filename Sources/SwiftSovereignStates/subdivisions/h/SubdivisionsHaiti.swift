@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Haiti
+public enum SubdivisionsHaiti : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Haiti
     case artibonite
     case centre
     case grand_anse
@@ -37,7 +37,7 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .nord:
             return "(Haitian_department)"
@@ -46,7 +46,7 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .artibonite:
             return [SubdivisionsHaiti.nord_ouest, SubdivisionsHaiti.nord, SubdivisionsHaiti.centre, SubdivisionsHaiti.ouest]

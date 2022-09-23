@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Mexico
+public enum SubdivisionsMexico : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Mexico
     case aguascalientes
     case baja_california
     case baja_california_sur
@@ -77,11 +77,11 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
             return nil
         }
     }
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .chihuahua,
                 .hidalgo:
-            return "(" + typeSuffix.lowercased() + ")"
+            return "(" + getTypeSuffix().lowercased() + ")"
         default:
             return ""
         }

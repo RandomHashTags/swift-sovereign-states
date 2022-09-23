@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_France
+public enum SubdivisionsFrance : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_France
     case auvergne_rhone_alpes
     case burgundy_free_county
     case brittany
@@ -53,7 +53,7 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .brittany,
                 .normandy,

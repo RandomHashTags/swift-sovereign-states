@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUzbekistan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Uzbekistan
+public enum SubdivisionsUzbekistan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Uzbekistan
     case andijan
     case bukhara
     case fergana
@@ -39,7 +39,7 @@ public enum SubdivisionsUzbekistan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .karakalpakstan,
                 .tashkent,
@@ -58,7 +58,7 @@ public enum SubdivisionsUzbekistan : String, SovereignStateSubdivision { // http
         }
     }
     
-    func returnNeighbors() -> [Any]? {
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .andijan:
             return [SubdivisionsUzbekistan.namangan, SubdivisionsUzbekistan.fergana]

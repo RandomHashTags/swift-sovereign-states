@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsItaly : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Italy
+public enum SubdivisionsItaly : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Italy
     case aruzzo
     case aosta_valley
     case apulia
@@ -66,7 +66,7 @@ public enum SubdivisionsItaly : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         default:
             return ""

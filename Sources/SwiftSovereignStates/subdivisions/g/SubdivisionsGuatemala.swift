@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Guatemala
+public enum SubdivisionsGuatemala : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Guatemala
     case alta_verapaz
     case baja_verapaz
     case chimaltenango
@@ -50,7 +50,7 @@ public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .santa_rosa:
             return ",_Guatemala"

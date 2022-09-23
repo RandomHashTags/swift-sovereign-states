@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Nicaragua
+public enum SubdivisionsNicaragua : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_Nicaragua
     case boaco
     case carazo
     case chinandega
@@ -61,7 +61,7 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .north_caribbean_coast,
                 .south_caribbean_coast:

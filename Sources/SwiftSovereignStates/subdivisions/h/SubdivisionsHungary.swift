@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsHungary : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Hungary
+public enum SubdivisionsHungary : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Hungary
     case bacs_kiskun
     case baranya
     case bekes
@@ -55,7 +55,7 @@ public enum SubdivisionsHungary : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getWikipediaURLSuffix(typeSuffix: String) -> String? {
+    public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .budapest:
             return ""
