@@ -75,7 +75,7 @@ public protocol SovereignStateSubdivision : SovereignState {
 
 public extension SovereignStateSubdivision {
     func getCacheID() -> String {
-        return getCountry().getCacheID() + "_" + rawValue
+        return getCountry().getIdentifier() + "_" + getIdentifier()
     }
     func getISOAlpha2() -> String? {
         return nil

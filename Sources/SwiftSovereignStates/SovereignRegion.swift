@@ -8,12 +8,14 @@
 import Foundation
 
 public protocol SovereignRegion {
+    func getIdentifier() -> String
     func getCacheID() -> String
     func getKeywords() -> [String]
     func getAdditionalKeywords() -> [String]?
     func isMentioned(in string: String, exact: Bool) -> Bool
     
     func getShortName() -> String
+    func getShortNameDecimalSeparatorIndex() -> Int?
     func getRealName() -> String?
     func getConditionalName() -> String?
     func getOfficialNames() -> [String]?
@@ -30,11 +32,15 @@ public protocol SovereignRegion {
     func getTimeZones() -> [SovereignStateTimeZone]?
 }
 
+public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
+    func getIdentifier() -> String {
+        return rawValue
+    }
+}
 public extension SovereignRegion {
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.getCacheID().elementsEqual(rhs.getCacheID())
     }
-    var rawValue:String { String(describing: self) }
     
     func isEqual(_ sovereignRegion: any SovereignRegion) -> Bool {
         return getCacheID().elementsEqual(sovereignRegion.getCacheID())
@@ -45,7 +51,7 @@ public extension SovereignRegion {
         if let cached:[String] = SwiftSovereignStateCacheSubdivisions.keywords[id] {
             return cached
         }
-        var keywords:[String] = [rawValue, getCacheID(), getShortName()]
+        var keywords:[String] = [getIdentifier(), getCacheID(), getShortName()]
         if let realName:String = getRealName() {
             keywords.append(realName)
         }
@@ -86,9 +92,14 @@ public extension SovereignRegion {
         if let shortName:String = SwiftSovereignStateCache.actualShortNames[id] {
             return shortName
         }
-        let string:String = SovereignRegions.toCorrectCapitalization(input: rawValue, excludedWords: ["and", "the", "da", "of", "del", "de", "la", "al"])
+        let identifier:String = getIdentifier()
+        let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : getShortNameDecimalSeparatorIndex()
+        let string:String = SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex, excludedWords: ["and", "the", "da", "of", "del", "de", "la", "al", "on"])
         SwiftSovereignStateCache.actualShortNames[id] = string
         return string
+    }
+    func getShortNameDecimalSeparatorIndex() -> Int? {
+        return nil
     }
     
     func getRealName() -> String? {
@@ -137,9 +148,13 @@ public extension SovereignRegion {
 }
 
 private enum SovereignRegions {
-    fileprivate static func toCorrectCapitalization(input: String, excludedWords: [String]?) -> String {
+    fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?, excludedWords: [String]?) -> String {
         guard !input.isEmpty else { return input }
-        let values:[String] = input.lowercased().components(separatedBy: "_"), excluded:[String] = excludedWords?.map({ $0.lowercased() }) ?? [String]()
+        var values:[String] = input.lowercased().components(separatedBy: "_")
+        if let decimalSeparatorIndex:Int = decimalSeparatorIndex, values.count > decimalSeparatorIndex {
+            values[decimalSeparatorIndex] = values[decimalSeparatorIndex] + "."
+        }
+        let excluded:[String] = excludedWords?.map({ $0.lowercased() }) ?? [String]()
         return values.compactMap({
             let value:String = $0
             guard !value.isEmpty else { return nil }

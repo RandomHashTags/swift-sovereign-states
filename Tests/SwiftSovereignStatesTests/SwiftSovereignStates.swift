@@ -3,14 +3,14 @@ import XCTest
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() throws {
-        benchmarkSubdivisions()
-        /*benchmarkCities()
+        //benchmarkSubdivisions()
+        //benchmarkCities()
         
         testWikipediaURLs()
         testCountryMentions()
         testCityMentions()
         testNeighbors()
-        testCities()*/
+        testCities()
     }
     
     private func benchmarkSubdivisions() {
@@ -57,7 +57,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions=" + failedSubdivisions.count.description)
             for subdivision in failedSubdivisions {
                 let country:Country = subdivision.getCountry()
-                print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions;" + country.rawValue + ";" + subdivision.rawValue + ";wikipediaURL=" + subdivision.getWikipediaURL())
+                print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions;" + country.getIdentifier() + ";" + subdivision.getIdentifier() + ";wikipediaURL=" + subdivision.getWikipediaURL())
             }
         }
         XCTAssert(failedSubdivisions.count == 0)
@@ -67,7 +67,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             for city in failedCities {
                 let subdivision = city.getSubdivision()
                 let country:Country = subdivision.getCountry()
-                print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities;" + country.rawValue + ";" + subdivision.rawValue + ";" + city.rawValue + ";wikipediaURL=" + subdivision.getWikipediaURL())
+                print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities;" + country.getIdentifier() + ";" + subdivision.getIdentifier() + ";" + city.getIdentifier() + ";wikipediaURL=" + subdivision.getWikipediaURL())
             }
         }
     }
@@ -78,11 +78,11 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let mentioned:[Country] = Country.getAllMentioned(mentionedString) ?? [Country]()
         let notFound:[Country] = targetCountries.filter({ !mentioned.contains($0) })
         if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testCountryMentions;missing " + notFound.count.description + ";=[" + notFound.map({ $0.rawValue }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCountryMentions;missing " + notFound.count.description + ";=[" + notFound.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
         }
         let notMentioned:[Country] = mentioned.filter({ !targetCountries.contains($0)})
         if !notMentioned.isEmpty {
-            print("SwiftSovereignStatesTests;testCountryMentions;shouldn't be=[" + notMentioned.map({ $0.rawValue }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCountryMentions;shouldn't be=[" + notMentioned.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
         }
         XCTAssert(mentioned.count == targetCountries.count)
     }
@@ -98,26 +98,26 @@ final class SwiftSovereignStatesTests: XCTestCase {
             CitiesUnitedStatesSouthDakota.naples, CitiesUnitedStatesTexas.naples,
             CitiesUnitedStatesTexas.dallas, CitiesUnitedStatesSouthDakota.dallas,
             
-            CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesIowa.des_moines, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesIdaho.oakley, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesSouthDakota.summit, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesTexas.mclean
+            CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesIowa.des_moines, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesIdaho.oakley, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesSouthDakota.summit, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesMinnesota.st_leo, CitiesUnitedStatesTexas.mclean
         ]
         
-        let mentionedString:String = "Rochester; this string should find the mentioned cities: Minneapolis, (Kasson) Owatonna! Dallas? Des Moines; Anaconda: Oakley, Naples, Edmore's, \"Winifred\", Lost River, Summit, Upham, and McLean. Case Sensitive! Will not find des Moines, sum.it, ROCHESTER, EDmore, [Faribault], and C?shing."
+        let mentionedString:String = "Rochester; this string should find the mentioned cities: Minneapolis, (Kasson) Owatonna! Dallas? Des Moines; Anaconda: Oakley, Naples, Edmore's, \"Winifred\", Lost River, Summit, Upham, St. Leo, and McLean. Case Sensitive! Will not find des Moines, sum.it, ROCHESTER, EDmore, [Faribault], and C?shing."
         
         let mentioned:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(mentionedString) ?? [any SovereignStateCity]()
         XCTAssert(mentioned.count > 0, "mentioned.count == 0")
-        let notFound = targetCities.filter({
-            let city = $0
+        let notFound:[any SovereignStateCity] = targetCities.filter({
+            let city:any SovereignStateCity = $0
             return !mentioned.contains(where: { city.isEqual($0) })
         })
-        let notMentioned = mentioned.filter({
-            let city = $0
+        let notMentioned:[any SovereignStateCity] = mentioned.filter({
+            let city:any SovereignStateCity = $0
             return !targetCities.contains(where: { city.isEqual($0) })
         })
         if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;missing " + notFound.count.description + ";[" + notFound.map({ $0.rawValue }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCityMentions;missing " + notFound.count.description + ";[" + notFound.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
         }
         if !notMentioned.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.rawValue }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
         }
         XCTAssert(mentioned.count == targetCities.count, "mentioned.count=" + mentioned.count.description + ", targetCities.count=" + targetCities.count.description)
     }

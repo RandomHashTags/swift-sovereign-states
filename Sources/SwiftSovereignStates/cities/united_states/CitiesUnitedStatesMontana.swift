@@ -140,9 +140,6 @@ public enum CitiesUnitedStatesMontana : String, CaseIterable, SovereignStateCity
     case terry
     case thompson_falls
     case three_forks
-    case total
-    case total_cities
-    case total_towns
     case townsend
     case troy
     case twin_bridges

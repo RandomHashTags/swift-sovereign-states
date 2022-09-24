@@ -73,7 +73,7 @@ public protocol SovereignStateCity : SovereignRegion {
 public extension SovereignStateCity {
     func getCacheID() -> String {
         let subdivision = getSubdivision()
-        return subdivision.getCountry().rawValue + "_" + subdivision.rawValue + "_" + rawValue
+        return subdivision.getCountry().getIdentifier() + "_" + subdivision.getIdentifier() + "_" + getIdentifier()
     }
     
     func getDefaultType() -> SovereignStateCityType {

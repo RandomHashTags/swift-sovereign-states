@@ -888,4 +888,18 @@ public enum CitiesUnitedStatesMinnesota : String, CaseIterable, SovereignStateCi
     public func getSubdivision() -> any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.minnesota
     }
+    
+    public func getShortNameDecimalSeparatorIndex() -> Int? {
+        switch self {
+        case .lake_st_croix_beach,
+                .north_st_paul,
+                .south_st_paul,
+                .west_st_paul:
+            return 1
+        case .marine_on_st_croix:
+            return 2
+        default:
+            return nil
+        }
+    }
 }

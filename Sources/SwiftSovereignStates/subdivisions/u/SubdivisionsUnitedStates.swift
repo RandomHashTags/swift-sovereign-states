@@ -489,6 +489,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
     
     public func getCities() -> [any SovereignStateCity]? {
         switch self {
+        case .arizona: return CitiesUnitedStatesArizona.allCases
         case .idaho: return CitiesUnitedStatesIdaho.allCases
         case .iowa: return CitiesUnitedStatesIowa.allCases
         case .minnesota: return CitiesUnitedStatesMinnesota.allCases
