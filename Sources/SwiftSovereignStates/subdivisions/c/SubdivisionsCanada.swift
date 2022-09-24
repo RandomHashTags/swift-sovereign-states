@@ -124,4 +124,11 @@ public enum SubdivisionsCanada : String, CaseIterable, SovereignStateSubdivision
             ]
         }
     }
+    
+    public func getCities() -> [SovereignStateCity]? {
+        switch self {
+        case .quebec: return CitiesCanadaQuebec.allCases
+        default: return nil
+        }
+    }
 }

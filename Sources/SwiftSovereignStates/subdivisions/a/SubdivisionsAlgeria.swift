@@ -11,7 +11,7 @@ public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivisio
     case adrar
     case ain_delfa
     case ain_temouchent
-    case alger
+    case algiers
     case annaba
     case barna
     case bechar
@@ -94,6 +94,13 @@ public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivisio
         case .setif: return "Sétif"
         case .sidi_bel_abbes: return "Sidi Bel Abbès"
         case .tebessa: return "Tébessa"
+        default: return nil
+        }
+    }
+    
+    public func getCities() -> [SovereignStateCity]? {
+        switch self {
+        case .adrar: return CitiesAlgeriaAdrar.allCases
         default: return nil
         }
     }

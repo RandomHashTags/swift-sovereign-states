@@ -67,8 +67,9 @@ public enum SovereignStateCities {
 }
 
 public protocol SovereignStateCity : SovereignRegion {
-    func getDefaultType() -> SovereignStateCityType
     func getSubdivision() -> any SovereignStateSubdivision
+    func getDefaultType() -> SovereignStateCityType
+    func isCapital() -> Bool
 }
 public extension SovereignStateCity {
     func getCacheID() -> String {
@@ -78,6 +79,10 @@ public extension SovereignStateCity {
     
     func getDefaultType() -> SovereignStateCityType {
         return SovereignStateCityType.city
+    }
+    
+    func isCapital() -> Bool {
+        return false
     }
 }
 
