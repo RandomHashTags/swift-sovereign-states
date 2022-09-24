@@ -12,6 +12,7 @@ public enum SovereignStateCityType : CaseIterable {
     case charter_township
     case consolidated_city_county
     case city
+    case metro_township
     case town
     case township
     case village

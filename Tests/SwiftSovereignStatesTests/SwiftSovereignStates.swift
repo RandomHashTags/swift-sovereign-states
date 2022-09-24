@@ -4,13 +4,13 @@ import XCTest
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() throws {
         //benchmarkSubdivisions()
-        //benchmarkCities()
+        benchmarkCities()
         
-        testWikipediaURLs()
-        testCountryMentions()
-        testCityMentions()
-        testNeighbors()
-        testCities()
+        //testWikipediaURLs()
+        //testCountryMentions()
+        //testCityMentions()
+        //testNeighbors()
+        //testCities()
     }
     
     private func benchmarkSubdivisions() {
@@ -20,7 +20,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     private func benchmarkCities() {
         measure {
-            let _:[any SovereignStateCity] = SovereignStateCities.getAllMentioned("Kasson! Mantorville, Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City.") ?? [any SovereignStateCity]()
+            let _:[any SovereignStateCity] = SovereignStateCities.getAllMentioned("Kasson! Mantorville, Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.") ?? [any SovereignStateCity]()
         }
     }
     
@@ -148,5 +148,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for city in cities {
             XCTAssert(city.getSubdivision().isEqual(minnesota), "minnesota city.getSubdivision != Minnesota")
         }
+        
+        
     }
 }
