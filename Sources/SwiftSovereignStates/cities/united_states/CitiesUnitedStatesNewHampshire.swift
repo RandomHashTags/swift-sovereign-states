@@ -261,7 +261,7 @@ public enum CitiesUnitedStatesNewHampshire : String, CaseIterable, SovereignStat
     case wolfeboro
     case woodstock
     
-    public func getSubdivision() -> SovereignStateSubdivision {
+    public func getSubdivision() -> any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.new_hampshire
     }
     
