@@ -8,23 +8,28 @@
 import Foundation
 
 public enum SovereignStateSubdivisions {
+    public static var all:[any SovereignStateSubdivision] = {
+        return Country.allCases.compactMap({ $0.getSubdivisions() }).flatMap({ $0 })
+    }()
+    
     public static func getAllMentioned(_ string: String, cache: Bool = true) -> [any SovereignStateSubdivision]? {
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
             return cached
         }
-        let subdivisions:[any SovereignStateSubdivision] = Country.allCases.compactMap({ getAllMentioned(string, country: $0, cache: cache) }).flatMap({ $0 })
+        let subdivisions:[any SovereignStateSubdivision] = all.filter({ $0.isMentioned(in: string) })
         if cache {
             SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
         }
         return subdivisions.isEmpty ? nil : subdivisions
     }
     public static func getAllMentioned(_ string: String, country: Country, cache: Bool = true) -> [any SovereignStateSubdivision]? {
+        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
             return cached
         }
-        let subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions()?.filter({ $0.isMentioned(in: string) }) ?? [any SovereignStateSubdivision]()
+        subdivisions.removeAll(where: { !$0.isMentioned(in: string) })
         if cache {
             SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
         }
@@ -36,19 +41,69 @@ public enum SovereignStateSubdivisions {
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.valueOfAll[stringLowercase] {
             return cached.isEmpty ? nil : cached
         }
-        let subdivisions:[any SovereignStateSubdivision] = Country.allCases.compactMap({ valueOf(string, country: $0, cache: cache) })
+        let subdivisions:[any SovereignStateSubdivision] = all.filter({ $0.isMentioned(in: string, exact: true) })
         if cache {
             SwiftSovereignStateCacheSubdivisions.valueOfAll[stringLowercase] = subdivisions
         }
         return subdivisions.isEmpty ? nil : subdivisions
     }
     public static func valueOf(_ string: String, country: Country, cache: Bool = true) -> (any SovereignStateSubdivision)? {
-        guard let subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
+        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
         let stringLowercase:String = string.lowercased()
         if let subdivision:Any? = SwiftSovereignStateCacheSubdivisions.valueOf[stringLowercase] {
             return subdivision as? (any SovereignStateSubdivision)
         }
-        let subdivision:(any SovereignStateSubdivision)? = subdivisions.filter({ $0.isMentioned(in: string, exact: true) }).first
+        subdivisions.removeAll(where: { !$0.isMentioned(in: string, exact: true) })
+        let subdivision:(any SovereignStateSubdivision)? = subdivisions.first
+        if cache {
+            SwiftSovereignStateCacheSubdivisions.valueOf[stringLowercase] = subdivision
+        }
+        return subdivision
+    }
+    // parallel
+    public static func getAllMentionedParallel(_ string: String, cache: Bool = true) async -> [any SovereignStateSubdivision]? {
+        let stringLowercase:String = string.lowercased()
+        if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
+            return cached
+        }
+        let subdivisions:[any SovereignStateSubdivision] = await all.filterAsync({ $0.isMentioned(in: string) })
+        if cache {
+            SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
+        }
+        return subdivisions.isEmpty ? nil : subdivisions
+    }
+    public static func getAllMentionedParallel(_ string: String, country: Country, cache: Bool = true) async -> [any SovereignStateSubdivision]? {
+        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
+        let stringLowercase:String = string.lowercased()
+        if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
+            return cached
+        }
+        subdivisions = await subdivisions.filterAsync({ $0.isMentioned(in: string) })
+        if cache {
+            SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
+        }
+        return subdivisions.isEmpty ? nil : subdivisions
+    }
+    
+    public static func valueOfParallel(_ string: String, cache: Bool = true) async -> [any SovereignStateSubdivision]? {
+        let stringLowercase:String = string.lowercased()
+        if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.valueOfAll[stringLowercase] {
+            return cached.isEmpty ? nil : cached
+        }
+        let subdivisions:[any SovereignStateSubdivision] = await all.filterAsync({ $0.isMentioned(in: string, exact: true) })
+        if cache {
+            SwiftSovereignStateCacheSubdivisions.valueOfAll[stringLowercase] = subdivisions
+        }
+        return subdivisions.isEmpty ? nil : subdivisions
+    }
+    public static func valueOfParallel(_ string: String, country: Country, cache: Bool = true) async -> (any SovereignStateSubdivision)? {
+        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
+        let stringLowercase:String = string.lowercased()
+        if let subdivision:Any? = SwiftSovereignStateCacheSubdivisions.valueOf[stringLowercase] {
+            return subdivision as? (any SovereignStateSubdivision)
+        }
+        subdivisions = await subdivisions.filterAsync({ $0.isMentioned(in: string, exact: true) })
+        let subdivision:(any SovereignStateSubdivision)? = subdivisions.first
         if cache {
             SwiftSovereignStateCacheSubdivisions.valueOf[stringLowercase] = subdivision
         }

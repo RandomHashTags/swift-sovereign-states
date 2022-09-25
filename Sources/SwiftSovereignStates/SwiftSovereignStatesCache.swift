@@ -87,10 +87,9 @@ private extension SwiftSovereignStatesCache {
 }
 
 public enum SwiftSovereignStateCacheType {
-    case sovereign_state_actualShortNames
     case countries_valueOf
     case countries_mentioned
-    case subdivisions_keywords
+    case subdivisions_keywords_regex
     case subdivisions_mentioned
     case subdivisions_valueOf
     case subdivisions_valueOfAll
@@ -104,12 +103,10 @@ public enum SwiftSovereignStateCacheType {
 public enum SwiftSovereignStateCache {
     public static func removeAll(_ type: SwiftSovereignStateCacheType? = nil) {
         guard let type:SwiftSovereignStateCacheType = type else {
-            actualShortNames.removeAll()
-            
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
-            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
+            SwiftSovereignStateCacheSubdivisions.keywordsRegex.removeAll()
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOf.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOfAll.removeAll()
@@ -122,17 +119,14 @@ public enum SwiftSovereignStateCache {
             return
         }
         switch type {
-        case .sovereign_state_actualShortNames:
-            actualShortNames.removeAll()
-            return
         case .countries_valueOf:
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             return
         case .countries_mentioned:
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
-        case .subdivisions_keywords:
-            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
+        case .subdivisions_keywords_regex:
+            SwiftSovereignStateCacheSubdivisions.keywordsRegex.removeAll()
             return
         case .subdivisions_mentioned:
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
@@ -160,15 +154,13 @@ public enum SwiftSovereignStateCache {
             return
         }
     }
-    
-    internal static var actualShortNames:SwiftSovereignStatesCache<String, String> = SwiftSovereignStatesCache<String, String>()
 }
 internal enum SwiftSovereignStateCacheCountries {
     static var valueOf:SwiftSovereignStatesCache<String, Country> = SwiftSovereignStatesCache<String, Country>()
     static var mentioned:SwiftSovereignStatesCache<String, [Country]> = SwiftSovereignStatesCache<String, [Country]>()
 }
 internal enum SwiftSovereignStateCacheSubdivisions {
-    static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
+    static var keywordsRegex:SwiftSovereignStatesCache<String, String> = SwiftSovereignStatesCache<String, String>()
     
     static var mentioned:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
     static var valueOf:SwiftSovereignStatesCache<String, Any?> = SwiftSovereignStatesCache<String, Any?>()

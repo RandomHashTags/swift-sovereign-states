@@ -98,7 +98,7 @@ public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getCities() -> [SovereignStateCity]? {
+    public func getCities() -> [any SovereignStateCity]? {
         switch self {
         case .adrar: return CitiesAlgeriaAdrar.allCases
         default: return nil

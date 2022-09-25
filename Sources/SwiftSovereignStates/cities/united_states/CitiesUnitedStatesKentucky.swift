@@ -449,7 +449,7 @@ public enum CitiesUnitedStatesKentucky : String, CaseIterable, SovereignStateCit
     case worthville
     case wurtland
     
-    public func getSubdivision() -> SovereignStateSubdivision {
+    public func getSubdivision() -> any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.kentucky
     }
     

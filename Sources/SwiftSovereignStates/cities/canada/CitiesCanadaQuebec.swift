@@ -1162,7 +1162,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity {
     case yamachiche
     case yamaska
     
-    public func getSubdivision() -> SovereignStateSubdivision {
+    public func getSubdivision() -> any SovereignStateSubdivision {
         return SubdivisionsCanada.quebec
     }
     

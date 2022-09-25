@@ -244,7 +244,7 @@ public enum CitiesUnitedStatesWashington : String, CaseIterable, SovereignStateC
     
     case zillah
     
-    public func getSubdivision() -> SovereignStateSubdivision {
+    public func getSubdivision() -> any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.washington
     }
     

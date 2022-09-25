@@ -49,7 +49,7 @@ public enum CitiesAlgeriaAdrar : String, CaseIterable, SovereignStateCity { // h
     
     case zaouiet_kounta
     
-    public func getSubdivision() -> SovereignStateSubdivision {
+    public func getSubdivision() -> any SovereignStateSubdivision {
         return SubdivisionsAlgeria.adrar
     }
 }

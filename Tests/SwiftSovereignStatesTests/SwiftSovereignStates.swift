@@ -1,27 +1,97 @@
 import XCTest
 @testable import SwiftSovereignStates
+import QuartzCore
 
 final class SwiftSovereignStatesTests: XCTestCase {
-    func testExample() throws {
-        //benchmarkSubdivisions()
-        benchmarkCities()
+    func testExample() async throws {
+        //await benchmarkSubdivisions()
+        //await benchmarkCities()
         
-        //testWikipediaURLs()
-        //testCountryMentions()
-        //testCityMentions()
-        //testNeighbors()
-        //testCities()
+        testWikipediaURLs()
+        testCountryMentions()
+        testCityMentions()
+        testNeighbors()
+        testCities()
     }
     
-    private func benchmarkSubdivisions() {
-        measure {
-            let _:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baja California, California? (Wisconsin) Texas's, Maine, New York; Kentucky.") ?? [any SovereignStateSubdivision]()
-        }
+    private func benchmarkSubdivisions() async {
+        await benchmarkSubdivisions(valueOf: false, parallel: true)
+        await benchmarkSubdivisions(valueOf: true, parallel: true)
+        
+        await benchmarkSubdivisions(valueOf: false, parallel: false)
+        await benchmarkSubdivisions(valueOf: true, parallel: false)
     }
-    private func benchmarkCities() {
-        measure {
-            let _:[any SovereignStateCity] = SovereignStateCities.getAllMentioned("Kasson! Mantorville, Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.") ?? [any SovereignStateCity]()
+    private func benchmarkSubdivisions(valueOf: Bool, parallel: Bool) async {
+        await benchmarkAsync(valueOf: valueOf, parallel: parallel, {
+            let string:String
+            if valueOf {
+                string = "Minnesota"
+                if parallel {
+                    let _:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.valueOfParallel(string, cache: false)
+                } else {
+                    let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf(string, cache: false)
+                }
+            } else {
+                string = "Minnesota! Baja California, California? (Wisconsin) Texas's, Maine, New York; Kentucky."
+                if parallel {
+                    let _:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel(string, cache: false)
+                } else {
+                    let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned(string, cache: false)
+                }
+            }
+        })
+    }
+    private func benchmarkCities() async {
+        await benchmarkCities(valueOf: false, parallel: true)
+        await benchmarkCities(valueOf: true, parallel: true)
+        
+        await benchmarkCities(valueOf: false, parallel: false)
+        await benchmarkCities(valueOf: true, parallel: false)
+    }
+    private func benchmarkCities(valueOf: Bool, parallel: Bool) async {
+        await benchmarkAsync(valueOf: valueOf, parallel: parallel, {
+            let string:String
+            if valueOf {
+                string = "Kasson"
+                if parallel {
+                    let _:[any SovereignStateCity]? = await SovereignStateCities.valueOfParallel(string, cache: false)
+                } else {
+                    let _:[any SovereignStateCity]? = SovereignStateCities.valueOf(string, cache: false)
+                }
+            } else {
+                string = "Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine."
+                if parallel {
+                    let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel(string, cache: false)
+                } else {
+                    let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned(string, cache: false)
+                }
+            }
+        })
+    }
+    private func benchmarkAsync(valueOf: Bool, parallel: Bool, _ code: () async -> Void) async {
+        var average:Double = 0, minimum:Double = 10000, maximum:Double = 0
+        let iterations:Int = 50
+        for _ in 0..<iterations {
+            let elapsed:Double = await checkElapsedTime(code)
+            average += elapsed
+            if elapsed < minimum {
+                minimum = elapsed
+            }
+            if elapsed > maximum {
+                maximum = elapsed
+            }
         }
+        print("==================================================")
+        print((valueOf ? "VALUE_OF" : "ALL_MENTIONED") + (parallel ? "_PARALLEL" : ""))
+        print("MIN=" + minimum.description + "ms")
+        print("MAX=" + maximum.description + "ms")
+        print("AVERAGE=" + (average / Double(iterations)).description + "ms")
+        print("==================================================")
+    }
+    private func checkElapsedTime(_ code: () async -> Void) async -> Double {
+        let now:Double = CACurrentMediaTime()
+        await code()
+        return (CACurrentMediaTime()-now) * 1_000
     }
     
     private func testWikipediaURLs() {
@@ -94,11 +164,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(lakeside != nil && lakeside!.count == 2)
         
         let targetCities:[any SovereignStateCity] = [
-            CitiesUnitedStatesMinnesota.rochester, CitiesUnitedStatesTexas.rochester,
-            CitiesUnitedStatesSouthDakota.naples, CitiesUnitedStatesTexas.naples,
+            CitiesUnitedStatesMinnesota.rochester, CitiesUnitedStatesTexas.rochester, CitiesUnitedStatesKentucky.rochester,
+            CitiesUnitedStatesSouthDakota.naples, CitiesUnitedStatesTexas.naples, CitiesUnitedStatesUtah.naples,
             CitiesUnitedStatesTexas.dallas, CitiesUnitedStatesSouthDakota.dallas,
+            CitiesUnitedStatesIdaho.oakley, CitiesUnitedStatesUtah.oakley,
+            CitiesUnitedStatesIowa.des_moines, CitiesUnitedStatesWashington.des_moines,
             
-            CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesIowa.des_moines, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesIdaho.oakley, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesSouthDakota.summit, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesMinnesota.st_leo, CitiesUnitedStatesTexas.mclean
+            CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesSouthDakota.summit, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesMinnesota.st_leo, CitiesUnitedStatesTexas.mclean
         ]
         
         let mentionedString:String = "Rochester; this string should find the mentioned cities: Minneapolis, (Kasson) Owatonna! Dallas? Des Moines; Anaconda: Oakley, Naples, Edmore's, \"Winifred\", Lost River, Summit, Upham, St. Leo, and McLean. Case Sensitive! Will not find des Moines, sum.it, ROCHESTER, EDmore, [Faribault], and C?shing."
@@ -148,7 +220,5 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for city in cities {
             XCTAssert(city.getSubdivision().isEqual(minnesota), "minnesota city.getSubdivision != Minnesota")
         }
-        
-        
     }
 }
