@@ -142,4 +142,7 @@ public extension SovereignStateSubdivision {
         guard let string:String = string else { return nil }
         return SovereignStateCities.valueOf(string, subdivision: self)
     }
+    func valueOfCityIdentifier(_ string: String) -> (any SovereignStateCity)? {
+        return getCities()?.first(where: { string.elementsEqual($0.getIdentifier()) })
+    }
 }

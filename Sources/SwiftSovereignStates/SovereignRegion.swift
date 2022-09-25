@@ -38,16 +38,12 @@ public extension SovereignRegion where Self : RawRepresentable, RawValue == Stri
     }
 }
 public extension SovereignRegion {
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.getCacheID().elementsEqual(rhs.getCacheID())
-    }
-    
     func isEqual(_ sovereignRegion: any SovereignRegion) -> Bool {
         return getCacheID().elementsEqual(sovereignRegion.getCacheID())
     }
     
     func getKeywords() -> [String] {
-        var keywords:[String] = [getIdentifier(), getRealName() ?? getShortName()]
+        var keywords:[String] = [getRealName() ?? getShortName()]
         if let conditionalName:String = getConditionalName() {
             keywords.append(conditionalName)
         }
@@ -87,12 +83,11 @@ public extension SovereignRegion {
     func getAliases() -> [String]? {
         return nil
     }
-        
+    
     func getShortName() -> String {
         let identifier:String = getIdentifier()
         let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : getShortNameDecimalSeparatorIndex()
-        let string:String = SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex, excludedWords: ["and", "the", "da", "of", "del", "de", "la", "al", "on"])
-        return string
+        return SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex)
     }
     func getShortNameDecimalSeparatorIndex() -> Int? {
         return nil
@@ -162,16 +157,17 @@ internal extension Sequence {
     }
 }
 internal enum SovereignRegions {
-    fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?, excludedWords: [String]) -> String {
-        var values:[String] = input.lowercased().components(separatedBy: "_")
+    private static var excludedWords:[String] = ["and", "the", "da", "of", "del", "de", "la", "al", "on"]
+    
+    fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String {
+        var values:[String] = input.components(separatedBy: "_")
         if let decimalSeparatorIndex:Int = decimalSeparatorIndex, values.count > decimalSeparatorIndex {
             values[decimalSeparatorIndex] = values[decimalSeparatorIndex] + "."
         }
-        return values.compactMap({
+        return values.map({
             let value:String = $0
-            guard !value.isEmpty else { return nil }
             guard !excludedWords.contains(value) else { return value }
-            return value.prefix(1).uppercased() + value.suffix(value.count-1)
+            return value.first!.uppercased() + value.suffix(value.count-1)
         }).joined(separator: " ")
     }
     

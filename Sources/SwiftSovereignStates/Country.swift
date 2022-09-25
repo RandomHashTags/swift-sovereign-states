@@ -294,6 +294,9 @@ public enum Country : String, CaseIterable, SovereignState {
         }
         return country
     }
+    public static func valueOfIdentifier(_ string: String) -> Country? {
+        return Country.allCases.first(where: { string.elementsEqual($0.getIdentifier()) })
+    }
     
     public func getCacheID() -> String {
         return rawValue

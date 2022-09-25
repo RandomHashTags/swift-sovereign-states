@@ -116,6 +116,9 @@ public extension Country {
         guard let string:String = string else { return nil }
         return SovereignStateSubdivisions.valueOf(string, country: self)
     }
+    func valueOfSubdivisionIdentifier(_ string: String) -> (any SovereignStateSubdivision)? {
+        return getSubdivisions()?.first(where: { string.elementsEqual($0.getIdentifier()) })
+    }
 }
 
 public protocol SovereignStateSubdivision : SovereignState {
