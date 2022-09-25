@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity {
+public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Quebec
     case abercorn
     case acton_vale
     case adstock
