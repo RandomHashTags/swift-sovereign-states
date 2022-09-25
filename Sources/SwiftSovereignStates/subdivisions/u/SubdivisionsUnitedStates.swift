@@ -491,6 +491,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
         switch self {
         case .alabama: return CitiesUnitedStatesAlabama.allCases
         case .arizona: return CitiesUnitedStatesArizona.allCases
+        case .arkansas: return CitiesUnitedStatesArkansas.allCases
         case .idaho: return CitiesUnitedStatesIdaho.allCases
         case .iowa: return CitiesUnitedStatesIowa.allCases
         case .kentucky: return CitiesUnitedStatesKentucky.allCases
