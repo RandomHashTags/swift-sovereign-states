@@ -500,6 +500,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
         case .new_mexico: return CitiesUnitedStatesNewMexico.allCases
         case .north_dakota: return CitiesUnitedStatesNorthDakota.allCases
         case .south_dakota: return CitiesUnitedStatesSouthDakota.allCases
+        case .ohio: return CitiesUnitedStatesOhio.allCases
         case .texas: return CitiesUnitedStatesTexas.allCases
         case .utah: return CitiesUnitedStatesUtah.allCases
         case .washington: return CitiesUnitedStatesWashington.allCases

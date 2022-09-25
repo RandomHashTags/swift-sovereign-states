@@ -122,14 +122,14 @@ public extension SovereignRegion {
     }
     
     func getWikipediaURL() -> String {
-        let conditionalName:String = getConditionalName() ?? getRealName() ?? getShortName()
+        let name:String = (getConditionalName() ?? getRealName() ?? getShortName()).replacingOccurrences(of: " ", with: "_")
         let prefix:String = getWikipediaURLPrefix() ?? ""
         var customSuffix:String = getWikipediaURLSuffix() ?? ""
         if customSuffix.starts(with: "_") || customSuffix.starts(with: " ") {
             customSuffix = customSuffix.suffix(customSuffix.count-1).description
         }
         let hasSuffix:Bool = !customSuffix.isEmpty
-        return "https://en.wikipedia.org/wiki/" + prefix + conditionalName.replacingOccurrences(of: " ", with: "_") + (hasSuffix ? "_" + customSuffix : "")
+        return "https://en.wikipedia.org/wiki/" + prefix + name + (hasSuffix ? "_" + customSuffix : "")
     }
     func getWikipediaURLPrefix() -> String? {
         return nil

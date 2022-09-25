@@ -128,9 +128,12 @@ public extension SovereignStateCity {
         return false
     }
     
-    func getWikipediaURL() -> String {
+    internal func getDefaultURLSuffix() -> String {
         let subdivision:any SovereignStateSubdivision = getSubdivision()
-        return "https://en.wikipedia.org/wiki/" + (getRealName() ?? getShortName()).replacingOccurrences(of: " ", with: "_") + ",_" + (subdivision.getRealName() ?? subdivision.getShortName()).replacingOccurrences(of: " ", with: "_")
+        return ",_" + (subdivision.getRealName() ?? subdivision.getShortName()).replacingOccurrences(of: " ", with: "_")
+    }
+    func getWikipediaURLSuffix() -> String? {
+        return getDefaultURLSuffix()
     }
 }
 
