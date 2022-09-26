@@ -11,8 +11,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baja California, California? (Wisconsin) Texas's, Maine, New York; Kentucky.", cache: false)
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: false)
             
-            //let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: false)
-            let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Kasson", cache: false)
+            let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: false)
+            //let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Kasson", cache: false)
         }
         
         testWikipediaURLs()

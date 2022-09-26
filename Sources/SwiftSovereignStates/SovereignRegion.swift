@@ -110,7 +110,7 @@ public extension SovereignRegion {
         let values:[String] = id.components(separatedBy: "/")
         let type:String = id.starts(with: "en") ? "en" : "commons"
         let hasExtension:Bool = idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif")
-        return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + id.replacingOccurrences(of: "en/", with: "") + (hasExtension ? "" : ".svg") + "/%quality%px-" + values[values.count-1].description + (hasExtension ? "" : ".svg.png")
+        return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + urlEncoded(id.replacingOccurrences(of: "en/", with: "") + (hasExtension ? "" : ".svg") + "/%quality%px-" + values[values.count-1].description + (hasExtension ? "" : ".svg.png"))
     }
     func getFlagURLWikipediaSVGID() -> String? {
         return nil
@@ -124,7 +124,7 @@ public extension SovereignRegion {
             customSuffix = customSuffix.suffix(customSuffix.count-1).description
         }
         let hasSuffix:Bool = !customSuffix.isEmpty
-        return "https://en.wikipedia.org/wiki/" + prefix + name + (hasSuffix ? "_" + customSuffix : "")
+        return "https://en.wikipedia.org/wiki/" + urlEncoded(prefix + name + (hasSuffix ? "_" + customSuffix : ""))
     }
     func getWikipediaURLPrefix() -> String? {
         return nil
@@ -135,6 +135,10 @@ public extension SovereignRegion {
     
     func getTimeZones() -> [SovereignStateTimeZone]? {
         return nil
+    }
+    
+    private func urlEncoded(_ string: String) -> String {
+        return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? string
     }
 }
 
