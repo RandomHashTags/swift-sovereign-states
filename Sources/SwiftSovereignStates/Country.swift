@@ -625,6 +625,7 @@ public extension Country {
         case .argentina: return SubdivisionsArgentina.allCases
         case .armenia: return SubdivisionsArmenia.allCases
         case .australia: return SubdivisionsAustralia.allCases
+        case .austria: return SubdivisionsAustria.allCases
         case .azerbaijan: return SubdivisionsAzerbaijan.allCases
         
         case .belarus: return SubdivisionsBelarus.allCases
