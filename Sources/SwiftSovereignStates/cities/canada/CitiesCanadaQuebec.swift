@@ -35,7 +35,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
     case ayer_s_cliff
     
     case baie_comeau
-    case baie_d_urfé
+    case baie_d_urfe
     case baie_des_sables
     case baie_du_febvre
     case baie_johan_beetz
@@ -438,7 +438,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
     case morin_heights
     case mulgrave_et_derry
     case murdochville
-    case métabetchouan__lac_à_la_croix
+    case métabetchouan__lac_a_la_croix
     case métis_sur_mer
     
     case namur
@@ -519,7 +519,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
     case pointe_des_cascades
     case pointe_fortune
     case pointe_lebel
-    case pointe_à_la_croix
+    case pointe_a_la_croix
     case pont_rouge
     case pontiac
     case port_cartier
@@ -559,8 +559,8 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
     case rivière_ouelle
     case rivière_rouge
     case rivière_saint_jean
-    case rivière_à_claude
-    case rivière_à_pierre
+    case rivière_a_claude
+    case rivière_a_pierre
     case rivière_éternité
     case roberval
     case rochebaucourt
@@ -1174,7 +1174,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
         case .authier_nord: return "Authier-Nord"
         case .ayer_s_cliff: return "Ayer's Cliff"
         case .baie_comeau: return "Baie-Comeau"
-        case .baie_d_urfé: return "Baie-D'Urfé"
+        case .baie_d_urfe: return "Baie-D'Urfé"
         case .baie_des_sables: return "Baie-des-Sables"
         case .baie_du_febvre: return "Baie-du-Febvre"
         case .baie_johan_beetz: return "Baie-Johan-Beetz"
@@ -1291,7 +1291,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
         case .longue_pointe_de_mingan: return "Longue-Pointe-de-Mingan"
         case .longue_rive: return "Longue-Rive"
         case .mansfield_et_pontefract: return "Mansfield-et-Pontefract"
-        case .métabetchouan__lac_à_la_croix: return "Métabetchouan--Lac-à-la-Croix"
+        case .métabetchouan__lac_a_la_croix: return "Métabetchouan--Lac-à-la-Croix"
         case .métis_sur_mer: return "Métis-sur-Mer"
         case .mille_isles: return "Mille-Isles"
         case .mont_blanc: return "Mont-Blanc"
@@ -1340,7 +1340,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
         case .petit_saguenay: return "Petit-Saguenay"
         case .petite_rivière_saint_françois: return "Petite-Rivière-Saint-François"
         case .petite_vallée: return "Petite-Vallée"
-        case .pointe_à_la_croix: return "Pointe-à-la-Croix"
+        case .pointe_a_la_croix: return "Pointe-à-la-Croix"
         case .pointe_aux_outardes: return "Pointe-aux-Outardes"
         case .pointe_calumet: return "Pointe-Calumet"
         case .pointe_claire: return "Pointe-Claire"
@@ -1355,8 +1355,8 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
         case .rapide_danseur: return "Rapide-Danseur"
         case .rapides_des_joachims: return "Rapides-des-Joachims"
         case .ristigouche_partie_sud_est: return "Ristigouche-Partie-Sud-Est"
-        case .rivière_à_claude: return "Rivière-à-Claude"
-        case .rivière_à_pierre: return "Rivière-à-Pierre"
+        case .rivière_a_claude: return "Rivière-à-Claude"
+        case .rivière_a_pierre: return "Rivière-à-Pierre"
         case .rivière_au_tonnerre: return "Rivière-au-Tonnerre"
         case .rivière_beaudette: return "Rivière-Beaudette"
         case .rivière_bleue: return "Rivière-Bleue"

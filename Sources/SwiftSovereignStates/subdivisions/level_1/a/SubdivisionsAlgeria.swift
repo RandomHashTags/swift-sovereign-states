@@ -9,11 +9,11 @@ import Foundation
 
 public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivision {  // https://en.wikipedia.org/wiki/Provinces_of_Algeria
     case adrar
-    case ain_delfa
+    case ain_defla
     case ain_temouchent
     case algiers
     case annaba
-    case barna
+    case batna
     case bechar
     case bejaia
     case beni_abbes
@@ -28,7 +28,7 @@ public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivisio
     case djanet
     case djelfa
     case el_bayadh
-    case el_mghair
+    case el_m_ghair
     case el_menia
     case el_oued
     case el_tarf
@@ -40,7 +40,7 @@ public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivisio
     case jijel
     case khenchela
     case laghouat
-    case msila
+    case m_sila
     case mascara
     case medea
     case mila
@@ -77,7 +77,7 @@ public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivisio
     
     public func getRealName() -> String? {
         switch self {
-        case .ain_delfa: return "Aïn Defla"
+        case .ain_defla: return "Aïn Defla"
         case .ain_temouchent: return "Aïn Témouchent"
         case .bechar: return "Béchar"
         case .bejaia: return "Béjaïa"
@@ -85,9 +85,9 @@ public enum SubdivisionsAlgeria : String, CaseIterable, SovereignStateSubdivisio
         case .bordj_bou_arreridj: return "Bordj Bou Arréridj"
         case .bouira: return "Bouïra"
         case .boumerdes: return "Boumerdès"
-        case .el_mghair: return "El M'Ghair"
+        case .el_m_ghair: return "El M'Ghair"
         case .ghardaia: return "Ghardaïa"
-        case .msila: return "M'Sila"
+        case .m_sila: return "M'Sila"
         case .medea: return "Médéa"
         case .naama: return "Naâma"
         case .saida: return "Saïda"
