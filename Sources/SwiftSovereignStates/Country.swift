@@ -619,6 +619,7 @@ public extension Country {
         case .afghanistan: return SubdivisionsAfghanistan.allCases
         case .albania: return SubdivisionsAlbania.allCases
         case .algeria: return SubdivisionsAlgeria.allCases
+        case .andorra: return SubdivisionsAndorra.allCases
         case .angola: return SubdivisionsAngola.allCases
         case .argentina: return SubdivisionsArgentina.allCases
         case .australia: return SubdivisionsAustralia.allCases
