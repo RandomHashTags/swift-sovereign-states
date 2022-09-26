@@ -636,6 +636,7 @@ public extension Country {
         case .chile: return SubdivisionsChile.allCases
         case .costa_rica: return SubdivisionsCostaRica.allCases
         case .cuba: return SubdivisionsCuba.allCases
+        case .czech_republic: return SubdivisionsCzechRepublic.allCases
         
         case .denmark: return SubdivisionsDenmark.allCases
         case .djibouti: return SubdivisionsDjibouti.allCases
