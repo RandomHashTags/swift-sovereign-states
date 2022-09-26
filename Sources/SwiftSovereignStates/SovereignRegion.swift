@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SovereignRegion {
+public protocol SovereignRegion { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     func getIdentifier() -> String
     func getCacheID() -> String
     func getKeywords() -> [String]

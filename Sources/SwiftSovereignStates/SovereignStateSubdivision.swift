@@ -121,7 +121,7 @@ public extension Country {
     }
 }
 
-public protocol SovereignStateSubdivision : SovereignState {
+public protocol SovereignStateSubdivision : SovereignState { // https://en.wikipedia.org/wiki/List_of_first-level_administrative_divisions_by_country
     func getCountry() -> Country
     func getDefaultType() -> SovereignStateSubdivisionType
     func getType() -> SovereignStateSubdivisionType?
@@ -154,5 +154,107 @@ public extension SovereignStateSubdivision {
     }
     func getCities() -> [any SovereignStateCity]? {
         return nil
+    }
+}
+
+public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Hashable {
+    public static func == (lhs: SovereignStateSubdivisionWrapper, rhs: SovereignStateSubdivisionWrapper) -> Bool {
+        return lhs.getCacheID().elementsEqual(rhs.getCacheID())
+    }
+    
+    let subdivision:any SovereignStateSubdivision
+    
+    public init(_ subdivision: any SovereignStateSubdivision) {
+        self.subdivision = subdivision
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(getCacheID())
+    }
+    
+    public func getIdentifier() -> String {
+        return subdivision.getIdentifier()
+    }
+    public func getCacheID() -> String {
+        return subdivision.getCacheID()
+    }
+    public func getKeywords() -> [String] {
+        return subdivision.getKeywords()
+    }
+    public func getAdditionalKeywords() -> [String]? {
+        return subdivision.getAdditionalKeywords()
+    }
+    public func isMentioned(in string: String, exact: Bool) -> Bool {
+        return subdivision.isMentioned(in: string, exact: exact)
+    }
+    
+    public func getShortName() -> String {
+        return subdivision.getShortName()
+    }
+    public func getShortNameDecimalSeparatorIndex() -> Int? {
+        return subdivision.getShortNameDecimalSeparatorIndex()
+    }
+    public func getRealName() -> String? {
+        return subdivision.getRealName()
+    }
+    public func getConditionalName() -> String? {
+        return subdivision.getConditionalName()
+    }
+    public func getOfficialNames() -> [String]? {
+        return subdivision.getOfficialNames()
+    }
+    public func getAliases() -> [String]? {
+        return subdivision.getAliases()
+    }
+    
+    public func getGovernmentWebsite() -> String? {
+        return subdivision.getGovernmentWebsite()
+    }
+    
+    public func getFlagURL() -> String? {
+        return subdivision.getFlagURL()
+    }
+    public func getFlagURLWikipediaSVGID() -> String? {
+        return subdivision.getFlagURLWikipediaSVGID()
+    }
+    public func getWikipediaURL() -> String {
+        return subdivision.getWikipediaURL()
+    }
+    public func getWikipediaURLPrefix() -> String? {
+        return subdivision.getWikipediaURLPrefix()
+    }
+    public func getWikipediaURLSuffix() -> String? {
+        return subdivision.getWikipediaURLSuffix()
+    }
+    
+    public func getTimeZones() -> [SovereignStateTimeZone]? {
+        return subdivision.getTimeZones()
+    }
+    
+    public func getISOAlpha2() -> String? {
+        return subdivision.getISOAlpha2()
+    }
+    public func getISOAlpha3() -> String? {
+        return subdivision.getISOAlpha3()
+    }
+    
+    public func getCountry() -> Country {
+        return subdivision.getCountry()
+    }
+    public func getDefaultType() -> SovereignStateSubdivisionType {
+        return subdivision.getDefaultType()
+    }
+    public func getType() -> SovereignStateSubdivisionType? {
+        return subdivision.getType()
+    }
+    public func getTypeSuffix() -> String {
+        return subdivision.getTypeSuffix()
+    }
+    
+    public func getNeighbors() -> [any SovereignStateSubdivision]? {
+        return subdivision.getNeighbors()
+    }
+    public func getCities() -> [any SovereignStateCity]? {
+        return subdivision.getCities()
     }
 }

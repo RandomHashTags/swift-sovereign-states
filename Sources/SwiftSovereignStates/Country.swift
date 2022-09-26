@@ -617,6 +617,7 @@ public extension Country {
     func getSubdivisions() -> [any SovereignStateSubdivision]? {
         switch self {
         case .afghanistan: return SubdivisionsAfghanistan.allCases
+        case .albania: return SubdivisionsAlbania.allCases
         case .algeria: return SubdivisionsAlgeria.allCases
         case .angola: return SubdivisionsAngola.allCases
         case .argentina: return SubdivisionsArgentina.allCases
