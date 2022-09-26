@@ -129,6 +129,39 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
         }
     }
     
+    public func getFlagURLWikipediaSVGID() -> String? {
+        switch self {
+        case .acre: return "4/4c/Bandeira_do_Acre"
+        case .alagoas: return "8/88/Bandeira_de_Alagoas"
+        case .amapa: return "0/0c/Bandeira_do_Amapá"
+        case .amazonas: return "6/6b/Bandeira_do_Amazonas"
+        case .bahia: return "2/28/Bandeira_da_Bahia"
+        case .ceara: return "2/2e/Bandeira_do_Ceará"
+        case .espirito_santo: return "4/43/Bandeira_do_Esp%C3%ADrito_Santo"
+        case .goias: return "b/be/Flag_of_Goiás"
+        case .maranhao: return "4/45/Bandeira_do_Maranhão"
+        case .mato_grosso: return "0/0b/Bandeira_de_Mato_Grosso"
+        case .mato_grosso_do_sul: return "6/64/Bandeira_de_Mato_Grosso_do_Sul"
+        case .minas_gerais: return "f/f4/Bandeira_de_Minas_Gerais"
+        case .para: return "0/02/Bandeira_do_Pará"
+        case .paraiba: return "b/bb/Bandeira_da_Para%C3%ADba"
+        case .parana: return "9/93/Bandeira_do_Paraná"
+        case .pernambuco: return "5/59/Bandeira_de_Pernambuco"
+        case .piaui: return "3/33/Bandeira_do_Piau%C3%AD"
+        case .rio_de_janerio: return "7/73/Bandeira_do_estado_do_Rio_de_Janeiro"
+        case .rio_grande_do_norte: return "3/30/Bandeira_do_Rio_Grande_do_Norte"
+        case .rio_grande_do_sul: return "6/63/Bandeira_do_Rio_Grande_do_Sul"
+        case .rondonia: return "f/fa/Bandeira_de_Rondônia"
+        case .roraima: return "9/98/Bandeira_de_Roraima"
+        case .santa_catarina: return "1/1a/Bandeira_de_Santa_Catarina"
+        case .sao_paulo: return "2/2b/Bandeira_do_estado_de_São_Paulo"
+        case .sergiepe: return "b/be/Bandeira_de_Sergipe"
+        case .tocantins: return "f/ff/Bandeira_do_Tocantins"
+            
+        case .distrito_federal: return "3/3c/Bandeira_do_Distrito_Federal_%28Brasil%29"
+        }
+    }
+    
     public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .acre:
