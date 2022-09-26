@@ -623,6 +623,7 @@ public extension Country {
         case .angola: return SubdivisionsAngola.allCases
         case .antigua_and_barbuda: return SubdivisionsAntiguaAndBarbuda.allCases
         case .argentina: return SubdivisionsArgentina.allCases
+        case .armenia: return SubdivisionsArmenia.allCases
         case .australia: return SubdivisionsAustralia.allCases
         case .azerbaijan: return SubdivisionsAzerbaijan.allCases
         
