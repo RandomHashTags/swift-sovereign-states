@@ -15,7 +15,7 @@ public enum SubdivisionsCzechRepublic : String, CaseIterable, SovereignStateSubd
     case moravian_silesian
     case olomouc
     case pardubice
-    case plzeň
+    case plzen
     case prague
     case south_bohemian
     case south_moravian
@@ -54,7 +54,7 @@ public enum SubdivisionsCzechRepublic : String, CaseIterable, SovereignStateSubd
         case .prague: return "d/d2/Flag_of_Prague"
         case .central_bohemian: return "0/06/Flag_of_Central_Bohemian_Region"
         case .south_bohemian: return "f/f7/Flag_of_South_Bohemian_Region"
-        case .plzeň: return "4/4b/Flag_of_Plzen_Region"
+        case .plzen: return "4/4b/Flag_of_Plzen_Region"
         case .karlovy_vary: return "0/0b/Flag_of_Karlovy_Vary_Region"
         case .usti_nad_labem: return "1/13/Flag_of_Usti_nad_Labem_Region"
         case .liberec: return "4/45/Flag_of_Liberec_Region"
