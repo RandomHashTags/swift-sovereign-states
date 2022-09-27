@@ -12,6 +12,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case autonomous_communities
     case autonomous_regions
     case autonomous_republics
+    case autonomous_territorial_units
     case cantons
     case chartered_cities
     case cities
@@ -51,6 +52,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .autonomous_communities: return "Autonomous Community"
         case .autonomous_regions: return "Autonomous Region"
         case .autonomous_republics: return "Autonomous Republic"
+        case .autonomous_territorial_units: return "Autonomous Territorial Unit"
         case .cantons: return "Canton"
         case .chartered_cities: return "Charter City"
         case .cities: return "City"
@@ -91,6 +93,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .autonomous_communities: return "Autonomous Communities"
         case .autonomous_regions: return "Autonomous Regions"
         case .autonomous_republics: return "Autonomous Republics"
+        case .autonomous_territorial_units: return "Autonomous Territorial Units"
         case .cantons: return "Cantons"
         case .chartered_cities: return "Charter Cities"
         case .cities: return "Cities"
