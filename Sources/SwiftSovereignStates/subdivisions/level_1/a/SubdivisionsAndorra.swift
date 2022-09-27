@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAndorra : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsAndorra : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Andorra
     case andorra_la_vella
     case canillo
     case encamp

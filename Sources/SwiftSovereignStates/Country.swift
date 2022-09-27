@@ -663,6 +663,7 @@ public extension Country {
         case .india: return SubdivisionsIndia.allCases
         case .indonesia: return SubdivisionsIndonesia.allCases
         case .ireland: return SubdivisionsIreland.allCases
+        case .iraq: return SubdivisionsIraq.allCases
         case .iran: return SubdivisionsIran.allCases
         case .italy: return SubdivisionsItaly.allCases
         

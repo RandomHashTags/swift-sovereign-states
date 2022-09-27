@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsCzechRepublic : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsCzechRepublic : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_the_Czech_Republic
     case central_bohemian
     case hradec_kralove
     case karlovy_vary

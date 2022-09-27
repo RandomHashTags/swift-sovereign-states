@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsEstonia : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsEstonia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Estonia
     case harju
     case hiiu
     case ida_viru

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsDominicanRepublic : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsDominicanRepublic : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_the_Dominican_Republic
     case azua
     case baoruco
     case barahona

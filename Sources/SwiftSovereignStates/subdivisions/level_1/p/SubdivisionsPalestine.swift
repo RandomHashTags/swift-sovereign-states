@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPalestine : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsPalestine : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Palestine
     case bethlehem
     case deir_al_balah
     case gaza

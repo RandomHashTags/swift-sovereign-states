@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAustria : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsAustria : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Austria
     case burgenland
     case carinthia
     case lower_austria
