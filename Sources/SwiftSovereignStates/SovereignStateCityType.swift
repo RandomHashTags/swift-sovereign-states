@@ -18,6 +18,7 @@ public enum SovereignStateCityType : CaseIterable { // https://en.wikipedia.org/
     case municipality
     case neighbourhood
     case parish
+    case plantation
     case regional_county_municipality
     case subdistrict
     case town

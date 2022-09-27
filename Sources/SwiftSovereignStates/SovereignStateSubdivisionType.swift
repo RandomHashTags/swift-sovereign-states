@@ -45,7 +45,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case territories
     case union_territories
     case voivodeships
-    
+        
     public func getSingularName() -> String {
         switch self {
         case .autonomous_cities: return "Autonomous City"

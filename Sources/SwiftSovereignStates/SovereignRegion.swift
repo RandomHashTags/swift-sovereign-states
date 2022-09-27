@@ -185,7 +185,7 @@ internal enum SovereignRegions {
         let string:String = [
             " ",
             "-", "–",
-            "\\(",
+            "\\(", "\\[",
             "/",
             "\"",
             "^"
@@ -200,7 +200,7 @@ internal enum SovereignRegions {
             ";", ":",
             "-", "–",
             "'", "\"",
-            "\\)",
+            "\\)", "\\]",
             "/"
         ].joined(separator: "|")
         return "(" + string + ")"

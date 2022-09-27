@@ -34,13 +34,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         let countries:[Country] = Country.allCases
         for country in countries {
-            if let subdivisions = country.getSubdivisions() {
+            if let subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() {
                 for subdivision in subdivisions {
                     let wikipediaURL:String = subdivision.getWikipediaURL()
                     if wikipediaURL.contains(" ") {
                         failedSubdivisions.append(subdivision)
                     }
-                    if let cities = subdivision.getCities() {
+                    if let cities:[any SovereignStateCity] = subdivision.getCities() {
                         for city in cities {
                             if city.getWikipediaURL().contains(" ") {
                                 failedCities.append(city)
@@ -71,8 +71,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     
     private func testCountryMentions() {
-        let targetCountries:[Country] = [Country.japan, Country.united_states, Country.canada, Country.russia, Country.china, Country.taiwan, Country.kenya, Country.mexico, Country.luxembourg, Country.switzerland, Country.egypt, Country.poland, Country.bahamas, Country.sao_tome_and_principe, Country.zambia]
-        let mentionedString:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, the Bahamas, Sao Tome and Principe, and Zambia. Case Sensitive! Will not find New zealand, central african republic, el Salvador, latv.a, FINLAND, OMan, [Romania], Dominican, and Ire?and."
+        let targetCountries:[Country] = [Country.japan, Country.united_states, Country.canada, Country.russia, Country.china, Country.taiwan, Country.kenya, Country.mexico, Country.luxembourg, Country.switzerland, Country.egypt, Country.poland, Country.romania, Country.bahamas, Country.sao_tome_and_principe, Country.zambia]
+        let mentionedString:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, [Romania], the Bahamas, Sao Tome and Principe, and Zambia. Case Sensitive! Will not find New zealand, central african republic, el Salvador, latv.a, FINLAND, OMan, Dominican, and Ire?and."
         let mentioned:[Country] = Country.getAllMentioned(mentionedString) ?? [Country]()
         let notFound:[Country] = targetCountries.filter({ !mentioned.contains($0) })
         if !notFound.isEmpty {
@@ -85,24 +85,24 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(mentioned.count == targetCountries.count)
     }
     private func testCityMentions() {
-        let minneapolis = SubdivisionsUnitedStates.minnesota.valueOfCity("Minneapolis")
+        let minneapolis:[any SovereignStateCity]? = SubdivisionsUnitedStates.minnesota.valueOfCity("Minneapolis")
         XCTAssert(minneapolis != nil)
         
-        let lakeside = SubdivisionsUnitedStates.texas.valueOfCity("Lakeside")
+        let lakeside:[any SovereignStateCity]? = SubdivisionsUnitedStates.texas.valueOfCity("Lakeside")
         XCTAssert(lakeside != nil && lakeside!.count == 2)
         
         let targetCities:[any SovereignStateCity] = [
             CitiesUnitedStatesKentucky.rochester, CitiesUnitedStatesMinnesota.rochester, CitiesUnitedStatesNewHampshire.rochester, CitiesUnitedStatesOhio.rochester, CitiesUnitedStatesTexas.rochester,
-            CitiesUnitedStatesSouthDakota.naples, CitiesUnitedStatesTexas.naples, CitiesUnitedStatesUtah.naples,
-            CitiesUnitedStatesTexas.dallas, CitiesUnitedStatesSouthDakota.dallas,
+            CitiesUnitedStatesMaine.naples, CitiesUnitedStatesSouthDakota.naples, CitiesUnitedStatesTexas.naples, CitiesUnitedStatesUtah.naples,
+            CitiesUnitedStatesMaine.dallas, CitiesUnitedStatesSouthDakota.dallas, CitiesUnitedStatesTexas.dallas,
             CitiesUnitedStatesIdaho.oakley, CitiesUnitedStatesUtah.oakley,
             CitiesUnitedStatesIowa.des_moines, CitiesUnitedStatesNewMexico.des_moines, CitiesUnitedStatesWashington.des_moines,
             CitiesUnitedStatesArizona.summit, CitiesUnitedStatesArkansas.summit, CitiesUnitedStatesSouthDakota.summit,
             
-            CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesMinnesota.st_leo, CitiesUnitedStatesTexas.mclean
+            CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesMinnesota.faribault, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesMinnesota.st_leo, CitiesUnitedStatesTexas.mclean
         ]
         
-        let mentionedString:String = "Rochester; this string should find the mentioned cities: Minneapolis, (Kasson) Owatonna! Dallas? Des Moines; Anaconda: Oakley, Naples, Edmore's, \"Winifred\", Lost River, Summit, Upham, St. Leo, and McLean. Case Sensitive! Will not find des Moines, sum.it, ROCHESTER, EDmore, [Faribault], and C?shing."
+        let mentionedString:String = "Rochester; this string should find the mentioned cities: Minneapolis, (Kasson) Owatonna! [Faribault] Dallas? Des Moines; Anaconda: Oakley, Naples, Edmore's, \"Winifred\", Lost River, Summit, Upham, St. Leo, and McLean. Case Sensitive! Will not find des Moines, sum.it, ROCHESTER, EDmore, and C?shing."
         
         let mentioned:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(mentionedString) ?? [any SovereignStateCity]()
         XCTAssert(mentioned.count > 0, "mentioned.count == 0")

@@ -495,6 +495,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
         case .idaho: return CitiesUnitedStatesIdaho.allCases
         case .iowa: return CitiesUnitedStatesIowa.allCases
         case .kentucky: return CitiesUnitedStatesKentucky.allCases
+        case .maine: return CitiesUnitedStatesMaine.allCases
         case .minnesota: return CitiesUnitedStatesMinnesota.allCases
         case .montana: return CitiesUnitedStatesMontana.allCases
         case .new_hampshire: return CitiesUnitedStatesNewHampshire.allCases
