@@ -97,7 +97,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             CitiesUnitedStatesTexas.dallas, CitiesUnitedStatesSouthDakota.dallas,
             CitiesUnitedStatesIdaho.oakley, CitiesUnitedStatesUtah.oakley,
             CitiesUnitedStatesIowa.des_moines, CitiesUnitedStatesNewMexico.des_moines, CitiesUnitedStatesWashington.des_moines,
-            CitiesUnitedStatesArkansas.summit, CitiesUnitedStatesSouthDakota.summit,
+            CitiesUnitedStatesArizona.summit, CitiesUnitedStatesArkansas.summit, CitiesUnitedStatesSouthDakota.summit,
             
             CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesMinnesota.st_leo, CitiesUnitedStatesTexas.mclean
         ]
@@ -115,10 +115,10 @@ final class SwiftSovereignStatesTests: XCTestCase {
             return !targetCities.contains(where: { city.isEqual($0) })
         })
         if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;missing " + notFound.count.description + ";[" + notFound.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCityMentions;missing " + notFound.count.description + ";[" + notFound.map({ $0.getCacheID() }).joined(separator: ",") + "]")
         }
         if !notMentioned.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.getCacheID() }).joined(separator: ",") + "]")
         }
         XCTAssert(mentioned.count == targetCities.count, "mentioned.count=" + mentioned.count.description + ", targetCities.count=" + targetCities.count.description)
     }

@@ -112,6 +112,7 @@ public enum SovereignStateCities {
 public protocol SovereignStateCity : SovereignRegion {
     func getSubdivision() -> any SovereignStateSubdivision
     func getDefaultType() -> SovereignStateCityType
+    func getType() -> SovereignStateCityType?
     func isCapital() -> Bool
 }
 public extension SovereignStateCity {
@@ -122,6 +123,9 @@ public extension SovereignStateCity {
     
     func getDefaultType() -> SovereignStateCityType {
         return SovereignStateCityType.city
+    }
+    func getType() -> SovereignStateCityType? {
+        return nil
     }
     
     func isCapital() -> Bool {
