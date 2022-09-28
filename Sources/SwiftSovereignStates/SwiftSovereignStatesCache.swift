@@ -89,7 +89,7 @@ private extension SwiftSovereignStatesCache {
 public enum SwiftSovereignStateCacheType {
     case countries_valueOf
     case countries_mentioned
-    case subdivisions_keywords_regex
+    case subdivisions_keywords
     case subdivisions_mentioned
     case subdivisions_valueOf
     case subdivisions_valueOfAll
@@ -106,7 +106,7 @@ public enum SwiftSovereignStateCache {
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
-            SwiftSovereignStateCacheSubdivisions.keywordsRegex.removeAll()
+            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOf.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOfAll.removeAll()
@@ -125,8 +125,8 @@ public enum SwiftSovereignStateCache {
         case .countries_mentioned:
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
-        case .subdivisions_keywords_regex:
-            SwiftSovereignStateCacheSubdivisions.keywordsRegex.removeAll()
+        case .subdivisions_keywords:
+            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
             return
         case .subdivisions_mentioned:
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
@@ -160,7 +160,7 @@ internal enum SwiftSovereignStateCacheCountries {
     static var mentioned:SwiftSovereignStatesCache<String, [Country]> = SwiftSovereignStatesCache<String, [Country]>()
 }
 internal enum SwiftSovereignStateCacheSubdivisions {
-    static var keywordsRegex:SwiftSovereignStatesCache<String, String> = SwiftSovereignStatesCache<String, String>()
+    static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
     
     static var mentioned:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
     static var valueOf:SwiftSovereignStatesCache<String, Any?> = SwiftSovereignStatesCache<String, Any?>()

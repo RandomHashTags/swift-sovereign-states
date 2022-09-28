@@ -4,9 +4,9 @@ import QuartzCore
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
-        let _:[String] = Country.allCases.map({ $0.getKeywordsRegex() })
-        let _:[String] = SovereignStateSubdivisions.all.map({ $0.getKeywordsRegex() })
-        let _:[String] = SovereignStateCities.all.map({ $0.getKeywordsRegex() })
+        let _:[[String]] = Country.allCases.map({ $0.getKeywords() })
+        let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.getKeywords() })
+        let _:[[String]] = SovereignStateCities.all.map({ $0.getKeywords() })
         measure {
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baja California, California? (Wisconsin) Texas's, Maine, New York; Kentucky.", cache: false)
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: false)
@@ -17,6 +17,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         testWikipediaURLs()
         testCountryMentions()
+        testSubdivisionMentions()
         testCityMentions()
         testNeighbors()
         testCities()
@@ -83,6 +84,26 @@ final class SwiftSovereignStatesTests: XCTestCase {
             print("SwiftSovereignStatesTests;testCountryMentions;shouldn't be=[" + notMentioned.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
         }
         XCTAssert(mentioned.count == targetCountries.count)
+    }
+    private func testSubdivisionMentions() {
+        let targetSubdivisions:[any SovereignStateSubdivision] = [SubdivisionsMexico.baja_california, SubdivisionsUnitedStates.california]
+        let mentionedString:String = "Baja California; California!"
+        let mentioned:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned(mentionedString) ?? [any SovereignStateSubdivision]()
+        let notFound:[any SovereignStateSubdivision] = targetSubdivisions.filter({
+            let subdivision:any SovereignStateSubdivision = $0
+            return !mentioned.contains(where: { subdivision.isEqual($0) })
+        })
+        if !notFound.isEmpty {
+            print("SwiftSovereignStatesTests;testSubdivisionMentions;missing " + notFound.count.description + ";=[" + notFound.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
+        }
+        let notMentioned:[any SovereignStateSubdivision] = mentioned.filter({
+            let subdivision:any SovereignStateSubdivision = $0
+            return !targetSubdivisions.contains(where: { subdivision.isEqual($0) })
+        })
+        if !notMentioned.isEmpty {
+            print("SwiftSovereignStatesTests;testSubdivisionMentions;shouldn't be=[" + notMentioned.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
+        }
+        XCTAssert(mentioned.count == targetSubdivisions.count, "mentioned != targetSubdivisions")
     }
     private func testCityMentions() {
         let minneapolis:[any SovereignStateCity]? = SubdivisionsUnitedStates.minnesota.valueOfCity("Minneapolis")

@@ -43,6 +43,10 @@ public extension SovereignRegion {
     }
     
     func getKeywords() -> [String] {
+        let id:String = getCacheID()
+        if let keywords:[String] = SwiftSovereignStateCacheSubdivisions.keywords[id] {
+            return keywords
+        }
         var keywords:[String] = [getRealName() ?? getShortName()]
         if let conditionalName:String = getConditionalName() {
             keywords.append(conditionalName)
@@ -56,24 +60,16 @@ public extension SovereignRegion {
         if let additional:[String] = getAdditionalKeywords() {
             keywords.append(contentsOf: additional)
         }
+        SwiftSovereignStateCacheSubdivisions.keywords[id] = keywords
         return keywords
-    }
-    func getKeywordsRegex() -> String {
-        let id:String = getCacheID()
-        if let cached:String = SwiftSovereignStateCacheSubdivisions.keywordsRegex[id] {
-            return cached
-        }
-        let regex:String = "(" + getKeywords().joined(separator: "|") + ")"
-        SwiftSovereignStateCacheSubdivisions.keywordsRegex[id] = regex
-        return regex
     }
     func getAdditionalKeywords() -> [String]? {
         return nil
     }
     
     func isMentioned(in string: String, exact: Bool = false) -> Bool {
-        let valuesRegex:String = getKeywordsRegex()
-        return exact ? SovereignRegions.doesEqual(string: string, valuesRegex: valuesRegex) : SovereignRegions.doesSatisfy(string: string, valuesRegex: valuesRegex)
+        let values:[String] = getKeywords()
+        return exact ? SovereignRegions.doesEqual(string: string, values: values) : SovereignRegions.doesSatisfy(string: string, values: values)
     }
     
     func getOfficialNames() -> [String]? {
@@ -160,12 +156,12 @@ internal extension Sequence {
         return values
     }
 }
-internal enum SovereignRegions {
+internal enum SovereignRegions {    
     private static var excludedWords:[String] = ["and", "the", "da", "of", "del", "de", "la", "al", "on"]
     
     fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String {
         var values:[String] = input.components(separatedBy: "_")
-        if let decimalSeparatorIndex:Int = decimalSeparatorIndex, values.count > decimalSeparatorIndex {
+        if let decimalSeparatorIndex:Int = decimalSeparatorIndex {
             values[decimalSeparatorIndex] = values[decimalSeparatorIndex] + "."
         }
         return values.map({
@@ -175,12 +171,17 @@ internal enum SovereignRegions {
         }).joined(separator: " ")
     }
     
-    static func doesEqual(string: String, valuesRegex: String) -> Bool {
-        return doesContain(string: string, regex: valuesRegex)
+    static func doesEqual(string: String, values: [String]) -> Bool {
+        return values.first(where: { string.elementsEqual($0) }) != nil
     }
-    static func doesSatisfy(string: String, valuesRegex: String) -> Bool {
+    static func doesSatisfy(string: String, values: [String]) -> Bool {
+        guard values.first(where: { string.contains($0) }) != nil else { return false }
+        return doesSatisfy(string: string, valuesRegex: "(" + values.joined(separator: "|") + ")")
+    }
+    private static func doesSatisfy(string: String, valuesRegex: String) -> Bool {
         return doesContain(string: string, regex: prefixRegex + valuesRegex + suffixRegex)
     }
+    
     private static let prefixRegex:String = {
         let string:String = [
             " ",
