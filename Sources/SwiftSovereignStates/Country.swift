@@ -636,6 +636,7 @@ public extension Country {
         case .belize: return SubdivisionsBelize.allCases
         case .benin: return SubdivisionsBenin.allCases
         case .bhutan: return SubdivisionsBhutan.allCases
+        case .bolivia: return SubdivisionsBolivia.allCases
         case .brazil: return SubdivisionsBrazil.allCases
         case .bulgaria: return SubdivisionsBulgaria.allCases
         
