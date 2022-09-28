@@ -628,6 +628,7 @@ public extension Country {
         case .austria: return SubdivisionsAustria.allCases
         case .azerbaijan: return SubdivisionsAzerbaijan.allCases
         
+        case .bahamas: return SubdivisionsBahamas.allCases
         case .belarus: return SubdivisionsBelarus.allCases
         case .brazil: return SubdivisionsBrazil.allCases
         case .bulgaria: return SubdivisionsBulgaria.allCases
@@ -718,6 +719,7 @@ public extension Country {
         
         case .senegal: return SubdivisionsSenegal.allCases
         case .south_korea: return SubdivisionsSouthKorea.allCases
+        case .south_sudan: return SubdivisionsSouthSudan.allCases
         case .spain: return SubdivisionsSpain.allCases
         case .sri_lanka: return SubdivisionsSriLanka.allCases
         case .suriname: return SubdivisionsSuriname.allCases

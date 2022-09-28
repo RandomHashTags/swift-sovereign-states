@@ -13,13 +13,14 @@ public enum SubdivisionsCanada : String, CaseIterable, SovereignStateSubdivision
     case manitoba
     case new_brunswick
     case newfoundland_and_labrador
-    case northwest_territories
     case nova_scotia
-    case nunavut
     case ontario
     case prince_edward_island
     case quebec
     case saskatchewan
+    
+    case northwest_territories
+    case nunavut
     case yukon
     
     public func getCountry() -> Country {

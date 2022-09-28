@@ -8,6 +8,7 @@
 import Foundation
 
 public enum SovereignStateSubdivisionType : String, CaseIterable {
+    case administrative_areas
     case autonomous_cities
     case autonomous_communities
     case autonomous_regions
@@ -36,6 +37,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case prefectures
     case provinces
     case regions
+    case special_administrative_areas
     case special_cities
     case special_municipalities
     case special_self_governing_cities
@@ -48,6 +50,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         
     public func getSingularName() -> String {
         switch self {
+        case .administrative_areas: return "Administrative Area"
         case .autonomous_cities: return "Autonomous City"
         case .autonomous_communities: return "Autonomous Community"
         case .autonomous_regions: return "Autonomous Region"
@@ -76,6 +79,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .prefectures: return "Prefecture"
         case .provinces: return "Province"
         case .regions: return "Region"
+        case .special_administrative_areas: return "Special Administrative Area"
         case .special_cities: return "Special City"
         case .special_municipalities: return "Special Municipality"
         case .special_self_governing_cities: return "Special self-governing City"
@@ -89,6 +93,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     }
     public func getPluralName() -> String {
         switch self {
+        case .administrative_areas: return "Administrative Area"
         case .autonomous_cities: return "Autonomous Cities"
         case .autonomous_communities: return "Autonomous Communities"
         case .autonomous_regions: return "Autonomous Regions"
@@ -117,6 +122,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .prefectures: return "Prefectures"
         case .provinces: return "Provinces"
         case .regions: return "Regions"
+        case .special_administrative_areas: return "Special Administrative Areas"
         case .special_cities: return "Special Cities"
         case .special_municipalities: return "Special Municipalities"
         case .special_self_governing_cities: return "Special self-governing Cities"
