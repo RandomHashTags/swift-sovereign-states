@@ -12,7 +12,7 @@ public protocol SovereignState : SovereignRegion {
     func getISOAlpha3() -> String?
 }
 public extension SovereignState {
-    /*func getAdditionalKeywords() -> [String]? {
+    func getAdditionalKeywords() -> [String]? {
         var keywords:[String] = [String]()
         if let isoAlpha2:String = getISOAlpha2() {
             keywords.append(isoAlpha2)
@@ -21,5 +21,5 @@ public extension SovereignState {
             keywords.append(isoAlpha3)
         }
         return keywords
-    }*/
+    }
 }

@@ -22,6 +22,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case departments
     case dependencies
     case districts
+    case divisions
     case federal_districts
     case federal_entities
     case federal_territories
@@ -64,6 +65,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .departments: return "Department"
         case .dependencies: return "Dependency"
         case .districts: return "District"
+        case .divisions: return "Division"
         case .federal_districts: return "Federal District"
         case .federal_entities: return "Federal Entity"
         case .federal_territories: return "Federal Territory"
@@ -107,6 +109,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .departments: return "Departments"
         case .dependencies: return "Dependencies"
         case .districts: return "Districts"
+        case .divisions: return "Divisions"
         case .federal_districts: return "Federal Districts"
         case .federal_entities: return "Federal Entities"
         case .federal_territories: return "Federal Territories"
