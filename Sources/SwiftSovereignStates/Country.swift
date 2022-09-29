@@ -728,6 +728,7 @@ public extension Country {
         
         case .qatar: return SubdivisionsQatar.allCases
         
+        case .romania: return SubdivisionsRomania.allCases
         case .rwanda: return SubdivisionsRwanda.allCases
         
         case .senegal: return SubdivisionsSenegal.allCases
