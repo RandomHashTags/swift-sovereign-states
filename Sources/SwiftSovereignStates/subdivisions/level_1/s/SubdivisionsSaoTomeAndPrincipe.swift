@@ -36,10 +36,11 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, CaseIterable, SovereignStat
     public func getRealName() -> String? {
         switch self {
         case .agua_grande: return "Água Grande"
-        case .autonomous_region_of_principe: return "Autonomous Region of Príncipe"
         case .caue: return "Caué"
         case .lemba: return "Lembá"
         case .me_zochi: return "Mé-Zóchi"
+            
+        case .autonomous_region_of_principe: return "Autonomous Region of Príncipe"
         default: return nil
         }
     }
