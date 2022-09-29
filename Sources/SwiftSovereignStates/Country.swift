@@ -658,6 +658,7 @@ public extension Country {
             
         case .ecuador: return SubdivisionsEcuador.allCases
         case .egypt: return SubdivisionsEgypt.allCases
+        case .el_salvador: return SubdivisionsElSalvador.allCases
         case .estonia: return SubdivisionsEstonia.allCases
         case .ethiopia: return SubdivisionsEthiopia.allCases
         
