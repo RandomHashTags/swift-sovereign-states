@@ -50,12 +50,23 @@ public enum SubdivisionsRomania : String, CaseIterable, SovereignStateSubdivisio
     case vaslui
     case vrancea
     
+    case bucharest
+    
     public func getCountry() -> Country {
         return Country.romania
     }
     
     public func getDefaultType() -> SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.counties
+    }
+    
+    public func getType() -> SovereignStateSubdivisionType? {
+        switch self {
+        case .bucharest:
+            return SovereignStateSubdivisionType.cities
+        default:
+            return nil
+        }
     }
     
     public func getRealName() -> String? {
@@ -128,6 +139,8 @@ public enum SubdivisionsRomania : String, CaseIterable, SovereignStateSubdivisio
         case .vaslui: return "0/0b/Actual_Vaslui_county_CoA.png"
         case .valcea: return "6/66/Actual_V%C3%A2lcea_county_CoA.png"
         case .vrancea: return "3/32/Actual_Vrancea_county_CoA.png"
+            
+        case .bucharest: return "6/64/ROU_Bucharest_CoA"
         }
     }
 }

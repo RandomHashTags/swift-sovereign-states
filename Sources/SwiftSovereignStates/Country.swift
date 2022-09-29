@@ -731,6 +731,7 @@ public extension Country {
         case .romania: return SubdivisionsRomania.allCases
         case .rwanda: return SubdivisionsRwanda.allCases
         
+        case .samoa: return SubdivisionsSamoa.allCases
         case .senegal: return SubdivisionsSenegal.allCases
         case .south_korea: return SubdivisionsSouthKorea.allCases
         case .south_sudan: return SubdivisionsSouthSudan.allCases
