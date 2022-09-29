@@ -640,6 +640,7 @@ public extension Country {
         case .botswana: return SubdivisionsBotswana.allCases
         case .brazil: return SubdivisionsBrazil.allCases
         case .bulgaria: return SubdivisionsBulgaria.allCases
+        case .burundi: return SubdivisionsBurundi.allCases
         
         case .canada: return SubdivisionsCanada.allCases
         case .chile: return SubdivisionsChile.allCases

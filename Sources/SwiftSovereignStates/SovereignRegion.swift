@@ -176,10 +176,7 @@ internal enum SovereignRegions {
     }
     static func doesSatisfy(string: String, values: [String]) -> Bool {
         guard values.first(where: { string.contains($0) }) != nil else { return false }
-        return doesSatisfy(string: string, valuesRegex: "(" + values.joined(separator: "|") + ")")
-    }
-    private static func doesSatisfy(string: String, valuesRegex: String) -> Bool {
-        return doesContain(string: string, regex: prefixRegex + valuesRegex + suffixRegex)
+        return doesContain(string: string, regex: prefixRegex + "(" + values.joined(separator: "|") + ")" + suffixRegex)
     }
     
     private static let prefixRegex:String = {
