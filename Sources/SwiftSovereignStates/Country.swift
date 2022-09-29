@@ -735,6 +735,7 @@ public extension Country {
         case .sao_tome_and_principe: return SubdivisionsSaoTomeAndPrincipe.allCases
         case .senegal: return SubdivisionsSenegal.allCases
         case .slovakia: return SubdivisionsSlovakia.allCases
+        case .slovenia: return SubdivisionsSlovenia.allCases
         case .south_korea: return SubdivisionsSouthKorea.allCases
         case .south_sudan: return SubdivisionsSouthSudan.allCases
         case .spain: return SubdivisionsSpain.allCases

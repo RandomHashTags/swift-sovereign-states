@@ -17,6 +17,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case cantons
     case chartered_cities
     case cities
+    case city_municipalities
     case communes
     case counties
     case departments
@@ -60,6 +61,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .cantons: return "Canton"
         case .chartered_cities: return "Charter City"
         case .cities: return "City"
+        case .city_municipalities: return "City Municipality"
         case .communes: return "Commune"
         case .counties: return "County"
         case .departments: return "Department"
@@ -104,6 +106,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
         case .cantons: return "Cantons"
         case .chartered_cities: return "Charter Cities"
         case .cities: return "Cities"
+        case .city_municipalities: return "City Municipalities"
         case .communes: return "Communes"
         case .counties: return "Counties"
         case .departments: return "Departments"
