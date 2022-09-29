@@ -701,6 +701,7 @@ public extension Country {
         
         case .madagascar: return SubdivisionsMadagascar.allCases
         case .malaysia: return SubdivisionsMalaysia.allCases
+        case .mali: return SubdivisionsMali.allCases
         case .mexico: return SubdivisionsMexico.allCases
         case .micronesia: return SubdivisionsMicronesia.allCases
         case .moldova: return SubdivisionsMoldova.allCases
