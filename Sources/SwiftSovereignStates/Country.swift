@@ -733,6 +733,7 @@ public extension Country {
         case .oman: return SubdivisionsOman.allCases
             
         case .pakistan: return SubdivisionsPakistan.allCases
+        case .palau: return SubdivisionsPalau.allCases
         case .palestine: return SubdivisionsPalestine.allCases
         case .panama: return SubdivisionsPanama.allCases
         case .papua_new_guinea: return SubdivisionsPapuaNewGuinea.allCases
