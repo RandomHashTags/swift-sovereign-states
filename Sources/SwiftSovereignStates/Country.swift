@@ -690,6 +690,7 @@ public extension Country {
         case .iran: return SubdivisionsIran.allCases
         case .israel: return SubdivisionsIsrael.allCases
         case .italy: return SubdivisionsItaly.allCases
+        case .ivory_coast: return SubdivisionsIvoryCoast.allCases
         
         case .jamaica: return SubdivisionsJamaica.allCases
         case .japan: return SubdivisionsJapan.allCases
