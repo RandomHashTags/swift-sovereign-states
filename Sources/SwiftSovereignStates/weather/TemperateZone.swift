@@ -44,9 +44,9 @@ public enum TemperateZone : String, CaseIterable {
             isAutumn = month >= 9 && month < 12
             break
         case .solar:
-            isSpring = month >= 2 && (month < 5 || month == 4 && day <= 30)
-            isSummer = month >= 5 && (month < 8 || month == 7 && day <= 31)
-            isAutumn = month >= 8 && (month < 11 || month == 10 && day <= 31)
+            isSpring = month >= 2 && month < 5
+            isSummer = month >= 5 && month < 8
+            isAutumn = month >= 8 && month < 11
             return WeatherSeason.summer
         }
         let season:WeatherSeason = isSpring ? .spring : isSummer ? .summer : isAutumn ? .autumn : .winter
