@@ -8,19 +8,30 @@
 import Foundation
 
 public protocol SovereignRegion { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
+    /// The unique identifier of the SovereignRegion, in relation to other administrative regions of the same type.
     func getIdentifier() -> String
+    /// The unique identifier of this SovereignRegion used for caching.
     func getCacheID() -> String
+    /// Cached strings this SovereignRegion is commonly recognized by.
     func getKeywords() -> [String]
+    /// Additional keywords this SovereignRegion should be recognized by.
     func getAdditionalKeywords() -> [String]?
+    /// Whether this SovereignRegion is mentioned or not in the `string`.
     func isMentioned(in string: String, exact: Bool) -> Bool
     
+    /// The name of this SovereignRegion as it is comonly known as internationally.
     func getShortName() -> String
+    /// Where the decimal point `(.)` should be located in the ``getShortName()-7cmmc``.
     func getShortNameDecimalSeparatorIndex() -> Int?
+    /// The real name of this SovereignRegion. Usually only used if this SovereignRegion's legal name contains accents, hyphens, commas, or other special characters.
     func getRealName() -> String?
     func getConditionalName() -> String?
+    /// The official names this SovereignRegion legally identifies as.
     func getOfficialNames() -> [String]?
+    /// The names of this SovereignRegion is also known by.
     func getAliases() -> [String]?
     
+    /// This SovereignRegion's official government website URL.
     func getGovernmentWebsite() -> String?
     
     func getFlagURL() -> String?
@@ -29,7 +40,9 @@ public protocol SovereignRegion { // https://en.wikipedia.org/wiki/Category:Admi
     func getWikipediaURLPrefix() -> String?
     func getWikipediaURLSuffix() -> String?
     
+    /// All the time zones this SovereignRegion recognizes within its administrative borders.
     func getTimeZones() -> [SovereignStateTimeZone]?
+    /// All temperate zones this SovereignRegion falls under within its administrative borders.
     func getTemperateZones() -> [TemperateZone]?
 }
 
@@ -39,6 +52,7 @@ public extension SovereignRegion where Self : RawRepresentable, RawValue == Stri
     }
 }
 public extension SovereignRegion {
+    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``getCacheID()``.
     func isEqual(_ sovereignRegion: any SovereignRegion) -> Bool {
         return getCacheID().elementsEqual(sovereignRegion.getCacheID())
     }
@@ -133,14 +147,22 @@ public extension SovereignRegion {
     func getTimeZones() -> [SovereignStateTimeZone]? {
         return nil
     }
-    func getTime(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style) -> String? {
+    
+    /// The formatted time of the first SovereignRegion's time zone, with a custom date and time style.
+    func getTime(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String? {
         guard let timezone:TimeZone = getTimeZones()?.first?.getTimeZone() else { return nil }
-        return SovereignRegions.formatTime(date: date, timeZone: timezone, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: true)
+        return SovereignRegions.formatTime(date: date, timeZone: timezone, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: showAbbreviation)
+    }
+    /// All formatted times of the SovereignRegion's time zones, with custom date and time styles.
+    func getTimes(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> [String]? {
+        guard let timezones:[TimeZone] = getTimeZones()?.compactMap({ $0.getTimeZone() }) else { return nil }
+        return timezones.map({ SovereignRegions.formatTime(date: date, timeZone: $0, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: showAbbreviation) })
     }
     
     func getTemperateZones() -> [TemperateZone]? {
         return nil
     }
+    /// The season this SovereignRegion is experiencing at a specific month and day.
     func getSeason(type: WeatherSeasonType = .astronomical, month: Int, day: Int) -> WeatherSeason? {
         return getTemperateZones()?.first?.getSeason(type: type, month: month, day: day)
     }

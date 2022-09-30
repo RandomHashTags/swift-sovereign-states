@@ -272,6 +272,7 @@ public enum Country : String, CaseIterable, SovereignState {
     
     case puerto_rico
     
+    /// Returns all countries that are mentioned in the `string`.
     public static func getAllMentioned(_ string: String, cache: Bool = true) -> [Country]? {
         let stringLowercase:String = string.lowercased()
         if let cached:[Country] = SwiftSovereignStateCacheCountries.mentioned[stringLowercase] {
@@ -283,6 +284,7 @@ public enum Country : String, CaseIterable, SovereignState {
         }
         return countries.isEmpty ? nil : countries
     }
+    /// Returns the first country that is mentioned in the `string`.
     public static func valueOf(_ string: String, cache: Bool = true) -> Country? {
         let stringLowercase:String = string.lowercased()
         if let cached:Country = SwiftSovereignStateCacheCountries.valueOf[stringLowercase] {
@@ -294,8 +296,9 @@ public enum Country : String, CaseIterable, SovereignState {
         }
         return country
     }
-    public static func valueOfIdentifier(_ string: String) -> Country? {
-        return Country.allCases.first(where: { string.elementsEqual($0.getIdentifier()) })
+    /// Returns the country that identifies with the specified identifier.
+    public static func valueOfIdentifier(_ identifier: String) -> Country? {
+        return Country.allCases.first(where: { identifier.elementsEqual($0.getIdentifier()) })
     }
     
     public func getCacheID() -> String {
@@ -440,6 +443,7 @@ public enum Country : String, CaseIterable, SovereignState {
         }
     }
     
+    /// Whether or not this Country is recognized by the United Nations as a sovereign state member.
     public func isUNMember() -> Bool {
         switch self {
         case .abkhazia,
@@ -493,6 +497,7 @@ public enum Country : String, CaseIterable, SovereignState {
             return true
         }
     }
+    /// Whether or not this Country is only recognized by the United Nations as a sovereign state.
     public func isUNObserverState() -> Bool {
         return self == .palestine || self == .vatican_city
     }
@@ -521,12 +526,14 @@ public enum Country : String, CaseIterable, SovereignState {
         return SovereignStateGovernmentWebsite.get(self)
     }
     
+    /// The unicode flag for this Country.
     public func getFlagEmoji() -> String? {
         return SovereignStateFlagEmoji.get(self)
     }
     public func getTimeZones() -> [SovereignStateTimeZone]? {
         return SovereignStateTimeZone.get(self)
     }
+    /// The official currencies used within this country.
     public func getCurrencies() -> [Currency]? {
         return SovereignStateCurrencies.get(self)
     }
@@ -614,6 +621,7 @@ public enum Country : String, CaseIterable, SovereignState {
 }
 
 public extension Country {
+    /// The level-1 administrative units this Country claims territorial ownership of.
     func getSubdivisions() -> [any SovereignStateSubdivision]? {
         switch self {
         case .afghanistan: return SubdivisionsAfghanistan.allCases
