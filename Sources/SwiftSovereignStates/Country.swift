@@ -682,6 +682,7 @@ public extension Country {
         case .honduras: return SubdivisionsHonduras.allCases
         case .hungary: return SubdivisionsHungary.allCases
         
+        case .iceland: return SubdivisionsIceland.allCases
         case .india: return SubdivisionsIndia.allCases
         case .indonesia: return SubdivisionsIndonesia.allCases
         case .ireland: return SubdivisionsIreland.allCases
