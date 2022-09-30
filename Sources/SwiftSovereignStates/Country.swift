@@ -737,6 +737,7 @@ public extension Country {
         case .palestine: return SubdivisionsPalestine.allCases
         case .panama: return SubdivisionsPanama.allCases
         case .papua_new_guinea: return SubdivisionsPapuaNewGuinea.allCases
+        case .paraguay: return SubdivisionsParaguay.allCases
         case .peru: return SubdivisionsPeru.allCases
         case .poland: return SubdivisionsPoland.allCases
         case .portugal: return SubdivisionsPortugal.allCases
