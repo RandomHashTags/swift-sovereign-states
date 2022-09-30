@@ -103,10 +103,10 @@ public extension SovereignRegion {
     func getFlagURL() -> String? {
         guard let id:String = getFlagURLWikipediaSVGID() else { return nil }
         let idLowercase:String = id.lowercased()
-        let values:[String] = id.components(separatedBy: "/")
-        let type:String = id.starts(with: "en") ? "en" : "commons"
+        let values:[String] = id.components(separatedBy: "/"), lastValue:String = values[values.count-1]
+        let isEN:Bool = id.starts(with: "en"), type:String = isEN ? "en" : "commons", offset:Int = isEN ? 1 : 0
         let hasExtension:Bool = idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif")
-        return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + urlEncoded(id.replacingOccurrences(of: "en/", with: "") + (hasExtension ? "" : ".svg") + "/%quality%px-" + values[values.count-1].description + (hasExtension ? "" : ".svg.png"))
+        return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + values[offset] + "/" + values[offset + 1] + "/" + urlEncoded(lastValue) + (hasExtension ? "" : ".svg") + "/%quality%px-" + lastValue + (hasExtension ? "" : ".svg.png")
     }
     func getFlagURLWikipediaSVGID() -> String? {
         return nil
@@ -120,7 +120,7 @@ public extension SovereignRegion {
             customSuffix = customSuffix.suffix(customSuffix.count-1).description
         }
         let hasSuffix:Bool = !customSuffix.isEmpty
-        return "https://en.wikipedia.org/wiki/" + urlEncoded(prefix + name + (hasSuffix ? "_" + customSuffix : ""))
+        return "https://en.wikipedia.org/wiki/" + prefix + urlEncoded(name) + (hasSuffix ? "_" + customSuffix : "")
     }
     func getWikipediaURLPrefix() -> String? {
         return nil

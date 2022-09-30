@@ -7,12 +7,14 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[[String]] = Country.allCases.map({ $0.getKeywords() })
         let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.getKeywords() })
         let _:[[String]] = SovereignStateCities.all.map({ $0.getKeywords() })
+        //await benchmark()
         measure {
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baja California, California? (Wisconsin) Texas's, Maine, New York; Kentucky.", cache: false)
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: false)
             
-            let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: false)
-            //let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Kasson", cache: false)
+            //let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: false)
+            let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Kasson", cache: false)
+            //let _:Country? = Country.valueOfIdentifier("united_states")
         }
         
         testWikipediaURLs()
@@ -21,6 +23,14 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testCityMentions()
         testNeighbors()
         testCities()
+    }
+    
+    private func benchmark() async {
+        for _ in 1...20 {
+            let started:Double = CACurrentMediaTime()
+            let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: false)
+            print("SwiftSovereignStates;benchmark;took " + (CACurrentMediaTime() - started).description + "ms")
+        }
     }
     
     private func testWikipediaURLs() {
