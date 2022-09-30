@@ -697,6 +697,7 @@ public extension Country {
         case .kazakhstan: return SubdivisionsKazakhstan.allCases
         case .kenya: return SubdivisionsKenya.allCases
         case .kuwait: return SubdivisionsKuwait.allCases
+        case .kyrgyzstan: return SubdivisionsKyrgyzstan.allCases
         
         case .laos: return SubdivisionsLaos.allCases
         case .latvia: return SubdivisionsLatvia.allCases
