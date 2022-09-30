@@ -30,6 +30,7 @@ public protocol SovereignRegion { // https://en.wikipedia.org/wiki/Category:Admi
     func getWikipediaURLSuffix() -> String?
     
     func getTimeZones() -> [SovereignStateTimeZone]?
+    func getTemperateZones() -> [TemperateZone]?
 }
 
 public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
@@ -103,10 +104,10 @@ public extension SovereignRegion {
     func getFlagURL() -> String? {
         guard let id:String = getFlagURLWikipediaSVGID() else { return nil }
         let idLowercase:String = id.lowercased()
-        let values:[String] = id.components(separatedBy: "/"), lastValue:String = values[values.count-1]
+        let values:[String] = id.components(separatedBy: "/"), lastValue:String = SovereignRegions.urlEncoded(values[values.count-1])
         let isEN:Bool = id.starts(with: "en"), type:String = isEN ? "en" : "commons", offset:Int = isEN ? 1 : 0
         let hasExtension:Bool = idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif")
-        return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + values[offset] + "/" + values[offset + 1] + "/" + urlEncoded(lastValue) + (hasExtension ? "" : ".svg") + "/%quality%px-" + lastValue + (hasExtension ? "" : ".svg.png")
+        return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + values[offset] + "/" + values[offset + 1] + "/" + lastValue + (hasExtension ? "" : ".svg") + "/%quality%px-" + lastValue + (hasExtension ? "" : ".svg.png")
     }
     func getFlagURLWikipediaSVGID() -> String? {
         return nil
@@ -120,7 +121,7 @@ public extension SovereignRegion {
             customSuffix = customSuffix.suffix(customSuffix.count-1).description
         }
         let hasSuffix:Bool = !customSuffix.isEmpty
-        return "https://en.wikipedia.org/wiki/" + prefix + urlEncoded(name) + (hasSuffix ? "_" + customSuffix : "")
+        return "https://en.wikipedia.org/wiki/" + prefix + SovereignRegions.urlEncoded(name) + (hasSuffix ? "_" + customSuffix : "")
     }
     func getWikipediaURLPrefix() -> String? {
         return nil
@@ -132,9 +133,16 @@ public extension SovereignRegion {
     func getTimeZones() -> [SovereignStateTimeZone]? {
         return nil
     }
+    func getTime(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style) -> String? {
+        guard let timezone:TimeZone = getTimeZones()?.first?.getTimeZone() else { return nil }
+        return SovereignRegions.formatTime(date: date, timeZone: timezone, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: true)
+    }
     
-    private func urlEncoded(_ string: String) -> String {
-        return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? string
+    func getTemperateZones() -> [TemperateZone]? {
+        return nil
+    }
+    func getSeason(type: WeatherSeasonType = .astronomical, month: Int, day: Int) -> WeatherSeason? {
+        return getTemperateZones()?.first?.getSeason(type: type, month: month, day: day)
     }
 }
 
@@ -169,6 +177,20 @@ internal enum SovereignRegions {
             guard !excludedWords.contains(value) else { return value }
             return value.first!.uppercased() + value.suffix(value.count-1)
         }).joined(separator: " ")
+    }
+    
+    fileprivate static func formatTime(date: Date, timeZone: TimeZone, timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String {
+        let formatter:DateFormatter = DateFormatter()
+        formatter.timeStyle = timeStyle
+        formatter.dateStyle = dateStyle
+        formatter.timeZone = timeZone
+        formatter.calendar = Calendar.current
+        let string:String = formatter.string(from: date)
+        guard showAbbreviation, let abbreviation:String = timeZone.abbreviation() else { return string }
+        return string + " " + abbreviation
+    }
+    fileprivate static func urlEncoded(_ string: String) -> String {
+        return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? string
     }
     
     static func doesEqual(string: String, values: [String]) -> Bool {
