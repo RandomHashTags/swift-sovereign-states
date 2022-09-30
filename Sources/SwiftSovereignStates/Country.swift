@@ -701,6 +701,7 @@ public extension Country {
         case .laos: return SubdivisionsLaos.allCases
         case .latvia: return SubdivisionsLatvia.allCases
         case .lebanon: return SubdivisionsLebanon.allCases
+        case .lesotho: return SubdivisionsLesotho.allCases
         case .liberia: return SubdivisionsLiberia.allCases
         case .libya: return SubdivisionsLibya.allCases
         case .liechtenstein: return SubdivisionsLiechtenstein.allCases
