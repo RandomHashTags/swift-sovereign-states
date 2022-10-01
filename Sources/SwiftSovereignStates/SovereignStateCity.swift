@@ -59,6 +59,9 @@ public enum SovereignStateCities {
         }
         return cities.isEmpty ? nil : cities
     }
+    public static func valueOfCacheID(_ string: String) -> (any SovereignStateCity)? {
+        return all.first(where: { string.elementsEqual($0.getCacheID()) })
+    }
     // parallel
     public static func getAllMentionedParallel(_ string: String, cache: Bool = true) async -> [any SovereignStateCity]? {
         let stringLowercase:String = string.lowercased()
@@ -110,17 +113,17 @@ public enum SovereignStateCities {
 }
 
 public protocol SovereignStateCity : SovereignRegion {
-    /// The subdivsion that this city's administrative borders is located in.
+    /// The subdivsion that this city's administrative borders are located in.
     func getSubdivision() -> any SovereignStateSubdivision
     func getDefaultType() -> SovereignStateCityType
     func getType() -> SovereignStateCityType?
     /// Whether or not this city is the capital in relation to its subdivision (``getSubdivision()``).
     func isCapital() -> Bool
 }
+
 public extension SovereignStateCity {
     func getCacheID() -> String {
-        let subdivision = getSubdivision()
-        return subdivision.getCountry().getIdentifier() + "_" + subdivision.getIdentifier() + "_" + getIdentifier()
+        return getSubdivision().getCacheID() + "_" + getIdentifier()
     }
     
     func getDefaultType() -> SovereignStateCityType {
@@ -150,5 +153,94 @@ public extension SovereignStateSubdivision {
     }
     func valueOfCityIdentifier(_ string: String) -> (any SovereignStateCity)? {
         return getCities()?.first(where: { string.elementsEqual($0.getIdentifier()) })
+    }
+}
+
+public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWrapper {
+    public let city:any SovereignStateCity
+    
+    public init(_ city: any SovereignStateCity) {
+        self.city = city
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container:SingleValueDecodingContainer = try decoder.singleValueContainer()
+        let identifier:String = try container.decode(String.self)
+        city = SovereignStateCities.valueOfCacheID(identifier) ?? CitiesUnitedStatesMinnesota.kasson
+    }
+    
+    public func getIdentifier() -> String {
+        return city.getIdentifier()
+    }
+    public func getCacheID() -> String {
+        return city.getCacheID()
+    }
+    public func getKeywords() -> [String] {
+        return city.getKeywords()
+    }
+    public func getAdditionalKeywords() -> [String]? {
+        return city.getAdditionalKeywords()
+    }
+    public func isMentioned(in string: String, exact: Bool) -> Bool {
+        return city.isMentioned(in: string, exact: exact)
+    }
+    
+    public func getShortName() -> String {
+        return city.getShortName()
+    }
+    public func getShortNameDecimalSeparatorIndex() -> Int? {
+        return city.getShortNameDecimalSeparatorIndex()
+    }
+    public func getRealName() -> String? {
+        return city.getRealName()
+    }
+    public func getConditionalName() -> String? {
+        return city.getConditionalName()
+    }
+    public func getOfficialNames() -> [String]? {
+        return city.getOfficialNames()
+    }
+    public func getAliases() -> [String]? {
+        return city.getAliases()
+    }
+    
+    public func getGovernmentWebsite() -> String? {
+        return city.getGovernmentWebsite()
+    }
+    
+    public func getFlagURL() -> String? {
+        return city.getFlagURL()
+    }
+    public func getFlagURLWikipediaSVGID() -> String? {
+        return city.getFlagURLWikipediaSVGID()
+    }
+    public func getWikipediaURL() -> String {
+        return city.getWikipediaURL()
+    }
+    public func getWikipediaURLPrefix() -> String? {
+        return city.getWikipediaURLPrefix()
+    }
+    public func getWikipediaURLSuffix() -> String? {
+        return city.getWikipediaURLSuffix()
+    }
+    
+    public func getTimeZones() -> [SovereignStateTimeZone]? {
+        return city.getTimeZones()
+    }
+    public func getTemperateZones() -> [TemperateZone]? {
+        return city.getTemperateZones()
+    }
+    
+    public func getSubdivision() -> any SovereignStateSubdivision {
+        return city.getSubdivision()
+    }
+    public func getDefaultType() -> SovereignStateCityType {
+        return city.getDefaultType()
+    }
+    public func getType() -> SovereignStateCityType? {
+        return city.getType()
+    }
+    public func isCapital() -> Bool {
+        return city.isCapital()
     }
 }

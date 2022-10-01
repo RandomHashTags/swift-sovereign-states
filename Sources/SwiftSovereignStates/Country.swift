@@ -8,7 +8,7 @@
 import Foundation
 
 public enum Country : String, CaseIterable, SovereignState {
-    case abkhazia = "abkhazia"
+    case abkhazia
     case afghanistan
     case albania
     case algeria
@@ -302,7 +302,7 @@ public enum Country : String, CaseIterable, SovereignState {
     }
     
     public func getCacheID() -> String {
-        return rawValue
+        return String(describing: self)
     }
     
     public func getAdditionalKeywords() -> [String]? {

@@ -60,6 +60,9 @@ public enum SovereignStateSubdivisions {
         }
         return subdivision
     }
+    public static func valueOfCacheID(_ string: String) -> (any SovereignStateSubdivision)? {
+        return all.first(where: { string.elementsEqual($0.getCacheID()) })
+    }
     // parallel
     public static func getAllMentionedParallel(_ string: String, cache: Bool = true) async -> [any SovereignStateSubdivision]? {
         let stringLowercase:String = string.lowercased()
@@ -160,19 +163,17 @@ public extension SovereignStateSubdivision {
     }
 }
 
-public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Hashable {
-    public static func == (lhs: SovereignStateSubdivisionWrapper, rhs: SovereignStateSubdivisionWrapper) -> Bool {
-        return lhs.getCacheID().elementsEqual(rhs.getCacheID())
-    }
-    
-    let subdivision:any SovereignStateSubdivision
+public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, SovereignRegionWrapper {
+    public let subdivision:any SovereignStateSubdivision
     
     public init(_ subdivision: any SovereignStateSubdivision) {
         self.subdivision = subdivision
     }
     
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(getCacheID())
+    public init(from decoder: Decoder) throws {
+        let container:SingleValueDecodingContainer = try decoder.singleValueContainer()
+        let identifier:String = try container.decode(String.self)
+        subdivision = SovereignStateSubdivisions.valueOfCacheID(identifier) ?? SubdivisionsUnitedStates.minnesota
     }
     
     public func getIdentifier() -> String {
@@ -232,6 +233,9 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Hash
     
     public func getTimeZones() -> [SovereignStateTimeZone]? {
         return subdivision.getTimeZones()
+    }
+    public func getTemperateZones() -> [TemperateZone]? {
+        return subdivision.getTemperateZones()
     }
     
     public func getISOAlpha2() -> String? {

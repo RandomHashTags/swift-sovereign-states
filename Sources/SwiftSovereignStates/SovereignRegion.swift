@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SovereignRegion { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
+public protocol SovereignRegion : Codable { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     /// The unique identifier of the SovereignRegion, in relation to other administrative regions of the same type.
     func getIdentifier() -> String
     /// The unique identifier of this SovereignRegion used for caching.
@@ -42,18 +42,22 @@ public protocol SovereignRegion { // https://en.wikipedia.org/wiki/Category:Admi
     
     /// All the time zones this SovereignRegion recognizes within its administrative borders.
     func getTimeZones() -> [SovereignStateTimeZone]?
-    /// All temperate zones this SovereignRegion falls under within its administrative borders.
+    /// All temperate zones this SovereignRegion contains within its administrative borders.
     func getTemperateZones() -> [TemperateZone]?
 }
 
 public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
+    var rawValue : String { return getCacheID() }
+    
     func getIdentifier() -> String {
-        return rawValue
+        return String(describing: self)
     }
 }
+
 public extension SovereignRegion {
     /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``getCacheID()``.
-    func isEqual(_ sovereignRegion: any SovereignRegion) -> Bool {
+    func isEqual(_ sovereignRegion: (any SovereignRegion)?) -> Bool {
+        guard let sovereignRegion:any SovereignRegion = sovereignRegion else { return false }
         return getCacheID().elementsEqual(sovereignRegion.getCacheID())
     }
     
@@ -249,5 +253,24 @@ internal enum SovereignRegions {
     }()
     private static func doesContain(string: String, regex: String) -> Bool {
         return string.range(of: regex, options: .regularExpression) != nil
+    }
+}
+
+
+public protocol SovereignRegionWrapper : Hashable, Codable {
+    func getCacheID() -> String
+}
+public extension SovereignRegionWrapper {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.getCacheID().elementsEqual(rhs.getCacheID())
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(getCacheID())
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container:SingleValueEncodingContainer = encoder.singleValueContainer()
+        try container.encode(getCacheID())
     }
 }
