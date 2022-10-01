@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SwiftSovereignStates'
-  s.version = '1.0.5'
+  s.version = '1.0.6'
   s.summary = 'Highly performant and efficient Swift library used to implement Sovereign States, Subdivisions, and other relevant information into your Swift projects.'
   s.homepage = 'https://github.com/RandomHashTags/swift-sovereign-states'
   s.license = { :type => 'CC0 1.0 Universal', :file => 'LICENSE.txt' }

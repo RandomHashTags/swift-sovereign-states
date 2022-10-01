@@ -113,7 +113,7 @@ public enum SovereignStateCities {
 }
 
 public protocol SovereignStateCity : SovereignRegion {
-    /// The subdivsion that this city's administrative borders are located in.
+    /// The subdivision that this city's administrative borders are located in.
     func getSubdivision() -> any SovereignStateSubdivision
     func getDefaultType() -> SovereignStateCityType
     func getType() -> SovereignStateCityType?
