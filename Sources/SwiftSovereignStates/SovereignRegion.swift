@@ -263,8 +263,7 @@ internal enum SovereignRegions {
 }
 
 
-public protocol SovereignRegionWrapper : Hashable, Codable {
-    func getCacheID() -> String
+public protocol SovereignRegionWrapper : SovereignRegion {
 }
 public extension SovereignRegionWrapper {
     static func == (lhs: Self, rhs: Self) -> Bool {
