@@ -57,11 +57,7 @@ public enum SubdivisionsLatvia : String, CaseIterable, SovereignStateSubdivision
         return Country.latvia
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.municipalities
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .daugavpils,
                 .jurmala,
@@ -72,7 +68,7 @@ public enum SubdivisionsLatvia : String, CaseIterable, SovereignStateSubdivision
                 .ventspils_city:
             return SovereignStateSubdivisionType.cities
         default:
-            return nil
+            return SovereignStateSubdivisionType.municipalities
         }
     }
     

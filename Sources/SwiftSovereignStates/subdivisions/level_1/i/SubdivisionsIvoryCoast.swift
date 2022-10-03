@@ -28,16 +28,13 @@ public enum SubdivisionsIvoryCoast : String, CaseIterable, SovereignStateSubdivi
         return Country.ivory_coast
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.districts
-    }
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .abidjan,
                 .yamoussoukro:
             return SovereignStateSubdivisionType.autonomous_districts
         default:
-            return nil
+            return SovereignStateSubdivisionType.districts
         }
     }
     

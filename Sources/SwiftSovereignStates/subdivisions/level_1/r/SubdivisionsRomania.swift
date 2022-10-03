@@ -56,16 +56,12 @@ public enum SubdivisionsRomania : String, CaseIterable, SovereignStateSubdivisio
         return Country.romania
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.counties
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .bucharest:
             return SovereignStateSubdivisionType.cities
         default:
-            return nil
+            return SovereignStateSubdivisionType.counties
         }
     }
     

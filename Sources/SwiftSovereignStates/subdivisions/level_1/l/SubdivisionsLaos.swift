@@ -31,14 +31,12 @@ public enum SubdivisionsLaos : String, CaseIterable, SovereignStateSubdivision {
         return Country.laos
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.provinces
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
-        case .vientiane_prefecture: return SovereignStateSubdivisionType.prefectures
-        default: return nil
+        case .vientiane_prefecture:
+            return SovereignStateSubdivisionType.prefectures
+        default:
+            return SovereignStateSubdivisionType.provinces
         }
     }
     

@@ -30,17 +30,13 @@ public enum SubdivisionsNicaragua : String, CaseIterable, SovereignStateSubdivis
         return Country.nicaragua
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.departments
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .north_caribbean_coast,
                 .south_caribbean_coast:
             return SovereignStateSubdivisionType.autonomous_regions
         default:
-            return nil
+            return SovereignStateSubdivisionType.departments
         }
     }
     

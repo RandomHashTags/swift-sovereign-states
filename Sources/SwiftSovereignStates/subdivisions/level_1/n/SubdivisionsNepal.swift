@@ -20,7 +20,7 @@ public enum SubdivisionsNepal : String, CaseIterable, SovereignStateSubdivision 
         return Country.nepal
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
+    public func getType() -> SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
     

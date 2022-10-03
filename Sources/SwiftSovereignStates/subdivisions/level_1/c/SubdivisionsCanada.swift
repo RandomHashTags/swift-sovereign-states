@@ -27,18 +27,14 @@ public enum SubdivisionsCanada : String, CaseIterable, SovereignStateSubdivision
         return Country.canada
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.provinces
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .northwest_territories,
                 .nunavut,
                 .yukon:
             return .territories
         default:
-            return nil
+            return SovereignStateSubdivisionType.provinces
         }
     }
     

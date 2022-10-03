@@ -35,18 +35,14 @@ public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSub
         return Country.papua_new_guinea
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.provinces
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .bougainville:
             return SovereignStateSubdivisionType.autonomous_regions
         case .national_capital_district:
             return SovereignStateSubdivisionType.incorporated_areas
         default:
-            return nil
+            return SovereignStateSubdivisionType.provinces
         }
     }
     

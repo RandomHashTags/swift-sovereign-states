@@ -30,18 +30,14 @@ public enum SubdivisionsMalaysia : String, CaseIterable, SovereignStateSubdivisi
         return Country.malaysia
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.states
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .kuala_lumpur,
                 .labuan,
                 .putrajaya:
             return .federal_territories
         default:
-            return nil
+            return SovereignStateSubdivisionType.states
         }
     }
     

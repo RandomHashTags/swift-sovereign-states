@@ -25,7 +25,7 @@ public enum SubdivisionsJersey : String, CaseIterable, SovereignStateSubdivision
         return Country.jersey
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
+    public func getType() -> SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.parishes
     }
     

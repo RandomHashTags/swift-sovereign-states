@@ -21,15 +21,12 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, CaseIterable, SovereignStat
         return Country.sao_tome_and_principe
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.districts
-    }
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .autonomous_region_of_principe:
             return SovereignStateSubdivisionType.autonomous_regions
         default:
-            return nil
+            return SovereignStateSubdivisionType.districts
         }
     }
     

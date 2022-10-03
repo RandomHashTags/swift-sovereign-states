@@ -27,14 +27,10 @@ public enum SubdivisionsCzechRepublic : String, CaseIterable, SovereignStateSubd
         return Country.czech_republic
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.regions
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         default:
-            return nil
+            return SovereignStateSubdivisionType.regions
         }
     }
     

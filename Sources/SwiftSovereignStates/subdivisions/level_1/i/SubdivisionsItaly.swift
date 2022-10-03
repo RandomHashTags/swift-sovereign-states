@@ -33,11 +33,7 @@ public enum SubdivisionsItaly : String, CaseIterable, SovereignStateSubdivision 
         return Country.italy
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.regions
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .aosta_valley,
                 .friuli_venezla_giulia,
@@ -46,7 +42,7 @@ public enum SubdivisionsItaly : String, CaseIterable, SovereignStateSubdivision 
                 .trentino_south_tyrol:
             return SovereignStateSubdivisionType.autonomous_regions
         default:
-            return nil
+            return SovereignStateSubdivisionType.regions
         }
     }
     

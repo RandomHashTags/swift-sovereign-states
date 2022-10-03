@@ -31,7 +31,7 @@ public enum SubdivisionsNorway : String, CaseIterable, SovereignStateSubdivision
         return Country.norway
     }
     
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .jan_mayen,
                 .svalbard:
@@ -41,12 +41,8 @@ public enum SubdivisionsNorway : String, CaseIterable, SovereignStateSubdivision
                 .queen_maud_land:
             return SovereignStateSubdivisionType.dependencies
         default:
-            return nil
+            return SovereignStateSubdivisionType.counties
         }
-    }
-    
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.counties
     }
     
     public func getRealName() -> String? {

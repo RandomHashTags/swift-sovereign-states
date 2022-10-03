@@ -81,7 +81,7 @@ public enum SubdivisionsIceland : String, CaseIterable, SovereignStateSubdivisio
         return Country.iceland
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
+    public func getType() -> SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.municipalities
     }
     

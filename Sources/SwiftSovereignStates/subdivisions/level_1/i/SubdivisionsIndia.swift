@@ -50,11 +50,7 @@ public enum SubdivisionsIndia : String, CaseIterable, SovereignStateSubdivision 
         return Country.india
     }
     
-    public func getDefaultType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.states
-    }
-    
-    public func getType() -> SovereignStateSubdivisionType? {
+    public func getType() -> SovereignStateSubdivisionType {
         switch self {
         case .andaman_and_nicobar_islands,
                 .chandigarh,
@@ -66,7 +62,7 @@ public enum SubdivisionsIndia : String, CaseIterable, SovereignStateSubdivision 
                 .puducherry:
             return SovereignStateSubdivisionType.union_territories
         default:
-            return nil
+            return SovereignStateSubdivisionType.states
         }
     }
     
