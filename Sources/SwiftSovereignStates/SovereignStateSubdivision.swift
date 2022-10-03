@@ -125,12 +125,12 @@ public extension Country {
 }
 
 public protocol SovereignStateSubdivision : SovereignState { // https://en.wikipedia.org/wiki/List_of_first-level_administrative_divisions_by_country
-    /// The country this SovereignStateSubdivision's administrative borders are located in.
+    /// The country this subdivision's administrative borders are claimed by.
     func getCountry() -> Country
     func getType() -> SovereignStateSubdivisionType
     func getTypeSuffix() -> String
     
-    /// The neighboring SovereignStateSubdivisions of this SovereignStateSubdivision, in relation the its administrative borders.
+    /// The neighboring subdivisions, in relation the its administrative borders.
     func getNeighbors() -> [any SovereignStateSubdivision]?
     /// The level-3 administrative units this subdivision contains.
     func getCities() -> [any SovereignStateCity]?
