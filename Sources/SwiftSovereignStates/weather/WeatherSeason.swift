@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum WeatherSeason : String, CaseIterable {
+public enum WeatherSeason : CaseIterable {
     case autumn
     case spring
     case summer

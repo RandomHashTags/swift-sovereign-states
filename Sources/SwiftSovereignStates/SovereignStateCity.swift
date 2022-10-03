@@ -122,6 +122,10 @@ public protocol SovereignStateCity : SovereignRegion {
 }
 
 public extension SovereignStateCity {
+    init?(_ description: String) {
+        self = SovereignStateCities.valueOfCacheID(description) as! Self
+    }
+    
     func getCacheID() -> String {
         return getSubdivision().getCacheID() + "_" + getIdentifier()
     }

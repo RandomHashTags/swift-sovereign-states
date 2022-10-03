@@ -301,8 +301,12 @@ public enum Country : String, CaseIterable, SovereignState {
         return Country.allCases.first(where: { identifier.elementsEqual($0.getIdentifier()) })
     }
     
+    public init?(_ description: String) {
+        self = Country.valueOfIdentifier(description)!
+    }
+    
     public func getCacheID() -> String {
-        return String(describing: self)
+        return rawValue
     }
     
     public func getAdditionalKeywords() -> [String]? {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SovereignRegion : Codable { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
+public protocol SovereignRegion : Codable, LosslessStringConvertible { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     /// The unique identifier of the SovereignRegion, in relation to other administrative regions of the same type.
     func getIdentifier() -> String
     /// The unique identifier of this SovereignRegion used for caching.
@@ -47,11 +47,17 @@ public protocol SovereignRegion : Codable { // https://en.wikipedia.org/wiki/Cat
 }
 
 public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
-    var rawValue : String { return getCacheID() }
-    
     func getIdentifier() -> String {
-        return String(describing: self)
+        return rawValue
     }
+    
+    func encode(to encoder: Encoder) throws {
+        var container:SingleValueEncodingContainer = encoder.singleValueContainer()
+        try container.encode(getCacheID())
+    }
+}
+public extension SovereignRegion where Self : LosslessStringConvertible {
+    var description: String { return getCacheID() }
 }
 
 public extension SovereignRegion {

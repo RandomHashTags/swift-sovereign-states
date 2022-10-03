@@ -138,6 +138,10 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
 }
 
 public extension SovereignStateSubdivision {
+    init?(_ description: String) {
+        self = SovereignStateSubdivisions.valueOfCacheID(description) as! Self
+    }
+    
     func getCacheID() -> String {
         return getCountry().getIdentifier() + "_" + getIdentifier()
     }

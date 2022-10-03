@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ClimateClassificationSystem : String, CaseIterable {
+public enum ClimateClassificationSystem : CaseIterable {
     case aridity
     case alisov
     case berg

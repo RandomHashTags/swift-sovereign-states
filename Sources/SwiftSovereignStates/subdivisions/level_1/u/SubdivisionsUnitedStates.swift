@@ -209,7 +209,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
                 .vermont,
                 .virginia,
                 .wisconsin:
-            return "https://" + rawValue + ".gov"
+            return "https://" + getIdentifier() + ".gov"
         case .florida: return "https://www.myflorida.com"
         case .massachusetts: return "https://www.mass.gov"
         case .west_virginia: return "https://www.wv.gov"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum TemperateZone : String, CaseIterable {
+public enum TemperateZone {
     case northern_frigid
     case northern_temperate
     case northern_subtropical
@@ -47,7 +47,6 @@ public enum TemperateZone : String, CaseIterable {
             isSpring = month >= 2 && month < 5
             isSummer = month >= 5 && month < 8
             isAutumn = month >= 8 && month < 11
-            return WeatherSeason.summer
         }
         let season:WeatherSeason = isSpring ? .spring : isSummer ? .summer : isAutumn ? .autumn : .winter
         return northern ? season : season == .spring ? .autumn : season == .summer ? .winter : season == .autumn ? .spring : .summer
