@@ -302,7 +302,7 @@ public enum Country : String, CaseIterable, SovereignState {
     }
     
     public init?(_ description: String) {
-        self = Country.valueOfIdentifier(description)!
+        self = Country.valueOfIdentifier(description) ?? Country.united_states
     }
     
     public func getCacheID() -> String {

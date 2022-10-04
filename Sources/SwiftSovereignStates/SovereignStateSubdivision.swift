@@ -138,7 +138,7 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
 
 public extension SovereignStateSubdivision {
     init?(_ description: String) {
-        self = SovereignStateSubdivisions.valueOfCacheID(description) as! Self
+        self = (SovereignStateSubdivisions.valueOfCacheID(description) ?? SubdivisionsUnitedStates.minnesota) as! Self
     }
     
     func getCacheID() -> String {
