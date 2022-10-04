@@ -21,6 +21,7 @@ public enum SovereignStateSubdivisionType : CaseIterable {
     case cities
     case city_municipalities
     case communes
+    case councils
     case counties
     case departments
     case dependencies
@@ -68,6 +69,7 @@ public enum SovereignStateSubdivisionType : CaseIterable {
         case .cities: return "City"
         case .city_municipalities: return "City Municipality"
         case .communes: return "Commune"
+        case .councils: return "Council"
         case .counties: return "County"
         case .departments: return "Department"
         case .dependencies: return "Dependency"
@@ -116,6 +118,7 @@ public enum SovereignStateSubdivisionType : CaseIterable {
         case .cities: return "Cities"
         case .city_municipalities: return "City Municipalities"
         case .communes: return "Communes"
+        case .councils: return "Councils"
         case .counties: return "Counties"
         case .departments: return "Departments"
         case .dependencies: return "Dependencies"
