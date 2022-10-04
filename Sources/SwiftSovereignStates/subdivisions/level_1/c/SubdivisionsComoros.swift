@@ -26,4 +26,12 @@ public enum SubdivisionsComoros : String, CaseIterable, SovereignStateSubdivisio
         default: return nil
         }
     }
+    
+    public func getFlagURLWikipediaSVGID() -> String? {
+        switch self {
+        case .anjouan: return "a/a6/Flag_of_Anjouan_%28official%29"
+        case .grande_comore: return "3/33/Flag_of_Grande_Comore"
+        case .moheli: return "c/c2/Flag_of_Mohéli_%28official%29"
+        }
+    }
 }

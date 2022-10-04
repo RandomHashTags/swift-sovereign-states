@@ -658,6 +658,7 @@ public extension Country {
         case .cambodia: return SubdivisionsCambodia.allCases
         case .cameroon: return SubdivisionsCameroon.allCases
         case .canada: return SubdivisionsCanada.allCases
+        case .central_african_republic: return SubdivisionsCentralAfricanRepublic.allCases
         case .chad: return SubdivisionsChad.allCases
         case .chile: return SubdivisionsChile.allCases
         case .comoros: return SubdivisionsComoros.allCases
