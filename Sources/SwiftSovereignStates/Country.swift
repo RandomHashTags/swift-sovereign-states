@@ -776,8 +776,10 @@ public extension Country {
         case .tanzania: return SubdivisionsTanzania.allCases
         case .thailand: return SubdivisionsThailand.allCases
         case .timor_leste: return SubdivisionsTimorLeste.allCases
+        case .togo: return SubdivisionsTogo.allCases
         case .tonga: return SubdivisionsTonga.allCases
         case .tunisia: return SubdivisionsTunisia.allCases
+        case .turkey: return SubdivisionsTurkey.allCases
         case .turkmenistan: return SubdivisionsTurkmenistan.allCases
         
         case .ukraine: return SubdivisionsUkraine.allCases
