@@ -42,6 +42,7 @@ public enum SovereignStateSubdivisionType : CaseIterable {
     case provinces
     case regions
     case special_administrative_areas
+    case special_administrative_regions
     case special_cities
     case special_municipalities
     case special_self_governing_cities
@@ -88,6 +89,7 @@ public enum SovereignStateSubdivisionType : CaseIterable {
         case .provinces: return "Province"
         case .regions: return "Region"
         case .special_administrative_areas: return "Special Administrative Area"
+        case .special_administrative_regions: return "Special Administrative Region"
         case .special_cities: return "Special City"
         case .special_municipalities: return "Special Municipality"
         case .special_self_governing_cities: return "Special self-governing City"
@@ -135,6 +137,7 @@ public enum SovereignStateSubdivisionType : CaseIterable {
         case .provinces: return "Provinces"
         case .regions: return "Regions"
         case .special_administrative_areas: return "Special Administrative Areas"
+        case .special_administrative_regions: return "Special Administrative Regions"
         case .special_cities: return "Special Cities"
         case .special_municipalities: return "Special Municipalities"
         case .special_self_governing_cities: return "Special self-governing Cities"
