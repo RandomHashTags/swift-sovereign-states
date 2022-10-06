@@ -296,13 +296,20 @@ public enum Country : String, CaseIterable, SovereignState {
         }
         return country
     }
-    /// Returns the country that identifies with the specified identifier.
-    public static func valueOfIdentifier(_ identifier: String) -> Country? {
-        return Country.allCases.first(where: { identifier.elementsEqual($0.getIdentifier()) })
+    /// Returns the country that identifies with the specified Cache ID.
+    public static func valueOfCacheID(_ cacheID: String, cache: Bool = true) -> Country? {
+        if let country:Country? = SwiftSovereignStateCacheCountries.valueOfCacheID[cacheID] {
+            return country
+        }
+        let country:Country? = Country.allCases.first(where: { cacheID.elementsEqual($0.rawValue) })
+        if cache {
+            SwiftSovereignStateCacheCountries.valueOfCacheID[cacheID] = country
+        }
+        return country
     }
     
     public init?(_ description: String) {
-        guard let country:Country = Country.valueOfIdentifier(description) else { return nil }
+        guard let country:Country = Country.valueOfCacheID(description) else { return nil }
         self = country
     }
     
