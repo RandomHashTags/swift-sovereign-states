@@ -130,7 +130,8 @@ public protocol SovereignStateCity : SovereignRegion {
 
 public extension SovereignStateCity {
     init?(_ description: String) {
-        self = SovereignStateCities.valueOfCacheID(description) as! Self
+        guard let city:any SovereignStateCity = SovereignStateCities.valueOfCacheID(description) else { return nil }
+        self = city as! Self
     }
     
     func getCacheID() -> String {

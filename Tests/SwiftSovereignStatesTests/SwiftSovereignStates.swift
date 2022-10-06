@@ -9,14 +9,30 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[[String]] = SovereignStateCities.all.map({ $0.getKeywords() })
         
         let cache:Bool = true
-        try await benchmark(key: "SovereignStateCities.getAllMentionedParallel,cache=" + cache.description) {
-            let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
+        try await benchmark(key: "SovereignStateSubdivisions.getAllMentioned,cache=" + cache.description) {
+            let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
         }
         try await benchmark(key: "SovereignStateSubdivisions.valueOfCacheID,cache=" + cache.description) {
             let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID("united_states_minnesota", cache: cache)
         }
+        try await benchmark(key: "SovereignStateCities.getAllMentionedParallel,cache=" + cache.description) {
+            let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
+        }
+        try await benchmark(key: "SovereignStateCities.getAllMentioned,cache=" + cache.description) {
+            let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
+        }
         try await benchmark(key: "SovereignStateCities.valueOfCacheID,cache=" + cache.description) {
             let _:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states_minnesota_kasson", cache: cache)
+        }
+        
+        try await benchmark(key: "Country.valueOfIdentifier") {
+            let _:Country? = Country.valueOfIdentifier("united_states")
+        }
+        try await benchmark(key: "Country.init(_ description)") {
+            let _:Country? = Country.init("united_states")
+        }
+        try await benchmark(key: "Country.init(rawValue)") {
+            let _:Country? = Country.init(rawValue: "united_states")
         }
         try await benchmark(key: "testCodable") {
             try self.testCodable()
@@ -42,11 +58,17 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     
     private func benchmark(key: String, _ code: @escaping () async throws -> Void) async throws {
-        for _ in 1...20 {
+        var timings:[Double] = [Double]()
+        for _ in 1...1_000 {
             let started:Double = CACurrentMediaTime()
             try await code()
-            print("SwiftSovereignStates;benchmark(" + key + ");took " + ((CACurrentMediaTime() - started) * 1_000).description + "ms")
+            timings.append((CACurrentMediaTime() - started) * 1_000)
         }
+        timings = timings.sorted(by: { $0 < $1 })
+        let average:Double = timings.reduce(0) { partialResult, value in
+            return partialResult + value
+        } / Double(timings.count)
+        print("SwiftSovereignStates;benchmark(" + key + ");timings=|min=" + timings.first!.description + "ms|max=" + timings.last!.description + "ms|average=" + average.description + "ms")
     }
     
     private func testFoundations() {
