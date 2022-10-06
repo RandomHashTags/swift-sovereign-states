@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftSovereignStates
+import SwiftSovereignStates
 import QuartzCore
 
 final class SwiftSovereignStatesTests: XCTestCase {

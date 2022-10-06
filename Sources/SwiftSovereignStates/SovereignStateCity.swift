@@ -15,7 +15,7 @@ public enum SovereignStateCities {
     public static func getAllMentioned(_ string: String, cache: Bool = true) -> [any SovereignStateCity]? {
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedAll[stringLowercase] {
-            return cached
+            return cached.isEmpty ? nil : cached
         }
         let cities:[any SovereignStateCity] = all.filter({ $0.isMentioned(in: string) })
         if cache {
@@ -27,7 +27,7 @@ public enum SovereignStateCities {
         guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
         let id:String = subdivision.getCacheID() + string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedSubdivision[id] {
-            return cached
+            return cached.isEmpty ? nil : cached
         }
         cities.removeAll(where: { !$0.isMentioned(in: string) })
         if cache {
@@ -73,7 +73,7 @@ public enum SovereignStateCities {
     public static func getAllMentionedParallel(_ string: String, cache: Bool = true) async -> [any SovereignStateCity]? {
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedAll[stringLowercase] {
-            return cached
+            return cached.isEmpty ? nil : cached
         }
         let cities:[any SovereignStateCity] = await all.filterAsync({ $0.isMentioned(in: string) })
         if cache {
@@ -85,7 +85,7 @@ public enum SovereignStateCities {
         guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
         let id:String = subdivision.getCacheID() + string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedSubdivision[id] {
-            return cached
+            return cached.isEmpty ? nil : cached
         }
         cities = await cities.filterAsync({ $0.isMentioned(in: string) })
         if cache {

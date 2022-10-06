@@ -7,52 +7,31 @@
 
 import Foundation
 
-internal struct SwiftSovereignStatesCache<Key: Hashable, Value> {
-    private let wrapped:NSCache<WrappedKey, Entry> = NSCache<WrappedKey, Entry>()
+internal struct SwiftSovereignStatesCache<Value> {
+    private let wrapped:NSCache<NSString, Entry> = NSCache<NSString, Entry>()
     
-    subscript(key: Key) -> Value? {
+    subscript(key: String) -> Value? {
         get {
-            return value(forKey: key)
+            return value(forKey: key as NSString)
         }
         set {
             guard let value:Value = newValue else {
-                removeValue(forKey: key)
+                removeValue(forKey: key as NSString)
                 return
             }
-            insert(value, forKey: key)
+            insert(value, forKey: key as NSString)
         }
     }
     
-    func getOrInsert(_ key: Key, _ handler: @escaping () -> Value) -> Value {
-        if let existingValue:Value = value(forKey: key) {
-            return existingValue
-        }
-        let insertedValue:Value = handler()
-        insert(insertedValue, forKey: key)
-        return insertedValue
-    }
-    func getOrInsertOptional(_ key: Key, _ handler: @escaping () -> Value?) -> Value? {
-        if let existingValue:Value = value(forKey: key) {
-            return existingValue
-        }
-        guard let insertedValue:Value = handler() else { return nil }
-        insert(insertedValue, forKey: key)
-        return insertedValue
-    }
-    func insertIfAbsent(_ val: Value, forKey key: Key) {
-        guard value(forKey: key) == nil else { return }
-        insert(val, forKey: key)
-    }
-    private func insert(_ value: Value, forKey key: Key) {
+    private func insert(_ value: Value, forKey key: NSString) {
         let entry:Entry = Entry(value: value)
-        wrapped.setObject(entry, forKey: WrappedKey(key))
+        wrapped.setObject(entry, forKey: key)
     }
-    private func value(forKey key: Key) -> Value? {
-        guard let entry:Entry = wrapped.object(forKey: WrappedKey(key)) else { return nil }
-        return entry.value
+    private func value(forKey key: NSString) -> Value? {
+        return wrapped.object(forKey: key)?.value
     }
-    func removeValue(forKey key: Key) {
-        wrapped.removeObject(forKey: WrappedKey(key))
+    func removeValue(forKey key: NSString) {
+        wrapped.removeObject(forKey: key)
     }
     func removeAll() {
         wrapped.removeAllObjects()
@@ -60,23 +39,6 @@ internal struct SwiftSovereignStatesCache<Key: Hashable, Value> {
 }
 
 private extension SwiftSovereignStatesCache {
-    final class WrappedKey : NSObject {
-        let key:Key
-        
-        init(_ key: Key) {
-            self.key = key
-        }
-        
-        override var hash: Int {
-            return key.hashValue
-        }
-        
-        override func isEqual(_ object: Any?) -> Bool {
-            guard let value:WrappedKey = object as? WrappedKey else { return false }
-            return value.key == key
-        }
-    }
-    
     final class Entry {
         let value:Value
         
@@ -166,23 +128,23 @@ public enum SwiftSovereignStateCache {
     }
 }
 internal enum SwiftSovereignStateCacheCountries {
-    static var valueOf:SwiftSovereignStatesCache<String, Country> = SwiftSovereignStatesCache<String, Country>()
-    static var mentioned:SwiftSovereignStatesCache<String, [Country]> = SwiftSovereignStatesCache<String, [Country]>()
+    static var valueOf:SwiftSovereignStatesCache<Country> = SwiftSovereignStatesCache<Country>()
+    static var mentioned:SwiftSovereignStatesCache<[Country]> = SwiftSovereignStatesCache<[Country]>()
 }
 internal enum SwiftSovereignStateCacheSubdivisions {
-    static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
+    static var keywords:SwiftSovereignStatesCache<[String]> = SwiftSovereignStatesCache<[String]>()
     
-    static var mentioned:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
-    static var valueOf:SwiftSovereignStatesCache<String, Any?> = SwiftSovereignStatesCache<String, Any?>()
-    static var valueOfAll:SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]> = SwiftSovereignStatesCache<String, [any SovereignStateSubdivision]>()
-    static var valueOfCacheID:SwiftSovereignStatesCache<String, any SovereignStateSubdivision> = SwiftSovereignStatesCache<String, any SovereignStateSubdivision>()
+    static var mentioned:SwiftSovereignStatesCache<[any SovereignStateSubdivision]> = SwiftSovereignStatesCache<[any SovereignStateSubdivision]>()
+    static var valueOf:SwiftSovereignStatesCache<Any?> = SwiftSovereignStatesCache<Any?>()
+    static var valueOfAll:SwiftSovereignStatesCache<[any SovereignStateSubdivision]> = SwiftSovereignStatesCache<[any SovereignStateSubdivision]>()
+    static var valueOfCacheID:SwiftSovereignStatesCache<any SovereignStateSubdivision> = SwiftSovereignStatesCache<any SovereignStateSubdivision>()
 }
 internal enum SwiftSovereignStateCacheCities {
-    static var keywords:SwiftSovereignStatesCache<String, [String]> = SwiftSovereignStatesCache<String, [String]>()
+    static var keywords:SwiftSovereignStatesCache<[String]> = SwiftSovereignStatesCache<[String]>()
     
-    static var mentionedAll:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
-    static var mentionedSubdivision:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
-    static var valueOf:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
-    static var valueOfAll:SwiftSovereignStatesCache<String, [any SovereignStateCity]> = SwiftSovereignStatesCache<String, [any SovereignStateCity]>()
-    static var valueOfCacheID:SwiftSovereignStatesCache<String, any SovereignStateCity> = SwiftSovereignStatesCache<String, any SovereignStateCity>()
+    static var mentionedAll:SwiftSovereignStatesCache<[any SovereignStateCity]> = SwiftSovereignStatesCache<[any SovereignStateCity]>()
+    static var mentionedSubdivision:SwiftSovereignStatesCache<[any SovereignStateCity]> = SwiftSovereignStatesCache<[any SovereignStateCity]>()
+    static var valueOf:SwiftSovereignStatesCache<[any SovereignStateCity]> = SwiftSovereignStatesCache<[any SovereignStateCity]>()
+    static var valueOfAll:SwiftSovereignStatesCache<[any SovereignStateCity]> = SwiftSovereignStatesCache<[any SovereignStateCity]>()
+    static var valueOfCacheID:SwiftSovereignStatesCache<any SovereignStateCity> = SwiftSovereignStatesCache<any SovereignStateCity>()
 }
