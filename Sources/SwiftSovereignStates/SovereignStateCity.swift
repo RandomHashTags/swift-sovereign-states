@@ -59,8 +59,15 @@ public enum SovereignStateCities {
         }
         return cities.isEmpty ? nil : cities
     }
-    public static func valueOfCacheID(_ string: String) -> (any SovereignStateCity)? {
-        return all.first(where: { string.elementsEqual($0.getCacheID()) })
+    public static func valueOfCacheID(_ cacheID: String, cache: Bool = true) -> (any SovereignStateCity)? {
+        if let city:any SovereignStateCity = SwiftSovereignStateCacheCities.valueOfCacheID[cacheID] {
+            return city
+        }
+        guard let city:any SovereignStateCity = all.first(where: { cacheID.elementsEqual($0.getCacheID()) }) else { return nil }
+        if cache {
+            SwiftSovereignStateCacheCities.valueOfCacheID[cacheID] = city
+        }
+        return city
     }
     // parallel
     public static func getAllMentionedParallel(_ string: String, cache: Bool = true) async -> [any SovereignStateCity]? {

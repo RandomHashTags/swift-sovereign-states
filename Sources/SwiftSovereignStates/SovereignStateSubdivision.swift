@@ -60,8 +60,15 @@ public enum SovereignStateSubdivisions {
         }
         return subdivision
     }
-    public static func valueOfCacheID(_ string: String) -> (any SovereignStateSubdivision)? {
-        return all.first(where: { string.elementsEqual($0.getCacheID()) })
+    public static func valueOfCacheID(_ cacheID: String, cache: Bool = true) -> (any SovereignStateSubdivision)? {
+        if let subdivision:any SovereignStateSubdivision = SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] {
+            return subdivision
+        }
+        guard let subdivision:any SovereignStateSubdivision = all.first(where: { cacheID.elementsEqual($0.getCacheID()) }) else { return nil }
+        if cache {
+            SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] = subdivision
+        }
+        return subdivision
     }
     // parallel
     public static func getAllMentionedParallel(_ string: String, cache: Bool = true) async -> [any SovereignStateSubdivision]? {

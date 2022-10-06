@@ -7,7 +7,21 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[[String]] = Country.allCases.map({ $0.getKeywords() })
         let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.getKeywords() })
         let _:[[String]] = SovereignStateCities.all.map({ $0.getKeywords() })
-        try await benchmark()
+        
+        let cache:Bool = true
+        try await benchmark(key: "SovereignStateCities.getAllMentionedParallel,cache=" + cache.description) {
+            let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
+        }
+        try await benchmark(key: "SovereignStateSubdivisions.valueOfCacheID,cache=" + cache.description) {
+            let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID("united_states_minnesota", cache: cache)
+        }
+        try await benchmark(key: "SovereignStateCities.valueOfCacheID,cache=" + cache.description) {
+            let _:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states_minnesota_kasson", cache: cache)
+        }
+        try await benchmark(key: "testCodable") {
+            try self.testCodable()
+        }
+        
         /*measure {
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baja California, California? (Wisconsin) Texas's, Maine, New York; Kentucky.", cache: false)
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: false)
@@ -27,14 +41,11 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testCities()
     }
     
-    private func benchmark() async throws {
+    private func benchmark(key: String, _ code: @escaping () async throws -> Void) async throws {
         for _ in 1...20 {
             let started:Double = CACurrentMediaTime()
-            //let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: false)
-            //let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID("united_states_minnesota")
-            //let _:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states_minnesota_kasson")
-            try testCodable()
-            print("SwiftSovereignStates;benchmark;took " + ((CACurrentMediaTime() - started) * 1_000).description + "ms")
+            try await code()
+            print("SwiftSovereignStates;benchmark(" + key + ");took " + ((CACurrentMediaTime() - started) * 1_000).description + "ms")
         }
     }
     
