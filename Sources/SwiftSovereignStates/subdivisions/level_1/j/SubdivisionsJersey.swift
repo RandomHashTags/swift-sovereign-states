@@ -40,7 +40,7 @@ public enum SubdivisionsJersey : String, CaseIterable, SovereignStateSubdivision
                 .saint_saviour,
                 .saint_mary,
                 .trinity:
-            return getTypeSuffix() + ",_Jersey"
+            return ",_Jersey"
         default:
             return nil
         }
