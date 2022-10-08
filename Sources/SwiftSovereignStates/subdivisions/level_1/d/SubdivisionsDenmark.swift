@@ -22,15 +22,19 @@ public enum SubdivisionsDenmark : String, CaseIterable, SovereignStateSubdivisio
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getWikipediaURLPrefix() -> String? {
-        return "Region_"
-    }
-    
     public func getRealName() -> String? {
         switch self {
         case .sjaelland: return "Sjælland"
         default: return nil
         }
+    }
+    
+    public func getWikipediaURLPrefix() -> String? {
+        return "Region_"
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return nil
     }
     
     public func getNeighbors() -> [any SovereignStateSubdivision]? {
