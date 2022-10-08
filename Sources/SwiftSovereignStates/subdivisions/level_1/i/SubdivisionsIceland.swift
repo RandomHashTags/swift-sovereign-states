@@ -154,7 +154,7 @@ public enum SubdivisionsIceland : String, CaseIterable, SovereignStateSubdivisio
         case .vogar:
             return "_(" + getTypeSuffix().lowercased() + ")"
         default:
-            return ""
+            return nil
         }
     }
 }

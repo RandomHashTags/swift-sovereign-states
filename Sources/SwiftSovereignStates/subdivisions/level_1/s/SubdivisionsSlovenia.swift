@@ -339,4 +339,28 @@ public enum SubdivisionsSlovenia : String, CaseIterable, SovereignStateSubdivisi
         default: return nil
         }
     }
+    
+    public func getWikipediaURLPrefix() -> String? {
+        switch self {
+        case .celje,
+                .koper,
+                .kranj,
+                .krsko,
+                .ljubljana,
+                .maribor,
+                .murska_sobota,
+                .nova_gorica,
+                .novo_mesto,
+                .ptuj,
+                .slovenj_gradec,
+                .velenje:
+            return nil
+        default:
+            return getTypeSuffix() + "_of_"
+        }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return nil
+    }
 }
