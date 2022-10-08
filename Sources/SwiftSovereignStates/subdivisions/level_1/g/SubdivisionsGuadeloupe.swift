@@ -81,7 +81,7 @@ public enum SubdivisionsGuadeloupe : String, CaseIterable, SovereignStateSubdivi
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .la_desirade:
-            return "(commune)"
+            return "_(commune)"
         case .pointe_noire,
                 .port_louis,
                 .saint_claude,
@@ -93,7 +93,7 @@ public enum SubdivisionsGuadeloupe : String, CaseIterable, SovereignStateSubdivi
                 .vieux_fort:
             return ",_Guadeloupe"
         default:
-            return ""
+            return nil
         }
     }
 }
