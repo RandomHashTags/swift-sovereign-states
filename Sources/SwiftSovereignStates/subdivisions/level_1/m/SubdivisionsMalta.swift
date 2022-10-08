@@ -188,4 +188,24 @@ public enum SubdivisionsMalta : String, CaseIterable, SovereignStateSubdivision 
         case .zurrieq: return "3/31/Flag_of_%C5%BBurrieq"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .fontana,
+                .victoria,
+                .zebbug_gozo:
+            return ",_Gozo"
+        case .marsa,
+                .paola,
+                .pembroke,
+                .pieta,
+                .qala,
+                .rabat,
+                .safi,
+                .st_julian_s:
+            return ",_Malta"
+        default:
+            return nil
+        }
+    }
 }
