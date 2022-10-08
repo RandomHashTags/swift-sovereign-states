@@ -56,4 +56,8 @@ public enum SubdivisionsCentralAfricanRepublic : String, CaseIterable, Sovereign
         default: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return nil
+    }
 }
