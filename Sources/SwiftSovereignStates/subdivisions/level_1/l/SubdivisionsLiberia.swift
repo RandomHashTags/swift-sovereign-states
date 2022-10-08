@@ -32,10 +32,6 @@ public enum SubdivisionsLiberia : String, CaseIterable, SovereignStateSubdivisio
         return SovereignStateSubdivisionType.counties
     }
     
-    public func getWikipediaURLSuffix() -> String? {
-        return "_" + getTypeSuffix()
-    }
-    
     public func getFlagURLWikipediaSVGID() -> String? {
         switch self {
         case .bomi: return "2/24/Flag_of_Bomi_County"

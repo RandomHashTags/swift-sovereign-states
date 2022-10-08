@@ -333,7 +333,7 @@ public enum Country : String, CaseIterable, SovereignState {
             name = "Georgia_(country)"
             break
         case .micronesia:
-            name = "Federated States of Micronesia"
+            name = "Federated_States_of_Micronesia"
             break
         case .saint_helena_ascension_and_tristan_da_cunha:
             name = "Saint_Helena%2C_Ascension_and_Tristan_da_Cunha"

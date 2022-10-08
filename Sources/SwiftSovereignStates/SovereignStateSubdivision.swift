@@ -159,6 +159,9 @@ public extension SovereignStateSubdivision {
         return nil
     }
     
+    func getWikipediaURLSuffix() -> String? {
+        return "_" + getTypeSuffix()
+    }
     func getTypeSuffix() -> String {
         return getType().getSingularName().replacingOccurrences(of: " ", with: "_")
     }

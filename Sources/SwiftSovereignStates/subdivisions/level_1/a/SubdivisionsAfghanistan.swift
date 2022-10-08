@@ -27,7 +27,7 @@ public enum SubdivisionsAfghanistan : String, CaseIterable, SovereignStateSubdiv
     case khost
     case kunar
     case kunduz
-    case leghman
+    case laghman
     case logar
     case nangarhar
     case nimruz

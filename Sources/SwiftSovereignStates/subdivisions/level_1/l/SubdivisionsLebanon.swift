@@ -26,13 +26,6 @@ public enum SubdivisionsLebanon : String, CaseIterable, SovereignStateSubdivisio
         return SovereignStateSubdivisionType.governorates
     }
     
-    public func getWikipediaURLSuffix() -> String? {
-        switch self {
-        default:
-            return "_" + getTypeSuffix()
-        }
-    }
-    
     public func getRealName() -> String? {
         switch self {
         case .baalbek_hermel: return "Baalbek-Hermel"

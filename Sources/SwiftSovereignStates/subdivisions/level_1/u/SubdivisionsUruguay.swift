@@ -46,10 +46,6 @@ public enum SubdivisionsUruguay : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
-        return "_" + getTypeSuffix()
-    }
-    
     public func getISOAlpha2() -> String? {
         switch self {
         case .artigas: return "AR"
