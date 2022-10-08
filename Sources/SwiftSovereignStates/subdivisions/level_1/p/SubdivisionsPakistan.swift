@@ -52,7 +52,7 @@ public enum SubdivisionsPakistan : String, CaseIterable, SovereignStateSubdivisi
                 .punjab:
             return ",_Pakistan"
         default:
-            return ""
+            return nil
         }
     }
 }
