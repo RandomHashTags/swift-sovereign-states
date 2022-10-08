@@ -43,4 +43,8 @@ public enum SubdivisionsAndorra : String, CaseIterable, SovereignStateSubdivisio
         case .sant_julia_de_loria: return "0/02/Bandera_de_San_Julián_de_Loria"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return ""
+    }
 }
