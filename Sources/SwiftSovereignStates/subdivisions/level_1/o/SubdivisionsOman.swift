@@ -31,9 +31,9 @@ public enum SubdivisionsOman : String, CaseIterable, SovereignStateSubdivision {
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .al_wusta:
-            return getTypeSuffix() + "_(Oman)"
+            return "_" + getTypeSuffix() + "_(Oman)"
         default:
-            return nil
+            return "_" + getTypeSuffix()
         }
     }
 }
