@@ -201,4 +201,18 @@ public enum SubdivisionsPhilippines : String, CaseIterable, SovereignStateSubdiv
         case .metro_manila: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .davao_de_oro,
+                .dinagat_islands,
+                .maguindanao_del_norte,
+                .maguindanao_del_sur,
+                .mountain_province,
+                .metro_manila:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
