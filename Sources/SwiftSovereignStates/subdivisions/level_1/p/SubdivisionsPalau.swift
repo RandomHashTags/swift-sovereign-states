@@ -53,4 +53,8 @@ public enum SubdivisionsPalau : String, CaseIterable, SovereignStateSubdivision 
         case .sonsorol: return "0/01/Flag_of_Sonsorol"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return nil
+    }
 }
