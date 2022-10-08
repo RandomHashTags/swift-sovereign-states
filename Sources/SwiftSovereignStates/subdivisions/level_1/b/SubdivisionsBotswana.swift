@@ -45,4 +45,18 @@ public enum SubdivisionsBotswana : String, CaseIterable, SovereignStateSubdivisi
         default: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .central, .north_east, .south_east, .southern:
+            return "_(Botswana)"
+        case .francistown, .gaborone,
+                .jwaneng, .lobatse, .orapa, .selebi_phikwe:
+            return ""
+        case .sowa:
+            return ",_Botswana"
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
