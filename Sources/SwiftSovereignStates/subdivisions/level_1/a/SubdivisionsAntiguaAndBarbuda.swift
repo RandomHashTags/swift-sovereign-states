@@ -37,4 +37,13 @@ public enum SubdivisionsAntiguaAndBarbuda : String, CaseIterable, SovereignState
         default: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .barbuda, .redonda:
+            return ""
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
