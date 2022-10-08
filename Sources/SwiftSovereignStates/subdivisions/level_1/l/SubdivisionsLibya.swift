@@ -11,7 +11,7 @@ public enum SubdivisionsLibya : String, CaseIterable, SovereignStateSubdivision 
     case butnan
     case jabal_al_akhdar
     case jabal_al_gharbi
-    case jafarah
+    case jafara
     case jufra
     case kufrah
     case marj
@@ -41,13 +41,12 @@ public enum SubdivisionsLibya : String, CaseIterable, SovereignStateSubdivision 
     
     public func getWikipediaURLSuffix() -> String? {
         switch self {
-        case .benghazi,
-                .jafarah:
-            return ""
-        case .tripoli:
-            return getTypeSuffix() + ",_Libya"
-        default:
+        case .benghazi:
             return nil
+        case .tripoli:
+            return "_" + getTypeSuffix() + ",_Libya"
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }
