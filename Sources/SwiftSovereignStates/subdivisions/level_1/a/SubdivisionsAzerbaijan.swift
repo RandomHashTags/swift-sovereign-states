@@ -127,20 +127,20 @@ public enum SubdivisionsAzerbaijan : String, CaseIterable, SovereignStateSubdivi
                 .mingachevir,
                 .sumqayit,
                 .yevlakh_city:
-                return ""
+            return ""
         case .ganja,
                 .naftalan,
                 .shaki_city,
                 .shirvan:
-                return ",_Azerbaijan"
+            return ",_Azerbaijan"
         case .nakhchivan:
-                return "_(city)"
+            return "_(city)"
         case .jalilabad,
                 .quba,
                 .salyan:
-                return "_" + getTypeSuffix() + "_(Azerbaijan)"
-            default:
-                return "_" + getTypeSuffix()
+            return "_" + getTypeSuffix() + "_(Azerbaijan)"
+        default:
+            return "_" + getTypeSuffix()
         }
     }
     
