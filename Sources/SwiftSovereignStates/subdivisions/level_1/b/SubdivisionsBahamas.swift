@@ -34,7 +34,7 @@ public enum SubdivisionsBahamas : String, CaseIterable, SovereignStateSubdivisio
     case north_eleuthera
     case ragged_island
     case rum_cay
-    case san_salvador
+    case san_salvador_island
     case south_abaco
     case south_andros
     case south_eleuthera
@@ -54,5 +54,9 @@ public enum SubdivisionsBahamas : String, CaseIterable, SovereignStateSubdivisio
         case .moore_s_island: return "Moore's Island"
         default: return nil
         }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return ""
     }
 }
