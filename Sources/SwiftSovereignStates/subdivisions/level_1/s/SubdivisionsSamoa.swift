@@ -32,12 +32,16 @@ public enum SubdivisionsSamoa : String, CaseIterable, SovereignStateSubdivision 
         switch self {
         case .a_ana: return "A'ana"
         case .aiga_i_le_tai: return "Aiga-i-le-Tai"
-        case .fa_asaleleaga: return "Fa'asaleleaga"
-        case .gaga_emauga: return "Gaga'emauga"
-        case .gaga_ifomauga: return "Gaga'ifomauga"
-        case .satupa_itea: return "Satupa'itea"
+        case .fa_asaleleaga: return "Faʻasaleleaga"
+        case .gaga_emauga: return "Gagaʻemauga"
+        case .gaga_ifomauga: return "Gagaʻifomauga"
+        case .satupa_itea: return "Satupaʻitea"
         case .va_a_o_fonoti: return "Va'a-o-Fonoti"
         default: return nil
         }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return nil
     }
 }
