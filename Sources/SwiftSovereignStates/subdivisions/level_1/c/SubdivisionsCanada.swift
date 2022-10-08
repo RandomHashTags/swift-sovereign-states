@@ -75,6 +75,16 @@ public enum SubdivisionsCanada : String, CaseIterable, SovereignStateSubdivision
         }
     }
     
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .newfoundland_and_labrador,
+                .northwest_territories:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
+    
     public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .alberta: return [SubdivisionsCanada.northwest_territories, SubdivisionsCanada.saskatchewan, SubdivisionsCanada.british_columbia, SubdivisionsUnitedStates.montana]
