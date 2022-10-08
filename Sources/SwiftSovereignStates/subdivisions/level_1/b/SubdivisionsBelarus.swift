@@ -14,7 +14,7 @@ public enum SubdivisionsBelarus : String, CaseIterable, SovereignStateSubdivisio
     case minsk
     case minsk_city
     case mogilev
-    case vitesbsk
+    case vitebsk
     
     public func getCountry() -> Country {
         return Country.belarus
@@ -55,7 +55,7 @@ public enum SubdivisionsBelarus : String, CaseIterable, SovereignStateSubdivisio
         case .grodno: return "f/f8/Flag_of_Hrodna_Voblasts"
         case .minsk: return "2/2e/Flag_of_Minsk_Voblast"
         case .mogilev: return "b/ba/Flag_of_Mahilyow_Voblast"
-        case .vitesbsk: return "a/a8/Flag_of_Vitsebsk_Voblasts"
+        case .vitebsk: return "4/45/Flag_of_Viciebsk%2C_Belarus"
         }
     }
     
@@ -66,14 +66,14 @@ public enum SubdivisionsBelarus : String, CaseIterable, SovereignStateSubdivisio
         case .gomel:
             return [SubdivisionsBelarus.brest, SubdivisionsBelarus.minsk, SubdivisionsBelarus.mogilev]
         case .grodno:
-            return [SubdivisionsBelarus.brest, SubdivisionsBelarus.minsk, SubdivisionsBelarus.vitesbsk]
+            return [SubdivisionsBelarus.brest, SubdivisionsBelarus.minsk, SubdivisionsBelarus.vitebsk]
         case .minsk:
-            return [SubdivisionsBelarus.grodno, SubdivisionsBelarus.brest, SubdivisionsBelarus.gomel, SubdivisionsBelarus.mogilev, SubdivisionsBelarus.vitesbsk, SubdivisionsBelarus.minsk_city]
+            return [SubdivisionsBelarus.grodno, SubdivisionsBelarus.brest, SubdivisionsBelarus.gomel, SubdivisionsBelarus.mogilev, SubdivisionsBelarus.vitebsk, SubdivisionsBelarus.minsk_city]
         case .minsk_city:
             return [SubdivisionsBelarus.minsk]
         case .mogilev:
-            return [SubdivisionsBelarus.vitesbsk, SubdivisionsBelarus.minsk, SubdivisionsBelarus.gomel]
-        case .vitesbsk:
+            return [SubdivisionsBelarus.vitebsk, SubdivisionsBelarus.minsk, SubdivisionsBelarus.gomel]
+        case .vitebsk:
             return [SubdivisionsBelarus.grodno, SubdivisionsBelarus.minsk, SubdivisionsBelarus.mogilev]
         }
     }
