@@ -48,6 +48,15 @@ public enum SubdivisionsZimbabwe : String, CaseIterable, SovereignStateSubdivisi
         }
     }
     
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .bulawayo:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
+    
     public func getNeighbors() -> [any SovereignStateSubdivision]? {
         switch self {
         case .bulawayo:
