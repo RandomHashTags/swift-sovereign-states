@@ -11,7 +11,7 @@ public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSub
     case bougainville
     case central
     case chimbu
-    case east_new_britian
+    case east_new_britain
     case east_sepik
     case eastern_highlands
     case enga
@@ -27,7 +27,7 @@ public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSub
     case new_ireland
     case sandaun
     case southern_highlands
-    case west_new_britian
+    case west_new_britain
     case western_highlands
     case western
     
@@ -58,14 +58,14 @@ public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSub
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .bougainville:
-            return ""
+            return nil
         case .central,
                 .western:
-            return getTypeSuffix() + "_(Papua_New_Guinea)"
+            return "_" + getTypeSuffix() + "_(Papua_New_Guinea)"
         case .national_capital_district:
-            return "(Papua_New_Guinea)"
+            return "_(Papua_New_Guinea)"
         default:
-            return nil
+            return "_" + getTypeSuffix()
         }
     }
     
@@ -74,7 +74,7 @@ public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSub
         case .bougainville: return "NSB"
         case .central: return "CPM"
         case .chimbu: return "CPK"
-        case .east_new_britian: return "EBR"
+        case .east_new_britain: return "EBR"
         case .east_sepik: return "ESW"
         case .eastern_highlands: return "EHG"
         case .enga: return "EPW"
@@ -90,7 +90,7 @@ public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSub
         case .oro: return "NPP"
         case .sandaun: return "SAN"
         case .southern_highlands: return "SHM"
-        case .west_new_britian: return "WBK"
+        case .west_new_britain: return "WBK"
         case .western: return "WPD"
         case .western_highlands: return "WHM"
         }
