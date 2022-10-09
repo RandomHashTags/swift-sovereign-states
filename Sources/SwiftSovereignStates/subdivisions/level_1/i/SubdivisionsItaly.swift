@@ -8,7 +8,7 @@
 import Foundation
 
 public enum SubdivisionsItaly : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Italy
-    case aruzzo
+    case abruzzo
     case aosta_valley
     case apulia
     case basilicata
@@ -63,15 +63,12 @@ public enum SubdivisionsItaly : String, CaseIterable, SovereignStateSubdivision 
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        switch self {
-        default:
-            return nil
-        }
+        return nil
     }
     
     public func getFlagURLWikipediaSVGID() -> String? {
         switch self {
-        case .aruzzo: return "4/45/Flag_of_Abruzzo"
+        case .abruzzo: return "4/45/Flag_of_Abruzzo"
         case .aosta_valley: return "9/90/Flag_of_Valle_d%27Aosta"
         case .apulia: return "b/b8/Flag_of_Apulia"
         case .basilicata: return "8/8e/Flag_of_Basilicata"
