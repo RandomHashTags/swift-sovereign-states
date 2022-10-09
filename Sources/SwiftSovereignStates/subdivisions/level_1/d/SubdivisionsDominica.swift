@@ -28,7 +28,7 @@ public enum SubdivisionsDominica : String, CaseIterable, SovereignStateSubdivisi
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        return getTypeSuffix() + ",_Dominica"
+        return "_" + getTypeSuffix() + ",_Dominica"
     }
     
     public func getNeighbors() -> [any SovereignStateSubdivision]? {

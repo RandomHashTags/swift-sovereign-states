@@ -55,9 +55,9 @@ public enum SubdivisionsHonduras : String, CaseIterable, SovereignStateSubdivisi
         switch self {
         case .colon,
                 .la_paz:
-            return getTypeSuffix() + "_(Honduras)";
+            return "_" + getTypeSuffix() + "_(Honduras)"
         case .santa_barabara:
-            return getTypeSuffix() + ",_Honduras";
+            return "_" + getTypeSuffix() + ",_Honduras"
         default:
             return nil
         }

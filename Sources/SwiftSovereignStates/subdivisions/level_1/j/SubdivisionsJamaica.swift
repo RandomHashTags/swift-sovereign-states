@@ -38,7 +38,7 @@ public enum SubdivisionsJamaica : String, CaseIterable, SovereignStateSubdivisio
                 .saint_andrew,
                 .saint_mary,
                 .saint_thomas:
-            return getTypeSuffix() + ",_Jamaica"
+            return "_" + getTypeSuffix() + ",_Jamaica"
         default:
             return nil
         }

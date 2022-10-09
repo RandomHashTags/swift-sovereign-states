@@ -75,7 +75,7 @@ public enum SubdivisionsArgentina : String, CaseIterable, SovereignStateSubdivis
                 .san_juan,
                 .santa_cruz,
                 .tierra_del_fuego_antartida_e_islas_del_atlantico_sur:
-            return getTypeSuffix() + ",_Argentina"
+            return "_" + getTypeSuffix() + ",_Argentina"
         default:
             return nil
         }
