@@ -25,8 +25,6 @@ public enum SubdivisionsKuwait : String, CaseIterable, SovereignStateSubdivision
     
     public func getRealName() -> String? {
         switch self {
-        case .al_asimah: return "Al-Asimah"
-        case .al_jahra: return "Al-Jahra"
         case .mubarak_al_kabeer: return "Mubarak Al-Kabeer"
         default: return nil
         }
@@ -40,6 +38,15 @@ public enum SubdivisionsKuwait : String, CaseIterable, SovereignStateSubdivision
         case .farwaniya: return "FA"
         case .hawalli: return "HA"
         case .mubarak_al_kabeer: return "MU"
+        }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .al_asimah:
+            return "_(Kuwait)"
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }
