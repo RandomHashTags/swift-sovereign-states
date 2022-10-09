@@ -13,7 +13,7 @@ public enum SubdivisionsTimorLeste : String, CaseIterable, SovereignStateSubdivi
     case atauro
     case baucau
     case bobonaro
-    case covalima
+    case cova_lima
     case dili
     case ermera
     case lautem
@@ -52,7 +52,7 @@ public enum SubdivisionsTimorLeste : String, CaseIterable, SovereignStateSubdivi
         case .atauro: return nil
         case .baucau: return "d/d8/Flag_of_Baucau_%28municipality%29.png"
         case .bobonaro: return nil
-        case .covalima: return nil
+        case .cova_lima: return nil
         case .dili: return nil
         case .ermera: return nil
         case .lautem: return nil
@@ -62,6 +62,15 @@ public enum SubdivisionsTimorLeste : String, CaseIterable, SovereignStateSubdivi
         case .viqueque: return nil
         
         case .oecusse: return "b/bc/Raeoa.png"
+        }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .oecusse:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }
