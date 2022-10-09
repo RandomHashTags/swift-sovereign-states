@@ -20,7 +20,7 @@ public enum SubdivisionsSouthSudan : String, CaseIterable, SovereignStateSubdivi
     case western_equatoria
     
     case abyei
-    case greator_pibor
+    case greater_pibor
     case ruweng
     
     public func getCountry() -> Country {
@@ -29,10 +29,8 @@ public enum SubdivisionsSouthSudan : String, CaseIterable, SovereignStateSubdivi
     
     public func getType() -> SovereignStateSubdivisionType {
         switch self {
-        case .abyei, .greator_pibor:
+        case .abyei, .greater_pibor, .ruweng:
             return SovereignStateSubdivisionType.administrative_areas
-        case .ruweng:
-            return SovereignStateSubdivisionType.special_administrative_areas
         default:
             return SovereignStateSubdivisionType.states
         }
@@ -53,7 +51,25 @@ public enum SubdivisionsSouthSudan : String, CaseIterable, SovereignStateSubdivi
         case .western_equatoria: return "6/65/Flag_of_Western_Equatoria.png"
             
         case .abyei: return "2/2e/Flag_of_the_Abyei_Area.png"
-        case .greator_pibor: return "1/19/Flag_of_Greater_Pibor_Administrative_Area.png"
+        case .greater_pibor: return "1/19/Flag_of_Greater_Pibor_Administrative_Area.png"
+        }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .central_equatoria,
+                .eastern_equatoria,
+                .northern_bahr_el_ghazal,
+                .western_bahr_el_ghazal,
+            
+                .abyei,
+                .greater_pibor,
+                .ruweng:
+            return nil
+        case .lakes:
+            return "_(" + getTypeSuffix().lowercased() + ")"
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }
