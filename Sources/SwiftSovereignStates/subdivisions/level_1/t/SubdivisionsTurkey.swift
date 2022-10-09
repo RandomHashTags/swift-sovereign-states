@@ -48,7 +48,7 @@ public enum SubdivisionsTurkey : String, CaseIterable, SovereignStateSubdivision
     case igdir
     case isparta
     case istanbul
-    case i̇zmir
+    case izmir
     case kahramanmaras
     case karabuk
     case karaman
@@ -116,6 +116,7 @@ public enum SubdivisionsTurkey : String, CaseIterable, SovereignStateSubdivision
         case .gumushane: return "Gümüşhane"
         case .hakkari: return "Hakkâri"
         case .igdir: return "Iğdır"
+        case .izmir: return "İzmir"
         case .kahramanmaras: return "Kahramanmaraş"
         case .karabuk: return "Karabük"
         case .kirikkale: return "Kırıkkale"
