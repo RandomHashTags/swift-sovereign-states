@@ -11,7 +11,7 @@ public enum SubdivisionsTonga : String, CaseIterable, SovereignStateSubdivision 
     case eua
     case ha_apai
     case niua_islands
-    case tongoatapu
+    case tongatapu
     case vava_u
     
     public func getCountry() -> Country {
@@ -32,6 +32,6 @@ public enum SubdivisionsTonga : String, CaseIterable, SovereignStateSubdivision 
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        return ""
+        return nil
     }
 }
