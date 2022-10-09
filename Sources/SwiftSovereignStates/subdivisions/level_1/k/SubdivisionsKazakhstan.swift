@@ -12,6 +12,7 @@ public enum SubdivisionsKazakhstan : String, CaseIterable, SovereignStateSubdivi
     case aktobe
     case almaty
     case almaty_region
+    case astana
     case atyrau
     case baikonur
     case east_kazakhstan
@@ -21,7 +22,6 @@ public enum SubdivisionsKazakhstan : String, CaseIterable, SovereignStateSubdivi
     case kyzylorda
     case mangystau
     case north_kazakhstan
-    case nur_sultan
     case pavlodar
     case shymkent
     case turkistan
@@ -32,13 +32,11 @@ public enum SubdivisionsKazakhstan : String, CaseIterable, SovereignStateSubdivi
     }
     
     public func getType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.regions
-    }
-    
-    public func getRealName() -> String? {
         switch self {
-        case .nur_sultan: return "Nur-Sultan"
-        default: return nil
+        case .almaty, .astana, .shymkent:
+            return SovereignStateSubdivisionType.cities
+        default:
+            return SovereignStateSubdivisionType.regions
         }
     }
     
@@ -46,12 +44,12 @@ public enum SubdivisionsKazakhstan : String, CaseIterable, SovereignStateSubdivi
         switch self {
         case .almaty,
                 .almaty_region,
+                .astana,
                 .baikonur,
-                .nur_sultan,
                 .shymkent:
             return nil
         default:
-            return nil
+            return "_" + getTypeSuffix()
         }
     }
 }
