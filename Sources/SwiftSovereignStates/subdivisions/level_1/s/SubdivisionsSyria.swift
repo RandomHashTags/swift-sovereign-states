@@ -18,7 +18,7 @@ public enum SubdivisionsSyria : String, CaseIterable, SovereignStateSubdivision 
     case homs
     case idlib
     case latakia
-    case queneitra
+    case quneitra
     case raqqa
     case rif_dimashq
     case tartus
@@ -41,6 +41,6 @@ public enum SubdivisionsSyria : String, CaseIterable, SovereignStateSubdivision 
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        return "_Governorate"
+        return "_" + getTypeSuffix()
     }
 }
