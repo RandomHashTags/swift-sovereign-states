@@ -50,13 +50,12 @@ public enum SubdivisionsIran : String, CaseIterable, SovereignStateSubdivision {
     
     public func getRealName() -> String? {
         switch self {
-        case .hormozgan: return "Hormozgān"
         case .kohgiluyeh_and_boyer_ahmad: return "Kohgiluyeh and Boyer-Ahmad"
         default: return nil
         }
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        return getTypeSuffix().lowercased()
+        return "_" + getTypeSuffix().lowercased()
     }
 }
