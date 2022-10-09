@@ -41,4 +41,13 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, CaseIterable, SovereignStat
         default: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .autonomous_region_of_principe:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
