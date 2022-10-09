@@ -23,7 +23,7 @@ public enum SubdivisionsMontenegro : String, CaseIterable, SovereignStateSubdivi
     case old_royal_capital_cetinje
     case petnjica
     case plav
-    case plijevlja
+    case pljevlja
     case pluzine
     case podgorica_capital_city
     case rozaje
@@ -54,12 +54,6 @@ public enum SubdivisionsMontenegro : String, CaseIterable, SovereignStateSubdivi
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        switch self {
-        case .old_royal_capital_cetinje,
-                .podgorica_capital_city:
-            return nil
-        default:
-            return nil
-        }
+        return nil
     }
 }
