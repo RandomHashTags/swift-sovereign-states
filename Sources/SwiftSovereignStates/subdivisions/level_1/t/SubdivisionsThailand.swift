@@ -181,4 +181,13 @@ public enum SubdivisionsThailand : String, CaseIterable, SovereignStateSubdivisi
         case .yasothon: return "b/b9/Yasothon_Flag.png"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .bangkok:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
