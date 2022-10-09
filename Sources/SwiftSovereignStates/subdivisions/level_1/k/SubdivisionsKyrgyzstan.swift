@@ -41,4 +41,13 @@ public enum SubdivisionsKyrgyzstan : String, CaseIterable, SovereignStateSubdivi
         default: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .bishkek, .osh_city:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
