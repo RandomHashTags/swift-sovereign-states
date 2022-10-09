@@ -59,7 +59,7 @@ public enum SubdivisionsGermany : String, CaseIterable, SovereignStateSubdivisio
         case .bremen:
             return "(state)"
         default:
-            return ""
+            return nil
         }
     }
 }

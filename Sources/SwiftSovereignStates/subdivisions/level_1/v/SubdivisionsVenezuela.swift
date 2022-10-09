@@ -76,7 +76,7 @@ public enum SubdivisionsVenezuela : String, CaseIterable, SovereignStateSubdivis
                 .trujillo:
             return "_(" + getTypeSuffix().lowercased() + ")"
         default:
-            return ""
+            return nil
         }
     }
     

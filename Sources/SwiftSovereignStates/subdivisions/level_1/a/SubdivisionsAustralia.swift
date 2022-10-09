@@ -63,7 +63,7 @@ public enum SubdivisionsAustralia : String, CaseIterable, SovereignStateSubdivis
         case .victoria:
             return "_(Australia)"
         default:
-            return ""
+            return nil
         }
     }
     

@@ -60,7 +60,7 @@ public enum SubdivisionsFrance : String, CaseIterable, SovereignStateSubdivision
                 .occitania:
             return "(administrative_region)"
         default:
-            return ""
+            return nil
         }
     }
 }

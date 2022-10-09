@@ -48,7 +48,7 @@ public enum SubdivisionsFiji : String, CaseIterable, SovereignStateSubdivision {
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .rotuma:
-            return ""
+            return nil
         default:
             return nil
         }

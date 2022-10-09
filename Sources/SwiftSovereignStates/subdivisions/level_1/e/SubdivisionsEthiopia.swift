@@ -59,7 +59,7 @@ public enum SubdivisionsEthiopia : String, CaseIterable, SovereignStateSubdivisi
         case .oromia,
                 .addis_ababa,
                 .dire_dawa:
-            return ""
+            return nil
         default:
             return "Region"
         }

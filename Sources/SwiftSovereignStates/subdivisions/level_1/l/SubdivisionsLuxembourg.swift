@@ -42,7 +42,7 @@ public enum SubdivisionsLuxembourg : String, CaseIterable, SovereignStateSubdivi
         return "Canton_of_"
     }
     public func getWikipediaURLSuffix() -> String? {
-        return ""
+        return nil
     }
     
     public func getFlagURLWikipediaSVGID() -> String? {

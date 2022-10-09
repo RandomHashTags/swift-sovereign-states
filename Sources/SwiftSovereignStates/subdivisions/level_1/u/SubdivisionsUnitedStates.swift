@@ -107,7 +107,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
                 .washington:
             return "(" + getTypeSuffix().lowercased() + ")"
         default:
-            return ""
+            return nil
         }
     }
     

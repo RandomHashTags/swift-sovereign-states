@@ -75,7 +75,7 @@ public enum SubdivisionsPanama : String, CaseIterable, SovereignStateSubdivision
         case .guna_yala,
                 .madungandi,
                 .wargandi:
-            return ""
+            return nil
         default:
             return nil
         }

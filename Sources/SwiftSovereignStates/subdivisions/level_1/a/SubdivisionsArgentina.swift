@@ -69,7 +69,7 @@ public enum SubdivisionsArgentina : String, CaseIterable, SovereignStateSubdivis
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .buenos_aires:
-            return ""
+            return nil
         case .cordoba,
                 .la_rioja,
                 .san_juan,

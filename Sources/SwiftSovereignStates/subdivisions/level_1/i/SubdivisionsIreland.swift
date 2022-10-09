@@ -22,6 +22,6 @@ public enum SubdivisionsIreland : String, CaseIterable, SovereignStateSubdivisio
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        return ""
+        return nil
     }
 }

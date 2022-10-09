@@ -59,7 +59,7 @@ public enum SubdivisionsMadagascar : String, CaseIterable, SovereignStateSubdivi
                 .sofia:
             return nil
         default:
-            return ""
+            return nil
         }
     }
 }

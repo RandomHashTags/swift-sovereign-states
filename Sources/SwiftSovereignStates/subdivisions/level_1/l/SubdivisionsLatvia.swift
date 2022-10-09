@@ -81,7 +81,7 @@ public enum SubdivisionsLatvia : String, CaseIterable, SovereignStateSubdivision
                 .riga,
                 .jelgava_city,
                 .ventspils_city:
-            return ""
+            return nil
         case .saldus:
             return "_" + getTypeSuffix() + "_(2021–present)"
         default:

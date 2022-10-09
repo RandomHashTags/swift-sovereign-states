@@ -61,7 +61,7 @@ public enum SubdivisionsNicaragua : String, CaseIterable, SovereignStateSubdivis
         switch self {
         case .north_caribbean_coast,
                 .south_caribbean_coast:
-            return ""
+            return nil
         default:
             return nil
         }

@@ -42,7 +42,7 @@ public enum SubdivisionsArmenia : String, CaseIterable, SovereignStateSubdivisio
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .yerevan:
-            return ""
+            return nil
         default:
             return "_" + getTypeSuffix()
         }

@@ -58,7 +58,7 @@ public enum SubdivisionsIndonesia : String, CaseIterable, SovereignStateSubdivis
                 .west_papua:
             return "(" + getTypeSuffix().lowercased() + ")"
         default:
-            return ""
+            return nil
         }
     }
 }

@@ -55,7 +55,7 @@ public enum SubdivisionsSpain : String, CaseIterable, SovereignStateSubdivision 
         case .galicia:
             return "_(Spain)"
         default:
-            return ""
+            return nil
         }
     }
     

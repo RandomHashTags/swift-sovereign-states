@@ -31,7 +31,7 @@ public enum SubdivisionsLiechtenstein : String, CaseIterable, SovereignStateSubd
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         default:
-            return ""
+            return nil
         }
     }
     

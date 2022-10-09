@@ -96,7 +96,7 @@ public enum SubdivisionsVietnam : String, CaseIterable, SovereignStateSubdivisio
                 .haiphong,
                 .hanoi,
                 .ho_chi_minh_city:
-            return ""
+            return nil
         default:
             return "_" + getTypeSuffix().lowercased()
         }

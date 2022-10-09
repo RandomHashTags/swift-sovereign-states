@@ -48,7 +48,7 @@ public enum SubdivisionsNewZealand : String, CaseIterable, SovereignStateSubdivi
                 .otago,
                 .taranaki,
                 .waikato:
-            return ""
+            return nil
         case .canterbury,
                 .nelson,
                 .southland,

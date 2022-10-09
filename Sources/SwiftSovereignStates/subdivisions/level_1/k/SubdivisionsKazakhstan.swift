@@ -49,7 +49,7 @@ public enum SubdivisionsKazakhstan : String, CaseIterable, SovereignStateSubdivi
                 .baikonur,
                 .nur_sultan,
                 .shymkent:
-            return ""
+            return nil
         default:
             return nil
         }

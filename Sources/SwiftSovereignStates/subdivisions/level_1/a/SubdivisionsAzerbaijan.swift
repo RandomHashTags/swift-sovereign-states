@@ -127,7 +127,7 @@ public enum SubdivisionsAzerbaijan : String, CaseIterable, SovereignStateSubdivi
                 .mingachevir,
                 .sumqayit,
                 .yevlakh_city:
-            return ""
+            return nil
         case .ganja,
                 .naftalan,
                 .shaki_city,

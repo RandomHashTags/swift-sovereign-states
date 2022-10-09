@@ -80,7 +80,7 @@ public enum SubdivisionsJapan : String, CaseIterable, SovereignStateSubdivision 
         switch self {
         case .hokkaido,
                 .tokyo:
-            return ""
+            return nil
         default:
             return nil
         }

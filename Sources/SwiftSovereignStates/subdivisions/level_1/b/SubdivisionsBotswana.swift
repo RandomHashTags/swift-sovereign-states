@@ -52,7 +52,7 @@ public enum SubdivisionsBotswana : String, CaseIterable, SovereignStateSubdivisi
             return "_(Botswana)"
         case .francistown, .gaborone,
                 .jwaneng, .lobatse, .orapa, .selebi_phikwe:
-            return ""
+            return nil
         case .sowa:
             return ",_Botswana"
         default:

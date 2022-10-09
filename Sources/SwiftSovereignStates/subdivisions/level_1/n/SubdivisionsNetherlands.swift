@@ -50,7 +50,7 @@ public enum SubdivisionsNetherlands : String, CaseIterable, SovereignStateSubdiv
         case .bonaire,
                 .saba,
                 .sint_eustatius:
-            return ""
+            return nil
         default:
             return nil
         }

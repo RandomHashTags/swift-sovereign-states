@@ -74,7 +74,7 @@ public enum SubdivisionsIndia : String, CaseIterable, SovereignStateSubdivision 
                 .puducherry:
             return "(union_territory)"
         default:
-            return ""
+            return nil
         }
     }
     

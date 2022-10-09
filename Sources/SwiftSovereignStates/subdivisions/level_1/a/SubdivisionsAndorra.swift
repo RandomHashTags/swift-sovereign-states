@@ -45,6 +45,6 @@ public enum SubdivisionsAndorra : String, CaseIterable, SovereignStateSubdivisio
     }
     
     public func getWikipediaURLSuffix() -> String? {
-        return ""
+        return nil
     }
 }

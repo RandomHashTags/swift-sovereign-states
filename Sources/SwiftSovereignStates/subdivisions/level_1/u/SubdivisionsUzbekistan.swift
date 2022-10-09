@@ -43,7 +43,7 @@ public enum SubdivisionsUzbekistan : String, CaseIterable, SovereignStateSubdivi
         case .karakalpakstan,
                 .tashkent,
                 .tashkent_region:
-            return ""
+            return nil
         default:
             return nil
         }

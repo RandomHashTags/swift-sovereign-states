@@ -24,7 +24,7 @@ public enum SubdivisionsMicronesia : String, CaseIterable, SovereignStateSubdivi
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .kosrae:
-            return ""
+            return nil
         default:
             return "_" + getTypeSuffix()
         }

@@ -41,7 +41,7 @@ public enum SubdivisionsBelarus : String, CaseIterable, SovereignStateSubdivisio
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .minsk_city:
-            return ""
+            return nil
         default:
             return "_" + getTypeSuffix()
         }

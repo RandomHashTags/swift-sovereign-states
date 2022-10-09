@@ -60,7 +60,7 @@ public enum SubdivisionsNorway : String, CaseIterable, SovereignStateSubdivision
         case .viken:
             return "(" + getTypeSuffix().lowercased() + ")"
         default:
-            return ""
+            return nil
         }
     }
 }

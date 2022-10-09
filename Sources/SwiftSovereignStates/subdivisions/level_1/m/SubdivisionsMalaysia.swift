@@ -44,7 +44,7 @@ public enum SubdivisionsMalaysia : String, CaseIterable, SovereignStateSubdivisi
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         default:
-            return ""
+            return nil
         }
     }
 }

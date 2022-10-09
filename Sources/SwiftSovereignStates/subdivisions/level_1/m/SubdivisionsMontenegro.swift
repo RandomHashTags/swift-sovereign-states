@@ -57,7 +57,7 @@ public enum SubdivisionsMontenegro : String, CaseIterable, SovereignStateSubdivi
         switch self {
         case .old_royal_capital_cetinje,
                 .podgorica_capital_city:
-            return ""
+            return nil
         default:
             return nil
         }

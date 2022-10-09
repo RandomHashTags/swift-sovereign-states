@@ -79,7 +79,7 @@ public enum SubdivisionsMexico : String, CaseIterable, SovereignStateSubdivision
                 .hidalgo:
             return "(" + getTypeSuffix().lowercased() + ")"
         default:
-            return ""
+            return nil
         }
     }
     

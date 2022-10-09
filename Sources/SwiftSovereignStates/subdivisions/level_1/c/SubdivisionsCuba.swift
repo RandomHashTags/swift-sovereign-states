@@ -53,7 +53,7 @@ public enum SubdivisionsCuba : String, CaseIterable, SovereignStateSubdivision {
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .isla_de_la_juventud:
-            return ""
+            return nil
         default:
             return nil
         }

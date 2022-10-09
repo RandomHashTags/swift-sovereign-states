@@ -31,7 +31,7 @@ public enum SubdivisionsAustria : String, CaseIterable, SovereignStateSubdivisio
         case .salzburg, .tyrol:
             return "_(" + getTypeSuffix().lowercased() + ")"
         default:
-            return ""
+            return nil
         }
     }
     

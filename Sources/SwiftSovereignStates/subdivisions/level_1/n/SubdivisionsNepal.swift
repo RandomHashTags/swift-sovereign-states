@@ -35,7 +35,7 @@ public enum SubdivisionsNepal : String, CaseIterable, SovereignStateSubdivision 
         switch self {
         case .madhesh,
                 .province_1:
-            return ""
+            return nil
         default:
             return nil
         }
