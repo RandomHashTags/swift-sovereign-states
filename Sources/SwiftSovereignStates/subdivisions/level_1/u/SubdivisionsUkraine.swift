@@ -58,8 +58,6 @@ public enum SubdivisionsUkraine : String, CaseIterable, SovereignStateSubdivisio
         switch self {
         case .crimea:
             return "Autonomous_Republic_of_"
-        case .sevastopol:
-            return ""
         default:
             return nil
         }
@@ -68,8 +66,9 @@ public enum SubdivisionsUkraine : String, CaseIterable, SovereignStateSubdivisio
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .crimea,
-                .kyiv_city:
-            return ""
+                .kyiv_city,
+                .sevastopol:
+            return nil
         default:
             return "_" + getTypeSuffix()
         }
