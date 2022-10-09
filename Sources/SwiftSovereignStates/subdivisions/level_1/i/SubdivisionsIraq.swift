@@ -24,7 +24,7 @@ public enum SubdivisionsIraq : String, CaseIterable, SovereignStateSubdivision {
     case muthanna
     case najaf
     case nineveh
-    case salah_al_din
+    case saladin
     case sulaymaniyah
     case wasit
     
@@ -40,7 +40,6 @@ public enum SubdivisionsIraq : String, CaseIterable, SovereignStateSubdivision {
         switch self {
         case .al_anbar: return "Al-Anbar"
         case .al_qadisiyyah: return "Al-Qādisiyyah"
-        case .salah_al_din: return "Salah Al-Din"
         default: return nil
         }
     }
@@ -63,7 +62,7 @@ public enum SubdivisionsIraq : String, CaseIterable, SovereignStateSubdivision {
         case .muthanna: return "MU"
         case .najaf: return "NA"
         case .nineveh: return "NI"
-        case .salah_al_din: return "SD"
+        case .saladin: return "SD"
         case .sulaymaniyah: return "SU"
         case .wasit: return "WA"
         }
@@ -87,7 +86,7 @@ public enum SubdivisionsIraq : String, CaseIterable, SovereignStateSubdivision {
         case .muthanna: return "en/e/e5/Flag_of_Muthanna_Governorate.png"
         case .najaf: return "en/c/cc/Seal_of_Najaf_Governorate.png"
         case .nineveh: return "c/c6/Flag_of_Nineveh_Governorate.png"
-        case .salah_al_din: return "a/ad/Flag_of_Saladin_Governorate%2C_Iraq"
+        case .saladin: return "a/ad/Flag_of_Saladin_Governorate%2C_Iraq"
         case .sulaymaniyah: return "en/8/8f/Flag_of_Sulaymaniyah_Governorate.png"
         case .wasit: return "en/0/08/Flag_of_Wasit_Governorate.png"
         }
