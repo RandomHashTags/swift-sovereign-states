@@ -34,4 +34,8 @@ public enum SubdivisionsComoros : String, CaseIterable, SovereignStateSubdivisio
         case .moheli: return "c/c2/Flag_of_Mohéli_%28official%29"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        return nil
+    }
 }
