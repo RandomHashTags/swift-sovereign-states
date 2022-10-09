@@ -47,6 +47,7 @@ public enum SubdivisionsPeru : String, CaseIterable, SovereignStateSubdivision {
         case .apurimac: return "Apurímac"
         case .huanuco: return "Huánuco"
         case .junin: return "Junín"
+        case .la_libertad: return "La Libertad"
         case .madre_de_dios: return "Madre de Dios"
         case .san_martin: return "San Martín"
         default: return nil
@@ -56,7 +57,7 @@ public enum SubdivisionsPeru : String, CaseIterable, SovereignStateSubdivision {
     public func getWikipediaURLPrefix() -> String? {
         switch self {
         case .callao:
-            return ""
+            return nil
         default:
             return "Department_of_"
         }
@@ -67,7 +68,7 @@ public enum SubdivisionsPeru : String, CaseIterable, SovereignStateSubdivision {
         case .amazonas:
             return ",_Peru"
         default:
-            return ""
+            return nil
         }
     }
 }
