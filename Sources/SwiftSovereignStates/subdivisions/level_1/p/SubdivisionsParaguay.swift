@@ -82,4 +82,13 @@ public enum SubdivisionsParaguay : String, CaseIterable, SovereignStateSubdivisi
         case .asuncion: return "d/d5/Flag_of_Asunción"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .asuncion:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
