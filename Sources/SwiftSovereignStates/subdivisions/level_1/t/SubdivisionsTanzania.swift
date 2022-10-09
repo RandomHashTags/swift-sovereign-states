@@ -47,4 +47,13 @@ public enum SubdivisionsTanzania : String, CaseIterable, SovereignStateSubdivisi
     public func getType() -> SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .dar_es_salaam:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
