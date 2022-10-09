@@ -31,7 +31,7 @@ public enum SubdivisionsLesotho : String, CaseIterable, SovereignStateSubdivisio
         switch self {
         case .butha_buthe: return "Butha-Buthe"
         case .mohale_s_hoek: return "Mohale's Hoek"
-        case .qacha_s_nek: return "Quacha's Nek"
+        case .qacha_s_nek: return "Qacha's Nek"
         case .thaba_tseka: return "Thaba-Tseka"
         default: return nil
         }
