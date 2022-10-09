@@ -10,7 +10,7 @@ import Foundation
 public enum SubdivisionsSwitzerland : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Cantons_of_Switzerland
     case aargau
     case appenzell_ausserrhoden
-    case appenzell_innerhoden
+    case appenzell_innerrhoden
     case basel_landschaft
     case basel_stadt
     case bern
@@ -58,7 +58,7 @@ public enum SubdivisionsSwitzerland : String, CaseIterable, SovereignStateSubdiv
         switch self {
         case .aargau,
                 .appenzell_ausserrhoden,
-                .appenzell_innerhoden,
+                .appenzell_innerrhoden,
                 .basel_landschaft,
                 .basel_stadt,
                 .grisons,
