@@ -193,7 +193,7 @@ internal extension Sequence {
     }
 }
 internal enum SovereignRegions {    
-    private static var excludedWords:[String] = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y"]
+    private static var excludedWords:[String] = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y", "du"]
     
     fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String {
         var values:[String] = input.components(separatedBy: "_")
