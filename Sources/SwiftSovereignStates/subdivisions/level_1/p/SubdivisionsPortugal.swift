@@ -8,8 +8,8 @@
 import Foundation
 
 public enum SubdivisionsPortugal : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Portugal
-    case acores
     case aveiro
+    case azores
     case beja
     case braga
     case braganca
@@ -20,7 +20,7 @@ public enum SubdivisionsPortugal : String, CaseIterable, SovereignStateSubdivisi
     case guarda
     case leiria
     case lisboa
-    case maderia
+    case madeira
     case portalegre
     case porto
     case santarem
@@ -34,17 +34,32 @@ public enum SubdivisionsPortugal : String, CaseIterable, SovereignStateSubdivisi
     }
     
     public func getType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.districts
+        switch self {
+        case .azores,
+                .madeira:
+            return SovereignStateSubdivisionType.autonomous_regions
+        default:
+            return SovereignStateSubdivisionType.districts
+        }
     }
     
     public func getRealName() -> String? {
         switch self {
-        case .acores: return "Açores"
         case .braganca: return "Bragança"
         case .evora: return "Évora"
         case .santarem: return "Santarém"
         case .setubal: return "Setúbal"
         default: return nil
+        }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .azores,
+                .madeira:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }
