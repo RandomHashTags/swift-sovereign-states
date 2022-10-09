@@ -9,7 +9,7 @@ import Foundation
 
 public enum SubdivisionsCameroon : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Cameroon
     case adamawa
-    case central
+    case centre
     case east
     case far_north
     case littoral
@@ -25,5 +25,22 @@ public enum SubdivisionsCameroon : String, CaseIterable, SovereignStateSubdivisi
     
     public func getType() -> SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .centre,
+                .east,
+                .north,
+                .nortwest,
+                .south,
+                .southwest,
+                .west:
+            return "_" + getTypeSuffix() + ",_(Cameroon)"
+        case .far_north:
+            return "_" + getTypeSuffix() + ",_Cameroon"
+        default:
+            return "_" + getTypeSuffix()
+        }
     }
 }
