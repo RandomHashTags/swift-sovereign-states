@@ -45,7 +45,7 @@ public enum SubdivisionsFrance : String, CaseIterable, SovereignStateSubdivision
     
     public func getRealName() -> String? {
         switch self {
-        case .auvergne_rhone_alpes: return "Auvergne-Rhône-Alps"
+        case .auvergne_rhone_alpes: return "Auvergne-Rhône-Alpes"
         case .burgundy_free_county: return "Burgundy-Free County"
         case .centre_loire_valley: return "Centre-Loire Valley"
         case .provence_alps_french_riviera: return "Provence-Alps-French Riviera"
@@ -58,7 +58,7 @@ public enum SubdivisionsFrance : String, CaseIterable, SovereignStateSubdivision
         case .brittany,
                 .normandy,
                 .occitania:
-            return "(administrative_region)"
+            return "_(administrative_region)"
         default:
             return nil
         }
