@@ -28,15 +28,17 @@ public enum SubdivisionsQatar : String, CaseIterable, SovereignStateSubdivision 
     public func getRealName() -> String? {
         switch self {
         case .ad_dawhah: return "Ad-Dawhah"
-        case .al_shahaniya: return "Al-Shahanya"
+        case .al_shahaniya: return "Al-Shahaniya"
         default: return nil
         }
     }
     
     public func getWikipediaURLSuffix() -> String? {
         switch self {
-        case .ad_dawhah: return "_(municipality)"
-        default: return nil
+        case .ad_dawhah:
+            return "_(" + getTypeSuffix().lowercased() + ")"
+        default:
+            return nil
         }
     }
 }
