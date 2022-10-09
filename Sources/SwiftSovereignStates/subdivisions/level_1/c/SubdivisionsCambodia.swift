@@ -39,7 +39,12 @@ public enum SubdivisionsCambodia : String, CaseIterable, SovereignStateSubdivisi
     }
     
     public func getType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.provinces
+        switch self {
+        case .phnom_penh:
+            return SovereignStateSubdivisionType.autonomous_municipalities
+        default:
+            return SovereignStateSubdivisionType.provinces
+        }
     }
     
     public func getRealName() -> String? {
@@ -77,6 +82,15 @@ public enum SubdivisionsCambodia : String, CaseIterable, SovereignStateSubdivisi
         case .svay_rieng: return "en/1/17/Svay_Rieng.png"
         case .takeo: return "en/1/16/Seal_of_Takeo.png"
         case .tboung_khmum: return "en/4/45/Tboung_Khmum_seal.png"
+        }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .phnom_penh:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }
