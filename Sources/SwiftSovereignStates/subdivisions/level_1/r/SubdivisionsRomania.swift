@@ -139,4 +139,13 @@ public enum SubdivisionsRomania : String, CaseIterable, SovereignStateSubdivisio
         case .bucharest: return "6/64/ROU_Bucharest_CoA"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .bucharest:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
