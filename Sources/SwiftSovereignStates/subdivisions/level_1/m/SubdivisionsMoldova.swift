@@ -11,6 +11,7 @@ public enum SubdivisionsMoldova : String, CaseIterable, SovereignStateSubdivisio
     case anenii_noi
     case balti
     case basarabeasca
+    case bender
     case briceni
     case cahul
     case calarasi
@@ -41,11 +42,10 @@ public enum SubdivisionsMoldova : String, CaseIterable, SovereignStateSubdivisio
     case straseni
     case taraclia
     case telenesti
-    case tighina
     case ungheni
     
     case gagauzia
-    case left_bank_of_the_dniester
+    case left_bank_of_the_dniester // aka Transnistria
     
     public func getCountry() -> Country {
         return Country.moldova
@@ -53,7 +53,7 @@ public enum SubdivisionsMoldova : String, CaseIterable, SovereignStateSubdivisio
     
     public func getType() -> SovereignStateSubdivisionType {
         switch self {
-        case .balti, .chisinau, .tighina:
+        case .balti, .chisinau, .bender:
             return SovereignStateSubdivisionType.municipalities
         case .gagauzia, .left_bank_of_the_dniester:
             return SovereignStateSubdivisionType.autonomous_territorial_units
@@ -91,6 +91,7 @@ public enum SubdivisionsMoldova : String, CaseIterable, SovereignStateSubdivisio
         case .anenii_noi: return "c/c8/Flag_of_Anenii_Noi_District.gif"
         case .balti: return "7/7a/Flag_of_Bălți.png"
         case .basarabeasca: return "1/11/Flag_of_Basarabeasca_District.png"
+        case .bender: return "e/e8/Bendery-Flag.jpg"
         case .briceni: return nil
         case .cahul: return "b/b8/Flag_of_District_Cahul"
         case .calarasi: return "f/f8/Rajon_Calarasi_flag.gif"
@@ -121,11 +122,21 @@ public enum SubdivisionsMoldova : String, CaseIterable, SovereignStateSubdivisio
         case .straseni: return "c/ce/Straseni_rajon_flag.gif"
         case .taraclia: return "f/f8/Drapel_Raionul_Taraclia.png"
         case .telenesti: return "1/17/Drapel_Raionul_Telenești.png"
-        case .tighina: return "e/e8/Bendery-Flag.jpg"
         case .ungheni: return "a/a5/Flag_of_District_Ungheni"
         
         case .gagauzia: return "6/69/Flag_of_Gagauzia"
         case .left_bank_of_the_dniester: return nil
+        }
+    }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .bender:
+            return ",_Moldova"
+        case .gagauzia, .left_bank_of_the_dniester:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }
