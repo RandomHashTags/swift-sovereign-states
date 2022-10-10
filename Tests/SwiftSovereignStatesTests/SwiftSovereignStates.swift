@@ -67,9 +67,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testNeighbors()
         testCities()
         
-        let seconds:UInt64 = 500_000_000
+        //let seconds:UInt64 = 500_000_000
         //try await validateCountryWikipediaURLs(seconds)
-        try await validateSubdivisionWikipediaURLs(seconds)
+        //try await validateSubdivisionWikipediaURLs(seconds)
         //try await validateCityWikipediaURLs(seconds)
     }
     
@@ -184,8 +184,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
     }
     private func validateSubdivisionWikipediaURLs(_ seconds: UInt64) async throws {
-        let subdivisions:[any SovereignStateSubdivision] = SovereignStateSubdivisions.all.filter({ $0.getCountry() == .argentina })
-        for subdivision in subdivisions {
+        for subdivision in SovereignStateSubdivisions.all {
             await verifyWikipediaURL(subdivision)
             try await Task.sleep(nanoseconds: seconds)
         }
