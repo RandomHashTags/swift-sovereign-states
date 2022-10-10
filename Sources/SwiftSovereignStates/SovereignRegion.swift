@@ -202,9 +202,12 @@ internal enum SovereignRegions {
         }
         return values.map({
             let value:String = $0
-            guard !excludedWords.contains(value) else { return value }
-            return value.first!.uppercased() + value.suffix(value.count-1)
+            guard !excludedWords.contains(value) else { return input.starts(with: value) ? capitalize(value) : value }
+            return capitalize(value)
         }).joined(separator: " ")
+    }
+    private static func capitalize(_ string: String) -> String {
+        return string.first!.uppercased() + string.suffix(string.count-1)
     }
     
     fileprivate static func formatTime(date: Date, timeZone: TimeZone, timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String {
