@@ -44,6 +44,13 @@ public enum SubdivisionsEgypt : String, CaseIterable, SovereignStateSubdivision 
         return SovereignStateSubdivisionType.governorates
     }
     
+    public func getRealName() -> String? {
+        switch self {
+        case .kafr_el_sheikh: return "Kafr El Sheikh"
+        default: return nil
+        }
+    }
+    
     public func getISOAlpha2() -> String? {
         switch self {
         case .alexandria: return "ALX"
