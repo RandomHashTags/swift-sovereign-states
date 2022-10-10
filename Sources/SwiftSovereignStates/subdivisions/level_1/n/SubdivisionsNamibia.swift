@@ -13,7 +13,7 @@ public enum SubdivisionsNamibia : String, CaseIterable, SovereignStateSubdivisio
     case kavango_east
     case kavango_west
     case khomas
-    case kuene
+    case kunene
     case ohangwena
     case omaheke
     case omusati
