@@ -57,6 +57,7 @@ public enum SubdivisionsArgentina : String, CaseIterable, SovereignStateSubdivis
     
     public func getRealName() -> String? {
         switch self {
+        case .autonomous_city_of_buenos_aires: return "Buenos Aires"
         case .cordoba: return "Córdoba"
         case .neuquen: return "Neuquén"
         case .rio_negreo: return "Río Negro"
@@ -68,7 +69,7 @@ public enum SubdivisionsArgentina : String, CaseIterable, SovereignStateSubdivis
     
     public func getWikipediaURLSuffix() -> String? {
         switch self {
-        case .buenos_aires:
+        case .autonomous_city_of_buenos_aires:
             return nil
         case .cordoba,
                 .la_rioja,
