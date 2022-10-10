@@ -36,7 +36,7 @@ public enum SubdivisionsDominicanRepublic : String, CaseIterable, SovereignState
     case san_juan
     case san_pedro_de_macoris
     case sanchez_ramirez
-    case santigao
+    case santiago
     case santiago_rodriguez
     case santo_domingo
     case valverde
@@ -52,7 +52,7 @@ public enum SubdivisionsDominicanRepublic : String, CaseIterable, SovereignState
     public func getConditionalName() -> String? {
         switch self {
         case .distrito_nacional:
-            return "Distro Nacional"
+            return "Distrito Nacional"
         default:
             return nil
         }
@@ -79,7 +79,7 @@ public enum SubdivisionsDominicanRepublic : String, CaseIterable, SovereignState
         case .la_romana:
             return ",_Dominican_Republic"
         case .san_juan,
-                .santigao:
+                .santiago:
             return "_(Dominican_Republic)"
         default:
             return nil
