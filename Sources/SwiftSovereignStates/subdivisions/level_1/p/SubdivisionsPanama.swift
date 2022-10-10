@@ -8,7 +8,7 @@
 import Foundation
 
 public enum SubdivisionsPanama : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Panama
-    case borcas_del_toro
+    case bocas_del_toro
     case chiriqui
     case cocle
     case colon
@@ -71,8 +71,8 @@ public enum SubdivisionsPanama : String, CaseIterable, SovereignStateSubdivision
         case .embera,
                 .ngabe_bugle,
                 .naso_tjer_di:
-            return "Comarca"
-        case .borcas_del_toro:
+            return "_Comarca"
+        case .bocas_del_toro:
             return "_" + getTypeSuffix()
         default:
             return nil
