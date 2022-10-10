@@ -42,4 +42,13 @@ public enum SubdivisionsMali : String, CaseIterable, SovereignStateSubdivision {
         default: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .bamako:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
