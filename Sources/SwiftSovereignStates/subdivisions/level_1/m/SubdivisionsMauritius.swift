@@ -23,7 +23,7 @@ public enum SubdivisionsMauritius : String, CaseIterable, SovereignStateSubdivis
     }
     
     public func getType() -> SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.divisions
+        return SovereignStateSubdivisionType.districts
     }
     
     public func getRealName() -> String? {
