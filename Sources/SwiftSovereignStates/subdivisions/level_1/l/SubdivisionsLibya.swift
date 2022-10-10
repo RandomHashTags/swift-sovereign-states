@@ -13,9 +13,9 @@ public enum SubdivisionsLibya : String, CaseIterable, SovereignStateSubdivision 
     case jabal_al_gharbi
     case jafara
     case jufra
-    case kufrah
+    case kufra
     case marj
-    case al_walhat
+    case al_wahat
     case nuqat_al_khams
     case zawiya
     case benghazi
