@@ -60,7 +60,7 @@ public enum SubdivisionsHungary : String, CaseIterable, SovereignStateSubdivisio
         case .budapest:
             return nil
         default:
-            return nil
+            return "_" + getTypeSuffix()
         }
     }
 }
