@@ -27,4 +27,13 @@ public enum SubdivisionsIsrael : String, CaseIterable, SovereignStateSubdivision
         default: return SovereignStateSubdivisionType.districts
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .judea_and_samaria:
+            return "_Area"
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
