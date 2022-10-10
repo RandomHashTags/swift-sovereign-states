@@ -18,7 +18,7 @@ public enum SubdivisionsPalestine : String, CaseIterable, SovereignStateSubdivis
     case khan_yunis
     case nablus
     case north_gaza
-    case qalqiliya
+    case qalqilya
     case rafah
     case ramallah_and_al_bireh
     case salfit

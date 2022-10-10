@@ -72,10 +72,8 @@ public enum SubdivisionsPanama : String, CaseIterable, SovereignStateSubdivision
                 .ngabe_bugle,
                 .naso_tjer_di:
             return "Comarca"
-        case .guna_yala,
-                .madungandi,
-                .wargandi:
-            return nil
+        case .borcas_del_toro:
+            return "_" + getTypeSuffix()
         default:
             return nil
         }
