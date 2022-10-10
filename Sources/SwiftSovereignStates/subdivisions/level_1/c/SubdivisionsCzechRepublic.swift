@@ -63,4 +63,13 @@ public enum SubdivisionsCzechRepublic : String, CaseIterable, SovereignStateSubd
         case .moravian_silesian: return "f/f3/Flag_of_Moravian-Silesian_Region"
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .prague:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
