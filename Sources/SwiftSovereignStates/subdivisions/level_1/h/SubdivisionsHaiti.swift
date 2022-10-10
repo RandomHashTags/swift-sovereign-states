@@ -40,9 +40,11 @@ public enum SubdivisionsHaiti : String, CaseIterable, SovereignStateSubdivision 
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .nord:
-            return "(Haitian_department)"
+            return "_(Haitian_department)"
+        case .nippes:
+            return nil
         default:
-            return "(department)"
+            return "_(department)"
         }
     }
     
