@@ -65,7 +65,7 @@ public enum SubdivisionsEcuador : String, CaseIterable, SovereignStateSubdivisio
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .bolivar:
-            return "_(Ecuador)"
+            return "_" + getTypeSuffix() + "_(Ecuador)"
         default:
             return nil
         }
