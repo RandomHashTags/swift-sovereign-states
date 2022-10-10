@@ -25,7 +25,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
     case parana
     case pernambuco
     case piaui
-    case rio_de_janerio
+    case rio_de_janeiro
     case rio_grande_do_norte
     case rio_grande_do_sul
     case rondonia
@@ -80,7 +80,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
         switch self {
         case .acre,
                 .parana,
-                .rio_de_janerio,
+                .rio_de_janeiro,
                 .santa_catarina,
                 .sao_paulo:
             return "_(" + getTypeSuffix().lowercased() + ")"
@@ -113,7 +113,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
         case .parana: return "PR"
         case .pernambuco: return "PE"
         case .piaui: return "PI"
-        case .rio_de_janerio: return "RJ"
+        case .rio_de_janeiro: return "RJ"
         case .rio_grande_do_norte: return "RN"
         case .rio_grande_do_sul: return "RS"
         case .rondonia: return "RO"
@@ -144,7 +144,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
         case .parana: return "9/93/Bandeira_do_Paraná"
         case .pernambuco: return "5/59/Bandeira_de_Pernambuco"
         case .piaui: return "3/33/Bandeira_do_Piau%C3%AD"
-        case .rio_de_janerio: return "7/73/Bandeira_do_estado_do_Rio_de_Janeiro"
+        case .rio_de_janeiro: return "7/73/Bandeira_do_estado_do_Rio_de_Janeiro"
         case .rio_grande_do_norte: return "3/30/Bandeira_do_Rio_Grande_do_Norte"
         case .rio_grande_do_sul: return "6/63/Bandeira_do_Rio_Grande_do_Sul"
         case .rondonia: return "f/fa/Bandeira_de_Rondônia"
@@ -175,7 +175,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
         case .distrito_federal:
             return [SubdivisionsBrazil.goias, SubdivisionsBrazil.minas_gerais]
         case .espirito_santo:
-            return [SubdivisionsBrazil.rio_de_janerio, SubdivisionsBrazil.minas_gerais, SubdivisionsBrazil.bahia]
+            return [SubdivisionsBrazil.rio_de_janeiro, SubdivisionsBrazil.minas_gerais, SubdivisionsBrazil.bahia]
         case .goias:
             return [SubdivisionsBrazil.distrito_federal, SubdivisionsBrazil.minas_gerais, SubdivisionsBrazil.mato_grosso_do_sul, SubdivisionsBrazil.mato_grosso, SubdivisionsBrazil.tocantins, SubdivisionsBrazil.bahia]
         case .maranhao:
@@ -185,7 +185,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
         case .mato_grosso_do_sul:
             return [SubdivisionsBrazil.mato_grosso, SubdivisionsBrazil.goias, SubdivisionsBrazil.minas_gerais, SubdivisionsBrazil.sao_paulo, SubdivisionsBrazil.parana]
         case .minas_gerais:
-            return [SubdivisionsBrazil.espirito_santo, SubdivisionsBrazil.rio_de_janerio, SubdivisionsBrazil.sao_paulo, SubdivisionsBrazil.mato_grosso_do_sul, SubdivisionsBrazil.goias, SubdivisionsBrazil.distrito_federal, SubdivisionsBrazil.bahia]
+            return [SubdivisionsBrazil.espirito_santo, SubdivisionsBrazil.rio_de_janeiro, SubdivisionsBrazil.sao_paulo, SubdivisionsBrazil.mato_grosso_do_sul, SubdivisionsBrazil.goias, SubdivisionsBrazil.distrito_federal, SubdivisionsBrazil.bahia]
         case .para:
             return [SubdivisionsBrazil.amapa, SubdivisionsBrazil.maranhao, SubdivisionsBrazil.tocantins, SubdivisionsBrazil.mato_grosso, SubdivisionsBrazil.amazonas, SubdivisionsBrazil.roraima]
         case .paraiba:
@@ -196,7 +196,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
             return [SubdivisionsBrazil.paraiba, SubdivisionsBrazil.ceara, SubdivisionsBrazil.piaui, SubdivisionsBrazil.bahia, SubdivisionsBrazil.alagoas]
         case .piaui:
             return [SubdivisionsBrazil.maranhao, SubdivisionsBrazil.tocantins, SubdivisionsBrazil.bahia, SubdivisionsBrazil.pernambuco, SubdivisionsBrazil.ceara]
-        case .rio_de_janerio:
+        case .rio_de_janeiro:
             return [SubdivisionsBrazil.espirito_santo, SubdivisionsBrazil.minas_gerais, SubdivisionsBrazil.sao_paulo]
         case .rio_grande_do_norte:
             return [SubdivisionsBrazil.ceara, SubdivisionsBrazil.paraiba]
@@ -209,7 +209,7 @@ public enum SubdivisionsBrazil : String, CaseIterable, SovereignStateSubdivision
         case .santa_catarina:
             return [SubdivisionsBrazil.parana, SubdivisionsBrazil.rio_grande_do_sul]
         case .sao_paulo:
-            return [SubdivisionsBrazil.parana, SubdivisionsBrazil.mato_grosso_do_sul, SubdivisionsBrazil.minas_gerais, SubdivisionsBrazil.rio_de_janerio]
+            return [SubdivisionsBrazil.parana, SubdivisionsBrazil.mato_grosso_do_sul, SubdivisionsBrazil.minas_gerais, SubdivisionsBrazil.rio_de_janeiro]
         case .sergipe:
             return [SubdivisionsBrazil.bahia, SubdivisionsBrazil.alagoas]
         case .tocantins:
