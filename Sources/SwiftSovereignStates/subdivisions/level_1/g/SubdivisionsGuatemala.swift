@@ -21,7 +21,7 @@ public enum SubdivisionsGuatemala : String, CaseIterable, SovereignStateSubdivis
     case peten
     case quetzaltenango
     case quiche
-    case retalhueu
+    case retalhuleu
     case sacatepequez
     case san_marcos
     case santa_rosa
@@ -55,7 +55,7 @@ public enum SubdivisionsGuatemala : String, CaseIterable, SovereignStateSubdivis
         case .santa_rosa:
             return ",_Guatemala"
         default:
-            return nil
+            return "_" + getTypeSuffix()
         }
     }
 }
