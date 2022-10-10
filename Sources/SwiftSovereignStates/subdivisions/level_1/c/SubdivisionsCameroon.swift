@@ -36,7 +36,7 @@ public enum SubdivisionsCameroon : String, CaseIterable, SovereignStateSubdivisi
                 .south,
                 .southwest,
                 .west:
-            return "_" + getTypeSuffix() + ",_(Cameroon)"
+            return "_" + getTypeSuffix() + "_(Cameroon)"
         case .far_north:
             return "_" + getTypeSuffix() + ",_Cameroon"
         default:
