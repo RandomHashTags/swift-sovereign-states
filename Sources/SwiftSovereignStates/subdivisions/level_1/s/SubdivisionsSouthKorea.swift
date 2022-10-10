@@ -67,7 +67,7 @@ public enum SubdivisionsSouthKorea : String, CaseIterable, SovereignStateSubdivi
         case .gangwon:
             return "_" + getTypeSuffix() + ",_South_Korea"
         case .sejong:
-            return "City"
+            return "_City"
         default:
             return nil
         }
