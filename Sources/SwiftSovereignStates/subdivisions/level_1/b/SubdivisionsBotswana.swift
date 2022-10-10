@@ -49,7 +49,7 @@ public enum SubdivisionsBotswana : String, CaseIterable, SovereignStateSubdivisi
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .central, .north_east, .south_east, .southern:
-            return "_(Botswana)"
+            return "_" + getTypeSuffix() + "_(Botswana)"
         case .francistown, .gaborone,
                 .jwaneng, .lobatse, .orapa, .selebi_phikwe:
             return nil
