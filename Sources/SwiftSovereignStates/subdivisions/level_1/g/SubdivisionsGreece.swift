@@ -44,7 +44,7 @@ public enum SubdivisionsGreece : String, CaseIterable, SovereignStateSubdivision
                 .western_macedonia:
             return nil
         default:
-            return "(region)"
+            return "_(region)"
         }
     }
 }

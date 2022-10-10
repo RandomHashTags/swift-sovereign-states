@@ -72,7 +72,7 @@ public enum SubdivisionsIndia : String, CaseIterable, SovereignStateSubdivision 
             return ",_India"
         case .jammu_and_kashmir,
                 .puducherry:
-            return "(union_territory)"
+            return "_(union_territory)"
         default:
             return nil
         }

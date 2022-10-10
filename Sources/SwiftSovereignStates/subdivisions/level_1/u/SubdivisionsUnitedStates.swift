@@ -102,10 +102,11 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
     
     public func getWikipediaURLSuffix() -> String? {
         switch self {
-        case .georgia: return "(U.S._" + getTypeSuffix().lowercased() + ")"
+        case .georgia:
+            return "_(U.S._" + getTypeSuffix().lowercased() + ")"
         case .new_york,
                 .washington:
-            return "(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + getTypeSuffix().lowercased() + ")"
         default:
             return nil
         }

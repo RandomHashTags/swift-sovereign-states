@@ -58,7 +58,7 @@ public enum SubdivisionsNorway : String, CaseIterable, SovereignStateSubdivision
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .viken:
-            return "(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + getTypeSuffix().lowercased() + ")"
         default:
             return nil
         }

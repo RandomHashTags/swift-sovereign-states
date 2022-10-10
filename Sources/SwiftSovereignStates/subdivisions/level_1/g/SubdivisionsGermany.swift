@@ -57,7 +57,7 @@ public enum SubdivisionsGermany : String, CaseIterable, SovereignStateSubdivisio
     public func getWikipediaURLSuffix() -> String? {
         switch self {
         case .bremen:
-            return "(state)"
+            return "_(state)"
         default:
             return nil
         }
