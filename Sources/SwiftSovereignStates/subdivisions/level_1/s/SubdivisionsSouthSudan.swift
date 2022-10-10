@@ -63,7 +63,6 @@ public enum SubdivisionsSouthSudan : String, CaseIterable, SovereignStateSubdivi
                 .western_bahr_el_ghazal,
             
                 .abyei,
-                .greater_pibor,
                 .ruweng:
             return nil
         case .lakes:
