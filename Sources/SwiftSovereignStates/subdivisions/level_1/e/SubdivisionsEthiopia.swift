@@ -61,7 +61,7 @@ public enum SubdivisionsEthiopia : String, CaseIterable, SovereignStateSubdivisi
                 .dire_dawa:
             return nil
         default:
-            return "Region"
+            return "_Region"
         }
     }
 }
