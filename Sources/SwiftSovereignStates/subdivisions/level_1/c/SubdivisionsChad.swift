@@ -56,4 +56,13 @@ public enum SubdivisionsChad : String, CaseIterable, SovereignStateSubdivision {
         default: return nil
         }
     }
+    
+    public func getWikipediaURLSuffix() -> String? {
+        switch self {
+        case .bahr_el_gazel:
+            return "_(region_of_Chad)"
+        default:
+            return "_" + getTypeSuffix()
+        }
+    }
 }
