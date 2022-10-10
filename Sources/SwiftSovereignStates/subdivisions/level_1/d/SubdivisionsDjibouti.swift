@@ -11,7 +11,7 @@ public enum SubdivisionsDjibouti : String, CaseIterable, SovereignStateSubdivisi
     case ali_sabieh
     case arta
     case dikhil
-    case djbouti
+    case djibouti
     case obock
     case tadjourah
     
@@ -28,15 +28,15 @@ public enum SubdivisionsDjibouti : String, CaseIterable, SovereignStateSubdivisi
         case .ali_sabieh:
             return [SubdivisionsDjibouti.dikhil, SubdivisionsDjibouti.arta]
         case .arta:
-            return [SubdivisionsDjibouti.djbouti, SubdivisionsDjibouti.ali_sabieh, SubdivisionsDjibouti.dikhil, SubdivisionsDjibouti.tadjourah]
+            return [SubdivisionsDjibouti.djibouti, SubdivisionsDjibouti.ali_sabieh, SubdivisionsDjibouti.dikhil, SubdivisionsDjibouti.tadjourah]
         case .dikhil:
             return [SubdivisionsDjibouti.tadjourah, SubdivisionsDjibouti.arta, SubdivisionsDjibouti.ali_sabieh]
-        case .djbouti:
+        case .djibouti:
             return [SubdivisionsDjibouti.obock, SubdivisionsDjibouti.tadjourah, SubdivisionsDjibouti.arta]
         case .obock:
-            return [SubdivisionsDjibouti.tadjourah, SubdivisionsDjibouti.djbouti]
+            return [SubdivisionsDjibouti.tadjourah, SubdivisionsDjibouti.djibouti]
         case .tadjourah:
-            return [SubdivisionsDjibouti.obock, SubdivisionsDjibouti.djbouti, SubdivisionsDjibouti.arta, SubdivisionsDjibouti.dikhil]
+            return [SubdivisionsDjibouti.obock, SubdivisionsDjibouti.djibouti, SubdivisionsDjibouti.arta, SubdivisionsDjibouti.dikhil]
         }
     }
 }
