@@ -130,7 +130,7 @@ public protocol SovereignStateCity : SovereignRegion {
 
 public extension SovereignStateCity {
     init?(_ description: String) {
-        guard let city:any SovereignStateCity = SovereignStateCities.valueOfCacheID(description) else { return nil }
+        guard let city:any SovereignStateCity = SovereignStateCities.valueOfCacheID(description), city is Self else { return nil }
         self = city as! Self
     }
     
@@ -173,6 +173,10 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     
     public init(_ city: any SovereignStateCity) {
         self.city = city
+    }
+    public init?(_ description: String) {
+        guard let city:any SovereignStateCity = SovereignStateCities.valueOfCacheID(description) else { return nil }
+        self = SovereignStateCityWrapper(city)
     }
     
     public init(from decoder: Decoder) throws {

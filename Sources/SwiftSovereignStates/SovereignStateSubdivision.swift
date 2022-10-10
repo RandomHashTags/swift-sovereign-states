@@ -145,7 +145,7 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
 
 public extension SovereignStateSubdivision {
     init?(_ description: String) {
-        guard let subdivision:any SovereignStateSubdivision = SovereignStateSubdivisions.valueOfCacheID(description) else { return nil }
+        guard let subdivision:any SovereignStateSubdivision = SovereignStateSubdivisions.valueOfCacheID(description), subdivision is Self else { return nil }
         self = subdivision as! Self
     }
     
@@ -179,6 +179,10 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     
     public init(_ subdivision: any SovereignStateSubdivision) {
         self.subdivision = subdivision
+    }
+    public init?(_ description: String) {
+        guard let subdivision:any SovereignStateSubdivision = SovereignStateSubdivisions.valueOfCacheID(description) else { return nil }
+        self = SovereignStateSubdivisionWrapper(subdivision)
     }
     
     public init(from decoder: Decoder) throws {
