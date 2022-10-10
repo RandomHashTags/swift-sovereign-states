@@ -19,7 +19,7 @@ public enum SubdivisionsIndonesia : String, CaseIterable, SovereignStateSubdivis
     case east_java
     case east_kalimantan
     case east_nusa_tenggara
-    case gorontali
+    case gorontalo
     case jakarta
     case jambi
     case lampung
@@ -56,7 +56,7 @@ public enum SubdivisionsIndonesia : String, CaseIterable, SovereignStateSubdivis
         case .maluku,
                 .papua,
                 .west_papua:
-            return "(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + getTypeSuffix().lowercased() + ")"
         default:
             return nil
         }
