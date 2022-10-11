@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
+public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible, Sendable { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     /// The unique identifier of the SovereignRegion, in relation to other administrative regions of the same type.
     func getIdentifier() -> String
     /// The unique identifier of this SovereignRegion used for caching.
