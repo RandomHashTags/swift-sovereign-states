@@ -156,6 +156,10 @@ public extension SovereignStateCity {
     func getWikipediaURLSuffix() -> String? {
         return getDefaultURLSuffix()
     }
+    
+    func wrapped() -> SovereignStateCityWrapper {
+        return SovereignStateCityWrapper(self)
+    }
 }
 
 public extension SovereignStateSubdivision {

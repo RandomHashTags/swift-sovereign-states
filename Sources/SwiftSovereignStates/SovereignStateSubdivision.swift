@@ -172,6 +172,10 @@ public extension SovereignStateSubdivision {
     func getCities() -> [any SovereignStateCity]? {
         return nil
     }
+    
+    func wrapped() -> SovereignStateSubdivisionWrapper {
+        return SovereignStateSubdivisionWrapper(self)
+    }
 }
 
 public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, SovereignRegionWrapper {
