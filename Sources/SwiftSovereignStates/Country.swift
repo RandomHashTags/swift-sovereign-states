@@ -546,7 +546,7 @@ public enum Country : String, CaseIterable, SovereignState {
         return SovereignStateTimeZone.get(self)
     }
     /// The official currencies used within this country.
-    public func getCurrencies() -> [Currency]? {
+    public func getCurrencies() -> [Currency] {
         return SovereignStateCurrencies.get(self)
     }
     

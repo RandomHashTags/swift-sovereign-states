@@ -8,7 +8,7 @@
 import Foundation
 
 internal enum SovereignStateCurrencies {
-    static func get(_ country: Country) -> [Currency]? {
+    static func get(_ country: Country) -> [Currency] {
         switch country {
         case .abkhazia: return [Currency.RUB]
         case .afghanistan: return [Currency.AFN]
@@ -256,12 +256,21 @@ internal enum SovereignStateCurrencies {
         case .zambia: return [Currency.ZMW]
         case .zimbabwe: return [Currency.ZWL]
 
-
         case .vatican_city: return [Currency.EUR]
 
         case .wallis_and_futuna: return [Currency.XPF]
         case .western_sahara: return [Currency.MAD]
-            default: return nil
+            
+        case .curacao: return [Currency.ANG]
+        case .equatorial_guinea: return [Currency.XAF]
+        case .french_polynesia: return [Currency.XPF]
+        case .isle_of_man: return [Currency.GBP]
+        case .kosovo: return [Currency.EUR]
+        case .new_caledonia: return [Currency.XPF]
+        case .northern_cyprus: return [Currency.TRY]
+        case .scotland: return [Currency.GBP]
+        case .somaliland: return [Currency.SLS]
+        case .united_states_virgin_islands: return [Currency.USN, Currency.USD]
         }
     }
 }
