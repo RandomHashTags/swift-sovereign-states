@@ -247,6 +247,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
             print("SwiftSovereignStatesTests;testCountryMentions;shouldn't be=[" + notMentioned.map({ $0.getIdentifier() }).joined(separator: ",") + "]")
         }
         XCTAssert(mentioned.count == targetCountries.count)
+        
+        XCTAssert(Country.valueOf("USA") != nil)
     }
     private func testSubdivisionMentions() {
         let targetSubdivisions:[any SovereignStateSubdivision] = [SubdivisionsMexico.baja_california, SubdivisionsUnitedStates.california]

@@ -318,11 +318,11 @@ public enum Country : String, CaseIterable, SovereignState {
     }
     
     public func getAdditionalKeywords() -> [String]? {
-        var keywords:[String] = [String]()
+        var keywords:[String] = getSovereignStateAdditionalKeywords() ?? [String]()
         if let parentISOAlpha2:String = getISOAlpha2ParentGroup() {
             keywords.append(parentISOAlpha2)
         }
-        return keywords
+        return keywords.isEmpty ? nil : keywords
     }
     
     public func getWikipediaURL() -> String {
