@@ -37,7 +37,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
         
         try await benchmark(key: "SovereignStateCities.valueOf") {
-            let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Rochester", cache: cache)
+            let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Rochester", cache: cache, ignoreCase: false)
         }
         try await benchmark(key: "SovereignStateCities.getAllMentionedParallel") {
             let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
@@ -106,7 +106,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(SovereignStateSubdivisions.valueOf("") == nil)
         XCTAssert(SovereignStateSubdivisions.valueOfCacheID("") == nil)
         XCTAssert(SovereignStateSubdivisions.getAllMentioned("") == nil)
-        XCTAssert(SovereignStateCities.valueOf("") == nil)
+        XCTAssert(SovereignStateCities.valueOf("", ignoreCase: false) == nil)
         XCTAssert(SovereignStateCities.valueOfCacheID("") == nil)
         XCTAssert(SovereignStateCities.getAllMentioned("") == nil)
         
@@ -248,7 +248,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
         XCTAssert(mentioned.count == targetCountries.count)
         
-        XCTAssert(Country.valueOf("USA") != nil)
+        XCTAssert(Country.valueOf("USA", cache: false, ignoreCase: false) != nil);
+        XCTAssert(Country.valueOf("usa", cache: false, ignoreCase: false) == nil);
+        XCTAssert(Country.valueOf("usa", cache: false, ignoreCase: true) != nil);
     }
     private func testSubdivisionMentions() {
         let targetSubdivisions:[any SovereignStateSubdivision] = [SubdivisionsMexico.baja_california, SubdivisionsUnitedStates.california]

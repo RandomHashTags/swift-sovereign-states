@@ -278,19 +278,19 @@ public enum Country : String, CaseIterable, SovereignState {
         if let cached:[Country] = SwiftSovereignStateCacheCountries.mentioned[stringLowercase] {
             return cached
         }
-        let countries:[Country] = Country.allCases.filter({ $0.isMentioned(in: string) })
+        let countries:[Country] = Country.allCases.filter({ $0.isMentioned(in: string, exact: false, ignoreCase: false) })
         if cache {
             SwiftSovereignStateCacheCountries.mentioned[stringLowercase] = countries
         }
         return countries.isEmpty ? nil : countries
     }
     /// Returns the first country that is mentioned in the `string`.
-    public static func valueOf(_ string: String, cache: Bool = true) -> Country? {
+    public static func valueOf(_ string: String, cache: Bool = true, ignoreCase: Bool = false) -> Country? {
         let stringLowercase:String = string.lowercased()
         if let cached:Country = SwiftSovereignStateCacheCountries.valueOf[stringLowercase] {
             return cached
         }
-        let country:Country? = Country.allCases.first(where: { $0.isMentioned(in: string, exact: true) })
+        let country:Country? = Country.allCases.first(where: { $0.isMentioned(in: string, exact: true, ignoreCase: ignoreCase) })
         if cache {
             SwiftSovereignStateCacheCountries.valueOf[stringLowercase] = country
         }
@@ -416,14 +416,14 @@ public enum Country : String, CaseIterable, SovereignState {
         case .bolivia: return ["Bolivia (Plurinational State of)"]
         case .bosnia_and_herzegovina: return ["BiH", "B&H", "Bosnia–Herzegovina", "Bosnia-Herzegovina", "Bosnia"]
         case .cape_verde: return ["Cabo Verde"]
-        case .china: return ["People's Republic of China"]
+        case .china: return ["People's Republic of China", "China, People's Republic of"]
         case .ivory_coast: return ["Côte d'Ivoire", "Cote d'Ivoire", "Côte d’Ivoire"]
         case .curacao: return ["Curacao"]
         case .czech_republic: return ["Czechia"]
-        case .democratic_republic_of_the_congo: return ["Congo, Democratic Republic of", "Congo-Kinshasa", "Democratic Republic of Congo", "Democratic Republic of Congo", "DR Congo", "the DRC", "DROC", "Congo, the", "Congo", "Congo, Dem.", "Congo (Democratic Republic of the)"]
+        case .democratic_republic_of_the_congo: return ["Congo, Democratic Republic of", "Congo, Democratic Republic of the", "Congo-Kinshasa", "Democratic Republic of Congo", "DR Congo", "the DRC", "DROC", "Congo, the", "Congo", "Congo, Dem.", "Congo (Democratic Republic of the)"]
         case .eswatini: return ["Swaziland", "Eswatinia (Swaziland)"]
         case .faroe_islands: return ["Faroe Islands (Denmark)"]
-        case .gambia: return ["The Gambia", "Gambia, the", "Gambia, The"]
+        case .gambia: return ["The Gambia", "Gambia, the"]
         case .greenland: return ["Greenland (Denmark)"]
         case .guinea_bissau: return ["Guinea-Bissau"]
         case .hong_kong: return ["Hong Kong SAR"]
@@ -450,7 +450,7 @@ public enum Country : String, CaseIterable, SovereignState {
         case .sao_tome_and_principe: return ["Sao Tome", "Sao Tome and Principe"]
         case .solomon_islands: return ["Soloman Island"]
         case .south_korea: return ["Korea, South", "Korea (Republic of)", "Korea, Republic of"]
-        case .taiwan: return ["Chinese Taipei"]
+        case .taiwan: return ["Chinese Taipei", "Taiwan (Republoc of China)"]
         case .tanzania: return ["Tanzania, United Republic of", "Tanzania (United Republic of)"]
         case .timor_leste: return ["Timor-Leste", "East Timor"]
         case .united_arab_emirates: return ["UAE"]

@@ -17,7 +17,7 @@ public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible {
     /// Additional keywords this SovereignRegion should be recognized by.
     func getAdditionalKeywords() -> [String]?
     /// Whether this SovereignRegion is mentioned or not in the `string`.
-    func isMentioned(in string: String, exact: Bool) -> Bool
+    func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool
     
     /// The name of this SovereignRegion as it is comonly known as internationally.
     func getShortName() -> String
@@ -94,8 +94,9 @@ public extension SovereignRegion {
         return nil
     }
     
-    func isMentioned(in string: String, exact: Bool = false) -> Bool {
-        let values:[String] = getKeywords()
+    func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
+        let values:[String] = ignoreCase ? getKeywords().map({ $0.lowercased() }) : getKeywords()
+        let string:String = ignoreCase ? string.lowercased() : string
         return exact ? SovereignRegions.doesEqual(string: string, values: values) : SovereignRegions.doesSatisfy(string: string, values: values)
     }
     
