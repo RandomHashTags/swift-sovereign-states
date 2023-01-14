@@ -412,6 +412,7 @@ public enum Country : String, CaseIterable, SovereignState {
     
     public func getAliases() -> [String]? {
         switch self {
+        case .afghanistan: return ["Islamic Republic of Afghanistan"]
         case .bahamas: return ["The Bahamas", "Bahamas, the"]
         case .bolivia: return ["Bolivia (Plurinational State of)"]
         case .bosnia_and_herzegovina: return ["BiH", "B&H", "Bosnia–Herzegovina", "Bosnia-Herzegovina", "Bosnia"]
@@ -457,6 +458,7 @@ public enum Country : String, CaseIterable, SovereignState {
         case .united_states: return ["United States of America"]
         case .united_states_virgin_islands: return ["U.S. Virgin Islands", "United States Virgin Islands", "US Virgin Islands"]
         case .vatican_city: return ["Holy See"]
+        case .venezuela: return ["Venezuela (Bolivarian Republic of)"]
         case .vietnam: return ["Viet Nam"]
         default: return nil
         }
