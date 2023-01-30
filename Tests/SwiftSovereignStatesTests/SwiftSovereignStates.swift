@@ -78,15 +78,26 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for _ in 1...1_000 {
             let started:Double = CACurrentMediaTime()
             try await code()
-            timings.append((CACurrentMediaTime() - started) * 1_000)
+            let elapsed:Double = (CACurrentMediaTime() - started) * 1_000
+            timings.append(elapsed)
         }
         timings = timings.sorted(by: { $0 < $1 })
         let median:Double = timings[timings.count/2]
-        let average:Double = timings.reduce(0) { partialResult, value in
-            return partialResult + value
-        } / Double(timings.count)
+        let sum:Double = timings.reduce(0, +)
+        let average:Double = sum / Double(timings.count)
         let key:String = key + (1...(65-key.count)).map({ _ in " " }).joined()
-        print("SwiftSovereignStates;benchmark( " + key + "| min=" + timings.first!.description + "ms | max=" + timings.last!.description + "ms | median=" + median.description + "ms | average=" + average.description + "ms")
+        
+        let formatter:NumberFormatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 20
+        
+        let average_time_elapsed:String = formatter.string(for: average)!
+        let minimum_time_elapsed:String = formatter.string(for: timings.first!)!
+        let maximum_time_elapsed:String = formatter.string(for: timings.last!)!
+        let median_time_elapsed:String = formatter.string(for: median)!
+        let total_time_elapsed:String = formatter.string(for: sum)!
+        
+        print("SwiftSovereignStates;benchmark( " + key + "| min=" + minimum_time_elapsed + "ms | max=" + maximum_time_elapsed + "ms | median=" + median_time_elapsed + "ms | average=" + average_time_elapsed + "ms | total=" + total_time_elapsed + "ms")
     }
     
     private func testFoundations() {
