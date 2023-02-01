@@ -10,45 +10,48 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         let cache:Bool = true
         print("SwiftSovereignStatesTests;testExample;cache=" + cache.description)
-        try await benchmark(key: "Country.valueOfCacheID") {
-            let _:Country? = Country.valueOfCacheID("united_states", cache: cache)
+        if #available(macOS 13.0, *) {
+            try await benchmark(key: "Country.valueOfCacheID") {
+                let _:Country? = Country.valueOfCacheID("united_states", cache: cache)
+            }
+            try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
+                let _:Country? = Country.init("mexico")
+            }
+            try await benchmark(key: "Country.init(rawValue) [RawRepresentable]") {
+                let _:Country? = Country.init(rawValue: "canada")
+            }
+            try await benchmark(key: "testCodable") {
+                try self.testCodable()
+            }
+            
+            try await benchmark(key: "SovereignStateSubdivisions.valueOf") {
+                let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: cache)
+            }
+            try await benchmark(key: "SovereignStateSubdivisions.getAllMentionedParallel") {
+                let _:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel("Wisconsin! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
+            }
+            try await benchmark(key: "SovereignStateSubdivisions.getAllMentioned") {
+                let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
+            }
+            try await benchmark(key: "SovereignStateSubdivisions.valueOfCacheID") {
+                let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID("united_states_minnesota", cache: cache)
+            }
+            
+            try await benchmark(key: "SovereignStateCities.valueOf") {
+                let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Rochester", cache: cache, ignoreCase: false)
+            }
+            try await benchmark(key: "SovereignStateCities.getAllMentionedParallel") {
+                let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
+            }
+            try await benchmark(key: "SovereignStateCities.getAllMentioned") {
+                let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Rochester! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
+            }
+            try await benchmark(key: "SovereignStateCities.valueOfCacheID") {
+                let _:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states_minnesota_kasson", cache: cache)
+            }
+        } else {
+            print("SwiftSovereignStatesTests;failed to execute benchmarks due to outdated macOS version (less than 13.0)")
         }
-        try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
-            let _:Country? = Country.init("mexico")
-        }
-        try await benchmark(key: "Country.init(rawValue) [RawRepresentable]") {
-            let _:Country? = Country.init(rawValue: "canada")
-        }
-        try await benchmark(key: "testCodable") {
-            try self.testCodable()
-        }
-        
-        try await benchmark(key: "SovereignStateSubdivisions.valueOf") {
-            let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: cache)
-        }
-        try await benchmark(key: "SovereignStateSubdivisions.getAllMentionedParallel") {
-            let _:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel("Wisconsin! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
-        }
-        try await benchmark(key: "SovereignStateSubdivisions.getAllMentioned") {
-            let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
-        }
-        try await benchmark(key: "SovereignStateSubdivisions.valueOfCacheID") {
-            let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID("united_states_minnesota", cache: cache)
-        }
-        
-        try await benchmark(key: "SovereignStateCities.valueOf") {
-            let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Rochester", cache: cache, ignoreCase: false)
-        }
-        try await benchmark(key: "SovereignStateCities.getAllMentionedParallel") {
-            let _:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
-        }
-        try await benchmark(key: "SovereignStateCities.getAllMentioned") {
-            let _:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Rochester! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
-        }
-        try await benchmark(key: "SovereignStateCities.valueOfCacheID") {
-            let _:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states_minnesota_kasson", cache: cache)
-        }
-        
         /*measure {
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baja California, California? (Wisconsin) Texas's, Maine, New York; Kentucky.", cache: false)
             //let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: false)
@@ -73,31 +76,36 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //try await validateCityWikipediaURLs(seconds)
     }
     
+    @available(macOS 13.0, *)
     private func benchmark(key: String, _ code: @escaping () async throws -> Void) async throws {
-        var timings:[Double] = [Double]()
-        for _ in 1...1_000 {
-            let started:Double = CACurrentMediaTime()
-            try await code()
-            let elapsed:Double = (CACurrentMediaTime() - started) * 1_000
-            timings.append(elapsed)
+        let iteration_count:Int = 1_000
+        let clock:ContinuousClock = ContinuousClock()
+        let _:Duration = try await clock.measure(code)
+        var timings:[Int64] = [Int64]()
+        timings.reserveCapacity(iteration_count)
+        for _ in 1...iteration_count {
+            let result:Duration = try await clock.measure(code)
+            let attoseconds:Int64 = result.components.attoseconds
+            let nanoseconds:Int64 = attoseconds / 1_000_000_000
+            timings.append(nanoseconds)
         }
         timings = timings.sorted(by: { $0 < $1 })
-        let median:Double = timings[timings.count/2]
-        let sum:Double = timings.reduce(0, +)
-        let average:Double = sum / Double(timings.count)
+        let median:Int64 = timings[timings.count/2]
+        let sum:Int64 = timings.reduce(0, +)
+        let average:Double = Double(sum) / Double(timings.count)
         let key:String = key + (1...(65-key.count)).map({ _ in " " }).joined()
         
         let formatter:NumberFormatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 20
         
-        let average_time_elapsed:String = formatter.string(for: average)!
-        let minimum_time_elapsed:String = formatter.string(for: timings.first!)!
-        let maximum_time_elapsed:String = formatter.string(for: timings.last!)!
-        let median_time_elapsed:String = formatter.string(for: median)!
-        let total_time_elapsed:String = formatter.string(for: sum)!
+        let average_time_elapsed:String = formatter.string(for: average)! + "ns"
+        let minimum_time_elapsed:String = formatter.string(for: timings.first!)! + "ns"
+        let maximum_time_elapsed:String = formatter.string(for: timings.last!)! + "ns"
+        let median_time_elapsed:String = formatter.string(for: median)! + "ns"
+        let total_time_elapsed:String = formatter.string(for: sum)! + "ns"
         
-        print("SwiftSovereignStates;benchmark( " + key + "| min=" + minimum_time_elapsed + "ms | max=" + maximum_time_elapsed + "ms | median=" + median_time_elapsed + "ms | average=" + average_time_elapsed + "ms | total=" + total_time_elapsed + "ms")
+        print("SwiftSovereignStates;benchmark( " + key + "| min=" + minimum_time_elapsed + " | max=" + maximum_time_elapsed + " | median=" + median_time_elapsed + " | average=" + average_time_elapsed + " | total=" + total_time_elapsed)
     }
     
     private func testFoundations() {
