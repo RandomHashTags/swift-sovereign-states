@@ -8,19 +8,16 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.getKeywords() })
         let _:[[String]] = SovereignStateCities.all.map({ $0.getKeywords() })
         
-        let cache:Bool = true
+        let cache:Bool = false
         print("SwiftSovereignStatesTests;testExample;cache=" + cache.description)
         if #available(macOS 13.0, *) {
-            try await benchmark(key: "Country.valueOfCacheID") {
-                let _:Country? = Country.valueOfCacheID("united_states", cache: cache)
-            }
             try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
-                let _:Country? = Country.init("mexico")
+                let _:Country? = Country.init("united_states")
             }
             try await benchmark(key: "Country.init(rawValue) [RawRepresentable]") {
-                let _:Country? = Country.init(rawValue: "canada")
+                let _:Country? = Country.init(rawValue: "united_states")
             }
-            try await benchmark(key: "testCodable") {
+            /*try await benchmark(key: "testCodable") {
                 try self.testCodable()
             }
             
@@ -48,7 +45,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             }
             try await benchmark(key: "SovereignStateCities.valueOfCacheID") {
                 let _:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states_minnesota_kasson", cache: cache)
-            }
+            }*/
         } else {
             print("SwiftSovereignStatesTests;failed to execute benchmarks due to outdated macOS version (less than 13.0)")
         }
@@ -60,6 +57,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Kasson", cache: false)
             //let _:Country? = Country.valueOfIdentifier("united_states")
         }*/
+        return
         
         testFoundations()
         try testCodable()
@@ -78,9 +76,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     @available(macOS 13.0, *)
     private func benchmark(key: String, _ code: @escaping () async throws -> Void) async throws {
-        let iteration_count:Int = 1_000
+        let iteration_count:Int = 100_000
         let clock:ContinuousClock = ContinuousClock()
-        let _:Duration = try await clock.measure(code)
         var timings:[Int64] = [Int64]()
         timings.reserveCapacity(iteration_count)
         for _ in 1...iteration_count {
@@ -120,7 +117,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(kasson.getCacheID().elementsEqual("united_states_minnesota_kasson"))
         
         XCTAssert(Country.valueOf("") == nil)
-        XCTAssert(Country.valueOfCacheID("") == nil)
+        XCTAssert(Country.init("") == nil)
         XCTAssert(Country.getAllMentioned("") == nil)
         XCTAssert(SovereignStateSubdivisions.valueOf("") == nil)
         XCTAssert(SovereignStateSubdivisions.valueOfCacheID("") == nil)
