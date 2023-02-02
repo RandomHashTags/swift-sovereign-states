@@ -116,7 +116,7 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .adazi: return "5/51/Ādažu_novada_karogs"
         case .aizkraukle: return "3/39/Aizkraukles_novads_COA"

@@ -36,7 +36,7 @@ public enum SubdivisionsSouthSudan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .central_equatoria: return "8/80/Flag_of_Central_Equatoria.png"
         case .eastern_equatoria: return "7/74/Flag_of_Eastern_Equatoria.png"

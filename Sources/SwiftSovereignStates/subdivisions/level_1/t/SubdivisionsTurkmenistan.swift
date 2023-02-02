@@ -48,7 +48,7 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .ashgabat: return "7/7e/Ashgabat_%28seal%29"
         default: return nil

@@ -49,7 +49,7 @@ public enum SubdivisionsUzbekistan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .karakalpakstan: return "1/16/Flag_of_Karakalpakstan"
         case .tashkent: return "4/4a/Flag_of_Tashkent"

@@ -79,7 +79,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .new_south_wales: return "0/00/Flag_of_New_South_Wales"
         case .queensland: return "0/04/Flag_of_Queensland"

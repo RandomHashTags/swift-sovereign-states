@@ -116,7 +116,7 @@ public enum SubdivisionsMalta : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .attard: return "f/f5/Flag_of_Attard"
         case .balzan: return "d/d4/Flag_of_Balzan"

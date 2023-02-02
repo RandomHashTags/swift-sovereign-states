@@ -85,7 +85,7 @@ public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .cherkasy: return "8/85/Flag_of_Cherkasy_Oblast"
         case .chernihiv: return "f/f7/Flag_of_Chernihiv_Oblast"

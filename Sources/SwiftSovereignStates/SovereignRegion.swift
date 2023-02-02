@@ -33,7 +33,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     var government_website : String? { get }
     
     func getFlagURL() -> String?
-    func getFlagURLWikipediaSVGID() -> String?
+    var wikipedia_flag_url_svg_id : String? { get }
     func getWikipediaURL() -> String
     func getWikipediaURLPrefix() -> String?
     func getWikipediaURLSuffix() -> String?
@@ -123,14 +123,14 @@ public extension SovereignRegion {
     }
     
     func getFlagURL() -> String? {
-        guard let id:String = getFlagURLWikipediaSVGID() else { return nil }
+        guard let id:String = wikipedia_flag_url_svg_id else { return nil }
         let idLowercase:String = id.lowercased()
         let values:[String] = id.components(separatedBy: "/"), lastValue:String = SovereignRegions.urlEncoded(values[values.count-1])
         let isEN:Bool = id.starts(with: "en"), type:String = isEN ? "en" : "commons", offset:Int = isEN ? 1 : 0
         let hasExtension:Bool = idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif")
         return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + values[offset] + "/" + values[offset + 1] + "/" + lastValue + (hasExtension ? "" : ".svg") + "/%quality%px-" + lastValue + (hasExtension ? "" : ".svg.png")
     }
-    func getFlagURLWikipediaSVGID() -> String? {
+    var wikipedia_flag_url_svg_id : String? {
         return nil
     }
     

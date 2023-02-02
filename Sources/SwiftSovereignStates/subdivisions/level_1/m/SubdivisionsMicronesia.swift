@@ -30,7 +30,7 @@ public enum SubdivisionsMicronesia : String, SovereignStateSubdivision {
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .chuuk: return "5/55/Flag_of_Chuuk"
         case .kosrae: return "2/23/Flag_of_Kosrae"

@@ -35,7 +35,7 @@ public enum SubdivisionsAustria : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .burgenland: return "2/29/Flag_of_Burgenland"
         case .carinthia: return "9/9b/Flag_of_Carinthia"

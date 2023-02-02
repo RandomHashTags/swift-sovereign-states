@@ -46,7 +46,7 @@ public enum SubdivisionsEstonia : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .harju: return "2/22/Flag_of_et-Harju_maakond"
         case .hiiu: return "5/5f/Hiiumaa_lipp"

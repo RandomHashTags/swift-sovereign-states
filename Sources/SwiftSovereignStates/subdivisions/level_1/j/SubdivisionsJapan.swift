@@ -86,7 +86,7 @@ public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .aichi: return "0/02/Flag_of_Aichi_Prefecture"
         case .akita: return "8/84/Flag_of_Akita_Prefecture"

@@ -82,7 +82,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .autonomous_city_of_buenos_aires: return "f/f5/Bandera_de_la_Ciudad_de_Buenos_Aires"
         case .buenos_aires: return "1/15/Bandera_de_la_Provincia_de_Buenos_Aires"

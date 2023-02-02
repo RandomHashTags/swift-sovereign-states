@@ -32,7 +32,7 @@ public enum SubdivisionsLiberia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.counties
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .bomi: return "2/24/Flag_of_Bomi_County"
         case .bong: return "1/10/Flag_of_Bong_County"

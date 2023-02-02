@@ -32,7 +32,7 @@ public enum SubdivisionsCostaRica : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .alajuela: return "9/91/Bandera_de_la_Provincia_de_Alajuela"
         case .cartago: return "0/06/Bandera_de_la_Provincia_de_Cartago"

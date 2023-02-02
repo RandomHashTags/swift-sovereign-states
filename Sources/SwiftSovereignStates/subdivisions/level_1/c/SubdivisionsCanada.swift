@@ -56,7 +56,7 @@ public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .alberta: return "f/f5/Flag_of_Alberta"
         case .british_columbia: return "b/b8/Flag_of_British_Columbia"

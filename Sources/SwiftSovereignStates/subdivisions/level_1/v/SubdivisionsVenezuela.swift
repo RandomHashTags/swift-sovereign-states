@@ -80,7 +80,7 @@ public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .amazonas: return "7/7f/Flag_of_Amazonas_Indigenous_State"
         case .anzoategui: return "0/03/Flag_of_Anzoátegui_State_%28original_version%29"

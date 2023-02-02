@@ -31,7 +31,7 @@ public enum SubdivisionsAntiguaAndBarbuda : String, SovereignStateSubdivision { 
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .barbuda: return "4/41/Barbuda_Council_Flag"
         default: return nil

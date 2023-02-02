@@ -55,7 +55,7 @@ public enum SubdivisionsCambodia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .banteay_meanchey: return "en/1/14/Banteay_Meanchey_seal.png"
         case .battambang: return "en/a/a8/Battambang_Province_seal.png"

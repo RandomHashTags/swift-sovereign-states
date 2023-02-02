@@ -119,7 +119,7 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .andhra_pradesh: return "3/37/Emblem_of_Andhra_Pradesh"
         case .arunachal_pradesh: return "en/d/d4/Arunachal_Pradesh_Seal"

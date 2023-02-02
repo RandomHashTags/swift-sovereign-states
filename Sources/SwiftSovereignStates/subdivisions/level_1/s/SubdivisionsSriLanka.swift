@@ -36,7 +36,7 @@ public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .central: return "f/fc/Central_Province.png"
         case .eastern: return "d/dd/Eastern_Province_Flag_%28SRI_LANKA%29.png"

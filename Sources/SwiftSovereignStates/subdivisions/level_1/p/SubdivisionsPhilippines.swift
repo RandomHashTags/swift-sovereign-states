@@ -113,7 +113,7 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .abra: return "b/b0/PH-ABR_Flag.png"
         case .agusan_del_norte: return "9/94/PH-AGN_Flag.png"

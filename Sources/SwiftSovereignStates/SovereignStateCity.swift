@@ -242,8 +242,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public func getFlagURL() -> String? {
         return city.getFlagURL()
     }
-    public func getFlagURLWikipediaSVGID() -> String? {
-        return city.getFlagURLWikipediaSVGID()
+    public var wikipedia_flag_url_svg_id : String? {
+        return city.wikipedia_flag_url_svg_id
     }
     public func getWikipediaURL() -> String {
         return city.getWikipediaURL()

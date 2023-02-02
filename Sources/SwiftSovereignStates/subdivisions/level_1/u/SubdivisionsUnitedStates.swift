@@ -226,7 +226,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .alabama: return "5/5c/Flag_of_Alabama"
         case .alaska: return "e/e6/Flag_of_Alaska"

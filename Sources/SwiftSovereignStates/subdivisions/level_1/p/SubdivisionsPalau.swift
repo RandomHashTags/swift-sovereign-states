@@ -33,7 +33,7 @@ public enum SubdivisionsPalau : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.states
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .kayangel: return "3/35/Flag_of_Kayangel"
         case .aimeliik: return "3/31/Flag_of_Aimeliik"

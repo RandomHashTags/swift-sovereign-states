@@ -47,7 +47,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .brest: return "e/ec/Flag_of_Brest_Voblast%2C_Belarus"
         case .minsk_city: return "6/69/Flag_of_Minsk%2C_Belarus"

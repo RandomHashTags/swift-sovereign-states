@@ -68,7 +68,7 @@ public enum SubdivisionsIraq : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .al_anbar: return "b/bc/Flag_of_Al_Anbar_Governorate.png"
         case .al_qadisiyyah: return "en/7/7c/Seal_of_Al-Qadisiyah_Governorate.png"

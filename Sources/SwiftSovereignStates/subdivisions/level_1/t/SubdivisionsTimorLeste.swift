@@ -45,7 +45,7 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .aileu: return nil
         case .ainaro: return nil

@@ -125,7 +125,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .acre: return "4/4c/Bandeira_do_Acre"
         case .alagoas: return "8/88/Bandeira_de_Alagoas"

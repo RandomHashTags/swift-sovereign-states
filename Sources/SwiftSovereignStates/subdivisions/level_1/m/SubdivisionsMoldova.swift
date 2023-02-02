@@ -86,7 +86,7 @@ public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .anenii_noi: return "c/c8/Flag_of_Anenii_Noi_District.gif"
         case .balti: return "7/7a/Flag_of_Bălți.png"

@@ -36,7 +36,7 @@ public enum SubdivisionsSlovakia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .bratislava: return "4/4c/Bratislavsky_vlajka"
         case .trnava: return "d/d4/Trnavsky_vlajka"

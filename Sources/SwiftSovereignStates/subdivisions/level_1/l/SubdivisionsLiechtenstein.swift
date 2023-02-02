@@ -35,7 +35,7 @@ public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .balzers: return "e/e0/Flag_of_Balzers_Liechtenstein-1"
         case .eschen: return "5/52/Flag_of_Eschen_Liechtenstein-1"

@@ -45,7 +45,7 @@ public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // http
         return nil
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .capellen: return "7/7b/Armoiries_de_Septfontaines_1"
         case .clervaux: return "2/2c/Armoiries_Clervaux_2"

@@ -45,7 +45,7 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .prague: return "d/d2/Flag_of_Prague"
         case .central_bohemian: return "0/06/Flag_of_Central_Bohemian_Region"

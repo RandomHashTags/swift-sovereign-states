@@ -43,7 +43,7 @@ public enum SubdivisionsAlbania : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .berat: return "c/c1/Stema_e_Qarkut_Berat"
         case .diber: return "6/69/ALB_Qarku_i_Dibrës_COA"

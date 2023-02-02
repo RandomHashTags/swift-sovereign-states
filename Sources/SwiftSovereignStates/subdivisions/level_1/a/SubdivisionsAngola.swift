@@ -44,7 +44,7 @@ public enum SubdivisionsAngola : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .cabinda: return "6/6c/Flag_of_Cabinda_Province"
         default: return nil

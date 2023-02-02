@@ -92,7 +92,7 @@ public enum SubdivisionsRomania : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .alba: return "5/5d/Actual_Alba_county_CoA.png"
         case .arad: return "9/9a/Stema_judetului_Arad.png"

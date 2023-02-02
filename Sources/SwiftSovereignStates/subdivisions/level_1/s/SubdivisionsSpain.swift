@@ -59,7 +59,7 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getFlagURLWikipediaSVGID() -> String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .andalusia: return "2/20/Flag_of_Andaluc%C3%ADa"
         case .aragon: return "1/18/Flag_of_Aragon"
