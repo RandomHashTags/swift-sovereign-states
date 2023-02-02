@@ -73,7 +73,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testCities()
         
         generate_english_localization()
-        test_localization(language: "en")
+        test_localization()
         
         //let seconds:UInt64 = 500_000_000
         //try await validateCountryWikipediaURLs(seconds)
@@ -376,25 +376,28 @@ final class SwiftSovereignStatesTests: XCTestCase {
             print("case " + short_name_id + "\" = \"" + country.getShortName() + "\";")
         }*/
     }
-    private func test_localization(language: String) {
-        var missing:[String] = [String]()
-        for country in Country.allCases {
-            let string:String = SwiftSovereignStateLocalization.get_country_short_name(country)
-            if string.elementsEqual("nil") {
-                missing.append(country.rawValue)
+    private func test_localization() {
+        let supported_language_codes:[String] = ["en"]
+        for language in supported_language_codes {
+            var missing:[String] = [String]()
+            for country in Country.allCases {
+                let string:String = SwiftSovereignStateLocalization.get_country_short_name(country, language_code: language)
+                if string.elementsEqual("nil") {
+                    missing.append(country.rawValue)
+                }
             }
-        }
-        XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " country_short_names for " + missing.description)
-        missing.removeAll()
-        
-        for currency in Currency.allCases {
-            let string:String = currency.name
-            if string.elementsEqual("nil") {
-                missing.append(currency.rawValue)
+            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " country_short_names for " + missing.description)
+            missing.removeAll()
+            
+            for currency in Currency.allCases {
+                let string:String = SwiftSovereignStateLocalization.get_currency_name(currency, language_code: language)
+                if string.elementsEqual("nil") {
+                    missing.append(currency.rawValue)
+                }
             }
+            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " currency_names for " + missing.description)
+            missing.removeAll()
         }
-        XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " currency_names for " + missing.description)
-        missing.removeAll()
     }
 }
 
