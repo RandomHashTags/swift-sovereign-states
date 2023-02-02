@@ -50,7 +50,7 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
         return Country.india
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .andaman_and_nicobar_islands,
                 .chandigarh,

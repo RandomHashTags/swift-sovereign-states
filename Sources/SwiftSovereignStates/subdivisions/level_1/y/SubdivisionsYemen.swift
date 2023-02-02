@@ -35,7 +35,7 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
         return Country.yemen
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .sanaa_city:
             return SovereignStateSubdivisionType.cities

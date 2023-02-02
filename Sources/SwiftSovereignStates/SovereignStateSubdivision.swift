@@ -134,7 +134,7 @@ public extension Country {
 public protocol SovereignStateSubdivision : SovereignState { // https://en.wikipedia.org/wiki/List_of_first-level_administrative_divisions_by_country
     /// The country this subdivision's administrative borders are claimed by.
     var country : Country { get }
-    func getType() -> SovereignStateSubdivisionType
+    var type : SovereignStateSubdivisionType { get }
     func getTypeSuffix() -> String
     
     /// The neighboring subdivisions, in relation the its administrative borders.
@@ -168,7 +168,7 @@ public extension SovereignStateSubdivision {
         return "_" + getTypeSuffix()
     }
     func getTypeSuffix() -> String {
-        return getType().getSingularName().replacingOccurrences(of: " ", with: "_")
+        return type.getSingularName().replacingOccurrences(of: " ", with: "_")
     }
     
     func getNeighbors() -> [any SovereignStateSubdivision]? {
@@ -284,8 +284,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var country : Country {
         return subdivision.country
     }
-    public func getType() -> SovereignStateSubdivisionType {
-        return subdivision.getType()
+    public var type : SovereignStateSubdivisionType {
+        return subdivision.type
     }
     public func getTypeSuffix() -> String {
         return subdivision.getTypeSuffix()

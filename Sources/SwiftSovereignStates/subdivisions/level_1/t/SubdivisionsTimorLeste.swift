@@ -28,7 +28,7 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
         return Country.timor_leste
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .oecusse:
             return SovereignStateSubdivisionType.special_administrative_regions

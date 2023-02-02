@@ -31,7 +31,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         return Country.australia
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .australian_capital_territory,
                 .jervis_bay_territory,

@@ -45,7 +45,7 @@ public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // http
         return Country.guadeloupe
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.communes
     }
     

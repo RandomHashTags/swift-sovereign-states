@@ -29,7 +29,7 @@ public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en
         return Country.cuba
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .isla_de_la_juventud:
             return SovereignStateSubdivisionType.special_municipalities

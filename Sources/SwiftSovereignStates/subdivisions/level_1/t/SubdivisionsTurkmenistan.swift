@@ -19,7 +19,7 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
         return Country.turkmenistan
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
     

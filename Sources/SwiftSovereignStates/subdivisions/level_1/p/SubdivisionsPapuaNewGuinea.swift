@@ -35,7 +35,7 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
         return Country.papua_new_guinea
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .bougainville:
             return SovereignStateSubdivisionType.autonomous_regions

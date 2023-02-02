@@ -23,7 +23,7 @@ public enum SubdivisionsLesotho : String, SovereignStateSubdivision { // https:/
         return Country.lesotho
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
     

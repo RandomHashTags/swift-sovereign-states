@@ -21,7 +21,7 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, SovereignStateSubdivision {
         return Country.sao_tome_and_principe
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .autonomous_region_of_principe:
             return SovereignStateSubdivisionType.autonomous_regions

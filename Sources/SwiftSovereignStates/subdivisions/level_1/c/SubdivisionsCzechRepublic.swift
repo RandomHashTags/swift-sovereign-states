@@ -27,7 +27,7 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
         return Country.czech_republic
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         default:
             return SovereignStateSubdivisionType.regions

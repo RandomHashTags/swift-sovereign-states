@@ -32,7 +32,7 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         return Country.spain
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .ceuta, .melilla:
             return SovereignStateSubdivisionType.autonomous_cities

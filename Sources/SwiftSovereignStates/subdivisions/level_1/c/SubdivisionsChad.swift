@@ -36,7 +36,7 @@ public enum SubdivisionsChad : String, SovereignStateSubdivision { // https://en
         return Country.chad
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
     

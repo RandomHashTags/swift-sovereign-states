@@ -29,7 +29,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         return Country.fiji
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .rotuma:
             return SovereignStateSubdivisionType.special_self_governing_dependencies

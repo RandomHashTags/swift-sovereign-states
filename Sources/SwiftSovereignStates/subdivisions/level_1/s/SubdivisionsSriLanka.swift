@@ -22,7 +22,7 @@ public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https:
         return Country.sri_lanka
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
     

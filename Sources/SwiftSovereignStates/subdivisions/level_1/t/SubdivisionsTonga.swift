@@ -18,7 +18,7 @@ public enum SubdivisionsTonga : String, SovereignStateSubdivision { // https://e
         return Country.tonga
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
     

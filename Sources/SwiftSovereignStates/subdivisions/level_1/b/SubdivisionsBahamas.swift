@@ -45,7 +45,7 @@ public enum SubdivisionsBahamas : String, SovereignStateSubdivision { // https:/
         return Country.bahamas
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
     

@@ -97,7 +97,7 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
         return Country.philippines
     }
     
-    public func getType() -> SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .metro_manila:
             return SovereignStateSubdivisionType.administrative_areas
