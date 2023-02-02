@@ -33,7 +33,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// This SovereignRegion's official government website URL.
     var government_website : String? { get }
     
-    func getFlagURL() -> String?
+    var flag_url : String? { get }
     var wikipedia_flag_url_svg_id : String? { get }
     func getWikipediaURL() -> String
     func getWikipediaURLPrefix() -> String?
@@ -123,7 +123,7 @@ public extension SovereignRegion {
         return nil
     }
     
-    func getFlagURL() -> String? {
+    var flag_url : String? {
         guard let id:String = wikipedia_flag_url_svg_id else { return nil }
         let idLowercase:String = id.lowercased()
         let values:[String] = id.components(separatedBy: "/"), lastValue:String = SovereignRegions.urlEncoded(values[values.count-1])

@@ -251,8 +251,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.government_website
     }
     
-    public func getFlagURL() -> String? {
-        return subdivision.getFlagURL()
+    public var flag_url : String? {
+        return subdivision.flag_url
     }
     public var wikipedia_flag_url_svg_id : String? {
         return subdivision.wikipedia_flag_url_svg_id
