@@ -485,7 +485,7 @@ public enum CitiesUnitedStatesArizona : String, SovereignStateCity { // https://
         return SubdivisionsUnitedStates.arizona
     }
     
-    public func getType() -> SovereignStateCityType? {
+    public var type : SovereignStateCityType {
         switch self {
         case .aguila,
                 .ajo,
@@ -849,7 +849,7 @@ public enum CitiesUnitedStatesArizona : String, SovereignStateCity { // https://
                 .yucca:
             return SovereignStateCityType.census_designated_place
         default:
-            return nil
+            return SovereignStateCityType.city
         }
     }
     

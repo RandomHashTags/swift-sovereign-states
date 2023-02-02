@@ -501,7 +501,7 @@ public enum CitiesUnitedStatesMaine : String, SovereignStateCity {
         return SubdivisionsUnitedStates.maine
     }
     
-    public func getType() -> SovereignStateCityType? {
+    public var type : SovereignStateCityType {
         switch self {
         case .abbot,
                 .acton,
@@ -966,7 +966,7 @@ public enum CitiesUnitedStatesMaine : String, SovereignStateCity {
                 .winterville:
             return SovereignStateCityType.plantation
         default:
-            return nil
+            return SovereignStateCityType.city
         }
     }
     

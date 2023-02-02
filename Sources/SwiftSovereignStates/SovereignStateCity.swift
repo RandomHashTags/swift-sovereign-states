@@ -122,9 +122,8 @@ public enum SovereignStateCities {
 public protocol SovereignStateCity : SovereignRegion {
     /// The subdivision that this city's administrative borders are located in.
     var subdivision : any SovereignStateSubdivision { get }
-    func getDefaultType() -> SovereignStateCityType
-    func getType() -> SovereignStateCityType?
-    /// Whether or not this city is the capital in relation to its subdivision (``getSubdivision()``).
+    var type : SovereignStateCityType { get }
+    /// Whether or not this city is the capital in relation to its subdivision.
     func isCapital() -> Bool
 }
 
@@ -141,11 +140,8 @@ public extension SovereignStateCity {
         return subdivision.getCurrencies()
     }
     
-    func getDefaultType() -> SovereignStateCityType {
+    var type : SovereignStateCityType {
         return SovereignStateCityType.city
-    }
-    func getType() -> SovereignStateCityType? {
-        return nil
     }
     
     func isCapital() -> Bool {
@@ -265,11 +261,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var subdivision : any SovereignStateSubdivision {
         return city.subdivision
     }
-    public func getDefaultType() -> SovereignStateCityType {
-        return city.getDefaultType()
-    }
-    public func getType() -> SovereignStateCityType? {
-        return city.getType()
+    public var type : SovereignStateCityType {
+        return city.type
     }
     public func isCapital() -> Bool {
         return city.isCapital()
