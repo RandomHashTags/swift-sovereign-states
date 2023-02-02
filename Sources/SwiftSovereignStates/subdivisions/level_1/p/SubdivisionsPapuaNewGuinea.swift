@@ -69,7 +69,7 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
         }
     }
     
-    public func getISOAlpha2() -> String? {
+    public var iso_alpha_2 : String? {
         switch self {
         case .bougainville: return "NSB"
         case .central: return "CPM"

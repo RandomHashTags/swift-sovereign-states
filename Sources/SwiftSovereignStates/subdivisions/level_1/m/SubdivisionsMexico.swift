@@ -83,7 +83,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getISOAlpha2() -> String? {
+    public var iso_alpha_2 : String? {
         switch self {
         case .aguascalientes: return "AG"
         case .baja_california: return "BC"

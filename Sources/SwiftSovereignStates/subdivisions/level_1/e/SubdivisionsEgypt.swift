@@ -51,7 +51,7 @@ public enum SubdivisionsEgypt : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getISOAlpha2() -> String? {
+    public var iso_alpha_2 : String? {
         switch self {
         case .alexandria: return "ALX"
         case .aswan: return "ASN"

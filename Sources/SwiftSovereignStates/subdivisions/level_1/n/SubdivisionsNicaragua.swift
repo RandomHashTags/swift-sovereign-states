@@ -67,7 +67,7 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getISOAlpha2() -> String? {
+    public var iso_alpha_2 : String? {
         switch self {
         case .boaco: return "BO"
         case .carazo: return "CA"

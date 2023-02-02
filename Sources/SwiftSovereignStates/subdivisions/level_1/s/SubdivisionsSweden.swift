@@ -60,7 +60,7 @@ public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://
         return "_County"
     }
     
-    public func getISOAlpha2() -> String? {
+    public var iso_alpha_2 : String? {
         switch self {
         case .blekinge: return "K"
         case .dalarna: return "W"

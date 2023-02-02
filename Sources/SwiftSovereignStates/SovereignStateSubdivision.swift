@@ -154,7 +154,7 @@ public extension SovereignStateSubdivision {
     var cache_id : String {
         return country.rawValue + "_" + rawValue
     }
-    func getISOAlpha2() -> String? {
+    var iso_alpha_2 : String? {
         return nil
     }
     func getISOAlpha3() -> String? {
@@ -274,8 +274,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.temperate_zones
     }
     
-    public func getISOAlpha2() -> String? {
-        return subdivision.getISOAlpha2()
+    public var iso_alpha_2 : String? {
+        return subdivision.iso_alpha_2
     }
     public func getISOAlpha3() -> String? {
         return subdivision.getISOAlpha3()

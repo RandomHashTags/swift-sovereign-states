@@ -516,7 +516,7 @@ public enum Country : String, SovereignState {
         return SovereignStateOfficialNames.get(self)
     }
     
-    public func getISOAlpha2() -> String? {
+    public var iso_alpha_2 : String? {
         return SovereignStateISOAlpha2.get(self)
     }
     public func getISOAlpha2Alias() -> String? {
@@ -549,7 +549,7 @@ public enum Country : String, SovereignState {
     }
     
     public func getFlagURL() -> String? {
-        guard let isoAlpha2:String = getISOAlpha2()?.lowercased() else { return nil }
+        guard let isoAlpha2:String = iso_alpha_2?.lowercased() else { return nil }
         return "https://raw.githubusercontent.com/stsrki/country-flags/master/png1000px/" + isoAlpha2 + ".png"
     }
     

@@ -25,7 +25,7 @@ public enum SubdivisionsBangladesh : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.divisions
     }
     
-    public func getISOAlpha2() -> String? {
+    public var iso_alpha_2 : String? {
         switch self {
         case .barishal: return "A"
         case .chattogram: return "B"
