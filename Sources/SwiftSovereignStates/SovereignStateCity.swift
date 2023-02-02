@@ -219,8 +219,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public func getShortName() -> String {
         return city.getShortName()
     }
-    public func getShortNameDecimalSeparatorIndex() -> Int? {
-        return city.getShortNameDecimalSeparatorIndex()
+    public var short_name_decimal_separator_index : Int? {
+        return city.short_name_decimal_separator_index
     }
     public var real_name : String? {
         return city.real_name

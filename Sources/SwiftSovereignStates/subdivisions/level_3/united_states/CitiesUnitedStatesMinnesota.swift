@@ -889,7 +889,7 @@ public enum CitiesUnitedStatesMinnesota : String, SovereignStateCity { // https:
         return SubdivisionsUnitedStates.minnesota
     }
     
-    public func getShortNameDecimalSeparatorIndex() -> Int? {
+    public var short_name_decimal_separator_index : Int? {
         switch self {
         case .lake_st_croix_beach,
                 .north_st_paul,

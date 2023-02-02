@@ -231,8 +231,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public func getShortName() -> String {
         return subdivision.getShortName()
     }
-    public func getShortNameDecimalSeparatorIndex() -> Int? {
-        return subdivision.getShortNameDecimalSeparatorIndex()
+    public var short_name_decimal_separator_index : Int? {
+        return subdivision.short_name_decimal_separator_index
     }
     public var real_name : String? {
         return subdivision.real_name

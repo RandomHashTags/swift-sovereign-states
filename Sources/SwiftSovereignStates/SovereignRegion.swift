@@ -20,7 +20,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// The name of this SovereignRegion as it is comonly known as internationally.
     func getShortName() -> String
     /// Where the decimal point `(.)` should be located in the ``getShortName()-7cmmc``.
-    func getShortNameDecimalSeparatorIndex() -> Int?
+    var short_name_decimal_separator_index : Int? { get }
     /// The real name of this SovereignRegion. Usually only used if this SovereignRegion's legal name contains accents, hyphens, commas, or other special characters.
     var real_name : String? { get }
     func getConditionalName() -> String?
@@ -104,10 +104,10 @@ public extension SovereignRegion {
     
     func getShortName() -> String {
         let identifier:String = rawValue
-        let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : getShortNameDecimalSeparatorIndex()
+        let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : short_name_decimal_separator_index
         return SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex)
     }
-    func getShortNameDecimalSeparatorIndex() -> Int? {
+    var short_name_decimal_separator_index : Int? {
         return nil
     }
     
