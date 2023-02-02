@@ -25,7 +25,7 @@ public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en
     case santiago_de_cuba
     case villa_clara
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.cuba
     }
     

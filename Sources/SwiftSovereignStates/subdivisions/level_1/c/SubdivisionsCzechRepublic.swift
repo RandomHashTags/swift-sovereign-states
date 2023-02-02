@@ -23,7 +23,7 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
     case vysocina
     case zlin
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.czech_republic
     }
     

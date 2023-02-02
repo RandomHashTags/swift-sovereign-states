@@ -22,7 +22,7 @@ public enum SubdivisionsBurkinaFaso : String, SovereignStateSubdivision { // htt
     case sahel
     case sud_ouest
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.burkina_faso
     }
     

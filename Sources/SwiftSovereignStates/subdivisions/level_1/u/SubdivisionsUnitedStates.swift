@@ -70,7 +70,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
     case micronesia
     case palau
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.united_states
     }
     

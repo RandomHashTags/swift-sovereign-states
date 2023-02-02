@@ -223,7 +223,7 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
     case slovenj_gradec
     case velenje
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.slovenia
     }
     

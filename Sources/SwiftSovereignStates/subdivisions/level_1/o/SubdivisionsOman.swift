@@ -20,7 +20,7 @@ public enum SubdivisionsOman : String, SovereignStateSubdivision { // https://en
     case musandam
     case muscat
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.oman
     }
     

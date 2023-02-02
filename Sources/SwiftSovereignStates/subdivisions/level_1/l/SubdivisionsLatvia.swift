@@ -53,7 +53,7 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
     case jelgava_city
     case ventspils_city
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.latvia
     }
     

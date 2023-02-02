@@ -19,7 +19,7 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
     case sud
     case sud_est
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.haiti
     }
     

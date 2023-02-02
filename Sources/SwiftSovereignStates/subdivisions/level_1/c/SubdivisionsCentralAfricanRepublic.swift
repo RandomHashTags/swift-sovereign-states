@@ -27,7 +27,7 @@ public enum SubdivisionsCentralAfricanRepublic : String, SovereignStateSubdivisi
     
     case bangui
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.central_african_republic
     }
     

@@ -41,7 +41,7 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
     case santo_domingo
     case valverde
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.dominican_republic
     }
     

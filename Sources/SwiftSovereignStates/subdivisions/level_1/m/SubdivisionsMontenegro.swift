@@ -33,7 +33,7 @@ public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // http
     case ulcinj
     case zabljak
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.montenegro
     }
     

@@ -22,7 +22,7 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
     case loire_countries
     case provence_alps_french_riviera
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.france
     }
     

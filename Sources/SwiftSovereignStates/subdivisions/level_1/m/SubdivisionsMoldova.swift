@@ -47,7 +47,7 @@ public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
     case gagauzia
     case left_bank_of_the_dniester // aka Transnistria
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.moldova
     }
     

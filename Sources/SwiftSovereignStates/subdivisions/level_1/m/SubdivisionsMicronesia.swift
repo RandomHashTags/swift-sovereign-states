@@ -13,7 +13,7 @@ public enum SubdivisionsMicronesia : String, SovereignStateSubdivision {
     case pohnpei
     case yap
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.micronesia
     }
     

@@ -19,7 +19,7 @@ public enum SubdivisionsLithuania : String, SovereignStateSubdivision { // https
     case utena
     case vilnius
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.lithuania
     }
     

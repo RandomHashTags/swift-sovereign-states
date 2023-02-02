@@ -93,7 +93,7 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
     
     case metro_manila
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.philippines
     }
     

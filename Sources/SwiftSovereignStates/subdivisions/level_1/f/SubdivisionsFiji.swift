@@ -25,7 +25,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
     
     case rotuma
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.fiji
     }
     

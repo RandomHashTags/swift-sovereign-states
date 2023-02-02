@@ -43,7 +43,7 @@ public enum SubdivisionsIndonesia : String, SovereignStateSubdivision { // https
     case west_sumatra
     case special_region_of_yogyakarta
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.indonesia
     }
     

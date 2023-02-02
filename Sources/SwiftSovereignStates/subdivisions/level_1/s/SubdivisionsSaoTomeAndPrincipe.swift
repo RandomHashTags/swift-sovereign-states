@@ -17,7 +17,7 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, SovereignStateSubdivision {
     
     case autonomous_region_of_principe
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.sao_tome_and_principe
     }
     

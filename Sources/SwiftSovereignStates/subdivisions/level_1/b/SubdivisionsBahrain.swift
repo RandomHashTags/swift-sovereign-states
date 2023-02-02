@@ -13,7 +13,7 @@ public enum SubdivisionsBahrain : String, SovereignStateSubdivision { // https:/
     case northern
     case southern
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.bahrain
     }
     

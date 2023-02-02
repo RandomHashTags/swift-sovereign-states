@@ -16,7 +16,7 @@ public enum SubdivisionsAndorra : String, SovereignStateSubdivision { // https:/
     case ordino
     case sant_julia_de_loria
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.andorra
     }
     

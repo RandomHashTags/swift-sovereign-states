@@ -25,7 +25,7 @@ public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // http
     case wellington
     case west_coast
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.new_zealand
     }
     

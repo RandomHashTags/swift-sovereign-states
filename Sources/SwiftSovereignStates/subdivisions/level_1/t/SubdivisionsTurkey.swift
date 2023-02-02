@@ -90,7 +90,7 @@ public enum SubdivisionsTurkey : String, SovereignStateSubdivision { // https://
     case yozgat
     case zonguldak
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.turkey
     }
     

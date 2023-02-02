@@ -31,7 +31,7 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
     case western_highlands
     case western
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.papua_new_guinea
     }
     

@@ -30,7 +30,7 @@ public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://
     case orebro
     case ostergotland
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.sweden
     }
     

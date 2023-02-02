@@ -29,7 +29,7 @@ public enum SubdivisionsBhutan : String, SovereignStateSubdivision { // https://
     case wangdue_phodrang
     case zhemgang
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.bhutan
     }
     

@@ -133,7 +133,7 @@ public extension Country {
 
 public protocol SovereignStateSubdivision : SovereignState { // https://en.wikipedia.org/wiki/List_of_first-level_administrative_divisions_by_country
     /// The country this subdivision's administrative borders are claimed by.
-    func getCountry() -> Country
+    var country : Country { get }
     func getType() -> SovereignStateSubdivisionType
     func getTypeSuffix() -> String
     
@@ -152,7 +152,7 @@ public extension SovereignStateSubdivision {
     }
     
     var cache_id : String {
-        return getCountry().rawValue + "_" + rawValue
+        return country.rawValue + "_" + rawValue
     }
     func getISOAlpha2() -> String? {
         return nil
@@ -161,7 +161,7 @@ public extension SovereignStateSubdivision {
         return nil
     }
     func getCurrencies() -> [Currency] {
-        return getCountry().getCurrencies()
+        return country.getCurrencies()
     }
     
     func getWikipediaURLSuffix() -> String? {
@@ -281,8 +281,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.getISOAlpha3()
     }
     
-    public func getCountry() -> Country {
-        return subdivision.getCountry()
+    public var country : Country {
+        return subdivision.country
     }
     public func getType() -> SovereignStateSubdivisionType {
         return subdivision.getType()

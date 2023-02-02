@@ -27,7 +27,7 @@ public enum SubdivisionsBurundi : String, SovereignStateSubdivision { // https:/
     case rutana
     case ruyigi
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.burundi
     }
     

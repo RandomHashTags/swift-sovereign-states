@@ -16,7 +16,7 @@ public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https:
     case punjab
     case sindh
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.pakistan
     }
     

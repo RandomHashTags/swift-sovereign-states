@@ -32,7 +32,7 @@ public enum SubdivisionsChad : String, SovereignStateSubdivision { // https://en
     case tibesti
     case wadi_fira
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.chad
     }
     

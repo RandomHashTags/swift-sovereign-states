@@ -33,7 +33,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
     case tierra_del_fuego_antartida_e_islas_del_atlantico_sur
     case tucuman
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.argentina
     }
     

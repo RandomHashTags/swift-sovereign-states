@@ -18,7 +18,7 @@ public enum SubdivisionsAntiguaAndBarbuda : String, SovereignStateSubdivision { 
     case barbuda
     case redonda
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.antigua_and_barbuda
     }
     

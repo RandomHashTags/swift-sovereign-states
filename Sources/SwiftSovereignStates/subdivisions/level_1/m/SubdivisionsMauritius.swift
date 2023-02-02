@@ -18,7 +18,7 @@ public enum SubdivisionsMauritius : String, SovereignStateSubdivision { // https
     case riviere_noire
     case savanne
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.mauritius
     }
     

@@ -56,7 +56,7 @@ public enum SubdivisionsKenya : String, SovereignStateSubdivision { // https://e
     case wajir
     case west_pokot
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.kenya
     }
     

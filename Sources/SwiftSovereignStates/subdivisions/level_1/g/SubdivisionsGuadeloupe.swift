@@ -41,7 +41,7 @@ public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // http
     case vieux_fort
     case vieux_habitants
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.guadeloupe
     }
     

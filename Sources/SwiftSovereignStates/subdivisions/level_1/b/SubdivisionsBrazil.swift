@@ -37,7 +37,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
     
     case distrito_federal
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.brazil
     }
     

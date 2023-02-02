@@ -23,7 +23,7 @@ public enum SubdivisionsSouthSudan : String, SovereignStateSubdivision { // http
     case greater_pibor
     case ruweng
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.south_sudan
     }
     

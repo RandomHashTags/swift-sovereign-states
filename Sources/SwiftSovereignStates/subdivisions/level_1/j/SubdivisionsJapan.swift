@@ -56,7 +56,7 @@ public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://e
     case yamaguchi
     case yamanashi
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.japan
     }
     

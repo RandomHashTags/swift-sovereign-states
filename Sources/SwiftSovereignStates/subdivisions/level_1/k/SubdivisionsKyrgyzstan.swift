@@ -19,7 +19,7 @@ public enum SubdivisionsKyrgyzstan : String, SovereignStateSubdivision { // http
     case bishkek
     case osh_city
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.kyrgyzstan
     }
     

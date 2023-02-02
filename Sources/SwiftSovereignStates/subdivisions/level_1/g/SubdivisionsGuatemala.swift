@@ -30,7 +30,7 @@ public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https
     case totonicapan
     case zacapa
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.guatemala
     }
     

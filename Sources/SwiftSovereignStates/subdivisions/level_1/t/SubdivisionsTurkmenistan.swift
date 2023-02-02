@@ -15,7 +15,7 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
     case lebap
     case mary
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.turkmenistan
     }
     

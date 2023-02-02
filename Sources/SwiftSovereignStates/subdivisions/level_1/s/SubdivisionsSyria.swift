@@ -23,7 +23,7 @@ public enum SubdivisionsSyria : String, SovereignStateSubdivision { // https://e
     case rif_dimashq
     case tartus
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.syria
     }
     

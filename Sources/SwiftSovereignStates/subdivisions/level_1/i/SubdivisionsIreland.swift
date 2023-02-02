@@ -13,7 +13,7 @@ public enum SubdivisionsIreland : String, SovereignStateSubdivision { // https:/
     case munster
     case ulster
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.ireland
     }
     

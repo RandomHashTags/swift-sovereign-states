@@ -20,7 +20,7 @@ public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
     case triesenberg
     case vaduz
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.liechtenstein
     }
     

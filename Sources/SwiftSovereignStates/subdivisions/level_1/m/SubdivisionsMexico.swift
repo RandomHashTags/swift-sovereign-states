@@ -41,7 +41,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
     case yucatan
     case zacatecas
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.mexico
     }
     

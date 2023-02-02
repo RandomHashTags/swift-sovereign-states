@@ -27,7 +27,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
     case heard_island_and_mcdonald_islands
     case norfolk_island
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.australia
     }
     

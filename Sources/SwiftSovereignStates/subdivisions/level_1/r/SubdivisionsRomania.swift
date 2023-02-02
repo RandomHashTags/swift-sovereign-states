@@ -52,7 +52,7 @@ public enum SubdivisionsRomania : String, SovereignStateSubdivision { // https:/
     
     case bucharest
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.romania
     }
     

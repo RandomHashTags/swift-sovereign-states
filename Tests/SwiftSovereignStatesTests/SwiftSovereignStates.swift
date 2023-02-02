@@ -117,8 +117,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
         XCTAssert(minnesota.rawValue.elementsEqual("minnesota"))
         XCTAssert(minnesota.cache_id.elementsEqual("united_states_minnesota"))
-        XCTAssert(minnesota.getCountry() == unitedStates)
-        XCTAssert(SubdivisionsAfghanistan.badakhshan.getCountry() == Country.afghanistan)
+        XCTAssert(minnesota.country == unitedStates)
+        XCTAssert(SubdivisionsAfghanistan.badakhshan.country == Country.afghanistan)
         let kasson:any SovereignStateCity = CitiesUnitedStatesMinnesota.kasson
         XCTAssert(kasson.rawValue.elementsEqual("kasson"))
         XCTAssert(kasson.cache_id.elementsEqual("united_states_minnesota_kasson"))
@@ -194,7 +194,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         if failedSubdivisions.count > 0 {
             print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions=" + failedSubdivisions.count.description)
             for subdivision in failedSubdivisions {
-                let country:Country = subdivision.getCountry()
+                let country:Country = subdivision.country
                 print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions;" + country.rawValue + ";" + subdivision.rawValue + ";wikipediaURL=" + subdivision.getWikipediaURL())
             }
         }
@@ -204,7 +204,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities=" + failedCities.count.description)
             for city in failedCities {
                 let subdivision = city.getSubdivision()
-                let country:Country = subdivision.getCountry()
+                let country:Country = subdivision.country
                 print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities;" + country.rawValue + ";" + subdivision.rawValue + ";" + city.rawValue + ";wikipediaURL=" + subdivision.getWikipediaURL())
             }
         }

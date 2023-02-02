@@ -15,7 +15,7 @@ public enum SubdivisionsEritrea : String, SovereignStateSubdivision { // https:/
     case northern_red_sea
     case southern_red_sea
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.eritrea
     }
     

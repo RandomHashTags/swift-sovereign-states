@@ -24,7 +24,7 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
     
     case oecusse
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.timor_leste
     }
     

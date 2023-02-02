@@ -29,7 +29,7 @@ public enum SubdivisionsPortugal : String, SovereignStateSubdivision { // https:
     case vila_real
     case viseu
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.portugal
     }
     

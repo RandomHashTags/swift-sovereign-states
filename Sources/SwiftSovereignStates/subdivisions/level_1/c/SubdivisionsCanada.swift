@@ -23,7 +23,7 @@ public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://
     case nunavut
     case yukon
     
-    public func getCountry() -> Country {
+    public var country : Country {
         return Country.canada
     }
     
