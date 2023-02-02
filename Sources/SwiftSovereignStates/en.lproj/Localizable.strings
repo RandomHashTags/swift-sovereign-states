@@ -10,49 +10,49 @@
  Countries
  */
 /// Short Names
-"country_name_abkhazia" = "Abkhazia";
-"country_name_afghanistan" = "Afghanistan";
-"country_name_albania" = "Albania";
-"country_name_algeria" = "Algeria";
-"country_name_american_samoa" = "American Samoa";
-"country_name_andorra" = "Andorra";
-"country_name_angola" = "Angola";
-"country_name_anguilla" = "Anguilla";
-"country_name_antigua_and_barbuda" = "Antigua and Barbuda";
-"country_name_argentina" = "Argentina";
-"country_name_armenia" = "Armenia";
-"country_name_aruba" = "Aruba";
-"country_name_artsakh" = "Artsakh";
-"country_name_australia" = "Australia";
-"country_name_austria" = "Austria";
-"country_name_azerbaijan" = "Azerbaijan";
+"country_short_name_abkhazia" = "Abkhazia";
+"country_short_name_afghanistan" = "Afghanistan";
+"country_short_name_albania" = "Albania";
+"country_short_name_algeria" = "Algeria";
+"country_short_name_american_samoa" = "American Samoa";
+"country_short_name_andorra" = "Andorra";
+"country_short_name_angola" = "Angola";
+"country_short_name_anguilla" = "Anguilla";
+"country_short_name_antigua_and_barbuda" = "Antigua and Barbuda";
+"country_short_name_argentina" = "Argentina";
+"country_short_name_armenia" = "Armenia";
+"country_short_name_aruba" = "Aruba";
+"country_short_name_artsakh" = "Artsakh";
+"country_short_name_australia" = "Australia";
+"country_short_name_austria" = "Austria";
+"country_short_name_azerbaijan" = "Azerbaijan";
 
-"country_name_uganda" = "Uganda";
-"country_name_ukraine" = "Ukraine";
-"country_name_united_arab_emirates" = "United Arab Emirates";
-"country_name_united_kingdom" = "United Kingdom";
-"country_name_united_states" = "United States";
-"country_name_united_states_virgin_islands" = "United States Virgin Islands";
-"country_name_uruguay" = "Uruguay";
-"country_name_uzbekistan" = "Uzbekistan";
+"country_short_name_uganda" = "Uganda";
+"country_short_name_ukraine" = "Ukraine";
+"country_short_name_united_arab_emirates" = "United Arab Emirates";
+"country_short_name_united_kingdom" = "United Kingdom";
+"country_short_name_united_states" = "United States";
+"country_short_name_united_states_virgin_islands" = "United States Virgin Islands";
+"country_short_name_uruguay" = "Uruguay";
+"country_short_name_uzbekistan" = "Uzbekistan";
 
-"country_name_vanuatu" = "Vanuatu";
-"country_name_vatican_city" = "Vatican City";
-"country_name_venezuela" = "Venezuela";
-"country_name_vietnam" = "Vietnam";
+"country_short_name_vanuatu" = "Vanuatu";
+"country_short_name_vatican_city" = "Vatican City";
+"country_short_name_venezuela" = "Venezuela";
+"country_short_name_vietnam" = "Vietnam";
 
-"country_name_wallis_and_futuna" = "Wallis and Futuna";
-"country_name_western_sahara" = "Western Sahara";
+"country_short_name_wallis_and_futuna" = "Wallis and Futuna";
+"country_short_name_western_sahara" = "Western Sahara";
 
-"country_name_yemen" = "Yemen";
+"country_short_name_yemen" = "Yemen";
 
-"country_name_zambia" = "Zambia";
-"country_name_zimbabwe" = "Zimbabwe";
+"country_short_name_zambia" = "Zambia";
+"country_short_name_zimbabwe" = "Zimbabwe";
 
-"country_name_puerto_rico" = "Puerto Rico";
+"country_short_name_puerto_rico" = "Puerto Rico";
 
 /*
  Subdivisions
  */
-/// Names
-"subdivision_name_united_states_minnesota" = "Minnesota";
+/// Short Names
+"subdivision_short_name_united_states_minnesota" = "Minnesota";

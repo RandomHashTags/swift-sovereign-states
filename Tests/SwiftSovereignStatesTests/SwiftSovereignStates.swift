@@ -72,6 +72,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testNeighbors()
         testCities()
         
+        test_localization(language: "en")
+        
         //let seconds:UInt64 = 500_000_000
         //try await validateCountryWikipediaURLs(seconds)
         //try await validateSubdivisionWikipediaURLs(seconds)
@@ -369,6 +371,24 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for city in cities {
             XCTAssert(city.subdivision.isEqual(minnesota), "minnesota city.getSubdivision != Minnesota")
         }
+    }
+    
+    private func test_localization(language: String) {
+        let localization_bundle:Bundle = Bundle(path: "/Users/randomhashtags/GitProjects/swift-sovereign-states/Sources/SwiftSovereignStates")!
+        guard let bundle_path:String = localization_bundle.path(forResource: language, ofType: "lproj") else {
+            XCTAssert(false, "test_localization; language=\"" + language + "\"; missing Localization.strings file (" + language + ".lproj)!")
+            return
+        }
+        let bundle:Bundle = Bundle(path: bundle_path)!
+        var missing_short_names:[String] = [String]()
+        for country in Country.allCases.map({ $0.rawValue }) {
+            let id:String = "country_short_name_" + country
+            let string:String = bundle.localizedString(forKey: id, value: "nil", table: nil)
+            if string.elementsEqual("nil") {
+                missing_short_names.append(country)
+            }
+        }
+        XCTAssert(missing_short_names.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing_short_names.count.description + " short_names for " + missing_short_names.description)
     }
 }
 
