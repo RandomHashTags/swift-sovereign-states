@@ -537,7 +537,7 @@ public enum Country : String, SovereignState {
     }
     
     /// The unicode flag for this Country.
-    public func getFlagEmoji() -> String? {
+    public var flag_emoji : String? {
         return SovereignStateFlagEmoji.get(self)
     }
     public var time_zones : [SovereignStateTimeZone]? {
@@ -548,7 +548,7 @@ public enum Country : String, SovereignState {
         return SovereignStateCurrencies.get(self)
     }
     
-    public func getFlagURL() -> String? {
+    public var flag_url : String? {
         guard let isoAlpha2:String = iso_alpha_2?.lowercased() else { return nil }
         return "https://raw.githubusercontent.com/stsrki/country-flags/master/png1000px/" + isoAlpha2 + ".png"
     }
