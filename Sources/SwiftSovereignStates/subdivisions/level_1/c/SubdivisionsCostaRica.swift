@@ -44,7 +44,7 @@ public enum SubdivisionsCostaRica : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getNeighbors() -> [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision]? {
         switch self {
         case .alajuela:
             return [SubdivisionsCostaRica.guanacaste, SubdivisionsCostaRica.puntarenas, SubdivisionsCostaRica.san_jose, SubdivisionsCostaRica.heredia]

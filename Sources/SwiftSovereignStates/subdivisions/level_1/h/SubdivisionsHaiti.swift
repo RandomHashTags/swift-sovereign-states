@@ -48,7 +48,7 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getNeighbors() -> [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision]? {
         switch self {
         case .artibonite:
             return [SubdivisionsHaiti.nord_ouest, SubdivisionsHaiti.nord, SubdivisionsHaiti.centre, SubdivisionsHaiti.ouest]

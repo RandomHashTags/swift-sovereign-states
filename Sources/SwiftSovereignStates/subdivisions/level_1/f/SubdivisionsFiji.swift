@@ -54,7 +54,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getNeighbors() -> [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision]? {
         switch self {
         case .ba:
             return [SubdivisionsFiji.rotuma, SubdivisionsFiji.ra, SubdivisionsFiji.naitasiri, SubdivisionsFiji.nadroga_navosa]

@@ -138,7 +138,7 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
     func getTypeSuffix() -> String
     
     /// The neighboring subdivisions, in relation the its administrative borders.
-    func getNeighbors() -> [any SovereignStateSubdivision]?
+    var neighbors : [any SovereignStateSubdivision]? { get }
     /// The level-3 administrative units' type this subdivision contains.
     func getCitiesType() -> (any SovereignStateCity.Type)?
     /// The level-3 administrative units this subdivision contains.
@@ -171,7 +171,7 @@ public extension SovereignStateSubdivision {
         return type.getSingularName().replacingOccurrences(of: " ", with: "_")
     }
     
-    func getNeighbors() -> [any SovereignStateSubdivision]? {
+    var neighbors : [any SovereignStateSubdivision]? {
         return nil
     }
     func getCitiesType() -> (any SovereignStateCity.Type)? {
@@ -291,8 +291,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.getTypeSuffix()
     }
     
-    public func getNeighbors() -> [any SovereignStateSubdivision]? {
-        return subdivision.getNeighbors()
+    public var neighbors : [any SovereignStateSubdivision]? {
+        return subdivision.neighbors
     }
     public func getCities() -> [any SovereignStateCity]? {
         return subdivision.getCities()

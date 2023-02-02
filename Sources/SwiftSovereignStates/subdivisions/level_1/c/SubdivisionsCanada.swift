@@ -85,7 +85,7 @@ public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getNeighbors() -> [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision]? {
         switch self {
         case .alberta: return [SubdivisionsCanada.northwest_territories, SubdivisionsCanada.saskatchewan, SubdivisionsCanada.british_columbia, SubdivisionsUnitedStates.montana]
         case .british_columbia:

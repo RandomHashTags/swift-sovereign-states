@@ -50,7 +50,7 @@ public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getNeighbors() -> [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision]? {
         switch self {
         case .central:
             return [SubdivisionsZambia.western, SubdivisionsZambia.north_western, SubdivisionsZambia.copperbelt, SubdivisionsZambia.luapula, SubdivisionsZambia.muchinga, SubdivisionsZambia.eastern, SubdivisionsZambia.lusaka, SubdivisionsZambia.southern]

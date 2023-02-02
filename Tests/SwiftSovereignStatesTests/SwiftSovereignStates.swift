@@ -344,13 +344,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     
     private func testNeighbors() {
-        let _:[any SovereignStateSubdivision]? = SubdivisionsUnitedStates.minnesota.getNeighbors()
+        let _:[any SovereignStateSubdivision]? = SubdivisionsUnitedStates.minnesota.neighbors
         
         var foundAtLeastOneNeighbors:Bool = false
         outer : for country in Country.allCases {
             if let subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() {
                 for subdivision in subdivisions {
-                    if let _:[any SovereignStateSubdivision] = subdivision.getNeighbors() {
+                    if let _:[any SovereignStateSubdivision] = subdivision.neighbors {
                         foundAtLeastOneNeighbors = true
                         break outer
                     }
