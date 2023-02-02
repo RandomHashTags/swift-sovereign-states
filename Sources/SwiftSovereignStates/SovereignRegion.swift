@@ -11,7 +11,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// The unique identifier of this SovereignRegion used for caching.
     var cache_id : String { get }
     /// Cached strings this SovereignRegion is commonly recognized by.
-    func getKeywords() -> [String]
+    var keywords : [String] { get }
     /// Additional keywords this SovereignRegion should be recognized by.
     func getAdditionalKeywords() -> [String]?
     /// Whether this SovereignRegion is mentioned or not in the `string`.
@@ -63,7 +63,7 @@ public extension SovereignRegion {
         return cache_id.elementsEqual(sovereignRegion.cache_id)
     }
     
-    func getKeywords() -> [String] {
+    var keywords : [String] {
         let id:String = cache_id
         if let keywords:[String] = SwiftSovereignStateCacheSubdivisions.keywords[id] {
             return keywords
@@ -89,7 +89,7 @@ public extension SovereignRegion {
     }
     
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
-        let values:[String] = ignoreCase ? getKeywords().map({ $0.lowercased() }) : getKeywords()
+        let values:[String] = ignoreCase ? keywords.map({ $0.lowercased() }) : keywords
         let string:String = ignoreCase ? string.lowercased() : string
         return exact ? SovereignRegions.doesEqual(string: string, values: values) : SovereignRegions.doesSatisfy(string: string, values: values)
     }

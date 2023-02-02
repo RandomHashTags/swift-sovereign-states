@@ -218,8 +218,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var cache_id : String {
         return subdivision.cache_id
     }
-    public func getKeywords() -> [String] {
-        return subdivision.getKeywords()
+    public var keywords : [String] {
+        return subdivision.keywords
     }
     public func getAdditionalKeywords() -> [String]? {
         return subdivision.getAdditionalKeywords()

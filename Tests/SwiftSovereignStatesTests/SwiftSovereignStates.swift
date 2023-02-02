@@ -4,9 +4,9 @@ import QuartzCore
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
-        let _:[[String]] = Country.allCases.map({ $0.getKeywords() })
-        let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.getKeywords() })
-        let _:[[String]] = SovereignStateCities.all.map({ $0.getKeywords() })
+        let _:[[String]] = Country.allCases.map({ $0.keywords })
+        let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.keywords })
+        let _:[[String]] = SovereignStateCities.all.map({ $0.keywords })
         
         let cache:Bool = false
         print("SwiftSovereignStatesTests;testExample;cache=" + cache.description)

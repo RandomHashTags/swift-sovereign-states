@@ -206,8 +206,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var cache_id : String {
         return city.cache_id
     }
-    public func getKeywords() -> [String] {
-        return city.getKeywords()
+    public var keywords : [String] {
+        return city.keywords
     }
     public func getAdditionalKeywords() -> [String]? {
         return city.getAdditionalKeywords()
