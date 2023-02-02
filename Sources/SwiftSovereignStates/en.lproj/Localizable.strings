@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 2/1/23.
+  
+*/
+
+/*
+ Countries
+ */
+/// Names
+"country_name_united_states" = "United States";
+
+/*
+ Subdivisions
+ */
+/// Names
+"subdivision_name_united_states_minnesota" = "Minnesota";

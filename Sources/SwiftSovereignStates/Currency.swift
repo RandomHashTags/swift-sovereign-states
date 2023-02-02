@@ -306,7 +306,7 @@ public enum Currency : String, CaseIterable {
         }
     }
     
-    public func getName() -> String {
+    public var name : String {
         switch self {
         case .AED: return "United Arab Emirates Dirham"
         case .AFN: return "Afghan Afghani"
