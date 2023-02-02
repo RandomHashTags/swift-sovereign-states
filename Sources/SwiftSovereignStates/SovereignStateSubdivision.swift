@@ -157,7 +157,7 @@ public extension SovereignStateSubdivision {
     var iso_alpha_2 : String? {
         return nil
     }
-    func getISOAlpha3() -> String? {
+    var iso_alpha_3 : String? {
         return nil
     }
     func getCurrencies() -> [Currency] {
@@ -277,8 +277,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var iso_alpha_2 : String? {
         return subdivision.iso_alpha_2
     }
-    public func getISOAlpha3() -> String? {
-        return subdivision.getISOAlpha3()
+    public var iso_alpha_3 : String? {
+        return subdivision.iso_alpha_3
     }
     
     public var country : Country {

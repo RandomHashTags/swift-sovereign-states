@@ -525,7 +525,7 @@ public enum Country : String, SovereignState {
     public func getISOAlpha2ParentGroup() -> String? {
         return SovereignStateISOAlpha2.getParentGroup(self)
     }
-    public func getISOAlpha3() -> String? {
+    public var iso_alpha_3 : String? {
         return SovereignStateISOAlpha3.get(self)
     }
     
