@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsJapan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Japan | https://en.wikipedia.org/wiki/Prefectures_of_Japan
+public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Japan | https://en.wikipedia.org/wiki/Prefectures_of_Japan
     case aichi
     case akita
     case aomori
@@ -64,7 +64,7 @@ public enum SubdivisionsJapan : String, CaseIterable, SovereignStateSubdivision 
         return SovereignStateSubdivisionType.prefectures
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .hokkaido: return "Hokkaidō"
         case .hyogo: return "Hyōgo"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLithuania : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Lithuania
+public enum SubdivisionsLithuania : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Lithuania
     case alytus
     case kaunas
     case klaipeda
@@ -27,7 +27,7 @@ public enum SubdivisionsLithuania : String, CaseIterable, SovereignStateSubdivis
         return SovereignStateSubdivisionType.counties
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .klaipeda: return "Klaipėda"
         case .marijampole: return "Marijampolė"

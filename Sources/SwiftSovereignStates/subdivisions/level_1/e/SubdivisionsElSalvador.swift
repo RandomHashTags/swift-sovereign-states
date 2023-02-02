@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsElSalvador : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_El_Salvador
+public enum SubdivisionsElSalvador : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Departments_of_El_Salvador
     case ahuachapan
     case cabanas
     case chalatenango
@@ -31,7 +31,7 @@ public enum SubdivisionsElSalvador : String, CaseIterable, SovereignStateSubdivi
         return SovereignStateSubdivisionType.departments
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .ahuachapan: return "Ahuachapán"
         case .cabanas: return "Cabañas"

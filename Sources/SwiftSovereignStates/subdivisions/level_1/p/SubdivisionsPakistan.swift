@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPakistan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_units_of_Pakistan
+public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_units_of_Pakistan
     case azad_jammu_and_kashmir
     case balochistan
     case gilgit_baltistan
@@ -38,7 +38,7 @@ public enum SubdivisionsPakistan : String, CaseIterable, SovereignStateSubdivisi
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .azad_jammu_and_kashmir: return "Azad Jammu and Kashmir"
         case .gilgit_baltistan: return "Gilgit-Baltistan"

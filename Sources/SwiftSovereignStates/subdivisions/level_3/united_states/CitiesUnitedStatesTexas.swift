@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesUnitedStatesTexas : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Texas
+public enum CitiesUnitedStatesTexas : String, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Texas
     case abbott
     case abernathy
     case abilene
@@ -1258,7 +1258,7 @@ public enum CitiesUnitedStatesTexas : String, CaseIterable, SovereignStateCity {
         return SubdivisionsUnitedStates.texas
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .baileys_prairie: return "Bailey's Prairie"
         case .bruceville_eddy: return "Bruceville-Eddy"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsThailand : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Thailand
+public enum SubdivisionsThailand : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Thailand
     case amnat_charoen
     case ang_thong
     case bueng_kan

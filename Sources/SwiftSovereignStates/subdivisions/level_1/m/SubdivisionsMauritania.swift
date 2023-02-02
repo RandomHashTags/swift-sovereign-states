@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMauritania : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Mauritania
+public enum SubdivisionsMauritania : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Mauritania
     case adrar
     case assaba
     case brakna
@@ -32,7 +32,7 @@ public enum SubdivisionsMauritania : String, CaseIterable, SovereignStateSubdivi
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .nouakchott_nord: return "Nouakchott-Nord"
         case .nouakchott_ouest: return "Nouakchott-Ouest"

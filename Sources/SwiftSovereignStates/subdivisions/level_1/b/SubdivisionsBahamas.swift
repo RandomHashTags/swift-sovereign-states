@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBahamas : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Local_government_in_The_Bahamas
+public enum SubdivisionsBahamas : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Local_government_in_The_Bahamas
     case acklins
     case berry_islands
     case bimini
@@ -49,7 +49,7 @@ public enum SubdivisionsBahamas : String, CaseIterable, SovereignStateSubdivisio
         return SovereignStateSubdivisionType.districts
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .moore_s_island: return "Moore's Island"
         default: return nil

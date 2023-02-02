@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsNigeria : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Nigeria
+public enum SubdivisionsNigeria : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Nigeria
     case abia
     case adamawa
     case akwa_ibom
@@ -94,7 +94,7 @@ public enum SubdivisionsNigeria : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getGovernmentWebsite() -> String? {
+    public var government_website : String? {
         switch self {
         case .abia: return nil
         case .adamawa: return nil

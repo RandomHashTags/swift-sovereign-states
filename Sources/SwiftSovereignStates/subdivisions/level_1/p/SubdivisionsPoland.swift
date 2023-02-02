@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPoland : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Voivodeships_of_Poland
+public enum SubdivisionsPoland : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Voivodeships_of_Poland
     case greater_poland
     case holy_cross
     case kuyavia_pomeranian
@@ -33,7 +33,7 @@ public enum SubdivisionsPoland : String, CaseIterable, SovereignStateSubdivision
         return SovereignStateSubdivisionType.voivodeships
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .kuyavia_pomeranian: return "Kuyavian-Pomeranian"
         case .lodz: return "Łódź"

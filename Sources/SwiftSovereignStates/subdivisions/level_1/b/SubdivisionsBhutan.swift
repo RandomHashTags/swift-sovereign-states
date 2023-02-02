@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBhutan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Bhutan
+public enum SubdivisionsBhutan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Bhutan
     case bumthang
     case chhukha
     case dagana

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLiechtenstein : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
     case balzers
     case eschen
     case gamprin

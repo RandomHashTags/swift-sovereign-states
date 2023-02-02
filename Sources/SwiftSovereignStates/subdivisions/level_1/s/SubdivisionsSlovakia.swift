@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSlovakia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Slovakia
+public enum SubdivisionsSlovakia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Slovakia
     case banska_bystrica
     case bratislava
     case kosice
@@ -25,7 +25,7 @@ public enum SubdivisionsSlovakia : String, CaseIterable, SovereignStateSubdivisi
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .banska_bystrica: return "Banská Bystrica"
         case .kosice: return "Košice"

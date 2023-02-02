@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSriLanka : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Sri_Lanka
+public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Sri_Lanka
     case central
     case eastern
     case north_central

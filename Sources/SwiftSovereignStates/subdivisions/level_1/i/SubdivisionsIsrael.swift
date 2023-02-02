@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIsrael : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Israel
+public enum SubdivisionsIsrael : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Israel
     case central
     case haifa
     case jerusalem

@@ -8,7 +8,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.getKeywords() })
         let _:[[String]] = SovereignStateCities.all.map({ $0.getKeywords() })
         
-        let cache:Bool = true
+        let cache:Bool = false
         print("SwiftSovereignStatesTests;testExample;cache=" + cache.description)
         if #available(macOS 13.0, *) {
             /*try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
@@ -18,23 +18,27 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 let _:Country? = Country.init(rawValue: "united_states")
             }*/
             
-            /*try await benchmark(key: "SovereignStateSubdivisions.valueOf") {
+            try await benchmark(key: "SovereignStateSubdivisions.valueOf") {
                 let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: cache)
             }
-            try await benchmark(key: "SovereignStateSubdivisions.getAllMentionedParallel") {
+            /*try await benchmark(key: "SovereignStateSubdivisions.getAllMentionedParallel") {
                 let _:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel("Wisconsin! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
             }
             try await benchmark(key: "SovereignStateSubdivisions.getAllMentioned") {
                 let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
-            }
-            try await benchmark(key: "SovereignStateSubdivisions.valueOfCacheID") {
-                let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID("united_states_minnesota", cache: cache)
             }*/
             
-            try await benchmark(key: "SovereignStateCities.valueOfIdentifier") {
+            /*try await benchmark(key: "SovereignStateSubdivisions.valueOfCacheID") {
+                let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID("united_states_minnesota", cache: cache)
+            }
+            try await benchmark(key: "SovereignStateSubdivisions.valueOfCacheID_v2") {
+                let _:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID_v2("united_states_minnesota")
+            }*/
+            
+            /*try await benchmark(key: "SovereignStateCities.valueOfIdentifier") {
                 let _:(any SovereignStateCity)? = SubdivisionsUnitedStates.minnesota.valueOfCityIdentifier("united_states_minnesota_kasson")
             }
-            /*try await benchmark(key: "SovereignStateCities.valueOf") {
+            try await benchmark(key: "SovereignStateCities.valueOf") {
                 let _:[any SovereignStateCity]? = SovereignStateCities.valueOf("Rochester", cache: cache, ignoreCase: false)
             }
             try await benchmark(key: "SovereignStateCities.getAllMentionedParallel") {
@@ -78,6 +82,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     private func benchmark(key: String, _ code: @escaping () async throws -> Void) async throws {
         let iteration_count:Int = 10_000
         let clock:ContinuousClock = ContinuousClock()
+        let _:Duration = try await clock.measure(code)
         var timings:[Int64] = [Int64]()
         timings.reserveCapacity(iteration_count)
         for _ in 1...iteration_count {
@@ -108,13 +113,15 @@ final class SwiftSovereignStatesTests: XCTestCase {
     private func testFoundations() throws {
         let unitedStates:Country = Country.united_states
         XCTAssert(unitedStates.rawValue.elementsEqual("united_states"))
-        XCTAssert(unitedStates.getCacheID().elementsEqual("united_states"))
+        XCTAssert(unitedStates.cache_id.elementsEqual("united_states"))
         let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
         XCTAssert(minnesota.rawValue.elementsEqual("minnesota"))
-        XCTAssert(minnesota.getCacheID().elementsEqual("united_states_minnesota"))
+        XCTAssert(minnesota.cache_id.elementsEqual("united_states_minnesota"))
+        XCTAssert(minnesota.getCountry() == unitedStates)
+        XCTAssert(SubdivisionsAfghanistan.badakhshan.getCountry() == Country.afghanistan)
         let kasson:any SovereignStateCity = CitiesUnitedStatesMinnesota.kasson
         XCTAssert(kasson.rawValue.elementsEqual("kasson"))
-        XCTAssert(kasson.getCacheID().elementsEqual("united_states_minnesota_kasson"))
+        XCTAssert(kasson.cache_id.elementsEqual("united_states_minnesota_kasson"))
         
         XCTAssert(Country.valueOf("") == nil)
         XCTAssert(Country.init("") == nil)
@@ -143,7 +150,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let unitedStates:Country = Country.united_states
         let encoded:Data = try JSONEncoder().encode(unitedStates)
         let encodedString:String = String(data: encoded, encoding: .utf8)!
-        let targetString:String = "\"" + unitedStates.getCacheID() + "\""
+        let targetString:String = "\"" + unitedStates.cache_id + "\""
         XCTAssert(encodedString.elementsEqual(targetString), encodedString + " != " + targetString)
         
         let decoded:Country = try JSONDecoder().decode(Country.self, from: encoded)
@@ -154,7 +161,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let test:TestEncodableStruct = TestEncodableStruct(country: unitedStates, subdivision: subdivision, city: city)
         let encodedTest:Data = try JSONEncoder().encode(test)
         let encodedStringTest:String = String(data: encodedTest, encoding: .utf8)!
-        let targetStringTest:String = "{\"country\":\"" + unitedStates.getCacheID() + "\",\"subdivision\":\"" + subdivision.getCacheID() + "\",\"city\":\"" + city.getCacheID() + "\"}"
+        let targetStringTest:String = "{\"country\":\"" + unitedStates.cache_id + "\",\"subdivision\":\"" + subdivision.cache_id + "\",\"city\":\"" + city.cache_id + "\"}"
         XCTAssert(encodedStringTest.elementsEqual(targetStringTest), encodedStringTest + " != " + targetStringTest)
         
         let decodedTest:TestDecodableStruct = try JSONDecoder().decode(TestDecodableStruct.self, from: encodedTest)
@@ -224,7 +231,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let url:String = region.getWikipediaURL()
         let slug:String = url.components(separatedBy: "/").last!
         let valid:Bool = await getSummaryAndImageURL(slug: slug)
-        let msg:String = "invalid Wikipedia URL for sovereign region with cache id \"" + region.getCacheID() + "\"; url=\"" + url + "\"; slug=\"" + slug + "\""
+        let msg:String = "invalid Wikipedia URL for sovereign region with cache id \"" + region.cache_id + "\"; url=\"" + url + "\"; slug=\"" + slug + "\""
         if !valid {
             print(msg)
         }
@@ -328,10 +335,10 @@ final class SwiftSovereignStatesTests: XCTestCase {
             return !targetCities.contains(where: { city.isEqual($0) })
         })
         if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;missing " + notFound.count.description + ";[" + notFound.map({ $0.getCacheID() }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCityMentions;missing " + notFound.count.description + ";[" + notFound.map({ $0.cache_id }).joined(separator: ",") + "]")
         }
         if !notMentioned.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.getCacheID() }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.cache_id }).joined(separator: ",") + "]")
         }
         XCTAssert(mentioned.count == targetCities.count, "mentioned.count=" + mentioned.count.description + ", targetCities.count=" + targetCities.count.description)
     }

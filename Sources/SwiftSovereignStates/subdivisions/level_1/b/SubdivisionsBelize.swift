@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBelize : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Belize
+public enum SubdivisionsBelize : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Belize
     case belize
     case cayo
     case corozal

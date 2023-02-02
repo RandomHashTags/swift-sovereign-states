@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPapuaNewGuinea : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Papua_New_Guinea
+public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Papua_New_Guinea
     case bougainville
     case central
     case chimbu

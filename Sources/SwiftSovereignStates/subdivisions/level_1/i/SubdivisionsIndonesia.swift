@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIndonesia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Indonesia
+public enum SubdivisionsIndonesia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Indonesia
     case aceh
     case bali
     case bangka_belitung_islands

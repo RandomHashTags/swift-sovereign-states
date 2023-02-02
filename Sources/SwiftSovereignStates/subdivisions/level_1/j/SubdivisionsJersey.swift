@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsJersey : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Jersey
+public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Jersey
     case grouville
     case saint_lawrence
     case saint_brelade

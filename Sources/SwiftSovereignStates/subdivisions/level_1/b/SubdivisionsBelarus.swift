@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBelarus : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Belarus
+public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Belarus
     case brest
     case gomel
     case grodno

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSouthKorea : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea
+public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea
     case busan
     
     case north_chungcheong

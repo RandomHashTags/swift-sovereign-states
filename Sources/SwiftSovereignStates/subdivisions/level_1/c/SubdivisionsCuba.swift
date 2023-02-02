@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsCuba : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Cuba
+public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Cuba
     case artemisa
     case camaguey
     case ciego_de_avila
@@ -38,7 +38,7 @@ public enum SubdivisionsCuba : String, CaseIterable, SovereignStateSubdivision {
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .camaguey: return "Camagüey"
         case .ciego_de_avila: return "Ciego de Ávila"

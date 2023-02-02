@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsRwanda : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Rwanda
+public enum SubdivisionsRwanda : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Rwanda
     case eastern
     case kigali
     case northern

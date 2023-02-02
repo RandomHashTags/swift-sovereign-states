@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBangladesh : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Divisions_of_Bangladesh
+public enum SubdivisionsBangladesh : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Divisions_of_Bangladesh
     case barishal
     case chattogram
     case dhaka

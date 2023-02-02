@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsFrance : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_France
+public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_France
     case auvergne_rhone_alpes
     case burgundy_free_county
     case brittany
@@ -43,7 +43,7 @@ public enum SubdivisionsFrance : String, CaseIterable, SovereignStateSubdivision
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .auvergne_rhone_alpes: return "Auvergne-Rhône-Alpes"
         case .burgundy_free_county: return "Burgundy-Free County"

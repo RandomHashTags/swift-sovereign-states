@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsGreece : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_regions_of_Greece
+public enum SubdivisionsGreece : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_regions_of_Greece
     case attica
     case central_greece
     case central_macedonia

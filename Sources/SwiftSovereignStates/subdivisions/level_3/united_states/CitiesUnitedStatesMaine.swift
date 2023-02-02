@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesUnitedStatesMaine : String, CaseIterable, SovereignStateCity {
+public enum CitiesUnitedStatesMaine : String, SovereignStateCity {
     // cities
     case auburn
     case augusta
@@ -970,7 +970,7 @@ public enum CitiesUnitedStatesMaine : String, CaseIterable, SovereignStateCity {
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .dover_foxcroft: return "Dover-Foxcroft"
         case .swan_s_island: return "Swan's Island"

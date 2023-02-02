@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMauritius : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Mauritius | TODO: these are level-2 administrative divisions!
+public enum SubdivisionsMauritius : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Mauritius | TODO: these are level-2 administrative divisions!
     case flacq
     case grand_port
     case moka
@@ -26,7 +26,7 @@ public enum SubdivisionsMauritius : String, CaseIterable, SovereignStateSubdivis
         return SovereignStateSubdivisionType.districts
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .riviere_du_rempart: return "Rivière du Rempart"
         case .riviere_noire: return "Rivière Noire"

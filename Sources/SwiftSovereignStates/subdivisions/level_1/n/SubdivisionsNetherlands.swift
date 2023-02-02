@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsNetherlands : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_the_Netherlands
+public enum SubdivisionsNetherlands : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_the_Netherlands
     case drenthe
     case flevoland
     case friesland

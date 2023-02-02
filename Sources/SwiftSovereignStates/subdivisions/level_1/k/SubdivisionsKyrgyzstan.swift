@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsKyrgyzstan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Kyrgyzstan
+public enum SubdivisionsKyrgyzstan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Kyrgyzstan
     case batken
     case chuy
     case issyk_kul
@@ -32,7 +32,7 @@ public enum SubdivisionsKyrgyzstan : String, CaseIterable, SovereignStateSubdivi
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .chuy: return "Chüy"
         case .issyk_kul: return "Issyk-Kul"

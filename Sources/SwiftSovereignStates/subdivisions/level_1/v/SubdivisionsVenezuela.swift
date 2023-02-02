@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsVenezuela : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Venezuela
+public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Venezuela
     case amazonas
     case anzoategui
     case apure
@@ -47,7 +47,7 @@ public enum SubdivisionsVenezuela : String, CaseIterable, SovereignStateSubdivis
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .anzoategui: return "Anzoátegui"
         case .bolivar: return "Bolívar"
@@ -110,7 +110,7 @@ public enum SubdivisionsVenezuela : String, CaseIterable, SovereignStateSubdivis
         }
     }
     
-    public func getGovernmentWebsite() -> String? {
+    public var government_website : String? {
         switch self {
         case .amazonas: return "https://amazonas.gob.ve"
         case .anzoategui: return nil

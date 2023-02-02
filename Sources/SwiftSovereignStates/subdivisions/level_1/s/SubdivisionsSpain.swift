@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSpain : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Autonomous_communities_of_Spain
+public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Autonomous_communities_of_Spain
     case andalusia
     case aragon
     case asturias
@@ -41,7 +41,7 @@ public enum SubdivisionsSpain : String, CaseIterable, SovereignStateSubdivision 
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .castilla_la_macha: return "Castilla-La Mancha"
         default: return nil

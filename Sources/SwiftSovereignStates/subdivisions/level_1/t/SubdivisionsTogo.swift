@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsTogo : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Togo
+public enum SubdivisionsTogo : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Togo
     case centrale
     case kara
     case maritime

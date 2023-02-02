@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAustralia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_territories_of_Australia
+public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_territories_of_Australia
     case new_south_wales
     case queensland
     case south_australia
@@ -50,7 +50,7 @@ public enum SubdivisionsAustralia : String, CaseIterable, SovereignStateSubdivis
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .cocos_keeling_islands: return "Cocos (Keeling) Islands"
         case .heard_island_and_mcdonald_islands: return "Heard Island and McDonald Islands"

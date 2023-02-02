@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsPalau : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Palau
+public enum SubdivisionsPalau : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Palau
     case aimeliik
     case airai
     case angaur

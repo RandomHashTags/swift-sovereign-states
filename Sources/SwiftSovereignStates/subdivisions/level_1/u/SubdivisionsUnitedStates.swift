@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States
+public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States
     case alabama
     case alaska
     case arizona
@@ -93,7 +93,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .washington_dc: return "Washington, D.C."
         default: return nil
@@ -179,7 +179,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
         }
     }
     
-    public func getGovernmentWebsite() -> String? {
+    public var government_website : String? {
         switch self {
         case .alabama,
                 .alaska,
@@ -217,9 +217,9 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
                 .puerto_rico,
                 .united_states_virgin_islands:
             return nil
-        case .marshall_islands: return Country.marshall_islands.getGovernmentWebsite()
-        case .micronesia: return Country.micronesia.getGovernmentWebsite()
-        case .palau: return Country.palau.getGovernmentWebsite()
+        case .marshall_islands: return Country.marshall_islands.government_website
+        case .micronesia: return Country.micronesia.government_website
+        case .palau: return Country.palau.government_website
         default:
             guard let isoAlpha2:String = getISOAlpha2() else { return nil }
             return "https://" + isoAlpha2 + ".gov"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsVanuatu : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vanuatu
+public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vanuatu
     case malampa
     case penama
     case sanma

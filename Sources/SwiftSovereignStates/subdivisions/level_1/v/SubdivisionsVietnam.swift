@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsVietnam : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vietnam
+public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Vietnam
     case an_giang
     case ba_ria_vung_tau
     case bac_giang
@@ -102,7 +102,7 @@ public enum SubdivisionsVietnam : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .ba_ria_vung_tau: return "Bà Rịa–Vũng Tàu"
         case .bac_giang: return "Bắc Giang"
@@ -163,7 +163,7 @@ public enum SubdivisionsVietnam : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getGovernmentWebsite() -> String? {
+    public var government_website : String? {
         switch self {
         case .an_giang: return "https://www.angiang.gov.vn"
         case .ba_ria_vung_tau: return "https://baria-vungtau.gov.vn"

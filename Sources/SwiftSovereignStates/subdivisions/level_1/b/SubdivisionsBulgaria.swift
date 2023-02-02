@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBulgaria : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Bulgaria
+public enum SubdivisionsBulgaria : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Bulgaria
     case blagoevgrad
     case burgas
     case dobrich

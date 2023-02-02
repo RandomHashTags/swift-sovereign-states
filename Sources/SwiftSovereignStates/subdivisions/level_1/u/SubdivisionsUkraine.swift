@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUkraine : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Ukraine
+public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Ukraine
     case cherkasy
     case chernihiv
     case chernivtsi
@@ -74,7 +74,7 @@ public enum SubdivisionsUkraine : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .kyiv_city:
             return "Kyiv"

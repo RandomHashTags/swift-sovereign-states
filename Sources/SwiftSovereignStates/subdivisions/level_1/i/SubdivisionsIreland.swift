@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIreland : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Ireland
+public enum SubdivisionsIreland : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Ireland
     case connacht
     case leinster
     case munster

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMoldova : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
     case anenii_noi
     case balti
     case basarabeasca
@@ -62,7 +62,7 @@ public enum SubdivisionsMoldova : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .balti: return "Bălți"
         case .calarasi: return "Călărași"

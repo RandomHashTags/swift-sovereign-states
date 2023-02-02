@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMalaysia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_federal_territories_of_Malaysia
+public enum SubdivisionsMalaysia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_federal_territories_of_Malaysia
     case johor
     case kedah
     case kelantan

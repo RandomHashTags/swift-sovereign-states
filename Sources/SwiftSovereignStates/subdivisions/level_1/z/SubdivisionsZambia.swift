@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsZambia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zambia
+public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zambia
     case central
     case copperbelt
     case eastern

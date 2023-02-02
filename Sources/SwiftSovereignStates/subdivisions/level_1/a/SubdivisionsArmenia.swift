@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsArmenia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Armenia
+public enum SubdivisionsArmenia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Armenia
     case aragatsotn
     case ararat
     case armavir

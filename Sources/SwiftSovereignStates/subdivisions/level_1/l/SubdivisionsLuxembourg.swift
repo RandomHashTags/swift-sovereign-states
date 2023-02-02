@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLuxembourg : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Cantons_of_Luxembourg
+public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Cantons_of_Luxembourg
     case capellen
     case clervaux
     case diekirch
@@ -29,7 +29,7 @@ public enum SubdivisionsLuxembourg : String, CaseIterable, SovereignStateSubdivi
         return SovereignStateSubdivisionType.cantons
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .esch_sur_alzette:
             return "Esch-sur-Alzette"

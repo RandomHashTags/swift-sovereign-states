@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesAlgeriaAdrar : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/Adrar_Province
+public enum CitiesAlgeriaAdrar : String, SovereignStateCity { // https://en.wikipedia.org/wiki/Adrar_Province
     case adrar
     case akabli
     case aougrout

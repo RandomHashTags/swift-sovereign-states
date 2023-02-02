@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsCameroon : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Cameroon
+public enum SubdivisionsCameroon : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Cameroon
     case adamawa
     case centre
     case east

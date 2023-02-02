@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsComoros : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Politics_of_the_Comoros#Autonomous_islands
+public enum SubdivisionsComoros : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Politics_of_the_Comoros#Autonomous_islands
     case anjouan
     case grande_comore
     case moheli
@@ -20,7 +20,7 @@ public enum SubdivisionsComoros : String, CaseIterable, SovereignStateSubdivisio
         return SovereignStateSubdivisionType.autonomous_islands
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .moheli: return "Mohéli"
         default: return nil

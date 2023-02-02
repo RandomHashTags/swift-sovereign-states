@@ -7,9 +7,9 @@
 
 import Foundation
 
-public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible, RawRepresentable where RawValue == String { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
+public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStringConvertible, RawRepresentable where RawValue == String { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     /// The unique identifier of this SovereignRegion used for caching.
-    func getCacheID() -> String
+    var cache_id : String { get }
     /// Cached strings this SovereignRegion is commonly recognized by.
     func getKeywords() -> [String]
     /// Additional keywords this SovereignRegion should be recognized by.
@@ -22,7 +22,7 @@ public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible, 
     /// Where the decimal point `(.)` should be located in the ``getShortName()-7cmmc``.
     func getShortNameDecimalSeparatorIndex() -> Int?
     /// The real name of this SovereignRegion. Usually only used if this SovereignRegion's legal name contains accents, hyphens, commas, or other special characters.
-    func getRealName() -> String?
+    var real_name : String? { get }
     func getConditionalName() -> String?
     /// The official names this SovereignRegion legally identifies as.
     func getOfficialNames() -> [String]?
@@ -30,7 +30,7 @@ public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible, 
     func getAliases() -> [String]?
     
     /// This SovereignRegion's official government website URL.
-    func getGovernmentWebsite() -> String?
+    var government_website : String? { get }
     
     func getFlagURL() -> String?
     func getFlagURLWikipediaSVGID() -> String?
@@ -49,26 +49,26 @@ public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible, 
 public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
     func encode(to encoder: Encoder) throws {
         var container:SingleValueEncodingContainer = encoder.singleValueContainer()
-        try container.encode(getCacheID())
+        try container.encode(cache_id)
     }
 }
 public extension SovereignRegion where Self : LosslessStringConvertible {
-    var description: String { return getCacheID() }
+    var description: String { return cache_id }
 }
 
 public extension SovereignRegion {
-    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``getCacheID()``.
+    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
     func isEqual(_ sovereignRegion: (any SovereignRegion)?) -> Bool {
         guard let sovereignRegion:any SovereignRegion = sovereignRegion else { return false }
-        return getCacheID().elementsEqual(sovereignRegion.getCacheID())
+        return cache_id.elementsEqual(sovereignRegion.cache_id)
     }
     
     func getKeywords() -> [String] {
-        let id:String = getCacheID()
+        let id:String = cache_id
         if let keywords:[String] = SwiftSovereignStateCacheSubdivisions.keywords[id] {
             return keywords
         }
-        var keywords:[String] = [getRealName() ?? getShortName()]
+        var keywords:[String] = [real_name ?? getShortName()]
         if let conditionalName:String = getConditionalName() {
             keywords.append(conditionalName)
         }
@@ -111,14 +111,14 @@ public extension SovereignRegion {
         return nil
     }
     
-    func getRealName() -> String? {
+    var real_name : String? {
         return nil
     }
     func getConditionalName() -> String? {
         return nil
     }
     
-    func getGovernmentWebsite() -> String? {
+    var government_website : String? {
         return nil
     }
     
@@ -135,7 +135,7 @@ public extension SovereignRegion {
     }
     
     func getWikipediaURL() -> String {
-        let name:String = (getConditionalName() ?? getRealName() ?? getShortName()).replacingOccurrences(of: " ", with: "_")
+        let name:String = (getConditionalName() ?? real_name ?? getShortName()).replacingOccurrences(of: " ", with: "_")
         let prefix:String = getWikipediaURLPrefix() ?? ""
         let suffix:String = getWikipediaURLSuffix() ?? ""
         return "https://en.wikipedia.org/wiki/" + prefix + SovereignRegions.urlEncoded(name) + suffix
@@ -263,15 +263,15 @@ public protocol SovereignRegionWrapper : SovereignRegion {
 }
 public extension SovereignRegionWrapper {
     static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.getCacheID().elementsEqual(rhs.getCacheID())
+        return lhs.cache_id.elementsEqual(rhs.cache_id)
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(getCacheID())
+        hasher.combine(cache_id)
     }
     
     func encode(to encoder: Encoder) throws {
         var container:SingleValueEncodingContainer = encoder.singleValueContainer()
-        try container.encode(getCacheID())
+        try container.encode(cache_id)
     }
 }

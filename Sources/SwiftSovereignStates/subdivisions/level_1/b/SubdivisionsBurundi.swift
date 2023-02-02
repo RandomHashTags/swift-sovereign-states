@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBurundi : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Burundi
+public enum SubdivisionsBurundi : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Burundi
     case bubanza
     case bujumbura_mairie
     case bujumbura_rural

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsLibya : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Libya
+public enum SubdivisionsLibya : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Libya
     case butnan
     case jabal_al_akhdar
     case jabal_al_gharbi

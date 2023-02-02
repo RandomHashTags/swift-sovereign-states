@@ -25,7 +25,7 @@ public enum SovereignStateCities {
     }
     public static func getAllMentioned(_ string: String, subdivision: any SovereignStateSubdivision, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateCity]? {
         guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
-        let id:String = subdivision.getCacheID() + string.lowercased()
+        let id:String = subdivision.cache_id + string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedSubdivision[id] {
             return cached.isEmpty ? nil : cached
         }
@@ -63,7 +63,7 @@ public enum SovereignStateCities {
         if let city:any SovereignStateCity = SwiftSovereignStateCacheCities.valueOfCacheID[cacheID] {
             return city
         }
-        guard let city:any SovereignStateCity = all.first(where: { cacheID.elementsEqual($0.getCacheID()) }) else { return nil }
+        guard let city:any SovereignStateCity = all.first(where: { cacheID.elementsEqual($0.cache_id) }) else { return nil }
         if cache {
             SwiftSovereignStateCacheCities.valueOfCacheID[cacheID] = city
         }
@@ -83,7 +83,7 @@ public enum SovereignStateCities {
     }
     public static func getAllMentionedParallel(_ string: String, subdivision: any SovereignStateSubdivision, cache: Bool = true, ignoreCase: Bool = false) async -> [any SovereignStateCity]? {
         guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
-        let id:String = subdivision.getCacheID() + string.lowercased()
+        let id:String = subdivision.cache_id + string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedSubdivision[id] {
             return cached.isEmpty ? nil : cached
         }
@@ -134,8 +134,8 @@ public extension SovereignStateCity {
         self = city as! Self
     }
     
-    func getCacheID() -> String {
-        return getSubdivision().getCacheID() + "_" + rawValue
+    var cache_id : String {
+        return getSubdivision().cache_id + "_" + rawValue
     }
     func getCurrencies() -> [Currency] {
         return getSubdivision().getCurrencies()
@@ -154,7 +154,7 @@ public extension SovereignStateCity {
     
     internal func getDefaultURLSuffix() -> String {
         let subdivision:any SovereignStateSubdivision = getSubdivision()
-        return ",_" + (subdivision.getRealName() ?? subdivision.getShortName()).replacingOccurrences(of: " ", with: "_")
+        return ",_" + (subdivision.real_name ?? subdivision.getShortName()).replacingOccurrences(of: " ", with: "_")
     }
     func getWikipediaURLSuffix() -> String? {
         return getDefaultURLSuffix()
@@ -176,6 +176,7 @@ public extension SovereignStateSubdivision {
 }
 
 public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWrapper {
+    public static var allCases: [SovereignStateCityWrapper] = []
     public var rawValue: String
     
     public let city:any SovereignStateCity
@@ -202,8 +203,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
         rawValue = city.rawValue
     }
     
-    public func getCacheID() -> String {
-        return city.getCacheID()
+    public var cache_id : String {
+        return city.cache_id
     }
     public func getKeywords() -> [String] {
         return city.getKeywords()
@@ -221,8 +222,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public func getShortNameDecimalSeparatorIndex() -> Int? {
         return city.getShortNameDecimalSeparatorIndex()
     }
-    public func getRealName() -> String? {
-        return city.getRealName()
+    public var real_name : String? {
+        return city.real_name
     }
     public func getConditionalName() -> String? {
         return city.getConditionalName()
@@ -234,8 +235,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
         return city.getAliases()
     }
     
-    public func getGovernmentWebsite() -> String? {
-        return city.getGovernmentWebsite()
+    public var government_website : String? {
+        return city.government_website
     }
     
     public func getFlagURL() -> String? {

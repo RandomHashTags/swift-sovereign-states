@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsZimbabwe : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zimbabwe
+public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Zimbabwe
     case bulawayo
     case harare
     case manicaland

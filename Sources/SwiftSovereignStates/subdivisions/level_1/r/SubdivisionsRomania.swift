@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsRomania : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Romania
+public enum SubdivisionsRomania : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Romania
     case alba
     case arad
     case arges
@@ -65,7 +65,7 @@ public enum SubdivisionsRomania : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .arges: return "Argeș"
         case .bacau: return "Bacău"

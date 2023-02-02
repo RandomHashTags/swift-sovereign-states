@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBarbados : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Barbados
+public enum SubdivisionsBarbados : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Barbados
     case christ_church
     case saint_andrew
     case saint_george

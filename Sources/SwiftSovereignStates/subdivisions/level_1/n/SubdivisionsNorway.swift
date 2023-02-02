@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsNorway : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Norway
+public enum SubdivisionsNorway : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Counties_of_Norway
     case agder
     case innlandet
     case more_og_romsdal
@@ -45,7 +45,7 @@ public enum SubdivisionsNorway : String, CaseIterable, SovereignStateSubdivision
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .more_og_romsdal: return "Møre og Romsdal"
         case .troms_og_finnmark: return "Troms og Finnmark"

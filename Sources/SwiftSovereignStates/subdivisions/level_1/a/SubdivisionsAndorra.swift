@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAndorra : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Andorra
+public enum SubdivisionsAndorra : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Andorra
     case andorra_la_vella
     case canillo
     case encamp
@@ -24,7 +24,7 @@ public enum SubdivisionsAndorra : String, CaseIterable, SovereignStateSubdivisio
         return SovereignStateSubdivisionType.parishes
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .escaldes_engordany: return "Escaldes-Engordany"
         case .sant_julia_de_loria: return "Sant Julià de Lòria"

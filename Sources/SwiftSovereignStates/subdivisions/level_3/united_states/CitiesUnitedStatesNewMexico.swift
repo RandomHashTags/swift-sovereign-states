@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesUnitedStatesNewMexico : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_New_Mexico
+public enum CitiesUnitedStatesNewMexico : String, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_New_Mexico
     case alamogordo
     case albuquerque
     case angel_fire

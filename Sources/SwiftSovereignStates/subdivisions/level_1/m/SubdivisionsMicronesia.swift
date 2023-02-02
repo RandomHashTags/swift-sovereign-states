@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMicronesia : String, CaseIterable, SovereignStateSubdivision {
+public enum SubdivisionsMicronesia : String, SovereignStateSubdivision {
     case chuuk
     case kosrae
     case pohnpei

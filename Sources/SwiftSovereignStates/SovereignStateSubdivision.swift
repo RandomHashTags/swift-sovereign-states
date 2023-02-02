@@ -64,7 +64,7 @@ public enum SovereignStateSubdivisions {
         if let subdivision:any SovereignStateSubdivision = SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] {
             return subdivision
         }
-        guard let subdivision:any SovereignStateSubdivision = all.first(where: { cacheID.elementsEqual($0.getCacheID()) }) else { return nil }
+        guard let subdivision:any SovereignStateSubdivision = all.first(where: { cacheID.elementsEqual($0.cache_id) }) else { return nil }
         if cache {
             SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] = subdivision
         }
@@ -151,7 +151,7 @@ public extension SovereignStateSubdivision {
         self = subdivision as! Self
     }
     
-    func getCacheID() -> String {
+    var cache_id : String {
         return getCountry().rawValue + "_" + rawValue
     }
     func getISOAlpha2() -> String? {
@@ -187,6 +187,8 @@ public extension SovereignStateSubdivision {
 }
 
 public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, SovereignRegionWrapper {
+    public static var allCases: [SovereignStateSubdivisionWrapper] = []
+    
     public var rawValue: String
     
     public let subdivision:any SovereignStateSubdivision
@@ -213,8 +215,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         rawValue = subdivision.rawValue
     }
     
-    public func getCacheID() -> String {
-        return subdivision.getCacheID()
+    public var cache_id : String {
+        return subdivision.cache_id
     }
     public func getKeywords() -> [String] {
         return subdivision.getKeywords()
@@ -232,8 +234,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public func getShortNameDecimalSeparatorIndex() -> Int? {
         return subdivision.getShortNameDecimalSeparatorIndex()
     }
-    public func getRealName() -> String? {
-        return subdivision.getRealName()
+    public var real_name : String? {
+        return subdivision.real_name
     }
     public func getConditionalName() -> String? {
         return subdivision.getConditionalName()
@@ -245,8 +247,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.getAliases()
     }
     
-    public func getGovernmentWebsite() -> String? {
-        return subdivision.getGovernmentWebsite()
+    public var government_website : String? {
+        return subdivision.government_website
     }
     
     public func getFlagURL() -> String? {

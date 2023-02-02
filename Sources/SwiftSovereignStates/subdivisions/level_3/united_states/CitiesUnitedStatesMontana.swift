@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesUnitedStatesMontana : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Montana
+public enum CitiesUnitedStatesMontana : String, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Montana
     case alberton
     case anaconda
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsGuadeloupe : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Guadeloupe#Governance
+public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Guadeloupe#Governance
     case anse_bertrand
     case baie_manhault
     case baillif
@@ -49,7 +49,7 @@ public enum SubdivisionsGuadeloupe : String, CaseIterable, SovereignStateSubdivi
         return SovereignStateSubdivisionType.communes
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .anse_bertrand: return "Anse-Bertrand"
         case .baie_manhault: return "Baie-Mahault"

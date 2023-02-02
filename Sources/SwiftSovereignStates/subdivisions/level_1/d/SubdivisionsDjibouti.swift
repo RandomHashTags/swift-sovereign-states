@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsDjibouti : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Djibouti
+public enum SubdivisionsDjibouti : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Djibouti
     case ali_sabieh
     case arta
     case dikhil

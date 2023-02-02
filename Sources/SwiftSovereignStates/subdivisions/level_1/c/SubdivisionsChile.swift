@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsChile : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Chile
+public enum SubdivisionsChile : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Chile
     case antofagasta
     case araucania
     case arica_and_parinacota
@@ -42,7 +42,7 @@ public enum SubdivisionsChile : String, CaseIterable, SovereignStateSubdivision 
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .araucania: return "Araucanía"
         case .aysen: return "Aysén"

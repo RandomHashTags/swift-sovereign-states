@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsYemen : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Yemen
+public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Yemen
     case amran
     case abyan
     case dhale

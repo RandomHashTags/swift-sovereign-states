@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesUnitedStatesArizona : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Arizona | https://en.wikipedia.org/wiki/List_of_census-designated_places_in_Arizona
+public enum CitiesUnitedStatesArizona : String, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Arizona | https://en.wikipedia.org/wiki/List_of_census-designated_places_in_Arizona
     case apache_junction
     case avondale
     
@@ -853,7 +853,7 @@ public enum CitiesUnitedStatesArizona : String, CaseIterable, SovereignStateCity
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .dewey_humboldt: return "Dewey-Humboldt"
         case .pinetop_lakeside: return "Pinetop-Lakeside"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsNewZealand : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_New_Zealand
+public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_New_Zealand
     case auckland
     case bay_of_plenty
     case canterbury
@@ -33,7 +33,7 @@ public enum SubdivisionsNewZealand : String, CaseIterable, SovereignStateSubdivi
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .hawkes_bay: return "Hawke's Bay"
         case .manawatu_whanganui: return "Manawatū-Whanganui"

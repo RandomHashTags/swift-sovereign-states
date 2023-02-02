@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIndia : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_union_territories_of_India
+public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_union_territories_of_India
     case andhra_pradesh
     case arunachal_pradesh
     case assam

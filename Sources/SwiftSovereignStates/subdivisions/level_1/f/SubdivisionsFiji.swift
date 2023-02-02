@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsFiji : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Fiji
+public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Fiji
     case ba
     case bua
     case cakaudrove
@@ -38,7 +38,7 @@ public enum SubdivisionsFiji : String, CaseIterable, SovereignStateSubdivision {
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .nadroga_navosa: return "Nadroga-Navosa"
         default: return nil

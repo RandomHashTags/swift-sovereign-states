@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Quebec
+public enum CitiesCanadaQuebec : String, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_municipalities_in_Quebec
     case abercorn
     case acton_vale
     case adstock
@@ -1166,7 +1166,7 @@ public enum CitiesCanadaQuebec : String, CaseIterable, SovereignStateCity { // h
         return SubdivisionsCanada.quebec
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .alleyn_et_cawood: return "Alleyn-et-Cawood"
         case .ange_gardien: return "Ange-Gardien"

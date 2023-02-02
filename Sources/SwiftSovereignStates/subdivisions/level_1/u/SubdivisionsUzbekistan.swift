@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUzbekistan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Uzbekistan
+public enum SubdivisionsUzbekistan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Uzbekistan
     case andijan
     case bukhara
     case fergana

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsGermany : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Germany
+public enum SubdivisionsGermany : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_Germany
     case baden_wurttemberg
     case bavaria
     case berlin
@@ -42,7 +42,7 @@ public enum SubdivisionsGermany : String, CaseIterable, SovereignStateSubdivisio
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .baden_wurttemberg: return "Baden-Württemberg"
         case .mecklenburg_western_pomerania: return "Mecklenburg-Western Pomerania"

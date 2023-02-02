@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsSouthSudan : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_South_Sudan
+public enum SubdivisionsSouthSudan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_of_South_Sudan
     case central_equatoria
     case eastern_equatoria
     case jonglei

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsJamaica : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Jamaica
+public enum SubdivisionsJamaica : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Parishes_of_Jamaica
     case hanover
     case saint_elizabeth
     case saint_james

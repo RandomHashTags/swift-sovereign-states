@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsTanzania : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Tanzania
+public enum SubdivisionsTanzania : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Tanzania
     case arusha
     case dar_es_salaam
     case dodoma

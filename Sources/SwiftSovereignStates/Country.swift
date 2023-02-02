@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Country : String, CaseIterable, SovereignState {
+public enum Country : String, SovereignState {
     case abkhazia
     case afghanistan
     case albania
@@ -302,7 +302,7 @@ public enum Country : String, CaseIterable, SovereignState {
         self = country
     }
     
-    public func getCacheID() -> String {
+    public var cache_id : String {
         return rawValue
     }
     
@@ -363,7 +363,7 @@ public enum Country : String, CaseIterable, SovereignState {
         }
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .curacao: return "Curaçao"
         case .saint_barthelemy: return "Saint Barthélemy"
@@ -532,7 +532,7 @@ public enum Country : String, CaseIterable, SovereignState {
     public func getNeighbors() -> [Country]? {
         return SovereignStateNeighbors.get(self)
     }
-    public func getGovernmentWebsite() -> String? {
+    public var government_website : String? {
         return SovereignStateGovernmentWebsite.get(self)
     }
     

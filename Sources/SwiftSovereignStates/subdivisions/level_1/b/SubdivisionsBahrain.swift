@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBahrain : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Bahrain
+public enum SubdivisionsBahrain : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Bahrain
     case capital
     case muharraq
     case northern

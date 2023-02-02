@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesUnitedStatesSouthDakota : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_cities_in_South_Dakota
+public enum CitiesUnitedStatesSouthDakota : String, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_cities_in_South_Dakota
     case aberdeen
     case agar
     case akaska

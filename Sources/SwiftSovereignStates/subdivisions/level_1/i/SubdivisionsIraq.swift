@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIraq : String, CaseIterable, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Iraq
+public enum SubdivisionsIraq : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Governorates_of_Iraq
     case al_anbar
     case al_qadisiyyah
     case babil
@@ -36,7 +36,7 @@ public enum SubdivisionsIraq : String, CaseIterable, SovereignStateSubdivision {
         return SovereignStateSubdivisionType.governorates
     }
     
-    public func getRealName() -> String? {
+    public var real_name : String? {
         switch self {
         case .al_anbar: return "Al-Anbar"
         case .al_qadisiyyah: return "Al-Qādisiyyah"

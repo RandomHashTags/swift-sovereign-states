@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CitiesUnitedStatesMinnesota : String, CaseIterable, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_cities_in_Minnesota
+public enum CitiesUnitedStatesMinnesota : String, SovereignStateCity { // https://en.wikipedia.org/wiki/List_of_cities_in_Minnesota
     case ada
     case adams
     case adrian
