@@ -13,7 +13,7 @@ public enum WeatherSeason : CaseIterable {
     case summer
     case winter
     
-    func getAliases() -> [String]? {
+    var aliases : [String]? {
         switch self {
         case .autumn: return ["Fall"]
         case .spring: return ["Springtime"]

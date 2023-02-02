@@ -231,8 +231,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public func getOfficialNames() -> [String]? {
         return city.getOfficialNames()
     }
-    public func getAliases() -> [String]? {
-        return city.getAliases()
+    public var aliases : [String]? {
+        return city.aliases
     }
     
     public var government_website : String? {

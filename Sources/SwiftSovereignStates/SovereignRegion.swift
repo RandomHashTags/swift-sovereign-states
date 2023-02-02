@@ -27,7 +27,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// The official names this SovereignRegion legally identifies as.
     func getOfficialNames() -> [String]?
     /// The names of this SovereignRegion is also known by.
-    func getAliases() -> [String]?
+    var aliases : [String]? { get }
     
     /// This SovereignRegion's official government website URL.
     var government_website : String? { get }
@@ -75,7 +75,7 @@ public extension SovereignRegion {
         if let officialNames:[String] = getOfficialNames() {
             keywords.append(contentsOf: officialNames)
         }
-        if let aliases:[String] = getAliases() {
+        if let aliases:[String] = aliases {
             keywords.append(contentsOf: aliases)
         }
         if let additional:[String] = getAdditionalKeywords() {
@@ -98,7 +98,7 @@ public extension SovereignRegion {
         return nil
     }
     
-    func getAliases() -> [String]? {
+    var aliases : [String]? {
         return nil
     }
     

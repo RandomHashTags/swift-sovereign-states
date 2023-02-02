@@ -243,8 +243,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public func getOfficialNames() -> [String]? {
         return subdivision.getOfficialNames()
     }
-    public func getAliases() -> [String]? {
-        return subdivision.getAliases()
+    public var aliases : [String]? {
+        return subdivision.aliases
     }
     
     public var government_website : String? {

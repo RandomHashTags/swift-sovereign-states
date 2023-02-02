@@ -399,7 +399,7 @@ public enum Country : String, SovereignState {
         }
     }
     
-    public func getAliases() -> [String]? {
+    public var aliases : [String]? {
         switch self {
         case .afghanistan: return ["Islamic Republic of Afghanistan"]
         case .bahamas: return ["The Bahamas", "Bahamas, the"]
