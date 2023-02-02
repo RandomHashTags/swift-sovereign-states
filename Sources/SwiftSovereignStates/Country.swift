@@ -529,7 +529,7 @@ public enum Country : String, SovereignState {
         return SovereignStateISOAlpha3.get(self)
     }
     
-    public func getNeighbors() -> [Country]? {
+    public var neighbors : [Country]? {
         return SovereignStateNeighbors.get(self)
     }
     public var government_website : String? {
