@@ -506,7 +506,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         default: return nil
         }
     }
-    public func getCities() -> [any SovereignStateCity]? {
+    public var cities : [any SovereignStateCity]? {
         switch self {
         case .alabama: return CitiesUnitedStatesAlabama.allCases
         case .arizona: return CitiesUnitedStatesArizona.allCases

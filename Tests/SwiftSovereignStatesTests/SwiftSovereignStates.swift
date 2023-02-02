@@ -8,7 +8,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.keywords })
         let _:[[String]] = SovereignStateCities.all.map({ $0.keywords })
         
-        let cache:Bool = false
+        let cache:Bool = true
         print("SwiftSovereignStatesTests;testExample;cache=" + cache.description)
         if #available(macOS 13.0, *) {
             /*try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
@@ -179,7 +179,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                     if subdivisionWikipediaURL.contains(" ") {
                         failedSubdivisions.append(subdivision)
                     }
-                    if let cities:[any SovereignStateCity] = subdivision.getCities() {
+                    if let cities:[any SovereignStateCity] = subdivision.cities {
                         for city in cities {
                             let cityWikipediaURL:String = city.getWikipediaURL()
                             if cityWikipediaURL.contains(" ") {
@@ -362,7 +362,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     private func testCities() {
         let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
-        guard let cities:[any SovereignStateCity] = minnesota.getCities() else {
+        guard let cities:[any SovereignStateCity] = minnesota.cities else {
             XCTAssert(false, "minnesota.getCities() == nil")
             return
         }

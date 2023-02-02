@@ -9,7 +9,7 @@ import Foundation
 
 public enum SovereignStateCities {
     public static var all:[any SovereignStateCity] = {
-        return SovereignStateSubdivisions.all.compactMap({ $0.getCities() }).flatMap({ $0 })
+        return SovereignStateSubdivisions.all.compactMap({ $0.cities }).flatMap({ $0 })
     }()
     
     public static func getAllMentioned(_ string: String, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateCity]? {
@@ -24,7 +24,7 @@ public enum SovereignStateCities {
         return cities.isEmpty ? nil : cities
     }
     public static func getAllMentioned(_ string: String, subdivision: any SovereignStateSubdivision, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateCity]? {
-        guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
+        guard var cities:[any SovereignStateCity] = subdivision.cities else { return nil }
         let id:String = subdivision.cache_id + string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedSubdivision[id] {
             return cached.isEmpty ? nil : cached
@@ -48,7 +48,7 @@ public enum SovereignStateCities {
         return cities.isEmpty ? nil : cities
     }
     public static func valueOf(_ string: String, subdivision: any SovereignStateSubdivision, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateCity]? {
-        guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
+        guard var cities:[any SovereignStateCity] = subdivision.cities else { return nil }
         let stringLowercase:String = string.lowercased()
         if let cities:[any SovereignStateCity] = SwiftSovereignStateCacheCities.valueOf[stringLowercase] {
             return cities.isEmpty ? nil : cities
@@ -82,7 +82,7 @@ public enum SovereignStateCities {
         return cities.isEmpty ? nil : cities
     }
     public static func getAllMentionedParallel(_ string: String, subdivision: any SovereignStateSubdivision, cache: Bool = true, ignoreCase: Bool = false) async -> [any SovereignStateCity]? {
-        guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
+        guard var cities:[any SovereignStateCity] = subdivision.cities else { return nil }
         let id:String = subdivision.cache_id + string.lowercased()
         if let cached:[any SovereignStateCity] = SwiftSovereignStateCacheCities.mentionedSubdivision[id] {
             return cached.isEmpty ? nil : cached
@@ -106,7 +106,7 @@ public enum SovereignStateCities {
         return cities.isEmpty ? nil : cities
     }
     public static func valueOfParallel(_ string: String, subdivision: any SovereignStateSubdivision, cache: Bool = true, ignoreCase: Bool = false) async -> [any SovereignStateCity]? {
-        guard var cities:[any SovereignStateCity] = subdivision.getCities() else { return nil }
+        guard var cities:[any SovereignStateCity] = subdivision.cities else { return nil }
         let stringLowercase:String = string.lowercased()
         if let cities:[any SovereignStateCity] = SwiftSovereignStateCacheCities.valueOf[stringLowercase] {
             return cities.isEmpty ? nil : cities

@@ -98,7 +98,7 @@ public enum SubdivisionsAlgeria : String, SovereignStateSubdivision {  // https:
         }
     }
     
-    public func getCities() -> [any SovereignStateCity]? {
+    public var cities : [any SovereignStateCity]? {
         switch self {
         case .adrar: return CitiesAlgeriaAdrar.allCases
         default: return nil
