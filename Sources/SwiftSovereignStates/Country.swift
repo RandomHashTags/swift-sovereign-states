@@ -540,7 +540,7 @@ public enum Country : String, SovereignState {
     public func getFlagEmoji() -> String? {
         return SovereignStateFlagEmoji.get(self)
     }
-    public func getTimeZones() -> [SovereignStateTimeZone]? {
+    public var time_zones : [SovereignStateTimeZone]? {
         return SovereignStateTimeZone.get(self)
     }
     /// The official currencies used within this country.

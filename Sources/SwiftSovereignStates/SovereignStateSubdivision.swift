@@ -267,8 +267,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.getWikipediaURLSuffix()
     }
     
-    public func getTimeZones() -> [SovereignStateTimeZone]? {
-        return subdivision.getTimeZones()
+    public var time_zones : [SovereignStateTimeZone]? {
+        return subdivision.time_zones
     }
     public func getTemperateZones() -> [TemperateZone]? {
         return subdivision.getTemperateZones()

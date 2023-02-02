@@ -90,7 +90,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getTimeZones() -> [SovereignStateTimeZone]? {
+    public var time_zones : [SovereignStateTimeZone]? {
         return [SovereignStateTimeZone.fiji_time]
     }
 }

@@ -157,13 +157,12 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getTimeZones() -> [SovereignStateTimeZone]? {
+    public var time_zones : [SovereignStateTimeZone]? {
         let centralStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_central_standard_time
-        let pacificStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_pacific_standard_time
         let mountainStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_mountain_standard_time
         switch self {
         case .aguascalientes: return [centralStandardTime]
-        case .baja_california: return [pacificStandardTime]
+        case .baja_california: return [SovereignStateTimeZone.america_pacific_standard_time]
         case .baja_california_sur: return [mountainStandardTime]
         case .campeche: return [centralStandardTime]
         case .chiapas: return [centralStandardTime]

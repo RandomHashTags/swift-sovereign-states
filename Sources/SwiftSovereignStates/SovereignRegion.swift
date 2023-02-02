@@ -41,7 +41,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// The official currencies used within this SovereignRegion.
     func getCurrencies() -> [Currency]
     /// All the time zones this SovereignRegion recognizes within its administrative borders.
-    func getTimeZones() -> [SovereignStateTimeZone]?
+    var time_zones : [SovereignStateTimeZone]? { get }
     /// All temperate zones this SovereignRegion contains within its administrative borders.
     func getTemperateZones() -> [TemperateZone]?
 }
@@ -147,18 +147,18 @@ public extension SovereignRegion {
         return nil
     }
     
-    func getTimeZones() -> [SovereignStateTimeZone]? {
+    var time_zones : [SovereignStateTimeZone]? {
         return nil
     }
     
     /// The formatted time of the first SovereignRegion's time zone, with a custom date and time style.
     func getTime(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String? {
-        guard let timezone:TimeZone = getTimeZones()?.first?.getTimeZone() else { return nil }
+        guard let timezone:TimeZone = time_zones?.first?.getTimeZone() else { return nil }
         return SovereignRegions.formatTime(date: date, timeZone: timezone, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: showAbbreviation)
     }
     /// All formatted times of the SovereignRegion's time zones, with custom date and time styles.
     func getTimes(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> [String]? {
-        guard let timezones:[TimeZone] = getTimeZones()?.compactMap({ $0.getTimeZone() }) else { return nil }
+        guard let timezones:[TimeZone] = time_zones?.compactMap({ $0.getTimeZone() }) else { return nil }
         return timezones.map({ SovereignRegions.formatTime(date: date, timeZone: $0, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: showAbbreviation) })
     }
     

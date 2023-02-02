@@ -291,7 +291,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public func getTimeZones() -> [SovereignStateTimeZone]? {
+    public var time_zones : [SovereignStateTimeZone]? {
         let centralStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_central_standard_time
         let easternStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_eastern_standard_time
         let hawaiiStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_hawaii_standard_time

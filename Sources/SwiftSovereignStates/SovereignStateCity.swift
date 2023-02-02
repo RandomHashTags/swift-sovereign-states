@@ -255,8 +255,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
         return city.getWikipediaURLSuffix()
     }
     
-    public func getTimeZones() -> [SovereignStateTimeZone]? {
-        return city.getTimeZones()
+    public var time_zones : [SovereignStateTimeZone]? {
+        return city.time_zones
     }
     public func getTemperateZones() -> [TemperateZone]? {
         return city.getTemperateZones()
