@@ -17,7 +17,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// Whether this SovereignRegion is mentioned or not in the `string`.
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool
     
-    /// The name of this SovereignRegion as it is comonly known as internationally.
+    /// The name of this SovereignRegion as it is commonly known as internationally.
     func getShortName() -> String
     /// Where the decimal point `(.)` should be located in the ``getShortName()-7cmmc``.
     var short_name_decimal_separator_index : Int? { get }
@@ -33,7 +33,9 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// This SovereignRegion's official government website URL.
     var government_website : String? { get }
     
+    /// URL that represents this SovereignRegion's official flag.
     var flag_url : String? { get }
+    /// This SovereignRegion's Wikipedia flag url suffix that identifies where it is located on their servers.
     var wikipedia_flag_url_svg_id : String? { get }
     func getWikipediaURL() -> String
     func getWikipediaURLPrefix() -> String?
@@ -59,9 +61,9 @@ public extension SovereignRegion where Self : LosslessStringConvertible {
 
 public extension SovereignRegion {
     /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
-    func isEqual(_ sovereignRegion: (any SovereignRegion)?) -> Bool {
-        guard let sovereignRegion:any SovereignRegion = sovereignRegion else { return false }
-        return cache_id.elementsEqual(sovereignRegion.cache_id)
+    func isEqual(_ region: (any SovereignRegion)?) -> Bool {
+        guard let region:any SovereignRegion = region else { return false }
+        return cache_id.elementsEqual(region.cache_id)
     }
     
     var keywords : [String] {
