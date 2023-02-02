@@ -388,7 +388,7 @@ public enum CitiesUnitedStatesNorthDakota : String, SovereignStateCity { // http
     case zap
     case zeeland
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.north_dakota
     }
     

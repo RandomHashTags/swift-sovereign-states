@@ -244,7 +244,7 @@ public enum CitiesUnitedStatesWashington : String, SovereignStateCity { // https
     
     case zillah
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.washington
     }
     

@@ -121,7 +121,7 @@ public enum SovereignStateCities {
 
 public protocol SovereignStateCity : SovereignRegion {
     /// The subdivision that this city's administrative borders are located in.
-    func getSubdivision() -> any SovereignStateSubdivision
+    var subdivision : any SovereignStateSubdivision { get }
     func getDefaultType() -> SovereignStateCityType
     func getType() -> SovereignStateCityType?
     /// Whether or not this city is the capital in relation to its subdivision (``getSubdivision()``).
@@ -135,10 +135,10 @@ public extension SovereignStateCity {
     }
     
     var cache_id : String {
-        return getSubdivision().cache_id + "_" + rawValue
+        return subdivision.cache_id + "_" + rawValue
     }
     func getCurrencies() -> [Currency] {
-        return getSubdivision().getCurrencies()
+        return subdivision.getCurrencies()
     }
     
     func getDefaultType() -> SovereignStateCityType {
@@ -153,7 +153,7 @@ public extension SovereignStateCity {
     }
     
     internal func getDefaultURLSuffix() -> String {
-        let subdivision:any SovereignStateSubdivision = getSubdivision()
+        let subdivision:any SovereignStateSubdivision = subdivision
         return ",_" + (subdivision.real_name ?? subdivision.getShortName()).replacingOccurrences(of: " ", with: "_")
     }
     func getWikipediaURLSuffix() -> String? {
@@ -262,8 +262,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
         return city.temperate_zones
     }
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
-        return city.getSubdivision()
+    public var subdivision : any SovereignStateSubdivision {
+        return city.subdivision
     }
     public func getDefaultType() -> SovereignStateCityType {
         return city.getDefaultType()

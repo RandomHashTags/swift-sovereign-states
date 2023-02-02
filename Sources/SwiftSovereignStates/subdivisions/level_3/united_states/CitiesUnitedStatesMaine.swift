@@ -497,7 +497,7 @@ public enum CitiesUnitedStatesMaine : String, SovereignStateCity {
     case west_forks
     case winterville
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.maine
     }
     

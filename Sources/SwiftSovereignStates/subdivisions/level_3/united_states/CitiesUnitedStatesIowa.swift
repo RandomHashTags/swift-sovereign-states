@@ -978,7 +978,7 @@ public enum CitiesUnitedStatesIowa : String, SovereignStateCity { // https://en.
     case zearing
     case zwingle
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.iowa
     }
     

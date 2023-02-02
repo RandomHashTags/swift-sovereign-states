@@ -534,7 +534,7 @@ public enum CitiesUnitedStatesArkansas : String, SovereignStateCity { // https:/
     
     case zinc
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.arkansas
     }
     

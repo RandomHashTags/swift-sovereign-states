@@ -203,7 +203,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         if failedCities.count > 0 {
             print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities=" + failedCities.count.description)
             for city in failedCities {
-                let subdivision = city.getSubdivision()
+                let subdivision = city.subdivision
                 let country:Country = subdivision.country
                 print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities;" + country.rawValue + ";" + subdivision.rawValue + ";" + city.rawValue + ";wikipediaURL=" + subdivision.getWikipediaURL())
             }
@@ -367,7 +367,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             return
         }
         for city in cities {
-            XCTAssert(city.getSubdivision().isEqual(minnesota), "minnesota city.getSubdivision != Minnesota")
+            XCTAssert(city.subdivision.isEqual(minnesota), "minnesota city.getSubdivision != Minnesota")
         }
     }
 }

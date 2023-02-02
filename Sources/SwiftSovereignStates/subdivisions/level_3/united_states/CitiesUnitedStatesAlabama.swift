@@ -492,7 +492,7 @@ public enum CitiesUnitedStatesAlabama : String, SovereignStateCity { // https://
     case yellow_bluff
     case york
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.alabama
     }
     

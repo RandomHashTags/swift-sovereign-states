@@ -231,7 +231,7 @@ public enum CitiesUnitedStatesIdaho : String, SovereignStateCity { // https://en
     case winchester
     case worley
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.idaho
     }
     

@@ -965,7 +965,7 @@ public enum CitiesUnitedStatesOhio : String, SovereignStateCity { // https://en.
     case zanesville
     case zoar
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.ohio
     }
     

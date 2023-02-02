@@ -133,7 +133,7 @@ public enum CitiesUnitedStatesNewMexico : String, SovereignStateCity { // https:
     case willard
     case williamsburg
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.new_mexico
     }
 }

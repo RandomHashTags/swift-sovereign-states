@@ -284,7 +284,7 @@ public enum CitiesUnitedStatesUtah : String, SovereignStateCity { // https://en.
     case woodruff
     case woods_cross
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.utah
     }
     

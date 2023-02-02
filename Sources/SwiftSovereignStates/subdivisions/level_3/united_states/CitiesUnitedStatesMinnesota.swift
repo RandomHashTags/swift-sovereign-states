@@ -885,7 +885,7 @@ public enum CitiesUnitedStatesMinnesota : String, SovereignStateCity { // https:
     case zumbro_falls
     case zumbrota
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.minnesota
     }
     

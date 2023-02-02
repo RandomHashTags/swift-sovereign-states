@@ -1254,7 +1254,7 @@ public enum CitiesUnitedStatesTexas : String, SovereignStateCity { // https://en
     
     case zavalla
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.texas
     }
     

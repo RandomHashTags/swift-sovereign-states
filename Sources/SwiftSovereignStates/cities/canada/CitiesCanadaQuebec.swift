@@ -1162,7 +1162,7 @@ public enum CitiesCanadaQuebec : String, SovereignStateCity { // https://en.wiki
     case yamachiche
     case yamaska
     
-    public func getSubdivision() -> any SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsCanada.quebec
     }
     
