@@ -315,7 +315,6 @@ public enum Country : String, SovereignState {
     }
     
     public func getWikipediaURL() -> String {
-        let prefix:String = "https://en.wikipedia.org/wiki/"
         let name:String
         switch self {
         case .georgia:
@@ -334,7 +333,7 @@ public enum Country : String, SovereignState {
             name = getShortName().replacingOccurrences(of: " ", with: "_")
             break
         }
-        return prefix + name
+        return "https://en.wikipedia.org/wiki/" + name
     }
     
     public func getWikipediaSuffix() -> String {

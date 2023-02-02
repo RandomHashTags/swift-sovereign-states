@@ -1,0 +1,106 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 2/2/23.
+  
+*/
+
+/*
+ Sovereign State Subdivision Types
+ */
+// Singular Names
+"administrative_areas_name_singular" = "Administrative Area";
+"autonomous_cities_name_singular" = "Autonomous City";
+"autonomous_communities_name_singular" = "Autonomous Community";
+"autonomous_districts_name_singular" = "Autonomous District";
+"autonomous_islands_name_singular" = "Autonomous Island";
+"autonomous_municipalities_name_singular" = "Autonomous Municipality";
+"autonomous_regions_name_singular" = "Autonomous Region";
+"autonomous_republics_name_singular" = "Autonomous Republic";
+"autonomous_territorial_units_name_singular" = "Autonomous Territorial Unit";
+"cantons_name_singular" = "Canton";
+"chartered_cities_name_singular" = "Charter City";
+"cities_name_singular" = "City";
+"city_municipalities_name_singular" = "City Municipality";
+"communes_name_singular" = "Commune";
+"councils_name_singular" = "Council";
+"counties_name_singular" = "County";
+"departments_name_singular" = "Department";
+"dependencies_name_singular" = "Dependency";
+"districts_name_singular" = "District";
+"divisions_name_singular" = "Division";
+"federal_districts_name_singular" = "Federal District";
+"federal_entities_name_singular" = "Federal Entity";
+"federal_territories_name_singular" = "Federal Territory";
+"freely_associated_states_name_singular" = "Freely Associated State";
+"governorates_name_singular" = "Governorate";
+"incorporated_areas_name_singular" = "Incorporated Area";
+"independent_cities_name_singular" = "Independent City";
+"indigenous_province_name_singular" = "Indigenous Province";
+"metropolitan_cities_name_singular" = "Metropolitan City";
+"municipalities_name_singular" = "Municipality";
+"oblasts_name_singular" = "Oblast";
+"parishes_name_singular" = "Parish";
+"prefectures_name_singular" = "Prefecture";
+"provinces_name_singular" = "Province";
+"regions_name_singular" = "Region";
+"special_administrative_areas_name_singular" = "Special Administrative Area";
+"special_administrative_regions_name_singular" = "Special Administrative Region";
+"special_cities_name_singular" = "Special City";
+"special_municipalities_name_singular" = "Special Municipality";
+"special_self_governing_cities_name_singular" = "Special self-governing City";
+"special_self_governing_dependencies_name_singular" = "Special self-governing Dependency";
+"states_name_singular" = "State";
+"subdivisions_name_singular" = "Subdivision";
+"territories_name_singular" = "Territory";
+"union_territories_name_singular" = "Union Territory";
+"voivodeships_name_singular" = "Voivodeship";
+
+// Plural Names
+"administrative_areas_name_plural" = "Administrative Area";
+"autonomous_cities_name_plural" = "Autonomous Cities";
+"autonomous_communities_name_plural" = "Autonomous Communities";
+"autonomous_districts_name_plural" = "Autonomous Districts";
+"autonomous_islands_name_plural" = "Autonomous Islands";
+"autonomous_municipalities_name_plural" = "Autonomous Municipalities";
+"autonomous_regions_name_plural" = "Autonomous Regions";
+"autonomous_republics_name_plural" = "Autonomous Republics";
+"autonomous_territorial_units_name_plural" = "Autonomous Territorial Units";
+"cantons_name_plural" = "Cantons";
+"chartered_cities_name_plural" = "Charter Cities";
+"cities_name_plural" = "Cities";
+"city_municipalities_name_plural" = "City Municipalities";
+"communes_name_plural" = "Communes";
+"councils_name_plural" = "Councils";
+"counties_name_plural" = "Counties";
+"departments_name_plural" = "Departments";
+"dependencies_name_plural" = "Dependencies";
+"districts_name_plural" = "Districts";
+"divisions_name_plural" = "Divisions";
+"federal_districts_name_plural" = "Federal Districts";
+"federal_entities_name_plural" = "Federal Entities";
+"federal_territories_name_plural" = "Federal Territories";
+"freely_associated_states_name_plural" = "Freely Associated States";
+"governorates_name_plural" = "Governorates";
+"incorporated_areas_name_plural" = "Incorporated Areas";
+"independent_cities_name_plural" = "Independent Cities";
+"indigenous_province_name_plural" = "Indigenous Provinces";
+"metropolitan_cities_name_plural" = "Metropolitan Cities";
+"municipalities_name_plural" = "Municipalities";
+"oblasts_name_plural" = "Oblasts";
+"parishes_name_plural" = "Parishes";
+"prefectures_name_plural" = "Prefectures";
+"provinces_name_plural" = "Provinces";
+"regions_name_plural" = "Regions";
+"special_administrative_areas_name_plural" = "Special Administrative Areas";
+"special_administrative_regions_name_plural" = "Special Administrative Regions";
+"special_cities_name_plural" = "Special Cities";
+"special_municipalities_name_plural" = "Special Municipalities";
+"special_self_governing_cities_name_plural" = "Special self-governing Cities";
+"special_self_governing_dependencies_name_plural" = "Special self-governing Dependencies";
+"states_name_plural" = "States";
+"subdivisions_name_plural" = "Subdivisions";
+"territories_name_plural" = "Territories";
+"union_territories_name_plural" = "Union Territories";
+"voivodeships_name_plural" = "Voivodeships";

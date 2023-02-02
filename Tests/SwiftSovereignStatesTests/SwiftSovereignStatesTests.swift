@@ -397,6 +397,23 @@ final class SwiftSovereignStatesTests: XCTestCase {
             }
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " currency_names for " + missing.description)
             missing.removeAll()
+            
+            for type in SovereignStateSubdivisionType.allCases {
+                let string:String = SwiftSovereignStateLocalization.get_subdivision_type_name_singular(type, language_code: language)
+                if string.elementsEqual("nil") {
+                    missing.append(type.rawValue)
+                }
+            }
+            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " subdivision_types_name_singular for " + missing.description)
+            missing.removeAll()
+            for type in SovereignStateSubdivisionType.allCases {
+                let string:String = SwiftSovereignStateLocalization.get_subdivision_type_name_plural(type, language_code: language)
+                if string.elementsEqual("nil") {
+                    missing.append(type.rawValue)
+                }
+            }
+            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " subdivision_types_name_plural for " + missing.description)
+            missing.removeAll()
         }
     }
 }
