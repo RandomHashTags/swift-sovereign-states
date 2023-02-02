@@ -258,8 +258,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var time_zones : [SovereignStateTimeZone]? {
         return city.time_zones
     }
-    public func getTemperateZones() -> [TemperateZone]? {
-        return city.getTemperateZones()
+    public var temperate_zones : [TemperateZone]? {
+        return city.temperate_zones
     }
     
     public func getSubdivision() -> any SovereignStateSubdivision {

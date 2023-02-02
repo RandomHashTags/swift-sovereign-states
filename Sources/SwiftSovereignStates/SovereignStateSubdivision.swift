@@ -270,8 +270,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var time_zones : [SovereignStateTimeZone]? {
         return subdivision.time_zones
     }
-    public func getTemperateZones() -> [TemperateZone]? {
-        return subdivision.getTemperateZones()
+    public var temperate_zones : [TemperateZone]? {
+        return subdivision.temperate_zones
     }
     
     public func getISOAlpha2() -> String? {

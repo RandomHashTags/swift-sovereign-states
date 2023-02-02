@@ -43,7 +43,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// All the time zones this SovereignRegion recognizes within its administrative borders.
     var time_zones : [SovereignStateTimeZone]? { get }
     /// All temperate zones this SovereignRegion contains within its administrative borders.
-    func getTemperateZones() -> [TemperateZone]?
+    var temperate_zones : [TemperateZone]? { get }
 }
 
 public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
@@ -162,12 +162,12 @@ public extension SovereignRegion {
         return timezones.map({ SovereignRegions.formatTime(date: date, timeZone: $0, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: showAbbreviation) })
     }
     
-    func getTemperateZones() -> [TemperateZone]? {
+    var temperate_zones : [TemperateZone]? {
         return nil
     }
     /// The season this SovereignRegion is experiencing at a specific month and day.
     func getSeason(type: WeatherSeasonType = .astronomical, month: Int, day: Int) -> WeatherSeason? {
-        return getTemperateZones()?.first?.getSeason(type: type, month: month, day: day)
+        return temperate_zones?.first?.getSeason(type: type, month: month, day: day)
     }
 }
 
