@@ -7,9 +7,7 @@
 
 import Foundation
 
-public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
-    /// The unique identifier of the SovereignRegion, in relation to other administrative regions of the same type.
-    func getIdentifier() -> String
+public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible, RawRepresentable where RawValue == String { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     /// The unique identifier of this SovereignRegion used for caching.
     func getCacheID() -> String
     /// Cached strings this SovereignRegion is commonly recognized by.
@@ -49,10 +47,6 @@ public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible {
 }
 
 public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
-    func getIdentifier() -> String {
-        return rawValue
-    }
-    
     func encode(to encoder: Encoder) throws {
         var container:SingleValueEncodingContainer = encoder.singleValueContainer()
         try container.encode(getCacheID())
@@ -109,7 +103,7 @@ public extension SovereignRegion {
     }
     
     func getShortName() -> String {
-        let identifier:String = getIdentifier()
+        let identifier:String = rawValue
         let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : getShortNameDecimalSeparatorIndex()
         return SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex)
     }
@@ -195,7 +189,7 @@ internal extension Sequence {
         return values
     }
 }
-internal enum SovereignRegions {    
+internal enum SovereignRegions {
     private static var excludedWords:[String] = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y", "du", "es", "el", "do", "ob", "na", "v", "pri"]
     
     fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String {

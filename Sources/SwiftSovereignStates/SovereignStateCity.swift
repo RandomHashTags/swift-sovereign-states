@@ -135,7 +135,7 @@ public extension SovereignStateCity {
     }
     
     func getCacheID() -> String {
-        return getSubdivision().getCacheID() + "_" + getIdentifier()
+        return getSubdivision().getCacheID() + "_" + rawValue
     }
     func getCurrencies() -> [Currency] {
         return getSubdivision().getCurrencies()
@@ -171,30 +171,37 @@ public extension SovereignStateSubdivision {
         return SovereignStateCities.valueOf(string, subdivision: self)
     }
     func valueOfCityIdentifier(_ string: String) -> (any SovereignStateCity)? {
-        return getCities()?.first(where: { string.elementsEqual($0.getIdentifier()) })
+        return getCitiesType()?.init(rawValue: string)
     }
 }
 
 public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWrapper {
+    public var rawValue: String
+    
     public let city:any SovereignStateCity
     
     public init(_ city: any SovereignStateCity) {
         self.city = city
+        rawValue = city.rawValue
     }
     public init?(_ description: String) {
         guard let city:any SovereignStateCity = SovereignStateCities.valueOfCacheID(description) else { return nil }
         self = SovereignStateCityWrapper(city)
+        rawValue = city.rawValue
+    }
+    public init?(rawValue: String) {
+        guard let city:any SovereignStateCity = SovereignStateCities.valueOfCacheID(rawValue) else { return nil }
+        self = SovereignStateCityWrapper(city)
+        self.rawValue = rawValue
     }
     
     public init(from decoder: Decoder) throws {
         let container:SingleValueDecodingContainer = try decoder.singleValueContainer()
         let identifier:String = try container.decode(String.self)
         city = SovereignStateCities.valueOfCacheID(identifier) ?? CitiesUnitedStatesMinnesota.kasson
+        rawValue = city.rawValue
     }
     
-    public func getIdentifier() -> String {
-        return city.getIdentifier()
-    }
     public func getCacheID() -> String {
         return city.getCacheID()
     }

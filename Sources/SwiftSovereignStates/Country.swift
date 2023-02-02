@@ -631,6 +631,179 @@ public enum Country : String, CaseIterable, SovereignState {
 }
 
 public extension Country {
+    /// The level-1 administrative units' class this Country claims territorial ownership of.
+    func getSubdivisionType() -> (any SovereignStateSubdivision.Type)? {
+        switch self {
+        case .afghanistan: return SubdivisionsAfghanistan.self
+        case .albania: return SubdivisionsAlbania.self
+        case .algeria: return SubdivisionsAlgeria.self
+        case .andorra: return SubdivisionsAndorra.self
+        case .angola: return SubdivisionsAngola.self
+        case .antigua_and_barbuda: return SubdivisionsAntiguaAndBarbuda.self
+        case .argentina: return SubdivisionsArgentina.self
+        case .armenia: return SubdivisionsArmenia.self
+        case .australia: return SubdivisionsAustralia.self
+        case .austria: return SubdivisionsAustria.self
+        case .azerbaijan: return SubdivisionsAzerbaijan.self
+        
+        case .bahamas: return SubdivisionsBahamas.self
+        case .bahrain: return SubdivisionsBahrain.self
+        case .bangladesh: return SubdivisionsBangladesh.self
+        case .barbados: return SubdivisionsBarbados.self
+        case .belarus: return SubdivisionsBelarus.self
+        case .belize: return SubdivisionsBelize.self
+        case .benin: return SubdivisionsBenin.self
+        case .bhutan: return SubdivisionsBhutan.self
+        case .bolivia: return SubdivisionsBolivia.self
+        case .botswana: return SubdivisionsBotswana.self
+        case .brazil: return SubdivisionsBrazil.self
+        case .bulgaria: return SubdivisionsBulgaria.self
+        case .burkina_faso: return SubdivisionsBurkinaFaso.self
+        case .burundi: return SubdivisionsBurundi.self
+        
+        case .cambodia: return SubdivisionsCambodia.self
+        case .cameroon: return SubdivisionsCameroon.self
+        case .canada: return SubdivisionsCanada.self
+        case .central_african_republic: return SubdivisionsCentralAfricanRepublic.self
+        case .chad: return SubdivisionsChad.self
+        case .chile: return SubdivisionsChile.self
+        case .comoros: return SubdivisionsComoros.self
+        case .costa_rica: return SubdivisionsCostaRica.self
+        case .cuba: return SubdivisionsCuba.self
+        case .czech_republic: return SubdivisionsCzechRepublic.self
+        
+        case .denmark: return SubdivisionsDenmark.self
+        case .djibouti: return SubdivisionsDjibouti.self
+        case .dominica: return SubdivisionsDominica.self
+        case .dominican_republic: return SubdivisionsDominicanRepublic.self
+            
+        case .ecuador: return SubdivisionsEcuador.self
+        case .egypt: return SubdivisionsEgypt.self
+        case .el_salvador: return SubdivisionsElSalvador.self
+        case .eritrea: return SubdivisionsEritrea.self
+        case .estonia: return SubdivisionsEstonia.self
+        case .ethiopia: return SubdivisionsEthiopia.self
+        
+        case .fiji: return SubdivisionsFiji.self
+        case .france: return SubdivisionsFrance.self
+            
+        case .germany: return SubdivisionsGermany.self
+        case .greece: return SubdivisionsGreece.self
+        case .guadeloupe: return SubdivisionsGuadeloupe.self
+        case .guatemala: return SubdivisionsGuatemala.self
+            
+        case .haiti: return SubdivisionsHaiti.self
+        case .honduras: return SubdivisionsHonduras.self
+        case .hungary: return SubdivisionsHungary.self
+        
+        case .iceland: return SubdivisionsIceland.self
+        case .india: return SubdivisionsIndia.self
+        case .indonesia: return SubdivisionsIndonesia.self
+        case .ireland: return SubdivisionsIreland.self
+        case .iraq: return SubdivisionsIraq.self
+        case .iran: return SubdivisionsIran.self
+        case .israel: return SubdivisionsIsrael.self
+        case .italy: return SubdivisionsItaly.self
+        case .ivory_coast: return SubdivisionsIvoryCoast.self
+        
+        case .jamaica: return SubdivisionsJamaica.self
+        case .japan: return SubdivisionsJapan.self
+        case .jersey: return SubdivisionsJersey.self
+        case .jordan: return SubdivisionsJordan.self
+        
+        case .kazakhstan: return SubdivisionsKazakhstan.self
+        case .kenya: return SubdivisionsKenya.self
+        case .kuwait: return SubdivisionsKuwait.self
+        case .kyrgyzstan: return SubdivisionsKyrgyzstan.self
+        
+        case .laos: return SubdivisionsLaos.self
+        case .latvia: return SubdivisionsLatvia.self
+        case .lebanon: return SubdivisionsLebanon.self
+        case .lesotho: return SubdivisionsLesotho.self
+        case .liberia: return SubdivisionsLiberia.self
+        case .libya: return SubdivisionsLibya.self
+        case .liechtenstein: return SubdivisionsLiechtenstein.self
+        case .lithuania: return SubdivisionsLithuania.self
+        case .luxembourg: return SubdivisionsLuxembourg.self
+        
+        case .madagascar: return SubdivisionsMadagascar.self
+        case .malaysia: return SubdivisionsMalaysia.self
+        case .mali: return SubdivisionsMali.self
+        case .malta: return SubdivisionsMalta.self
+        case .mauritania: return SubdivisionsMauritania.self
+        case .mauritius: return SubdivisionsMauritius.self
+        case .mexico: return SubdivisionsMexico.self
+        case .micronesia: return SubdivisionsMicronesia.self
+        case .moldova: return SubdivisionsMoldova.self
+        case .mongolia: return SubdivisionsMongolia.self
+        case .montenegro: return SubdivisionsMontenegro.self
+        
+        case .namibia: return SubdivisionsNamibia.self
+        case .nepal: return SubdivisionsNepal.self
+        case .netherlands: return SubdivisionsNetherlands.self
+        case .new_zealand: return SubdivisionsNewZealand.self
+        case .nicaragua: return SubdivisionsNicaragua.self
+        case .niger: return SubdivisionsNiger.self
+        case .nigeria: return SubdivisionsNigeria.self
+        case .norway: return SubdivisionsNorway.self
+            
+        case .oman: return SubdivisionsOman.self
+            
+        case .pakistan: return SubdivisionsPakistan.self
+        case .palau: return SubdivisionsPalau.self
+        case .palestine: return SubdivisionsPalestine.self
+        case .panama: return SubdivisionsPanama.self
+        case .papua_new_guinea: return SubdivisionsPapuaNewGuinea.self
+        case .paraguay: return SubdivisionsParaguay.self
+        case .peru: return SubdivisionsPeru.self
+        case .philippines: return SubdivisionsPhilippines.self
+        case .poland: return SubdivisionsPoland.self
+        case .portugal: return SubdivisionsPortugal.self
+        
+        case .qatar: return SubdivisionsQatar.self
+        
+        case .romania: return SubdivisionsRomania.self
+        case .rwanda: return SubdivisionsRwanda.self
+        
+        case .samoa: return SubdivisionsSamoa.self
+        case .sao_tome_and_principe: return SubdivisionsSaoTomeAndPrincipe.self
+        case .senegal: return SubdivisionsSenegal.self
+        case .slovakia: return SubdivisionsSlovakia.self
+        case .slovenia: return SubdivisionsSlovenia.self
+        case .south_korea: return SubdivisionsSouthKorea.self
+        case .south_sudan: return SubdivisionsSouthSudan.self
+        case .spain: return SubdivisionsSpain.self
+        case .sri_lanka: return SubdivisionsSriLanka.self
+        case .suriname: return SubdivisionsSuriname.self
+        case .sweden: return SubdivisionsSweden.self
+        case .switzerland: return SubdivisionsSwitzerland.self
+        case .syria: return SubdivisionsSyria.self
+        
+        case .tanzania: return SubdivisionsTanzania.self
+        case .thailand: return SubdivisionsThailand.self
+        case .timor_leste: return SubdivisionsTimorLeste.self
+        case .togo: return SubdivisionsTogo.self
+        case .tonga: return SubdivisionsTonga.self
+        case .tunisia: return SubdivisionsTunisia.self
+        case .turkey: return SubdivisionsTurkey.self
+        case .turkmenistan: return SubdivisionsTurkmenistan.self
+        
+        case .ukraine: return SubdivisionsUkraine.self
+        case .united_states: return SubdivisionsUnitedStates.self
+        case .uruguay: return SubdivisionsUruguay.self
+        case .uzbekistan: return SubdivisionsUzbekistan.self
+        
+        case .vanuatu: return SubdivisionsVanuatu.self
+        case .venezuela: return SubdivisionsVenezuela.self
+        case .vietnam: return SubdivisionsVietnam.self
+        
+        case .yemen: return SubdivisionsYemen.self
+        
+        case .zambia: return SubdivisionsZambia.self
+        case .zimbabwe: return SubdivisionsZimbabwe.self
+        default: return nil
+        }
+    }
     /// The level-1 administrative units this Country claims territorial ownership of.
     func getSubdivisions() -> [any SovereignStateSubdivision]? {
         switch self {

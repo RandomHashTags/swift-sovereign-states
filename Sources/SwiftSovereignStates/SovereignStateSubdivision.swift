@@ -127,7 +127,7 @@ public extension Country {
         return SovereignStateSubdivisions.valueOf(string, country: self)
     }
     func valueOfSubdivisionIdentifier(_ string: String) -> (any SovereignStateSubdivision)? {
-        return getSubdivisions()?.first(where: { string.elementsEqual($0.getIdentifier()) })
+        return getSubdivisionType()?.init(rawValue: string)
     }
 }
 
@@ -139,6 +139,8 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
     
     /// The neighboring subdivisions, in relation the its administrative borders.
     func getNeighbors() -> [any SovereignStateSubdivision]?
+    /// The level-3 administrative units' type this subdivision contains.
+    func getCitiesType() -> (any SovereignStateCity.Type)?
     /// The level-3 administrative units this subdivision contains.
     func getCities() -> [any SovereignStateCity]?
 }
@@ -150,7 +152,7 @@ public extension SovereignStateSubdivision {
     }
     
     func getCacheID() -> String {
-        return getCountry().getIdentifier() + "_" + getIdentifier()
+        return getCountry().rawValue + "_" + rawValue
     }
     func getISOAlpha2() -> String? {
         return nil
@@ -172,6 +174,9 @@ public extension SovereignStateSubdivision {
     func getNeighbors() -> [any SovereignStateSubdivision]? {
         return nil
     }
+    func getCitiesType() -> (any SovereignStateCity.Type)? {
+        return nil
+    }
     func getCities() -> [any SovereignStateCity]? {
         return nil
     }
@@ -182,25 +187,32 @@ public extension SovereignStateSubdivision {
 }
 
 public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, SovereignRegionWrapper {
+    public var rawValue: String
+    
     public let subdivision:any SovereignStateSubdivision
     
     public init(_ subdivision: any SovereignStateSubdivision) {
         self.subdivision = subdivision
+        rawValue = subdivision.rawValue
     }
     public init?(_ description: String) {
         guard let subdivision:any SovereignStateSubdivision = SovereignStateSubdivisions.valueOfCacheID(description) else { return nil }
-        self = SovereignStateSubdivisionWrapper(subdivision)
+        self = subdivision.wrapped()
+        rawValue = subdivision.rawValue
+    }
+    public init?(rawValue: String) {
+        guard let subdivision:any SovereignStateSubdivision = SovereignStateSubdivisions.valueOfCacheID(rawValue) else { return nil }
+        self = subdivision.wrapped()
+        self.rawValue = rawValue
     }
     
     public init(from decoder: Decoder) throws {
         let container:SingleValueDecodingContainer = try decoder.singleValueContainer()
         let identifier:String = try container.decode(String.self)
         subdivision = SovereignStateSubdivisions.valueOfCacheID(identifier) ?? SubdivisionsUnitedStates.minnesota
+        rawValue = subdivision.rawValue
     }
     
-    public func getIdentifier() -> String {
-        return subdivision.getIdentifier()
-    }
     public func getCacheID() -> String {
         return subdivision.getCacheID()
     }

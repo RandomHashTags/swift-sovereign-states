@@ -206,7 +206,7 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
                 .vermont,
                 .virginia,
                 .wisconsin:
-            return "https://" + getIdentifier() + ".gov"
+            return "https://" + rawValue + ".gov"
         case .florida: return "https://www.myflorida.com"
         case .massachusetts: return "https://www.mass.gov"
         case .west_virginia: return "https://www.wv.gov"
@@ -484,6 +484,28 @@ public enum SubdivisionsUnitedStates : String, CaseIterable, SovereignStateSubdi
         }
     }
     
+    public func getCitiesType() -> (any SovereignStateCity.Type)? {
+        switch self {
+        case .alabama: return CitiesUnitedStatesAlabama.self
+        case .arizona: return CitiesUnitedStatesArizona.self
+        case .arkansas: return CitiesUnitedStatesArkansas.self
+        case .idaho: return CitiesUnitedStatesIdaho.self
+        case .iowa: return CitiesUnitedStatesIowa.self
+        case .kentucky: return CitiesUnitedStatesKentucky.self
+        case .maine: return CitiesUnitedStatesMaine.self
+        case .minnesota: return CitiesUnitedStatesMinnesota.self
+        case .montana: return CitiesUnitedStatesMontana.self
+        case .new_hampshire: return CitiesUnitedStatesNewHampshire.self
+        case .new_mexico: return CitiesUnitedStatesNewMexico.self
+        case .north_dakota: return CitiesUnitedStatesNorthDakota.self
+        case .south_dakota: return CitiesUnitedStatesSouthDakota.self
+        case .ohio: return CitiesUnitedStatesOhio.self
+        case .texas: return CitiesUnitedStatesTexas.self
+        case .utah: return CitiesUnitedStatesUtah.self
+        case .washington: return CitiesUnitedStatesWashington.self
+        default: return nil
+        }
+    }
     public func getCities() -> [any SovereignStateCity]? {
         switch self {
         case .alabama: return CitiesUnitedStatesAlabama.allCases
