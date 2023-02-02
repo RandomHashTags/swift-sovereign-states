@@ -40,7 +40,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     func getWikipediaURLSuffix() -> String?
     
     /// The official currencies used within this SovereignRegion.
-    func getCurrencies() -> [Currency]
+    var currencies : [Currency] { get }
     /// All the time zones this SovereignRegion recognizes within its administrative borders.
     var time_zones : [SovereignStateTimeZone]? { get }
     /// All temperate zones this SovereignRegion contains within its administrative borders.

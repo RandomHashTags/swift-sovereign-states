@@ -543,7 +543,7 @@ public enum Country : String, SovereignState {
         return SovereignStateTimeZone.get(self)
     }
     /// The official currencies used within this country.
-    public func getCurrencies() -> [Currency] {
+    public var currencies : [Currency] {
         return SovereignStateCurrencies.get(self)
     }
     

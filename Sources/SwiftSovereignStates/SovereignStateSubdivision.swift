@@ -160,8 +160,8 @@ public extension SovereignStateSubdivision {
     var iso_alpha_3 : String? {
         return nil
     }
-    func getCurrencies() -> [Currency] {
-        return country.getCurrencies()
+    var currencies : [Currency] {
+        return country.currencies
     }
     
     func getWikipediaURLSuffix() -> String? {

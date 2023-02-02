@@ -136,8 +136,8 @@ public extension SovereignStateCity {
     var cache_id : String {
         return subdivision.cache_id + "_" + rawValue
     }
-    func getCurrencies() -> [Currency] {
-        return subdivision.getCurrencies()
+    var currencies : [Currency] {
+        return subdivision.currencies
     }
     
     var type : SovereignStateCityType {
