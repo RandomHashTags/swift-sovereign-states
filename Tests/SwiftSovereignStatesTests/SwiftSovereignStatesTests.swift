@@ -18,9 +18,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 let _:Country? = Country.init(rawValue: "united_states")
             }*/
             
-            try await benchmark(key: "SovereignStateSubdivisions.valueOf") {
+            /*try await benchmark(key: "SovereignStateSubdivisions.valueOf") {
                 let _:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: cache)
-            }
+            }*/
             /*try await benchmark(key: "SovereignStateSubdivisions.getAllMentionedParallel") {
                 let _:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel("Wisconsin! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
             }
@@ -72,6 +72,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testNeighbors()
         testCities()
         
+        generate_english_localization()
         test_localization(language: "en")
         
         //let seconds:UInt64 = 500_000_000
@@ -252,20 +253,16 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
     }
     private func makeRequest(request: URLRequest) async -> Data? {
-        do {
-            return try await withCheckedThrowingContinuation({ continuation in
-                let dataTask:URLSessionDataTask = URLSession.shared.dataTask(with: request) { data, response, error in
-                    guard let data:Data = data, let _:URLResponse = response else {
-                        let error:Error = error ?? URLError(.badServerResponse)
-                        return continuation.resume(throwing: error)
-                    }
-                    continuation.resume(returning: data)
+        return try? await withCheckedThrowingContinuation({ continuation in
+            let dataTask:URLSessionDataTask = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data:Data = data, let _:URLResponse = response else {
+                    let error:Error = error ?? URLError(.badServerResponse)
+                    return continuation.resume(throwing: error)
                 }
-                dataTask.resume()
-            })
-        } catch {
-            return nil
-        }
+                continuation.resume(returning: data)
+            }
+            dataTask.resume()
+        })
     }
     
     private func testCountryMentions() {
@@ -373,22 +370,31 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
     }
     
+    private func generate_english_localization() {
+        /*for country in Country.allCases {
+            let short_name_id:String = "country_short_name_" + country.rawValue
+            print("case " + short_name_id + "\" = \"" + country.getShortName() + "\";")
+        }*/
+    }
     private func test_localization(language: String) {
-        let localization_bundle:Bundle = Bundle(path: "/Users/randomhashtags/GitProjects/swift-sovereign-states/Sources/SwiftSovereignStates")!
-        guard let bundle_path:String = localization_bundle.path(forResource: language, ofType: "lproj") else {
-            XCTAssert(false, "test_localization; language=\"" + language + "\"; missing Localization.strings file (" + language + ".lproj)!")
-            return
-        }
-        let bundle:Bundle = Bundle(path: bundle_path)!
-        var missing_short_names:[String] = [String]()
-        for country in Country.allCases.map({ $0.rawValue }) {
-            let id:String = "country_short_name_" + country
-            let string:String = bundle.localizedString(forKey: id, value: "nil", table: nil)
+        var missing:[String] = [String]()
+        for country in Country.allCases {
+            let string:String = SwiftSovereignStateLocalization.get_country_short_name(country)
             if string.elementsEqual("nil") {
-                missing_short_names.append(country)
+                missing.append(country.rawValue)
             }
         }
-        XCTAssert(missing_short_names.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing_short_names.count.description + " short_names for " + missing_short_names.description)
+        XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " country_short_names for " + missing.description)
+        missing.removeAll()
+        
+        for currency in Currency.allCases {
+            let string:String = currency.name
+            if string.elementsEqual("nil") {
+                missing.append(currency.rawValue)
+            }
+        }
+        XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " currency_names for " + missing.description)
+        missing.removeAll()
     }
 }
 

@@ -1,2 +1,2 @@
-struct SwiftSovereignStates {
+final class SwiftSovereignStates {
 }
