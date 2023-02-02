@@ -33,7 +33,7 @@ public enum SubdivisionsGermany : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.states
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .mecklenburg_western_pomerania:
             return "Mecklenburg-Vorpommern"

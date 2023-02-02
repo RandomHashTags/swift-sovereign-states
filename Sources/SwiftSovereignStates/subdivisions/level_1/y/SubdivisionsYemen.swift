@@ -44,7 +44,7 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .sanaa_city: return "Sanaa"
         case .amran: return "'Amran"

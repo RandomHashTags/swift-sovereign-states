@@ -23,7 +23,8 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     var short_name_decimal_separator_index : Int? { get }
     /// The real name of this SovereignRegion. Usually only used if this SovereignRegion's legal name contains accents, hyphens, commas, or other special characters.
     var real_name : String? { get }
-    func getConditionalName() -> String?
+    /// The slug Wikipedia has for this SovereignRegion as it would appear in the url, but the underscores are spaces.
+    var wikipedia_name : String? { get }
     /// The official names this SovereignRegion legally identifies as.
     func getOfficialNames() -> [String]?
     /// The names of this SovereignRegion is also known by.
@@ -69,7 +70,7 @@ public extension SovereignRegion {
             return keywords
         }
         var keywords:[String] = [real_name ?? getShortName()]
-        if let conditionalName:String = getConditionalName() {
+        if let conditionalName:String = wikipedia_name {
             keywords.append(conditionalName)
         }
         if let officialNames:[String] = getOfficialNames() {
@@ -114,7 +115,7 @@ public extension SovereignRegion {
     var real_name : String? {
         return nil
     }
-    func getConditionalName() -> String? {
+    var wikipedia_name : String? {
         return nil
     }
     
@@ -135,7 +136,7 @@ public extension SovereignRegion {
     }
     
     func getWikipediaURL() -> String {
-        let name:String = (getConditionalName() ?? real_name ?? getShortName()).replacingOccurrences(of: " ", with: "_")
+        let name:String = (wikipedia_name ?? real_name ?? getShortName()).replacingOccurrences(of: " ", with: "_")
         let prefix:String = getWikipediaURLPrefix() ?? ""
         let suffix:String = getWikipediaURLSuffix() ?? ""
         return "https://en.wikipedia.org/wiki/" + prefix + SovereignRegions.urlEncoded(name) + suffix

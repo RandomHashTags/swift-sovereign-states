@@ -46,7 +46,7 @@ public enum SubdivisionsItaly : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .trentino_south_tyrol: return "Trentino-Alto_Adige/Südtirol"
         default: return nil

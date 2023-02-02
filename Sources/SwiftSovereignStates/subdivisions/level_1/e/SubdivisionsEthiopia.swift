@@ -37,7 +37,7 @@ public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .south_west:
             return "South West Ethiopia"

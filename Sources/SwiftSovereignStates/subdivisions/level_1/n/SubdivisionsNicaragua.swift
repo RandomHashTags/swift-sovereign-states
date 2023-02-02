@@ -40,7 +40,7 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .north_caribbean_coast: return "North Caribbean Coast Autonomous Region"
         case .south_caribbean_coast: return "South Caribbean Coast Autonomous Region"

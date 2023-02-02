@@ -237,8 +237,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var real_name : String? {
         return subdivision.real_name
     }
-    public func getConditionalName() -> String? {
-        return subdivision.getConditionalName()
+    public var wikipedia_name : String? {
+        return subdivision.wikipedia_name
     }
     public func getOfficialNames() -> [String]? {
         return subdivision.getOfficialNames()

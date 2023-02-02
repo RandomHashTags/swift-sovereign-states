@@ -46,7 +46,7 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .bougainville:
             return "Autonomous Region of Bougainville"

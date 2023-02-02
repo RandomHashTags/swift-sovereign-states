@@ -33,7 +33,7 @@ public enum SubdivisionsChile : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .metropolitan:
             return "Santiago Metropolitan"

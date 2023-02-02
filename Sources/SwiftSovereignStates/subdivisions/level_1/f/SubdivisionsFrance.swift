@@ -30,7 +30,7 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .burgundy_free_county: return "Bourgogne-Franche-Comté"
         case .great_east: return "Grand Est"

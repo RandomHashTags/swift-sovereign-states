@@ -41,7 +41,7 @@ public enum SubdivisionsEcuador : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.provinces
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .morona_santigao: return "Morona-Santiago"
         case .zamora_chinchipe: return "Zamora-Chinchipe"

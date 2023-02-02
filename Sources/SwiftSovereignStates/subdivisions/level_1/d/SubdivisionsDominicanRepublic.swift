@@ -49,7 +49,7 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
         return SovereignStateSubdivisionType.provinces
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .distrito_nacional:
             return "Distrito Nacional"

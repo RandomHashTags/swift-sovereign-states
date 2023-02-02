@@ -50,7 +50,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .distrito_federal:
             return "Federal District"

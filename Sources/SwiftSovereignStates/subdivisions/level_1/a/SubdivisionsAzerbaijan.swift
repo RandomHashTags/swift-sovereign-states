@@ -106,7 +106,7 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .shaki_city, .shaki_district:
             return "Shaki"

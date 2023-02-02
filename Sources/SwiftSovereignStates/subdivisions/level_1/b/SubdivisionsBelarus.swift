@@ -29,7 +29,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .minsk_city:
             return "Minsk"

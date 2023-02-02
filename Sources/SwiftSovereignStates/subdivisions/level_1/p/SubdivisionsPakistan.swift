@@ -29,7 +29,7 @@ public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .azad_jammu_and_kashmir:
             return "Azad Kashmir"

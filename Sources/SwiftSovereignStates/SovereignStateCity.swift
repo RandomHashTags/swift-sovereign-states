@@ -221,8 +221,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var real_name : String? {
         return city.real_name
     }
-    public func getConditionalName() -> String? {
-        return city.getConditionalName()
+    public var wikipedia_name : String? {
+        return city.wikipedia_name
     }
     public func getOfficialNames() -> [String]? {
         return city.getOfficialNames()

@@ -46,7 +46,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getConditionalName() -> String? {
+    public var wikipedia_name : String? {
         switch self {
         case .tierra_del_fuego_antartida_e_islas_del_atlantico_sur:
             return "Tierra del Fuego"
