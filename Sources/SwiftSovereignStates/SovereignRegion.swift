@@ -92,9 +92,8 @@ public extension SovereignRegion {
     }
     
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
-        let values:[String] = ignoreCase ? keywords.map({ $0.lowercased() }) : keywords
-        let string:String = ignoreCase ? string.lowercased() : string
-        return exact ? SovereignRegions.doesEqual(string: string, values: values) : SovereignRegions.doesSatisfy(string: string, values: values)
+        let option:String.CompareOptions = ignoreCase ? .caseInsensitive : .literal
+        return exact ? SovereignRegions.doesEqual(string: string, values: keywords, option: option) : SovereignRegions.doesSatisfy(string: string, values: keywords)
     }
     
     func getOfficialNames() -> [String]? {
@@ -224,8 +223,8 @@ internal enum SovereignRegions {
         return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? string
     }
     
-    static func doesEqual(string: String, values: [String]) -> Bool {
-        return values.first(where: { string.elementsEqual($0) }) != nil
+    static func doesEqual(string: String, values: [String], option: String.CompareOptions) -> Bool {
+        return values.first(where: { string.compare($0, options: option) == .orderedSame }) != nil
     }
     static func doesSatisfy(string: String, values: [String]) -> Bool {
         guard values.first(where: { string.contains($0) }) != nil else { return false }
