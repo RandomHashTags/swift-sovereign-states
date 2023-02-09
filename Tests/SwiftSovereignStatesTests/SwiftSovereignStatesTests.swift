@@ -32,6 +32,16 @@ final class SwiftSovereignStatesTests: XCTestCase {
     private func test_benchmarks(cache: Bool) async throws {
         print("SwiftSovereignStatesTests;test_benchmarks;cache=" + cache.description)
         if #available(macOS 13.0, *) {
+            /*let string:String = "Minnesota and Wisconsin bro!"
+            try await benchmark(key: "SovereignRegions.doesSatisfy(string: string, values: keywords)") {
+                let subdivisions:[any SovereignStateSubdivision] = SovereignStateSubdivisions.all.filter({ SovereignRegions.doesSatisfy(string: string, values: $0.keywords) })
+                XCTAssert(subdivisions.count > 0)
+            }
+            try await benchmark(key: "SovereignRegions.doesSatisfy2(string: string, values: keywords)") {
+                let subdivisions:[any SovereignStateSubdivision] = SovereignStateSubdivisions.all.filter({ SovereignRegions.doesSatisfy2(string: string, values: $0.keywords) })
+                XCTAssert(subdivisions.count > 0)
+            }*/
+            
             try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
                 let country:Country? = Country.init("united_states")
                 XCTAssert(country != nil)
@@ -62,11 +72,11 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 XCTAssert(all != nil)
             }
             try await benchmark(key: "SovereignStateSubdivisions.getAllMentioned") {
-                let mentioned:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
+                let mentioned:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
                 XCTAssert(mentioned != nil && mentioned!.count >= 5)
             }
             try await benchmark(key: "SovereignStateSubdivisions.getAllMentionedParallel") {
-                let mentioned:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel("Wisconsin! Baku? (Limburg) Buenos Aires's, Zabul", cache: cache)
+                let mentioned:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel("Wisconsin! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
                 XCTAssert(mentioned != nil && mentioned!.count >= 5)
             }
             
@@ -98,7 +108,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     @available(macOS 13.0, *)
     private func benchmark(key: String, _ code: @escaping () async throws -> Void) async throws {
-        let iteration_count:Int = 10_000
+        let iteration_count:Int = 10_00
         let clock:ContinuousClock = ContinuousClock()
         let _:Duration = try await clock.measure(code)
         var timings:[Int64] = [Int64]()

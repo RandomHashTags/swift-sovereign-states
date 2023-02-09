@@ -92,8 +92,7 @@ public extension SovereignRegion {
     }
     
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
-        let option:String.CompareOptions = ignoreCase ? .caseInsensitive : .literal
-        return exact ? SovereignRegions.doesEqual(string: string, values: keywords, option: option) : SovereignRegions.doesSatisfy(string: string, values: keywords)
+        return exact ? SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal) : SovereignRegions.doesSatisfy(string: string, values: keywords)
     }
     
     func getOfficialNames() -> [String]? {
@@ -228,7 +227,7 @@ internal enum SovereignRegions {
     }
     static func doesSatisfy(string: String, values: [String]) -> Bool {
         guard values.first(where: { string.contains($0) }) != nil else { return false }
-        return doesContain(string: string, regex: prefixRegex + "(" + values.joined(separator: "|") + ")" + suffixRegex)
+        return string.range(of: prefixRegex + "(" + values.joined(separator: "|") + ")" + suffixRegex, options: [.regularExpression]) != nil
     }
     
     private static let prefixRegex:String = {
@@ -255,9 +254,6 @@ internal enum SovereignRegions {
         ].joined(separator: "|")
         return "(" + string + ")"
     }()
-    private static func doesContain(string: String, regex: String) -> Bool {
-        return string.range(of: regex, options: [.regularExpression]) != nil
-    }
 }
 
 
