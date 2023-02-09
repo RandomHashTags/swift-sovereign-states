@@ -256,7 +256,7 @@ internal enum SovereignRegions {
         return "(" + string + ")"
     }()
     private static func doesContain(string: String, regex: String) -> Bool {
-        return string.range(of: regex, options: .regularExpression) != nil
+        return string.range(of: regex, options: [.regularExpression]) != nil
     }
 }
 
