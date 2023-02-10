@@ -453,7 +453,7 @@ public enum Country : String, SovereignState {
     }
     
     /// Whether or not this Country is recognized by the United Nations as a sovereign state member.
-    public func isUNMember() -> Bool {
+    public var is_united_nations_member : Bool {
         switch self {
         case .abkhazia,
                 .american_samoa,
