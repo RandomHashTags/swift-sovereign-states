@@ -198,20 +198,20 @@ internal extension Sequence {
     }
 }
 internal enum SovereignRegions {
-    private static var excludedWords:[String] = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y", "du", "es", "el", "do", "ob", "na", "v", "pri"]
+    private static var excluded_words:Set<Substring> = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y", "du", "es", "el", "do", "ob", "na", "v", "pri"]
     
     fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String {
-        var values:[String] = input.components(separatedBy: "_")
+        var values:[Substring] = input.split(separator: "_")
         if let decimalSeparatorIndex:Int = decimalSeparatorIndex {
             values[decimalSeparatorIndex] = values[decimalSeparatorIndex] + "."
         }
         return values.map({
-            let value:String = $0
-            guard !excludedWords.contains(value) else { return input.starts(with: value) ? capitalize(value) : value }
+            let value:Substring = $0
+            guard !excluded_words.contains(value) else { return input.starts(with: value) ? capitalize(value) : value }
             return capitalize(value)
         }).joined(separator: " ")
     }
-    private static func capitalize(_ string: String) -> String {
+    private static func capitalize(_ string: Substring) -> Substring {
         return string.first!.uppercased() + string.suffix(string.count-1)
     }
     
