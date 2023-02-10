@@ -549,6 +549,42 @@ public enum Country : String, SovereignState {
             return false
         }
     }
+    /// Whether or not this Country is part of the European Union. (https://en.wikipedia.org/wiki/European_Union | https://en.wikipedia.org/wiki/Member_state_of_the_European_Union)
+    public var is_european_union_member : Bool {
+        switch self {
+        case .austria,
+                .belgium,
+                .bulgaria,
+                .croatia,
+                .cyprus,
+                .czech_republic,
+                .denmark,
+                .estonia,
+                .finland,
+                .france,
+                .germany,
+                .greece,
+                .hungary,
+                .ireland,
+                .italy,
+                .latvia,
+                .lithuania,
+                .luxembourg,
+                .malta,
+                .netherlands,
+                .poland,
+                .portugal,
+                .romania,
+                .slovakia,
+                .slovenia,
+                .spain,
+                .sweden
+            :
+            return true
+        default:
+            return false
+        }
+    }
     
     public func getOfficialNames() -> Set<String>? {
         return SovereignStateOfficialNames.get(self)
