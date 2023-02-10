@@ -308,7 +308,7 @@ public enum Country : String, SovereignState {
     
     public func getAdditionalKeywords() -> Set<String>? {
         var keywords:Set<String> = getSovereignStateAdditionalKeywords() ?? Set<String>()
-        if let parentISOAlpha2:String = getISOAlpha2ParentGroup() {
+        if let parentISOAlpha2:String = iso_alpha_2_parent_group {
             keywords.insert(parentISOAlpha2)
         }
         return keywords.isEmpty ? nil : keywords
@@ -596,7 +596,7 @@ public enum Country : String, SovereignState {
     public var iso_alpha_2_alias : String? {
         return SovereignStateISOAlpha2.getAlias(self)
     }
-    public func getISOAlpha2ParentGroup() -> String? {
+    public var iso_alpha_2_parent_group : String? {
         return SovereignStateISOAlpha2.getParentGroup(self)
     }
     public var iso_alpha_3 : String? {
