@@ -507,7 +507,7 @@ public enum Country : String, SovereignState {
         }
     }
     /// Whether or not this Country is only recognized by the United Nations as a sovereign state.
-    public func isUNObserverState() -> Bool {
+    public var is_united_nations_observer_state : Bool {
         return self == .palestine || self == .vatican_city
     }
     
