@@ -54,7 +54,7 @@ public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public func getWikipediaURLPrefix() -> String? {
+    public var wikipedia_url_prefix : String? {
         switch self {
         case .aargau,
                 .appenzell_ausserrhoden,

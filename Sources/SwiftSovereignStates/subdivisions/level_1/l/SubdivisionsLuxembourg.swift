@@ -38,7 +38,7 @@ public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLPrefix() -> String? {
+    public var wikipedia_url_prefix : String? {
         return "Canton_of_"
     }
     public func getWikipediaURLSuffix() -> String? {

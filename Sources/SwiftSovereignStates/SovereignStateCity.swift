@@ -245,8 +245,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var wikipedia_url : String {
         return city.wikipedia_url
     }
-    public func getWikipediaURLPrefix() -> String? {
-        return city.getWikipediaURLPrefix()
+    public var wikipedia_url_prefix : String? {
+        return city.wikipedia_url_prefix
     }
     public func getWikipediaURLSuffix() -> String? {
         return city.getWikipediaURLSuffix()

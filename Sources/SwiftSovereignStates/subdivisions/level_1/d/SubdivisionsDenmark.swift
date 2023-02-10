@@ -29,7 +29,7 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getWikipediaURLPrefix() -> String? {
+    public var wikipedia_url_prefix : String? {
         return "Region_"
     }
     

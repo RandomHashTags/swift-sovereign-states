@@ -261,8 +261,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var wikipedia_url : String {
         return subdivision.wikipedia_url
     }
-    public func getWikipediaURLPrefix() -> String? {
-        return subdivision.getWikipediaURLPrefix()
+    public var wikipedia_url_prefix : String? {
+        return subdivision.wikipedia_url_prefix
     }
     public func getWikipediaURLSuffix() -> String? {
         return subdivision.getWikipediaURLSuffix()

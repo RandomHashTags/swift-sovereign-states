@@ -54,7 +54,7 @@ public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getWikipediaURLPrefix() -> String? {
+    public var wikipedia_url_prefix : String? {
         switch self {
         case .crimea:
             return "Autonomous_Republic_of_"

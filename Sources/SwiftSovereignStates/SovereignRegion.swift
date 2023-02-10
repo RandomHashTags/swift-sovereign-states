@@ -38,7 +38,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// This SovereignRegion's Wikipedia flag url suffix that identifies where it is located on their servers.
     var wikipedia_flag_url_svg_id : String? { get }
     var wikipedia_url : String { get }
-    func getWikipediaURLPrefix() -> String?
+    var wikipedia_url_prefix : String? { get }
     func getWikipediaURLSuffix() -> String?
     
     /// The official currencies used within this SovereignRegion.
@@ -144,9 +144,9 @@ public extension SovereignRegion {
     
     var wikipedia_url : String {
         let name:String = (wikipedia_name ?? real_name ?? getShortName()).replacingOccurrences(of: " ", with: "_")
-        return "https://en.wikipedia.org/wiki/" + (getWikipediaURLPrefix() ?? "") + SovereignRegions.urlEncoded(name) + (getWikipediaURLSuffix() ?? "")
+        return "https://en.wikipedia.org/wiki/" + (wikipedia_url_prefix ?? "") + SovereignRegions.urlEncoded(name) + (getWikipediaURLSuffix() ?? "")
     }
-    func getWikipediaURLPrefix() -> String? {
+    var wikipedia_url_prefix : String? {
         return nil
     }
     func getWikipediaURLSuffix() -> String? {

@@ -54,7 +54,7 @@ public enum SubdivisionsPeru : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getWikipediaURLPrefix() -> String? {
+    public var wikipedia_url_prefix : String? {
         switch self {
         case .callao:
             return nil
