@@ -586,7 +586,7 @@ public enum Country : String, SovereignState {
         }
     }
     
-    public func getOfficialNames() -> Set<String>? {
+    public var official_names : Set<String>? {
         return SovereignStateOfficialNames.get(self)
     }
     

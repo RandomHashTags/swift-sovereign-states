@@ -241,8 +241,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var wikipedia_name : String? {
         return subdivision.wikipedia_name
     }
-    public func getOfficialNames() -> Set<String>? {
-        return subdivision.getOfficialNames()
+    public var official_names : Set<String>? {
+        return subdivision.official_names
     }
     public var aliases : Set<String>? {
         return subdivision.aliases

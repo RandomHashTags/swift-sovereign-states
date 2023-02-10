@@ -26,7 +26,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// The slug Wikipedia has for this SovereignRegion as it would appear in the url, but the underscores are spaces.
     var wikipedia_name : String? { get }
     /// The official names this SovereignRegion legally identifies as.
-    func getOfficialNames() -> Set<String>?
+    var official_names : Set<String>? { get }
     /// The names of this SovereignRegion is also known by.
     var aliases : Set<String>? { get }
     
@@ -82,7 +82,7 @@ public extension SovereignRegion {
         if let conditionalName:String = wikipedia_name {
             keywords.insert(conditionalName)
         }
-        if let officialNames:Set<String> = getOfficialNames() {
+        if let officialNames:Set<String> = official_names {
             keywords.insert(contentsOf: officialNames)
         }
         if let aliases:Set<String> = aliases {
@@ -102,7 +102,7 @@ public extension SovereignRegion {
         return exact ? SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal) : SovereignRegions.doesSatisfy(string: string, values: keywords)
     }
     
-    func getOfficialNames() -> Set<String>? {
+    var official_names : Set<String>? {
         return nil
     }
     
