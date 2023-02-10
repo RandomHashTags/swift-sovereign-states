@@ -484,7 +484,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public func getCitiesType() -> (any SovereignStateCity.Type)? {
+    public var cities_type : (any SovereignStateCity.Type)? {
         switch self {
         case .alabama: return CitiesUnitedStatesAlabama.self
         case .arizona: return CitiesUnitedStatesArizona.self
