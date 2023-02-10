@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Currency : String, CaseIterable {
+public enum Currency : String, CaseIterable, LosslessStringConvertible {
     case AED
     case AFN
     case ALL
@@ -232,7 +232,14 @@ public enum Currency : String, CaseIterable {
     case TVD
     case ZWB
     
-    public func isOfficial() -> Bool {
+    public var description: String { rawValue }
+    
+    public init?(_ description: String) {
+        guard let currency:Currency = Currency.init(rawValue: description) else { return nil }
+        self = currency
+    }
+    
+    public var is_official : Bool {
         switch self {
         case .BDS,
                 .CKD,
@@ -257,7 +264,7 @@ public enum Currency : String, CaseIterable {
         }
     }
     
-    public func getDecimalPoints() -> Int {
+    public var decimal_points : Int {
         switch self {
         case .BHD,
                 .IQD,
