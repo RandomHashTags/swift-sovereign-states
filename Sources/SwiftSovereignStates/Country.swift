@@ -510,6 +510,45 @@ public enum Country : String, SovereignState {
     public var is_united_nations_observer_state : Bool {
         return self == .palestine || self == .vatican_city
     }
+    /// Whether or not this Country is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
+    public var is_nato_member : Bool {
+        switch self {
+        case .albania,
+                .belgium,
+                .bulgaria,
+                .canada,
+                .croatia,
+                .czech_republic,
+                .denmark,
+                .estonia,
+                .france,
+                .germany,
+                .greece,
+                .hungary,
+                .iceland,
+                .italy,
+                .latvia,
+                .lithuania,
+                .luxembourg,
+                .montenegro,
+                .netherlands,
+                .north_macedonia,
+                .norway,
+                .poland,
+                .portugal,
+                .romania,
+                .slovakia,
+                .slovenia,
+                .spain,
+                .turkey,
+                .united_kingdom,
+                .united_states
+            :
+            return true
+        default:
+            return false
+        }
+    }
     
     public func getOfficialNames() -> Set<String>? {
         return SovereignStateOfficialNames.get(self)
