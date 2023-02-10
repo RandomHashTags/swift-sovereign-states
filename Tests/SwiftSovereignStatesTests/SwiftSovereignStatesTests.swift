@@ -240,13 +240,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for country in Country.allCases {
             if let subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() {
                 for subdivision in subdivisions {
-                    let subdivisionWikipediaURL:String = subdivision.getWikipediaURL()
+                    let subdivisionWikipediaURL:String = subdivision.wikipedia_url
                     if subdivisionWikipediaURL.contains(" ") {
                         failedSubdivisions.append(subdivision)
                     }
                     if let cities:[any SovereignStateCity] = subdivision.cities {
                         for city in cities {
-                            let cityWikipediaURL:String = city.getWikipediaURL()
+                            let cityWikipediaURL:String = city.wikipedia_url
                             if cityWikipediaURL.contains(" ") {
                                 failedCities.append(city)
                             }
@@ -260,7 +260,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions=" + failedSubdivisions.count.description)
             for subdivision in failedSubdivisions {
                 let country:Country = subdivision.country
-                print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions;" + country.rawValue + ";" + subdivision.rawValue + ";wikipediaURL=" + subdivision.getWikipediaURL())
+                print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions;" + country.rawValue + ";" + subdivision.rawValue + ";wikipediaURL=" + subdivision.wikipedia_url)
             }
         }
         XCTAssert(failedSubdivisions.count == 0)
@@ -270,7 +270,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             for city in failedCities {
                 let subdivision = city.subdivision
                 let country:Country = subdivision.country
-                print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities;" + country.rawValue + ";" + subdivision.rawValue + ";" + city.rawValue + ";wikipediaURL=" + subdivision.getWikipediaURL())
+                print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities;" + country.rawValue + ";" + subdivision.rawValue + ";" + city.rawValue + ";wikipediaURL=" + subdivision.wikipedia_url)
             }
         }
     }
@@ -293,7 +293,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
     }
     private func verifyWikipediaURL(_ region: any SovereignRegion) async {
-        let url:String = region.getWikipediaURL()
+        let url:String = region.wikipedia_url
         let slug:String = url.components(separatedBy: "/").last!
         let valid:Bool = await getSummaryAndImageURL(slug: slug)
         XCTAssert(valid, "invalid Wikipedia URL for sovereign region with cache id \"" + region.cache_id + "\"; url=\"" + url + "\"; slug=\"" + slug + "\"")

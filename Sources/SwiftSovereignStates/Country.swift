@@ -314,7 +314,7 @@ public enum Country : String, SovereignState {
         return keywords.isEmpty ? nil : keywords
     }
     
-    public func getWikipediaURL() -> String {
+    public var wikipedia_url : String {
         let name:String
         switch self {
         case .georgia:
