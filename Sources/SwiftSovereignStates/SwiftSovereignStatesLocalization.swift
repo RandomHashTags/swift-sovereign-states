@@ -10,7 +10,7 @@ import Foundation
 private extension Bundle {
     static func get_localization(language_code: String?, type: SwiftSovereignStateLocalizationCategory, identifier: String) -> Bundle? {
         guard let localization_bundle:Bundle = Bundle(identifier: identifier) ?? Bundle(path: identifier),
-              let path:String = localization_bundle.path(forResource: "_locale/" + (language_code ?? String(Locale.current.identifier.prefix(2))) + "_" + type.rawValue, ofType: "lproj"),
+              let path:String = localization_bundle.path(forResource: "_locale/" + (language_code ?? String(Locale.current.identifier.prefix(2))) + "/" + type.rawValue, ofType: "lproj"),
               let bundle:Bundle = Bundle(path: path)
         else {
             return nil
@@ -24,10 +24,10 @@ private extension Bundle {
     }
 }
 private enum SwiftSovereignStateLocalizationCategory : String {
-    case country_short_names
+    case country_short_names = "country/short_names"
     case currencies
     
-    case subdivision_types
+    case subdivision_types = "subdivision/types"
 }
 public enum SwiftSovereignStateLocalization {
     public static func get_country_short_name(_ country: Country, language_code: String? = nil) -> String {
