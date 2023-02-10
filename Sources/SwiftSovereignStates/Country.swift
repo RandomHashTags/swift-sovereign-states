@@ -593,7 +593,7 @@ public enum Country : String, SovereignState {
     public var iso_alpha_2 : String? {
         return SovereignStateISOAlpha2.get(self)
     }
-    public func getISOAlpha2Alias() -> String? {
+    public var iso_alpha_2_alias : String? {
         return SovereignStateISOAlpha2.getAlias(self)
     }
     public func getISOAlpha2ParentGroup() -> String? {
