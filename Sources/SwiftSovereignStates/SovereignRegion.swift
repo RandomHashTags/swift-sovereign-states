@@ -144,9 +144,7 @@ public extension SovereignRegion {
     
     func getWikipediaURL() -> String {
         let name:String = (wikipedia_name ?? real_name ?? getShortName()).replacingOccurrences(of: " ", with: "_")
-        let prefix:String = getWikipediaURLPrefix() ?? ""
-        let suffix:String = getWikipediaURLSuffix() ?? ""
-        return "https://en.wikipedia.org/wiki/" + prefix + SovereignRegions.urlEncoded(name) + suffix
+        return "https://en.wikipedia.org/wiki/" + (getWikipediaURLPrefix() ?? "") + SovereignRegions.urlEncoded(name) + (getWikipediaURLSuffix() ?? "")
     }
     func getWikipediaURLPrefix() -> String? {
         return nil

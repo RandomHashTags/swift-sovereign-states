@@ -75,7 +75,7 @@ public enum SovereignStateSubdivisions {
     public static func getAllMentionedParallel(_ string: String, cache: Bool = true, ignoreCase: Bool = false) async -> [any SovereignStateSubdivision]? {
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
-            return cached
+            return cached.isEmpty ? nil : cached
         }
         let subdivisions:[any SovereignStateSubdivision] = await all.filterAsync({ $0.isMentioned(in: string, exact: false, ignoreCase: ignoreCase) })
         if cache {
@@ -87,7 +87,7 @@ public enum SovereignStateSubdivisions {
         guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
-            return cached
+            return cached.isEmpty ? nil : subdivisions
         }
         subdivisions = await subdivisions.filterAsync({ $0.isMentioned(in: string, exact: false, ignoreCase: ignoreCase) })
         if cache {
