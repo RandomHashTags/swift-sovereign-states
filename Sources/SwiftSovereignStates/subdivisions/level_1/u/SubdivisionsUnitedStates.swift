@@ -81,13 +81,13 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
                 .guam,
                 .northern_mariana_islands,
                 .united_states_virgin_islands:
-            return .territories
+            return SovereignStateSubdivisionType.territories
         case .washington_dc:
-            return .federal_districts
+            return SovereignStateSubdivisionType.federal_districts
         case .marshall_islands,
                 .micronesia,
                 .palau:
-            return .freely_associated_states
+            return SovereignStateSubdivisionType.freely_associated_states
         default:
             return SovereignStateSubdivisionType.states
         }
@@ -292,66 +292,66 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
     }
     
     public var time_zones : [SovereignStateTimeZone]? {
-        let centralStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_central_standard_time
-        let easternStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_eastern_standard_time
+        let cst:SovereignStateTimeZone = SovereignStateTimeZone.america_central_standard_time
+        let est:SovereignStateTimeZone = SovereignStateTimeZone.america_eastern_standard_time
         let hawaiiStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_hawaii_standard_time
         let mountainStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_mountain_standard_time
-        let pacificStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_pacific_standard_time
+        let pst:SovereignStateTimeZone = SovereignStateTimeZone.america_pacific_standard_time
         let atlanticStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.atlantic_standard_time
         let guamTime:SovereignStateTimeZone = SovereignStateTimeZone.guam_time
         switch self {
-        case .alabama: return [centralStandardTime, easternStandardTime]
+        case .alabama: return [cst, est]
         case .alaska: return [SovereignStateTimeZone.america_alaska_standard_time, hawaiiStandardTime]
-        case .arkansas: return [centralStandardTime]
+        case .arkansas: return [cst]
         case .arizona: return [mountainStandardTime]
-        case .california: return [pacificStandardTime]
+        case .california: return [pst]
         case .colorado: return [mountainStandardTime]
-        case .connecticut: return [easternStandardTime]
-        case .delaware: return [easternStandardTime]
-        case .florida: return [easternStandardTime, centralStandardTime]
-        case .georgia: return [easternStandardTime]
+        case .connecticut: return [est]
+        case .delaware: return [est]
+        case .florida: return [est, cst]
+        case .georgia: return [est]
         case .hawaii: return [hawaiiStandardTime]
-        case .idaho: return [mountainStandardTime, pacificStandardTime]
-        case .illinois: return [centralStandardTime]
-        case .indiana: return [easternStandardTime, centralStandardTime]
-        case .iowa: return [centralStandardTime]
-        case .kansas: return [centralStandardTime, mountainStandardTime]
-        case .kentucky: return [easternStandardTime, centralStandardTime]
-        case .louisiana: return [centralStandardTime]
-        case .maine: return [easternStandardTime]
-        case .maryland: return [easternStandardTime]
-        case .massachusetts: return [easternStandardTime]
-        case .michigan: return [easternStandardTime, centralStandardTime]
-        case .minnesota: return [centralStandardTime]
-        case .mississippi: return [centralStandardTime]
-        case .missouri: return [centralStandardTime]
+        case .idaho: return [mountainStandardTime, pst]
+        case .illinois: return [cst]
+        case .indiana: return [est, cst]
+        case .iowa: return [cst]
+        case .kansas: return [cst, mountainStandardTime]
+        case .kentucky: return [est, cst]
+        case .louisiana: return [cst]
+        case .maine: return [est]
+        case .maryland: return [est]
+        case .massachusetts: return [est]
+        case .michigan: return [est, cst]
+        case .minnesota: return [cst]
+        case .mississippi: return [cst]
+        case .missouri: return [cst]
         case .montana: return [mountainStandardTime]
-        case .nebraska: return [centralStandardTime, mountainStandardTime]
-        case .nevada: return [pacificStandardTime, mountainStandardTime]
-        case .new_hampshire: return [easternStandardTime]
-        case .new_jersey: return [easternStandardTime]
-        case .new_mexico: return [mountainStandardTime, centralStandardTime]
-        case .new_york: return [easternStandardTime]
-        case .north_carolina: return [easternStandardTime]
-        case .north_dakota: return [centralStandardTime, mountainStandardTime]
-        case .ohio: return [easternStandardTime]
-        case .oklahoma: return [centralStandardTime, mountainStandardTime]
-        case .oregon: return [pacificStandardTime, mountainStandardTime]
-        case .pennsylvania: return [easternStandardTime]
-        case .rhode_island: return [easternStandardTime]
-        case .south_carolina: return [easternStandardTime]
-        case .south_dakota: return [centralStandardTime, mountainStandardTime]
-        case .tennessee: return [easternStandardTime, centralStandardTime]
-        case .texas: return [centralStandardTime, mountainStandardTime]
+        case .nebraska: return [cst, mountainStandardTime]
+        case .nevada: return [pst, mountainStandardTime]
+        case .new_hampshire: return [est]
+        case .new_jersey: return [est]
+        case .new_mexico: return [mountainStandardTime, cst]
+        case .new_york: return [est]
+        case .north_carolina: return [est]
+        case .north_dakota: return [cst, mountainStandardTime]
+        case .ohio: return [est]
+        case .oklahoma: return [cst, mountainStandardTime]
+        case .oregon: return [pst, mountainStandardTime]
+        case .pennsylvania: return [est]
+        case .rhode_island: return [est]
+        case .south_carolina: return [est]
+        case .south_dakota: return [cst, mountainStandardTime]
+        case .tennessee: return [est, cst]
+        case .texas: return [cst, mountainStandardTime]
         case .utah: return [mountainStandardTime]
-        case .vermont: return [easternStandardTime]
-        case .virginia: return [easternStandardTime]
-        case .washington: return [pacificStandardTime]
-        case .west_virginia: return [easternStandardTime]
-        case .wisconsin: return [centralStandardTime]
+        case .vermont: return [est]
+        case .virginia: return [est]
+        case .washington: return [pst]
+        case .west_virginia: return [est]
+        case .wisconsin: return [cst]
         case .wyoming: return [mountainStandardTime]
             
-        case .washington_dc: return [easternStandardTime]
+        case .washington_dc: return [est]
         case .united_states_virgin_islands: return [atlanticStandardTime]
             
         case .american_samoa: return [SovereignStateTimeZone.samoa_west_standard_time]
