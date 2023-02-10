@@ -169,7 +169,7 @@ public extension SovereignStateSubdivision {
         return "_" + getTypeSuffix()
     }
     func getTypeSuffix() -> String {
-        return type.getSingularName().replacingOccurrences(of: " ", with: "_")
+        return type.name_singular.replacingOccurrences(of: " ", with: "_")
     }
     
     var neighbors : [any SovereignStateSubdivision]? {

@@ -55,10 +55,10 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case union_territories
     case voivodeships
         
-    public func getSingularName() -> String {
+    public var name_singular : String {
         return SwiftSovereignStateLocalization.get_subdivision_type_name_singular(self)
     }
-    public func getPluralName() -> String {
+    public var name_plural : String {
         return SwiftSovereignStateLocalization.get_subdivision_type_name_plural(self)
     }
 }
