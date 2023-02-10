@@ -8,7 +8,7 @@
 import Foundation
 
 internal enum SovereignStateOfficialNames {
-    static func get(_ country: Country) -> [String]? {
+    static func get(_ country: Country) -> Set<String>? {
         switch country {
         case .abkhazia: return ["Republic of Abkhazia"]
         case .artsakh: return ["Republic of Artsakh"]

@@ -203,10 +203,10 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var cache_id : String {
         return city.cache_id
     }
-    public var keywords : [String] {
+    public var keywords : Set<String> {
         return city.keywords
     }
-    public func getAdditionalKeywords() -> [String]? {
+    public func getAdditionalKeywords() -> Set<String>? {
         return city.getAdditionalKeywords()
     }
     public func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
@@ -225,10 +225,10 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var wikipedia_name : String? {
         return city.wikipedia_name
     }
-    public func getOfficialNames() -> [String]? {
+    public func getOfficialNames() -> Set<String>? {
         return city.getOfficialNames()
     }
-    public var aliases : [String]? {
+    public var aliases : Set<String>? {
         return city.aliases
     }
     

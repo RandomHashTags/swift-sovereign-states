@@ -14,17 +14,17 @@ public protocol SovereignState : SovereignRegion {
     var iso_alpha_3 : String? { get }
 }
 public extension SovereignState {
-    func getSovereignStateAdditionalKeywords() -> [String]? {
-        var keywords:[String] = [String]()
+    func getSovereignStateAdditionalKeywords() -> Set<String>? {
+        var keywords:Set<String> = Set<String>()
         if let isoAlpha2:String = iso_alpha_2 {
-            keywords.append(isoAlpha2)
+            keywords.insert(isoAlpha2)
         }
         if let isoAlpha3:String = iso_alpha_3 {
-            keywords.append(isoAlpha3)
+            keywords.insert(isoAlpha3)
         }
         return keywords.isEmpty ? nil : keywords
     }
-    func getAdditionalKeywords() -> [String]? {
+    func getAdditionalKeywords() -> Set<String>? {
         return getSovereignStateAdditionalKeywords()
     }
 }

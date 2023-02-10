@@ -11,9 +11,9 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// The unique identifier of this SovereignRegion used for caching.
     var cache_id : String { get }
     /// Cached strings this SovereignRegion is commonly recognized by.
-    var keywords : [String] { get }
+    var keywords : Set<String> { get }
     /// Additional keywords this SovereignRegion should be recognized by.
-    func getAdditionalKeywords() -> [String]?
+    func getAdditionalKeywords() -> Set<String>?
     /// Whether this SovereignRegion is mentioned or not in the `string`.
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool
     
@@ -26,9 +26,9 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// The slug Wikipedia has for this SovereignRegion as it would appear in the url, but the underscores are spaces.
     var wikipedia_name : String? { get }
     /// The official names this SovereignRegion legally identifies as.
-    func getOfficialNames() -> [String]?
+    func getOfficialNames() -> Set<String>?
     /// The names of this SovereignRegion is also known by.
-    var aliases : [String]? { get }
+    var aliases : Set<String>? { get }
     
     /// This SovereignRegion's official government website URL.
     var government_website : String? { get }
@@ -59,6 +59,13 @@ public extension SovereignRegion where Self : LosslessStringConvertible {
     var description: String { return cache_id }
 }
 
+private extension Set where Element : Hashable {
+    mutating func insert(contentsOf: Set<Element>) {
+        for value in contentsOf {
+            insert(value)
+        }
+    }
+}
 public extension SovereignRegion {
     /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
     func isEqual(_ region: (any SovereignRegion)?) -> Bool {
@@ -66,28 +73,28 @@ public extension SovereignRegion {
         return cache_id.elementsEqual(region.cache_id)
     }
     
-    var keywords : [String] {
+    var keywords : Set<String> {
         let id:String = cache_id
-        if let keywords:[String] = SwiftSovereignStateCacheSubdivisions.keywords[id] {
+        if let keywords:Set<String> = SwiftSovereignStateCacheSubdivisions.keywords[id] {
             return keywords
         }
-        var keywords:[String] = [real_name ?? getShortName()]
+        var keywords:Set<String> = [real_name ?? getShortName()]
         if let conditionalName:String = wikipedia_name {
-            keywords.append(conditionalName)
+            keywords.insert(conditionalName)
         }
-        if let officialNames:[String] = getOfficialNames() {
-            keywords.append(contentsOf: officialNames)
+        if let officialNames:Set<String> = getOfficialNames() {
+            keywords.insert(contentsOf: officialNames)
         }
-        if let aliases:[String] = aliases {
-            keywords.append(contentsOf: aliases)
+        if let aliases:Set<String> = aliases {
+            keywords.insert(contentsOf: aliases)
         }
-        if let additional:[String] = getAdditionalKeywords() {
-            keywords.append(contentsOf: additional)
+        if let additional:Set<String> = getAdditionalKeywords() {
+            keywords.insert(contentsOf: additional)
         }
         SwiftSovereignStateCacheSubdivisions.keywords[id] = keywords
         return keywords
     }
-    func getAdditionalKeywords() -> [String]? {
+    func getAdditionalKeywords() -> Set<String>? {
         return nil
     }
     
@@ -95,11 +102,11 @@ public extension SovereignRegion {
         return exact ? SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal) : SovereignRegions.doesSatisfy(string: string, values: keywords)
     }
     
-    func getOfficialNames() -> [String]? {
+    func getOfficialNames() -> Set<String>? {
         return nil
     }
     
-    var aliases : [String]? {
+    var aliases : Set<String>? {
         return nil
     }
     
@@ -222,10 +229,10 @@ internal enum SovereignRegions {
         return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? string
     }
     
-    static func doesEqual(string: String, values: [String], option: String.CompareOptions) -> Bool {
+    static func doesEqual(string: String, values: Set<String>, option: String.CompareOptions) -> Bool {
         return values.first(where: { string.compare($0, options: option) == .orderedSame }) != nil
     }
-    static func doesSatisfy(string: String, values: [String]) -> Bool {
+    static func doesSatisfy(string: String, values: Set<String>) -> Bool {
         guard values.first(where: { string.contains($0) }) != nil else { return false }
         return string.range(of: prefixRegex + "(" + values.joined(separator: "|") + ")" + suffixRegex, options: [.regularExpression]) != nil
     }

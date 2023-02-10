@@ -219,10 +219,10 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var cache_id : String {
         return subdivision.cache_id
     }
-    public var keywords : [String] {
+    public var keywords : Set<String> {
         return subdivision.keywords
     }
-    public func getAdditionalKeywords() -> [String]? {
+    public func getAdditionalKeywords() -> Set<String>? {
         return subdivision.getAdditionalKeywords()
     }
     public func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
@@ -241,10 +241,10 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var wikipedia_name : String? {
         return subdivision.wikipedia_name
     }
-    public func getOfficialNames() -> [String]? {
+    public func getOfficialNames() -> Set<String>? {
         return subdivision.getOfficialNames()
     }
-    public var aliases : [String]? {
+    public var aliases : Set<String>? {
         return subdivision.aliases
     }
     

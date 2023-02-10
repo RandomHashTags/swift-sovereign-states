@@ -306,10 +306,10 @@ public enum Country : String, SovereignState {
         return rawValue
     }
     
-    public func getAdditionalKeywords() -> [String]? {
-        var keywords:[String] = getSovereignStateAdditionalKeywords() ?? [String]()
+    public func getAdditionalKeywords() -> Set<String>? {
+        var keywords:Set<String> = getSovereignStateAdditionalKeywords() ?? Set<String>()
         if let parentISOAlpha2:String = getISOAlpha2ParentGroup() {
-            keywords.append(parentISOAlpha2)
+            keywords.insert(parentISOAlpha2)
         }
         return keywords.isEmpty ? nil : keywords
     }
@@ -398,7 +398,7 @@ public enum Country : String, SovereignState {
         }
     }
     
-    public var aliases : [String]? {
+    public var aliases : Set<String>? {
         switch self {
         case .afghanistan: return ["Islamic Republic of Afghanistan"]
         case .bahamas: return ["The Bahamas", "Bahamas, the"]
@@ -511,7 +511,7 @@ public enum Country : String, SovereignState {
         return self == .palestine || self == .vatican_city
     }
     
-    public func getOfficialNames() -> [String]? {
+    public func getOfficialNames() -> Set<String>? {
         return SovereignStateOfficialNames.get(self)
     }
     

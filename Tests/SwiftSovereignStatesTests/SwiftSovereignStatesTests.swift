@@ -4,9 +4,9 @@ import QuartzCore
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
-        let _:[[String]] = Country.allCases.map({ $0.keywords })
-        let _:[[String]] = SovereignStateSubdivisions.all.map({ $0.keywords })
-        let _:[[String]] = SovereignStateCities.all.map({ $0.keywords })
+        let _:[Set<String>] = Country.allCases.map({ $0.keywords })
+        let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
+        let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
         
         try testFoundations()
         try testCodable()
@@ -108,7 +108,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     @available(macOS 13.0, *)
     private func benchmark(key: String, _ code: @escaping () async throws -> Void) async throws {
-        let iteration_count:Int = 10_00
+        let iteration_count:Int = 10_0
         let clock:ContinuousClock = ContinuousClock()
         let _:Duration = try await clock.measure(code)
         var timings:[Int64] = [Int64]()

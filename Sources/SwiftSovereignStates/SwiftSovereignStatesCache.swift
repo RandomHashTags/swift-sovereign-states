@@ -56,7 +56,6 @@ public enum SwiftSovereignStateCacheType {
     case subdivisions_valueOf
     case subdivisions_valueOfAll
     case subdivisions_valueOfCacheID
-    case cities_keywords
     case cities_mentionedAll
     case cities_mentionedSubdivision
     case cities_valueOf
@@ -76,7 +75,6 @@ public enum SwiftSovereignStateCache {
             SwiftSovereignStateCacheSubdivisions.valueOfAll.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOfCacheID.removeAll()
             
-            SwiftSovereignStateCacheCities.keywords.removeAll()
             SwiftSovereignStateCacheCities.mentionedAll.removeAll()
             SwiftSovereignStateCacheCities.mentionedSubdivision.removeAll()
             SwiftSovereignStateCacheCities.valueOf.removeAll()
@@ -106,9 +104,6 @@ public enum SwiftSovereignStateCache {
         case .subdivisions_valueOfCacheID:
             SwiftSovereignStateCacheSubdivisions.valueOfCacheID.removeAll()
             return
-        case .cities_keywords:
-            SwiftSovereignStateCacheCities.keywords.removeAll()
-            return
         case .cities_mentionedAll:
             SwiftSovereignStateCacheCities.mentionedAll.removeAll()
             return
@@ -132,7 +127,7 @@ internal enum SwiftSovereignStateCacheCountries {
     static var mentioned:SwiftSovereignStatesCache<[Country]> = SwiftSovereignStatesCache<[Country]>()
 }
 internal enum SwiftSovereignStateCacheSubdivisions {
-    static var keywords:SwiftSovereignStatesCache<[String]> = SwiftSovereignStatesCache<[String]>()
+    static var keywords:SwiftSovereignStatesCache<Set<String>> = SwiftSovereignStatesCache<Set<String>>()
     
     static var mentioned:SwiftSovereignStatesCache<[any SovereignStateSubdivision]> = SwiftSovereignStatesCache<[any SovereignStateSubdivision]>()
     static var valueOf:SwiftSovereignStatesCache<Any?> = SwiftSovereignStatesCache<Any?>()
@@ -140,8 +135,6 @@ internal enum SwiftSovereignStateCacheSubdivisions {
     static var valueOfCacheID:SwiftSovereignStatesCache<any SovereignStateSubdivision> = SwiftSovereignStatesCache<any SovereignStateSubdivision>()
 }
 internal enum SwiftSovereignStateCacheCities {
-    static var keywords:SwiftSovereignStatesCache<[String]> = SwiftSovereignStatesCache<[String]>()
-    
     static var mentionedAll:SwiftSovereignStatesCache<[any SovereignStateCity]> = SwiftSovereignStatesCache<[any SovereignStateCity]>()
     static var mentionedSubdivision:SwiftSovereignStatesCache<[any SovereignStateCity]> = SwiftSovereignStatesCache<[any SovereignStateCity]>()
     static var valueOf:SwiftSovereignStatesCache<[any SovereignStateCity]> = SwiftSovereignStatesCache<[any SovereignStateCity]>()
