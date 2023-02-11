@@ -52,6 +52,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case states
     case subdivisions
     case territories
+    case towns
     case union_territories
     case voivodeships
         

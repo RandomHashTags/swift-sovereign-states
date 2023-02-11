@@ -729,6 +729,7 @@ public extension Country {
         case .belarus: return SubdivisionsBelarus.self
         case .belize: return SubdivisionsBelize.self
         case .benin: return SubdivisionsBenin.self
+        case .bermuda: return SubdivisionsBermuda.self
         case .bhutan: return SubdivisionsBhutan.self
         case .bolivia: return SubdivisionsBolivia.self
         case .botswana: return SubdivisionsBotswana.self
@@ -905,6 +906,7 @@ public extension Country {
         case .belarus: return SubdivisionsBelarus.allCases
         case .belize: return SubdivisionsBelize.allCases
         case .benin: return SubdivisionsBenin.allCases
+        case .bermuda: return SubdivisionsBermuda.allCases
         case .bhutan: return SubdivisionsBhutan.allCases
         case .bolivia: return SubdivisionsBolivia.allCases
         case .botswana: return SubdivisionsBotswana.allCases

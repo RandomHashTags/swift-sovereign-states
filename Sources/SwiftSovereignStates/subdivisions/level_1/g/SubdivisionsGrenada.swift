@@ -35,7 +35,7 @@ public enum SubdivisionsGrenada : String, SovereignStateSubdivision { // https:/
         case .carriacou_and_petite_martinique:
             return nil
         default:
-            return "_Parish,_Grenada"
+            return "_" + getTypeSuffix() + ",_Grenada"
         }
     }
 }

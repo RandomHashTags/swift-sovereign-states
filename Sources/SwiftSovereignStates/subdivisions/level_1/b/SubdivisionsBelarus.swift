@@ -23,7 +23,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         switch self {
         case .minsk_city:
-            return .special_cities
+            return SovereignStateSubdivisionType.special_cities
         default:
             return SovereignStateSubdivisionType.oblasts
         }
