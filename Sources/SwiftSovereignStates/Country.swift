@@ -766,6 +766,7 @@ public extension Country {
         case .germany: return SubdivisionsGermany.self
         case .greece: return SubdivisionsGreece.self
         case .greenland: return SubdivisionsGreenland.self
+        case .grenada: return SubdivisionsGrenada.self
         case .guam: return nil
         case .guadeloupe: return SubdivisionsGuadeloupe.self
         case .guatemala: return SubdivisionsGuatemala.self
@@ -941,6 +942,7 @@ public extension Country {
         case .germany: return SubdivisionsGermany.allCases
         case .greece: return SubdivisionsGreece.allCases
         case .greenland: return SubdivisionsGreenland.allCases
+        case .grenada: return SubdivisionsGrenada.allCases
         case .guadeloupe: return SubdivisionsGuadeloupe.allCases
         case .guatemala: return SubdivisionsGuatemala.allCases
             
