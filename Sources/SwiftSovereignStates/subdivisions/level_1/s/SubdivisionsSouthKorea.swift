@@ -54,7 +54,7 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .busan,
                 .daegu,

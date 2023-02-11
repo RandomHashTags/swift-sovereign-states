@@ -202,7 +202,7 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .davao_de_oro,
                 .dinagat_islands,

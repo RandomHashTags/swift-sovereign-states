@@ -50,7 +50,7 @@ public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .isla_de_la_juventud:
             return nil

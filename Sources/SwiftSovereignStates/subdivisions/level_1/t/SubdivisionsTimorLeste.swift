@@ -65,7 +65,7 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .oecusse:
             return nil

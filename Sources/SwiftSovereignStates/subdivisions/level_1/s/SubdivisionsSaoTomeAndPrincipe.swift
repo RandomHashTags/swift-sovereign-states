@@ -42,7 +42,7 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, SovereignStateSubdivision {
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .autonomous_region_of_principe:
             return nil

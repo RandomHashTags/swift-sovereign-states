@@ -48,7 +48,7 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision {
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .southampton,
                 .st_george_s:

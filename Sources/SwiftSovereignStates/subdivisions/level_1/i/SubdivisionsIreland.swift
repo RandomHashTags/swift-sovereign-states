@@ -21,7 +21,7 @@ public enum SubdivisionsIreland : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.provinces
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return nil
     }
 }

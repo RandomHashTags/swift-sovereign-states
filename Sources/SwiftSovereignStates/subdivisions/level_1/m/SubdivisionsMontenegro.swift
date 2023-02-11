@@ -53,7 +53,7 @@ public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return nil
     }
 }

@@ -41,7 +41,7 @@ public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .bay_of_plenty,
                 .manawatu_whanganui,

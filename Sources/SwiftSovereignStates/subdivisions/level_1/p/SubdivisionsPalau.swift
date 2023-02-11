@@ -54,7 +54,7 @@ public enum SubdivisionsPalau : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return nil
     }
 }

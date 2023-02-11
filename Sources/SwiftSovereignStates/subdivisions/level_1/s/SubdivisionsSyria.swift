@@ -40,7 +40,7 @@ public enum SubdivisionsSyria : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return "_" + getTypeSuffix()
     }
 }

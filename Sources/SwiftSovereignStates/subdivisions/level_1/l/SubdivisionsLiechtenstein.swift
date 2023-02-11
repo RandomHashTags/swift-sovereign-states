@@ -28,7 +28,7 @@ public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
         return SovereignStateSubdivisionType.municipalities
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         default:
             return nil

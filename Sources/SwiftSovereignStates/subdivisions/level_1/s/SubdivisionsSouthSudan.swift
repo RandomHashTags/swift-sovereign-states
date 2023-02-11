@@ -55,7 +55,7 @@ public enum SubdivisionsSouthSudan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .central_equatoria,
                 .eastern_equatoria,

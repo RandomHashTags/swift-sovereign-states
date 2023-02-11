@@ -40,7 +40,7 @@ public enum SubdivisionsNetherlands : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .groningen,
                 .utrecht:

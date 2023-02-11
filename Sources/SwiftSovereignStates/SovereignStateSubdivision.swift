@@ -165,7 +165,7 @@ public extension SovereignStateSubdivision {
         return country.currencies
     }
     
-    func getWikipediaURLSuffix() -> String? {
+    var wikipedia_url_suffix : String? {
         return "_" + getTypeSuffix()
     }
     func getTypeSuffix() -> String {
@@ -264,8 +264,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var wikipedia_url_prefix : String? {
         return subdivision.wikipedia_url_prefix
     }
-    public func getWikipediaURLSuffix() -> String? {
-        return subdivision.getWikipediaURLSuffix()
+    public var wikipedia_url_suffix : String? {
+        return subdivision.wikipedia_url_suffix
     }
     
     public var time_zones : [SovereignStateTimeZone]? {

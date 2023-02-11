@@ -129,7 +129,7 @@ public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .bender:
             return ",_Moldova"

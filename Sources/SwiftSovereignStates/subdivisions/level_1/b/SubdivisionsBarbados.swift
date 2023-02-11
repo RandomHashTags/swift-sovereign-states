@@ -28,7 +28,7 @@ public enum SubdivisionsBarbados : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.parishes
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return ",_Barbados"
     }
 }

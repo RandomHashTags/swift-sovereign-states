@@ -29,7 +29,7 @@ public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.parishes
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .saint_lawrence,
                 .saint_clement,

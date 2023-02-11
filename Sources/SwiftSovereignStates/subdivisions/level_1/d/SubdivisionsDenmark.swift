@@ -33,7 +33,7 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
         return "Region_"
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return nil
     }
     

@@ -149,7 +149,7 @@ public enum SubdivisionsIceland : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .vogar:
             return "_(" + getTypeSuffix().lowercased() + ")"

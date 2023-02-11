@@ -119,7 +119,7 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .baku,
                 .khankendi,

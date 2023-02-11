@@ -52,7 +52,7 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .sanaa_city:
             return nil

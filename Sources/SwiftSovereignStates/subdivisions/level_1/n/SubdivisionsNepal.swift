@@ -31,7 +31,7 @@ public enum SubdivisionsNepal : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .madhesh,
                 .province_1:

@@ -100,7 +100,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .georgia:
             return "_(U.S._" + getTypeSuffix().lowercased() + ")"

@@ -30,7 +30,7 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .ashgabat: return nil
         default: return "_Region"

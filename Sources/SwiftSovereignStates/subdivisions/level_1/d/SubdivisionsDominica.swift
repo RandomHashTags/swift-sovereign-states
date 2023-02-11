@@ -27,7 +27,7 @@ public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.parishes
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return "_" + getTypeSuffix() + ",_Dominica"
     }
     

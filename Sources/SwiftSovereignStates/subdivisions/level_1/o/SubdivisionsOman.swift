@@ -28,7 +28,7 @@ public enum SubdivisionsOman : String, SovereignStateSubdivision { // https://en
         return SovereignStateSubdivisionType.governorates
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .al_wusta:
             return "_" + getTypeSuffix() + "_(Oman)"

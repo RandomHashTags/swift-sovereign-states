@@ -984,7 +984,7 @@ public enum CitiesUnitedStatesOhio : String, SovereignStateCity { // https://en.
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .centerville_gallia: return ",_Gallia_County,_Ohio"
         case .oakwood_montgomery: return ",_Montgomery_County,_Ohio"

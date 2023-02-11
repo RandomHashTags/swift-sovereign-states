@@ -31,7 +31,7 @@ public enum SubdivisionsGreece : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .central_macedonia,
                 .crete,

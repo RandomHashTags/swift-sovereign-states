@@ -57,7 +57,7 @@ public enum SubdivisionsChad : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .bahr_el_gazel:
             return "_(region_of_Chad)"

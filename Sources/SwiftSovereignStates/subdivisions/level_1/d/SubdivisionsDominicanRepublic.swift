@@ -74,7 +74,7 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .la_romana:
             return ",_Dominican_Republic"

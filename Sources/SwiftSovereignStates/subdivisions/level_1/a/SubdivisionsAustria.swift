@@ -26,7 +26,7 @@ public enum SubdivisionsAustria : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.states
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .salzburg, .tyrol:
             return "_(" + getTypeSuffix().lowercased() + ")"

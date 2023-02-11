@@ -33,7 +33,7 @@ public enum SubdivisionsQatar : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .ad_dawhah:
             return "_(" + getTypeSuffix().lowercased() + ")"

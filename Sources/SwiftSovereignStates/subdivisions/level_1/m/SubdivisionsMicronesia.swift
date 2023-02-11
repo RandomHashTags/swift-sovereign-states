@@ -21,7 +21,7 @@ public enum SubdivisionsMicronesia : String, SovereignStateSubdivision {
         return SovereignStateSubdivisionType.states
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .kosrae:
             return nil

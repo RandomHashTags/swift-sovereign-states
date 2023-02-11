@@ -32,7 +32,7 @@ public enum SubdivisionsNiger : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .niamey:
             return nil

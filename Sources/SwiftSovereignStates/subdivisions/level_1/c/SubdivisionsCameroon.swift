@@ -27,7 +27,7 @@ public enum SubdivisionsCameroon : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.regions
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .centre,
                 .east,

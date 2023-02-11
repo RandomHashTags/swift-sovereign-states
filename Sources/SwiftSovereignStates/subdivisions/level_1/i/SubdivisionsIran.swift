@@ -55,7 +55,7 @@ public enum SubdivisionsIran : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         return "_" + getTypeSuffix().lowercased()
     }
 }

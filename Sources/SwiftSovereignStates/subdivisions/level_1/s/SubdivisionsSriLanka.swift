@@ -26,7 +26,7 @@ public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.provinces
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .sabaragamuwa,
                 .uva:

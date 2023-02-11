@@ -48,7 +48,7 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .basque_country:
             return "_(autonomous_community)"

@@ -153,7 +153,7 @@ public extension SovereignStateCity {
         let subdivision:any SovereignStateSubdivision = subdivision
         return ",_" + (subdivision.real_name ?? subdivision.getShortName()).replacingOccurrences(of: " ", with: "_")
     }
-    func getWikipediaURLSuffix() -> String? {
+    var wikipedia_url_suffix : String? {
         return getDefaultURLSuffix()
     }
     
@@ -248,8 +248,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var wikipedia_url_prefix : String? {
         return city.wikipedia_url_prefix
     }
-    public func getWikipediaURLSuffix() -> String? {
-        return city.getWikipediaURLSuffix()
+    public var wikipedia_url_suffix : String? {
+        return city.wikipedia_url_suffix
     }
     
     public var time_zones : [SovereignStateTimeZone]? {

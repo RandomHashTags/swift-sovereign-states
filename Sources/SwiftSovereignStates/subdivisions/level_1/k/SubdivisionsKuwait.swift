@@ -41,7 +41,7 @@ public enum SubdivisionsKuwait : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .al_asimah:
             return "_(Kuwait)"

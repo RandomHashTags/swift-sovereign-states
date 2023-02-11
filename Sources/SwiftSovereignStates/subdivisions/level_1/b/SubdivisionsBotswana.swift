@@ -46,7 +46,7 @@ public enum SubdivisionsBotswana : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .central, .north_east, .south_east, .southern:
             return "_" + getTypeSuffix() + "_(Botswana)"

@@ -59,7 +59,7 @@ public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https
         }
     }
     
-    public func getWikipediaURLSuffix() -> String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .amazonas:
             return "_(Venezuelan_state)"
