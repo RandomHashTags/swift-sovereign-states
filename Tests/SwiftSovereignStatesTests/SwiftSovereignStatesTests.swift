@@ -1,6 +1,7 @@
 import XCTest
 import SwiftSovereignStates
 import QuartzCore
+import Kanna
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
@@ -20,13 +21,86 @@ final class SwiftSovereignStatesTests: XCTestCase {
         generate_english_localization()
         test_localization()
         
-        try await test_benchmarks(cache: false)
+        await generate_sovereign_regions()
+        
+        //try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
         
         //let seconds:UInt64 = 500_000_000
         //try await validateCountryWikipediaURLs(seconds)
         //try await validateSubdivisionWikipediaURLs(seconds)
         //try await validateCityWikipediaURLs(seconds)
+    }
+    
+    private func generate_sovereign_regions() async {
+        let regexReplacements:[String:String] = [
+            "( |-|'|/|–)" : "_",
+            "(\\.|\\!|\\?|,)" : "",
+            
+            "(à|á|â|ä|ã|å|ā|ă)" : "a",
+            "(æ)" : "ae",
+            "(ç|ć|č|ċ)" : "c",
+            "(è|é|ê|ë|ē|ė|ę)" : "e",
+            "(ġ|ğ)" : "g",
+            "(ħ)" : "h",
+            "(î|ï|í|ī|į|ì|ı|İ)" : "i",
+            "(ł)" : "l",
+            "(ñ|ń|ň)" : "n",
+            "(ô|ö|ò|ó|œ|ø|ō|õ|ð)" : "o",
+            "(þ)" : "th",
+            "(ß|ś|š|ș|ş)" : "s",
+            "(ț)" : "t",
+            "(û|ü|ù|ú|ū)" : "u",
+            "(ÿ|ý)" : "y",
+            "(ž|ź|ż)" : "z"
+        ]
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Provinces_of_Turkey") else {
+            return
+        }
+        var cities:[String] = [String](), cityNames:[String] = [String](), flagURLs:[String] = [String]()
+        let table:Kanna.XMLElement = test.css("table.sortable")[0]
+        let trs:XPathObject = table.css("tbody tr")
+        for tr in trs {
+            let tds:XPathObject = tr.css("td")
+            if tds.count >= 3 {
+                let tdElement:Kanna.XMLElement = tds[1]
+                let hrefs:XPathObject = tdElement.css("a[href]")
+                if hrefs.count >= 1 {
+                    //let flagURL:String = tds[1].css("img").first!["src"]!.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
+                    let cityElement:Kanna.XMLElement = hrefs[0]
+                    let cityName:String = cityElement.get_text()!
+                    var city:String = cityName.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
+                    if city.hasSuffix(" ") {
+                        city = String(city.prefix(city.count-1))
+                    }
+                    let previousCity:String = city.replacingOccurrences(of: " ", with: "_")
+                    for (regex, replacement) in regexReplacements {
+                        city = city.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
+                    }
+                    let didReplace:Bool = !previousCity.elementsEqual(city)
+                    let caseString:String = "    case "
+                    cities.append(caseString + city)
+                    if didReplace {
+                        cityNames.append(caseString + "." + city + ": return \"" + cityName + "\"")
+                    }
+                    //flagURLs.append(caseString + "." + city + ": return \"" + flagURL + "\"")
+                }
+            }
+        }
+        cities = cities.sorted { $0 < $1 }
+        cityNames = cityNames.sorted { $0 < $1 }
+        flagURLs = flagURLs.sorted { $0 < $1 }
+        for city in cities {
+            print(city)
+        }
+        for city in cityNames {
+            print(city)
+        }
+        if !flagURLs.isEmpty {
+            for flagURL in flagURLs {
+                print(flagURL)
+            }
+        }
     }
     
     private func test_benchmarks(cache: Bool) async throws {
@@ -300,9 +374,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     private func getSummaryAndImageURL(slug: String) async -> Bool {
         let url:String = "https://en.wikipedia.org/api/rest_v1/page/summary/" + slug
-        guard let url:URL = URL(string: url), let data:Data = await makeRequest(request: URLRequest(url: url)) else {
-            return false
-        }
+        guard let data:Data = await make_request(url: url) else { return false }
         do {
             let json:WikipediaAPIResponse = try JSONDecoder().decode(WikipediaAPIResponse.self, from: data)
             return json.extract != nil
@@ -310,7 +382,23 @@ final class SwiftSovereignStatesTests: XCTestCase {
             return false
         }
     }
-    private func makeRequest(request: URLRequest) async -> Data? {
+    
+    private func make_request<T : Decodable>(url: String) async -> T? {
+        guard let url:URL = URL(string: url),
+              let data:Data = await make_request(request: URLRequest(url: url)) else {
+            return nil
+        }
+        return try? JSONDecoder().decode(T.self, from: data)
+    }
+    private func request_html(url: String) async -> HTMLDocument? {
+        guard let url:URL = URL(string: url),
+              let data:Data = await make_request(request: URLRequest(url: url)),
+              let html:String = String(data: data, encoding: .utf8) else {
+            return nil
+        }
+        return try? HTML(html: html, encoding: .utf8)
+    }
+    private func make_request(request: URLRequest) async -> Data? {
         return try? await withCheckedThrowingContinuation({ continuation in
             let dataTask:URLSessionDataTask = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data:Data = data, let _:URLResponse = response else {
@@ -493,4 +581,15 @@ private struct TestDecodableStruct : Decodable {
     
     //lazy var targetSubdivision:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID(subdivision)
     //lazy var targetCity:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID(city)
+}
+
+fileprivate extension Kanna.XMLElement {
+    func get_text() -> String? {
+        return remove_wikipedia_references(text?.replacingOccurrences(of: "*", with: "").trimmingCharacters(in: .whitespacesAndNewlines))
+    }
+    func remove_wikipedia_references(_ string: String?) -> String! {
+        guard let string:String = string else { return nil }
+        let regex:String = "(\\[.*?])"
+        return string.replacingOccurrences(of: regex, with: "", options: .regularExpression)
+    }
 }

@@ -713,9 +713,11 @@ public extension Country {
         case .algeria: return SubdivisionsAlgeria.self
         case .andorra: return SubdivisionsAndorra.self
         case .angola: return SubdivisionsAngola.self
+        case .anguilla: return nil
         case .antigua_and_barbuda: return SubdivisionsAntiguaAndBarbuda.self
         case .argentina: return SubdivisionsArgentina.self
         case .armenia: return SubdivisionsArmenia.self
+        case .aruba: return nil
         case .australia: return SubdivisionsAustralia.self
         case .austria: return SubdivisionsAustria.self
         case .azerbaijan: return SubdivisionsAzerbaijan.self
@@ -763,6 +765,8 @@ public extension Country {
             
         case .germany: return SubdivisionsGermany.self
         case .greece: return SubdivisionsGreece.self
+        case .greenland: return SubdivisionsGreenland.self
+        case .guam: return nil
         case .guadeloupe: return SubdivisionsGuadeloupe.self
         case .guatemala: return SubdivisionsGuatemala.self
             
@@ -936,6 +940,7 @@ public extension Country {
             
         case .germany: return SubdivisionsGermany.allCases
         case .greece: return SubdivisionsGreece.allCases
+        case .greenland: return SubdivisionsGreenland.allCases
         case .guadeloupe: return SubdivisionsGuadeloupe.allCases
         case .guatemala: return SubdivisionsGuatemala.allCases
             
