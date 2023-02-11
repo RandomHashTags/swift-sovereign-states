@@ -54,7 +54,7 @@
 "states_name_singular" = "State";
 "subdivisions_name_singular" = "Subdivision";
 "territories_name_singular" = "Territory";
-"towns_singular" = "Town";
+"towns_name_singular" = "Town";
 "union_territories_name_singular" = "Union Territory";
 "voivodeships_name_singular" = "Voivodeship";
 
@@ -103,6 +103,6 @@
 "states_name_plural" = "States";
 "subdivisions_name_plural" = "Subdivisions";
 "territories_name_plural" = "Territories";
-"towns_plural" = "Towns";
+"towns_name_plural" = "Towns";
 "union_territories_name_plural" = "Union Territories";
 "voivodeships_name_plural" = "Voivodeships";

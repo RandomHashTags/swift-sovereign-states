@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsBermuda : String, SovereignStateSubdivision {
+public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Bermuda
     case devonshire
     case hamilton
     case paget

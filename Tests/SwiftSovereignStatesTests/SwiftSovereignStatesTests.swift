@@ -21,7 +21,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         generate_english_localization()
         test_localization()
         
-        await generate_sovereign_regions()
+        //await generate_sovereign_regions()
         
         //try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)

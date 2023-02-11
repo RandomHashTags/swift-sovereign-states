@@ -49,17 +49,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     var temperate_zones : [TemperateZone]? { get }
 }
 
-public extension SovereignRegion where Self : RawRepresentable, RawValue == String {
-    func encode(to encoder: Encoder) throws {
-        var container:SingleValueEncodingContainer = encoder.singleValueContainer()
-        try container.encode(cache_id)
-    }
-}
-public extension SovereignRegion where Self : LosslessStringConvertible {
-    var description: String { return cache_id }
-}
-
-private extension Set where Element : Hashable {
+private extension Set {
     mutating func insert(contentsOf: Set<Element>) {
         for value in contentsOf {
             insert(value)
@@ -67,6 +57,13 @@ private extension Set where Element : Hashable {
     }
 }
 public extension SovereignRegion {
+    var description: String { return cache_id }
+    
+    func encode(to encoder: Encoder) throws {
+        var container:SingleValueEncodingContainer = encoder.singleValueContainer()
+        try container.encode(cache_id)
+    }
+    
     /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
     func isEqual(_ region: (any SovereignRegion)?) -> Bool {
         guard let region:any SovereignRegion = region else { return false }
