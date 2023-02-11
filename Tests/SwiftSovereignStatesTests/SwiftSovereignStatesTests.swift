@@ -54,7 +54,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Provinces_of_Turkey") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Regions_of_Finland") else {
             return
         }
         var cities:[String] = [String](), cityNames:[String] = [String](), flagURLs:[String] = [String]()
@@ -63,10 +63,10 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for tr in trs {
             let tds:XPathObject = tr.css("td")
             if tds.count >= 3 {
-                let tdElement:Kanna.XMLElement = tds[1]
+                let tdElement:Kanna.XMLElement = tds[2]
                 let hrefs:XPathObject = tdElement.css("a[href]")
                 if hrefs.count >= 1 {
-                    //let flagURL:String = tds[1].css("img").first!["src"]!.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
+                    let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
                     let cityElement:Kanna.XMLElement = hrefs[0]
                     let cityName:String = cityElement.get_text()!
                     var city:String = cityName.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
@@ -83,7 +83,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                     if didReplace {
                         cityNames.append(caseString + "." + city + ": return \"" + cityName + "\"")
                     }
-                    //flagURLs.append(caseString + "." + city + ": return \"" + flagURL + "\"")
+                    flagURLs.append(caseString + "." + city + ": return " + (flagURL != nil ? "\"" + flagURL! + "\"" : "nil"))
                 }
             }
         }
@@ -96,10 +96,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for city in cityNames {
             print(city)
         }
-        if !flagURLs.isEmpty {
-            for flagURL in flagURLs {
-                print(flagURL)
-            }
+        for flagURL in flagURLs {
+            print(flagURL)
         }
     }
     

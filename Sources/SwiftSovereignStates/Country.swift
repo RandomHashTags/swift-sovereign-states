@@ -762,6 +762,7 @@ public extension Country {
         case .ethiopia: return SubdivisionsEthiopia.self
         
         case .fiji: return SubdivisionsFiji.self
+        case .finland: return SubdivisionsFinland.self
         case .france: return SubdivisionsFrance.self
             
         case .germany: return SubdivisionsGermany.self
@@ -939,12 +940,14 @@ public extension Country {
         case .ethiopia: return SubdivisionsEthiopia.allCases
         
         case .fiji: return SubdivisionsFiji.allCases
+        case .finland: return SubdivisionsFinland.allCases
         case .france: return SubdivisionsFrance.allCases
             
         case .germany: return SubdivisionsGermany.allCases
         case .greece: return SubdivisionsGreece.allCases
         case .greenland: return SubdivisionsGreenland.allCases
         case .grenada: return SubdivisionsGrenada.allCases
+        case .guam: return nil
         case .guadeloupe: return SubdivisionsGuadeloupe.allCases
         case .guatemala: return SubdivisionsGuatemala.allCases
             
