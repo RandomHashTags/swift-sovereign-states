@@ -26,7 +26,7 @@ public enum SubdivisionsJordan : String, SovereignStateSubdivision { // https://
     }
     
     public var type : SovereignStateSubdivisionType {
-        return .governorates
+        return SovereignStateSubdivisionType.governorates
     }
     
     public var real_name : String? {

@@ -57,7 +57,7 @@ public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // http
                 .itasy,
                 .sava,
                 .sofia:
-            return nil
+            return "_" + getTypeSuffix()
         default:
             return nil
         }
