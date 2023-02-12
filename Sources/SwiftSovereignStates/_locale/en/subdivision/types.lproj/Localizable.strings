@@ -11,6 +11,7 @@
  */
 // Singular Names
 "administrative_areas_name_singular" = "Administrative Area";
+"atolls_name_singular" = "Atoll";
 "autonomous_cities_name_singular" = "Autonomous City";
 "autonomous_communities_name_singular" = "Autonomous Community";
 "autonomous_districts_name_singular" = "Autonomous District";
@@ -59,7 +60,8 @@
 "voivodeships_name_singular" = "Voivodeship";
 
 // Plural Names
-"administrative_areas_name_plural" = "Administrative Area";
+"administrative_areas_name_plural" = "Administrative Areas";
+"atolls_name_plural" = "Atolls";
 "autonomous_cities_name_plural" = "Autonomous Cities";
 "autonomous_communities_name_plural" = "Autonomous Communities";
 "autonomous_districts_name_plural" = "Autonomous Districts";

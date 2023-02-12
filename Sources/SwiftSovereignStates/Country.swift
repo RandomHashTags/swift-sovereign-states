@@ -809,6 +809,7 @@ public extension Country {
         
         case .madagascar: return SubdivisionsMadagascar.self
         case .malaysia: return SubdivisionsMalaysia.self
+        case .maldives: return SubdivisionsMaldives.self
         case .mali: return SubdivisionsMali.self
         case .malta: return SubdivisionsMalta.self
         case .mauritania: return SubdivisionsMauritania.self
@@ -987,6 +988,7 @@ public extension Country {
         
         case .madagascar: return SubdivisionsMadagascar.allCases
         case .malaysia: return SubdivisionsMalaysia.allCases
+        case .maldives: return SubdivisionsMaldives.allCases
         case .mali: return SubdivisionsMali.allCases
         case .malta: return SubdivisionsMalta.allCases
         case .mauritania: return SubdivisionsMauritania.allCases

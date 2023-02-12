@@ -9,6 +9,7 @@ import Foundation
 
 public enum SovereignStateSubdivisionType : String, CaseIterable {
     case administrative_areas
+    case atolls
     case autonomous_cities
     case autonomous_communities
     case autonomous_districts
