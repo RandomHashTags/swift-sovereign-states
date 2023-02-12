@@ -772,6 +772,7 @@ public extension Country {
         case .guam: return nil
         case .guadeloupe: return SubdivisionsGuadeloupe.self
         case .guatemala: return SubdivisionsGuatemala.self
+        case .guinea: return SubdivisionsGuinea.self
             
         case .haiti: return SubdivisionsHaiti.self
         case .honduras: return SubdivisionsHonduras.self
@@ -953,6 +954,7 @@ public extension Country {
         case .guam: return nil
         case .guadeloupe: return SubdivisionsGuadeloupe.allCases
         case .guatemala: return SubdivisionsGuatemala.allCases
+        case .guinea: return SubdivisionsGuinea.allCases
             
         case .haiti: return SubdivisionsHaiti.allCases
         case .honduras: return SubdivisionsHonduras.allCases
