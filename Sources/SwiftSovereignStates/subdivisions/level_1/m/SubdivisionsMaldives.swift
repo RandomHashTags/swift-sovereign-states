@@ -15,14 +15,14 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
     case faafu
     case gaafu_alif
     case haa_alif
+    case haddhunmathi
     case kaafu
-    case laamu
+    case kolhumadulu
     case lhaviyani
     case meemu
     case noonu
     case raa
     case shaviyani
-    case thaa
     case vaavu
     
     case gnaviyani
@@ -47,6 +47,15 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
         switch self {
         case .male: return "Malé"
         default: return nil
+        }
+    }
+    
+    public var wikipedia_url_suffix: String? {
+        switch self {
+        case .male:
+            return nil
+        default:
+            return "_" + getTypeSuffix()
         }
     }
 }

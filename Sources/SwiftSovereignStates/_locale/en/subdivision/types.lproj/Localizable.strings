@@ -33,6 +33,7 @@
 "divisions_name_singular" = "Division";
 "federal_districts_name_singular" = "Federal District";
 "federal_entities_name_singular" = "Federal Entity";
+"federal_member_states_name_singular" = "Federal Member State";
 "federal_territories_name_singular" = "Federal Territory";
 "freely_associated_states_name_singular" = "Freely Associated State";
 "governorates_name_singular" = "Governorate";
@@ -83,6 +84,7 @@
 "divisions_name_plural" = "Divisions";
 "federal_districts_name_plural" = "Federal Districts";
 "federal_entities_name_plural" = "Federal Entities";
+"federal_member_states_name_plural" = "Federal Member States";
 "federal_territories_name_plural" = "Federal Territories";
 "freely_associated_states_name_plural" = "Freely Associated States";
 "governorates_name_plural" = "Governorates";

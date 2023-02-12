@@ -31,6 +31,7 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case divisions
     case federal_districts
     case federal_entities
+    case federal_member_states
     case federal_territories
     case freely_associated_states
     case governorates

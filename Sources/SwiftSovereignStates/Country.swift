@@ -853,6 +853,7 @@ public extension Country {
         case .senegal: return SubdivisionsSenegal.self
         case .slovakia: return SubdivisionsSlovakia.self
         case .slovenia: return SubdivisionsSlovenia.self
+        case .somalia: return SubdivisionsSomalia.self
         case .south_korea: return SubdivisionsSouthKorea.self
         case .south_sudan: return SubdivisionsSouthSudan.self
         case .spain: return SubdivisionsSpain.self
@@ -1033,6 +1034,7 @@ public extension Country {
         case .senegal: return SubdivisionsSenegal.allCases
         case .slovakia: return SubdivisionsSlovakia.allCases
         case .slovenia: return SubdivisionsSlovenia.allCases
+        case .somalia: return SubdivisionsSomalia.allCases
         case .south_korea: return SubdivisionsSouthKorea.allCases
         case .south_sudan: return SubdivisionsSouthSudan.allCases
         case .spain: return SubdivisionsSpain.allCases

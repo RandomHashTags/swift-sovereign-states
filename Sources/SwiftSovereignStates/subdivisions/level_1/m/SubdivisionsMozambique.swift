@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMozambique : String, SovereignStateSubdivision {
+public enum SubdivisionsMozambique : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Provinces_of_Mozambique
     case cabo_delgado
     case gaza
     case inhambane
@@ -26,6 +26,8 @@ public enum SubdivisionsMozambique : String, SovereignStateSubdivision {
     
     public var type: SovereignStateSubdivisionType {
         switch self {
+        case .maputo_city:
+            return SovereignStateSubdivisionType.cities
         default:
             return SovereignStateSubdivisionType.provinces
         }

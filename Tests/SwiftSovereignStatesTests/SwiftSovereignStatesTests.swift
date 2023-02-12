@@ -21,7 +21,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         generate_english_localization()
         test_localization()
         
-        //await generate_sovereign_regions()
+        await generate_sovereign_regions()
         
         //try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
@@ -54,7 +54,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Regions_of_Finland") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Administrative_divisions_of_Somalia") else {
             return
         }
         var cities:[String] = [String](), cityNames:[String] = [String](), flagURLs:[String] = [String]()
@@ -63,7 +63,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for tr in trs {
             let tds:XPathObject = tr.css("td")
             if tds.count >= 3 {
-                let tdElement:Kanna.XMLElement = tds[2]
+                let tdElement:Kanna.XMLElement = tds[0]
                 let hrefs:XPathObject = tdElement.css("a[href]")
                 if hrefs.count >= 1 {
                     let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
