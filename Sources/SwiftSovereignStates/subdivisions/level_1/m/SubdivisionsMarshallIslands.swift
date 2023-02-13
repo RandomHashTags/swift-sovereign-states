@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsMarshallIslands : String, SovereignStateSubdivision {
+public enum SubdivisionsMarshallIslands : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/List_of_islands_of_the_Marshall_Islands
     case ailinglaplap
     case ailuk
     case arno

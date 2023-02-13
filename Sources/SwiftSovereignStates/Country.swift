@@ -821,6 +821,7 @@ public extension Country {
         case .moldova: return SubdivisionsMoldova.self
         case .mongolia: return SubdivisionsMongolia.self
         case .montenegro: return SubdivisionsMontenegro.self
+        case .morocco: return SubdivisionsMorocco.self
         case .mozambique: return SubdivisionsMozambique.self
         
         case .namibia: return SubdivisionsNamibia.self
@@ -1004,6 +1005,7 @@ public extension Country {
         case .moldova: return SubdivisionsMoldova.allCases
         case .mongolia: return SubdivisionsMongolia.allCases
         case .montenegro: return SubdivisionsMontenegro.allCases
+        case .morocco: return SubdivisionsMorocco.allCases
         case .mozambique: return SubdivisionsMozambique.allCases
         
         case .namibia: return SubdivisionsNamibia.allCases
