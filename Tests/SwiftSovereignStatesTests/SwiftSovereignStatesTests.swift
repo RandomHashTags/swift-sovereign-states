@@ -5,9 +5,9 @@ import Kanna
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
-        let _:[Set<String>] = Country.allCases.map({ $0.keywords })
-        let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
-        let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
+        //let _:[Set<String>] = Country.allCases.map({ $0.keywords })
+        //let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
+        //let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
         
         try testFoundations()
         try testCodable()
@@ -23,7 +23,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         //await generate_sovereign_regions()
         
-        //try await test_benchmarks(cache: false)
+        try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
         
         //let seconds:UInt64 = 500_000_000
@@ -116,9 +116,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 XCTAssert(subdivisions.count > 0)
             }*/
             
-            try await benchmark_compare(key1: "test1", {
-            }, key2: "test2", code2: {
-            })
+            for _ in 1...100 {
+                try await benchmark_compare(key1: "test1", {
+                }, key2: "test2", code2: {
+                })
+            }
+            
+            return;
             
             let _ = try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
                 let country:Country? = Country.init("united_states")
@@ -186,7 +190,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     @available(macOS 13.0, *)
     private func benchmark(key: String, _ code: @escaping () async throws -> Void, will_print: Bool = true) async throws -> (key: String, min: Int64, max: Int64, median: Int64, average: Int64, total: Int64) {
-        let iteration_count:Int = 10_0
+        let iteration_count:Int = 10_000
         let clock:ContinuousClock = ContinuousClock()
         let _:Duration = try await clock.measure(code)
         var timings:[Int64] = [Int64]()

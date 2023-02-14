@@ -49,13 +49,6 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     var temperate_zones : [TemperateZone]? { get }
 }
 
-private extension Set {
-    mutating func insert(contentsOf: Set<Element>) {
-        for value in contentsOf {
-            insert(value)
-        }
-    }
-}
 public extension SovereignRegion {
     var description: String { return cache_id }
     
@@ -76,17 +69,17 @@ public extension SovereignRegion {
             return keywords
         }
         var keywords:Set<String> = [real_name ?? getShortName()]
-        if let conditionalName:String = wikipedia_name {
-            keywords.insert(conditionalName)
+        if let wikipedia_name:String = wikipedia_name {
+            keywords.insert(wikipedia_name)
         }
-        if let officialNames:Set<String> = official_names {
-            keywords.insert(contentsOf: officialNames)
+        if let official_names:Set<String> = official_names {
+            keywords.formUnion(official_names)
         }
         if let aliases:Set<String> = aliases {
-            keywords.insert(contentsOf: aliases)
+            keywords.formUnion(aliases)
         }
         if let additional:Set<String> = getAdditionalKeywords() {
-            keywords.insert(contentsOf: additional)
+            keywords.formUnion(additional)
         }
         SwiftSovereignStateCacheSubdivisions.keywords[id] = keywords
         return keywords

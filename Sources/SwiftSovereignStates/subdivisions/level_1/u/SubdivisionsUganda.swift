@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsUganda : String, SovereignStateSubdivision {
+public enum SubdivisionsUganda : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Districts_of_Uganda
     case abim
     case adjumani
     case agago
