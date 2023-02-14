@@ -732,8 +732,10 @@ public extension Country {
         case .bermuda: return SubdivisionsBermuda.self
         case .bhutan: return SubdivisionsBhutan.self
         case .bolivia: return SubdivisionsBolivia.self
+        case .bosnia_and_herzegovina: return nil
         case .botswana: return SubdivisionsBotswana.self
         case .brazil: return SubdivisionsBrazil.self
+        case .brunei: return nil
         case .bulgaria: return SubdivisionsBulgaria.self
         case .burkina_faso: return SubdivisionsBurkinaFaso.self
         case .burundi: return SubdivisionsBurundi.self
@@ -741,14 +743,21 @@ public extension Country {
         case .cambodia: return SubdivisionsCambodia.self
         case .cameroon: return SubdivisionsCameroon.self
         case .canada: return SubdivisionsCanada.self
+        case .cape_verde: return nil
         case .central_african_republic: return SubdivisionsCentralAfricanRepublic.self
         case .chad: return SubdivisionsChad.self
         case .chile: return SubdivisionsChile.self
+        case .china: return nil
+        case .colombia: return nil
         case .comoros: return SubdivisionsComoros.self
+        case .republic_of_the_congo: return nil
         case .costa_rica: return SubdivisionsCostaRica.self
+        case .croatia: return nil
         case .cuba: return SubdivisionsCuba.self
+        case .cyprus: return nil
         case .czech_republic: return SubdivisionsCzechRepublic.self
         
+        case .democratic_republic_of_the_congo: return nil
         case .denmark: return SubdivisionsDenmark.self
         case .djibouti: return SubdivisionsDjibouti.self
         case .dominica: return SubdivisionsDominica.self
@@ -757,15 +766,21 @@ public extension Country {
         case .ecuador: return SubdivisionsEcuador.self
         case .egypt: return SubdivisionsEgypt.self
         case .el_salvador: return SubdivisionsElSalvador.self
+        case .equatorial_guinea: return nil
         case .eritrea: return SubdivisionsEritrea.self
         case .estonia: return SubdivisionsEstonia.self
+        case .eswatini: return nil
         case .ethiopia: return SubdivisionsEthiopia.self
         
         case .fiji: return SubdivisionsFiji.self
         case .finland: return SubdivisionsFinland.self
         case .france: return SubdivisionsFrance.self
             
+        case .gabon: return nil
+        case .gambia: return nil
+        case .georgia: return nil
         case .germany: return SubdivisionsGermany.self
+        case .ghana: return nil
         case .greece: return SubdivisionsGreece.self
         case .greenland: return SubdivisionsGreenland.self
         case .grenada: return SubdivisionsGrenada.self
@@ -773,6 +788,8 @@ public extension Country {
         case .guadeloupe: return SubdivisionsGuadeloupe.self
         case .guatemala: return SubdivisionsGuatemala.self
         case .guinea: return SubdivisionsGuinea.self
+        case .guinea_bissau: return nil
+        case .guyana: return nil
             
         case .haiti: return SubdivisionsHaiti.self
         case .honduras: return SubdivisionsHonduras.self
@@ -781,9 +798,9 @@ public extension Country {
         case .iceland: return SubdivisionsIceland.self
         case .india: return SubdivisionsIndia.self
         case .indonesia: return SubdivisionsIndonesia.self
-        case .ireland: return SubdivisionsIreland.self
         case .iraq: return SubdivisionsIraq.self
         case .iran: return SubdivisionsIran.self
+        case .ireland: return SubdivisionsIreland.self
         case .israel: return SubdivisionsIsrael.self
         case .italy: return SubdivisionsItaly.self
         case .ivory_coast: return SubdivisionsIvoryCoast.self
@@ -795,6 +812,7 @@ public extension Country {
         
         case .kazakhstan: return SubdivisionsKazakhstan.self
         case .kenya: return SubdivisionsKenya.self
+        case .kiribati: return nil
         case .kuwait: return SubdivisionsKuwait.self
         case .kyrgyzstan: return SubdivisionsKyrgyzstan.self
         
@@ -809,6 +827,7 @@ public extension Country {
         case .luxembourg: return SubdivisionsLuxembourg.self
         
         case .madagascar: return SubdivisionsMadagascar.self
+        case .malawi: return nil
         case .malaysia: return SubdivisionsMalaysia.self
         case .maldives: return SubdivisionsMaldives.self
         case .mali: return SubdivisionsMali.self
@@ -819,10 +838,12 @@ public extension Country {
         case .mexico: return SubdivisionsMexico.self
         case .micronesia: return SubdivisionsMicronesia.self
         case .moldova: return SubdivisionsMoldova.self
+        case .monaco: return nil
         case .mongolia: return SubdivisionsMongolia.self
         case .montenegro: return SubdivisionsMontenegro.self
         case .morocco: return SubdivisionsMorocco.self
         case .mozambique: return SubdivisionsMozambique.self
+        case .myanmar: return nil
         
         case .namibia: return SubdivisionsNamibia.self
         case .nauru: return SubdivisionsNauru.self
@@ -832,6 +853,8 @@ public extension Country {
         case .nicaragua: return SubdivisionsNicaragua.self
         case .niger: return SubdivisionsNiger.self
         case .nigeria: return SubdivisionsNigeria.self
+        case .north_korea: return nil
+        case .north_macedonia: return nil
         case .norway: return SubdivisionsNorway.self
             
         case .oman: return SubdivisionsOman.self
@@ -900,6 +923,7 @@ public extension Country {
         case .uzbekistan: return SubdivisionsUzbekistan.self
         
         case .vanuatu: return SubdivisionsVanuatu.self
+        case .vatican_city: return nil
         case .venezuela: return SubdivisionsVenezuela.self
         case .vietnam: return SubdivisionsVietnam.self
         
@@ -935,8 +959,10 @@ public extension Country {
         case .bermuda: return SubdivisionsBermuda.allCases
         case .bhutan: return SubdivisionsBhutan.allCases
         case .bolivia: return SubdivisionsBolivia.allCases
+        case .bosnia_and_herzegovina: return nil
         case .botswana: return SubdivisionsBotswana.allCases
         case .brazil: return SubdivisionsBrazil.allCases
+        case .brunei: return nil
         case .bulgaria: return SubdivisionsBulgaria.allCases
         case .burkina_faso: return SubdivisionsBurkinaFaso.allCases
         case .burundi: return SubdivisionsBurundi.allCases
@@ -944,14 +970,21 @@ public extension Country {
         case .cambodia: return SubdivisionsCambodia.allCases
         case .cameroon: return SubdivisionsCameroon.allCases
         case .canada: return SubdivisionsCanada.allCases
+        case .cape_verde: return nil
         case .central_african_republic: return SubdivisionsCentralAfricanRepublic.allCases
         case .chad: return SubdivisionsChad.allCases
         case .chile: return SubdivisionsChile.allCases
+        case .china: return nil
+        case .colombia: return nil
         case .comoros: return SubdivisionsComoros.allCases
+        case .republic_of_the_congo: return nil
         case .costa_rica: return SubdivisionsCostaRica.allCases
+        case .croatia: return nil
         case .cuba: return SubdivisionsCuba.allCases
+        case .cyprus: return nil
         case .czech_republic: return SubdivisionsCzechRepublic.allCases
         
+        case .democratic_republic_of_the_congo: return nil
         case .denmark: return SubdivisionsDenmark.allCases
         case .djibouti: return SubdivisionsDjibouti.allCases
         case .dominica: return SubdivisionsDominica.allCases
@@ -960,15 +993,21 @@ public extension Country {
         case .ecuador: return SubdivisionsEcuador.allCases
         case .egypt: return SubdivisionsEgypt.allCases
         case .el_salvador: return SubdivisionsElSalvador.allCases
+        case .equatorial_guinea: return nil
         case .eritrea: return SubdivisionsEritrea.allCases
         case .estonia: return SubdivisionsEstonia.allCases
+        case .eswatini: return nil
         case .ethiopia: return SubdivisionsEthiopia.allCases
         
         case .fiji: return SubdivisionsFiji.allCases
         case .finland: return SubdivisionsFinland.allCases
         case .france: return SubdivisionsFrance.allCases
             
+        case .gabon: return nil
+        case .gambia: return nil
+        case .georgia: return nil
         case .germany: return SubdivisionsGermany.allCases
+        case .ghana: return nil
         case .greece: return SubdivisionsGreece.allCases
         case .greenland: return SubdivisionsGreenland.allCases
         case .grenada: return SubdivisionsGrenada.allCases
@@ -976,6 +1015,8 @@ public extension Country {
         case .guadeloupe: return SubdivisionsGuadeloupe.allCases
         case .guatemala: return SubdivisionsGuatemala.allCases
         case .guinea: return SubdivisionsGuinea.allCases
+        case .guinea_bissau: return nil
+        case .guyana: return nil
             
         case .haiti: return SubdivisionsHaiti.allCases
         case .honduras: return SubdivisionsHonduras.allCases
@@ -984,9 +1025,9 @@ public extension Country {
         case .iceland: return SubdivisionsIceland.allCases
         case .india: return SubdivisionsIndia.allCases
         case .indonesia: return SubdivisionsIndonesia.allCases
-        case .ireland: return SubdivisionsIreland.allCases
         case .iraq: return SubdivisionsIraq.allCases
         case .iran: return SubdivisionsIran.allCases
+        case .ireland: return SubdivisionsIreland.allCases
         case .israel: return SubdivisionsIsrael.allCases
         case .italy: return SubdivisionsItaly.allCases
         case .ivory_coast: return SubdivisionsIvoryCoast.allCases
@@ -998,6 +1039,7 @@ public extension Country {
         
         case .kazakhstan: return SubdivisionsKazakhstan.allCases
         case .kenya: return SubdivisionsKenya.allCases
+        case .kiribati: return nil
         case .kuwait: return SubdivisionsKuwait.allCases
         case .kyrgyzstan: return SubdivisionsKyrgyzstan.allCases
         
@@ -1012,6 +1054,7 @@ public extension Country {
         case .luxembourg: return SubdivisionsLuxembourg.allCases
         
         case .madagascar: return SubdivisionsMadagascar.allCases
+        case .malawi: return nil
         case .malaysia: return SubdivisionsMalaysia.allCases
         case .maldives: return SubdivisionsMaldives.allCases
         case .mali: return SubdivisionsMali.allCases
@@ -1022,10 +1065,12 @@ public extension Country {
         case .mexico: return SubdivisionsMexico.allCases
         case .micronesia: return SubdivisionsMicronesia.allCases
         case .moldova: return SubdivisionsMoldova.allCases
+        case .monaco: return nil
         case .mongolia: return SubdivisionsMongolia.allCases
         case .montenegro: return SubdivisionsMontenegro.allCases
         case .morocco: return SubdivisionsMorocco.allCases
         case .mozambique: return SubdivisionsMozambique.allCases
+        case .myanmar: return nil
         
         case .namibia: return SubdivisionsNamibia.allCases
         case .nauru: return SubdivisionsNauru.allCases
@@ -1035,6 +1080,8 @@ public extension Country {
         case .nicaragua: return SubdivisionsNicaragua.allCases
         case .niger: return SubdivisionsNiger.allCases
         case .nigeria: return SubdivisionsNigeria.allCases
+        case .north_korea: return nil
+        case .north_macedonia: return nil
         case .norway: return SubdivisionsNorway.allCases
             
         case .oman: return SubdivisionsOman.allCases
@@ -1103,6 +1150,7 @@ public extension Country {
         case .uzbekistan: return SubdivisionsUzbekistan.allCases
         
         case .vanuatu: return SubdivisionsVanuatu.allCases
+        case .vatican_city: return nil
         case .venezuela: return SubdivisionsVenezuela.allCases
         case .vietnam: return SubdivisionsVietnam.allCases
         
