@@ -850,14 +850,25 @@ public extension Country {
         case .qatar: return SubdivisionsQatar.self
         
         case .romania: return SubdivisionsRomania.self
+        case .russia: return nil
         case .rwanda: return SubdivisionsRwanda.self
         
+        case .saint_kitts_and_nevis: return nil
+        case .saint_lucia: return nil
+        case .saint_vincent_and_the_grenadines: return nil
         case .samoa: return SubdivisionsSamoa.self
         case .sao_tome_and_principe: return SubdivisionsSaoTomeAndPrincipe.self
+        case .saudi_arabia: return nil
         case .senegal: return SubdivisionsSenegal.self
+        case .serbia: return nil
+        case .seychelles: return nil
+        case .sierra_leone: return nil
+        case .singapore: return nil
         case .slovakia: return SubdivisionsSlovakia.self
         case .slovenia: return SubdivisionsSlovenia.self
+        case .solomon_islands: return nil
         case .somalia: return SubdivisionsSomalia.self
+        case .south_africa: return SubdivisionsSouthAfrica.self
         case .south_korea: return SubdivisionsSouthKorea.self
         case .south_sudan: return SubdivisionsSouthSudan.self
         case .spain: return SubdivisionsSpain.self
@@ -1035,14 +1046,25 @@ public extension Country {
         case .qatar: return SubdivisionsQatar.allCases
         
         case .romania: return SubdivisionsRomania.allCases
+        case .russia: return nil
         case .rwanda: return SubdivisionsRwanda.allCases
         
+        case .saint_kitts_and_nevis: return nil
+        case .saint_lucia: return nil
+        case .saint_vincent_and_the_grenadines: return nil
         case .samoa: return SubdivisionsSamoa.allCases
         case .sao_tome_and_principe: return SubdivisionsSaoTomeAndPrincipe.allCases
+        case .saudi_arabia: return nil
         case .senegal: return SubdivisionsSenegal.allCases
+        case .serbia: return nil
+        case .seychelles: return nil
+        case .sierra_leone: return nil
+        case .singapore: return nil
         case .slovakia: return SubdivisionsSlovakia.allCases
         case .slovenia: return SubdivisionsSlovenia.allCases
+        case .solomon_islands: return nil
         case .somalia: return SubdivisionsSomalia.allCases
+        case .south_africa: return SubdivisionsSouthAfrica.allCases
         case .south_korea: return SubdivisionsSouthKorea.allCases
         case .south_sudan: return SubdivisionsSouthSudan.allCases
         case .spain: return SubdivisionsSpain.allCases
