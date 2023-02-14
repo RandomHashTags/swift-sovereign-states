@@ -106,23 +106,18 @@ final class SwiftSovereignStatesTests: XCTestCase {
     private func test_benchmarks(cache: Bool) async throws {
         print("SwiftSovereignStatesTests;test_benchmarks;cache=" + cache.description)
         if #available(macOS 13.0, *) {
-            /*let string:String = "Minnesota and Wisconsin bro!"
-            try await benchmark(key: "SovereignRegions.doesSatisfy(string: string, values: keywords)") {
-                let subdivisions:[any SovereignStateSubdivision] = SovereignStateSubdivisions.all.filter({ SovereignRegions.doesSatisfy(string: string, values: $0.keywords) })
-                XCTAssert(subdivisions.count > 0)
-            }
-            try await benchmark(key: "SovereignRegions.doesSatisfy2(string: string, values: keywords)") {
-                let subdivisions:[any SovereignStateSubdivision] = SovereignStateSubdivisions.all.filter({ SovereignRegions.doesSatisfy2(string: string, values: $0.keywords) })
-                XCTAssert(subdivisions.count > 0)
-            }*/
             
-            for _ in 1...100 {
-                try await benchmark_compare(key1: "test1", {
-                }, key2: "test2", code2: {
-                })
-            }
+            //for _ in 1...100 {
+            //    try await benchmark_compare(key1: "test1", {
+                    //let mentioned:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
+                    //XCTAssert(mentioned != nil && mentioned!.count >= 5)
+           //     }, key2: "test2", code2: {
+                    //let mentioned:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned2("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
+                    //XCTAssert(mentioned != nil && mentioned!.count >= 5)
+            //    })
+            //}
             
-            return;
+            //return;
             
             let _ = try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
                 let country:Country? = Country.init("united_states")
@@ -190,7 +185,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     @available(macOS 13.0, *)
     private func benchmark(key: String, _ code: @escaping () async throws -> Void, will_print: Bool = true) async throws -> (key: String, min: Int64, max: Int64, median: Int64, average: Int64, total: Int64) {
-        let iteration_count:Int = 10_000
+        let iteration_count:Int = 10_00
         let clock:ContinuousClock = ContinuousClock()
         let _:Duration = try await clock.measure(code)
         var timings:[Int64] = [Int64]()
@@ -248,7 +243,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         string.append(" | total=" + (total1 < total2 ? "🟢" : "🔴") + "by " + total_time_diff)
         print(string)
     }
-    private func get_benchmark_formatted_string(formatter: NumberFormatter, _ value: Any, separation_count: Int = 15) -> String {
+    private func get_benchmark_formatted_string(formatter: NumberFormatter, _ value: Any, separation_count: Int = 20) -> String {
         let string:String = formatter.string(for: value)! + "ns"
         return string + (0..<(separation_count - (string.count))).map({ _ in " " }).joined()
     }

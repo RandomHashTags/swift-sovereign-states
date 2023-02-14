@@ -221,8 +221,8 @@ internal enum SovereignRegions {
         return values.first(where: { string.compare($0, options: option) == .orderedSame }) != nil
     }
     static func doesSatisfy(string: String, values: Set<String>) -> Bool {
-        guard values.first(where: { string.contains($0) }) != nil else { return false }
-        return string.range(of: prefixRegex + "(" + values.joined(separator: "|") + ")" + suffixRegex, options: [.regularExpression]) != nil
+        guard let value:String = values.first(where: { string.contains($0) }) else { return false }
+        return string.range(of: prefixRegex + "(" + value + ")" + suffixRegex, options: [.regularExpression]) != nil
     }
     
     private static let prefixRegex:String = {

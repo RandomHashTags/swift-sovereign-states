@@ -15,7 +15,7 @@ public enum SovereignStateSubdivisions {
     public static func getAllMentioned(_ string: String, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateSubdivision]? {
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
-            return cached
+            return cached.isEmpty ? nil : cached
         }
         let subdivisions:[any SovereignStateSubdivision] = all.filter({ $0.isMentioned(in: string, exact: false, ignoreCase: ignoreCase) })
         if cache {
@@ -27,7 +27,7 @@ public enum SovereignStateSubdivisions {
         guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
-            return cached
+            return cached.isEmpty ? nil : cached
         }
         subdivisions.removeAll(where: { !$0.isMentioned(in: string, exact: false, ignoreCase: ignoreCase) })
         if cache {
