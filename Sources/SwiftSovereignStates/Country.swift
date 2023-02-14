@@ -825,6 +825,7 @@ public extension Country {
         case .mozambique: return SubdivisionsMozambique.self
         
         case .namibia: return SubdivisionsNamibia.self
+        case .nauru: return SubdivisionsNauru.self
         case .nepal: return SubdivisionsNepal.self
         case .netherlands: return SubdivisionsNetherlands.self
         case .new_zealand: return SubdivisionsNewZealand.self
@@ -1009,6 +1010,7 @@ public extension Country {
         case .mozambique: return SubdivisionsMozambique.allCases
         
         case .namibia: return SubdivisionsNamibia.allCases
+        case .nauru: return SubdivisionsNauru.allCases
         case .nepal: return SubdivisionsNepal.allCases
         case .netherlands: return SubdivisionsNetherlands.allCases
         case .new_zealand: return SubdivisionsNewZealand.allCases
