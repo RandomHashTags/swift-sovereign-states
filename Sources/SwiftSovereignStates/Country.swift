@@ -873,21 +873,28 @@ public extension Country {
         case .south_sudan: return SubdivisionsSouthSudan.self
         case .spain: return SubdivisionsSpain.self
         case .sri_lanka: return SubdivisionsSriLanka.self
+        case .sudan: return nil
         case .suriname: return SubdivisionsSuriname.self
         case .sweden: return SubdivisionsSweden.self
         case .switzerland: return SubdivisionsSwitzerland.self
         case .syria: return SubdivisionsSyria.self
         
+        case .tajikistan: return nil
         case .tanzania: return SubdivisionsTanzania.self
         case .thailand: return SubdivisionsThailand.self
         case .timor_leste: return SubdivisionsTimorLeste.self
         case .togo: return SubdivisionsTogo.self
         case .tonga: return SubdivisionsTonga.self
+        case .trinidad_and_tobago: return nil
         case .tunisia: return SubdivisionsTunisia.self
         case .turkey: return SubdivisionsTurkey.self
         case .turkmenistan: return SubdivisionsTurkmenistan.self
+        case .tuvalu: return nil
         
+        case .uganda: return SubdivisionsUganda.self
         case .ukraine: return SubdivisionsUkraine.self
+        case .united_arab_emirates: return nil
+        case .united_kingdom: return nil
         case .united_states: return SubdivisionsUnitedStates.self
         case .uruguay: return SubdivisionsUruguay.self
         case .uzbekistan: return SubdivisionsUzbekistan.self
@@ -1069,21 +1076,28 @@ public extension Country {
         case .south_sudan: return SubdivisionsSouthSudan.allCases
         case .spain: return SubdivisionsSpain.allCases
         case .sri_lanka: return SubdivisionsSriLanka.allCases
+        case .sudan: return nil
         case .suriname: return SubdivisionsSuriname.allCases
         case .sweden: return SubdivisionsSweden.allCases
         case .switzerland: return SubdivisionsSwitzerland.allCases
         case .syria: return SubdivisionsSyria.allCases
         
+        case .tajikistan: return nil
         case .tanzania: return SubdivisionsTanzania.allCases
         case .thailand: return SubdivisionsThailand.allCases
         case .timor_leste: return SubdivisionsTimorLeste.allCases
         case .togo: return SubdivisionsTogo.allCases
         case .tonga: return SubdivisionsTonga.allCases
+        case .trinidad_and_tobago: return nil
         case .tunisia: return SubdivisionsTunisia.allCases
         case .turkey: return SubdivisionsTurkey.allCases
         case .turkmenistan: return SubdivisionsTurkmenistan.allCases
+        case .tuvalu: return nil
         
+        case .uganda: return SubdivisionsUganda.allCases
         case .ukraine: return SubdivisionsUkraine.allCases
+        case .united_arab_emirates: return nil
+        case .united_kingdom: return nil
         case .united_states: return SubdivisionsUnitedStates.allCases
         case .uruguay: return SubdivisionsUruguay.allCases
         case .uzbekistan: return SubdivisionsUzbekistan.allCases

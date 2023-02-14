@@ -54,36 +54,38 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Administrative_divisions_of_Somalia") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Districts_of_Uganda") else {
             return
         }
         var cities:[String] = [String](), cityNames:[String] = [String](), flagURLs:[String] = [String]()
-        let table:Kanna.XMLElement = test.css("table.sortable")[0]
-        let trs:XPathObject = table.css("tbody tr")
-        for tr in trs {
-            let tds:XPathObject = tr.css("td")
-            if tds.count >= 3 {
-                let tdElement:Kanna.XMLElement = tds[0]
-                let hrefs:XPathObject = tdElement.css("a[href]")
-                if hrefs.count >= 1 {
-                    let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
-                    let cityElement:Kanna.XMLElement = hrefs[0]
-                    let cityName:String = cityElement.get_text()!
-                    var city:String = cityName.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
-                    if city.hasSuffix(" ") {
-                        city = String(city.prefix(city.count-1))
+        let tables:XPathObject = test.css("table.sortable")
+        for table in tables {
+            let trs:XPathObject = table.css("tbody tr")
+            for tr in trs {
+                let tds:XPathObject = tr.css("td")
+                if tds.count >= 4 {
+                    let tdElement:Kanna.XMLElement = tds[1]
+                    let hrefs:XPathObject = tdElement.css("a[href]")
+                    if hrefs.count >= 1 {
+                        let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
+                        let cityElement:Kanna.XMLElement = hrefs[0]
+                        let cityName:String = cityElement.get_text()!
+                        var city:String = cityName.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
+                        if city.hasSuffix(" ") {
+                            city = String(city.prefix(city.count-1))
+                        }
+                        let previousCity:String = city.replacingOccurrences(of: " ", with: "_")
+                        for (regex, replacement) in regexReplacements {
+                            city = city.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
+                        }
+                        let didReplace:Bool = !previousCity.elementsEqual(city)
+                        let caseString:String = "    case "
+                        cities.append(caseString + city)
+                        if didReplace {
+                            cityNames.append(caseString + "." + city + ": return \"" + cityName + "\"")
+                        }
+                        flagURLs.append(caseString + "." + city + ": return " + (flagURL != nil ? "\"" + flagURL! + "\"" : "nil"))
                     }
-                    let previousCity:String = city.replacingOccurrences(of: " ", with: "_")
-                    for (regex, replacement) in regexReplacements {
-                        city = city.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
-                    }
-                    let didReplace:Bool = !previousCity.elementsEqual(city)
-                    let caseString:String = "    case "
-                    cities.append(caseString + city)
-                    if didReplace {
-                        cityNames.append(caseString + "." + city + ": return \"" + cityName + "\"")
-                    }
-                    flagURLs.append(caseString + "." + city + ": return " + (flagURL != nil ? "\"" + flagURL! + "\"" : "nil"))
                 }
             }
         }
