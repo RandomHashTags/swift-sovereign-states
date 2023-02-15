@@ -706,7 +706,7 @@ public enum Country : String, SovereignState {
 
 public extension Country {
     /// The level-1 administrative units' type this Country claims territorial ownership of.
-    func getSubdivisionType() -> (any SovereignStateSubdivision.Type)? {
+    var subdivision_type : (any SovereignStateSubdivision.Type)? {
         switch self {
         case .afghanistan: return SubdivisionsAfghanistan.self
         case .albania: return SubdivisionsAlbania.self

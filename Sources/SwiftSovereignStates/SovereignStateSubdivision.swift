@@ -65,7 +65,7 @@ public enum SovereignStateSubdivisions {
             return subdivision
         }
         let components:[String] = cacheID.split(separator: "-").map({ String($0) })
-        guard components.count == 2, let subdivision:any SovereignStateSubdivision = Country.init(rawValue: components[0])?.getSubdivisionType()?.init(rawValue: components[1]) else { return nil }
+        guard components.count == 2, let subdivision:any SovereignStateSubdivision = Country.init(rawValue: components[0])?.subdivision_type?.init(rawValue: components[1]) else { return nil }
         if cache {
             SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] = subdivision
         }
@@ -128,7 +128,7 @@ public extension Country {
         return SovereignStateSubdivisions.valueOf(string, country: self)
     }
     func valueOfSubdivisionIdentifier(_ string: String) -> (any SovereignStateSubdivision)? {
-        return getSubdivisionType()?.init(rawValue: string)
+        return subdivision_type?.init(rawValue: string)
     }
 }
 
