@@ -306,7 +306,7 @@ public enum Country : String, SovereignState {
         return rawValue
     }
     
-    public func getAdditionalKeywords() -> Set<String>? {
+    public var additional_keywords : Set<String>? {
         var keywords:Set<String> = getSovereignStateAdditionalKeywords() ?? Set<String>()
         if let parentISOAlpha2:String = iso_alpha_2_parent_group {
             keywords.insert(parentISOAlpha2)

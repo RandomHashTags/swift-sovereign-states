@@ -13,7 +13,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// Cached strings this SovereignRegion is commonly recognized by.
     var keywords : Set<String> { get }
     /// Additional keywords this SovereignRegion should be recognized by.
-    func getAdditionalKeywords() -> Set<String>?
+    var additional_keywords : Set<String>? { get }
     /// Whether this SovereignRegion is mentioned or not in the `string`.
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool
     
@@ -78,13 +78,13 @@ public extension SovereignRegion {
         if let aliases:Set<String> = aliases {
             keywords.formUnion(aliases)
         }
-        if let additional:Set<String> = getAdditionalKeywords() {
+        if let additional:Set<String> = additional_keywords {
             keywords.formUnion(additional)
         }
         SwiftSovereignStateCacheSubdivisions.keywords[id] = keywords
         return keywords
     }
-    func getAdditionalKeywords() -> Set<String>? {
+    var additional_keywords : Set<String>? {
         return nil
     }
     

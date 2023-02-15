@@ -222,8 +222,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var keywords : Set<String> {
         return subdivision.keywords
     }
-    public func getAdditionalKeywords() -> Set<String>? {
-        return subdivision.getAdditionalKeywords()
+    public var additional_keywords : Set<String>? {
+        return subdivision.additional_keywords
     }
     public func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
         return subdivision.isMentioned(in: string, exact: exact, ignoreCase: ignoreCase)

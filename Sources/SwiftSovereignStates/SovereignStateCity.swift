@@ -206,8 +206,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var keywords : Set<String> {
         return city.keywords
     }
-    public func getAdditionalKeywords() -> Set<String>? {
-        return city.getAdditionalKeywords()
+    public var additional_keywords : Set<String>? {
+        return city.additional_keywords
     }
     public func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
         return city.isMentioned(in: string, exact: exact, ignoreCase: ignoreCase)
