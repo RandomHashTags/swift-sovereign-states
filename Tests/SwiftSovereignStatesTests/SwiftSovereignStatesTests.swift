@@ -311,7 +311,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         var failedSubdivisions:[any SovereignStateSubdivision] = [any SovereignStateSubdivision]()
         var failedCities:[any SovereignStateCity] = [any SovereignStateCity]()
         for country in Country.allCases {
-            if let subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() {
+            if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
                 for subdivision in subdivisions {
                     let subdivisionWikipediaURL:String = subdivision.wikipedia_url
                     if subdivisionWikipediaURL.contains(" ") {
@@ -492,7 +492,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         var foundAtLeastOneNeighbors:Bool = false
         outer : for country in Country.allCases {
-            if let subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() {
+            if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
                 for subdivision in subdivisions {
                     if let _:[any SovereignStateSubdivision] = subdivision.neighbors {
                         foundAtLeastOneNeighbors = true

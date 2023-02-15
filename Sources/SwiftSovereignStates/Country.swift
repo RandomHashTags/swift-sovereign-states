@@ -307,7 +307,7 @@ public enum Country : String, SovereignState {
     }
     
     public var additional_keywords : Set<String>? {
-        var keywords:Set<String> = getSovereignStateAdditionalKeywords() ?? Set<String>()
+        var keywords:Set<String> = sovereign_state_additional_keywords ?? Set<String>()
         if let parentISOAlpha2:String = iso_alpha_2_parent_group {
             keywords.insert(parentISOAlpha2)
         }
@@ -336,7 +336,7 @@ public enum Country : String, SovereignState {
         return "https://en.wikipedia.org/wiki/" + name
     }
     
-    public func getWikipediaSuffix() -> String {
+    public var wikipedia_url_suffix : String? {
         let shortName:String = getShortName().replacingOccurrences(of: " ", with: "_")
         switch self {
         case .bahamas,
@@ -935,7 +935,7 @@ public extension Country {
         }
     }
     /// The level-1 administrative units this Country claims territorial ownership of.
-    func getSubdivisions() -> [any SovereignStateSubdivision]? {
+    var subdivisions : [any SovereignStateSubdivision]? {
         switch self {
         case .afghanistan: return SubdivisionsAfghanistan.allCases
         case .albania: return SubdivisionsAlbania.allCases

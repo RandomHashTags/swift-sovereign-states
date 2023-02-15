@@ -9,7 +9,7 @@ import Foundation
 
 public enum SovereignStateSubdivisions {
     public static var all:[any SovereignStateSubdivision] = {
-        return Country.allCases.compactMap({ $0.getSubdivisions() }).flatMap({ $0 })
+        return Country.allCases.compactMap({ $0.subdivisions }).flatMap({ $0 })
     }()
     
     public static func getAllMentioned(_ string: String, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateSubdivision]? {
@@ -24,7 +24,7 @@ public enum SovereignStateSubdivisions {
         return subdivisions.isEmpty ? nil : subdivisions
     }
     public static func getAllMentioned(_ string: String, country: Country, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateSubdivision]? {
-        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
+        guard var subdivisions:[any SovereignStateSubdivision] = country.subdivisions else { return nil }
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
             return cached.isEmpty ? nil : cached
@@ -48,7 +48,7 @@ public enum SovereignStateSubdivisions {
         return subdivisions.isEmpty ? nil : subdivisions
     }
     public static func valueOf(_ string: String, country: Country, cache: Bool = true, ignoreCase: Bool = false) -> (any SovereignStateSubdivision)? {
-        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
+        guard var subdivisions:[any SovereignStateSubdivision] = country.subdivisions else { return nil }
         let stringLowercase:String = string.lowercased()
         if let subdivision:Any? = SwiftSovereignStateCacheSubdivisions.valueOf[stringLowercase] {
             return subdivision as? (any SovereignStateSubdivision)
@@ -84,7 +84,7 @@ public enum SovereignStateSubdivisions {
         return subdivisions.isEmpty ? nil : subdivisions
     }
     public static func getAllMentionedParallel(_ string: String, country: Country, cache: Bool = true, ignoreCase: Bool = false) async -> [any SovereignStateSubdivision]? {
-        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
+        guard var subdivisions:[any SovereignStateSubdivision] = country.subdivisions else { return nil }
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
             return cached.isEmpty ? nil : subdivisions
@@ -108,7 +108,7 @@ public enum SovereignStateSubdivisions {
         return subdivisions.isEmpty ? nil : subdivisions
     }
     public static func valueOfParallel(_ string: String, country: Country, cache: Bool = true, ignoreCase: Bool = false) async -> (any SovereignStateSubdivision)? {
-        guard var subdivisions:[any SovereignStateSubdivision] = country.getSubdivisions() else { return nil }
+        guard var subdivisions:[any SovereignStateSubdivision] = country.subdivisions else { return nil }
         let stringLowercase:String = string.lowercased()
         if let subdivision:Any? = SwiftSovereignStateCacheSubdivisions.valueOf[stringLowercase] {
             return subdivision as? (any SovereignStateSubdivision)
