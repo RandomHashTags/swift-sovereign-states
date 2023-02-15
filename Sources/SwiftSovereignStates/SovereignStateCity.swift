@@ -125,7 +125,7 @@ public protocol SovereignStateCity : SovereignRegion {
     var subdivision : any SovereignStateSubdivision { get }
     var type : SovereignStateCityType { get }
     /// Whether or not this city is the capital in relation to its subdivision.
-    func isCapital() -> Bool
+    var is_capital : Bool { get }
 }
 
 public extension SovereignStateCity {
@@ -145,7 +145,7 @@ public extension SovereignStateCity {
         return SovereignStateCityType.city
     }
     
-    func isCapital() -> Bool {
+    var is_capital : Bool {
         return false
     }
     
@@ -265,7 +265,7 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var type : SovereignStateCityType {
         return city.type
     }
-    public func isCapital() -> Bool {
-        return city.isCapital()
+    public var is_capital : Bool {
+        return city.is_capital
     }
 }
