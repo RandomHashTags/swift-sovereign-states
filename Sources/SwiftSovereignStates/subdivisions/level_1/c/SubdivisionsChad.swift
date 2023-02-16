@@ -62,7 +62,7 @@ public enum SubdivisionsChad : String, SovereignStateSubdivision { // https://en
         case .bahr_el_gazel:
             return "_(region_of_Chad)"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

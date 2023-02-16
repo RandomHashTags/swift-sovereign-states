@@ -33,7 +33,7 @@ public enum SubdivisionsIsrael : String, SovereignStateSubdivision { // https://
         case .judea_and_samaria:
             return "_Area"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

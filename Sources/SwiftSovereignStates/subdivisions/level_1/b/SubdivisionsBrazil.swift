@@ -83,9 +83,9 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
                 .rio_de_janeiro,
                 .santa_catarina,
                 .sao_paulo:
-            return "_(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + type_suffix.lowercased() + ")"
         case .amazonas:
-            return "_(Brazilian_" + getTypeSuffix().lowercased() + ")"
+            return "_(Brazilian_" + type_suffix.lowercased() + ")"
         case .distrito_federal:
             return "_(Brazil)"
         default:

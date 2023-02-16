@@ -212,7 +212,7 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
                 .metro_manila:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

@@ -53,7 +53,7 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
         case .bulawayo:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

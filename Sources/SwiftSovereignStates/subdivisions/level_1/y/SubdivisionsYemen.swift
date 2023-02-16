@@ -57,7 +57,7 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
         case .sanaa_city:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

@@ -27,7 +27,7 @@ public enum SubdivisionsRwanda : String, SovereignStateSubdivision { // https://
         case .kigali:
             return nil
         default:
-            return "_" + getTypeSuffix() + ",_Rwanda"
+            return "_" + type_suffix + ",_Rwanda"
         }
     }
 }

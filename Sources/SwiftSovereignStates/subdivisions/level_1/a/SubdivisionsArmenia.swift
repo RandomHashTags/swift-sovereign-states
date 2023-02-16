@@ -44,7 +44,7 @@ public enum SubdivisionsArmenia : String, SovereignStateSubdivision { // https:/
         case .yerevan:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

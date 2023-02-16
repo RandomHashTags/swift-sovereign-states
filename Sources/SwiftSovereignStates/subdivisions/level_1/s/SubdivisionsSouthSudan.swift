@@ -66,9 +66,9 @@ public enum SubdivisionsSouthSudan : String, SovereignStateSubdivision { // http
                 .ruweng:
             return nil
         case .lakes:
-            return "_(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + type_suffix.lowercased() + ")"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

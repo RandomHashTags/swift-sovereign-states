@@ -37,7 +37,7 @@ public enum SubdivisionsNiger : String, SovereignStateSubdivision { // https://e
         case .niamey:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

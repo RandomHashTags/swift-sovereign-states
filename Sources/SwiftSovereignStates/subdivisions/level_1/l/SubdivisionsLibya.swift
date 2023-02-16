@@ -44,9 +44,9 @@ public enum SubdivisionsLibya : String, SovereignStateSubdivision { // https://e
         case .benghazi:
             return nil
         case .tripoli:
-            return "_" + getTypeSuffix() + ",_Libya"
+            return "_" + type_suffix + ",_Libya"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

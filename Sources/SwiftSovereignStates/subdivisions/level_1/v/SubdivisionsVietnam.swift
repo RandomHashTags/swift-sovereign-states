@@ -98,7 +98,7 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
                 .ho_chi_minh_city:
             return nil
         default:
-            return "_" + getTypeSuffix().lowercased()
+            return "_" + type_suffix.lowercased()
         }
     }
     

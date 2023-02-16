@@ -88,7 +88,7 @@ public enum SubdivisionsParaguay : String, SovereignStateSubdivision { // https:
         case .asuncion:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

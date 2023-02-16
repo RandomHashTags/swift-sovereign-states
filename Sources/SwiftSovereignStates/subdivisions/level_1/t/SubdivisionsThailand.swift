@@ -187,7 +187,7 @@ public enum SubdivisionsThailand : String, SovereignStateSubdivision { // https:
         case .bangkok:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

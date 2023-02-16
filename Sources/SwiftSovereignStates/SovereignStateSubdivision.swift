@@ -136,7 +136,7 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
     /// The country this subdivision's administrative borders are claimed by.
     var country : Country { get }
     var type : SovereignStateSubdivisionType { get }
-    func getTypeSuffix() -> String
+    var type_suffix : String { get }
     
     /// The neighboring subdivisions, in relation the its administrative borders.
     var neighbors : [any SovereignStateSubdivision]? { get }
@@ -166,9 +166,9 @@ public extension SovereignStateSubdivision {
     }
     
     var wikipedia_url_suffix : String? {
-        return "_" + getTypeSuffix()
+        return "_" + type_suffix
     }
-    func getTypeSuffix() -> String {
+    var type_suffix : String {
         return type.name_singular.replacingOccurrences(of: " ", with: "_")
     }
     
@@ -288,8 +288,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var type : SovereignStateSubdivisionType {
         return subdivision.type
     }
-    public func getTypeSuffix() -> String {
-        return subdivision.getTypeSuffix()
+    public var type_suffix : String {
+        return subdivision.type_suffix
     }
     
     public var neighbors : [any SovereignStateSubdivision]? {

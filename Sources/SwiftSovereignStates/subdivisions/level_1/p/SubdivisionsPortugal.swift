@@ -59,7 +59,7 @@ public enum SubdivisionsPortugal : String, SovereignStateSubdivision { // https:
                 .madeira:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

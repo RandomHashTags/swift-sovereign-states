@@ -76,9 +76,9 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
                 .san_juan,
                 .santa_cruz,
                 .tierra_del_fuego_antartida_e_islas_del_atlantico_sur:
-            return "_" + getTypeSuffix() + ",_Argentina"
+            return "_" + type_suffix + ",_Argentina"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

@@ -70,7 +70,7 @@ public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https:/
                 .sevastopol:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

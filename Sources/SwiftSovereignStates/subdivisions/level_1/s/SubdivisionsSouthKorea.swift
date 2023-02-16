@@ -65,7 +65,7 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
                 .ulsan:
             return nil
         case .gangwon:
-            return "_" + getTypeSuffix() + ",_South_Korea"
+            return "_" + type_suffix + ",_South_Korea"
         case .sejong:
             return "_City"
         default:

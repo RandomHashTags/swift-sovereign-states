@@ -81,7 +81,7 @@ public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://
                 .northwest_territories:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

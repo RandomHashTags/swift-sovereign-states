@@ -83,9 +83,9 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
                 .ventspils_city:
             return nil
         case .saldus:
-            return "_" + getTypeSuffix() + "_(2021–present)"
+            return "_" + type_suffix + "_(2021–present)"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

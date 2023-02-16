@@ -49,7 +49,7 @@ public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // http
                 .shymkent:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

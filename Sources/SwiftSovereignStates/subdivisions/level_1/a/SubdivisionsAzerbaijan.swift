@@ -138,9 +138,9 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         case .jalilabad,
                 .quba,
                 .salyan:
-            return "_" + getTypeSuffix() + "_(Azerbaijan)"
+            return "_" + type_suffix + "_(Azerbaijan)"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

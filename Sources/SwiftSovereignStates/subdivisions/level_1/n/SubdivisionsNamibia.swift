@@ -45,7 +45,7 @@ public enum SubdivisionsNamibia : String, SovereignStateSubdivision { // https:/
                 .oshana:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

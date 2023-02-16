@@ -52,12 +52,12 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
         switch self {
         case .southampton,
                 .st_george_s:
-            return "_" + getTypeSuffix() + ",_Bermuda"
+            return "_" + type_suffix + ",_Bermuda"
         case .hamilton_city,
                 .st_george_s_town:
             return ",_Bermuda"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

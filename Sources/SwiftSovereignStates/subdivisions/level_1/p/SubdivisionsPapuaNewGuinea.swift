@@ -61,11 +61,11 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
             return nil
         case .central,
                 .western:
-            return "_" + getTypeSuffix() + "_(Papua_New_Guinea)"
+            return "_" + type_suffix + "_(Papua_New_Guinea)"
         case .national_capital_district:
             return "_(Papua_New_Guinea)"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

@@ -55,7 +55,7 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
         case .male:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

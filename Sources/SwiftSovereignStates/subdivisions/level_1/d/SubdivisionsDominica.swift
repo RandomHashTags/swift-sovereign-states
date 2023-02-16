@@ -28,7 +28,7 @@ public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https:
     }
     
     public var wikipedia_url_suffix : String? {
-        return "_" + getTypeSuffix() + ",_Dominica"
+        return "_" + type_suffix + ",_Dominica"
     }
     
     public var neighbors : [any SovereignStateSubdivision]? {

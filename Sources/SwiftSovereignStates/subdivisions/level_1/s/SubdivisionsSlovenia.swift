@@ -356,7 +356,7 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
                 .velenje:
             return nil
         default:
-            return getTypeSuffix() + "_of_"
+            return type_suffix + "_of_"
         }
     }
     

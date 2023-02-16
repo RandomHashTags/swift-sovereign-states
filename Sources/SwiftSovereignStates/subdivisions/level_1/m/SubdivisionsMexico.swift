@@ -77,7 +77,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         switch self {
         case .chihuahua,
                 .hidalgo:
-            return "_(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + type_suffix.lowercased() + ")"
         default:
             return nil
         }

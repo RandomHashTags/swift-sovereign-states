@@ -69,7 +69,7 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
         case .prague:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

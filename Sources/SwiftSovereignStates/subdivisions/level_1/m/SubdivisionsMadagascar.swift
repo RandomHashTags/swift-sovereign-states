@@ -57,7 +57,7 @@ public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // http
                 .itasy,
                 .sava,
                 .sofia:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         default:
             return nil
         }

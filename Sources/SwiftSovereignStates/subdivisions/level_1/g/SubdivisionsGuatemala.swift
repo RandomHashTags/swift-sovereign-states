@@ -55,7 +55,7 @@ public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https
         case .santa_rosa:
             return ",_Guatemala"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

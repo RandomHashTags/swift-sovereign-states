@@ -34,9 +34,9 @@ public enum SubdivisionsNauru : String, SovereignStateSubdivision { // https://e
     public var wikipedia_url_suffix: String? {
         switch self {
         case .ewa:
-            return "_" + getTypeSuffix() + ",_Nauru"
+            return "_" + type_suffix + ",_Nauru"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
         
     }

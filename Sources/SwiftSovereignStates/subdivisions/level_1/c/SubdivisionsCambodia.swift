@@ -90,7 +90,7 @@ public enum SubdivisionsCambodia : String, SovereignStateSubdivision { // https:
         case .phnom_penh:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

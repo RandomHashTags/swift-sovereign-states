@@ -56,7 +56,7 @@ public enum SubdivisionsIndonesia : String, SovereignStateSubdivision { // https
         case .maluku,
                 .papua,
                 .west_papua:
-            return "_(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + type_suffix.lowercased() + ")"
         default:
             return nil
         }

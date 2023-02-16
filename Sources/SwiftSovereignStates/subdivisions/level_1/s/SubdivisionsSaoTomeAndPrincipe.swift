@@ -47,7 +47,7 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, SovereignStateSubdivision {
         case .autonomous_region_of_principe:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

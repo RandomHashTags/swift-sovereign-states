@@ -53,7 +53,7 @@ public enum SubdivisionsTanzania : String, SovereignStateSubdivision { // https:
         case .dar_es_salaam:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

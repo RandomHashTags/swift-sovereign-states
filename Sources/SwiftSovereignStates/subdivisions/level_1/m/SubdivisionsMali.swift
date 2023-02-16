@@ -48,7 +48,7 @@ public enum SubdivisionsMali : String, SovereignStateSubdivision { // https://en
         case .bamako:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

@@ -30,9 +30,9 @@ public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https:
         switch self {
         case .sabaragamuwa,
                 .uva:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         default:
-            return "_" + getTypeSuffix() + ",_Sri_Lanka"
+            return "_" + type_suffix + ",_Sri_Lanka"
         }
     }
     

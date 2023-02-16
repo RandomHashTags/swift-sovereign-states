@@ -70,7 +70,7 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
         case .oecusse:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

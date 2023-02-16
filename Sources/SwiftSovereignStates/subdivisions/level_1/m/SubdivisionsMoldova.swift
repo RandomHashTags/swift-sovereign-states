@@ -136,7 +136,7 @@ public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
         case .gagauzia, .left_bank_of_the_dniester:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

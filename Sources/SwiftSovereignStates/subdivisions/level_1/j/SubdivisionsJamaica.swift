@@ -38,7 +38,7 @@ public enum SubdivisionsJamaica : String, SovereignStateSubdivision { // https:/
                 .saint_andrew,
                 .saint_mary,
                 .saint_thomas:
-            return "_" + getTypeSuffix() + ",_Jamaica"
+            return "_" + type_suffix + ",_Jamaica"
         default:
             return nil
         }

@@ -43,7 +43,7 @@ public enum SubdivisionsAntiguaAndBarbuda : String, SovereignStateSubdivision { 
         case .barbuda, .redonda:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

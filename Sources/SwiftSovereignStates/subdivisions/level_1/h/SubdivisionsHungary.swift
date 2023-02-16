@@ -60,7 +60,7 @@ public enum SubdivisionsHungary : String, SovereignStateSubdivision { // https:/
         case .budapest:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

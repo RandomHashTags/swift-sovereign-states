@@ -65,7 +65,7 @@ public enum SubdivisionsEcuador : String, SovereignStateSubdivision { // https:/
     public var wikipedia_url_suffix : String? {
         switch self {
         case .bolivar:
-            return "_" + getTypeSuffix() + "_(Ecuador)"
+            return "_" + type_suffix + "_(Ecuador)"
         default:
             return nil
         }

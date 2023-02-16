@@ -103,10 +103,10 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
     public var wikipedia_url_suffix : String? {
         switch self {
         case .georgia:
-            return "_(U.S._" + getTypeSuffix().lowercased() + ")"
+            return "_(U.S._" + type_suffix.lowercased() + ")"
         case .new_york,
                 .washington:
-            return "_(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + type_suffix.lowercased() + ")"
         default:
             return nil
         }

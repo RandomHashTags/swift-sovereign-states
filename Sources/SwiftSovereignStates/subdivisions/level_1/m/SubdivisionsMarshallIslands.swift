@@ -51,7 +51,7 @@ public enum SubdivisionsMarshallIslands : String, SovereignStateSubdivision { //
         case .majuro:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

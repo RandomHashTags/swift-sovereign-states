@@ -49,14 +49,14 @@ public enum SubdivisionsBotswana : String, SovereignStateSubdivision { // https:
     public var wikipedia_url_suffix : String? {
         switch self {
         case .central, .north_east, .south_east, .southern:
-            return "_" + getTypeSuffix() + "_(Botswana)"
+            return "_" + type_suffix + "_(Botswana)"
         case .francistown, .gaborone,
                 .jwaneng, .lobatse, .orapa, .selebi_phikwe:
             return nil
         case .sowa:
             return ",_Botswana"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

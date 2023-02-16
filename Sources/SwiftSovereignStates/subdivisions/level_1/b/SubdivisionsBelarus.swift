@@ -43,7 +43,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         case .minsk_city:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
     

@@ -46,7 +46,7 @@ public enum SubdivisionsKuwait : String, SovereignStateSubdivision { // https://
         case .al_asimah:
             return "_(Kuwait)"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

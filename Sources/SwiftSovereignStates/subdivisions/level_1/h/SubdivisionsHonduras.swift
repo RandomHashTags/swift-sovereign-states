@@ -55,9 +55,9 @@ public enum SubdivisionsHonduras : String, SovereignStateSubdivision { // https:
         switch self {
         case .colon,
                 .la_paz:
-            return "_" + getTypeSuffix() + "_(Honduras)"
+            return "_" + type_suffix + "_(Honduras)"
         case .santa_barabara:
-            return "_" + getTypeSuffix() + ",_Honduras"
+            return "_" + type_suffix + ",_Honduras"
         default:
             return nil
         }

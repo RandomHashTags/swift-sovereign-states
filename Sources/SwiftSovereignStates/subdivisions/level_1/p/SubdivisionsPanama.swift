@@ -73,7 +73,7 @@ public enum SubdivisionsPanama : String, SovereignStateSubdivision { // https://
                 .naso_tjer_di:
             return "_Comarca"
         case .bocas_del_toro:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         default:
             return nil
         }

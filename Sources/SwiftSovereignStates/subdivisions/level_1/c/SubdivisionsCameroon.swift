@@ -36,11 +36,11 @@ public enum SubdivisionsCameroon : String, SovereignStateSubdivision { // https:
                 .south,
                 .southwest,
                 .west:
-            return "_" + getTypeSuffix() + "_(Cameroon)"
+            return "_" + type_suffix + "_(Cameroon)"
         case .far_north:
-            return "_" + getTypeSuffix() + ",_Cameroon"
+            return "_" + type_suffix + ",_Cameroon"
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

@@ -47,7 +47,7 @@ public enum SubdivisionsMozambique : String, SovereignStateSubdivision { // http
         case .maputo_city:
             return nil
         default:
-            return "_" + getTypeSuffix()
+            return "_" + type_suffix
         }
     }
 }

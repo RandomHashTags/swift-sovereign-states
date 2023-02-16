@@ -74,7 +74,7 @@ public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https
                 .portuguesa,
                 .sucre,
                 .trujillo:
-            return "_(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + type_suffix.lowercased() + ")"
         default:
             return nil
         }

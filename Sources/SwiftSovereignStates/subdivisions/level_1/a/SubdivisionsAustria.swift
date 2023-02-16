@@ -29,7 +29,7 @@ public enum SubdivisionsAustria : String, SovereignStateSubdivision { // https:/
     public var wikipedia_url_suffix : String? {
         switch self {
         case .salzburg, .tyrol:
-            return "_(" + getTypeSuffix().lowercased() + ")"
+            return "_(" + type_suffix.lowercased() + ")"
         default:
             return nil
         }
