@@ -229,8 +229,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.isMentioned(in: string, exact: exact, ignoreCase: ignoreCase)
     }
     
-    public func getShortName() -> String {
-        return subdivision.getShortName()
+    public var short_name : String {
+        return subdivision.short_name
     }
     public var short_name_decimal_separator_index : Int? {
         return subdivision.short_name_decimal_separator_index

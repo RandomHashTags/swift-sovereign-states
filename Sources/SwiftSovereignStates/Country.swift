@@ -330,14 +330,14 @@ public enum Country : String, SovereignState {
             name = "Saint_Martin_(island)"
             break
         default:
-            name = getShortName().replacingOccurrences(of: " ", with: "_")
+            name = short_name.replacingOccurrences(of: " ", with: "_")
             break
         }
         return "https://en.wikipedia.org/wiki/" + name
     }
     
     public var wikipedia_url_suffix : String? {
-        let shortName:String = getShortName().replacingOccurrences(of: " ", with: "_")
+        let shortName:String = short_name.replacingOccurrences(of: " ", with: "_")
         switch self {
         case .bahamas,
                 .central_african_republic,

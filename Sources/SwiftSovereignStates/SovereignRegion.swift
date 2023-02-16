@@ -18,8 +18,8 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool
     
     /// The name of this SovereignRegion as it is commonly known as internationally.
-    func getShortName() -> String
-    /// Where the decimal point `(.)` should be located in the ``getShortName()-7cmmc``.
+    var short_name : String { get }
+    /// Where the decimal point `(.)` should be located in the `short_name`.
     var short_name_decimal_separator_index : Int? { get }
     /// The real name of this SovereignRegion. Usually only used if this SovereignRegion's legal name contains accents, hyphens, commas, or other special characters.
     var real_name : String? { get }
@@ -68,7 +68,7 @@ public extension SovereignRegion {
         if let keywords:Set<String> = SwiftSovereignStateCacheSubdivisions.keywords[id] {
             return keywords
         }
-        var keywords:Set<String> = [real_name ?? getShortName()]
+        var keywords:Set<String> = [real_name ?? short_name]
         if let wikipedia_name:String = wikipedia_name {
             keywords.insert(wikipedia_name)
         }
@@ -100,7 +100,7 @@ public extension SovereignRegion {
         return nil
     }
     
-    func getShortName() -> String {
+    var short_name : String {
         let identifier:String = rawValue
         let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : short_name_decimal_separator_index
         return SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex)
@@ -133,7 +133,7 @@ public extension SovereignRegion {
     }
     
     var wikipedia_url : String {
-        let name:String = (wikipedia_name ?? real_name ?? getShortName()).replacingOccurrences(of: " ", with: "_")
+        let name:String = (wikipedia_name ?? real_name ?? short_name).replacingOccurrences(of: " ", with: "_")
         return "https://en.wikipedia.org/wiki/" + (wikipedia_url_prefix ?? "") + SovereignRegions.urlEncoded(name) + (wikipedia_url_suffix ?? "")
     }
     var wikipedia_url_prefix : String? {

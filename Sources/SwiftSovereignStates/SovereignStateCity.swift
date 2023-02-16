@@ -151,7 +151,7 @@ public extension SovereignStateCity {
     
     internal func getDefaultURLSuffix() -> String {
         let subdivision:any SovereignStateSubdivision = subdivision
-        return ",_" + (subdivision.real_name ?? subdivision.getShortName()).replacingOccurrences(of: " ", with: "_")
+        return ",_" + (subdivision.real_name ?? subdivision.short_name).replacingOccurrences(of: " ", with: "_")
     }
     var wikipedia_url_suffix : String? {
         return getDefaultURLSuffix()
@@ -213,8 +213,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
         return city.isMentioned(in: string, exact: exact, ignoreCase: ignoreCase)
     }
     
-    public func getShortName() -> String {
-        return city.getShortName()
+    public var short_name : String {
+        return city.short_name
     }
     public var short_name_decimal_separator_index : Int? {
         return city.short_name_decimal_separator_index

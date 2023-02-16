@@ -518,7 +518,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     private func generate_english_localization() {
         /*for country in Country.allCases {
             let short_name_id:String = "country_short_name_" + country.rawValue
-            print("case " + short_name_id + "\" = \"" + country.getShortName() + "\";")
+            print("case " + short_name_id + "\" = \"" + country.short_name + "\";")
         }*/
     }
     private func test_localization() {
