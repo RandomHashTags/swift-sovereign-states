@@ -49,6 +49,8 @@ private extension SwiftSovereignStatesCache {
 }
 
 public enum SwiftSovereignStateCacheType {
+    case localization
+    
     case countries_valueOf
     case countries_mentioned
     case subdivisions_keywords
@@ -64,8 +66,12 @@ public enum SwiftSovereignStateCacheType {
 }
 
 public enum SwiftSovereignStateCache {
+    static var localization:SwiftSovereignStatesCache<Bundle> = SwiftSovereignStatesCache<Bundle>()
+    
     public static func removeAll(_ type: SwiftSovereignStateCacheType? = nil) {
         guard let type:SwiftSovereignStateCacheType = type else {
+            SwiftSovereignStateCache.localization.removeAll()
+            
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
@@ -83,6 +89,8 @@ public enum SwiftSovereignStateCache {
             return
         }
         switch type {
+        case .localization:
+            return SwiftSovereignStateCache.localization.removeAll()
         case .countries_valueOf:
             SwiftSovereignStateCacheCountries.valueOf.removeAll()
             return

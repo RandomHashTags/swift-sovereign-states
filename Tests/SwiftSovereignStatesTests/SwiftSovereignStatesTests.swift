@@ -5,9 +5,9 @@ import Kanna
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
-        //let _:[Set<String>] = Country.allCases.map({ $0.keywords })
-        //let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
-        //let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
+        let _:[Set<String>] = Country.allCases.map({ $0.keywords })
+        let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
+        let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
         
         try testFoundations()
         try testCodable()
