@@ -336,7 +336,7 @@ public enum Country : String, SovereignState {
         return "https://en.wikipedia.org/wiki/" + name
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipedia_url_suffix : String {
         let shortName:String = short_name.replacingOccurrences(of: " ", with: "_")
         switch self {
         case .bahamas,
