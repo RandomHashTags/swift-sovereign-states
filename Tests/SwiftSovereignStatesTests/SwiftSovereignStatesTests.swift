@@ -127,7 +127,6 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 let country:Country? = Country.init(rawValue: "united_states")
                 XCTAssert(country != nil)
             }
-            
             let _ = try await benchmark(key: "SubdivisionsUnitedStates.init(_ description) [LosslessStringConvertible]") {
                 let subdivision:SubdivisionsUnitedStates? = SubdivisionsUnitedStates.init("united_states-minnesota")
                 XCTAssert(subdivision != nil)
@@ -136,6 +135,15 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 let subdivision:SubdivisionsUnitedStates? = SubdivisionsUnitedStates.init(rawValue: "minnesota")
                 XCTAssert(subdivision != nil)
             }
+            let _ = try await benchmark(key: "CitiesUnitedStatesMinnesota.init(_ description) [LosslessStringConvertible]") {
+                let city:CitiesUnitedStatesMinnesota? = CitiesUnitedStatesMinnesota.init("united_states-minnesota-kasson")
+                XCTAssert(city != nil)
+            }
+            let _ = try await benchmark(key: "CitiesUnitedStatesMinnesota.init(rawValue) [RawRepresentable]") {
+                let city:CitiesUnitedStatesMinnesota? = CitiesUnitedStatesMinnesota.init(rawValue: "kasson")
+                XCTAssert(city != nil)
+            }
+            
             let _ = try await benchmark(key: "Country.united_states.valueOfSubdivisionIdentifier") {
                 let subdivision:(any SovereignStateSubdivision)? = Country.united_states.valueOfSubdivisionIdentifier("minnesota")
                 XCTAssert(subdivision != nil)
@@ -158,11 +166,11 @@ final class SwiftSovereignStatesTests: XCTestCase {
             }
             
             let _ = try await benchmark(key: "SubdivisionsUnitedStates.minnesota.valueOfIdentifier") {
-                let city:(any SovereignStateCity)? = SubdivisionsUnitedStates.minnesota.valueOfCityIdentifier("kasson")
+                let city:(any SovereignStateCity)? = SubdivisionsUnitedStates.minnesota.valueOfCityIdentifier("rochester")
                 XCTAssert(city != nil)
             }
             let _ = try await benchmark(key: "SovereignStateCities.valueOfCacheID") {
-                let city:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states-minnesota-kasson", cache: cache)
+                let city:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID("united_states-minnesota-rochester", cache: cache)
                 XCTAssert(city != nil)
             }
             let _ = try await benchmark(key: "SovereignStateCities.valueOf") {
@@ -202,7 +210,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let sum:Int64 = timings.reduce(0, +)
         let average:Int64 = Int64( Double(sum) / Double(timings.count) )
         if will_print {
-            let key:String = key + (1...(75-key.count)).map({ _ in " " }).joined()
+            let key:String = key + (1...(80-key.count)).map({ _ in " " }).joined()
             
             let formatter:NumberFormatter = NumberFormatter()
             formatter.numberStyle = .decimal

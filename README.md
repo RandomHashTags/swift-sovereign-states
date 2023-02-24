@@ -13,13 +13,13 @@ Implement and use real-world regional divisions. I didn't want other people inve
 ### CocoaPods
 
 ```ruby
-pod 'SwiftSovereignStates', '~> 1.1.9'
+pod 'SwiftSovereignStates', '~> 1.2.1'
 ```
 
 ### Swift Package Manager
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/randomhashtags/swift-sovereign-states.git", from: "1.1.9"),
+    .package(url: "https://github.com/randomhashtags/swift-sovereign-states.git", from: "1.2.1"),
 ]
 ```
