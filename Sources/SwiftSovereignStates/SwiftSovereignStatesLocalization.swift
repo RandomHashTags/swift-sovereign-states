@@ -15,7 +15,7 @@ private extension Bundle {
             return bundle
         }
         guard let localization_bundle:Bundle = Bundle(identifier: identifier) ?? Bundle(path: identifier),
-              let path:String = localization_bundle.path(forResource: "_locale/" + cache_id, ofType: "lproj"),
+              let path:String = localization_bundle.path(forResource: "Resources/_locale/" + cache_id, ofType: "lproj"),
               let bundle:Bundle = Bundle(path: path)
         else {
             return nil
