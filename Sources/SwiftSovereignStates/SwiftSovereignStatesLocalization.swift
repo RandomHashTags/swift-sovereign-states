@@ -8,14 +8,13 @@
 import Foundation
 
 private extension Bundle {
-    private static func get_localization(language_code: String?, type: SwiftSovereignStateLocalizationCategory, identifier: String) -> Bundle? {
+    private static func get_localization(language_code: String?, type: SwiftSovereignStateLocalizationCategory) -> Bundle? {
         let language_code:String = "en"// language_code ?? String(Locale.current.identifier.prefix(2))
         let cache_id:String = language_code + "/" + type.rawValue
         if let bundle:Bundle = SwiftSovereignStateCache.localization[cache_id] {
             return bundle
         }
-        guard let localization_bundle:Bundle = Bundle(identifier: identifier) ?? Bundle(path: identifier),
-              let path:String = localization_bundle.path(forResource: "Resources/_locale/" + cache_id, ofType: "lproj"),
+        guard let path:String = Bundle.module.path(forResource: "Resources/_locale/" + cache_id, ofType: "lproj"),
               let bundle:Bundle = Bundle(path: path)
         else {
             return nil
@@ -24,9 +23,7 @@ private extension Bundle {
         return bundle
     }
     static func get(language_code: String? = nil, type: SwiftSovereignStateLocalizationCategory, _ key: String) -> String {
-        return (Bundle.get_localization(language_code: language_code, type: type, identifier: "org.cocoapods.SwiftSovereignStates")
-                ?? Bundle.get_localization(language_code: language_code, type: type, identifier: Bundle(for: SwiftSovereignStates.self).bundleIdentifier!)
-                ?? Bundle.get_localization(language_code: language_code, type: type, identifier: "/Users/randomhashtags/GitProjects/swift-sovereign-states/Sources/SwiftSovereignStates"))?.localizedString(forKey: key, value: "nil", table: nil) ?? "nil"
+        return Bundle.get_localization(language_code: language_code, type: type)?.localizedString(forKey: key, value: "nil", table: nil) ?? "nil"
     }
 }
 private enum SwiftSovereignStateLocalizationCategory : String {
