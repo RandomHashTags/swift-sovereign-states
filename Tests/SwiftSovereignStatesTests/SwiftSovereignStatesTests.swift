@@ -125,7 +125,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Texas") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_New_York") else {
             return
         }
         var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String](), flagURLs:[String] = [String]()
@@ -133,35 +133,37 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for table in tables {
             let trs:XPathObject = table.css("tbody tr")
             for tr in trs {
-                let ths:XPathObject = tr.css("th")[0].css("a[href]"), tds:XPathObject = tr.css("td")
-                var identifier:String = "", caseString:String = ""
-                if ths.count >= 1 {
-                    let element:Kanna.XMLElement = ths[0]
-                    
-                    let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
-                    let name:String = element.get_text()!
-                        .replacingOccurrences(of: " County", with: "")
-                    identifier = name.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
-                    if identifier.hasSuffix(" ") {
-                        identifier = String(identifier.prefix(identifier.count-1))
+                if let ths:XPathObject = tr.css("th").first?.css("a[href]") {
+                    let tds:XPathObject = tr.css("td")
+                    var identifier:String = "", caseString:String = ""
+                    if ths.count >= 1 {
+                        let element:Kanna.XMLElement = ths[0]
+                        
+                        let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
+                        let name:String = element.get_text()!
+                            .replacingOccurrences(of: " County", with: "")
+                        identifier = name.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
+                        if identifier.hasSuffix(" ") {
+                            identifier = String(identifier.prefix(identifier.count-1))
+                        }
+                        let previous_identifier:String = identifier.replacingOccurrences(of: " ", with: "_")
+                        for (regex, replacement) in regexReplacements {
+                            identifier = identifier.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
+                        }
+                        let didReplace:Bool = !previous_identifier.elementsEqual(identifier)
+                        caseString = "    case "
+                        identifiers.append(caseString + identifier)
+                        if didReplace {
+                            names.append(caseString + "." + identifier + ": return \"" + name + "\"")
+                        }
+                        flagURLs.append(caseString + "." + identifier + ": return " + (flagURL != nil ? "\"" + flagURL! + "\"" : "nil"))
                     }
-                    let previous_identifier:String = identifier.replacingOccurrences(of: " ", with: "_")
-                    for (regex, replacement) in regexReplacements {
-                        identifier = identifier.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
-                    }
-                    let didReplace:Bool = !previous_identifier.elementsEqual(identifier)
-                    caseString = "    case "
-                    identifiers.append(caseString + identifier)
-                    if didReplace {
-                        names.append(caseString + "." + identifier + ": return \"" + name + "\"")
-                    }
-                    flagURLs.append(caseString + "." + identifier + ": return " + (flagURL != nil ? "\"" + flagURL! + "\"" : "nil"))
-                }
-                if tds.count >= 1 {
-                    let tdElement:Kanna.XMLElement = tds[0]
-                    let hrefs:XPathObject = tdElement.css("a[href]")
-                    if hrefs.count >= 1 {
-                        fips_codes.append(caseString + "." + identifier + ": return " + hrefs[0].get_text()!)
+                    if tds.count >= 1 {
+                        let tdElement:Kanna.XMLElement = tds[0]
+                        let hrefs:XPathObject = tdElement.css("a[href]")
+                        if hrefs.count >= 1 {
+                            fips_codes.append(caseString + "." + identifier + ": return " + hrefs[0].get_text()!)
+                        }
                     }
                 }
             }
