@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CountiesUnitedStatesMinnesota : String, SovereignStateLevel2Division {
+public enum CountiesUnitedStatesMinnesota : String, SovereignStateLevel2Division { // https://en.wikipedia.org/wiki/List_of_counties_in_Minnesota
     case aitkin
     case anoka
     case becker
