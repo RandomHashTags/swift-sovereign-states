@@ -125,10 +125,10 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_South_Carolina") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Kentucky") else {
             return
         }
-        var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String](), flagURLs:[String] = [String]()
+        var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String]()
         let tables:XPathObject = test.css("table.sortable")
         if let table:Kanna.XMLElement = tables.first {
             let trs:XPathObject = table.css("tbody tr")
@@ -157,7 +157,6 @@ final class SwiftSovereignStatesTests: XCTestCase {
                         if didReplace {
                             names.append(caseString + "." + identifier + ": return \"" + name + "\"")
                         }
-                        flagURLs.append(caseString + "." + identifier + ": return " + (flagURL != nil ? "\"" + flagURL! + "\"" : "nil"))
                     }
                     if tds.count >= 1 {
                         let tdElement:Kanna.XMLElement = tds[0]
@@ -180,9 +179,6 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
         for fips_code in fips_codes {
             print(fips_code)
-        }
-        for flagURL in flagURLs {
-            print(flagURL)
         }
     }
     
