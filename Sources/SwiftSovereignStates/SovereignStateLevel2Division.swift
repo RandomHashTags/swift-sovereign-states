@@ -19,7 +19,7 @@ public extension SovereignStateLevel2Division {
         return (fips_code < 10 ? "00" : fips_code < 100 ? "0" : "") + fips_code.description
     }
     
-    init?(_ description: String) {
+    init?(_ description: String) { // TODO: fix
         return nil
     }
     
