@@ -22,8 +22,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
         test_localization()
         
         //await generate_sovereign_regions()
+        await generate_level_2_divisions()
         
-        try await test_benchmarks(cache: false)
+        //try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
         
         //let seconds:UInt64 = 500_000_000
@@ -97,6 +98,85 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
         for city in cityNames {
             print(city)
+        }
+        for flagURL in flagURLs {
+            print(flagURL)
+        }
+    }
+    private func generate_level_2_divisions() async {
+        let regexReplacements:[String:String] = [
+            "( |-|'|/|–)" : "_",
+            "(\\.|\\!|\\?|,)" : "",
+            
+            "(à|á|â|ä|ã|å|ā|ă)" : "a",
+            "(æ)" : "ae",
+            "(ç|ć|č|ċ)" : "c",
+            "(è|é|ê|ë|ē|ė|ę)" : "e",
+            "(ġ|ğ)" : "g",
+            "(ħ)" : "h",
+            "(î|ï|í|ī|į|ì|ı|İ)" : "i",
+            "(ł)" : "l",
+            "(ñ|ń|ň)" : "n",
+            "(ô|ö|ò|ó|œ|ø|ō|õ|ð)" : "o",
+            "(þ)" : "th",
+            "(ß|ś|š|ș|ş)" : "s",
+            "(ț)" : "t",
+            "(û|ü|ù|ú|ū)" : "u",
+            "(ÿ|ý)" : "y",
+            "(ž|ź|ż)" : "z"
+        ]
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Minnesota") else {
+            return
+        }
+        var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String](), flagURLs:[String] = [String]()
+        let tables:XPathObject = test.css("table.sortable")
+        for table in tables {
+            let trs:XPathObject = table.css("tbody tr")
+            for tr in trs {
+                let ths:XPathObject = tr.css("th")[0].css("a[href]"), tds:XPathObject = tr.css("td")
+                var identifier:String = "", caseString:String = ""
+                if ths.count >= 1 {
+                    let element:Kanna.XMLElement = ths[0]
+                    
+                    let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
+                    let name:String = element.get_text()!
+                        .replacingOccurrences(of: " County", with: "")
+                    identifier = name.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
+                    if identifier.hasSuffix(" ") {
+                        identifier = String(identifier.prefix(identifier.count-1))
+                    }
+                    let previous_identifier:String = identifier.replacingOccurrences(of: " ", with: "_")
+                    for (regex, replacement) in regexReplacements {
+                        identifier = identifier.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
+                    }
+                    let didReplace:Bool = !previous_identifier.elementsEqual(identifier)
+                    caseString = "    case "
+                    identifiers.append(caseString + identifier)
+                    if didReplace {
+                        names.append(caseString + "." + identifier + ": return \"" + name + "\"")
+                    }
+                    flagURLs.append(caseString + "." + identifier + ": return " + (flagURL != nil ? "\"" + flagURL! + "\"" : "nil"))
+                }
+                if tds.count >= 1 {
+                    let tdElement:Kanna.XMLElement = tds[0]
+                    let hrefs:XPathObject = tdElement.css("a[href]")
+                    if hrefs.count >= 1 {
+                        fips_codes.append(caseString + "." + identifier + ": return " + hrefs[0].get_text()!)
+                    }
+                }
+            }
+        }
+        identifiers = identifiers.sorted { $0 < $1 }
+        names = names.sorted { $0 < $1 }
+        fips_codes = fips_codes.sorted { $0 < $1 }
+        for identifier in identifiers {
+            print(identifier)
+        }
+        for identifier in names {
+            print(identifier)
+        }
+        for fips_code in fips_codes {
+            print(fips_code)
         }
         for flagURL in flagURLs {
             print(flagURL)
