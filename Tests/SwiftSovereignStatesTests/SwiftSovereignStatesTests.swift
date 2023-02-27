@@ -125,12 +125,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Georgia") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Colorado") else {
             return
         }
         var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String](), flagURLs:[String] = [String]()
         let tables:XPathObject = test.css("table.sortable")
-        for table in tables {
+        if let table:Kanna.XMLElement = tables.first {
             let trs:XPathObject = table.css("tbody tr")
             for tr in trs {
                 if let ths:XPathObject = tr.css("th").first?.css("a[href]") {
@@ -139,8 +139,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
                     if ths.count >= 1 {
                         let element:Kanna.XMLElement = ths[0]
                         
-                        let flagURL:String? = tds[0].css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
+                        let flagURL:String? = tds.first?.css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
                         let name:String = element.get_text()!
+                            .replacingOccurrences(of: "City and County of ", with: "")
                             .replacingOccurrences(of: " County", with: "")
                         identifier = name.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
                         if identifier.hasSuffix(" ") {
