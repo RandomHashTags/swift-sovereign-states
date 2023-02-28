@@ -125,7 +125,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Missouri") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_New_Jersey") else {
             return
         }
         var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String]()
