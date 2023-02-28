@@ -125,7 +125,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Wisconsin") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_Oklahoma") else {
             return
         }
         var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String]()
@@ -139,7 +139,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                     if ths.count >= 1 {
                         let element:Kanna.XMLElement = ths[0]
                         
-                        let flagURL:String? = tds.first?.css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
+                        //let flagURL:String? = tds.first?.css("img").first?["src"]?.components(separatedBy: "/thumb/")[1].components(separatedBy: "/[0-9]+px-")[0].components(separatedBy: ".svg")[0]
                         let name:String = element.get_text()!
                             .replacingOccurrences(of: "City and County of ", with: "")
                             .replacingOccurrences(of: " County", with: "")
