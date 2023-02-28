@@ -27,7 +27,7 @@ public enum CountiesUnitedStatesMassachusetts : String, SovereignStateLevel2Divi
         return SubdivisionsUnitedStates.massachusetts
     }
     
-    public var fips_code: Int {
+    public var fips_code : Int {
         switch self {
         case .barnstable: return 001
         case .berkshire: return 003
