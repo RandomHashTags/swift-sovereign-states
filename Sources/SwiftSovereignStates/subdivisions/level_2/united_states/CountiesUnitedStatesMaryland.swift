@@ -37,7 +37,7 @@ public enum CountiesUnitedStatesMaryland : String, SovereignStateLevel2Division 
         return SubdivisionsUnitedStates.maryland
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .baltimore_city: return "Baltimore"
         case .prince_george_s: return "Prince George's"
@@ -47,7 +47,7 @@ public enum CountiesUnitedStatesMaryland : String, SovereignStateLevel2Division 
         }
     }
     
-    public var fips_code: Int {
+    public var fips_code : Int {
         switch self {
         case .allegany: return 001
         case .anne_arundel: return 003
