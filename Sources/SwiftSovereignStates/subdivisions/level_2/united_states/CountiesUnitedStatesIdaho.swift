@@ -53,7 +53,7 @@ public enum CountiesUnitedStatesIdaho : String, SovereignStateLevel2Division { /
     case valley
     case washington
     
-    public var subdivision : SovereignStateSubdivision {
+    public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.idaho
     }
     
