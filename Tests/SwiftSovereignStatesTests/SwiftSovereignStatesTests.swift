@@ -21,20 +21,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         generate_english_localization()
         test_localization()
         
-        //await generate_sovereign_regions()
-        await generate_level_2_divisions()
-        
-        //try await test_benchmarks(cache: false)
-        //try await test_benchmarks(cache: true)
-        
-        //let seconds:UInt64 = 500_000_000
-        //try await validateCountryWikipediaURLs(seconds)
-        //try await validateSubdivisionWikipediaURLs(seconds)
-        //try await validateCityWikipediaURLs(seconds)
-    }
-    
-    private func generate_sovereign_regions() async {
-        let regexReplacements:[String:String] = [
+        let regex_replacements:[String:String] = [
             "( |-|'|/|–)" : "_",
             "(\\.|\\!|\\?|,)" : "",
             
@@ -55,6 +42,19 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
+        //await generate_level_1_divisions(regex_replacements)
+        //await generate_level_2_divisions(regex_replacements)
+        
+        //try await test_benchmarks(cache: false)
+        //try await test_benchmarks(cache: true)
+        
+        //let seconds:UInt64 = 500_000_000
+        //try await validateCountryWikipediaURLs(seconds)
+        //try await validateSubdivisionWikipediaURLs(seconds)
+        //try await validateCityWikipediaURLs(seconds)
+    }
+    
+    private func generate_level_1_divisions(_ regex_replacements: [String:String]) async {
         guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Districts_of_Uganda") else {
             return
         }
@@ -76,7 +76,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                             city = String(city.prefix(city.count-1))
                         }
                         let previousCity:String = city.replacingOccurrences(of: " ", with: "_")
-                        for (regex, replacement) in regexReplacements {
+                        for (regex, replacement) in regex_replacements {
                             city = city.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
                         }
                         let didReplace:Bool = !previousCity.elementsEqual(city)
@@ -103,28 +103,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             print(flagURL)
         }
     }
-    private func generate_level_2_divisions() async {
-        let regexReplacements:[String:String] = [
-            "( |-|'|/|–)" : "_",
-            "(\\.|\\!|\\?|,)" : "",
-            
-            "(à|á|â|ä|ã|å|ā|ă)" : "a",
-            "(æ)" : "ae",
-            "(ç|ć|č|ċ)" : "c",
-            "(è|é|ê|ë|ē|ė|ę)" : "e",
-            "(ġ|ğ)" : "g",
-            "(ħ)" : "h",
-            "(î|ï|í|ī|į|ì|ı|İ)" : "i",
-            "(ł)" : "l",
-            "(ñ|ń|ň)" : "n",
-            "(ô|ö|ò|ó|œ|ø|ō|õ|ð)" : "o",
-            "(þ)" : "th",
-            "(ß|ś|š|ș|ş)" : "s",
-            "(ț)" : "t",
-            "(û|ü|ù|ú|ū)" : "u",
-            "(ÿ|ý)" : "y",
-            "(ž|ź|ż)" : "z"
-        ]
+    private func generate_level_2_divisions(_ regex_replacements: [String:String]) async {
         guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_parishes_in_Louisiana") else {
             return
         }
@@ -150,7 +129,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                             identifier = String(identifier.prefix(identifier.count-1))
                         }
                         let previous_identifier:String = identifier.replacingOccurrences(of: " ", with: "_")
-                        for (regex, replacement) in regexReplacements {
+                        for (regex, replacement) in regex_replacements {
                             identifier = identifier.replacingOccurrences(of: regex, with: replacement, options: .regularExpression)
                         }
                         let didReplace:Bool = !previous_identifier.elementsEqual(identifier)
