@@ -125,7 +125,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_counties_in_South_Dakota") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_boroughs_and_census_areas_in_Alaska") else {
             return
         }
         var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String]()
@@ -143,6 +143,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                         let name:String = element.get_text()!
                             .replacingOccurrences(of: "City and County of ", with: "")
                             .replacingOccurrences(of: " County", with: "")
+                            .replacingOccurrences(of: " Borough", with: "")
                         identifier = name.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
                         if identifier.hasSuffix(" ") {
                             identifier = String(identifier.prefix(identifier.count-1))
