@@ -125,12 +125,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
-        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_boroughs_and_census_areas_in_Alaska") else {
+        guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/List_of_cities_and_counties_in_Virginia") else {
             return
         }
         var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String]()
         let tables:XPathObject = test.css("table.sortable")
-        if let table:Kanna.XMLElement = tables.first {
+        let table:Kanna.XMLElement = tables[1]
             let trs:XPathObject = table.css("tbody tr")
             for tr in trs {
                 if let ths:XPathObject = tr.css("th").first?.css("a[href]") {
@@ -167,7 +167,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                         }
                     }
                 }
-            }
+            
         }
         identifiers = identifiers.sorted { $0 < $1 }
         names = names.sorted { $0 < $1 }
