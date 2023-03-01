@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SovereignStateCityType : CaseIterable { // https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country
+public enum SovereignStateCityType : String, CaseIterable { // https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country
     case borough
     case census_designated_place
     case charter_township

@@ -508,7 +508,13 @@ public enum Country : String, SovereignState {
     }
     /// Whether or not this Country is only recognized by the United Nations as a sovereign state.
     public var is_united_nations_observer_state : Bool {
-        return self == .palestine || self == .vatican_city
+        switch self {
+        case .palestine,
+                .vatican_city:
+            return true
+        default:
+            return false
+        }
     }
     /// Whether or not this Country is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
     public var is_nato_member : Bool {

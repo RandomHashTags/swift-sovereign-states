@@ -140,6 +140,12 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
     
     /// The neighboring subdivisions, in relation the its administrative borders.
     var neighbors : [any SovereignStateSubdivision]? { get }
+    
+    /// The level-2 administrative units' type this subdivision contains.
+    var counties_type : (any SovereignStateLevel2Division.Type)? { get }
+    /// The level-2 administrative units this subdivision contains.
+    var counties : [any SovereignStateLevel2Division]? { get }
+    
     /// The level-3 administrative units' type this subdivision contains.
     var cities_type : (any SovereignStateCity.Type)? { get }
     /// The level-3 administrative units this subdivision contains.
@@ -175,6 +181,14 @@ public extension SovereignStateSubdivision {
     var neighbors : [any SovereignStateSubdivision]? {
         return nil
     }
+    
+    var counties_type : (any SovereignStateLevel2Division.Type)? {
+        return nil
+    }
+    var counties : [any SovereignStateLevel2Division]? {
+        return nil
+    }
+    
     var cities_type : (any SovereignStateCity.Type)? {
         return nil
     }

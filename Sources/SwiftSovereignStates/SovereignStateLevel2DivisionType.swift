@@ -11,4 +11,5 @@ public enum SovereignStateLevel2DivisionType : String, CaseIterable {
     case boroughs
     case counties
     case independent_cities
+    case parishes
 }
