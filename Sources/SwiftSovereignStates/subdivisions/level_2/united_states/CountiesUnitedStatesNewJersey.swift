@@ -34,6 +34,10 @@ public enum CountiesUnitedStatesNewJersey : String, SovereignStateLevel2Division
         return SubdivisionsUnitedStates.new_jersey
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .atlantic: return 001

@@ -104,7 +104,6 @@ public enum CountiesUnitedStatesVirginia : String, SovereignStateLevel2Division 
     case wythe
     case york
     
-    // TODO: fix; independent cities (not counties, but county-equivalents)
     case alexandria
     case bristol
     case buena_vista
@@ -146,6 +145,53 @@ public enum CountiesUnitedStatesVirginia : String, SovereignStateLevel2Division 
     
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.virginia
+    }
+    
+    public var type : SovereignStateLevel2DivisionType {
+        switch self {
+        case .alexandria,
+                .bristol,
+                .buena_vista,
+                .charlottesville,
+                .chesapeake,
+                .colonial_heights,
+                .covington,
+                .danville,
+                .emporia,
+                .fairfax_city,
+                .falls_church,
+                .franklin_city,
+                .fredericksburg,
+                .galax,
+                .hampton,
+                .harrisonburg,
+                .hopewell,
+                .lexington,
+                .lynchburg,
+                .manassas,
+                .manassas_park,
+                .martinsville,
+                .newport_news,
+                .norfolk,
+                .norton,
+                .petersburg,
+                .poquoson,
+                .portsmouth,
+                .radford,
+                .richmond_city,
+                .roanoke_city,
+                .salem,
+                .staunton,
+                .suffolk,
+                .virginia_beach,
+                .waynesboro,
+                .williamsburg,
+                .winchester:
+            return SovereignStateLevel2DivisionType.independent_cities
+        default:
+            return SovereignStateLevel2DivisionType.counties
+        }
+        
     }
     
     public var real_name : String? {

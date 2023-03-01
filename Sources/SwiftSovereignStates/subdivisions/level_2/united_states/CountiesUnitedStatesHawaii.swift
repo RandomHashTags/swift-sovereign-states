@@ -18,6 +18,10 @@ public enum CountiesUnitedStatesHawaii : String, SovereignStateLevel2Division { 
         return SubdivisionsUnitedStates.hawaii
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .hawaii: return 001

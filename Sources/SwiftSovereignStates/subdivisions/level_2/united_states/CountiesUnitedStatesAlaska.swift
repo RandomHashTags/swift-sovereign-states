@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CountiesUnitedStatesAlaska : String, SovereignStateLevel2Division { // https://en.wikipedia.org/wiki/List_of_boroughs_and_census_areas_in_Alaska | TODO: boroughs; not counties
+public enum CountiesUnitedStatesAlaska : String, SovereignStateLevel2Division { // https://en.wikipedia.org/wiki/List_of_boroughs_and_census_areas_in_Alaska
     case aleutians_east
     case anchorage
     case bristol_bay
@@ -25,12 +25,16 @@ public enum CountiesUnitedStatesAlaska : String, SovereignStateLevel2Division { 
     case petersburg
     case sitka
     case skagway
-    case unorganized // TODO: fix
+    case unorganized
     case wrangell
     case yakutat
     
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.alaska
+    }
+    
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.boroughs
     }
     
     public var real_name : String? {
@@ -59,7 +63,7 @@ public enum CountiesUnitedStatesAlaska : String, SovereignStateLevel2Division { 
         case .petersburg: return 195
         case .sitka: return 220
         case .skagway: return 230
-        case .unorganized: return -1
+        case .unorganized: return -1 // TODO: fix?
         case .wrangell: return 275
         case .yakutat: return 282
         }

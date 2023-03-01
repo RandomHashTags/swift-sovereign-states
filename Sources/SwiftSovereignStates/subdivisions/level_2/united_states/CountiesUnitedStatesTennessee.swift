@@ -108,6 +108,10 @@ public enum CountiesUnitedStatesTennessee : String, SovereignStateLevel2Division
         return SubdivisionsUnitedStates.tennessee
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .anderson: return 001

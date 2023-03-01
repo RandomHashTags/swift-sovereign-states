@@ -23,6 +23,10 @@ public enum CountiesUnitedStatesNewHampshire : String, SovereignStateLevel2Divis
         return SubdivisionsUnitedStates.new_hampshire
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var real_name : String? {
         switch self {
         case .coos: return "Coös"

@@ -18,6 +18,10 @@ public enum CountiesUnitedStatesRhodeIsland : String, SovereignStateLevel2Divisi
         return SubdivisionsUnitedStates.rhode_island
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .bristol: return 001

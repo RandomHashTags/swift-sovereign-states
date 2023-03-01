@@ -46,6 +46,10 @@ public enum CountiesUnitedStatesNewMexico : String, SovereignStateLevel2Division
         return SubdivisionsUnitedStates.new_mexico
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var real_name : String? {
         switch self {
         case .dona_ana: return "Doña Ana"

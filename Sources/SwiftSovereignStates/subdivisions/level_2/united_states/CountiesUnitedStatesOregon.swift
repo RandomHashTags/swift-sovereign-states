@@ -49,6 +49,10 @@ public enum CountiesUnitedStatesOregon : String, SovereignStateLevel2Division { 
         return SubdivisionsUnitedStates.oregon
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .baker: return 001

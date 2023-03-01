@@ -68,6 +68,10 @@ public enum CountiesUnitedStatesWestVirginia : String, SovereignStateLevel2Divis
         return SubdivisionsUnitedStates.west_virginia
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .barbour: return 001

@@ -103,7 +103,7 @@ public enum CountiesUnitedStatesMissouri : String, SovereignStateLevel2Division 
     case saint_clair
     case saint_francois
     case saint_louis
-    case saint_louis_city // TODO: fix (independent city)
+    case saint_louis_city
     case sainte_genevieve
     case saline
     case schuyler
@@ -126,6 +126,15 @@ public enum CountiesUnitedStatesMissouri : String, SovereignStateLevel2Division 
     
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.missouri
+    }
+    
+    public var type : SovereignStateLevel2DivisionType {
+        switch self {
+        case .saint_louis_city:
+            return SovereignStateLevel2DivisionType.independent_cities
+        default:
+            return SovereignStateLevel2DivisionType.counties
+        }
     }
     
     public var real_name: String? {

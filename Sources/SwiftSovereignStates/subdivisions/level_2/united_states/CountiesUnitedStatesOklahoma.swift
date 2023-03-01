@@ -90,6 +90,10 @@ public enum CountiesUnitedStatesOklahoma : String, SovereignStateLevel2Division 
         return SubdivisionsUnitedStates.oklahoma
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .adair: return 001

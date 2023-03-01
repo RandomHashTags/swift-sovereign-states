@@ -130,7 +130,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
         var identifiers:[String] = [String](), names:[String] = [String](), fips_codes:[String] = [String]()
         let tables:XPathObject = test.css("table.sortable")
-        let table:Kanna.XMLElement = tables[1]
+        if let table:Kanna.XMLElement = tables.first {
             let trs:XPathObject = table.css("tbody tr")
             for tr in trs {
                 if let ths:XPathObject = tr.css("th").first?.css("a[href]") {
@@ -167,7 +167,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                         }
                     }
                 }
-            
+            }
         }
         identifiers = identifiers.sorted { $0 < $1 }
         names = names.sorted { $0 < $1 }

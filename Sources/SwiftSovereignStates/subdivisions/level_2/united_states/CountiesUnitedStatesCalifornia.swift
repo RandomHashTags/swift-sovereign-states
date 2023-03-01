@@ -71,6 +71,10 @@ public enum CountiesUnitedStatesCalifornia : String, SovereignStateLevel2Divisio
         return SubdivisionsUnitedStates.california
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .alameda: return 001

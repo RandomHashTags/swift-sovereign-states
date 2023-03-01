@@ -21,6 +21,10 @@ public enum CountiesUnitedStatesConnecticut : String, SovereignStateLevel2Divisi
         return SubdivisionsUnitedStates.connecticut
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .fairfield: return 001

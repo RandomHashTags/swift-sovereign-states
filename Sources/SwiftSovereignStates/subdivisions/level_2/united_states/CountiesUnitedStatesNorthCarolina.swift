@@ -113,6 +113,10 @@ public enum CountiesUnitedStatesNorthCarolina : String, SovereignStateLevel2Divi
         return SubdivisionsUnitedStates.north_carolina
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .alamance: return 001

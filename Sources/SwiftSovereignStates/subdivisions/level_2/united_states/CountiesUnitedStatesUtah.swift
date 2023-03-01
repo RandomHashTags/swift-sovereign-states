@@ -42,6 +42,10 @@ public enum CountiesUnitedStatesUtah : String, SovereignStateLevel2Division { //
         return SubdivisionsUnitedStates.utah
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .beaver: return 001

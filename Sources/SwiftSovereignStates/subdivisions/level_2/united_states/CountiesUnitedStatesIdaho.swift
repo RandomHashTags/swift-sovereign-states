@@ -57,6 +57,10 @@ public enum CountiesUnitedStatesIdaho : String, SovereignStateLevel2Division { /
         return SubdivisionsUnitedStates.idaho
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .ada: return 001

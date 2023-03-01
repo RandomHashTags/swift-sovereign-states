@@ -59,6 +59,10 @@ public enum CountiesUnitedStatesSouthCarolina : String, SovereignStateLevel2Divi
         return SubdivisionsUnitedStates.south_carolina
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .abbeville: return 001

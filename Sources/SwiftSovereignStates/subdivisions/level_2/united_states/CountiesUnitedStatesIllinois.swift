@@ -115,6 +115,10 @@ public enum CountiesUnitedStatesIllinois : String, SovereignStateLevel2Division 
         return SubdivisionsUnitedStates.illinois
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var fips_code : Int {
         switch self {
         case .adams: return 001

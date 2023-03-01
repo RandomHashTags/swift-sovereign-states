@@ -112,6 +112,10 @@ public enum CountiesUnitedStatesIowa : String, SovereignStateLevel2Division { //
         return SubdivisionsUnitedStates.iowa
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var real_name : String? {
         switch self {
         case .o_brien: return "O'Brien"

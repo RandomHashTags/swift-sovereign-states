@@ -11,7 +11,7 @@ public enum CountiesUnitedStatesMaryland : String, SovereignStateLevel2Division 
     case allegany
     case anne_arundel
     case baltimore
-    case baltimore_city // TODO: fix (independent city)
+    case baltimore_city
     case calvert
     case caroline
     case carroll
@@ -35,6 +35,15 @@ public enum CountiesUnitedStatesMaryland : String, SovereignStateLevel2Division 
     
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.maryland
+    }
+    
+    public var type : SovereignStateLevel2DivisionType {
+        switch self {
+        case .baltimore_city:
+            return SovereignStateLevel2DivisionType.independent_cities
+        default:
+            return SovereignStateLevel2DivisionType.counties
+        }
     }
     
     public var real_name : String? {

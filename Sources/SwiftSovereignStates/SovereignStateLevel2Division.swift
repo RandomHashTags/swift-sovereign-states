@@ -10,6 +10,7 @@ import Foundation
 public protocol SovereignStateLevel2Division : SovereignRegion {
     /// The level-1 administrative unit this division is located in or claimed by.
     var subdivision : any SovereignStateSubdivision { get }
+    var type : SovereignStateLevel2DivisionType { get }
     /// _Federal Information Processing Standard_ number or regional equivalent representing this division.
     var fips_code : Int { get }
 }

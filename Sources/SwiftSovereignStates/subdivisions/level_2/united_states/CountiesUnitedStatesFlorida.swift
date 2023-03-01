@@ -80,6 +80,10 @@ public enum CountiesUnitedStatesFlorida : String, SovereignStateLevel2Division {
         return SubdivisionsUnitedStates.florida
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        return SovereignStateLevel2DivisionType.counties
+    }
+    
     public var real_name : String? {
         switch self {
         case .miami_dade: return "Miami-Dade"

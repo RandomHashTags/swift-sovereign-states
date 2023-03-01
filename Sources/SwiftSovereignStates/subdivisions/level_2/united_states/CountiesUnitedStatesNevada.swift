@@ -30,6 +30,15 @@ public enum CountiesUnitedStatesNevada : String, SovereignStateLevel2Division { 
         return SubdivisionsUnitedStates.nevada
     }
     
+    public var type : SovereignStateLevel2DivisionType {
+        switch self {
+        case .carson_city:
+            return SovereignStateLevel2DivisionType.independent_cities
+        default:
+            return SovereignStateLevel2DivisionType.counties
+        }
+    }
+    
     public var fips_code : Int {
         switch self {
         case .carson_city: return 510
