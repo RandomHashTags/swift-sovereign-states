@@ -14,6 +14,17 @@ public protocol SovereignStateLevel2Division : SovereignRegion {
     /// _Federal Information Processing Standard_ number or regional equivalent representing this division.
     var fips_code : Int { get }
 }
+
+public extension SovereignStateSubdivision {
+    func valueOfLevel2DivisionIdentifier(_ string: String) -> (any SovereignStateLevel2Division)? {
+        return counties_type?.init(rawValue: string)
+    }
+    
+    func valueOfLevel2DivisionFIPSCode(_ code: Int) -> (any SovereignStateLevel2Division)? {
+        return counties?.first(where: { $0.fips_code == code })
+    }
+}
+
 public extension SovereignStateLevel2Division {
     init?(_ description: String) { // TODO: fix
         return nil

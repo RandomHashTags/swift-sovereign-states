@@ -186,7 +186,7 @@ internal extension Sequence {
     }
 }
 internal enum SovereignRegions {
-    private static var excluded_words:Set<Substring> = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y", "du", "es", "el", "do", "ob", "na", "v", "pri", "du"]
+    private static var excluded_words:Set<Substring> = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y", "du", "es", "el", "do", "ob", "na", "v", "pri", "du", "qui"]
     
     fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String {
         var values:[Substring] = input.split(separator: "_")
