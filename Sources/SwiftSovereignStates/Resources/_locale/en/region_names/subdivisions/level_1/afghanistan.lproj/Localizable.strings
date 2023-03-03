@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/3/23.
+  
+*/
+"badakhshan" = "Badakhshan";
+"badghis" = "Badghis";
+"baghlan" = "Baghlan";
+"balkh" = "Balkh";
+"bamyan" = "Bamyan";
+"daykundi" = "Daykundi";
+"farah" = "Farah";
+"faryab" = "Faryab";
+"ghazni" = "Ghazni";
+"ghor" = "Ghor";
+"helmand" = "Helmand";
+"herat" = "Herat";
+"jowzjan" = "Jowzjan";
+"kabul" = "Kabul";
+"kandahar" = "Kandahar";
+"kapisa" = "Kapisa";
+"khost" = "Khost";
+"kunar" = "Kunar";
+"kunduz" = "Kunduz";
+"laghman" = "Laghman";
+"logar" = "Logar";
+"nangarhar" = "Nangarhar";
+"nimruz" = "Nimruz";
+"nuristan" = "Nuristan";
+"paktia" = "Paktia";
+"paktika" = "Paktika";
+"panjshir" = "Panjshir";
+"parwan" = "Parwan";
+"samangan" = "Samangan";
+"sar_e_pol" = "Sar-e Pol";
+"takhar" = "Takhar";
+"uruzgan" = "Uruzgan";
+"wardak" = "Wardak";
+"zabul" = "Zabul";

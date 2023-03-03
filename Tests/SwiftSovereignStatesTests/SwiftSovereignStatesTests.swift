@@ -18,7 +18,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testNeighbors()
         testCities()
         
-        generate_english_localization()
+        //generate_english_localization()
         test_localization()
         
         let regex_replacements:[String:String] = [
@@ -572,17 +572,17 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     
     private func generate_english_localization() {
-        /*for country in Country.allCases {
-            let short_name_id:String = "country_short_name_" + country.rawValue
-            print("case " + short_name_id + "\" = \"" + country.short_name + "\";")
-        }*/
+        for subdivision in Country.albania.subdivisions! {
+            let id:String = subdivision.rawValue
+            print("\"" + id + "\" = \"" + subdivision.name + "\";")
+        }
     }
     private func test_localization() {
         let supported_language_codes:[String] = ["en"]
         for language in supported_language_codes {
             var missing:[String] = [String]()
             for country in Country.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_country_short_name(country, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_country_name(country, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(country.rawValue)
                 }
