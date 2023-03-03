@@ -457,6 +457,8 @@ public enum CitiesUnitedStatesKentucky : String, SovereignStateCity { // https:/
         switch self {
         case .fleming_neon: return "Fleming-Neon"
         case .graymoor_devondale: return "Graymoor-Devondale"
+        case .mchenry: return "McHenry"
+        case .mckee: return "McKee"
         default: return nil
         }
     }

@@ -104,6 +104,13 @@ public enum CountiesUnitedStatesMinnesota : String, SovereignStateLevel2Division
         return SovereignStateLevel2DivisionType.counties
     }
     
+    public var real_name : String? {
+        switch self {
+        case .mcleod: return "McLeod"
+        default: return nil
+        }
+    }
+    
     public var fips_code : Int {
         switch self {
         case .aitkin: return 001

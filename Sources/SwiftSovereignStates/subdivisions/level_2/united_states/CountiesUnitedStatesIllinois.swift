@@ -124,6 +124,9 @@ public enum CountiesUnitedStatesIllinois : String, SovereignStateLevel2Division 
         case .dekalb: return "DeKalb"
         case .dewitt: return "DeWitt"
         case .lasalle: return "LaSalle"
+        case .mcdonough: return "McDonough"
+        case .mchenry: return "McHenry"
+        case .mclean: return "McLean"
         default: return nil
         }
     }

@@ -542,6 +542,13 @@ public enum CitiesUnitedStatesArkansas : String, SovereignStateCity { // https:/
         switch self {
         case .fifty_six: return "Fifty-Six"
         case .helena_west_helena: return "Helena-West Helena"
+        case .mccaskill: return "McCaskill"
+        case .mccrory: return "McCrory"
+        case .mcdougal: return "McDougal"
+        case .mcgehee: return "McGehee"
+        case .mcnab: return "McNab"
+        case .mcneil: return "McNeil"
+        case .mcrae: return "McRae"
         case .o_kean: return "O'Kean"
         case .st_charles: return "St. Charles"
         case .st_francis: return "St. Francis"

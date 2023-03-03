@@ -53,6 +53,7 @@ public enum CountiesUnitedStatesNewMexico : String, SovereignStateLevel2Division
     public var real_name : String? {
         switch self {
         case .dona_ana: return "Doña Ana"
+        case .mckinley: return "McKinley"
         default: return nil
         }
     }

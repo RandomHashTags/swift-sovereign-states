@@ -973,6 +973,12 @@ public enum CitiesUnitedStatesOhio : String, SovereignStateCity { // https://en.
         switch self {
         case .centerville_montgomery, .centerville_gallia: return "Centerville"
         case .geneva_on_the_lake: return "Geneva-on-the-Lake"
+        case .mcarthur: return "McArthur"
+        case .mcclure: return "McClure"
+        case .mccomb: return "McComb"
+        case .mcconnelsville: return "McConnelsville"
+        case .mcdonald: return "McDonald"
+        case .mcguffey: return "McGuffey"
         case .mentor_on_the_lake: return "Mentor-on-the-Lake"
         case .oakwood_montgomery, .oakwood_cuyahoga, .oakwood_paulding: return "Oakwood"
         case .put_in_bay: return "Put-in-Bay"

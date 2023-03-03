@@ -271,6 +271,15 @@ public enum CountiesUnitedStatesTexas : String, SovereignStateLevel2Division { /
         return SovereignStateLevel2DivisionType.counties
     }
     
+    public var real_name : String? {
+        switch self {
+        case .mcculloch: return "McCulloch"
+        case .mclennan: return "McLennan"
+        case .mcmullen: return "McMullen"
+        default: return nil
+        }
+    }
+    
     public var fips_code : Int {
         switch self {
         case .anderson: return 001

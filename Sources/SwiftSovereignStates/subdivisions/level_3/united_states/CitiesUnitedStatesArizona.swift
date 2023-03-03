@@ -864,6 +864,9 @@ public enum CitiesUnitedStatesArizona : String, SovereignStateCity { // https://
         case .cottonwood_apache: return "Cottonwood"
         case .heber_overgaard: return "Heber-Overgaard"
         case .hotevilla_bacavi: return "Hotevilla-Bacavi"
+        case .mcconnico: return "McConnico"
+        case .mcnary: return "McNary"
+        case .mcneal: return "McNeal"
         case .new_kingman_butler: return "New Kingman-Butler"
         case .oljato_monument_valley: return "Oljato-Monument Valley"
         case .red_rock_apache, .red_rock_pinal:

@@ -73,6 +73,10 @@ public enum CountiesUnitedStatesNorthDakota : String, SovereignStateLevel2Divisi
     public var real_name : String? {
         switch self {
         case .lamoure: return "LaMoure"
+        case .mchenry: return "McHenry"
+        case .mcintosh: return "McIntosh"
+        case .mckenzie: return "McKenzie"
+        case .mclean: return "McLean"
         default: return nil
         }
     }

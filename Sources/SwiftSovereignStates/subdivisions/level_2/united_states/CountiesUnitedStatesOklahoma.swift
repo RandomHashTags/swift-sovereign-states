@@ -94,6 +94,15 @@ public enum CountiesUnitedStatesOklahoma : String, SovereignStateLevel2Division 
         return SovereignStateLevel2DivisionType.counties
     }
     
+    public var real_name : String? {
+        switch self {
+        case .mcclain: return "McClain"
+        case .mccurtain: return "McCurtain"
+        case .mcintosh: return "McIntosh"
+        default: return nil
+        }
+    }
+    
     public var fips_code : Int {
         switch self {
         case .adair: return 001

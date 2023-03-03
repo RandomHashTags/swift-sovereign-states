@@ -192,7 +192,7 @@ internal extension Sequence {
 internal enum SovereignRegions {
     private static var excluded_words:Set<Substring> = ["and", "the", "da", "of", "del", "de", "la", "al", "on", "y", "du", "es", "el", "do", "ob", "na", "v", "pri", "du", "qui"]
     
-    fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String {
+    fileprivate static func toCorrectCapitalization(input: String, decimalSeparatorIndex: Int?) -> String { // TODO: add localization for all SovereignRegion names, preventing the use of this function for performance gains
         var values:[Substring] = input.split(separator: "_")
         if let decimalSeparatorIndex:Int = decimalSeparatorIndex {
             values[decimalSeparatorIndex] = values[decimalSeparatorIndex] + "."
@@ -203,11 +203,7 @@ internal enum SovereignRegions {
         }).joined(separator: " ")
     }
     private static func capitalize(_ string: Substring) -> Substring {
-        if string.starts(with: "mc") {
-            return string.first!.uppercased() + "c" + string[string.index(string.startIndex, offsetBy: 2)].uppercased() + string.suffix(string.count - 3)
-        } else {
-            return string.first!.uppercased() + string.suffix(string.count - 1)
-        }
+        return string.first!.uppercased() + string.suffix(string.count - 1)
     }
     
     fileprivate static func formatTime(date: Date, timeZone: TimeZone, timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String {

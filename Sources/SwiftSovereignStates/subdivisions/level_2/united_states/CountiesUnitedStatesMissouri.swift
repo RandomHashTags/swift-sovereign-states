@@ -139,6 +139,7 @@ public enum CountiesUnitedStatesMissouri : String, SovereignStateLevel2Division 
     
     public var real_name : String? {
         switch self {
+        case .mcdonald: return "McDonald"
         case .saint_louis_city: return "Saint Louis"
         default: return nil
         }

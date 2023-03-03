@@ -250,6 +250,7 @@ public enum CitiesUnitedStatesWashington : String, SovereignStateCity { // https
     
     public var real_name : String? {
         switch self {
+        case .mccleary: return "McCleary"
         case .sedro_woolley: return "Sedro-Woolley"
         default: return nil
         }

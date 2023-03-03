@@ -500,6 +500,9 @@ public enum CitiesUnitedStatesAlabama : String, SovereignStateCity { // https://
         switch self {
         case .gu_win: return "Gu-Win"
         case .jacksons_gap: return "Jackson's Gap"
+        case .mcintosh: return "McIntosh"
+        case .mckenzie: return "McKenzie"
+        case .mcmullen: return "McMullen"
         default: return nil
         }
     }

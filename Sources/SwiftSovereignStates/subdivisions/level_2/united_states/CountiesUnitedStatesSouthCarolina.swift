@@ -63,6 +63,13 @@ public enum CountiesUnitedStatesSouthCarolina : String, SovereignStateLevel2Divi
         return SovereignStateLevel2DivisionType.counties
     }
     
+    public var real_name : String? {
+        switch self {
+        case .mccormick: return "McCormick"
+        default: return nil
+        }
+    }
+    
     public var fips_code : Int {
         switch self {
         case .abbeville: return 001

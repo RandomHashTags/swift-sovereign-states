@@ -137,6 +137,15 @@ public enum CountiesUnitedStatesKentucky : String, SovereignStateLevel2Division 
         return SovereignStateLevel2DivisionType.counties
     }
     
+    public var real_name : String? {
+        switch self {
+        case .mccracken: return "McCracken"
+        case .mccreary: return "McCreary"
+        case .mclean: return "McLean"
+        default: return nil
+        }
+    }
+    
     public var fips_code : Int {
         switch self {
         case .adair: return 001

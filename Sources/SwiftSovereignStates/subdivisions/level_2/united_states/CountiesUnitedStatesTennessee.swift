@@ -112,9 +112,11 @@ public enum CountiesUnitedStatesTennessee : String, SovereignStateLevel2Division
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .dekalb: return "DeKalb"
+        case .mcminn: return "McMinn"
+        case .mcnairy: return "McNairy"
         default: return nil
         }
     }
