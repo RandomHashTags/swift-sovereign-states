@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/3/23.
+  
+*/
+"acre" = "Acre";
+"alagoas" = "Alagoas";
+"amapa" = "Amapá";
+"amazonas" = "Amazonas";
+"bahia" = "Bahia";
+"ceara" = "Ceará";
+"espirito_santo" = "Espírito Santo";
+"goias" = "Goiás";
+"maranhao" = "Maranhão";
+"mato_grosso" = "Mato Grosso";
+"mato_grosso_do_sul" = "Mato Grosso do Sul";
+"minas_gerais" = "Minas Gerais";
+"para" = "Pará";
+"paraiba" = "Paraíba";
+"parana" = "Paraná";
+"pernambuco" = "Pernambuco";
+"piaui" = "Piauí";
+"rio_de_janeiro" = "Rio de Janeiro";
+"rio_grande_do_norte" = "Rio Grande do Norte";
+"rio_grande_do_sul" = "Rio Grande do Sul";
+"rondonia" = "Rondônia";
+"roraima" = "Roraima";
+"santa_catarina" = "Santa Catarina";
+"sao_paulo" = "Sao Paulo";
+"sergipe" = "Sergipe";
+"tocantins" = "Tocantins";
+"distrito_federal" = "Distrito Federal";

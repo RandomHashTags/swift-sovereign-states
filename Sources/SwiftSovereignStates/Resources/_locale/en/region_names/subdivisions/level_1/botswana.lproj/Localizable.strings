@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/3/23.
+  
+*/
+"central" = "Central";
+"chobe" = "Chobe";
+"ghanzi" = "Ghanzi";
+"kgalagadi" = "Kgalagadi";
+"kgatleng" = "Kgatleng";
+"kweneng" = "Kweneng";
+"ngamiland" = "Ngamiland";
+"north_east" = "North-East";
+"south_east" = "South-East";
+"southern" = "Southern";
+"francistown" = "Francistown";
+"gaborone" = "Gaborone";
+"jwaneng" = "Jwaneng";
+"lobatse" = "Lobatse";
+"orapa" = "Orapa";
+"selebi_phikwe" = "Selebi-Phikwe";
+"sowa" = "Sowa";
