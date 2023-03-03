@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/3/23.
+  
+*/
+"amazonas" = "Amazonas";
+"anzoategui" = "Anzoátegui";
+"apure" = "Apure";
+"aragua" = "Aragua";
+"barinas" = "Barinas";
+"bolivar" = "Bolívar";
+"carabobo" = "Carabobo";
+"cojedes" = "Cojedes";
+"delta_amacuro" = "Delta Amacuro";
+"falcon" = "Falcón";
+"guarico" = "Guárico";
+"la_guaira" = "La Guaira";
+"lara" = "Lara";
+"merida" = "Mérida";
+"miranda" = "Miranda";
+"monagas" = "Monagas";
+"nueva_esparta" = "Nueva Esparta";
+"portuguesa" = "Portuguesa";
+"sucre" = "Sucre";
+"tachira" = "Táchira";
+"trujillo" = "Trujillo";
+"yaracuy" = "Yaracuy";
+"zulia" = "Zulia";
+"capital_district" = "Capital District";
