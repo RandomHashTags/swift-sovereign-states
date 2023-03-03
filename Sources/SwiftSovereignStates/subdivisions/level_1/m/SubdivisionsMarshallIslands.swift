@@ -33,15 +33,15 @@ public enum SubdivisionsMarshallIslands : String, SovereignStateSubdivision { //
     case wotho
     case wotje
     
-    public var country: Country {
+    public var country : Country {
         return Country.marshall_islands
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.atolls
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .jabat,
                 .kili,

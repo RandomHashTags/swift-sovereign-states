@@ -104,7 +104,7 @@ public enum CountiesUnitedStatesMinnesota : String, SovereignStateLevel2Division
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var fips_code: Int {
+    public var fips_code : Int {
         switch self {
         case .aitkin: return 001
         case .anoka: return 003

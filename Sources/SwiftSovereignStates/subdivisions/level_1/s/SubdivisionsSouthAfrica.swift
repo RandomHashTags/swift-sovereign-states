@@ -18,22 +18,22 @@ public enum SubdivisionsSouthAfrica : String, SovereignStateSubdivision { // htt
     case northern_cape
     case western_cape
     
-    public var country: Country {
+    public var country : Country {
         return Country.south_africa
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .kwazulu_natal: return "KwaZulu-Natal"
         default: return nil
         }
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .free_state:
             return "_(province)"

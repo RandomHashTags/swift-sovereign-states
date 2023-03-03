@@ -28,15 +28,15 @@ public enum SubdivisionsFinland : String, SovereignStateSubdivision { // https:/
     case southwest_finland
     case uusimaa
     
-    public var country: Country {
+    public var country : Country {
         return Country.finland
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .aland: return "Åland"
         case .kanta_hame: return "Kanta-Häme"
@@ -45,7 +45,7 @@ public enum SubdivisionsFinland : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .lapland:
             return "_(Finland)"
@@ -56,7 +56,7 @@ public enum SubdivisionsFinland : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id: String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .aland: return "5/52/Flag_of_%C3%85land"
         case .central_finland: return "9/9a/Keski-suomi_lippu"

@@ -23,15 +23,15 @@ public enum SubdivisionsNauru : String, SovereignStateSubdivision { // https://e
     case uaboe
     case yaren
     
-    public var country: Country {
+    public var country : Country {
         return Country.nauru
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .ewa:
             return "_" + type_suffix + ",_Nauru"

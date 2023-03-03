@@ -30,11 +30,11 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
     case male
     case addu
     
-    public var country: Country {
+    public var country : Country {
         return Country.maldives
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .male:
             return SovereignStateSubdivisionType.cities
@@ -43,14 +43,14 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .male: return "Malé"
         default: return nil
         }
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .male:
             return nil

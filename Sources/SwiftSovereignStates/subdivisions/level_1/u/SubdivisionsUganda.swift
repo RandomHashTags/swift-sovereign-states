@@ -145,11 +145,11 @@ public enum SubdivisionsUganda : String, SovereignStateSubdivision { // https://
     case yumbe
     case zombo
     
-    public var country: Country {
+    public var country : Country {
         return Country.uganda
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .kampala:
             return SovereignStateSubdivisionType.cities
@@ -158,14 +158,14 @@ public enum SubdivisionsUganda : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .madi_okollo: return "Madi-Okollo"
         default: return nil
         }
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .busia:
             return "_" + type_suffix + ",_Uganda"

@@ -20,11 +20,11 @@ public enum SubdivisionsMozambique : String, SovereignStateSubdivision { // http
     case tete
     case zambezia
     
-    public var country: Country {
+    public var country : Country {
         return Country.mozambique
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .maputo_city:
             return SovereignStateSubdivisionType.cities
@@ -33,7 +33,7 @@ public enum SubdivisionsMozambique : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .maputo_city:
             return "Maputo"
@@ -42,7 +42,7 @@ public enum SubdivisionsMozambique : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .maputo_city:
             return nil

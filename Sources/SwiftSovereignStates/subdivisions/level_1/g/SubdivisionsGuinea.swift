@@ -18,11 +18,11 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
     
     case conakry
     
-    public var country: Country {
+    public var country : Country {
         return Country.guinea
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .conakry:
             return SovereignStateSubdivisionType.special_cities
@@ -31,7 +31,7 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
         }
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .boke: return "Boké"
         case .labe: return "Labé"
@@ -40,7 +40,7 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
         }
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .conakry:
             return nil

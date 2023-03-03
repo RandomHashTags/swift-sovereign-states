@@ -70,7 +70,7 @@ public enum CountiesUnitedStatesNorthDakota : String, SovereignStateLevel2Divisi
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var fips_code: Int {
+    public var fips_code : Int {
         switch self {
         case .adams: return 001
         case .barnes: return 003

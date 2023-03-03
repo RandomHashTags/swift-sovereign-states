@@ -57,7 +57,7 @@ public enum CountiesUnitedStatesNewMexico : String, SovereignStateLevel2Division
         }
     }
     
-    public var fips_code: Int {
+    public var fips_code : Int {
         switch self {
         case .bernalillo: return 001
         case .catron: return 003

@@ -21,11 +21,11 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
     case hamilton_city
     case st_george_s_town
     
-    public var country: Country {
+    public var country : Country {
         return Country.bermuda
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         switch self {
         case .hamilton:
             return SovereignStateSubdivisionType.cities
@@ -36,7 +36,7 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .smith_s: return "Smith's"
         case .st_george_s,
@@ -61,7 +61,7 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id: String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .devonshire: return nil
         case .hamilton: return nil

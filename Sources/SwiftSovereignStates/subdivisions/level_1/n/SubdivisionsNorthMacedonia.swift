@@ -10,11 +10,11 @@ import Foundation
 public enum SubdivisionsNorthMacedonia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Municipalities_of_North_Macedonia // TODO: fix - 84 subdivisions, but it says only 80 ?????????
     case bro
     
-    public var country: Country {
+    public var country : Country {
         return Country.north_macedonia
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.municipalities
     }
 }

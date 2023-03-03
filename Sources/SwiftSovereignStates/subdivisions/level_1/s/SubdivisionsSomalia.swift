@@ -15,15 +15,15 @@ public enum SubdivisionsSomalia : String, SovereignStateSubdivision { // https:/
     case south_west
     case somaliland
     
-    public var country: Country {
+    public var country : Country {
         return Country.somalia
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.federal_member_states
     }
     
-    public var wikipedia_flag_url_svg_id: String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .galmudug: return "9/9b/Flag_of_Galmudug_State_of_Somalia_%282015%29"
         case .hirshabelle: return "1/18/Hirshabeelle.png"

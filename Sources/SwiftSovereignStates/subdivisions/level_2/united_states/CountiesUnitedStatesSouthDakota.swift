@@ -83,7 +83,7 @@ public enum CountiesUnitedStatesSouthDakota : String, SovereignStateLevel2Divisi
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var fips_code: Int {
+    public var fips_code : Int {
         switch self {
         case .aurora: return 003
         case .beadle: return 005

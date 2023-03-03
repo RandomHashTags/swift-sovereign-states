@@ -21,15 +21,15 @@ public enum SubdivisionsMorocco : String, SovereignStateSubdivision { // https:/
     case souss_massa
     case tanger_tetouan_al_hoceima
     
-    public var country: Country {
+    public var country : Country {
         return Country.morocco
     }
     
-    public var type: SovereignStateSubdivisionType {
+    public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name: String? {
+    public var real_name : String? {
         switch self {
         case .beni_mellal_khenifra: return "Béni Mellal-Khénifra"
         case .casablanca_settat: return "Casablanca-Settat"
@@ -46,7 +46,7 @@ public enum SubdivisionsMorocco : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_url_suffix: String? {
+    public var wikipedia_url_suffix : String? {
         switch self {
         case .oriental:
             return "_(Morocco)"
@@ -55,7 +55,7 @@ public enum SubdivisionsMorocco : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id: String? {
+    public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .beni_mellal_khenifra: return nil
         case .casablanca_settat: return nil
