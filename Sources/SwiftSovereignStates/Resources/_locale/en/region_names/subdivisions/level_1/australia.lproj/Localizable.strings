@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/3/23.
+  
+*/
+"new_south_wales" = "New South Wales";
+"queensland" = "Queensland";
+"south_australia" = "South Australia";
+"tasmania" = "Tasmania";
+"victoria" = "Victoria";
+"western_australia" = "Western Australia";
+"australian_capital_territory" = "Australian Capital Territory";
+"jervis_bay_territory" = "Jervis Bay Territory";
+"northern_territory" = "Northern Territory";
+"ashmore_and_cartier_islands" = "Ashmore and Cartier Islands";
+"australian_antarctic_territory" = "Australian Antarctic Territory";
+"christmas_island" = "Christmas Island";
+"cocos_keeling_islands" = "Cocos (Keeling) Islands";
+"coral_sea_islands" = "Coral Sea Islands";
+"heard_island_and_mcdonald_islands" = "Heard Island and McDonald Islands";
+"norfolk_island" = "Norfolk Island";

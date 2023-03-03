@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/3/23.
+  
+*/
+"burgenland" = "Burgenland";
+"carinthia" = "Carinthia";
+"lower_austria" = "Lower Austria";
+"salzburg" = "Salzburg";
+"styria" = "Styria";
+"tyrol" = "Tyrol";
+"upper_austria" = "Upper Austria";
+"vienna" = "Vienna";
+"vorarlberg" = "Vorarlberg";
