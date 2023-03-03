@@ -68,7 +68,7 @@ public extension SovereignRegion {
         if let keywords:Set<String> = SwiftSovereignStateCacheSubdivisions.keywords[id] {
             return keywords
         }
-        var keywords:Set<String> = [real_name ?? short_name]
+        var keywords:Set<String> = [name]
         if let wikipedia_name:String = wikipedia_name {
             keywords.insert(wikipedia_name)
         }
@@ -98,6 +98,10 @@ public extension SovereignRegion {
     
     var aliases : Set<String>? {
         return nil
+    }
+    
+    var name : String {
+        return real_name ?? short_name
     }
     
     var short_name : String {
@@ -133,7 +137,7 @@ public extension SovereignRegion {
     }
     
     var wikipedia_url : String {
-        let name:String = (wikipedia_name ?? real_name ?? short_name).replacingOccurrences(of: " ", with: "_")
+        let name:String = (wikipedia_name ?? name).replacingOccurrences(of: " ", with: "_")
         return "https://en.wikipedia.org/wiki/" + (wikipedia_url_prefix ?? "") + SovereignRegions.urlEncoded(name) + (wikipedia_url_suffix ?? "")
     }
     var wikipedia_url_prefix : String? {
@@ -199,7 +203,11 @@ internal enum SovereignRegions {
         }).joined(separator: " ")
     }
     private static func capitalize(_ string: Substring) -> Substring {
-        return string.first!.uppercased() + string.suffix(string.count-1)
+        if string.starts(with: "mc") {
+            return string.first!.uppercased() + "c" + string[string.index(string.startIndex, offsetBy: 2)].uppercased() + string.suffix(string.count - 3)
+        } else {
+            return string.first!.uppercased() + string.suffix(string.count - 1)
+        }
     }
     
     fileprivate static func formatTime(date: Date, timeZone: TimeZone, timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String {

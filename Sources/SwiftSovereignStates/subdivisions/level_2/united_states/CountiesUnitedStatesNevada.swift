@@ -8,7 +8,7 @@
 import Foundation
 
 public enum CountiesUnitedStatesNevada : String, SovereignStateLevel2Division { // https://en.wikipedia.org/wiki/List_of_counties_in_Nevada
-    case carson_city // TODO: fix (independent city)
+    case carson_city
     case churchill
     case clark
     case douglas
@@ -58,6 +58,15 @@ public enum CountiesUnitedStatesNevada : String, SovereignStateLevel2Division { 
         case .storey: return 029
         case .washoe: return 031
         case .white_pine: return 033
+        }
+    }
+    
+    public var wikipedia_url_suffix : String? {
+        switch self {
+        case .carson_city:
+            return ",_Nevada"
+        default:
+            return default_wikipedia_url_suffix
         }
     }
 }

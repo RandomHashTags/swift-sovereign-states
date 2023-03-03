@@ -42,16 +42,21 @@ final class SwiftSovereignStatesTests: XCTestCase {
             "(ÿ|ý)" : "y",
             "(ž|ź|ż)" : "z"
         ]
+        
         //await generate_level_1_divisions(regex_replacements)
         //await generate_level_2_divisions(regex_replacements)
         
         //try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
         
-        //let seconds:UInt64 = 500_000_000
-        //try await validateCountryWikipediaURLs(seconds)
-        //try await validateSubdivisionWikipediaURLs(seconds)
-        //try await validateCityWikipediaURLs(seconds)
+        /*let seconds:UInt64 = 1 * 1_000_000_000
+        if let regions:[any SovereignRegion] = Country.united_states.subdivisions?.filter({ $0.rawValue[$0.rawValue.index($0.rawValue.startIndex, offsetBy: 0)] > "m" }).compactMap({ $0.counties }).flatMap({ $0 }) {
+            print("validating " + regions.count.description + " regions...")
+            try await validate_region_wikipedia_urls(regions: regions, seconds)
+        }*/
+        //try await validate_region_wikipedia_urls(regions: Country.allCases, seconds)
+        //try await validate_region_wikipedia_urls(regions: SovereignStateSubdivisions.all, seconds)
+        //try await validate_region_wikipedia_urls(regions: SovereignStateCities.all, seconds)
     }
     
     private func generate_level_1_divisions(_ regex_replacements: [String:String]) async {
@@ -415,39 +420,22 @@ final class SwiftSovereignStatesTests: XCTestCase {
             }
         }
     }
-    private func validateCountryWikipediaURLs(_ seconds: UInt64) async throws {
-        for country in Country.allCases {
-            await verifyWikipediaURL(country)
-            try await Task.sleep(nanoseconds: seconds)
-        }
-    }
-    private func validateSubdivisionWikipediaURLs(_ seconds: UInt64) async throws {
-        for subdivision in SovereignStateSubdivisions.all {
-            await verifyWikipediaURL(subdivision)
-            try await Task.sleep(nanoseconds: seconds)
-        }
-    }
-    private func validateCityWikipediaURLs(_ seconds: UInt64) async throws {
-        for city in SovereignStateCities.all {
-            await verifyWikipediaURL(city)
+    private func validate_region_wikipedia_urls(regions: [any SovereignRegion], _ seconds: UInt64) async throws {
+        for region in regions {
+            await verifyWikipediaURL(region)
             try await Task.sleep(nanoseconds: seconds)
         }
     }
     private func verifyWikipediaURL(_ region: any SovereignRegion) async {
         let url:String = region.wikipedia_url
-        let slug:String = url.components(separatedBy: "/").last!
+        let slug:String = String(url.split(separator: "/").last!)
         let valid:Bool = await getSummaryAndImageURL(slug: slug)
         XCTAssert(valid, "invalid Wikipedia URL for sovereign region with cache id \"" + region.cache_id + "\"; url=\"" + url + "\"; slug=\"" + slug + "\"")
     }
     private func getSummaryAndImageURL(slug: String) async -> Bool {
         let url:String = "https://en.wikipedia.org/api/rest_v1/page/summary/" + slug
-        guard let data:Data = await make_request(url: url) else { return false }
-        do {
-            let json:WikipediaAPIResponse = try JSONDecoder().decode(WikipediaAPIResponse.self, from: data)
-            return json.extract != nil
-        } catch {
-            return false
-        }
+        guard let json:WikipediaAPIResponse = await make_request(url: url) else { return false }
+        return json.extract != nil
     }
     
     private func make_request<T : Decodable>(url: String) async -> T? {

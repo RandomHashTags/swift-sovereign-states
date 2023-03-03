@@ -342,4 +342,42 @@ public enum CountiesUnitedStatesVirginia : String, SovereignStateLevel2Division 
         case .winchester: return 840
         }
     }
+    
+    public var wikipedia_url_suffix : String? {
+        switch self {
+        case .alexandria,
+                .bristol,
+                .buena_vista,
+                .charlottesville,
+                .colonial_heights,
+                .covington,
+                .danville,
+                .emporia,
+                .galax,
+                .harrisonburg,
+                .hopewell,
+                .lexington,
+                .lynchburg,
+                .martinsville,
+                .newport_news,
+                .norfolk,
+                .norton,
+                .petersburg,
+                .poquoson,
+                .portsmouth,
+                .radford,
+                .richmond_city,
+                .roanoke_city,
+                .salem,
+                .staunton,
+                .suffolk,
+                .virginia_beach,
+                .waynesboro,
+                .williamsburg,
+                .winchester:
+            return ",_Virginia"
+        default:
+            return default_wikipedia_url_suffix
+        }
+    }
 }
