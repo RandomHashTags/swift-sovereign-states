@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/4/23.
+  
+*/
+"alexandria" = "Alexandria";
+"aswan" = "Aswan";
+"asyut" = "Asyut";
+"beheira" = "Beheira";
+"beni_suef" = "Beni Suef";
+"cairo" = "Cairo";
+"dakahlia" = "Dakahlia";
+"damietta" = "Damietta";
+"faiyum" = "Faiyum";
+"gharbia" = "Gharbia";
+"giza" = "Giza";
+"ismailia" = "Ismailia";
+"kafr_el_sheikh" = "Kafr El Sheikh";
+"luxor" = "Luxor";
+"matrouh" = "Matrouh";
+"minya" = "Minya";
+"monufia" = "Monufia";
+"new_valley" = "New Valley";
+"north_sinai" = "North Sinai";
+"port_said" = "Port Said";
+"qalyubia" = "Qalyubia";
+"qena" = "Qena";
+"red_sea" = "Red Sea";
+"sharqia" = "Sharqia";
+"sohag" = "Sohag";
+"south_sinai" = "South Sinai";
+"suez" = "Suez";
