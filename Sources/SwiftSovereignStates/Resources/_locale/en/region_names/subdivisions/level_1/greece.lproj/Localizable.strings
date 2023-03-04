@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/4/23.
+  
+*/
+"attica" = "Attica";
+"central_greece" = "Central Greece";
+"central_macedonia" = "Central Macedonia";
+"crete" = "Crete";
+"eastern_macedonia_and_thrace" = "Eastern Macedonia and Thrace";
+"epirus" = "Epirus";
+"ionian_islands" = "Ionian Islands";
+"mount_athos" = "Mount Athos";
+"north_aegean" = "North Aegean";
+"peloponnese" = "Peloponnese";
+"south_aegean" = "South Aegean";
+"thessaly" = "Thessaly";
+"western_greece" = "Western Greece";
+"western_macedonia" = "Western Macedonia";

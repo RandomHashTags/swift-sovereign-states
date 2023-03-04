@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/4/23.
+  
+*/
+"baden_wurttemberg" = "Baden-Württemberg";
+"bavaria" = "Bavaria";
+"berlin" = "Berlin";
+"brandenburg" = "Brandenburg";
+"bremen" = "Bremen";
+"hamburg" = "Hamburg";
+"hesse" = "Hesse";
+"lower_saxony" = "Lower Saxony";
+"mecklenburg_western_pomerania" = "Mecklenburg-Western Pomerania";
+"north_rhine_westphalia" = "North Rhine-Westphalia";
+"rhineland_palatinate" = "Rhineland-Palatinate";
+"saarland" = "Saarland";
+"saxony" = "Saxony";
+"saxony_anhalt" = "Saxony-Anhalt";
+"schleswig_holstein" = "Schleswig-Holstein";
+"thuringia" = "Thuringia";
