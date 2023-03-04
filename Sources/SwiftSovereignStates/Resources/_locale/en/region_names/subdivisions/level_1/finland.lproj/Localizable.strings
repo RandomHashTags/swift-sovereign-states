@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/4/23.
+  
+*/
+"aland" = "Åland";
+"central_finland" = "Central Finland";
+"central_ostrobothnia" = "Central Ostrobothnia";
+"kainuu" = "Kainuu";
+"kanta_hame" = "Kanta-Häme";
+"kymenlaakso" = "Kymenlaakso";
+"lapland" = "Lapland";
+"north_karelia" = "North Karelia";
+"north_ostrobothnia" = "North Ostrobothnia";
+"north_savo" = "North Savo";
+"ostrobothnia" = "Ostrobothnia";
+"paijat_hame" = "Päijät-Häme";
+"pirkanmaa" = "Pirkanmaa";
+"satakunta" = "Satakunta";
+"south_karelia" = "South Karelia";
+"south_ostrobothnia" = "South Ostrobothnia";
+"south_savo" = "South Savo";
+"southwest_finland" = "Southwest Finland";
+"uusimaa" = "Uusimaa";
