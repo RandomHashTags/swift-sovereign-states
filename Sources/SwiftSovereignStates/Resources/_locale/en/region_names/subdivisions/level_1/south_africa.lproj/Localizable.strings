@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"eastern_cape" = "Eastern Cape";
+"free_state" = "Free State";
+"gauteng" = "Gauteng";
+"kwazulu_natal" = "KwaZulu-Natal";
+"limpopo" = "Limpopo";
+"mpumalanga" = "Mpumalanga";
+"north_west" = "North West";
+"northern_cape" = "Northern Cape";
+"western_cape" = "Western Cape";

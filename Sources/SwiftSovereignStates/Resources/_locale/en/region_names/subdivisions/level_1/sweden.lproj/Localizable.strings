@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"blekinge" = "Blekinge";
+"dalarna" = "Dalarna";
+"gotland" = "Gotland";
+"gavleborg" = "Gävleborg";
+"halland" = "Halland";
+"jamtland" = "Jämtland";
+"jonkoping" = "Jönköping";
+"kalmar" = "Kalmar";
+"kronoberg" = "Kronoberg";
+"norrbotten" = "Norrbotten";
+"skane" = "Skåne";
+"stockholm" = "Stockholm";
+"sodermanland" = "Södermanland";
+"uppsala" = "Uppsala";
+"varmland" = "Värmland";
+"vasterbotten" = "Västerbotten";
+"vasternorrland" = "Västernorrland";
+"vastmandland" = "Västmanland";
+"vastra_gotaland" = "Västra Götaland";
+"orebro" = "Örebro";
+"ostergotland" = "Östergötland";

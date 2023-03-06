@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"eastern" = "Eastern";
+"kigali" = "Kigali";
+"northern" = "Northern";
+"southern" = "Southern";
+"western" = "Western";

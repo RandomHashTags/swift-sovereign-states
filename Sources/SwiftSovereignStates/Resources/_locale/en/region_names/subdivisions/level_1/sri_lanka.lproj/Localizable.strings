@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"central" = "Central";
+"eastern" = "Eastern";
+"north_central" = "North Central";
+"north_western" = "North Western";
+"northern" = "Northern";
+"sabaragamuwa" = "Sabaragamuwa";
+"southern" = "Southern";
+"uva" = "Uva";
+"western" = "Western";

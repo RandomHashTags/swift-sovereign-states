@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"andalusia" = "Andalusia";
+"aragon" = "Aragon";
+"asturias" = "Asturias";
+"balearic_islands" = "Balearic Islands";
+"basque_country" = "Basque Country";
+"canary_islands" = "Canary Islands";
+"cantabria" = "Cantabria";
+"castile_and_leon" = "Castile and Leon";
+"castilla_la_macha" = "Castilla-La Mancha";
+"catalonia" = "Catalonia";
+"ceuta" = "Ceuta";
+"community_of_madrid" = "Community of Madrid";
+"extremadura" = "Extremadura";
+"galicia" = "Galicia";
+"la_rioja" = "La Rioja";
+"melilla" = "Melilla";
+"navarre" = "Navarre";
+"region_of_murcia" = "Region of Murcia";
+"valencian_community" = "Valencian Community";

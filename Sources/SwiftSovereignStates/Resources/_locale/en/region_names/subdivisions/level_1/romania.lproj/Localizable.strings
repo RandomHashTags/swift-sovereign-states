@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"alba" = "Alba";
+"arad" = "Arad";
+"arges" = "Argeș";
+"bacau" = "Bacău";
+"bihor" = "Bihor";
+"bistrita_nasaud" = "Bistrița-Năsăud";
+"botosani" = "Botoșani";
+"braila" = "Brăila";
+"brasov" = "Brașov";
+"buzau" = "Buzău";
+"calarasi" = "Călărași";
+"caras_severin" = "Caraș-Severin";
+"cluj" = "Cluj";
+"constanta" = "Constanța";
+"covasna" = "Covasna";
+"dambovita" = "Dâmbovița";
+"dolj" = "Dolj";
+"galati" = "Galați";
+"giurgiu" = "Giurgiu";
+"gorj" = "Gorj";
+"harghita" = "Harghita";
+"hunedoara" = "Hunedoara";
+"ialomita" = "Ialomița";
+"iasi" = "Iași";
+"ilfov" = "Ilfov";
+"maramures" = "Maramureș";
+"mehedinti" = "Mehedinți";
+"mures" = "Mureș";
+"neamt" = "Neamț";
+"olt" = "Olt";
+"prahova" = "Prahova";
+"salaj" = "Sălaj";
+"satu_mare" = "Satu Mare";
+"sibiu" = "Sibiu";
+"suceava" = "Suceava";
+"teleorman" = "Teleorman";
+"timis" = "Timiș";
+"tulcea" = "Tulcea";
+"valcea" = "Vâlcea";
+"vaslui" = "Vaslui";
+"vrancea" = "Vrancea";
+"bucharest" = "Bucharest";

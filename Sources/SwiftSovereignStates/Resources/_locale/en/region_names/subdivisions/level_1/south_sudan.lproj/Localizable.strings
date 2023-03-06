@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"central_equatoria" = "Central Equatoria";
+"eastern_equatoria" = "Eastern Equatoria";
+"jonglei" = "Jonglei";
+"lakes" = "Lakes";
+"northern_bahr_el_ghazal" = "Northern Bahr el Ghazal";
+"unity" = "Unity";
+"upper_nile" = "Upper Nile";
+"warrap" = "Warrap";
+"western_bahr_el_ghazal" = "Western Bahr el Ghazal";
+"western_equatoria" = "Western Equatoria";
+"abyei" = "Abyei";
+"greater_pibor" = "Greater Pibor";
+"ruweng" = "Ruweng";

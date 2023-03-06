@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"al_hasaka" = "Al-Hasakah";
+"aleppo" = "Aleppo";
+"as_suwayda" = "As-Suwayda";
+"damascus" = "Damascus";
+"daraa" = "Daraa";
+"deir_ez_zor" = "Deir ez-Zor";
+"hama" = "Hama";
+"homs" = "Homs";
+"idlib" = "Idlib";
+"latakia" = "Latakia";
+"quneitra" = "Quneitra";
+"raqqa" = "Raqqa";
+"rif_dimashq" = "Rif Dimashq";
+"tartus" = "Tartus";
