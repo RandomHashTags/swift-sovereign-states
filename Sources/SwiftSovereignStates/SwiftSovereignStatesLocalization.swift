@@ -9,7 +9,7 @@ import Foundation
 
 // TODO: automate the creation of a single Localizable file per language with all translations - localizations maintained in the project by their separate files, but only 1 file per language is included when importing the project via CocoaPods)
 private extension Bundle {
-    private static func get_localization(language_code: String?, type: SwiftSovereignStateLocalizationCategory, replacements: [String:String]?, identifier: String) -> Bundle? {
+    private static func get_debug_localization(language_code: String?, type: SwiftSovereignStateLocalizationCategory, replacements: [String:String]?, identifier: String) -> Bundle? {
         let language_code:String = "en"// language_code ?? String(Locale.current.identifier.prefix(2))
         var cache_id:String = language_code + "/" + type.rawValue
         if let replacements:[String:String] = replacements {
@@ -29,10 +29,27 @@ private extension Bundle {
         SwiftSovereignStateCache.localization[cache_id] = bundle
         return bundle
     }
+    private static func get_release_localization(language_code: String?, type: SwiftSovereignStateLocalizationCategory, replacements: [String:String]?, identifier: String) -> Bundle? {
+        let language_code:String = "en"// language_code ?? String(Locale.current.identifier.prefix(2))
+        if let bundle:Bundle = SwiftSovereignStateCache.localization[language_code] {
+            return bundle
+        }
+        guard let localization_bundle:Bundle = Bundle(identifier: identifier) ?? Bundle(path: identifier),
+              let path:String = localization_bundle.path(forResource: "Resources/_locale/" + language_code + "/all", ofType: "lproj"),
+              let bundle:Bundle = Bundle(path: path)
+        else {
+            return nil
+        }
+        SwiftSovereignStateCache.localization[language_code] = bundle
+        return bundle
+    }
     static func get(language_code: String? = nil, type: SwiftSovereignStateLocalizationCategory, replacements: [String:String]? = nil, _ key: String) -> String {
-        return (Bundle.get_localization(language_code: language_code, type: type, replacements: replacements, identifier: "org.cocoapods.SwiftSovereignStates")
-                ?? Bundle.get_localization(language_code: language_code, type: type, replacements: replacements, identifier: Bundle(for: SwiftSovereignStates.self).bundleIdentifier!)
-                ?? Bundle.get_localization(language_code: language_code, type: type, replacements: replacements, identifier: "/Users/randomhashtags/GitProjects/swift-sovereign-states/Sources/SwiftSovereignStates"))?.localizedString(forKey: key, value: "nil", table: nil) ?? "nil"
+        guard let bundle:Bundle = (Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: "org.cocoapods.SwiftSovereignStates")
+                                   ?? Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: Bundle(for: SwiftSovereignStates.self).bundleIdentifier!)
+                                   ?? Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: "/Users/randomhashtags/GitProjects/swift-sovereign-states/Sources/SwiftSovereignStates")) else {
+            return "nil"
+        }
+        return bundle.localizedString(forKey: key, value: "nil", table: nil)
     }
 }
 private enum SwiftSovereignStateLocalizationCategory : String {
