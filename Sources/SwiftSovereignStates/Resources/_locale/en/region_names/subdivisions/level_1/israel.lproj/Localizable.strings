@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/5/23.
+  
+*/
+"central" = "Central";
+"haifa" = "Haifa";
+"jerusalem" = "Jerusalem";
+"northern" = "Northern";
+"southern" = "Southern";
+"tel_aviv" = "Tel Aviv";
+"judea_and_samaria" = "Judea and Samaria";

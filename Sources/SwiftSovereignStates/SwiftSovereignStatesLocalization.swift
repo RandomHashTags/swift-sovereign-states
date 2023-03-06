@@ -7,7 +7,7 @@
 
 import Foundation
 
-// TODO: automate the creation of a single Localizable file per language with all translations - localizations maintained in the project by their separate files, but only 1 file per language is included when importing the project)
+// TODO: automate the creation of a single Localizable file per language with all translations - localizations maintained in the project by their separate files, but only 1 file per language is included when importing the project via CocoaPods)
 private extension Bundle {
     private static func get_localization(language_code: String?, type: SwiftSovereignStateLocalizationCategory, replacements: [String:String]?, identifier: String) -> Bundle? {
         let language_code:String = "en"// language_code ?? String(Locale.current.identifier.prefix(2))

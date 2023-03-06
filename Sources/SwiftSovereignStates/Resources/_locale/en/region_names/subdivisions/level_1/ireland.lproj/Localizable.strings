@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/5/23.
+  
+*/
+"connacht" = "Connacht";
+"leinster" = "Leinster";
+"munster" = "Munster";
+"ulster" = "Ulster";
