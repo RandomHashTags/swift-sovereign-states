@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"johor" = "Johor";
+"kedah" = "Kedah";
+"kelantan" = "Kelantan";
+"malacca" = "Malacca";
+"negeri_sembilan" = "Negeri Sembilan";
+"pahang" = "Pahang";
+"penang" = "Penang";
+"perak" = "Perak";
+"perlis" = "Perlis";
+"sabah" = "Sabah";
+"sarawak" = "Sarawak";
+"selangor" = "Selangor";
+"terengganu" = "Terengganu";
+"kuala_lumpur" = "Kuala Lumpur";
+"labuan" = "Labuan";
+"putrajaya" = "Putrajaya";
