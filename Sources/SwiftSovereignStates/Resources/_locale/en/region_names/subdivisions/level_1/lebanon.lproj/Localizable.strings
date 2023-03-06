@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/5/23.
+  
+*/
+"akkar" = "Akkar";
+"baalbek_hermel" = "Baalbek-Hermel";
+"beirut" = "Beirut";
+"beqaa" = "Beqaa";
+"keserwan_jbeil" = "Keserwan-Jbeil";
+"mount_lebanon" = "Mount Lebanon";
+"nabatieh" = "Nabatieh";
+"north" = "North";
+"south" = "South";

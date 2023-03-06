@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/5/23.
+  
+*/
+"aichi" = "Aichi";
+"akita" = "Akita";
+"aomori" = "Aomori";
+"chiba" = "Chiba";
+"ehime" = "Ehime";
+"fukui" = "Fukui";
+"fukuoka" = "Fukuoka";
+"fukushima" = "Fukushima";
+"gifu" = "Gifu";
+"gunma" = "Gunma";
+"hiroshima" = "Hiroshima";
+"hokkaido" = "Hokkaidō";
+"hyogo" = "Hyōgo";
+"ibaraki" = "Ibaraki";
+"ishikawa" = "Ishikawa";
+"iwate" = "Iwate";
+"kagawa" = "Kagawa";
+"kagoshima" = "Kagoshima";
+"kanagawa" = "Kanagawa";
+"kochi" = "Kōchi";
+"kumamoto" = "Kumamoto";
+"kyoto" = "Kyōto";
+"mie" = "Mie";
+"miyagi" = "Miyagi";
+"miyazaki" = "Miyazaki";
+"nagano" = "Nagano";
+"nagasaki" = "Nagasaki";
+"nara" = "Nara";
+"niigata" = "Niigata";
+"oita" = "Ōita";
+"okayama" = "Okayama";
+"okinawa" = "Okinawa";
+"osaka" = "Ōsaka";
+"saga" = "Saga";
+"saitama" = "Saitama";
+"shiga" = "Shiga";
+"shimane" = "Shimane";
+"shizuoka" = "Shizuoka";
+"tochigi" = "Tochigi";
+"tokushima" = "Tokushima";
+"tokyo" = "Tokyo";
+"tottori" = "Tottori";
+"toyama" = "Toyama";
+"wakayama" = "Wakayama";
+"yamagata" = "Yamagata";
+"yamaguchi" = "Yamaguchi";
+"yamanashi" = "Yamanashi";

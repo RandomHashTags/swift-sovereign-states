@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/5/23.
+  
+*/
+"hanover" = "Hanover";
+"saint_elizabeth" = "Saint Elizabeth";
+"saint_james" = "Saint James";
+"trelawny" = "Trelawny";
+"westmoreland" = "Westmoreland";
+"clarendon" = "Clarendon";
+"manchester" = "Manchester";
+"saint_ann" = "Saint Ann";
+"saint_catherine" = "Saint Catherine";
+"saint_mary" = "Saint Mary";
+"kingston" = "Kingston";
+"portland" = "Portland";
+"saint_andrew" = "Saint Andrew";
+"saint_thomas" = "Saint Thomas";

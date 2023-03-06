@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/5/23.
+  
+*/
+"adazi" = "Ādaži";
+"aizkraukle" = "Aizkraukle";
+"aluksne" = "Alūksne";
+"augsdaugava" = "Augšdaugava";
+"balvi" = "Balvi";
+"bauska" = "Bauska";
+"cesis" = "Cēsis";
+"dobele" = "Dobele";
+"gulbene" = "Gulbene";
+"jekabpils" = "Jēkabpils";
+"jelgava" = "Jelgava";
+"kekava" = "Ķekava";
+"kraslava" = "Krāslava";
+"kuldiga" = "Kuldīga";
+"limbazi" = "Limbaži";
+"livani" = "Līvāni";
+"ludza" = "Ludza";
+"madona" = "Madona";
+"marupe" = "Mārupe";
+"ogre" = "Ogre";
+"olaine" = "Olaine";
+"preili" = "Preiļi";
+"rezekne" = "Rēzekne";
+"ropazi" = "Ropaži";
+"salaspils" = "Salaspils";
+"saldus" = "Saldus";
+"saulkrasti" = "Saulkrasti";
+"sigulda" = "Sigulda";
+"smiltene" = "Smiltene";
+"south_kurzeme" = "South Kurzeme";
+"talsi" = "Talsi";
+"tukums" = "Tukums";
+"valka" = "Valka";
+"valmiera" = "Valmiera";
+"varaklani" = "Varakļāni";
+"ventspils" = "Ventspils";
+"daugavpils" = "Daugavpils";
+"jurmala" = "Jūrmala";
+"liepaja" = "Liepāja";
+"rezekne_city" = "Rēzekne";
+"riga" = "Riga";
+"jelgava_city" = "Jelgava";
+"ventspils_city" = "Ventspils";

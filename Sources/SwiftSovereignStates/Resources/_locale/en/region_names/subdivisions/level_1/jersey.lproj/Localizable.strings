@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/5/23.
+  
+*/
+"grouville" = "Grouville";
+"saint_lawrence" = "Saint Lawrence";
+"saint_brelade" = "Saint Brelade";
+"saint_clement" = "Saint Clement";
+"saint_helier" = "Saint Helier";
+"saint_john" = "Saint John";
+"saint_martin" = "Saint Martin";
+"saint_ouen" = "Saint Ouen";
+"saint_peter" = "Saint Peter";
+"saint_saviour" = "Saint Saviour";
+"saint_mary" = "Saint Mary";
+"trinity" = "Trinity";
