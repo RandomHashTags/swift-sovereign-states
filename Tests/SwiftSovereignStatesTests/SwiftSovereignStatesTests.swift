@@ -172,17 +172,16 @@ final class SwiftSovereignStatesTests: XCTestCase {
         print("SwiftSovereignStatesTests;test_benchmarks;cache=" + cache.description)
         if #available(macOS 13.0, *) {
             
-            //for _ in 1...100 {
-            //    try await benchmark_compare(key1: "test1", {
-                    //let mentioned:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
-                    //XCTAssert(mentioned != nil && mentioned!.count >= 5)
-           //     }, key2: "test2", code2: {
-                    //let mentioned:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned2("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
-                    //XCTAssert(mentioned != nil && mentioned!.count >= 5)
-            //    })
-            //}
+            /*let subdivision:SubdivisionsAfghanistan = SubdivisionsAfghanistan.badakhshan
+            for _ in 1...100 {
+                try await benchmark_compare(key1: "test1", {
+                    let name:String = subdivision.name
+                }, key2: "test2", code2: {
+                    let name:String = SwiftSovereignStateLocalization.get_subdivision_level_1_name(subdivision)
+                })
+            }*/
             
-            //return;
+            return;
             
             let _ = try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
                 let country:Country? = Country.init("united_states")
