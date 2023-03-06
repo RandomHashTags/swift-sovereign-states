@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"amazonas" = "Amazonas";
+"ancash" = "Ancash";
+"apurimac" = "Apurímac";
+"arequipa" = "Arequipa";
+"ayacucho" = "Ayacucho";
+"cajamarca" = "Cajamarca";
+"callao" = "Callao";
+"cuzco" = "Cuzco";
+"huancavelica" = "Huancavelica";
+"huanuco" = "Huánuco";
+"ica" = "Ica";
+"junin" = "Junín";
+"la_libertad" = "La Libertad";
+"lambayeque" = "Lambayeque";
+"lima" = "Lima";
+"loreto" = "Loreto";
+"madre_de_dios" = "Madre de Dios";
+"moquegua" = "Moquegua";
+"pasco" = "Pasco";
+"piura" = "Piura";
+"puno" = "Puno";
+"san_martin" = "San Martín";
+"tacna" = "Tacna";
+"tumbes" = "Tumbes";
+"ucayali" = "Ucayali";

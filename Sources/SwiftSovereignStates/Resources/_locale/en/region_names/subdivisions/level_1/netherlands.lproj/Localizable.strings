@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 3/6/23.
+  
+*/
+"drenthe" = "Drenthe";
+"flevoland" = "Flevoland";
+"friesland" = "Friesland";
+"gelderland" = "Gelderland";
+"groningen" = "Groningen";
+"limburg" = "Limburg";
+"north_brabant" = "North Brabant";
+"north_holland" = "North Holland";
+"overijssel" = "Overijssel";
+"south_holland" = "South Holland";
+"utrecht" = "Utrecht";
+"zeeland" = "Zeeland";
+"bonaire" = "Bonaire";
+"saba" = "Saba";
+"sint_eustatius" = "Sint Eustatius";
