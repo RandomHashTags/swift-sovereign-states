@@ -151,7 +151,7 @@ public extension SovereignStateCity {
     
     internal func getDefaultURLSuffix() -> String {
         let subdivision:any SovereignStateSubdivision = subdivision
-        return ",_" + (subdivision.real_name ?? subdivision.short_name).replacingOccurrences(of: " ", with: "_")
+        return ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")
     }
     var wikipedia_url_suffix : String? {
         return getDefaultURLSuffix()
