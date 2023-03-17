@@ -172,12 +172,15 @@ final class SwiftSovereignStatesTests: XCTestCase {
         print("SwiftSovereignStatesTests;test_benchmarks;cache=" + cache.description)
         if #available(macOS 13.0, *) {
             
-            /*let subdivision:SubdivisionsAfghanistan = SubdivisionsAfghanistan.badakhshan
+            /*let subdivision:SubdivisionsUnitedStates = SubdivisionsUnitedStates.minnesota
+            let url:String? = subdivision.flag_url
             for _ in 1...100 {
                 try await benchmark_compare(key1: "test1", {
-                    let name:String = subdivision.name
+                    let name:String? = subdivision.flag_url2
+                    XCTAssert(url == name)
                 }, key2: "test2", code2: {
-                    let name:String = SwiftSovereignStateLocalization.get_subdivision_level_1_name(subdivision)
+                    let name:String? = subdivision.flag_url
+                    XCTAssert(url == name)
                 })
             }*/
             

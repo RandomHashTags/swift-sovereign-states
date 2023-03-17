@@ -128,10 +128,21 @@ public extension SovereignRegion {
         guard let id:String = wikipedia_flag_url_svg_id else { return nil }
         let idLowercase:String = id.lowercased()
         let values:[String] = id.components(separatedBy: "/"), lastValue:String = SovereignRegions.urlEncoded(values[values.count-1])
-        let isEN:Bool = id.starts(with: "en"), type:String = isEN ? "en" : "commons", offset:Int = isEN ? 1 : 0
-        let hasExtension:Bool = idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif")
-        return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + values[offset] + "/" + values[offset + 1] + "/" + lastValue + (hasExtension ? "" : ".svg") + "/%quality%px-" + lastValue + (hasExtension ? "" : ".svg.png")
+        let type:String, offset:Int
+        if id.starts(with: "en") {
+            type = "en"
+            offset = 1
+        } else {
+            type = "commons"
+            offset = 0
+        }
+        if idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif") {
+            return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + values[offset] + "/" + values[offset + 1] + "/" + lastValue + "/%quality%px-" + lastValue
+        } else {
+            return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + values[offset] + "/" + values[offset + 1] + "/" + lastValue + ".svg/%quality%px-" + lastValue + ".svg.png"
+        }
     }
+    
     var wikipedia_flag_url_svg_id : String? {
         return nil
     }
