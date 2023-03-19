@@ -174,9 +174,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
             
             /*let array:Array<String> = ["homie", "got", "played"]
             try await benchmark_compare_is_faster(key1: "test1", {
-                let _:String = array.first!
-            }, key2: "test2", code2: {
                 let _:String = array[0]
+            }, key2: "test2", code2: {
+                let _:String = array.first!
             })*/
             
             return;
@@ -290,15 +290,20 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     @available(macOS 13.0, *)
     private func benchmark_compare_is_faster(maximum_iterations: Int = 100, key1: String, _ code1: @escaping () async throws -> Void, key2: String, code2: @escaping () async throws -> Void) async throws {
-        var faster_count:Int = 0
+        var faster_count:Int = 0, faster_average:Int64 = 0
         for _ in 1...maximum_iterations {
-            let faster:Bool = try await benchmark_compare(key1: key1, code1, key2: key2, code2: code2, print_to_console: false)
-            faster_count += faster ? 1 : 0
+            let faster:(Bool, Int64) = try await benchmark_compare(key1: key1, code1, key2: key2, code2: code2, print_to_console: false)
+            faster_count += faster.0 ? 1 : 0
+            faster_average += faster.1
         }
-        print("SwiftSovereignStates;benchmark_compare_is_faster;     " + key1 + " is faster " + faster_count.description + "/" + maximum_iterations.description)
+        let formatter:NumberFormatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 20
+        let average_string:String = get_benchmark_formatted_string(formatter: formatter, faster_average / Int64(maximum_iterations))
+        print("SwiftSovereignStates;benchmark_compare_is_faster;     " + key1 + " is faster " + faster_count.description + "/" + maximum_iterations.description + " on average by " + average_string)
     }
     @available(macOS 13.0, *)
-    private func benchmark_compare(key1: String, _ code1: @escaping () async throws -> Void, key2: String, code2: @escaping () async throws -> Void, print_to_console: Bool = true) async throws -> Bool {
+    private func benchmark_compare(key1: String, _ code1: @escaping () async throws -> Void, key2: String, code2: @escaping () async throws -> Void, print_to_console: Bool = true) async throws -> (Bool, Int64) {
         async let test1 = benchmark(key: key1, code1, will_print: false)
         async let test2 = benchmark(key: key2, code2, will_print: false)
         let ((key1, min1, max1, median1, average1, total1) , (_, min2, max2, median2, average2, total2)) = try await (test1, test2)
@@ -323,7 +328,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             string.append(" | total=" + (total1 < total2 ? "🟢" : "🔴") + "by " + total_time_diff)
             print(string)
         }
-        return average1 <= average2
+        return (average1 <= average2, average2 - average1)
     }
     private func get_benchmark_formatted_string(formatter: NumberFormatter, _ value: Any, separation_count: Int = 20) -> String {
         let string:String = formatter.string(for: value)! + "ns"
