@@ -527,6 +527,7 @@ public enum Country : String, SovereignState {
                 .czech_republic,
                 .denmark,
                 .estonia,
+                .finland,
                 .france,
                 .germany,
                 .greece,
