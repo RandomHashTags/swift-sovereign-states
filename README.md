@@ -23,3 +23,9 @@ dependencies: [
     .package(url: "https://github.com/randomhashtags/swift-sovereign-states.git", from: "1.2.1"),
 ]
 ```
+
+## Contributing
+Adding/improving functionality is always welcome, just make a PR.
+
+## License
+Public Domain. Creative Commons Zero v1.0 Universal.
