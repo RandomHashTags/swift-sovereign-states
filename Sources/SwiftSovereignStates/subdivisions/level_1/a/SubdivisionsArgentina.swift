@@ -55,18 +55,6 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .autonomous_city_of_buenos_aires: return "Buenos Aires"
-        case .cordoba: return "Córdoba"
-        case .neuquen: return "Neuquén"
-        case .rio_negreo: return "Río Negro"
-        case .tierra_del_fuego_antartida_e_islas_del_atlantico_sur: return "Tierra del Fuego, Antártida e Islas del Atlántico Sur"
-        case .tucuman: return "Tucumán"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .autonomous_city_of_buenos_aires:

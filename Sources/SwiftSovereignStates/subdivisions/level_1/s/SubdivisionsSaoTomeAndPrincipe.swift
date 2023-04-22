@@ -30,18 +30,6 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, SovereignStateSubdivision {
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .agua_grande: return "Água Grande"
-        case .caue: return "Caué"
-        case .lemba: return "Lembá"
-        case .me_zochi: return "Mé-Zóchi"
-            
-        case .autonomous_region_of_principe: return "Autonomous Region of Príncipe"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .autonomous_region_of_principe:

@@ -42,18 +42,6 @@ public enum SubdivisionsPeru : String, SovereignStateSubdivision { // https://en
         return SovereignStateSubdivisionType.departments
     }
     
-    public var real_name : String? {
-        switch self {
-        case .apurimac: return "Apurímac"
-        case .huanuco: return "Huánuco"
-        case .junin: return "Junín"
-        case .la_libertad: return "La Libertad"
-        case .madre_de_dios: return "Madre de Dios"
-        case .san_martin: return "San Martín"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_prefix : String? {
         switch self {
         case .callao:

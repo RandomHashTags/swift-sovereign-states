@@ -47,14 +47,6 @@ public enum SubdivisionsCambodia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .kratie: return "Kratié"
-        case .takeo: return "Takéo"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .banteay_meanchey: return "en/1/14/Banteay_Meanchey_seal.png"

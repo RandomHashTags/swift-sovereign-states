@@ -34,15 +34,6 @@ public enum SubdivisionsMali : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .menaka: return "Ménaka"
-        case .segou: return "Ségou"
-        case .taoudenit: return "Taoudénit"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .bamako:

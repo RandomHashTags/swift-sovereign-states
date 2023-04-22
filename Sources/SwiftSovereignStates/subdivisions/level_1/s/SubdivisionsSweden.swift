@@ -38,24 +38,6 @@ public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .gavleborg: return "Gävleborg"
-        case .jamtland: return "Jämtland"
-        case .jonkoping: return "Jönköping"
-        case .skane: return "Skåne"
-        case .sodermanland: return "Södermanland"
-        case .varmland: return "Värmland"
-        case .vasterbotten: return "Västerbotten"
-        case .vasternorrland: return "Västernorrland"
-        case .vastmandland: return "Västmanland"
-        case .vastra_gotaland: return "Västra Götaland"
-        case .orebro: return "Örebro"
-        case .ostergotland: return "Östergötland"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return "_County"
     }

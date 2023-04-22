@@ -26,14 +26,6 @@ public enum SubdivisionsLebanon : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.governorates
     }
     
-    public var real_name : String? {
-        switch self {
-        case .baalbek_hermel: return "Baalbek-Hermel"
-        case .keserwan_jbeil: return "Keserwan-Jbeil"
-        default: return nil
-        }
-    }
-    
     public var iso_alpha_2 : String? {
         switch self {
         case .akkar: return "AK"

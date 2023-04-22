@@ -27,16 +27,6 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.departments
     }
     
-    public var real_name : String? {
-        switch self {
-        case .grand_anse: return "Grand'Anse"
-        case .nord_est: return "Nord-Est"
-        case .nord_ouest: return "Nord-Ouest"
-        case .sud_est: return "Sud-Est"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .nord:

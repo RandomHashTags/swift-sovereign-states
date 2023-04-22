@@ -48,13 +48,6 @@ public enum SubdivisionsIran : String, SovereignStateSubdivision { // https://en
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var real_name : String? {
-        switch self {
-        case .kohgiluyeh_and_boyer_ahmad: return "Kohgiluyeh and Boyer-Ahmad"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return "_" + type_suffix.lowercased()
     }

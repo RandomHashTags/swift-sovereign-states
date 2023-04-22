@@ -65,33 +65,6 @@ public enum SubdivisionsRomania : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .arges: return "Argeș"
-        case .bacau: return "Bacău"
-        case .bistrita_nasaud: return "Bistrița-Năsăud"
-        case .botosani: return "Botoșani"
-        case .braila: return "Brăila"
-        case .brasov: return "Brașov"
-        case .buzau: return "Buzău"
-        case .calarasi: return "Călărași"
-        case .caras_severin: return "Caraș-Severin"
-        case .constanta: return "Constanța"
-        case .dambovita: return "Dâmbovița"
-        case .galati: return "Galați"
-        case .ialomita: return "Ialomița"
-        case .iasi: return "Iași"
-        case .maramures: return "Maramureș"
-        case .mehedinti: return "Mehedinți"
-        case .mures: return "Mureș"
-        case .neamt: return "Neamț"
-        case .salaj: return "Sălaj"
-        case .timis: return "Timiș"
-        case .valcea: return "Vâlcea"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .alba: return "5/5d/Actual_Alba_county_CoA.png"

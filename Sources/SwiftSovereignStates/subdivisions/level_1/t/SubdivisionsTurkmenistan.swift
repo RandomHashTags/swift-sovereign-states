@@ -23,13 +23,6 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var real_name : String? {
-        switch self {
-        case .dasoguz: return "Daşoguz"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .ashgabat: return nil

@@ -41,18 +41,6 @@ public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.municipalities
     }
     
-    public var real_name : String? {
-        switch self {
-        case .kolasin: return "Kolašin"
-        case .niksic: return "Nikšić"
-        case .pluzine: return "Plužine"
-        case .rozaje: return "Rožaje"
-        case .savnik: return "Šavnik"
-        case .zabljak: return "Žabljak"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return nil
     }

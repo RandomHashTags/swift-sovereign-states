@@ -42,20 +42,6 @@ public enum SubdivisionsChile : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .araucania: return "Araucanía"
-        case .aysen: return "Aysén"
-        case .biobio: return "Biobío"
-        case .los_rios: return "Los Ríos"
-        case .nuble: return "Ñuble"
-        case .o_higgines: return "O'Higgins"
-        case .tarapaca: return "Tarapacá"
-        case .valparaiso: return "Valparaíso"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .antofagasta: return "c/cc/Flag_of_Antofagasta_Region%2C_Chile"

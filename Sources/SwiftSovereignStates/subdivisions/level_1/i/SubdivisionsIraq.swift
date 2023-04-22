@@ -36,14 +36,6 @@ public enum SubdivisionsIraq : String, SovereignStateSubdivision { // https://en
         return SovereignStateSubdivisionType.governorates
     }
     
-    public var real_name : String? {
-        switch self {
-        case .al_anbar: return "Al-Anbar"
-        case .al_qadisiyyah: return "Al-Qādisiyyah"
-        default: return nil
-        }
-    }
-    
     public var iso_alpha_2 : String? {
         switch self {
         case .al_anbar: return "AN"

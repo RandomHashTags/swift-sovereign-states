@@ -40,23 +40,6 @@ public enum SubdivisionsCentralAfricanRepublic : String, SovereignStateSubdivisi
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .bamingui_bangoran: return "Bamingui-Bangoran"
-        case .basse_kotto: return "Basse-Kotto"
-        case .haut_mbomou: return "Haut-Mbomou"
-        case .haute_kotto: return "Haute-Kotto"
-        case .kemo: return "Kémo"
-        case .mambere_kadei: return "Mambéré-Kadéï"
-        case .nana_grebizi: return "Nana-Grébizi"
-        case .nana_mambere: return "Nana-Mambéré"
-        case .ombella_m_poko: return "Ombella-M'Poko"
-        case .ouham_pende: return "Ouham-Pendé"
-        case .sangha_mbaere: return "Sangha-Mbaéré"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return nil
     }

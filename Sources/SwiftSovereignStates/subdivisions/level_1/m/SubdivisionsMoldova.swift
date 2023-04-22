@@ -62,30 +62,6 @@ public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .balti: return "Bălți"
-        case .calarasi: return "Călărași"
-        case .causeni: return "Căușeni"
-        case .chisinau: return "Chișinău"
-        case .cimislia: return "Cimișlia"
-        case .donduseni: return "Dondușeni"
-        case .dubasari: return "Dubăsari"
-        case .edinet: return "Edineț"
-        case .falesti: return "Fălești"
-        case .floresti: return "Florești"
-        case .hincesti: return "Hîncești"
-        case .ocnita: return "Ocnița"
-        case .riscani: return "Rîșcani"
-        case .singerei: return "Sîngerei"
-        case .soldanesti: return "Șoldănești"
-        case .stefan_voda: return "Ștefan Vodă"
-        case .straseni: return "Strășeni"
-        case .telenesti: return "Telenești"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .anenii_noi: return "c/c8/Flag_of_Anenii_Noi_District.gif"

@@ -25,17 +25,6 @@ public enum SubdivisionsSlovakia : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name : String? {
-        switch self {
-        case .banska_bystrica: return "Banská Bystrica"
-        case .kosice: return "Košice"
-        case .presov: return "Prešov"
-        case .trencin: return "Trenčín"
-        case .zilina: return "Žilina"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .bratislava: return "4/4c/Bratislavsky_vlajka"

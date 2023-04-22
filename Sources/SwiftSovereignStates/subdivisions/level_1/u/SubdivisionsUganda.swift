@@ -158,13 +158,6 @@ public enum SubdivisionsUganda : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .madi_okollo: return "Madi-Okollo"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .busia:

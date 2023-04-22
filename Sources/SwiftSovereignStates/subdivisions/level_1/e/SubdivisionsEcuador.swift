@@ -49,19 +49,6 @@ public enum SubdivisionsEcuador : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .bolivar: return "Bolívar"
-        case .canar: return "Cañar"
-        case .galapagos: return "Galápagos"
-        case .los_rios: return "Los Ríos"
-        case .manabi: return " Manabí"
-        case .santo_domingo_de_los_tsachilas: return "Santo Domingo de los Tsáchilas"
-        case .sucumbios: return "Sucumbíos"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .bolivar:

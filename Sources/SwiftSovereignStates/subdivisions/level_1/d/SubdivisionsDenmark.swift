@@ -22,13 +22,6 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name : String? {
-        switch self {
-        case .sjaelland: return "Sjælland"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_prefix : String? {
         return "Region_"
     }

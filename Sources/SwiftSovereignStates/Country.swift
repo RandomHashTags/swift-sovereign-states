@@ -362,14 +362,10 @@ public enum Country : String, SovereignState {
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .curacao: return "Curaçao"
-        case .saint_barthelemy: return "Saint Barthélemy"
-        case .sao_tome_and_principe: return "São Tomé and Príncipe"
-        default: return nil
-        }
+    public var name : String {
+        return SwiftSovereignStateLocalization.get_release_country_name(self)
     }
+    
     public func getShortNamePrefix() -> String {
         switch self {
         case .bahamas,

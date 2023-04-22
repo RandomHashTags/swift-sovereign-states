@@ -36,15 +36,6 @@ public enum SubdivisionsFinland : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name : String? {
-        switch self {
-        case .aland: return "Åland"
-        case .kanta_hame: return "Kanta-Häme"
-        case .paijat_hame: return "Päijät-Häme"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .lapland:

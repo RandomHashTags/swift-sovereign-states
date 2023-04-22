@@ -37,24 +37,6 @@ public enum SubdivisionsHungary : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .bacs_kiskun: return "Bács-Kiskun"
-        case .bekes: return "Békés"
-        case .borsod_abauj_zemplen: return "Borsod-Abaúj-Zemplén"
-        case .csongrad_csanad: return "Csongrád-Csanád"
-        case .fejer: return "Fejér"
-        case .gyor_moson_sopron: return "Győr-Moson-Sopron"
-        case .hajdu_bihar: return "Hajdú-Bihar"
-        case .jasz_nagykun_szolnok: return "Jász-Nagykun-Szolnok"
-        case .komarom_esztergom: return "Komárom-Esztergom"
-        case .nograd: return "Nógrád"
-        case .szabolcs_szatmar_bereg: return "Szabolcs-Szatmár-Bereg"
-        case .veszprem: return "Veszprém"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .budapest:

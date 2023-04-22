@@ -31,13 +31,6 @@ public enum SubdivisionsNamibia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name : String? {
-        switch self {
-        case .karas: return "ǁKaras"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .kavango_east,

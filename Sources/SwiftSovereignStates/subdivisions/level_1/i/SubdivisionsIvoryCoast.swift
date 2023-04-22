@@ -37,16 +37,4 @@ public enum SubdivisionsIvoryCoast : String, SovereignStateSubdivision { // http
             return SovereignStateSubdivisionType.districts
         }
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .bas_sassandra: return "Bas-Sassandra"
-        case .comoe: return "Comoé"
-        case .denguele: return "Denguélé"
-        case .goh_djiboua: return "Gôh-Djiboua"
-        case .sassandra_marahoue: return "Sassandra-Marahoué"
-        case .vallee_du_bandama: return "Vallée du Bandama"
-        default: return nil
-        }
-    }
 }

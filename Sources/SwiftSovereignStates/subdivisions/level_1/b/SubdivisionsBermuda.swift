@@ -36,18 +36,6 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .smith_s: return "Smith's"
-        case .st_george_s,
-                .st_george_s_town:
-            return "St. George's"
-            
-        case .hamilton_city: return "Hamilton"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .southampton,

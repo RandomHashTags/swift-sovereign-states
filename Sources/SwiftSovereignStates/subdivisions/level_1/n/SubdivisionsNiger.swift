@@ -25,13 +25,6 @@ public enum SubdivisionsNiger : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name : String? {
-        switch self {
-        case .tillaberi: return "Tillabéri"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .niamey:

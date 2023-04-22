@@ -42,18 +42,6 @@ public enum SubdivisionsGermany : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .baden_wurttemberg: return "Baden-Württemberg"
-        case .mecklenburg_western_pomerania: return "Mecklenburg-Western Pomerania"
-        case .north_rhine_westphalia: return "North Rhine-Westphalia"
-        case .rhineland_palatinate: return "Rhineland-Palatinate"
-        case .saxony_anhalt: return "Saxony-Anhalt"
-        case .schleswig_holstein: return "Schleswig-Holstein"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .bremen:

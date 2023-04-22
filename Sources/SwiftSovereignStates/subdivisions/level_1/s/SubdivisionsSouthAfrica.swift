@@ -26,13 +26,6 @@ public enum SubdivisionsSouthAfrica : String, SovereignStateSubdivision { // htt
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var real_name : String? {
-        switch self {
-        case .kwazulu_natal: return "KwaZulu-Natal"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .free_state:

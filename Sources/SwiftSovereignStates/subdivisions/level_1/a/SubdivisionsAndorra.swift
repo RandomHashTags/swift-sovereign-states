@@ -24,14 +24,6 @@ public enum SubdivisionsAndorra : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.parishes
     }
     
-    public var real_name : String? {
-        switch self {
-        case .escaldes_engordany: return "Escaldes-Engordany"
-        case .sant_julia_de_loria: return "Sant Julià de Lòria"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .andorra_la_vella: return "6/6a/Flag_of_Andorra_la_Vella"

@@ -26,13 +26,6 @@ public enum SubdivisionsBolivia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.departments
     }
     
-    public var real_name : String? {
-        switch self {
-        case .potosi: return "Potosí"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .beni: return "7/70/Flag_of_Beni"

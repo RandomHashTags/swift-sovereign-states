@@ -38,18 +38,6 @@ public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https
         return SovereignStateSubdivisionType.departments
     }
     
-    public var real_name : String? {
-        switch self {
-        case .peten: return "Petén"
-        case .quiche: return "Quiché"
-        case .sacatepequez: return "Sacatepéquez"
-        case .solola: return "Sololá"
-        case .suchitepequez: return "Suchitepéquez"
-        case .totonicapan: return "Totonicapán"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .santa_rosa:

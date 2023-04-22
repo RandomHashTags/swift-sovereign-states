@@ -31,15 +31,6 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .boke: return "Boké"
-        case .labe: return "Labé"
-        case .nzerekore: return "Nzérékoré"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .conakry:

@@ -64,18 +64,6 @@ public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.prefectures
     }
     
-    public var real_name : String? {
-        switch self {
-        case .hokkaido: return "Hokkaidō"
-        case .hyogo: return "Hyōgo"
-        case .kochi: return "Kōchi"
-        case .kyoto: return "Kyōto"
-        case .oita: return "Ōita"
-        case .osaka: return "Ōsaka"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .hokkaido,

@@ -59,9 +59,9 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case voivodeships
         
     public var name_singular : String {
-        return SwiftSovereignStateLocalization.get_subdivision_type_name_singular(self)
+        return SwiftSovereignStateLocalization.get_release_subdivision_type_name_singular(self)
     }
     public var name_plural : String {
-        return SwiftSovereignStateLocalization.get_subdivision_type_name_plural(self)
+        return SwiftSovereignStateLocalization.get_release_subdivision_type_name_plural(self)
     }
 }

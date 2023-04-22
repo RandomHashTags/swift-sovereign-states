@@ -50,14 +50,6 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .cocos_keeling_islands: return "Cocos (Keeling) Islands"
-        case .heard_island_and_mcdonald_islands: return "Heard Island and McDonald Islands"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .victoria:

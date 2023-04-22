@@ -47,25 +47,6 @@ public enum SubdivisionsPanama : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .chiriqui: return "Chiriquí"
-        case .cocle: return "Coclé"
-        case .colon: return "Colón"
-        case .darien: return "Darién"
-        case .panama: return "Panamá"
-        case .panama_oeste: return "Panamá Oeste"
-
-        case .embera: return "Emberá-Wounaan"
-        case .ngabe_bugle: return "Ngäbe-Buglé"
-        case .naso_tjer_di: return "Naso Tjër Di"
-
-        case .madungandi: return "Madungandí"
-        case .wargandi: return "Wargandí"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .embera,

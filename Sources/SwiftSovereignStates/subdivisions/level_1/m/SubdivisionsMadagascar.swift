@@ -40,17 +40,6 @@ public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name : String? {
-        switch self {
-        case .alaotra_mangoro: return "Alaotra-Mangoro"
-        case .amoron_i_mania: return "Amoron'i Mania"
-        case .atsimo_andrefana: return "Atsimo-Andrefana"
-        case .atsimo_atsinanana: return "Atsimo-Atsinanana"
-        case .vatovavy_fitovinany: return "Vatovavy-Fitovinany"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .diana,

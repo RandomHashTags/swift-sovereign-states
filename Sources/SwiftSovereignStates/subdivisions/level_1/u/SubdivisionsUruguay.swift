@@ -36,16 +36,6 @@ public enum SubdivisionsUruguay : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.departments
     }
     
-    public var real_name : String? {
-        switch self {
-        case .paysandu: return "Paysandú"
-        case .rio_negro: return "Río Negro"
-        case .san_jose: return "San José"
-        case .tacuarembo: return "Tacuarembó"
-        default: return nil
-        }
-    }
-    
     public var iso_alpha_2 : String? {
         switch self {
         case .artigas: return "AR"

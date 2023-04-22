@@ -29,23 +29,6 @@ public enum SubdivisionsMorocco : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var real_name : String? {
-        switch self {
-        case .beni_mellal_khenifra: return "Béni Mellal-Khénifra"
-        case .casablanca_settat: return "Casablanca-Settat"
-        case .dakhla_oued_ed_dahab: return "Dakhla-Oued Ed-Dahab"
-        case .draa_tafilalet: return "Drâa-Tafilalet"
-        case .fes_meknes: return "Fès-Meknès"
-        case .guelmim_oued_noun: return "Guelmim-Oued Noun"
-        case .laayoune_sakia_el_hamra: return "Laâyoune-Sakia El Hamra"
-        case .marrakech_safi: return "Marrakech-Safi"
-        case .rabat_sale_kenitra: return "Rabat-Salé-Kénitra"
-        case .souss_massa: return "Souss-Massa"
-        case .tanger_tetouan_al_hoceima: return "Tanger-Tétouan-Al Hoceïma"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .oriental:

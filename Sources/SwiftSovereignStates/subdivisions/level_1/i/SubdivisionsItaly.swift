@@ -53,15 +53,6 @@ public enum SubdivisionsItaly : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .emilia_romagna: return "Emilia-Romagna"
-        case .friuli_venezla_giulia: return "Friuli-Venezia Giulia"
-        case .trentino_south_tyrol: return "Trentino-South Tyrol"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return nil
     }

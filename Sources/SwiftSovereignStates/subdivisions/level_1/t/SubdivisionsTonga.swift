@@ -22,15 +22,6 @@ public enum SubdivisionsTonga : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.districts
     }
     
-    public var real_name : String? {
-        switch self {
-        case .eua: return "'Eua"
-        case .ha_apai: return "Ha'apai"
-        case .vava_u: return "Vava'u"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return nil
     }

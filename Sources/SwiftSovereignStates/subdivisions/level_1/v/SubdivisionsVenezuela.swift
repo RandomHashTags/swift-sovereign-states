@@ -47,18 +47,6 @@ public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .anzoategui: return "Anzoátegui"
-        case .bolivar: return "Bolívar"
-        case .falcon: return "Falcón"
-        case .guarico: return "Guárico"
-        case .merida: return "Mérida"
-        case .tachira: return "Táchira"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .amazonas:

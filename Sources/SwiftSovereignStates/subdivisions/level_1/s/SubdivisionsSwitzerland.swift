@@ -43,17 +43,6 @@ public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // htt
         return SovereignStateSubdivisionType.cantons
     }
     
-    public var real_name : String? {
-        switch self {
-        case .basel_landschaft: return "Basel-Landschaft"
-        case .basel_stadt: return "Basel-Stadt"
-        case .neuchatel: return "Neuchâtel"
-        case .st_gallen: return "St. Gallen"
-        case .zurich: return "Zürich"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_prefix : String? {
         switch self {
         case .aargau,

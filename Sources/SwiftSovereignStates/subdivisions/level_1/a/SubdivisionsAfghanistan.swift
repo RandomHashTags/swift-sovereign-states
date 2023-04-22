@@ -50,11 +50,4 @@ public enum SubdivisionsAfghanistan : String, SovereignStateSubdivision { // htt
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .sar_e_pol: return "Sar-e Pol"
-        default: return nil
-        }
-    }
 }

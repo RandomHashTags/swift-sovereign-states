@@ -31,15 +31,6 @@ public enum SubdivisionsSyria : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.governorates
     }
     
-    public var real_name : String? {
-        switch self {
-        case .al_hasaka: return "Al-Hasakah"
-        case .as_suwayda: return "As-Suwayda"
-        case .deir_ez_zor: return "Deir ez-Zor"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return "_" + type_suffix
     }

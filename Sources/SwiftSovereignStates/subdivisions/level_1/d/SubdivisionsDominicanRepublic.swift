@@ -58,22 +58,6 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .dajabon: return "Dajabón"
-        case .elias_pina: return "Elías Piña"
-        case .maria_trinidad_sanchez: return "María Trinidad Sánchez"
-        case .monsenor_nouel: return "Monseñor Nouel"
-        case .samana: return "Samaná"
-        case .san_cristobal: return "San Cristóbal"
-        case .san_jose_de_ocoa: return "San José de Ocoa"
-        case .san_pedro_de_macoris: return "San Pedro de Macorís"
-        case .sanchez_ramirez: return "Sánchez Ramírez"
-        case .santiago_rodriguez: return "Santiago Rodríguez"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .la_romana:

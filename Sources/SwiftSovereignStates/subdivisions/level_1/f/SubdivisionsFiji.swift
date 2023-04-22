@@ -38,13 +38,6 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .nadroga_navosa: return "Nadroga-Navosa"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .rotuma:

@@ -9,6 +9,9 @@ Implement and use real-world regional divisions. I didn't want other people inve
 * tvOS >= 13.0
 * watchOS >= 6.0
 
+## Current Limitations
+- only supports English localization
+
 ## Installation
 ### CocoaPods
 

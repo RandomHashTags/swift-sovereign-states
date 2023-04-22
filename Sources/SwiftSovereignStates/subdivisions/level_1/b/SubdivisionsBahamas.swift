@@ -49,13 +49,6 @@ public enum SubdivisionsBahamas : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.districts
     }
     
-    public var real_name : String? {
-        switch self {
-        case .moore_s_island: return "Moore's Island"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return nil
     }

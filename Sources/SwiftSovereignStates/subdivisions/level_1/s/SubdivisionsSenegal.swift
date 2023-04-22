@@ -30,14 +30,4 @@ public enum SubdivisionsSenegal : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .kedougou: return "Kédougou"
-        case .saint_louis: return "Saint-Louis"
-        case .sedhiou: return "Sédhiou"
-        case .thies: return "Thiès"
-        default: return nil
-        }
-    }
 }

@@ -33,15 +33,6 @@ public enum SubdivisionsMozambique : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .maputo_city:
-            return "Maputo"
-        default:
-            return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .maputo_city:

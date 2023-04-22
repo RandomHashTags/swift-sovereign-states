@@ -43,16 +43,6 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .auvergne_rhone_alpes: return "Auvergne-Rhône-Alpes"
-        case .burgundy_free_county: return "Burgundy-Free County"
-        case .centre_loire_valley: return "Centre-Loire Valley"
-        case .provence_alps_french_riviera: return "Provence-Alps-French Riviera"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .brittany,

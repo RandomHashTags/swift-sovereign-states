@@ -31,13 +31,4 @@ public enum SubdivisionsMauritania : String, SovereignStateSubdivision { // http
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .nouakchott_nord: return "Nouakchott-Nord"
-        case .nouakchott_ouest: return "Nouakchott-Ouest"
-        case .nouakchott_sud: return "Nouakchott-Sud"
-        default: return nil
-        }
-    }
 }

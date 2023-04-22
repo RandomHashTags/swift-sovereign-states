@@ -97,41 +97,4 @@ public enum SubdivisionsTurkey : String, SovereignStateSubdivision { // https://
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .adiyaman: return "Adıyaman"
-        case .agri: return "Ağrı"
-        case .aydin: return "Aydın"
-        case .balikesir: return "Balıkesir"
-        case .bartin: return "Bartın"
-        case .bingol: return "Bingöl"
-        case .canakkale: return "Çanakkale"
-        case .cankiri: return "Çankırı"
-        case .corum: return "Çorum"
-        case .diyarbakir: return "Diyarbakır"
-        case .duzce: return "Düzce"
-        case .elazig: return "Elâzığ"
-        case .eskisehir: return "Eskişehir"
-        case .gumushane: return "Gümüşhane"
-        case .hakkari: return "Hakkâri"
-        case .igdir: return "Iğdır"
-        case .izmir: return "İzmir"
-        case .kahramanmaras: return "Kahramanmaraş"
-        case .karabuk: return "Karabük"
-        case .kirikkale: return "Kırıkkale"
-        case .kirklareli: return "Kırklareli"
-        case .kirsehir: return "Kırşehir"
-        case .kutahya: return "Kütahya"
-        case .mugla: return "Muğla"
-        case .mus: return "Muş"
-        case .nevsehir: return "Nevşehir"
-        case .nigde: return "Niğde"
-        case .sanliurfa: return "Şanlıurfa"
-        case .sirnak: return "Şırnak"
-        case .tekirdag: return "Tekirdağ"
-        case .usak: return "Uşak"
-        default: return nil
-        }
-    }
 }

@@ -38,18 +38,6 @@ public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .camaguey: return "Camagüey"
-        case .ciego_de_avila: return "Ciego de Ávila"
-        case .guantanamo: return "Guantánamo"
-        case .holguin: return "Holguín"
-        case .pinar_del_rio: return "Pinar del Río"
-        case .sancti_spiritus: return "Sancti Spíritus"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .isla_de_la_juventud:

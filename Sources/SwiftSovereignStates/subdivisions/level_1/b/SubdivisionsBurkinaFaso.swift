@@ -29,17 +29,4 @@ public enum SubdivisionsBurkinaFaso : String, SovereignStateSubdivision { // htt
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .centre_est: return "Centre-Est"
-        case .centre_nord: return "Centre-Nord"
-        case .centre_ouest: return "Centre-Ouest"
-        case .centre_sud: return "Centre-Sud"
-        case .hauts_bassins: return "Hauts-Bassins"
-        case .plateau_central: return "Plateau-Central"
-        case .sud_ouest: return "Sud-Ouest"
-        default: return nil
-        }
-    }
 }

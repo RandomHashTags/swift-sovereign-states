@@ -22,11 +22,4 @@ public enum SubdivisionsEritrea : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .gash_barka: return "Gash-Barka"
-        default: return nil
-        }
-    }
 }

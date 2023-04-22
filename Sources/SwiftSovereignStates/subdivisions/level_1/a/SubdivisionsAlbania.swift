@@ -29,20 +29,6 @@ public enum SubdivisionsAlbania : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .diber: return "Dibër"
-        case .durres: return "Durrës"
-        case .gjirokaster: return "Gjirokastër"
-        case .korce: return "Korçë"
-        case .kukes: return "Kukës"
-        case .lezhe: return "Lezhë"
-        case .shkoder: return "Shkodër"
-        case .vlore: return "Vlorë"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .berat: return "c/c1/Stema_e_Qarkut_Berat"

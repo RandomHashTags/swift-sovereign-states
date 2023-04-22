@@ -38,14 +38,6 @@ public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .azad_jammu_and_kashmir: return "Azad Jammu and Kashmir"
-        case .gilgit_baltistan: return "Gilgit-Baltistan"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .balochistan,

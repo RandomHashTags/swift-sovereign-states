@@ -34,17 +34,6 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .hradec_kralove: return "Hradec Králové"
-        case .moravian_silesian: return "Moravian-Silesian"
-        case .usti_nad_labem: return "Ústí nad Labem"
-        case .vysocina: return "Vysočina"
-        case .zlin: return "Zlín"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .prague: return "d/d2/Flag_of_Prague"

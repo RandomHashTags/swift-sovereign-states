@@ -75,29 +75,6 @@ public enum SubdivisionsAlgeria : String, SovereignStateSubdivision {  // https:
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var real_name : String? {
-        switch self {
-        case .ain_defla: return "Aïn Defla"
-        case .ain_temouchent: return "Aïn Témouchent"
-        case .bechar: return "Béchar"
-        case .bejaia: return "Béjaïa"
-        case .beni_abbes: return "Béni Abbès"
-        case .bordj_bou_arreridj: return "Bordj Bou Arréridj"
-        case .bouira: return "Bouïra"
-        case .boumerdes: return "Boumerdès"
-        case .el_m_ghair: return "El M'Ghair"
-        case .ghardaia: return "Ghardaïa"
-        case .m_sila: return "M'Sila"
-        case .medea: return "Médéa"
-        case .naama: return "Naâma"
-        case .saida: return "Saïda"
-        case .setif: return "Sétif"
-        case .sidi_bel_abbes: return "Sidi Bel Abbès"
-        case .tebessa: return "Tébessa"
-        default: return nil
-        }
-    }
-    
     public var cities : [any SovereignStateCity]? {
         switch self {
         case .adrar: return CitiesAlgeriaAdrar.allCases

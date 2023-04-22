@@ -314,6 +314,6 @@ public enum Currency : String, CaseIterable, LosslessStringConvertible {
     }
     
     public var name : String {
-        return SwiftSovereignStateLocalization.get_currency_name(self)
+        return SwiftSovereignStateLocalization.get_release_currency_name(self)
     }
 }

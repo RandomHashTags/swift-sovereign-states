@@ -32,20 +32,6 @@ public enum SubdivisionsEstonia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .ida_viru: return "Ida-Viru"
-        case .jarva: return "Järva"
-        case .jogeva: return "Jõgeva"
-        case .laane: return "Lääne"
-        case .laane_viru: return "Lääne-Viru"
-        case .parnu: return "Pärnu"
-        case .polva: return "Põlva"
-        case .voru: return "Võru"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .harju: return "2/22/Flag_of_et-Harju_maakond"

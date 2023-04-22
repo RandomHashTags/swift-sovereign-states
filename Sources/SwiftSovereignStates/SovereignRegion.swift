@@ -18,11 +18,17 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool
     
     /// The name of this SovereignRegion as it is commonly known as internationally.
+    @available(*, deprecated)
     var short_name : String { get }
     /// Where the decimal point `(.)` should be located in the `short_name`.
+    @available(*, deprecated)
     var short_name_decimal_separator_index : Int? { get }
     /// The real name of this SovereignRegion. Usually only used if this SovereignRegion's legal name contains accents, hyphens, commas, or other special characters.
+    @available(*, deprecated)
     var real_name : String? { get }
+    
+    var name : String { get }
+    
     /// The slug Wikipedia has for this SovereignRegion as it would appear in the url, but the underscores are spaces.
     var wikipedia_name : String? { get }
     /// The official names this SovereignRegion legally identifies as.

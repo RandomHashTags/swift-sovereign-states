@@ -48,15 +48,6 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .esteli: return "Estelí"
-        case .leon: return "León"
-        case .rio_san_juan: return "Río San Juan"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .north_caribbean_coast,

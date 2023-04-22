@@ -25,12 +25,4 @@ public enum SubdivisionsMauritius : String, SovereignStateSubdivision { // https
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .riviere_du_rempart: return "Rivière du Rempart"
-        case .riviere_noire: return "Rivière Noire"
-        default: return nil
-        }
-    }
 }

@@ -49,35 +49,6 @@ public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.communes
     }
     
-    public var real_name : String? {
-        switch self {
-        case .anse_bertrand: return "Anse-Bertrand"
-        case .baie_manhault: return "Baie-Mahault"
-        case .basse_terre: return "Basse-Terre"
-        case .capesterre_belle_eau: return "Capesterre-Belle-Eau"
-        case .capesterre_de_marie_galante: return "Capesterre-de-Marie-Galante"
-        case .grand_bourg: return "Grand-Bourg"
-        case .la_desirade: return "La Désirade"
-        case .morne_a_l_eau: return "Morne-à-l'Eau"
-        case .petit_bourg: return "Petit-Bourg"
-        case .petit_canal: return "Petit-Canal"
-        case .pointe_a_pitre: return "Pointe-à-Pitre"
-        case .pointe_noire: return "Pointe-Noire"
-        case .port_louis: return "Port-Louis"
-        case .saint_claude: return "Saint-Claude"
-        case .saint_francois: return "Saint-François"
-        case .saint_louis: return "Saint-Louis"
-        case .sainte_anne: return "Sainte-Anne"
-        case .sainte_rose: return "Sainte-Rose"
-        case .terre_de_bas: return "Terre-de-Bas"
-        case .terre_de_haut: return "Terre-de-Haut"
-        case .trois_rivieres: return "Trois-Rivières"
-        case .vieux_fort: return "Vieux-Fort"
-        case .vieux_habitants: return "Vieux-Habitants"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .la_desirade:

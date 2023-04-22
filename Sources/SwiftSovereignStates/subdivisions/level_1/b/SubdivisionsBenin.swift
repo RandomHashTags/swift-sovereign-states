@@ -28,11 +28,4 @@ public enum SubdivisionsBenin : String, SovereignStateSubdivision { // https://e
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.departments
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .oueme: return "Ouémé"
-        default: return nil
-        }
-    }
 }

@@ -43,16 +43,6 @@ public enum SubdivisionsPortugal : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .braganca: return "Bragança"
-        case .evora: return "Évora"
-        case .santarem: return "Santarém"
-        case .setubal: return "Setúbal"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .azores,

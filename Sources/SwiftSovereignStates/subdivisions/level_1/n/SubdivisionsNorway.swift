@@ -45,16 +45,6 @@ public enum SubdivisionsNorway : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .more_og_romsdal: return "Møre og Romsdal"
-        case .troms_og_finnmark: return "Troms og Finnmark"
-        case .trondelag: return "Trøndelag"
-        case .vestfold_og_telemark: return "Vestfold og Telemark"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .viken:

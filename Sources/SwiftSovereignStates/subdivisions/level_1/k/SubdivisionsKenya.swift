@@ -64,17 +64,6 @@ public enum SubdivisionsKenya : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .elgeyo_marakwet: return "Elgeyo-Marakwet"
-        case .murang_a: return "Murang'a"
-        case .taita_taveta: return "Taita–Taveta"
-        case .tharaka_nithi: return "Tharaka-Nithi"
-        case .trans_nzoia: return "Trans-Nzoia"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .baringo: return "d/da/Flag_of_Baringo_County.png"

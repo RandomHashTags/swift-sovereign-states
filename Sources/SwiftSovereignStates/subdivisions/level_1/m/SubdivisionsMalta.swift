@@ -85,37 +85,6 @@ public enum SubdivisionsMalta : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.councils
     }
     
-    public var real_name : String? {
-        switch self {
-        case .birzebbuga: return "Birżebbuġa"
-        case .ghajnsielem: return "Għajnsielem"
-        case .gharb: return "Għarb"
-        case .gharghur: return "Għargħur"
-        case .ghasri: return "Għasri"
-        case .ghaxaq: return "Għaxaq"
-        case .gzira: return "Gżira"
-        case .hamrun: return "Ħamrun"
-        case .kercem: return "Kerċem"
-        case .mellieha: return "Mellieħa"
-        case .mgarr: return "Mġarr"
-        case .pieta: return "Pietà"
-        case .san_gwann: return "San Ġwann"
-        case .santa_lucija: return "Santa Luċija"
-        case .siggiewi: return "Siġġiewi"
-        case .st_julian_s: return "St. Julian's"
-        case .st_paul_s_bay: return "St. Paul's Bay"
-        case .ta__xbiex: return "Ta' Xbiex"
-        case .xaghra: return "Xagħra"
-        case .xghajra: return "Xgħajra"
-        case .zabbar: return "Żabbar"
-        case .zebbug: return "Żebbuġ"
-        case .zebbug_gozo: return "Żebbuġ"
-        case .zejtun: return "Żejtun"
-        case .zurrieq: return "Żurrieq"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .attard: return "f/f5/Flag_of_Attard"

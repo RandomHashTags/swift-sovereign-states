@@ -39,12 +39,4 @@ public enum SubdivisionsLaos : String, SovereignStateSubdivision {
             return SovereignStateSubdivisionType.provinces
         }
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .bokeo: return "Bokèo"
-        case .vientiane_prefecture: return "Vientiane"
-        default: return nil
-        }
-    }
 }

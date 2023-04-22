@@ -41,13 +41,6 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .castilla_la_macha: return "Castilla-La Mancha"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .basque_country:

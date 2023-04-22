@@ -36,16 +36,6 @@ public enum SubdivisionsBotswana : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.districts
     }
     
-    public var real_name : String? {
-        switch self {
-        case .north_east: return "North-East"
-        case .south_east: return "South-East"
-            
-        case .selebi_phikwe: return "Selebi-Phikwe"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .central, .north_east, .south_east, .southern:

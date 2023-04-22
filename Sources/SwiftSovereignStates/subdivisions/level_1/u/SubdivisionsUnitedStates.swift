@@ -93,13 +93,6 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .washington_dc: return "Washington, D.C."
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .georgia:

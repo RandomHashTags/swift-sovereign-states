@@ -29,15 +29,6 @@ public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.cantons
     }
     
-    public var real_name : String? {
-        switch self {
-        case .esch_sur_alzette:
-            return "Esch-sur-Alzette"
-        default:
-            return nil
-        }
-    }
-    
     public var wikipedia_url_prefix : String? {
         return "Canton_of_"
     }

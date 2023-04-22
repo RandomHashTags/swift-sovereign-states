@@ -28,11 +28,4 @@ public enum SubdivisionsJordan : String, SovereignStateSubdivision { // https://
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.governorates
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .maan: return "Ma'an"
-        default: return nil
-        }
-    }
 }

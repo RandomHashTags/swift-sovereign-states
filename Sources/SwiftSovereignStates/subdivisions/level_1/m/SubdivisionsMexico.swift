@@ -54,17 +54,6 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .michoacan: return "Michoacán"
-        case .nuevo_leon: return "Nuevo León"
-        case .queretaro: return "Querétaro"
-        case .san_luis_potosi: return "San Luis Potosí"
-        case .yucatan: return "Yucatán"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_prefix : String? {
         switch self {
         case .mexico:

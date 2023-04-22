@@ -41,24 +41,6 @@ public enum SubdivisionsParaguay : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .alto_parana: return "Alto Paraná"
-        case .boqueron: return "Boquerón"
-        case .caaguazu: return "Caaguazú"
-        case .caazapa: return "Caazapá"
-        case .canindeyu: return "Canindeyú"
-        case .concepcion: return "Concepción"
-        case .guaira: return "Guairá"
-        case .itapua: return "Itapúa"
-        case .neembucu: return "Ñeembucú"
-        case .paraguari: return "Paraguarí"
-        
-        case .asuncion: return "Asunción"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .concepcion: return "a/ac/Flag_of_Concepci%C3%B3n_Department"

@@ -33,14 +33,6 @@ public enum SubdivisionsPalestine : String, SovereignStateSubdivision { // https
         return SovereignStateSubdivisionType.governorates
     }
     
-    public var real_name : String? {
-        switch self {
-        case .deir_al_balah: return "Deir al-Balah"
-        case .ramallah_and_al_bireh: return "Ramallah and al-Bireh"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         return "_Governorate"
     }

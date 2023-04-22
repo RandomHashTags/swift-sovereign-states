@@ -106,13 +106,6 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .tawi_tawi: return "Tawi-Tawi"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .abra: return "b/b0/PH-ABR_Flag.png"

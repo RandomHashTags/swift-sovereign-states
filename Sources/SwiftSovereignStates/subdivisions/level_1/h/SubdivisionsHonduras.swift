@@ -35,22 +35,6 @@ public enum SubdivisionsHonduras : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.departments
     }
     
-    public var real_name : String? {
-        switch self {
-        case .atlantida: return "Atlántida"
-        case .colon: return "Colón"
-        case .copan: return "Copán"
-        case .cortes: return "Cortés"
-        case .el_paraiso: return "El Paraíso"
-        case .francisco_morazan: return "Francisco Morazán"
-        case .gracias_a_dios: return "Gracias a Dios"
-        case .intibuca: return "Intibucá"
-        case .bay_islands: return "Bay Islands"
-        case .santa_barabara: return "Santa Bárbara"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .colon,

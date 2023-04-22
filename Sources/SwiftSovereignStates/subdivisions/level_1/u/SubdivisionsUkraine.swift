@@ -74,17 +74,6 @@ public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .kyiv_city:
-            return "Kyiv"
-        case .ivano_frankivsk:
-            return "Ivano-Frankivsk"
-        default:
-            return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .cherkasy: return "8/85/Flag_of_Cherkasy_Oblast"

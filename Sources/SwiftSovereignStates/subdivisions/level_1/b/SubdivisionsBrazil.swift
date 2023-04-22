@@ -59,23 +59,6 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    
-    public var real_name : String? {
-        switch self {
-        case .amapa: return "Amapá"
-        case .ceara: return "Ceará"
-        case .espirito_santo: return "Espírito Santo"
-        case .goias: return "Goiás"
-        case .maranhao: return "Maranhão"
-        case .para: return "Pará"
-        case .paraiba: return "Paraíba"
-        case .parana: return "Paraná"
-        case .piaui: return "Piauí"
-        case .rondonia: return "Rondônia"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .acre,

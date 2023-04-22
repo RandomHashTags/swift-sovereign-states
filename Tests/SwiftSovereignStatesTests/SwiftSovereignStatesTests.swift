@@ -5,6 +5,8 @@ import Kanna
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
+        //generate_all_english_localization_file()
+        
         let _:[Set<String>] = Country.allCases.map({ $0.keywords })
         let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
         let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
@@ -21,6 +23,22 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //generate_english_localization()
         test_localization()
         
+        await generate_divisions()
+        
+        //try await test_benchmarks(cache: false)
+        //try await test_benchmarks(cache: true)
+        
+        /*let seconds:UInt64 = 1 * 1_000_000_000
+        if let regions:[any SovereignRegion] = Country.united_states.subdivisions?.filter({ $0.rawValue[$0.rawValue.index($0.rawValue.startIndex, offsetBy: 0)] > "m" }).compactMap({ $0.counties }).flatMap({ $0 }) {
+            print("validating " + regions.count.description + " regions...")
+            try await validate_region_wikipedia_urls(regions: regions, seconds)
+        }*/
+        //try await validate_region_wikipedia_urls(regions: Country.allCases, seconds)
+        //try await validate_region_wikipedia_urls(regions: SovereignStateSubdivisions.all, seconds)
+        //try await validate_region_wikipedia_urls(regions: SovereignStateCities.all, seconds)
+    }
+    
+    private func generate_divisions() async {
         let regex_replacements:[String:String] = [
             "( |-|'|/|–)" : "_",
             "(\\.|\\!|\\?|,)" : "",
@@ -45,20 +63,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         //await generate_level_1_divisions(regex_replacements)
         //await generate_level_2_divisions(regex_replacements)
-        
-        //try await test_benchmarks(cache: false)
-        //try await test_benchmarks(cache: true)
-        
-        /*let seconds:UInt64 = 1 * 1_000_000_000
-        if let regions:[any SovereignRegion] = Country.united_states.subdivisions?.filter({ $0.rawValue[$0.rawValue.index($0.rawValue.startIndex, offsetBy: 0)] > "m" }).compactMap({ $0.counties }).flatMap({ $0 }) {
-            print("validating " + regions.count.description + " regions...")
-            try await validate_region_wikipedia_urls(regions: regions, seconds)
-        }*/
-        //try await validate_region_wikipedia_urls(regions: Country.allCases, seconds)
-        //try await validate_region_wikipedia_urls(regions: SovereignStateSubdivisions.all, seconds)
-        //try await validate_region_wikipedia_urls(regions: SovereignStateCities.all, seconds)
     }
-    
     private func generate_level_1_divisions(_ regex_replacements: [String:String]) async {
         guard let test:HTMLDocument = await request_html(url: "https://en.wikipedia.org/wiki/Districts_of_Uganda") else {
             return
@@ -584,7 +589,44 @@ final class SwiftSovereignStatesTests: XCTestCase {
             XCTAssert(city.subdivision.isEqual(minnesota), "minnesota city.getSubdivision != Minnesota")
         }
     }
-    
+}
+extension SwiftSovereignStatesTests {
+    private func generate_all_english_localization_file() {
+        let date:String = Date().timeIntervalSince1970.description
+        var array:[String] = [String]()
+        array.reserveCapacity(1 + 4 + Currency.allCases.count + Country.allCases.count + (SovereignStateSubdivisionType.allCases.count * 2) + SovereignStateSubdivisions.all.count)
+        
+        array.append("/*\n  Localizable.strings\n  Generated at " + date + "\n*/")
+        
+        array.append("// Currency Names")
+        for currency in Currency.allCases {
+            array.append("\"" + currency.rawValue + "\" = \"" + SwiftSovereignStateLocalization.get_debug_currency_name(currency) + "\";")
+        }
+        
+        array.append("// Country Short Names")
+        for country in Country.allCases {
+            array.append("\"" + country.cache_id + "\" = \"" + SwiftSovereignStateLocalization.get_debug_country_name(country) + "\";")
+        }
+        
+        array.append("// Level 1 Subdivision Type Names")
+        for type in SovereignStateSubdivisionType.allCases {
+            array.append("\"" + type.rawValue + "_s\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_type_name_singular(type) + "\";")
+            array.append("\"" + type.rawValue + "_p\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_type_name_plural(type) + "\";")
+        }
+        
+        array.append("// Level 1 Subdivision Short Names")
+        for subdivision in SovereignStateSubdivisions.all {
+            array.append("\"" + subdivision.cache_id + "\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_level_1_name(subdivision) + "\";")
+        }
+        write(text: array.joined(separator: "\n"), to: "Localizable")
+    }
+    func write(text: String, to fileNamed: String, folder: String = "SavedFiles") {
+        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return }
+        guard let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else { return }
+        try? FileManager.default.createDirectory(atPath: writePath.path, withIntermediateDirectories: true)
+        let file = writePath.appendingPathComponent(fileNamed + ".strings")
+        try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
+    }
     private func generate_english_localization() {
         for country in Country.allCases {
             if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
@@ -601,7 +643,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         for language in supported_language_codes {
             var missing:[String] = [String]()
             for country in Country.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_country_name(country, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_release_country_name(country, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(country.rawValue)
                 }
@@ -610,7 +652,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             missing.removeAll()
             
             for subdivision in SovereignStateSubdivisions.all {
-                let string:String = SwiftSovereignStateLocalization.get_subdivision_level_1_name(subdivision, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_level_1_name(subdivision, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(subdivision.cache_id)
                 }
@@ -619,7 +661,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             missing.removeAll()
             
             for currency in Currency.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_currency_name(currency, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_release_currency_name(currency, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(currency.rawValue)
                 }
@@ -628,7 +670,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             missing.removeAll()
             
             for type in SovereignStateSubdivisionType.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_subdivision_type_name_singular(type, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_singular(type, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(type.rawValue)
                 }
@@ -636,7 +678,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " subdivision_types_name_singular for " + missing.description)
             missing.removeAll()
             for type in SovereignStateSubdivisionType.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_subdivision_type_name_plural(type, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_plural(type, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(type.rawValue)
                 }

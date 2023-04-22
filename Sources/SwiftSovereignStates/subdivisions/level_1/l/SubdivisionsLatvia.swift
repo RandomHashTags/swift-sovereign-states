@@ -89,33 +89,6 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .adazi: return "Ādaži"
-        case .aluksne: return "Alūksne"
-        case .augsdaugava: return "Augšdaugava"
-        case .cesis: return "Cēsis"
-        case .jekabpils: return "Jēkabpils"
-        case .kekava: return "Ķekava"
-        case .kraslava: return "Krāslava"
-        case .kuldiga: return "Kuldīga"
-        case .limbazi: return "Limbaži"
-        case .livani: return "Līvāni"
-        case .marupe: return "Mārupe"
-        case .preili: return "Preiļi"
-        case .rezekne, .rezekne_city:
-            return "Rēzekne"
-        case .ropazi: return "Ropaži"
-        case .varaklani: return "Varakļāni"
-        
-        case .jelgava_city: return "Jelgava"
-        case .jurmala: return "Jūrmala"
-        case .liepaja: return "Liepāja"
-        case .ventspils_city: return "Ventspils"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .adazi: return "5/51/Ādažu_novada_karogs"

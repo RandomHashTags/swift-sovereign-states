@@ -46,14 +46,6 @@ public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .benishangul_gumuz: return "Benishangul-Gumuz"
-        case .southern_nations_nationalities_and_peoples_region: return "Southern Nations, Nationalities, and Peoples'"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .oromia,

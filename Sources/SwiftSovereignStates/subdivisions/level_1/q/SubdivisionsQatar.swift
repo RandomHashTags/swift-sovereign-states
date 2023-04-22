@@ -25,14 +25,6 @@ public enum SubdivisionsQatar : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.municipalities
     }
     
-    public var real_name : String? {
-        switch self {
-        case .ad_dawhah: return "Ad-Dawhah"
-        case .al_shahaniya: return "Al-Shahaniya"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .ad_dawhah:

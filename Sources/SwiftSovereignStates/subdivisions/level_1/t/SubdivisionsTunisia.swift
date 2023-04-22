@@ -40,12 +40,4 @@ public enum SubdivisionsTunisia : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.governorates
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .beja: return "Béja"
-        case .gabes: return "Gabès"
-        default: return nil
-        }
-    }
 }

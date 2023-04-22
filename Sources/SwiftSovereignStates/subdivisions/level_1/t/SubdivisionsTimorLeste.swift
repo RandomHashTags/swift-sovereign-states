@@ -37,14 +37,6 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .lautem: return "Lautém"
-        case .liquica: return "Liquiçá"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .aileu: return nil

@@ -31,18 +31,6 @@ public enum SubdivisionsElSalvador : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.departments
     }
     
-    public var real_name : String? {
-        switch self {
-        case .ahuachapan: return "Ahuachapán"
-        case .cabanas: return "Cabañas"
-        case .cuscatlan: return "Cuscatlán"
-        case .la_union: return "La Unión"
-        case .morazan: return "Morazán"
-        case .usulutan: return "Usulután"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_flag_url_svg_id : String? {
         switch self {
         case .ahuachapan: return "e/e8/Bandera_del_Departamento_de_Ahuachap%C3%A1n.PNG"

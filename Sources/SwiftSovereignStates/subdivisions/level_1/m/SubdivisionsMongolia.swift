@@ -44,21 +44,6 @@ public enum SubdivisionsMongolia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .bayan_olgii: return "Bayan-Ölgii"
-        case .darkhan_uul: return "Darkhan-Uul"
-        case .govi_altai: return "Govi-Altai"
-        case .govisumber: return "Govisümber"
-        case .khovsgol: return "Khövsgöl"
-        case .omnogovi: return "Ömnögovi"
-        case .ovorkhangai: return "Övörkhangai"
-        case .sukhbaatar: return "Sükhbaatar"
-        case .tov: return "Töv"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .ulaanbaatar:

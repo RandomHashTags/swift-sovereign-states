@@ -32,16 +32,6 @@ public enum SubdivisionsKyrgyzstan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .chuy: return "Chüy"
-        case .issyk_kul: return "Issyk-Kul"
-        case .jalal_abad: return "Jalal-Abad"
-        case .osh_city: return "Osh"
-        default: return nil
-        }
-    }
-    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .bishkek, .osh_city:

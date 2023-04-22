@@ -33,6 +33,9 @@ public extension SovereignStateLevel2Division {
     var cache_id : String {
         return subdivision.cache_id + "-" + rawValue
     }
+    var name : String {
+        return SwiftSovereignStateLocalization.get_release_subdivision_level_2_name(self)
+    }
     /// _Federal Information Processing Standard_ number or regional equivalent representing this division as a string, formatted as `###`.
     var fips_code_string : String {
         return (fips_code < 10 ? "00" : fips_code < 100 ? "0" : "") + fips_code.description

@@ -26,14 +26,4 @@ public enum SubdivisionsLesotho : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .butha_buthe: return "Butha-Buthe"
-        case .mohale_s_hoek: return "Mohale's Hoek"
-        case .qacha_s_nek: return "Qacha's Nek"
-        case .thaba_tseka: return "Thaba-Tseka"
-        default: return nil
-        }
-    }
 }

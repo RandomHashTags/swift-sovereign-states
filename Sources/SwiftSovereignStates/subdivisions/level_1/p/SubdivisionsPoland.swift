@@ -32,13 +32,4 @@ public enum SubdivisionsPoland : String, SovereignStateSubdivision { // https://
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.voivodeships
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .kuyavia_pomeranian: return "Kuyavian-Pomeranian"
-        case .lodz: return "Łódź"
-        case .warmian_masurian: return "Warmian-Masurian"
-        default: return nil
-        }
-    }
 }
