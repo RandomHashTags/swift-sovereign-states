@@ -29,7 +29,7 @@ private extension Bundle {
         return bundle
     }
     private static func get_release_localization(language_code: String?, identifier: String) -> Bundle? {
-        let language_code:String = language_code ?? String(Locale.current.identifier.prefix(2))
+        let language_code:String = "en"// language_code ?? String(Locale.current.identifier.prefix(2))
         if let bundle:Bundle = SwiftSovereignStateCache.localization[language_code] {
             return bundle
         }
@@ -91,13 +91,7 @@ public enum SwiftSovereignStateLocalization {
     }
 }
 public extension SwiftSovereignStateLocalization {
-    static func get_release_country_name(_ country: Country, language_code: String? = nil) -> String {
-        return Bundle.get_release(language_code: language_code, country.cache_id)
-    }
-    static func get_release_subdivision_level_1_name(_ region: any SovereignStateSubdivision, language_code: String? = nil) -> String {
-        return Bundle.get_release(language_code: language_code, region.cache_id)
-    }
-    static func get_release_subdivision_level_2_name(_ region: any SovereignStateLevel2Division, language_code: String? = nil) -> String {
+    static func get_release_sovereign_region_name(_ region: any SovereignRegion, language_code: String? = nil) -> String {
         return Bundle.get_release(language_code: language_code, region.cache_id)
     }
     

@@ -621,8 +621,10 @@ extension SwiftSovereignStatesTests {
         write(text: array.joined(separator: "\n"), to: "Localizable")
     }
     func write(text: String, to fileNamed: String, folder: String = "SavedFiles") {
-        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return }
-        guard let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else { return }
+        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
+              let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else {
+            return
+        }
         try? FileManager.default.createDirectory(atPath: writePath.path, withIntermediateDirectories: true)
         let file = writePath.appendingPathComponent(fileNamed + ".strings")
         try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
@@ -643,7 +645,7 @@ extension SwiftSovereignStatesTests {
         for language in supported_language_codes {
             var missing:[String] = [String]()
             for country in Country.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_release_country_name(country, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_release_sovereign_region_name(country, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(country.rawValue)
                 }
@@ -652,7 +654,7 @@ extension SwiftSovereignStatesTests {
             missing.removeAll()
             
             for subdivision in SovereignStateSubdivisions.all {
-                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_level_1_name(subdivision, language_code: language)
+                let string:String = SwiftSovereignStateLocalization.get_release_sovereign_region_name(subdivision, language_code: language)
                 if string.elementsEqual("nil") {
                     missing.append(subdivision.cache_id)
                 }

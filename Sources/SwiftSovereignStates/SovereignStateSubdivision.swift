@@ -162,10 +162,6 @@ public extension SovereignStateSubdivision {
         return country.rawValue + "-" + rawValue
     }
     
-    var name : String {
-        return SwiftSovereignStateLocalization.get_release_subdivision_level_1_name(self)
-    }
-    
     var iso_alpha_2 : String? {
         return nil
     }

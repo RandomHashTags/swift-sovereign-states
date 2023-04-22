@@ -107,7 +107,7 @@ public extension SovereignRegion {
     }
     
     var name : String {
-        return real_name ?? short_name
+        return SwiftSovereignStateLocalization.get_release_sovereign_region_name(self)
     }
     
     var short_name : String {
