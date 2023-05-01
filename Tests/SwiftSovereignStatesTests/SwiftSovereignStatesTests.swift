@@ -613,18 +613,18 @@ extension SwiftSovereignStatesTests {
             array.append("\"" + country.cache_id + "\" = \"" + SwiftSovereignStateLocalization.get_debug_country_name(country) + "\";")
         }
         
-        array.append("// Level 1 Subdivision Type Names")
+        array.append("// Level-1 Subdivision Type Names")
         for type in SovereignStateSubdivisionType.allCases {
             array.append("\"" + type.rawValue + "_s\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_type_name_singular(type) + "\";")
             array.append("\"" + type.rawValue + "_p\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_type_name_plural(type) + "\";")
         }
         
-        array.append("// Level 1 Subdivision Short Names")
+        array.append("// Level-1 Subdivision Short Names")
         for subdivision in SovereignStateSubdivisions.all {
             array.append("\"" + subdivision.cache_id + "\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_level_1_name(subdivision) + "\";")
         }
         
-        array.append("// Level 3 Subdivision Short Names")
+        array.append("// Level-3 Subdivision Short Names")
         for subdivision in SovereignStateCities.all {
             array.append("\"" + subdivision.cache_id + "\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_level_3_name(subdivision) + "\";")
         }
