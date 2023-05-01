@@ -12,7 +12,12 @@ let package = Package(
         .tvOS(.v14),
         .watchOS(.v6)
     ],
-    products: [],
+    products: [
+        .library(
+            name: "SwiftSovereignStates",
+            targets: ["SwiftSovereignStates"]
+        )
+    ],
     dependencies: [
         .package(url: "https://github.com/tid-kijyun/Kanna.git", from: "5.2.7")
     ],
