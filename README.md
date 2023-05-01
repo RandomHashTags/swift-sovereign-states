@@ -11,6 +11,7 @@ Implement and use real-world regional divisions. I didn't want other people inve
 
 ## Current Limitations
 - only supports English localization
+- only a few level-2 supported subdivisions
 
 ## Installation
 ### CocoaPods
