@@ -234,13 +234,4 @@ public enum CitiesUnitedStatesIdaho : String, SovereignStateCity { // https://en
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.idaho
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .coeur_dalene: return "Coeur d'Alene"
-        case .mccall: return "McCall"
-        case .mccammon: return "McCammon"
-        default: return nil
-        }
-    }
 }

@@ -16,6 +16,7 @@ private extension Bundle {
                 cache_id = cache_id.replacingOccurrences(of: "%" + key + "%", with: replacement)
             }
         }
+        cache_id.append("_" + language_code)
         if let bundle:Bundle = SwiftSovereignStateCache.localization[cache_id] {
             return bundle
         }
@@ -63,6 +64,7 @@ private enum SwiftSovereignStateLocalizationCategory : String {
     case country_names = "region_names/country"
     case subdivision_level_1_names = "region_names/subdivisions/level_1/%country%"
     case subdivision_level_2_names = "region_names/subdivisions/level_2/%country%/%subdivision%"
+    case subdivision_level_3_names = "region_names/subdivisions/level_3/%country%/%subdivision%"
     case currencies
     
     case subdivision_types = "subdivision/types"
@@ -77,6 +79,10 @@ public enum SwiftSovereignStateLocalization {
     public static func get_debug_subdivision_level_2_name(_ region: any SovereignStateLevel2Division, language_code: String? = nil) -> String {
         let subdivision:any SovereignStateSubdivision = region.subdivision
         return Bundle.get_debug(language_code: language_code, type: SwiftSovereignStateLocalizationCategory.subdivision_level_2_names, replacements: ["country" : subdivision.country.rawValue, "subdivision" : subdivision.rawValue], region.rawValue)
+    }
+    public static func get_debug_subdivision_level_3_name(_ region: any SovereignStateCity, language_code: String? = nil) -> String {
+        let subdivision:any SovereignStateSubdivision = region.subdivision
+        return Bundle.get_debug(language_code: language_code, type: SwiftSovereignStateLocalizationCategory.subdivision_level_3_names, replacements: ["country" : subdivision.country.rawValue, "subdivision" : subdivision.rawValue], region.rawValue)
     }
     
     public static func get_debug_currency_name(_ currency: Currency, language_code: String? = nil) -> String {

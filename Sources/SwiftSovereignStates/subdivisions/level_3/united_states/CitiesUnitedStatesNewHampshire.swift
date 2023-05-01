@@ -264,11 +264,4 @@ public enum CitiesUnitedStatesNewHampshire : String, SovereignStateCity { // htt
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.new_hampshire
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .hart_s_location: return "Hart's Location"
-        default: return nil
-        }
-    }
 }

@@ -391,14 +391,4 @@ public enum CitiesUnitedStatesNorthDakota : String, SovereignStateCity { // http
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.north_dakota
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .mcclusky: return "McClusky"
-        case .mchenry: return "McHenry"
-        case .mcville: return "McVille"
-        case .reiles_acres: return "Reile's Acres"
-        default: return nil
-        }
-    }
 }

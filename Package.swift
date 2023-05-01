@@ -12,20 +12,14 @@ let package = Package(
         .tvOS(.v14),
         .watchOS(.v6)
     ],
-    products: [
-        .library(
-            name: "SwiftSovereignStates",
-            targets: ["SwiftSovereignStates"]),
-    ],
+    products: [],
     dependencies: [
-        .package(url: "https://github.com/tid-kijyun/Kanna.git", from: "5.2.7"),
+        .package(url: "https://github.com/tid-kijyun/Kanna.git", from: "5.2.7")
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SwiftSovereignStates",
-            dependencies: [],
+            dependencies: ["Kanna"],
             resources: [
                 .process("Localization")
             ]
@@ -34,7 +28,7 @@ let package = Package(
             name: "SwiftSovereignStatesTests",
             dependencies: [
                 "SwiftSovereignStates",
-                .product(name: "Kanna", package: "kanna")
+                "Kanna"
             ]
         ),
     ]

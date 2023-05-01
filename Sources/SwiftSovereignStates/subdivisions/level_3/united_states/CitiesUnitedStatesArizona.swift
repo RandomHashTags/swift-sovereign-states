@@ -852,30 +852,4 @@ public enum CitiesUnitedStatesArizona : String, SovereignStateCity { // https://
             return SovereignStateCityType.city
         }
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .dewey_humboldt: return "Dewey-Humboldt"
-        case .pinetop_lakeside: return "Pinetop-Lakeside"
-            
-        // census-designated places,
-        case .ak_chin_village: return "Ak-Chin Village"
-        case .central_heights_midland_city: return "Central Heights-Midland City"
-        case .cottonwood_apache: return "Cottonwood"
-        case .heber_overgaard: return "Heber-Overgaard"
-        case .hotevilla_bacavi: return "Hotevilla-Bacavi"
-        case .mcconnico: return "McConnico"
-        case .mcnary: return "McNary"
-        case .mcneal: return "McNeal"
-        case .new_kingman_butler: return "New Kingman-Butler"
-        case .oljato_monument_valley: return "Oljato-Monument Valley"
-        case .red_rock_apache, .red_rock_pinal:
-            return "Red Rock"
-        case .so_hi: return "So-Hi"
-        case .st_johns_maricopa: return "St. Johns"
-        case .top_of_the_world: return "Top-of-the-World"
-        case .tumacacori_carmen: return "Tumacacori-Carmen"
-        default: return nil
-        }
-    }
 }

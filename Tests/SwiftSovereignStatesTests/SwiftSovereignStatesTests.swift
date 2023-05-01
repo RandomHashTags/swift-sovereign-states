@@ -6,6 +6,9 @@ import Kanna
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async throws {
         //generate_all_english_localization_file()
+        //generate_english_localization()
+        //await generate_divisions()
+        //return;
         
         let _:[Set<String>] = Country.allCases.map({ $0.keywords })
         let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
@@ -20,10 +23,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         testNeighbors()
         testCities()
         
-        //generate_english_localization()
         test_localization()
-        
-        await generate_divisions()
         
         //try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
@@ -594,7 +594,12 @@ extension SwiftSovereignStatesTests {
     private func generate_all_english_localization_file() {
         let date:String = Date().timeIntervalSince1970.description
         var array:[String] = [String]()
-        array.reserveCapacity(1 + 4 + Currency.allCases.count + Country.allCases.count + (SovereignStateSubdivisionType.allCases.count * 2) + SovereignStateSubdivisions.all.count)
+        var reserved_count:Int = 1
+        reserved_count += 1 + Currency.allCases.count
+        reserved_count += 1 + Country.allCases.count
+        reserved_count += 2 + (SovereignStateSubdivisionType.allCases.count * 2) + SovereignStateSubdivisions.all.count
+        reserved_count += 1 + SovereignStateCities.all.count
+        array.reserveCapacity(reserved_count)
         
         array.append("/*\n  Localizable.strings\n  Generated at " + date + "\n*/")
         
@@ -618,6 +623,11 @@ extension SwiftSovereignStatesTests {
         for subdivision in SovereignStateSubdivisions.all {
             array.append("\"" + subdivision.cache_id + "\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_level_1_name(subdivision) + "\";")
         }
+        
+        array.append("// Level 3 Subdivision Short Names")
+        for subdivision in SovereignStateCities.all {
+            array.append("\"" + subdivision.cache_id + "\" = \"" + SwiftSovereignStateLocalization.get_debug_subdivision_level_3_name(subdivision) + "\";")
+        }
         write(text: array.joined(separator: "\n"), to: "Localizable")
     }
     func write(text: String, to fileNamed: String, folder: String = "SavedFiles") {
@@ -630,7 +640,7 @@ extension SwiftSovereignStatesTests {
         try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
     }
     private func generate_english_localization() {
-        for country in Country.allCases {
+        /*for country in Country.allCases {
             if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
                 print("\n\n" + country.rawValue.uppercased())
                 for subdivision in subdivisions {
@@ -638,6 +648,9 @@ extension SwiftSovereignStatesTests {
                     print("\"" + id + "\" = \"" + subdivision.name + "\";")
                 }
             }
+        }*/
+        for city in CitiesUnitedStatesWashington.allCases {
+            print("\"" + city.rawValue + "\" = \"" + (city.real_name ?? city.short_name) + "\";")
         }
     }
     private func test_localization() {

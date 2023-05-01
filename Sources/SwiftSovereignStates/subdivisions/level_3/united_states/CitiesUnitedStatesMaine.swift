@@ -969,15 +969,4 @@ public enum CitiesUnitedStatesMaine : String, SovereignStateCity {
             return SovereignStateCityType.city
         }
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .dover_foxcroft: return "Dover-Foxcroft"
-        case .swan_s_island: return "Swan's Island"
-            
-        case .lincoln_plantation: return "Lincoln"
-        case .rangeley_plantation: return "Rangeley"
-        default: return nil
-        }
-    }
 }

@@ -287,11 +287,4 @@ public enum CitiesUnitedStatesUtah : String, SovereignStateCity { // https://en.
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.utah
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .marriott_slaterville: return "Marriott-Slaterville"
-        default: return nil
-        }
-    }
 }

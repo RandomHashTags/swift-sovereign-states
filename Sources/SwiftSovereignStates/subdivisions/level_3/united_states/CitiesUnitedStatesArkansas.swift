@@ -537,24 +537,4 @@ public enum CitiesUnitedStatesArkansas : String, SovereignStateCity { // https:/
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.arkansas
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .fifty_six: return "Fifty-Six"
-        case .helena_west_helena: return "Helena-West Helena"
-        case .mccaskill: return "McCaskill"
-        case .mccrory: return "McCrory"
-        case .mcdougal: return "McDougal"
-        case .mcgehee: return "McGehee"
-        case .mcnab: return "McNab"
-        case .mcneil: return "McNeil"
-        case .mcrae: return "McRae"
-        case .o_kean: return "O'Kean"
-        case .st_charles: return "St. Charles"
-        case .st_francis: return "St. Francis"
-        case .st_joe: return "St. Joe"
-        case .st_paul: return "St. Paul"
-        default: return nil
-        }
-    }
 }

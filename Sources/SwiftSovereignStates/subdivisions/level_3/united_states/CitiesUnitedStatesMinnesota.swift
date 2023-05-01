@@ -888,28 +888,4 @@ public enum CitiesUnitedStatesMinnesota : String, SovereignStateCity { // https:
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.minnesota
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .mcgrath: return "McGrath"
-        case .mcgregor: return "McGregor"
-        case .mcintosh: return "McIntosh"
-        case .mckinley: return "McKinley"
-        default: return nil
-        }
-    }
-    
-    public var short_name_decimal_separator_index : Int? {
-        switch self {
-        case .lake_st_croix_beach,
-                .north_st_paul,
-                .south_st_paul,
-                .west_st_paul:
-            return 1
-        case .marine_on_st_croix:
-            return 2
-        default:
-            return nil
-        }
-    }
 }

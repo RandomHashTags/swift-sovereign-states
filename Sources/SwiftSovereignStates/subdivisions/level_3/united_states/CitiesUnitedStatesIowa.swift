@@ -981,16 +981,4 @@ public enum CitiesUnitedStatesIowa : String, SovereignStateCity { // https://en.
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.iowa
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .mccallsburg: return "McCallsburg"
-        case .mccausland: return "McCausland"
-        case .mcclelland: return "McClelland"
-        case .mcgregor: return "McGregor"
-        case .mcintire: return "McIntire"
-        case .melcher_dallas: return "Melcher-Dallas"
-        default: return nil
-        }
-    }
 }

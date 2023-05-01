@@ -452,14 +452,4 @@ public enum CitiesUnitedStatesKentucky : String, SovereignStateCity { // https:/
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.kentucky
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .fleming_neon: return "Fleming-Neon"
-        case .graymoor_devondale: return "Graymoor-Devondale"
-        case .mchenry: return "McHenry"
-        case .mckee: return "McKee"
-        default: return nil
-        }
-    }
 }

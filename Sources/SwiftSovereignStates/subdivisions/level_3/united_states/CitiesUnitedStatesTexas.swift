@@ -1257,33 +1257,4 @@ public enum CitiesUnitedStatesTexas : String, SovereignStateCity { // https://en
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.texas
     }
-    
-    public var real_name : String? {
-        switch self {
-        case .baileys_prairie: return "Bailey's Prairie"
-        case .bruceville_eddy: return "Bruceville-Eddy"
-        case .carls_corner: return "Carl's Corner"
-        case .lacy_lakeview: return "Lacy-Lakeview"
-        case .lakeside_san_patricio, .lakeside_tarrant:
-            return "Lakeside"
-        case .little_river_academy: return "Little River-Academy"
-        case .mcallen: return "McAllen"
-        case .mccamey: return "McCamey"
-        case .mcgregor: return "McGregor"
-        case .mckinney: return "McKinny"
-        case .mclean: return "McLean"
-        case .mclendon_chisholm: return "McLendon-Chisholm"
-        case .millers_cove: return "Miller's Cove"
-        case .morgans_point: return "Morgan's Point"
-        case .morgans_point_resort: return "Morgan's Point Resort"
-        case .obrien: return "O'Brien"
-        case .odonnell: return "O'Donnell"
-        case .oak_ridge_cooke, .oak_ridge_kaufman:
-            return "Oak Ridge"
-        case .old_river_winfree: return "Old River-Winfree"
-        case .reno_lamar, .reno_parker:
-            return "Reno"
-        default: return nil
-        }
-    }
 }
