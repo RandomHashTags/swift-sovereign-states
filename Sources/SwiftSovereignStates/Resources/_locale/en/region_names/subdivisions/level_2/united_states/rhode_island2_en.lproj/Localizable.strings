@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"bristol" = "Bristol";
+"kent" = "Kent";
+"newport" = "Newport";
+"providence" = "Providence";
+"washington" = "Washington";

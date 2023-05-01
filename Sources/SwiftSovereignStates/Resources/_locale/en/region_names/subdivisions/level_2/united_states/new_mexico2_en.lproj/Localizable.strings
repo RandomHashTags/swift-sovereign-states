@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"bernalillo" = "Bernalillo";
+"catron" = "Catron";
+"chaves" = "Chaves";
+"cibola" = "Cibola";
+"colfax" = "Colfax";
+"curry" = "Curry";
+"de_baca" = "De Baca";
+"dona_ana" = "Doña Ana";
+"eddy" = "Eddy";
+"grant" = "Grant";
+"guadalupe" = "Guadalupe";
+"harding" = "Harding";
+"hidalgo" = "Hidalgo";
+"lea" = "Lea";
+"lincoln" = "Lincoln";
+"los_alamos" = "Los Alamos";
+"luna" = "Luna";
+"mckinley" = "McKinley";
+"mora" = "Mora";
+"otero" = "Otero";
+"quay" = "Quay";
+"rio_arriba" = "Rio Arriba";
+"roosevelt" = "Roosevelt";
+"san_juan" = "San Juan";
+"san_miguel" = "San Miguel";
+"sandoval" = "Sandoval";
+"santa_fe" = "Santa Fe";
+"sierra" = "Sierra";
+"socorro" = "Socorro";
+"taos" = "Taos";
+"torrance" = "Torrance";
+"union" = "Union";
+"valencia" = "Valencia";

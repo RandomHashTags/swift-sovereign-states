@@ -50,14 +50,6 @@ public enum CountiesUnitedStatesNewMexico : String, SovereignStateLevel2Division
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .dona_ana: return "Doña Ana"
-        case .mckinley: return "McKinley"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .bernalillo: return 001

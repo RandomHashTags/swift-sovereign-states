@@ -137,14 +137,6 @@ public enum CountiesUnitedStatesMissouri : String, SovereignStateLevel2Division 
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .mcdonald: return "McDonald"
-        case .saint_louis_city: return "Saint Louis"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .adair: return 001

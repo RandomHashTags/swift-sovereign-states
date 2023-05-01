@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"allegany" = "Allegany";
+"anne_arundel" = "Anne Arundel";
+"baltimore" = "Baltimore";
+"baltimore_city" = "Baltimore";
+"calvert" = "Calvert";
+"caroline" = "Caroline";
+"carroll" = "Carroll";
+"cecil" = "Cecil";
+"charles" = "Charles";
+"dorchester" = "Dorchester";
+"frederick" = "Frederick";
+"garrett" = "Garrett";
+"harford" = "Harford";
+"howard" = "Howard";
+"kent" = "Kent";
+"montgomery" = "Montgomery";
+"prince_george_s" = "Prince George's";
+"queen_anne_s" = "Queen Anne's";
+"somerset" = "Somerset";
+"st_mary_s" = "St. Mary's";
+"talbot" = "Talbot";
+"washington" = "Washington";
+"wicomico" = "Wicomico";
+"worcester" = "Worcester";

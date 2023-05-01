@@ -17,16 +17,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// Whether this SovereignRegion is mentioned or not in the `string`.
     func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool
     
-    /// The name of this SovereignRegion as it is commonly known as internationally.
-    @available(*, deprecated)
-    var short_name : String { get }
-    /// Where the decimal point `(.)` should be located in the `short_name`.
-    @available(*, deprecated)
-    var short_name_decimal_separator_index : Int? { get }
-    /// The real name of this SovereignRegion. Usually only used if this SovereignRegion's legal name contains accents, hyphens, commas, or other special characters.
-    @available(*, deprecated)
-    var real_name : String? { get }
-    
+    /// The common short name of this SovereignRegion.
     var name : String { get }
     
     /// The slug Wikipedia has for this SovereignRegion as it would appear in the url, but the underscores are spaces.
@@ -110,18 +101,11 @@ public extension SovereignRegion {
         return SwiftSovereignStateLocalization.get_release_sovereign_region_name(self)
     }
     
-    var short_name : String {
+    /*var short_name : String {
         let identifier:String = rawValue
         let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : short_name_decimal_separator_index
         return SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex)
-    }
-    var short_name_decimal_separator_index : Int? {
-        return nil
-    }
-    
-    var real_name : String? {
-        return nil
-    }
+    }*/
     var wikipedia_name : String? {
         return nil
     }

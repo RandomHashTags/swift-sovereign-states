@@ -1,0 +1,71 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"acadia" = "Acadia";
+"allen" = "Allen";
+"ascension" = "Ascension";
+"assumption" = "Assumption";
+"avoyelles" = "Avoyelles";
+"beauregard" = "Beauregard";
+"bienville" = "Bienville";
+"bossier" = "Bossier";
+"caddo" = "Caddo";
+"calcasieu" = "Calcasieu";
+"caldwell" = "Caldwell";
+"cameron" = "Cameron";
+"catahoula" = "Catahoula";
+"claiborne" = "Claiborne";
+"concordia" = "Concordia";
+"desoto" = "Desoto";
+"east_baton_rouge" = "East Baton Rouge";
+"east_carroll" = "East Carroll";
+"east_feliciana" = "East Feliciana";
+"evangeline" = "Evangeline";
+"franklin" = "Franklin";
+"grant" = "Grant";
+"iberia" = "Iberia";
+"iberville" = "Iberville";
+"jackson" = "Jackson";
+"jefferson" = "Jefferson";
+"jefferson_davis" = "Jefferson Davis";
+"lafayette" = "Lafayette";
+"lafourche" = "Lafourche";
+"lasalle" = "LaSalle";
+"lincoln" = "Lincoln";
+"livingston" = "Livingston";
+"madison" = "Madison";
+"morehouse" = "Morehouse";
+"natchitoches" = "Natchitoches";
+"orleans" = "Orleans";
+"ouachita" = "Ouachita";
+"plaquemines" = "Plaquemines";
+"pointe_coupee" = "Pointe Coupee";
+"rapides" = "Rapides";
+"red_river" = "Red River";
+"richland" = "Richland";
+"sabine" = "Sabine";
+"st_bernard" = "St. Bernard";
+"st_charles" = "St. Charles";
+"st_helena" = "St. Helena";
+"st_james" = "St. James";
+"st_john_the_baptist" = "St. John the Baptist";
+"st_landry" = "St. Landry";
+"st_martin" = "St. Martin";
+"st_mary" = "St. Mary";
+"st_tammany" = "St. Tammany";
+"tangipahoa" = "Tangipahoa";
+"tensas" = "Tensas";
+"terrebonne" = "Terrebonne";
+"union" = "Union";
+"vermilion" = "Vermilion";
+"vernon" = "Vernon";
+"washington" = "Washington";
+"webster" = "Webster";
+"west_baton_rouge" = "West Baton Rouge";
+"west_carroll" = "West Carroll";
+"west_feliciana" = "West Feliciana";
+"winn" = "Winn";

@@ -194,16 +194,6 @@ public enum CountiesUnitedStatesVirginia : String, SovereignStateLevel2Division 
         
     }
     
-    public var real_name : String? {
-        switch self {
-        case .fairfax_city: return "Fairfax"
-        case .franklin_city: return "Franklin"
-        case .richmond_city: return "Richmond"
-        case .roanoke_city: return "Roanoke"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .accomack: return 001

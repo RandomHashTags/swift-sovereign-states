@@ -244,14 +244,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.isMentioned(in: string, exact: exact, ignoreCase: ignoreCase)
     }
     
-    public var short_name : String {
-        return subdivision.short_name
-    }
-    public var short_name_decimal_separator_index : Int? {
-        return subdivision.short_name_decimal_separator_index
-    }
-    public var real_name : String? {
-        return subdivision.real_name
+    public var name : String {
+        return subdivision.name
     }
     public var wikipedia_name : String? {
         return subdivision.wikipedia_name

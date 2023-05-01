@@ -46,16 +46,6 @@ public enum CountiesUnitedStatesMaryland : String, SovereignStateLevel2Division 
         }
     }
     
-    public var real_name : String? {
-        switch self {
-        case .baltimore_city: return "Baltimore"
-        case .prince_george_s: return "Prince George's"
-        case .queen_anne_s: return "Queen Anne's"
-        case .st_mary_s: return "St. Mary's"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .allegany: return 001

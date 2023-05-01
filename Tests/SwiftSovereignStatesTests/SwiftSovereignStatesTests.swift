@@ -649,8 +649,8 @@ extension SwiftSovereignStatesTests {
                 }
             }
         }*/
-        for city in CitiesUnitedStatesWashington.allCases {
-            print("\"" + city.rawValue + "\" = \"" + (city.real_name ?? city.short_name) + "\";")
+        for county in CountiesUnitedStatesWyoming.allCases {
+            print("\"" + county.rawValue + "\" = \"" + county.name + "\";")
         }
     }
     private func test_localization() {
@@ -673,6 +673,15 @@ extension SwiftSovereignStatesTests {
                 }
             }
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " level-1 subdivision names for " + missing.description)
+            missing.removeAll()
+            
+            for city in SovereignStateCities.all {
+                let string:String = SwiftSovereignStateLocalization.get_release_sovereign_region_name(city, language_code: language)
+                if string.elementsEqual("nil") {
+                    missing.append(city.cache_id)
+                }
+            }
+            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " level-3 subdivision names for " + missing.description)
             missing.removeAll()
             
             for currency in Currency.allCases {

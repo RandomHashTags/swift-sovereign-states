@@ -81,13 +81,6 @@ public enum CountiesUnitedStatesLouisiana : String, SovereignStateLevel2Division
         return SovereignStateLevel2DivisionType.parishes
     }
     
-    public var real_name : String? {
-        switch self {
-        case .lasalle: return "LaSalle"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .acadia: return 001

@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"ada" = "Ada";
+"adams" = "Adams";
+"bannock" = "Bannock";
+"bear_lake" = "Bear Lake";
+"benewah" = "Benewah";
+"bingham" = "Bingham";
+"blaine" = "Blaine";
+"boise" = "Boise";
+"bonner" = "Bonner";
+"bonneville" = "Bonneville";
+"boundary" = "Boundary";
+"butte" = "Butte";
+"camas" = "Camas";
+"canyon" = "Canyon";
+"caribou" = "Caribou";
+"cassia" = "Cassia";
+"clark" = "Clark";
+"clearwater" = "Clearwater";
+"custer" = "Custer";
+"elmore" = "Elmore";
+"franklin" = "Franklin";
+"fremont" = "Fremont";
+"gem" = "Gem";
+"gooding" = "Gooding";
+"idaho" = "Idaho";
+"jefferson" = "Jefferson";
+"jerome" = "Jerome";
+"kootenai" = "Kootenai";
+"latah" = "Latah";
+"lemhi" = "Lemhi";
+"lewis" = "Lewis";
+"lincoln" = "Lincoln";
+"madison" = "Madison";
+"minidoka" = "Minidoka";
+"nez_perce" = "Nez Perce";
+"oneida" = "Oneida";
+"owyhee" = "Owyhee";
+"payette" = "Payette";
+"power" = "Power";
+"shoshone" = "Shoshone";
+"teton" = "Teton";
+"twin_falls" = "Twin Falls";
+"valley" = "Valley";
+"washington" = "Washington";

@@ -213,14 +213,8 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
         return city.isMentioned(in: string, exact: exact, ignoreCase: ignoreCase)
     }
     
-    public var short_name : String {
-        return city.short_name
-    }
-    public var short_name_decimal_separator_index : Int? {
-        return city.short_name_decimal_separator_index
-    }
-    public var real_name : String? {
-        return city.real_name
+    public var name : String {
+        return city.name
     }
     public var wikipedia_name : String? {
         return city.wikipedia_name

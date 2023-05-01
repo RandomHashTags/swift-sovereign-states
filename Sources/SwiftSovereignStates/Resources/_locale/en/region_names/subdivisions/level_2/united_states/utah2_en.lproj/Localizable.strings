@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"beaver" = "Beaver";
+"box_elder" = "Box Elder";
+"cache" = "Cache";
+"carbon" = "Carbon";
+"daggett" = "Daggett";
+"davis" = "Davis";
+"duchesne" = "Duchesne";
+"emery" = "Emery";
+"garfield" = "Garfield";
+"grand" = "Grand";
+"iron" = "Iron";
+"juab" = "Juab";
+"kane" = "Kane";
+"millard" = "Millard";
+"morgan" = "Morgan";
+"piute" = "Piute";
+"rich" = "Rich";
+"salt_lake" = "Salt Lake";
+"san_juan" = "San Juan";
+"sanpete" = "Sanpete";
+"sevier" = "Sevier";
+"summit" = "Summit";
+"tooele" = "Tooele";
+"uintah" = "Uintah";
+"utah" = "Utah";
+"wasatch" = "Wasatch";
+"washington" = "Washington";
+"wayne" = "Wayne";
+"weber" = "Weber";

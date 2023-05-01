@@ -176,14 +176,6 @@ public enum CountiesUnitedStatesGeorgia : String, SovereignStateLevel2Division {
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .mcduffie: return "McDuffie"
-        case .mcintosh: return "McIntosh"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .appling: return 001

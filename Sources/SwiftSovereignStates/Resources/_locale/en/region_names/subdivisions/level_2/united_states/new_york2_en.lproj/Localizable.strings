@@ -1,0 +1,69 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"albany" = "Albany";
+"allegany" = "Allegany";
+"bronx" = "Bronx";
+"broome" = "Broome";
+"cattaraugus" = "Cattaraugus";
+"cayuga" = "Cayuga";
+"chautauqua" = "Chautauqua";
+"chemung" = "Chemung";
+"chenango" = "Chenango";
+"clinton" = "Clinton";
+"columbia" = "Columbia";
+"cortland" = "Cortland";
+"delaware" = "Delaware";
+"dutchess" = "Dutchess";
+"erie" = "Erie";
+"essex" = "Essex";
+"franklin" = "Franklin";
+"fulton" = "Fulton";
+"genesee" = "Genesee";
+"greene" = "Greene";
+"hamilton" = "Hamilton";
+"herkimer" = "Herkimer";
+"jefferson" = "Jefferson";
+"kings" = "Kings";
+"lewis" = "Lewis";
+"livingston" = "Livingston";
+"madison" = "Madison";
+"monroe" = "Monroe";
+"montgomery" = "Montgomery";
+"nassau" = "Nassau";
+"new_york" = "New York";
+"niagara" = "Niagara";
+"oneida" = "Oneida";
+"onondaga" = "Onondaga";
+"ontario" = "Ontario";
+"orange" = "Orange";
+"orleans" = "Orleans";
+"oswego" = "Oswego";
+"otsego" = "Otsego";
+"putnam" = "Putnam";
+"queens" = "Queens";
+"rensselaer" = "Rensselaer";
+"richmond" = "Richmond";
+"rockland" = "Rockland";
+"saratoga" = "Saratoga";
+"schenectady" = "Schenectady";
+"schoharie" = "Schoharie";
+"schuyler" = "Schuyler";
+"seneca" = "Seneca";
+"st_lawrence" = "St. Lawrence";
+"steuben" = "Steuben";
+"suffolk" = "Suffolk";
+"sullivan" = "Sullivan";
+"tioga" = "Tioga";
+"tompkins" = "Tompkins";
+"ulster" = "Ulster";
+"warren" = "Warren";
+"washington" = "Washington";
+"wayne" = "Wayne";
+"westchester" = "Westchester";
+"wyoming" = "Wyoming";
+"yates" = "Yates";

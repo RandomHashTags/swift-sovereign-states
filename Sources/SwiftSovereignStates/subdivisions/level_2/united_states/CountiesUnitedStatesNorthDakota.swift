@@ -70,17 +70,6 @@ public enum CountiesUnitedStatesNorthDakota : String, SovereignStateLevel2Divisi
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .lamoure: return "LaMoure"
-        case .mchenry: return "McHenry"
-        case .mcintosh: return "McIntosh"
-        case .mckenzie: return "McKenzie"
-        case .mclean: return "McLean"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .adams: return 001

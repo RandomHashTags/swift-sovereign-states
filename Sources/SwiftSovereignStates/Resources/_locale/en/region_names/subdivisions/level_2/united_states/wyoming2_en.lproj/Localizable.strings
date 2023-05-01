@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"albany" = "Albany";
+"big_horn" = "Big Horn";
+"campbell" = "Campbell";
+"carbon" = "Carbon";
+"converse" = "Converse";
+"crook" = "Crook";
+"fremont" = "Fremont";
+"goshen" = "Goshen";
+"hot_springs" = "Hot Springs";
+"johnson" = "Johnson";
+"laramie" = "Laramie";
+"lincoln" = "Lincoln";
+"natrona" = "Natrona";
+"niobrara" = "Niobrara";
+"park" = "Park";
+"platte" = "Platte";
+"sheridan" = "Sheridan";
+"sublette" = "Sublette";
+"sweetwater" = "Sweetwater";
+"teton" = "Teton";
+"uinta" = "Uinta";
+"washakie" = "Washakie";
+"weston" = "Weston";

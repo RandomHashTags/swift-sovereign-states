@@ -27,13 +27,6 @@ public enum CountiesUnitedStatesNewHampshire : String, SovereignStateLevel2Divis
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .coos: return "Coös"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .belknap: return 001

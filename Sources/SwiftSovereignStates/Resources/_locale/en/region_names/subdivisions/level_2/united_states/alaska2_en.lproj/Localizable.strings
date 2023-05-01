@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Evan Anderson on 5/1/23.
+  
+*/
+"aleutians_east" = "Aleutians East";
+"anchorage" = "Anchorage";
+"bristol_bay" = "Bristol Bay";
+"denali" = "Denali";
+"fairbanks_north_star" = "Fairbanks North Star";
+"haines" = "Haines";
+"juneau" = "Juneau";
+"kenai_peninsula" = "Kenai Peninsula";
+"ketchikan_gateway" = "Ketchikan Gateway";
+"kodiak_island" = "Kodiak Island";
+"lake_and_peninsula" = "Lake and Peninsula";
+"matanuska_susitna" = "Matanuska-Susitna";
+"north_slope" = "North Slope";
+"northwest_arctic" = "Northwest Arctic";
+"petersburg" = "Petersburg";
+"sitka" = "Sitka";
+"skagway" = "Skagway";
+"unorganized" = "Unorganized";
+"wrangell" = "Wrangell";
+"yakutat" = "Yakutat";

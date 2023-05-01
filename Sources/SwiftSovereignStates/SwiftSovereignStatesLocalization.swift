@@ -63,8 +63,8 @@ private extension Bundle {
 private enum SwiftSovereignStateLocalizationCategory : String {
     case country_names = "region_names/country"
     case subdivision_level_1_names = "region_names/subdivisions/level_1/%country%"
-    case subdivision_level_2_names = "region_names/subdivisions/level_2/%country%/%subdivision%"
-    case subdivision_level_3_names = "region_names/subdivisions/level_3/%country%/%subdivision%"
+    case subdivision_level_2_names = "region_names/subdivisions/level_2/%country%/%subdivision%2"
+    case subdivision_level_3_names = "region_names/subdivisions/level_3/%country%/%subdivision%3"
     case currencies
     
     case subdivision_types = "subdivision/types"

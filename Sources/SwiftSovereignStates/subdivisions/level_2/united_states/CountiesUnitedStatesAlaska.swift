@@ -37,13 +37,6 @@ public enum CountiesUnitedStatesAlaska : String, SovereignStateLevel2Division { 
         return SovereignStateLevel2DivisionType.boroughs
     }
     
-    public var real_name : String? {
-        switch self {
-        case .matanuska_susitna: return "Matanuska-Susitna"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .aleutians_east: return 013

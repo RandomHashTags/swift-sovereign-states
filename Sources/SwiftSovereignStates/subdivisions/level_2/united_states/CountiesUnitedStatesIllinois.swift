@@ -119,18 +119,6 @@ public enum CountiesUnitedStatesIllinois : String, SovereignStateLevel2Division 
         return SovereignStateLevel2DivisionType.counties
     }
     
-    public var real_name : String? {
-        switch self {
-        case .dekalb: return "DeKalb"
-        case .dewitt: return "DeWitt"
-        case .lasalle: return "LaSalle"
-        case .mcdonough: return "McDonough"
-        case .mchenry: return "McHenry"
-        case .mclean: return "McLean"
-        default: return nil
-        }
-    }
-    
     public var fips_code : Int {
         switch self {
         case .adams: return 001
