@@ -44,20 +44,38 @@ private extension Bundle {
         return bundle
     }
     static func get_debug(language_code: String? = nil, type: SwiftSovereignStateLocalizationCategory, replacements: [String:String]? = nil, _ key: String) -> String {
-        guard let bundle:Bundle = (Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: "org.cocoapods.SwiftSovereignStates")
-                                   ?? Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: Bundle(for: SwiftSovereignStates.self).bundleIdentifier!)
-                                   ?? Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: "/Users/randomhashtags/GitProjects/swift-sovereign-states/Sources/SwiftSovereignStates")) else {
-            return "nil"
+        let debug_bundle:Bundle
+        if let bundle:Bundle = Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: "org.cocoapods.SwiftSovereignStates") {
+            debug_bundle = bundle
+        } else if let bundle_identifier:String = Bundle(for: SwiftSovereignStates.self).bundleIdentifier, let bundle:Bundle = Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: bundle_identifier) {
+            debug_bundle = bundle
+        } else {
+            var file_path:String = #file
+            file_path.removeLast("/SwiftSovereignStatesLocalization.swift".count)
+            if let bundle:Bundle = Bundle.get_debug_localization(language_code: language_code, type: type, replacements: replacements, identifier: file_path) {
+                debug_bundle = bundle
+            } else {
+                return "nil"
+            }
         }
-        return bundle.localizedString(forKey: key, value: "nil", table: nil)
+        return debug_bundle.localizedString(forKey: key, value: "nil", table: nil)
     }
     static func get_release(language_code: String? = nil, _ key: String) -> String {
-        guard let bundle:Bundle = (Bundle.get_release_localization(language_code: language_code, identifier: "org.cocoapods.SwiftSovereignStates")
-                                   ?? Bundle.get_release_localization(language_code: language_code, identifier: Bundle(for: SwiftSovereignStates.self).bundleIdentifier!)
-                                   ?? Bundle.get_release_localization(language_code: language_code, identifier: "/Users/randomhashtags/GitProjects/swift-sovereign-states/Sources/SwiftSovereignStates")) else {
-            return "nil"
+        let release_bundle:Bundle
+        if let bundle:Bundle = Bundle.get_release_localization(language_code: language_code, identifier: "org.cocoapods.SwiftSovereignStates") {
+            release_bundle = bundle
+        } else if let bundle_identifier:String = Bundle(for: SwiftSovereignStates.self).bundleIdentifier, let bundle:Bundle = Bundle.get_release_localization(language_code: language_code, identifier: bundle_identifier) {
+            release_bundle = bundle
+        } else {
+            var file_path:String = #file
+            file_path.removeLast("/SwiftSovereignStatesLocalization.swift".count)
+            if let bundle:Bundle = Bundle.get_release_localization(language_code: language_code, identifier: file_path) {
+                release_bundle = bundle
+            } else {
+                return "nil"
+            }
         }
-        return bundle.localizedString(forKey: key, value: "nil", table: nil)
+        return release_bundle.localizedString(forKey: key, value: "nil", table: nil)
     }
 }
 private enum SwiftSovereignStateLocalizationCategory : String {
