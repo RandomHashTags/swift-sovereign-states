@@ -25,6 +25,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         test_localization()
         
+        generate_localized_string_catalog()
+        
         //try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
         
@@ -710,6 +712,115 @@ extension SwiftSovereignStatesTests {
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing " + missing.count.description + " subdivision_types_name_plural for " + missing.description)
             missing.removeAll()
         }
+    }
+    
+    
+}
+extension SwiftSovereignStatesTests {
+    private func generate_localized_string_catalog() {
+        
+        var entries:[String:LocalizedKey] = [:]
+        //entries.reserveCapacity(Currency.allCases.count + (SovereignStateSubdivisionType.allCases.count * 2) + Country.allCases.count + SovereignStateSubdivisions.all.count + SovereignStateLevel2Divisions.all.count + SovereignStateCities.all.count)
+        
+        for currency in Currency.allCases {
+            let name:String = currency.name
+            entries["\(currency)_name"] = LocalizedKey(
+                localizations: LocalizedKeyLocalizations(
+                    en: LocalizedKeyLocalization(stringUnit: LocalizedKeyLocalizationStringUnit(value: name))
+                )
+            )
+        }
+        
+        print_string_catalog_entries(name: "Currencies", entries)
+        entries.removeAll()
+        
+        for subdivision_type in SovereignStateSubdivisionType.allCases {
+            let name_singular:String = subdivision_type.name_singular
+            //let name_plural:String = subdivision_type.name_plural
+            entries["\(subdivision_type)_name"] = LocalizedKey(
+                localizations: LocalizedKeyLocalizations(
+                    en: LocalizedKeyLocalization(stringUnit: LocalizedKeyLocalizationStringUnit(value: name_singular))
+                )
+            )
+            /*
+            entries["\(subdivision_type)_name"] = LocalizedKey(
+                localizations: LocalizedKeyLocalizations(
+                    en: LocalizedKeyLocalization(stringUnit: LocalizedKeyLocalizationStringUnit(value: name_plural))
+                )
+            )*/
+        }
+        
+        print_string_catalog_entries(name: "SubdivisionTypes", entries)
+        entries.removeAll()
+        
+        for country in Country.allCases {
+            let short_name:String = country.name
+            entries["\(country)_name_short"] = LocalizedKey(
+                localizations: LocalizedKeyLocalizations(
+                    en: LocalizedKeyLocalization(stringUnit: LocalizedKeyLocalizationStringUnit(value: short_name))
+                )
+            )
+        }
+        
+        print_string_catalog_entries(name: "Countries", entries)
+        entries.removeAll()
+        return;
+        
+        for subdivision in SovereignStateSubdivisions.all {
+            let short_name:String = subdivision.name
+            entries["subdivision_\(subdivision.country)_1_" + subdivision.rawValue + "_name_short"] = LocalizedKey(
+                localizations: LocalizedKeyLocalizations(
+                    en: LocalizedKeyLocalization(stringUnit: LocalizedKeyLocalizationStringUnit(value: short_name))
+                )
+            )
+        }
+        for county in SovereignStateLevel2Divisions.all {
+            let short_name:String = county.name
+            entries["subdivision_\(county.subdivision.country)_\(county.subdivision.rawValue)_2_" + county.rawValue + "_name_short"] = LocalizedKey(
+                localizations: LocalizedKeyLocalizations(
+                    en: LocalizedKeyLocalization(stringUnit: LocalizedKeyLocalizationStringUnit(value: short_name))
+                )
+            )
+        }
+        for city in SovereignStateCities.all {
+            let short_name:String = city.name
+            entries["subdivision_\(city.subdivision.country)_\(city.subdivision.rawValue)_3_" + city.rawValue + "_name_short"] = LocalizedKey(
+                localizations: LocalizedKeyLocalizations(
+                    en: LocalizedKeyLocalization(stringUnit: LocalizedKeyLocalizationStringUnit(value: short_name))
+                )
+            )
+        }
+        
+        //let sorted_entries = entries.sorted(by: { $0.key < $1.key })
+        //print_string_catalog_entries(entries)
+    }
+    private func print_string_catalog_entries(name: String, _ entries: [String:LocalizedKey]) {
+        let catalog:StringCatalog = StringCatalog(strings: entries)
+        
+        let encoder:JSONEncoder = JSONEncoder()
+        let data:Data = try! encoder.encode(catalog)
+        let string:String = String(data: data, encoding: .utf8)!
+        print("print_string_catalog_entries;name=" + name + ";string=\n" + string)
+    }
+    
+    private struct StringCatalog : Codable {
+        var sourceLanguage:String = "en"
+        var strings:[String:LocalizedKey]
+        var version:String = "1.0"
+    }
+    private struct LocalizedKey : Codable {
+        var extractionState:String = "manual"
+        var localizations:LocalizedKeyLocalizations
+    }
+    private struct LocalizedKeyLocalizations : Codable {
+        let en:LocalizedKeyLocalization
+    }
+    private struct LocalizedKeyLocalization : Codable {
+        let stringUnit:LocalizedKeyLocalizationStringUnit
+    }
+    private struct LocalizedKeyLocalizationStringUnit : Codable {
+        var state:String = "translated"
+        let value:String
     }
 }
 

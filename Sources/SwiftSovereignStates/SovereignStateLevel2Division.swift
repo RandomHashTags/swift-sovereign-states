@@ -7,6 +7,12 @@
 
 import Foundation
 
+public enum SovereignStateLevel2Divisions {
+    public static var all:[any SovereignStateLevel2Division] = {
+        return SovereignStateSubdivisions.all.compactMap({ $0.counties }).flatMap({ $0 })
+    }()
+}
+
 public protocol SovereignStateLevel2Division : SovereignRegion {
     /// The level-1 administrative unit this division is located in or claimed by.
     var subdivision : any SovereignStateSubdivision { get }
