@@ -39,6 +39,13 @@ public extension SovereignStateLevel2Division {
     var cache_id : String {
         return subdivision.cache_id + "-" + rawValue
     }
+    
+    var name : String {
+        let table:String = "Subdivisions2\(subdivision.country.name.replacingOccurrences(of: " ", with: ""))\(subdivision.name.replacingOccurrences(of: " ", with: ""))"
+        let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
+        return String(localized: key, table: table, bundle: Bundle.module)
+    }
+    
     /// _Federal Information Processing Standard_ number or regional equivalent representing this division as a string, formatted as `###`.
     var fips_code_string : String {
         return (fips_code < 10 ? "00" : fips_code < 100 ? "0" : "") + fips_code.description

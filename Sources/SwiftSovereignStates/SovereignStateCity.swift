@@ -137,6 +137,11 @@ public extension SovereignStateCity {
     var cache_id : String {
         return subdivision.cache_id + "-" + rawValue
     }
+    var name : String {
+        let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
+        let table:String = "Subdivisions3\(subdivision.country.name.replacingOccurrences(of: " ", with: ""))\(subdivision.name.replacingOccurrences(of: " ", with: ""))"
+        return String(localized: key, table: table, bundle: Bundle.module)
+    }
     var currencies : [Currency] {
         return subdivision.currencies
     }

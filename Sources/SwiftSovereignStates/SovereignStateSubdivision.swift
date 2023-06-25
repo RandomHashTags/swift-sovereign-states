@@ -162,6 +162,12 @@ public extension SovereignStateSubdivision {
         return country.rawValue + "-" + rawValue
     }
     
+    var name : String {
+        let table:String = "Subdivisions1\(country.name.replacingOccurrences(of: " ", with: ""))"
+        let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
+        return String(localized: key, table: table, bundle: Bundle.module)
+    }
+    
     var iso_alpha_2 : String? {
         return nil
     }

@@ -306,6 +306,11 @@ public enum Country : String, SovereignState {
         return rawValue
     }
     
+    public var name : String {
+        let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
+        return String(localized: key, table: "Countries", bundle: Bundle.module)
+    }
+    
     public var additional_keywords : Set<String>? {
         var keywords:Set<String> = sovereign_state_additional_keywords ?? Set<String>()
         if let parentISOAlpha2:String = iso_alpha_2_parent_group {

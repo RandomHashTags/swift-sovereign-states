@@ -97,15 +97,6 @@ public extension SovereignRegion {
         return nil
     }
     
-    var name : String {
-        return SwiftSovereignStateLocalization.get_release_sovereign_region_name(self)
-    }
-    
-    /*var short_name : String {
-        let identifier:String = rawValue
-        let decimalSeparatorIndex:Int? = identifier.starts(with: "st_") ? 0 : short_name_decimal_separator_index
-        return SovereignRegions.toCorrectCapitalization(input: identifier, decimalSeparatorIndex: decimalSeparatorIndex)
-    }*/
     var wikipedia_name : String? {
         return nil
     }

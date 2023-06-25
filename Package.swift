@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -7,10 +7,10 @@ let package = Package(
     name: "swift-sovereign-states",
     defaultLocalization: "en",
     platforms: [
-        .macOS(.v10_15),
-        .iOS(.v13),
-        .tvOS(.v14),
-        .watchOS(.v6)
+        .macOS(.v12),
+        .iOS(.v15),
+        .tvOS(.v15),
+        .watchOS(.v8)
     ],
     products: [
         .library(
@@ -26,7 +26,7 @@ let package = Package(
             name: "SwiftSovereignStates",
             dependencies: ["Kanna"],
             resources: [
-                .process("Localization")
+                .process("Resources")
             ]
         ),
         .testTarget(

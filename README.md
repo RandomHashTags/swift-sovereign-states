@@ -4,10 +4,10 @@ Implement and use real-world regional divisions. I didn't want other people inve
 
 ## Requirements
 * Swift >= 5.4
-* iOS >= 13.0
-* macOS >= 10.15
-* tvOS >= 13.0
-* watchOS >= 6.0
+* macOS >= 12
+* iOS >= 15.0
+* tvOS >= 15.0
+* watchOS >= 8.0
 
 ## Current Limitations
 - only supports English localization
