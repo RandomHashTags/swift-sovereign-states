@@ -24,7 +24,6 @@ let package = Package(
     targets: [
         .target(
             name: "SwiftSovereignStates",
-            dependencies: ["Kanna"],
             resources: [
                 .process("Resources")
             ]
