@@ -250,6 +250,10 @@ internal enum SovereignRegions {
 public protocol SovereignRegionWrapper : SovereignRegion {
 }
 public extension SovereignRegionWrapper {
+    static var allCases : [Self] {
+        return []
+    }
+    
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.cache_id.elementsEqual(rhs.cache_id)
     }

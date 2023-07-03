@@ -178,7 +178,6 @@ public extension SovereignStateSubdivision {
 }
 
 public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWrapper {
-    public static var allCases: [SovereignStateCityWrapper] = []
     public var rawValue: String
     
     public let city:any SovereignStateCity

@@ -208,9 +208,7 @@ public extension SovereignStateSubdivision {
     }
 }
 
-public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, SovereignRegionWrapper {
-    public static var allCases: [SovereignStateSubdivisionWrapper] = []
-    
+public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, SovereignRegionWrapper {    
     public var rawValue: String
     
     public let subdivision:any SovereignStateSubdivision
