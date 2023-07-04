@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '12'
   s.ios.deployment_target = '15.0'
   s.source = { :git => 'https://github.com/RandomHashTags/swift-sovereign-states.git', :tag => s.version.to_s }
-  s.swift_versions = ['5.9']
+  s.swift_versions = ['5.6']
   s.cocoapods_version = '>= 1.5.0'
   s.source_files = 'Sources/**/*'
 end
