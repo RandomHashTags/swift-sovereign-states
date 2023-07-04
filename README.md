@@ -3,11 +3,15 @@
 Implement and use real-world regional divisions. I didn't want other people investing their time and energy on creating or paying for something like this, which is why it is licensed under the public domain and works offline.
 
 ## Requirements
-* Swift >= 5.4
+* Swift >= 5.5
 * macOS >= 12
 * iOS >= 15.0
 * tvOS >= 15.0
 * watchOS >= 8.0
+
+### Expansions
+- [SwiftNationalParks](https://github.com/RandomHashTags/swift-national-parks)
+- [SwiftVolcanoes](https://github.com/RandomHashTags/swift-volcanoes)
 
 ## Current Limitations
 - only supports English localization
