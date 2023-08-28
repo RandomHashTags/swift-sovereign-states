@@ -36,6 +36,20 @@ public enum SovereignStateSubdivisions {
         return subdivisions.isEmpty ? nil : subdivisions
     }
     
+    public static func get_all_mentioned_cached(_ string: String) -> [any SovereignStateSubdivision]? {
+        let stringLowercase:String = string.lowercased()
+        if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
+            return cached.isEmpty ? nil : cached
+        }
+        let subdivisions:[any SovereignStateSubdivision] = all.filter({ $0.is_mentioned(in: string) })
+        SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
+        return subdivisions.isEmpty ? nil : subdivisions
+    }
+    public static func get_all_mentioned(_ string: String) -> [any SovereignStateSubdivision]? {
+        let subdivisions:[any SovereignStateSubdivision] = all.filter({ $0.is_mentioned(in: string) })
+        return subdivisions.isEmpty ? nil : subdivisions
+    }
+    
     public static func valueOf(_ string: String, cache: Bool = true, ignoreCase: Bool = false) -> [any SovereignStateSubdivision]? {
         let stringLowercase:String = string.lowercased()
         if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.valueOfAll[stringLowercase] {

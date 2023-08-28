@@ -284,6 +284,21 @@ public enum Country : String, SovereignState {
         }
         return countries.isEmpty ? nil : countries
     }
+    
+    /*public static func get_all_mentioned_cached(_ string: String) -> [Locale.Region]? {
+        let stringLowercase:String = string.lowercased()
+        if let cached:[Country] = SwiftSovereignStateCacheCountries.mentioned[stringLowercase] {
+            return cached
+        }
+        let countries:[Country] = Country.allCases.filter({ $0.is_mentioned(in: string) })
+        return countries.isEmpty ? nil : countries
+    }*/
+    public static func get_all_mentioned(_ string: String) -> [Locale.Region]? {
+        let stringLowercase:String = string.lowercased()
+        let countries:[Locale.Region] = Locale.Region.allCases.filter({ $0.is_mentioned(in: string) })
+        return countries.isEmpty ? nil : countries
+    }
+    
     /// Returns the first country that is mentioned in the `string`.
     public static func valueOf(_ string: String, cache: Bool = true, ignoreCase: Bool = false) -> Country? {
         let stringLowercase:String = string.lowercased()
@@ -513,7 +528,7 @@ public enum Country : String, SovereignState {
             return false
         }
     }
-    /// Whether or not this Country is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
+    /*/// Whether or not this Country is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
     public var is_nato_member : Bool {
         switch self {
         case .albania,
@@ -588,7 +603,7 @@ public enum Country : String, SovereignState {
         default:
             return false
         }
-    }
+    }*/
     
     public var official_names : Set<String>? {
         return SovereignStateOfficialNames.get(self)
@@ -607,17 +622,17 @@ public enum Country : String, SovereignState {
         return SovereignStateISOAlpha3.get(self)
     }
     
-    public var neighbors : [Country]? {
+    /*public var neighbors : [Country]? {
         return SovereignStateNeighbors.get(self)
-    }
+    }*/
     public var government_website : String? {
         return SovereignStateGovernmentWebsite.get(self)
     }
     
-    /// The unicode flag for this Country.
+    /*/// The unicode flag for this Country.
     public var flag_emoji : String? {
         return SovereignStateFlagEmoji.get(self)
-    }
+    }*/
     public var time_zones : [SovereignStateTimeZone]? {
         return SovereignStateTimeZone.get(self)
     }
