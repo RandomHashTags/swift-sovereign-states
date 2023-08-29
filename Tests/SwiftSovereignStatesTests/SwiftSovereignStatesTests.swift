@@ -10,12 +10,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //await generate_divisions()
         //return;
         
-        let _:[Set<String>] = Country.allCases.map({ $0.keywords })
+        /*let _:[Set<String>] = Country.allCases.map({ $0.keywords })
         let _:[Set<String>] = Locale.Region.allCases.map({ $0.keywords() })
         
         for region in Locale.Region.allCases {
             print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency=" + region.currency.identifier + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
-        }
+        }*/
         
         try await test_change(cache: false)
         //try await test_change(cache: true)
@@ -185,8 +185,11 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
     
     private func test_change(cache: Bool) async throws {
-        let string:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, [Romania], the Bahamas, Sao Tome and Principe, and Zambia. Case Sensitive! Will not find New zealand, central african republic, el Salvador, latv.a, FINLAND, \"Yemen\", OMan, Dominican, and Ire?and."
-        let _ = try await benchmark(key: "Country.getAllMentioned") {
+        let string:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, [Romania], the Bahamas, Sao Tome and Principe, and Zambia. Case Sensitive! Will not find (the new version will though) New zealand, central african republic, el Salvador, latv.a, FINLAND, \"Yemen\", OMan, dominican Republic, and Ireland"
+        if true {
+            let _ = try await benchmark(key: "Country.getAllMentioned") {
+                let _:[Country]? = Country.getAllMentioned(string, cache: cache)
+            }
             let mentioned:[Country]? = Country.getAllMentioned(string, cache: cache)
             XCTAssert(mentioned != nil && mentioned!.count == 16, "mentioned.count=\(mentioned!.count);mentioned=\(mentioned!.map({ $0.rawValue }))")
         }
@@ -197,11 +200,10 @@ final class SwiftSovereignStatesTests: XCTestCase {
             }*/
         } else {
             let _ = try await benchmark(key: "Country.getAllMentioned2") {
-                let mentioned:[Locale.Region] = Locale.Region.get_all_mentioned(in: string)
-                XCTAssert(mentioned.count == 23, "mentioned.count=\(mentioned.count);mentioned=\(mentioned.map({ $0.identifier }))")
+                let _:[Locale.Region] = Locale.Region.get_all_mentioned(in: string)
             }
             let mentioned:[Locale.Region] = Locale.Region.get_all_mentioned(in: string)
-            print("SwiftSovereignStatesTests;mentioned=" + mentioned.map({ $0.identifier }).debugDescription)
+            XCTAssert(mentioned.count == 24, "mentioned.count=\(mentioned.count);mentioned=\(mentioned.map({ $0.identifier }))")
         }
     }
     private func test_benchmarks(cache: Bool) async throws {

@@ -99,6 +99,7 @@ public enum SwiftSovereignStateCache {
             return
         case .subdivisions_keywords:
             SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
+            SwiftSovereignStateCacheSubdivisions.keywords2.removeAll()
             return
         case .subdivisions_mentioned:
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()

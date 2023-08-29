@@ -321,9 +321,11 @@ public extension Locale.Region {
     
     static func get_all_mentioned(in string: String, locale: Locale = Locale.current) -> [Locale.Region] {
         let string_lowercased:String = string.lowercased()
+        let string_start_index:String.Index = string.startIndex
+        let string_end_index:String.Index = string.endIndex
         return allCases.filter({ region in
             let keywords:Set<String> = region.keywords(forLocale: locale)
-            return SovereignRegions.doesSatisfy2(string_lowercased: string_lowercased, values: keywords)
+            return SovereignRegions.doesSatisfy2(string_start_index: string_start_index, string_end_index: string_end_index, string_lowercased: string_lowercased, values: keywords)
         })
     }
     
@@ -406,28 +408,35 @@ public extension Locale.Region {
         if let official_names:Set<String> = officialNames(forLocale: locale) {
             keywords.formUnion(official_names)
         }
-        /*if let wikipedia_name:String = wikipedia_name {
-         keywords.insert(wikipedia_name)
-         }
+        /*
          if let additional:Set<String> = additional_keywords {
          keywords.formUnion(additional)
          }*/
-        keywords = Set<String>(keywords.map({ $0.lowercased() }))
+        keywords = keywords.map_set({ $0.lowercased() })
         SwiftSovereignStateCacheSubdivisions.keywords2[id] = keywords
         return keywords
     }
     
-    func isMentioned(in string: String, exact: Bool, ignoreCase: Bool) -> Bool {
+    func isMentioned(in string: String) -> Bool {
         let keywords:Set<String> = keywords()
-        return exact ? SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal) : SovereignRegions.doesSatisfy(string: string, values: keywords)
+        return SovereignRegions.doesSatisfy2(string_start_index: string.startIndex, string_end_index: string.endIndex, string_lowercased: string.lowercased(), values: keywords)
     }
-    func is_mentioned(in string: String) -> Bool {
+    /*func is_mentioned(in string: String) -> Bool {
         let keywords:Set<String> = keywords()
         return SovereignRegions.doesSatisfy2(string_lowercased: string, values: keywords)
     }
     func is_mentioned_exactly(in string: String, ignoreCase: Bool) -> Bool {
         let keywords:Set<String> = keywords()
         return SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal)
+    }*/
+}
+extension Set {
+    func map_set<T>(_ transform: @escaping (Element) throws -> T) rethrows -> Set<T> {
+        var set:Set<T> = Set<T>.init(minimumCapacity: count)
+        for element in self {
+            set.insert(try transform(element))
+        }
+        return set
     }
 }
 
@@ -436,7 +445,7 @@ public extension Locale.Region {
         return "https://raw.githubusercontent.com/stsrki/country-flags/master/png1000px/" + identifier.lowercased() + ".png"
     }
     /// Whether or not this Region is only recognized by the United Nations as a sovereign state.
-    var is_united_nations_observer_state : Bool {
+    var isUnitedNationsObserverState : Bool {
         switch self {
         case .palestine,
                 .vaticanCity:
@@ -446,7 +455,7 @@ public extension Locale.Region {
         }
     }
     /// Whether or not this Region is recognized by the United Nations as a sovereign state member.
-    var is_united_nations_member : Bool {
+    var isUnitedNationsMember : Bool {
         switch self {
         case .abkhazia,
                 .americanSamoa,
@@ -578,11 +587,11 @@ public extension Locale.Region {
 }
 
 public extension Locale.Region {
-    /// The level-1 administrative units this Country claims territorial ownership of.
+    /// The level-1 administrative units this Region claims territorial ownership of.
     var subdivisions : [any SovereignStateSubdivision]? {
-        return subdivision_type?.allCases as? [any SovereignStateSubdivision]
+        return subdivisionType?.allCases as? [any SovereignStateSubdivision]
     }
-    var subdivision_type : (any SovereignStateSubdivision.Type)? {
+    var subdivisionType : (any SovereignStateSubdivision.Type)? {
         switch self {
         case .afghanistan: return SubdivisionsAfghanistan.self
         case .albania: return SubdivisionsAlbania.self
@@ -1014,10 +1023,14 @@ internal enum SovereignRegions {
         guard let value:String = values.first(where: { string.contains($0) }) else { return false }
         return string.range(of: prefixRegex + "(" + value + ")" + suffixRegex, options: [.regularExpression]) != nil
     }
-    static func doesSatisfy2(string_lowercased: String, values: Set<String>) -> Bool {
+    static func doesSatisfy2(string_start_index: String.Index, string_end_index: String.Index, string_lowercased: String, values: Set<String>) -> Bool {
         for value in values {
-            if string_lowercased.contains(value) {
-                return true
+            let ranges:Set<Range<String.Index>> = string_lowercased.all_ranges(of: value)
+            for range in ranges {
+                let prefix_index:String.Index? = string_lowercased.index(range.lowerBound, offsetBy: -1, limitedBy: string_start_index)
+                if (prefix_index == nil || !string_lowercased[prefix_index!].isLetter) && (range.upperBound == string_end_index || !string_lowercased[range.upperBound].isLetter) {
+                    return true
+                }
             }
         }
         return false
@@ -1047,6 +1060,18 @@ internal enum SovereignRegions {
         ].joined(separator: "|")
         return "(" + string + ")"
     }()
+}
+
+extension String {
+    func all_ranges(of substring: String) -> Set<Range<Index>> {
+        var ranges:Set<Range<Index>> = []
+        var last_range:Index? = nil
+        while let range:Range<Index> = range(of: substring, range: (last_range ?? self.startIndex)..<self.endIndex) {
+            ranges.insert(range)
+            last_range = range.upperBound
+        }
+        return ranges
+    }
 }
 
 
