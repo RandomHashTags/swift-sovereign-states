@@ -293,9 +293,8 @@ public enum Country : String, SovereignState {
         let countries:[Country] = Country.allCases.filter({ $0.is_mentioned(in: string) })
         return countries.isEmpty ? nil : countries
     }*/
-    public static func get_all_mentioned(_ string: String) -> [Locale.Region]? {
-        let stringLowercase:String = string.lowercased()
-        let countries:[Locale.Region] = Locale.Region.allCases.filter({ $0.is_mentioned(in: string) })
+    public static func get_all_mentioned(_ string: String) -> [Country]? {
+        let countries:[Country] = Country.allCases.filter({ $0.is_mentioned(in: string) })
         return countries.isEmpty ? nil : countries
     }
     

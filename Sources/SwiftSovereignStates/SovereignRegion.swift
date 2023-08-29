@@ -23,7 +23,7 @@ public extension Locale.Region {
     
     static var transnistria:Locale.Region = Locale.Region("transnistria")
     
-    static var allCases : [Locale.Region] {
+    static var allCases : [Locale.Region] = {
         return [
             Locale.Region.abkhazia,
             Locale.Region.artsakh,
@@ -317,11 +317,14 @@ public extension Locale.Region {
             Locale.Region.zambia,
             Locale.Region.zimbabwe,
         ]
-    }
+    }()
     
-    static func get_all_mentioned(in string: String) -> [Locale.Region]? {
-        let array:[Locale.Region] = allCases.filter({ $0.is_mentioned(in: string) })
-        return array.isEmpty ? nil : array
+    static func get_all_mentioned(in string: String, locale: Locale = Locale.current) -> [Locale.Region] {
+        let string_lowercased:String = string.lowercased()
+        return allCases.filter({ region in
+            let keywords:Set<String> = region.keywords(forLocale: locale)
+            return SovereignRegions.doesSatisfy2(string_lowercased: string_lowercased, values: keywords)
+        })
     }
     
     /// The unicode flag for this Region.
@@ -333,9 +336,11 @@ public extension Locale.Region {
     }
     
     func aliases(forLocale locale: Locale = Locale.current) -> Set<String>? {
+        // TODO: support locale
         return SovereignStateAliases.get(self)
     }
     func officialNames(forLocale locale: Locale = Locale.current) -> Set<String>? {
+        // TODO: support locale
         return SovereignStateOfficialNames.get(self)
     }
     
@@ -366,7 +371,7 @@ public extension Locale.Region {
     
     func keywords(forLocale locale: Locale = Locale.current) -> Set<String> {
         let id:String = identifier
-        if let keywords:Set<String> = SwiftSovereignStateCacheSubdivisions.keywords[id] {
+        if let keywords:Set<String> = SwiftSovereignStateCacheSubdivisions.keywords2[id] {
             return keywords
         }
         let locale_name:String = name(forLocale: locale)
@@ -407,7 +412,8 @@ public extension Locale.Region {
          if let additional:Set<String> = additional_keywords {
          keywords.formUnion(additional)
          }*/
-        SwiftSovereignStateCacheSubdivisions.keywords[id] = keywords
+        keywords = Set<String>(keywords.map({ $0.lowercased() }))
+        SwiftSovereignStateCacheSubdivisions.keywords2[id] = keywords
         return keywords
     }
     
@@ -417,7 +423,7 @@ public extension Locale.Region {
     }
     func is_mentioned(in string: String) -> Bool {
         let keywords:Set<String> = keywords()
-        return SovereignRegions.doesSatisfy(string: string, values: keywords)
+        return SovereignRegions.doesSatisfy2(string_lowercased: string, values: keywords)
     }
     func is_mentioned_exactly(in string: String, ignoreCase: Bool) -> Bool {
         let keywords:Set<String> = keywords()
@@ -1007,6 +1013,14 @@ internal enum SovereignRegions {
     static func doesSatisfy(string: String, values: Set<String>) -> Bool {
         guard let value:String = values.first(where: { string.contains($0) }) else { return false }
         return string.range(of: prefixRegex + "(" + value + ")" + suffixRegex, options: [.regularExpression]) != nil
+    }
+    static func doesSatisfy2(string_lowercased: String, values: Set<String>) -> Bool {
+        for value in values {
+            if string_lowercased.contains(value) {
+                return true
+            }
+        }
+        return false
     }
     
     private static let prefixRegex:String = {

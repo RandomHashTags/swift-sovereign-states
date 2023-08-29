@@ -136,6 +136,7 @@ internal enum SwiftSovereignStateCacheCountries {
 }
 internal enum SwiftSovereignStateCacheSubdivisions {
     static var keywords:SwiftSovereignStatesCache<Set<String>> = SwiftSovereignStatesCache<Set<String>>()
+    static var keywords2:SwiftSovereignStatesCache<Set<String>> = SwiftSovereignStatesCache<Set<String>>()
     
     static var mentioned:SwiftSovereignStatesCache<[any SovereignStateSubdivision]> = SwiftSovereignStatesCache<[any SovereignStateSubdivision]>()
     static var valueOf:SwiftSovereignStatesCache<Any?> = SwiftSovereignStatesCache<Any?>()
