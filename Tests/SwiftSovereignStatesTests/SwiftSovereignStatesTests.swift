@@ -13,7 +13,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //let _:[Set<String>] = Country.allCases.map({ $0.keywords })
         
         for region in Locale.Region.allCases {
-            print("region;identifier=" + region.identifier + ";name=" + (region.name() ?? "nil") + ";isISORegion=\(region.isISORegion);currency=" + region.currency.identifier + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
+            print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency=" + region.currency.identifier + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
         }
         
         try await test_change(cache: false)

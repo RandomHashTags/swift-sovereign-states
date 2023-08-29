@@ -410,7 +410,7 @@ public enum Country : String, SovereignState {
         }
     }
     
-    public var aliases : Set<String>? {
+    /*public var aliases : Set<String>? {
         switch self {
         case .afghanistan: return ["Islamic Republic of Afghanistan"]
         case .bahamas: return ["The Bahamas", "Bahamas, the"]
@@ -462,9 +462,9 @@ public enum Country : String, SovereignState {
         case .vietnam: return ["Viet Nam"]
         default: return nil
         }
-    }
+    }*/
     
-    /// Whether or not this Country is recognized by the United Nations as a sovereign state member.
+    /*/// Whether or not this Country is recognized by the United Nations as a sovereign state member.
     public var is_united_nations_member : Bool {
         switch self {
         case .abkhazia,
@@ -528,6 +528,7 @@ public enum Country : String, SovereignState {
             return false
         }
     }
+     */
     /*/// Whether or not this Country is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
     public var is_nato_member : Bool {
         switch self {
@@ -605,9 +606,9 @@ public enum Country : String, SovereignState {
         }
     }*/
     
-    public var official_names : Set<String>? {
+    /*public var official_names : Set<String>? {
         return SovereignStateOfficialNames.get(self)
-    }
+    }*/
     
     public var iso_alpha_2 : String? {
         return SovereignStateISOAlpha2.get(self)

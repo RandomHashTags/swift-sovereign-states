@@ -332,6 +332,13 @@ public extension Locale.Region {
         return SovereignStateNeighbors.get(self)
     }
     
+    func aliases(forLocale locale: Locale = Locale.current) -> Set<String>? {
+        return SovereignStateAliases.get(self)
+    }
+    func officialNames(forLocale locale: Locale = Locale.current) -> Set<String>? {
+        return SovereignStateOfficialNames.get(self)
+    }
+    
     var currency : Locale.Currency {
         return Locale.Currency(identifier)
     }
@@ -376,20 +383,26 @@ public extension Locale.Region {
                 locale_name_diacritic_insensitive.replacingOccurrences(of: "&", with: "and")
             ])
         }
-        let regex:Regex = try! Regex(" \\([a-zA-Z]+\\)")
-        if locale_name.contains(regex) {
-            keywords.formUnion([
-                locale_name.replacing(regex, with: ""),
-            ])
+        let regex:Regex<Substring> = try! Regex<Substring>(" \\([a-zA-Z]+\\)")
+        let regex_matches:[Regex<Substring>.Match] = locale_name.matches(of: regex)
+        
+        if !regex_matches.isEmpty {
+            let match:Regex<Substring>.Match = regex_matches[0]
+            var regex_keywords:Set<String> = [locale_name.replacing(regex, with: "")]
+            if match.range.lowerBound == match.endIndex {
+                regex_keywords.insert(String(locale_name[locale_name.index(match.startIndex, offsetBy: 2)..<locale_name.index(before: match.endIndex)]))
+            }
+            keywords.formUnion(regex_keywords)
+        }
+        
+        if let aliases:Set<String> = aliases(forLocale: locale) {
+            keywords.formUnion(aliases)
+        }
+        if let official_names:Set<String> = officialNames(forLocale: locale) {
+            keywords.formUnion(official_names)
         }
         /*if let wikipedia_name:String = wikipedia_name {
          keywords.insert(wikipedia_name)
-         }
-         if let official_names:Set<String> = official_names {
-         keywords.formUnion(official_names)
-         }
-         if let aliases:Set<String> = aliases {
-         keywords.formUnion(aliases)
          }
          if let additional:Set<String> = additional_keywords {
          keywords.formUnion(additional)
