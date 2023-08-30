@@ -15,8 +15,8 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
     case lebap
     case mary
     
-    public var country : Country {
-        return Country.turkmenistan
+    public var country : Locale.Region {
+        return Locale.Region.turkmenistan
     }
     
     public var type : SovereignStateSubdivisionType {

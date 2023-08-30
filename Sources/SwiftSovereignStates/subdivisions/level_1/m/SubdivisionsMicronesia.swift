@@ -13,8 +13,8 @@ public enum SubdivisionsMicronesia : String, SovereignStateSubdivision {
     case pohnpei
     case yap
     
-    public var country : Country {
-        return Country.micronesia
+    public var country : Locale.Region {
+        return Locale.Region.micronesia
     }
     
     public var type : SovereignStateSubdivisionType {

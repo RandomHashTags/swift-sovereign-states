@@ -27,8 +27,8 @@ public enum SubdivisionsLaos : String, SovereignStateSubdivision {
     case xaisomboun
     case xiangkhouang
     
-    public var country : Country {
-        return Country.laos
+    public var country : Locale.Region {
+        return Locale.Region.laos
     }
     
     public var type : SovereignStateSubdivisionType {

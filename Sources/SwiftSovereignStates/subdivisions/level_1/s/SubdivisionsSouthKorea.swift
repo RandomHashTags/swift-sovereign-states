@@ -32,8 +32,8 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
     case seoul
     case ulsan
     
-    public var country : Country {
-        return Country.south_korea
+    public var country : Locale.Region {
+        return Locale.Region.southKorea
     }
     
     public var type : SovereignStateSubdivisionType {

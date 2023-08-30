@@ -23,8 +23,8 @@ public enum SubdivisionsElSalvador : String, SovereignStateSubdivision { // http
     case sonsonate
     case usulutan
     
-    public var country : Country {
-        return Country.el_salvador
+    public var country : Locale.Region {
+        return Locale.Region.elSalvador
     }
     
     public var type : SovereignStateSubdivisionType {

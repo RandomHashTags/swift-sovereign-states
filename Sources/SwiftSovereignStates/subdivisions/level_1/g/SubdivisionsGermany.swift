@@ -25,8 +25,8 @@ public enum SubdivisionsGermany : String, SovereignStateSubdivision { // https:/
     case schleswig_holstein
     case thuringia
     
-    public var country : Country {
-        return Country.germany
+    public var country : Locale.Region {
+        return Locale.Region.germany
     }
     
     public var type : SovereignStateSubdivisionType {

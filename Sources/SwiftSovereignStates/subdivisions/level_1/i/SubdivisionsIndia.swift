@@ -46,8 +46,8 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
     case lakshadweep
     case puducherry
     
-    public var country : Country {
-        return Country.india
+    public var country : Locale.Region {
+        return Locale.Region.india
     }
     
     public var type : SovereignStateSubdivisionType {

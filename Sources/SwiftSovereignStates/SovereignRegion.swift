@@ -444,6 +444,34 @@ public extension Locale.Region {
     var flagURL : String {
         return "https://raw.githubusercontent.com/stsrki/country-flags/master/png1000px/" + identifier.lowercased() + ".png"
     }
+    
+    var isoAlpha3 : String? {
+        return SovereignStateISOAlpha3.get(self)
+    }
+    
+    func wikipediaURL(forLocale locale: Locale) -> String {
+        let language:String = locale.language.minimalIdentifier
+        let name:String
+        switch self {
+        case .georgia:
+            name = "Georgia_(country)"
+            break
+        case .micronesia:
+            name = "Federated_States_of_Micronesia"
+            break
+        case .saintHelena:
+            name = "Saint_Helena"
+            break
+        case .saintMartin:
+            name = "Saint_Martin_(island)"
+            break
+        default:
+            name = self.name(forLocale: locale).replacingOccurrences(of: " ", with: "_")
+            break
+        }
+        return "https://" + language + ".wikipedia.org/wiki/" + name
+    }
+    
     /// Whether or not this Region is only recognized by the United Nations as a sovereign state.
     var isUnitedNationsObserverState : Bool {
         switch self {

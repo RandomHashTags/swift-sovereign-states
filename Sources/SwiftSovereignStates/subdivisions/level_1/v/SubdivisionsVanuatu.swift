@@ -15,8 +15,8 @@ public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https:/
     case tafea
     case torba
     
-    public var country : Country {
-        return Country.vanuatu
+    public var country : Locale.Region {
+        return Locale.Region.vanuatu
     }
     
     public var type : SovereignStateSubdivisionType {

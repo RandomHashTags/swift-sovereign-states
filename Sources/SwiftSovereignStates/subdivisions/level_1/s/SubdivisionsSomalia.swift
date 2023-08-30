@@ -15,8 +15,8 @@ public enum SubdivisionsSomalia : String, SovereignStateSubdivision { // https:/
     case south_west
     case somaliland
     
-    public var country : Country {
-        return Country.somalia
+    public var country : Locale.Region {
+        return Locale.Region.somalia
     }
     
     public var type : SovereignStateSubdivisionType {

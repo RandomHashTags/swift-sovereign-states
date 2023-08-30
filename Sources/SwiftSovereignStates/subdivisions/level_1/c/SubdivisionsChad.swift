@@ -32,8 +32,8 @@ public enum SubdivisionsChad : String, SovereignStateSubdivision { // https://en
     case tibesti
     case wadi_fira
     
-    public var country : Country {
-        return Country.chad
+    public var country : Locale.Region {
+        return Locale.Region.chad
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -90,8 +90,8 @@ public enum SubdivisionsTurkey : String, SovereignStateSubdivision { // https://
     case yozgat
     case zonguldak
     
-    public var country : Country {
-        return Country.turkey
+    public var country : Locale.Region {
+        return Locale.Region.turkey
     }
     
     public var type : SovereignStateSubdivisionType {

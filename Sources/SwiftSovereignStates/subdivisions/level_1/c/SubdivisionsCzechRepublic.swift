@@ -23,8 +23,8 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
     case vysocina
     case zlin
     
-    public var country : Country {
-        return Country.czech_republic
+    public var country : Locale.Region {
+        return Locale.Region.czechia
     }
     
     public var type : SovereignStateSubdivisionType {

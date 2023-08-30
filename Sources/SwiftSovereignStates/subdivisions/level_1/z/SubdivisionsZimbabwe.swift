@@ -19,8 +19,8 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
     case matabeleland_south
     case midlands
     
-    public var country : Country {
-        return Country.zimbabwe
+    public var country : Locale.Region {
+        return Locale.Region.zimbabwe
     }
     
     public var type : SovereignStateSubdivisionType {

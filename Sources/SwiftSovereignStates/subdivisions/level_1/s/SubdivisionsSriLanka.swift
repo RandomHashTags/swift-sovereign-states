@@ -18,8 +18,8 @@ public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https:
     case uva
     case western
     
-    public var country : Country {
-        return Country.sri_lanka
+    public var country : Locale.Region {
+        return Locale.Region.sriLanka
     }
     
     public var type : SovereignStateSubdivisionType {

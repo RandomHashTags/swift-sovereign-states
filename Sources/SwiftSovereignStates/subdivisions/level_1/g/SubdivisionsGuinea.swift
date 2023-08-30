@@ -18,8 +18,8 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
     
     case conakry
     
-    public var country : Country {
-        return Country.guinea
+    public var country : Locale.Region {
+        return Locale.Region.guinea
     }
     
     public var type : SovereignStateSubdivisionType {

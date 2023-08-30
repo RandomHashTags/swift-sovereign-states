@@ -61,7 +61,7 @@ public enum SovereignStateSubdivisions {
         }
         return subdivisions.isEmpty ? nil : subdivisions
     }
-    public static func valueOf(_ string: String, country: Country, cache: Bool = true, ignoreCase: Bool = false) -> (any SovereignStateSubdivision)? {
+    public static func valueOf(_ string: String, country: Locale.Region, cache: Bool = true, ignoreCase: Bool = false) -> (any SovereignStateSubdivision)? {
         guard var subdivisions:[any SovereignStateSubdivision] = country.subdivisions else { return nil }
         let stringLowercase:String = string.lowercased()
         if let subdivision:Any? = SwiftSovereignStateCacheSubdivisions.valueOf[stringLowercase] {
@@ -79,7 +79,7 @@ public enum SovereignStateSubdivisions {
             return subdivision
         }
         let components:[String] = cacheID.split(separator: "-").map({ String($0) })
-        guard components.count == 2, let subdivision:any SovereignStateSubdivision = Country.init(rawValue: components[0])?.subdivision_type?.init(rawValue: components[1]) else { return nil }
+        guard components.count == 2, let subdivision:any SovereignStateSubdivision = Locale.Region.init(components[0]).subdivisionType?.init(rawValue: components[1]) else { return nil }
         if cache {
             SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] = subdivision
         }
@@ -136,19 +136,19 @@ public enum SovereignStateSubdivisions {
     }
 }
 
-public extension Country {
+public extension Locale.Region {
     func valueOfSubdivision(_ string: String?) -> (any SovereignStateSubdivision)? {
         guard let string:String = string else { return nil }
         return SovereignStateSubdivisions.valueOf(string, country: self)
     }
     func valueOfSubdivisionIdentifier(_ string: String) -> (any SovereignStateSubdivision)? {
-        return subdivision_type?.init(rawValue: string)
+        return subdivisionType?.init(rawValue: string)
     }
 }
 
 public protocol SovereignStateSubdivision : SovereignState { // https://en.wikipedia.org/wiki/List_of_first-level_administrative_divisions_by_country
     /// The country this subdivision's administrative borders are claimed by.
-    var country : Country { get }
+    var country : Locale.Region { get }
     var type : SovereignStateSubdivisionType { get }
     var type_suffix : String { get }
     
@@ -173,11 +173,11 @@ public extension SovereignStateSubdivision {
     }
     
     var cache_id : String {
-        return country.rawValue + "-" + rawValue
+        return country.identifier + "-" + rawValue
     }
     
     var name : String {
-        let table:String = "Subdivisions1\(country.name.replacingOccurrences(of: " ", with: ""))"
+        let table:String = "Subdivisions1\(country.name(forLocale: Locale.init(identifier: "en")).replacingOccurrences(of: " ", with: ""))"
         let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
         return String(localized: key, table: table, bundle: Bundle.module)
     }
@@ -189,7 +189,7 @@ public extension SovereignStateSubdivision {
         return nil
     }
     var currencies : [Currency] {
-        return country.currencies
+        return [] // TODO: fix
     }
     
     var wikipedia_url_suffix : String? {
@@ -223,7 +223,7 @@ public extension SovereignStateSubdivision {
 }
 
 public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, SovereignRegionWrapper {    
-    public var rawValue: String
+    public var rawValue:String
     
     public let subdivision:any SovereignStateSubdivision
     
@@ -309,7 +309,7 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.iso_alpha_3
     }
     
-    public var country : Country {
+    public var country : Locale.Region {
         return subdivision.country
     }
     public var type : SovereignStateSubdivisionType {

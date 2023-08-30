@@ -72,8 +72,8 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
     case vinh_phuc
     case yen_bai
     
-    public var country : Country {
-        return Country.vietnam
+    public var country : Locale.Region {
+        return Locale.Region.vietnam
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -34,8 +34,8 @@ public enum SubdivisionsVenezuela : String, SovereignStateSubdivision { // https
     
     case capital_district
     
-    public var country : Country {
-        return Country.venezuela
+    public var country : Locale.Region {
+        return Locale.Region.venezuela
     }
     
     public var type : SovereignStateSubdivisionType {

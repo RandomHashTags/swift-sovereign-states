@@ -34,8 +34,8 @@ public enum SubdivisionsCambodia : String, SovereignStateSubdivision { // https:
     case takeo
     case tboung_khmum
     
-    public var country : Country {
-        return Country.cambodia
+    public var country : Locale.Region {
+        return Locale.Region.cambodia
     }
     
     public var type : SovereignStateSubdivisionType {

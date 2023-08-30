@@ -45,8 +45,8 @@ public enum SubdivisionsNigeria : String, SovereignStateSubdivision { // https:/
     case yobe
     case zamfara
     
-    public var country : Country {
-        return Country.nigeria
+    public var country : Locale.Region {
+        return Locale.Region.nigeria
     }
     
     public var type : SovereignStateSubdivisionType {

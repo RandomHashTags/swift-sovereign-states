@@ -18,8 +18,8 @@ public enum SubdivisionsSouthAfrica : String, SovereignStateSubdivision { // htt
     case northern_cape
     case western_cape
     
-    public var country : Country {
-        return Country.south_africa
+    public var country : Locale.Region {
+        return Locale.Region.southAfrica
     }
     
     public var type : SovereignStateSubdivisionType {

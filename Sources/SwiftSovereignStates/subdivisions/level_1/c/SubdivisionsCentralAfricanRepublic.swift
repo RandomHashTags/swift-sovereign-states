@@ -27,8 +27,8 @@ public enum SubdivisionsCentralAfricanRepublic : String, SovereignStateSubdivisi
     
     case bangui
     
-    public var country : Country {
-        return Country.central_african_republic
+    public var country : Locale.Region {
+        return Locale.Region.centralAfricanRepublic
     }
     
     public var type : SovereignStateSubdivisionType {

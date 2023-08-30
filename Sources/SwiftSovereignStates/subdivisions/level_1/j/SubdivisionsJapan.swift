@@ -56,8 +56,8 @@ public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://e
     case yamaguchi
     case yamanashi
     
-    public var country : Country {
-        return Country.japan
+    public var country : Locale.Region {
+        return Locale.Region.japan
     }
     
     public var type : SovereignStateSubdivisionType {

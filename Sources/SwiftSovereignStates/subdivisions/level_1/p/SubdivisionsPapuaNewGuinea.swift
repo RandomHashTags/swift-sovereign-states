@@ -31,8 +31,8 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
     case western_highlands
     case western
     
-    public var country : Country {
-        return Country.papua_new_guinea
+    public var country : Locale.Region {
+        return Locale.Region.papuaNewGuinea
     }
     
     public var type : SovereignStateSubdivisionType {

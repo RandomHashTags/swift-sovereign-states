@@ -64,7 +64,7 @@ public enum SovereignStateCities {
             return city
         }
         let components:[String] = cacheID.split(separator: "-").map({ String($0) })
-        guard components.count == 3, let city:any SovereignStateCity = Country.init(rawValue: components[0])?.subdivision_type?.init(rawValue: components[1])?.cities_type?.init(rawValue: components[2]) else { return nil }
+        guard components.count == 3, let city:any SovereignStateCity = Locale.Region.init(components[0]).subdivisionType?.init(rawValue: components[1])?.cities_type?.init(rawValue: components[2]) else { return nil }
         if cache {
             SwiftSovereignStateCacheCities.valueOfCacheID[cacheID] = city
         }
@@ -139,7 +139,7 @@ public extension SovereignStateCity {
     }
     var name : String {
         let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
-        let table:String = "Subdivisions3\(subdivision.country.name.replacingOccurrences(of: " ", with: ""))\(subdivision.name.replacingOccurrences(of: " ", with: ""))"
+        let table:String = "Subdivisions3\(subdivision.country.name(forLocale: Locale.init(identifier: "en")) .replacingOccurrences(of: " ", with: ""))\(subdivision.name.replacingOccurrences(of: " ", with: ""))"
         return String(localized: key, table: table, bundle: Bundle.module)
     }
     var currencies : [Currency] {

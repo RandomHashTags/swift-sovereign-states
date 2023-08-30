@@ -25,8 +25,8 @@ public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // http
     case wellington
     case west_coast
     
-    public var country : Country {
-        return Country.new_zealand
+    public var country : Locale.Region {
+        return Locale.Region.newZealand
     }
     
     public var type : SovereignStateSubdivisionType {

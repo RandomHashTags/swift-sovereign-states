@@ -15,8 +15,8 @@ public enum SubdivisionsBelize : String, SovereignStateSubdivision { // https://
     case stann_creek
     case toledo
     
-    public var country : Country {
-        return Country.belize
+    public var country : Locale.Region {
+        return Locale.Region.belize
     }
     
     public var type : SovereignStateSubdivisionType {

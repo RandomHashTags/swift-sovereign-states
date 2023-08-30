@@ -33,8 +33,8 @@ public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // http
     case ulcinj
     case zabljak
     
-    public var country : Country {
-        return Country.montenegro
+    public var country : Locale.Region {
+        return Locale.Region.montenegro
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -28,8 +28,8 @@ public enum SubdivisionsBotswana : String, SovereignStateSubdivision { // https:
     case selebi_phikwe
     case sowa
     
-    public var country : Country {
-        return Country.botswana
+    public var country : Locale.Region {
+        return Locale.Region.botswana
     }
     
     public var type : SovereignStateSubdivisionType {

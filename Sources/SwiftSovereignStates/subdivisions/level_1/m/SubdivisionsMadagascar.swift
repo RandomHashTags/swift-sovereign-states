@@ -32,8 +32,8 @@ public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // http
     case vatovavy
     case vatovavy_fitovinany
     
-    public var country : Country {
-        return Country.madagascar
+    public var country : Locale.Region {
+        return Locale.Region.madagascar
     }
     
     public var type : SovereignStateSubdivisionType {

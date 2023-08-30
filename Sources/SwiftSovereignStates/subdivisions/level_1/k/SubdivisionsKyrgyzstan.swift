@@ -19,8 +19,8 @@ public enum SubdivisionsKyrgyzstan : String, SovereignStateSubdivision { // http
     case bishkek
     case osh_city
     
-    public var country : Country {
-        return Country.kyrgyzstan
+    public var country : Locale.Region {
+        return Locale.Region.kyrgyzstan
     }
     
     public var type : SovereignStateSubdivisionType {

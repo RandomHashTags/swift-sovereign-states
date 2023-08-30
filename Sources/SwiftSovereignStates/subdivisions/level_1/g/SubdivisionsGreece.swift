@@ -23,8 +23,8 @@ public enum SubdivisionsGreece : String, SovereignStateSubdivision { // https://
     case western_greece
     case western_macedonia
     
-    public var country : Country {
-        return Country.greece
+    public var country : Locale.Region {
+        return Locale.Region.greece
     }
     
     public var type : SovereignStateSubdivisionType {

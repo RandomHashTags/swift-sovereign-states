@@ -24,8 +24,8 @@ public enum SubdivisionsMauritania : String, SovereignStateSubdivision { // http
     case tiris_zemmour
     case trarza
     
-    public var country : Country {
-        return Country.mauritania
+    public var country : Locale.Region {
+        return Locale.Region.mauritania
     }
     
     public var type : SovereignStateSubdivisionType {

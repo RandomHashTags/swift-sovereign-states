@@ -41,8 +41,8 @@ public enum SubdivisionsBahamas : String, SovereignStateSubdivision { // https:/
     case spanish_wells
     case west_grand_bahama
     
-    public var country : Country {
-        return Country.bahamas
+    public var country : Locale.Region {
+        return Locale.Region.bahamas
     }
     
     public var type : SovereignStateSubdivisionType {

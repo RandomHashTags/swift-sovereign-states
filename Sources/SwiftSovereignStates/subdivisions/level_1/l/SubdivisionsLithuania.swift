@@ -19,8 +19,8 @@ public enum SubdivisionsLithuania : String, SovereignStateSubdivision { // https
     case utena
     case vilnius
     
-    public var country : Country {
-        return Country.lithuania
+    public var country : Locale.Region {
+        return Locale.Region.lithuania
     }
     
     public var type : SovereignStateSubdivisionType {

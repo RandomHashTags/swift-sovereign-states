@@ -25,8 +25,8 @@ public enum SubdivisionsPoland : String, SovereignStateSubdivision { // https://
     case warmian_masurian
     case west_pomeranian
     
-    public var country : Country {
-        return Country.poland
+    public var country : Locale.Region {
+        return Locale.Region.poland
     }
     
     public var type : SovereignStateSubdivisionType {

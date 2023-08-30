@@ -26,8 +26,8 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
     case rivas
     case south_caribbean_coast
     
-    public var country : Country {
-        return Country.nicaragua
+    public var country : Locale.Region {
+        return Locale.Region.nicaragua
     }
     
     public var type : SovereignStateSubdivisionType {

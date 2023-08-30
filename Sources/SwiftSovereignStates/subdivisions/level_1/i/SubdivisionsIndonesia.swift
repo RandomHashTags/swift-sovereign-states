@@ -43,8 +43,8 @@ public enum SubdivisionsIndonesia : String, SovereignStateSubdivision { // https
     case west_sumatra
     case special_region_of_yogyakarta
     
-    public var country : Country {
-        return Country.indonesia
+    public var country : Locale.Region {
+        return Locale.Region.indonesia
     }
     
     public var type : SovereignStateSubdivisionType {

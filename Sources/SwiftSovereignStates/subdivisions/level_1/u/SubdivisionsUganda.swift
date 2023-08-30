@@ -145,8 +145,8 @@ public enum SubdivisionsUganda : String, SovereignStateSubdivision { // https://
     case yumbe
     case zombo
     
-    public var country : Country {
-        return Country.uganda
+    public var country : Locale.Region {
+        return Locale.Region.uganda
     }
     
     public var type : SovereignStateSubdivisionType {

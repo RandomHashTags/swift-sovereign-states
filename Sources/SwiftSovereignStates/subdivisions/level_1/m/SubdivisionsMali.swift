@@ -21,8 +21,8 @@ public enum SubdivisionsMali : String, SovereignStateSubdivision { // https://en
     
     case bamako
     
-    public var country : Country {
-        return Country.mali
+    public var country : Locale.Region {
+        return Locale.Region.mali
     }
     
     public var type : SovereignStateSubdivisionType {

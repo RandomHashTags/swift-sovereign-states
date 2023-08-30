@@ -47,8 +47,8 @@ public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
     case gagauzia
     case left_bank_of_the_dniester // aka Transnistria
     
-    public var country : Country {
-        return Country.moldova
+    public var country : Locale.Region {
+        return Locale.Region.moldova
     }
     
     public var type : SovereignStateSubdivisionType {

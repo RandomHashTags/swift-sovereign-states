@@ -40,8 +40,8 @@ public enum SubdivisionsIran : String, SovereignStateSubdivision { // https://en
     case yazd
     case zanjan
     
-    public var country : Country {
-        return Country.iran
+    public var country : Locale.Region {
+        return Locale.Region.iran
     }
     
     public var type : SovereignStateSubdivisionType {

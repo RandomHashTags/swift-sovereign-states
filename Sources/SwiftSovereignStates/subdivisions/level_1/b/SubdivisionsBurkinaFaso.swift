@@ -22,8 +22,8 @@ public enum SubdivisionsBurkinaFaso : String, SovereignStateSubdivision { // htt
     case sahel
     case sud_ouest
     
-    public var country : Country {
-        return Country.burkina_faso
+    public var country : Locale.Region {
+        return Locale.Region.burkinaFaso
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -25,8 +25,8 @@ public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en
     case santiago_de_cuba
     case villa_clara
     
-    public var country : Country {
-        return Country.cuba
+    public var country : Locale.Region {
+        return Locale.Region.cuba
     }
     
     public var type : SovereignStateSubdivisionType {

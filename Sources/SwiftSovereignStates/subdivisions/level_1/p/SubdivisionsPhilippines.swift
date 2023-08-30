@@ -93,8 +93,8 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
     
     case metro_manila
     
-    public var country : Country {
-        return Country.philippines
+    public var country : Locale.Region {
+        return Locale.Region.philippines
     }
     
     public var type : SovereignStateSubdivisionType {

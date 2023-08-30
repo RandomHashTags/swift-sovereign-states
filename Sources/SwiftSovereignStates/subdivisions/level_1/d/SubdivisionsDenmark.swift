@@ -14,8 +14,8 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
     case sjaelland
     case syddanmark
     
-    public var country : Country {
-        return Country.denmark
+    public var country : Locale.Region {
+        return Locale.Region.denmark
     }
     
     public var type : SovereignStateSubdivisionType {

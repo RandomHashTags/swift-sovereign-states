@@ -223,8 +223,8 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
     case slovenj_gradec
     case velenje
     
-    public var country : Country {
-        return Country.slovenia
+    public var country : Locale.Region {
+        return Locale.Region.slovenia
     }
     
     public var type : SovereignStateSubdivisionType {

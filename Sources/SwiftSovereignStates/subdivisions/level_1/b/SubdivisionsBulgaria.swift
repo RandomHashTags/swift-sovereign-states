@@ -37,8 +37,8 @@ public enum SubdivisionsBulgaria : String, SovereignStateSubdivision { // https:
     case vratsa
     case yambol
     
-    public var country : Country {
-        return Country.bulgaria
+    public var country : Locale.Region {
+        return Locale.Region.bulgaria
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -21,8 +21,8 @@ public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://
     case saint_mary
     case trinity
     
-    public var country : Country {
-        return Country.jersey
+    public var country : Locale.Region {
+        return Locale.Region.jersey
     }
     
     public var type : SovereignStateSubdivisionType {

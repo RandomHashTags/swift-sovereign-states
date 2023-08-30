@@ -29,8 +29,8 @@ public enum SubdivisionsHungary : String, SovereignStateSubdivision { // https:/
     case veszprem
     case zala
     
-    public var country : Country {
-        return Country.hungary
+    public var country : Locale.Region {
+        return Locale.Region.hungary
     }
     
     public var type : SovereignStateSubdivisionType {

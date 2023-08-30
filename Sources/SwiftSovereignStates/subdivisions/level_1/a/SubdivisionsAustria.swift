@@ -18,8 +18,8 @@ public enum SubdivisionsAustria : String, SovereignStateSubdivision { // https:/
     case vienna
     case vorarlberg
     
-    public var country : Country {
-        return Country.austria
+    public var country : Locale.Region {
+        return Locale.Region.austria
     }
     
     public var type : SovereignStateSubdivisionType {

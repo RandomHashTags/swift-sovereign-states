@@ -28,8 +28,8 @@ public enum SubdivisionsUruguay : String, SovereignStateSubdivision { // https:/
     case tacuarembo
     case treinta_y_tres
     
-    public var country : Country {
-        return Country.uruguay
+    public var country : Locale.Region {
+        return Locale.Region.uruguay
     }
     
     public var type : SovereignStateSubdivisionType {

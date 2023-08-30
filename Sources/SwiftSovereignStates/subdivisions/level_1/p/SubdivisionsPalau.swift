@@ -25,8 +25,8 @@ public enum SubdivisionsPalau : String, SovereignStateSubdivision { // https://e
     case peleliu
     case sonsorol
     
-    public var country : Country {
-        return Country.palau
+    public var country : Locale.Region {
+        return Locale.Region.palau
     }
     
     public var type : SovereignStateSubdivisionType {

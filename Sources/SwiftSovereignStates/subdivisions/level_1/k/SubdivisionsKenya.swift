@@ -56,8 +56,8 @@ public enum SubdivisionsKenya : String, SovereignStateSubdivision { // https://e
     case wajir
     case west_pokot
     
-    public var country : Country {
-        return Country.kenya
+    public var country : Locale.Region {
+        return Locale.Region.kenya
     }
     
     public var type : SovereignStateSubdivisionType {

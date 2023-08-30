@@ -23,8 +23,8 @@ public enum SubdivisionsNamibia : String, SovereignStateSubdivision { // https:/
     case zambezi
     case karas
     
-    public var country : Country {
-        return Country.namibia
+    public var country : Locale.Region {
+        return Locale.Region.namibia
     }
     
     public var type : SovereignStateSubdivisionType {

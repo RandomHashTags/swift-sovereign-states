@@ -30,8 +30,8 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
     case male
     case addu
     
-    public var country : Country {
-        return Country.maldives
+    public var country : Locale.Region {
+        return Locale.Region.maldives
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -23,8 +23,8 @@ public enum SubdivisionsSouthSudan : String, SovereignStateSubdivision { // http
     case greater_pibor
     case ruweng
     
-    public var country : Country {
-        return Country.south_sudan
+    public var country : Locale.Region {
+        return Locale.Region.southSudan
     }
     
     public var type : SovereignStateSubdivisionType {

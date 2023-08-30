@@ -27,8 +27,8 @@ public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // http
     case turkistan
     case west_kazakhstan
     
-    public var country : Country {
-        return Country.kazakhstan
+    public var country : Locale.Region {
+        return Locale.Region.kazakhstan
     }
     
     public var type : SovereignStateSubdivisionType {

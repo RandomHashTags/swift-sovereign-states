@@ -14,8 +14,8 @@ public enum SubdivisionsGreenland : String, SovereignStateSubdivision { // https
     case qeqqata
     case sermersooq
     
-    public var country : Country {
-        return Country.greenland
+    public var country : Locale.Region {
+        return Locale.Region.greenland
     }
     
     public var type : SovereignStateSubdivisionType {

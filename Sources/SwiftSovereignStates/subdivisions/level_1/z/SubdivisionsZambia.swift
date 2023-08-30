@@ -19,8 +19,8 @@ public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://
     case southern
     case western
     
-    public var country : Country {
-        return Country.zambia
+    public var country : Locale.Region {
+        return Locale.Region.zambia
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -41,7 +41,7 @@ public extension SovereignStateLevel2Division {
     }
     
     var name : String {
-        let table:String = "Subdivisions2\(subdivision.country.name.replacingOccurrences(of: " ", with: ""))\(subdivision.name.replacingOccurrences(of: " ", with: ""))"
+        let table:String = "Subdivisions2\(subdivision.country.name(forLocale: Locale.init(identifier: "en")) .replacingOccurrences(of: " ", with: ""))\(subdivision.name.replacingOccurrences(of: " ", with: ""))"
         let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
         return String(localized: key, table: table, bundle: Bundle.module)
     }

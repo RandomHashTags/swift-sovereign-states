@@ -41,8 +41,8 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
     case yucatan
     case zacatecas
     
-    public var country : Country {
-        return Country.mexico
+    public var country : Locale.Region {
+        return Locale.Region.mexico
     }
     
     public var type : SovereignStateSubdivisionType {

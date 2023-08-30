@@ -24,8 +24,8 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
     
     case oecusse
     
-    public var country : Country {
-        return Country.timor_leste
+    public var country : Locale.Region {
+        return Locale.Region.timorLeste
     }
     
     public var type : SovereignStateSubdivisionType {

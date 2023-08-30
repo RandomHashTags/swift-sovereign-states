@@ -23,8 +23,8 @@ public enum SubdivisionsSyria : String, SovereignStateSubdivision { // https://e
     case rif_dimashq
     case tartus
     
-    public var country : Country {
-        return Country.syria
+    public var country : Locale.Region {
+        return Locale.Region.syria
     }
     
     public var type : SovereignStateSubdivisionType {

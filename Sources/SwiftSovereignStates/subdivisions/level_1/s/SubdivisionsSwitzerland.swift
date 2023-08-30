@@ -35,8 +35,8 @@ public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // htt
     case zug
     case zurich
     
-    public var country : Country {
-        return Country.switzerland
+    public var country : Locale.Region {
+        return Locale.Region.switzerland
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -30,8 +30,8 @@ public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https
     case totonicapan
     case zacapa
     
-    public var country : Country {
-        return Country.guatemala
+    public var country : Locale.Region {
+        return Locale.Region.guatemala
     }
     
     public var type : SovereignStateSubdivisionType {

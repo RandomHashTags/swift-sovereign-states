@@ -16,8 +16,8 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
     case mogilev
     case vitebsk
     
-    public var country : Country {
-        return Country.belarus
+    public var country : Locale.Region {
+        return Locale.Region.belarus
     }
     
     public var type : SovereignStateSubdivisionType {

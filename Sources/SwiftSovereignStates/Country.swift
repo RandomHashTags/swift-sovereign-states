@@ -333,7 +333,7 @@ public enum Country : String, SovereignState {
         return keywords.isEmpty ? nil : keywords
     }
     
-    public var wikipedia_url : String {
+    /*public var wikipedia_url : String {
         let name:String
         switch self {
         case .georgia:
@@ -353,7 +353,7 @@ public enum Country : String, SovereignState {
             break
         }
         return "https://en.wikipedia.org/wiki/" + name
-    }
+    }*/
     
     public var wikipedia_url_suffix : String {
         let shortName:String = name.replacingOccurrences(of: " ", with: "_")
@@ -619,7 +619,7 @@ public enum Country : String, SovereignState {
         return SovereignStateISOAlpha2.getParentGroup(self)
     }
     public var iso_alpha_3 : String? {
-        return SovereignStateISOAlpha3.get(self)
+        return nil
     }
     
     /*public var neighbors : [Country]? {

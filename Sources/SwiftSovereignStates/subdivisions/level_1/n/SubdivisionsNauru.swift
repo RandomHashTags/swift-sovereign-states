@@ -23,8 +23,8 @@ public enum SubdivisionsNauru : String, SovereignStateSubdivision { // https://e
     case uaboe
     case yaren
     
-    public var country : Country {
-        return Country.nauru
+    public var country : Locale.Region {
+        return Locale.Region.nauru
     }
     
     public var type : SovereignStateSubdivisionType {

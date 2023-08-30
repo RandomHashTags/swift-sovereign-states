@@ -40,8 +40,8 @@ public enum SubdivisionsTanzania : String, SovereignStateSubdivision { // https:
     case unguja_north
     case unguja_south
     
-    public var country : Country {
-        return Country.tanzania
+    public var country : Locale.Region {
+        return Locale.Region.tanzania
     }
     
     public var type : SovereignStateSubdivisionType {

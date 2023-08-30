@@ -43,8 +43,8 @@ public enum SubdivisionsAfghanistan : String, SovereignStateSubdivision { // htt
     case wardak
     case zabul
     
-    public var country : Country {
-        return Country.afghanistan
+    public var country : Locale.Region {
+        return Locale.Region.afghanistan
     }
     
     public var type : SovereignStateSubdivisionType {

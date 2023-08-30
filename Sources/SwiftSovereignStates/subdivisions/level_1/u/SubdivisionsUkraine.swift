@@ -38,8 +38,8 @@ public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https:/
     case kyiv_city
     case sevastopol
     
-    public var country : Country {
-        return Country.ukraine
+    public var country : Locale.Region {
+        return Locale.Region.ukraine
     }
     
     public var type : SovereignStateSubdivisionType {

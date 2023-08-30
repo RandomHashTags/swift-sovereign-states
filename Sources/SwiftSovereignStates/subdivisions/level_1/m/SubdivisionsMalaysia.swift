@@ -26,8 +26,8 @@ public enum SubdivisionsMalaysia : String, SovereignStateSubdivision { // https:
     case labuan
     case putrajaya
     
-    public var country : Country {
-        return Country.malaysia
+    public var country : Locale.Region {
+        return Locale.Region.malaysia
     }
     
     public var type : SovereignStateSubdivisionType {

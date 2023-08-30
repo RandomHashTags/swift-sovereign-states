@@ -25,8 +25,8 @@ public enum SubdivisionsChile : String, SovereignStateSubdivision { // https://e
     case tarapaca
     case valparaiso
     
-    public var country : Country {
-        return Country.chile
+    public var country : Locale.Region {
+        return Locale.Region.chile
     }
     
     public var type : SovereignStateSubdivisionType {

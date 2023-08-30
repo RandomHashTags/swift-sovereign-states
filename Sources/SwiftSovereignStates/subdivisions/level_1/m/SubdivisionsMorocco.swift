@@ -21,8 +21,8 @@ public enum SubdivisionsMorocco : String, SovereignStateSubdivision { // https:/
     case souss_massa
     case tanger_tetouan_al_hoceima
     
-    public var country : Country {
-        return Country.morocco
+    public var country : Locale.Region {
+        return Locale.Region.morocco
     }
     
     public var type : SovereignStateSubdivisionType {

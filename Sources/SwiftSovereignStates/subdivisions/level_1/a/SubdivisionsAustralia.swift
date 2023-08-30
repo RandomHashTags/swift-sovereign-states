@@ -27,8 +27,8 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
     case heard_island_and_mcdonald_islands
     case norfolk_island
     
-    public var country : Country {
-        return Country.australia
+    public var country : Locale.Region {
+        return Locale.Region.australia
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -20,8 +20,8 @@ public enum SubdivisionsBarbados : String, SovereignStateSubdivision { // https:
     case saint_philip
     case saint_thomas
     
-    public var country : Country {
-        return Country.barbados
+    public var country : Locale.Region {
+        return Locale.Region.barbados
     }
     
     public var type : SovereignStateSubdivisionType {

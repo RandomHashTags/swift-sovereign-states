@@ -15,8 +15,8 @@ public enum SubdivisionsDjibouti : String, SovereignStateSubdivision { // https:
     case obock
     case tadjourah
     
-    public var country : Country {
-        return Country.djibouti
+    public var country : Locale.Region {
+        return Locale.Region.djibouti
     }
     
     public var type : SovereignStateSubdivisionType {

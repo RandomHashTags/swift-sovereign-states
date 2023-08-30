@@ -20,8 +20,8 @@ public enum SubdivisionsArmenia : String, SovereignStateSubdivision { // https:/
     case vayots_dzor
     case yerevan
     
-    public var country : Country {
-        return Country.armenia
+    public var country : Locale.Region {
+        return Locale.Region.armenia
     }
     
     public var type : SovereignStateSubdivisionType {

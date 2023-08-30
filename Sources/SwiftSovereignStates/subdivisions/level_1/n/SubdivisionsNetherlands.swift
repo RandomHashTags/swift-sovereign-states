@@ -25,8 +25,8 @@ public enum SubdivisionsNetherlands : String, SovereignStateSubdivision { // htt
     case saba
     case sint_eustatius
     
-    public var country : Country {
-        return Country.netherlands
+    public var country : Locale.Region {
+        return Locale.Region.netherlands
     }
     
     public var type : SovereignStateSubdivisionType {

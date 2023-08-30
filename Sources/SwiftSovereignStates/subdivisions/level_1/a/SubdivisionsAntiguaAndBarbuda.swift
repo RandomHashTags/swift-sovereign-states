@@ -18,8 +18,8 @@ public enum SubdivisionsAntiguaAndBarbuda : String, SovereignStateSubdivision { 
     case barbuda
     case redonda
     
-    public var country : Country {
-        return Country.antigua_and_barbuda
+    public var country : Locale.Region {
+        return Locale.Region.antiguaBarbuda
     }
     
     public var type : SovereignStateSubdivisionType {

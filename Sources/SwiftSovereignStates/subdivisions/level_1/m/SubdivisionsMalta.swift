@@ -77,8 +77,8 @@ public enum SubdivisionsMalta : String, SovereignStateSubdivision { // https://e
     case zejtun
     case zurrieq
     
-    public var country : Country {
-        return Country.malta
+    public var country : Locale.Region {
+        return Locale.Region.malta
     }
     
     public var type : SovereignStateSubdivisionType {

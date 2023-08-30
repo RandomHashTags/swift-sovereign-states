@@ -15,8 +15,8 @@ public enum SubdivisionsEritrea : String, SovereignStateSubdivision { // https:/
     case northern_red_sea
     case southern_red_sea
     
-    public var country : Country {
-        return Country.eritrea
+    public var country : Locale.Region {
+        return Locale.Region.eritrea
     }
     
     public var type : SovereignStateSubdivisionType {

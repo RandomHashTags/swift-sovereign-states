@@ -19,8 +19,8 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
     case sud
     case sud_est
     
-    public var country : Country {
-        return Country.haiti
+    public var country : Locale.Region {
+        return Locale.Region.haiti
     }
     
     public var type : SovereignStateSubdivisionType {

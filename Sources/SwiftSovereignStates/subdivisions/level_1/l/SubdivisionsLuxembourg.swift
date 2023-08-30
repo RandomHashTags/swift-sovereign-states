@@ -21,8 +21,8 @@ public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // http
     case vianden
     case wiltz
     
-    public var country : Country {
-        return Country.luxembourg
+    public var country : Locale.Region {
+        return Locale.Region.luxembourg
     }
     
     public var type : SovereignStateSubdivisionType {

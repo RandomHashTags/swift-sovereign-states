@@ -33,8 +33,8 @@ public enum SubdivisionsEcuador : String, SovereignStateSubdivision { // https:/
     case tungurahua
     case zamora_chinchipe
     
-    public var country : Country {
-        return Country.ecuador
+    public var country : Locale.Region {
+        return Locale.Region.ecuador
     }
     
     public var type : SovereignStateSubdivisionType {

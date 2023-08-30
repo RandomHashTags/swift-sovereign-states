@@ -18,8 +18,8 @@ public enum SubdivisionsBolivia : String, SovereignStateSubdivision { // https:/
     case santa_cruz
     case tarija
     
-    public var country : Country {
-        return Country.bolivia
+    public var country : Locale.Region {
+        return Locale.Region.bolivia
     }
     
     public var type : SovereignStateSubdivisionType {

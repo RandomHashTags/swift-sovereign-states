@@ -16,8 +16,8 @@ public enum SubdivisionsCostaRica : String, SovereignStateSubdivision { // https
     case puntarenas
     case san_jose
     
-    public var country : Country {
-        return Country.costa_rica
+    public var country : Locale.Region {
+        return Locale.Region.costaRica
     }
     
     public var type : SovereignStateSubdivisionType {

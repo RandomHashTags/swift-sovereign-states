@@ -25,8 +25,8 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
     
     case rotuma
     
-    public var country : Country {
-        return Country.fiji
+    public var country : Locale.Region {
+        return Locale.Region.fiji
     }
     
     public var type : SovereignStateSubdivisionType {

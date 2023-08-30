@@ -41,8 +41,8 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
     case santo_domingo
     case valverde
     
-    public var country : Country {
-        return Country.dominican_republic
+    public var country : Locale.Region {
+        return Locale.Region.dominicanRepublic
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -29,8 +29,8 @@ public enum SubdivisionsItaly : String, SovereignStateSubdivision { // https://e
     case umbria
     case veneto
     
-    public var country : Country {
-        return Country.italy
+    public var country : Locale.Region {
+        return Locale.Region.italy
     }
     
     public var type : SovereignStateSubdivisionType {

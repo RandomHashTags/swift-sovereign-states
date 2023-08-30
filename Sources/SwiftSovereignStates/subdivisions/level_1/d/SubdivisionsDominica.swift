@@ -19,8 +19,8 @@ public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https:
     case saint_paul
     case saint_peter
     
-    public var country : Country {
-        return Country.dominica
+    public var country : Locale.Region {
+        return Locale.Region.dominica
     }
     
     public var type : SovereignStateSubdivisionType {

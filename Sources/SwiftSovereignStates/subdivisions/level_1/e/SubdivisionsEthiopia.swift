@@ -23,8 +23,8 @@ public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https:
     case addis_ababa
     case dire_dawa
     
-    public var country : Country {
-        return Country.ethiopia
+    public var country : Locale.Region {
+        return Locale.Region.ethiopia
     }
     
     public var type : SovereignStateSubdivisionType {

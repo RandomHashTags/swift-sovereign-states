@@ -28,8 +28,8 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
     case region_of_murcia
     case valencian_community
     
-    public var country : Country {
-        return Country.spain
+    public var country : Locale.Region {
+        return Locale.Region.spain
     }
     
     public var type : SovereignStateSubdivisionType {

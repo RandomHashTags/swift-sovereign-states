@@ -24,8 +24,8 @@ public enum SubdivisionsLiberia : String, SovereignStateSubdivision { // https:/
     case rivercess
     case sinoe
     
-    public var country : Country {
-        return Country.liberia
+    public var country : Locale.Region {
+        return Locale.Region.liberia
     }
     
     public var type : SovereignStateSubdivisionType {

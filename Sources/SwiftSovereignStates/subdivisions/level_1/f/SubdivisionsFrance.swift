@@ -22,8 +22,8 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
     case loire_countries
     case provence_alps_french_riviera
     
-    public var country : Country {
-        return Country.france
+    public var country : Locale.Region {
+        return Locale.Region.france
     }
     
     public var type : SovereignStateSubdivisionType {

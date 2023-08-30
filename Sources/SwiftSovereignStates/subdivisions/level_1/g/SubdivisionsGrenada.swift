@@ -17,8 +17,8 @@ public enum SubdivisionsGrenada : String, SovereignStateSubdivision { // https:/
     
     case carriacou_and_petite_martinique
     
-    public var country : Country {
-        return Country.grenada
+    public var country : Locale.Region {
+        return Locale.Region.grenada
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -29,8 +29,8 @@ public enum SubdivisionsPortugal : String, SovereignStateSubdivision { // https:
     case vila_real
     case viseu
     
-    public var country : Country {
-        return Country.portugal
+    public var country : Locale.Region {
+        return Locale.Region.portugal
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -25,8 +25,8 @@ public enum SubdivisionsPalestine : String, SovereignStateSubdivision { // https
     case tubas
     case tulkarm
     
-    public var country : Country {
-        return Country.palestine
+    public var country : Locale.Region {
+        return Locale.Region.palestine
     }
     
     public var type : SovereignStateSubdivisionType {

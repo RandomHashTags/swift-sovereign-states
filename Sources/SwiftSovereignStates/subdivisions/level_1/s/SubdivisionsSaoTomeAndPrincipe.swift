@@ -17,8 +17,8 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, SovereignStateSubdivision {
     
     case autonomous_region_of_principe
     
-    public var country : Country {
-        return Country.sao_tome_and_principe
+    public var country : Locale.Region {
+        return Locale.Region.sãoToméPríncipe
     }
     
     public var type : SovereignStateSubdivisionType {

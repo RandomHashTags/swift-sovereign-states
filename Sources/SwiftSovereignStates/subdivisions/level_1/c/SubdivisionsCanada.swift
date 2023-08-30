@@ -23,8 +23,8 @@ public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://
     case nunavut
     case yukon
     
-    public var country : Country {
-        return Country.canada
+    public var country : Locale.Region {
+        return Locale.Region.canada
     }
     
     public var type : SovereignStateSubdivisionType {

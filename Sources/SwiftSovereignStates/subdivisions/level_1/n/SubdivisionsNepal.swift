@@ -16,8 +16,8 @@ public enum SubdivisionsNepal : String, SovereignStateSubdivision { // https://e
     case province_1
     case sudurpashchim
     
-    public var country : Country {
-        return Country.nepal
+    public var country : Locale.Region {
+        return Locale.Region.nepal
     }
     
     public var type : SovereignStateSubdivisionType {

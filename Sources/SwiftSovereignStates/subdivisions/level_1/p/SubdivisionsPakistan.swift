@@ -16,8 +16,8 @@ public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https:
     case punjab
     case sindh
     
-    public var country : Country {
-        return Country.pakistan
+    public var country : Locale.Region {
+        return Locale.Region.pakistan
     }
     
     public var type : SovereignStateSubdivisionType {

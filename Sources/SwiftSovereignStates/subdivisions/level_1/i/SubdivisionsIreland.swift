@@ -13,8 +13,8 @@ public enum SubdivisionsIreland : String, SovereignStateSubdivision { // https:/
     case munster
     case ulster
     
-    public var country : Country {
-        return Country.ireland
+    public var country : Locale.Region {
+        return Locale.Region.ireland
     }
     
     public var type : SovereignStateSubdivisionType {

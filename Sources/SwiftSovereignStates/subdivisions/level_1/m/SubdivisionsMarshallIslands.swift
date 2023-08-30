@@ -33,8 +33,8 @@ public enum SubdivisionsMarshallIslands : String, SovereignStateSubdivision { //
     case wotho
     case wotje
     
-    public var country : Country {
-        return Country.marshall_islands
+    public var country : Locale.Region {
+        return Locale.Region.marshallIslands
     }
     
     public var type : SovereignStateSubdivisionType {

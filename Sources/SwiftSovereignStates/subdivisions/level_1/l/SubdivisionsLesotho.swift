@@ -19,8 +19,8 @@ public enum SubdivisionsLesotho : String, SovereignStateSubdivision { // https:/
     case quthing
     case thaba_tseka
     
-    public var country : Country {
-        return Country.lesotho
+    public var country : Locale.Region {
+        return Locale.Region.lesotho
     }
     
     public var type : SovereignStateSubdivisionType {

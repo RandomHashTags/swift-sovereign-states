@@ -29,8 +29,8 @@ public enum SubdivisionsBhutan : String, SovereignStateSubdivision { // https://
     case wangdue_phodrang
     case zhemgang
     
-    public var country : Country {
-        return Country.bhutan
+    public var country : Locale.Region {
+        return Locale.Region.bhutan
     }
     
     public var type : SovereignStateSubdivisionType {

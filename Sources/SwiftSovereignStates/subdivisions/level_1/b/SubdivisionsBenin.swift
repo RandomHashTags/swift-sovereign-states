@@ -21,8 +21,8 @@ public enum SubdivisionsBenin : String, SovereignStateSubdivision { // https://e
     case plateau
     case zou
     
-    public var country : Country {
-        return Country.benin
+    public var country : Locale.Region {
+        return Locale.Region.benin
     }
     
     public var type : SovereignStateSubdivisionType {

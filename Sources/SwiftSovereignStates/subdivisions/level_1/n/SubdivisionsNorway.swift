@@ -27,8 +27,8 @@ public enum SubdivisionsNorway : String, SovereignStateSubdivision { // https://
     case peter_i_island
     case queen_maud_land
     
-    public var country : Country {
-        return Country.norway
+    public var country : Locale.Region {
+        return Locale.Region.norway
     }
     
     public var type : SovereignStateSubdivisionType {

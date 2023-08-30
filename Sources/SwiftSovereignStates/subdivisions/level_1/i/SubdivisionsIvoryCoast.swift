@@ -24,8 +24,8 @@ public enum SubdivisionsIvoryCoast : String, SovereignStateSubdivision { // http
     case abidjan
     case yamoussoukro
     
-    public var country : Country {
-        return Country.ivory_coast
+    public var country : Locale.Region {
+        return Locale.Region.côteDIvoire
     }
     
     public var type : SovereignStateSubdivisionType {

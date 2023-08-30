@@ -17,8 +17,8 @@ public enum SubdivisionsBangladesh : String, SovereignStateSubdivision { // http
     case rangpur
     case sylhet
     
-    public var country : Country {
-        return Country.bangladesh
+    public var country : Locale.Region {
+        return Locale.Region.bangladesh
     }
     
     public var type : SovereignStateSubdivisionType {

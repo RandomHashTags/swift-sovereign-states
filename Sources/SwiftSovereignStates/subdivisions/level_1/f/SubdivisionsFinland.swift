@@ -28,8 +28,8 @@ public enum SubdivisionsFinland : String, SovereignStateSubdivision { // https:/
     case southwest_finland
     case uusimaa
     
-    public var country : Country {
-        return Country.finland
+    public var country : Locale.Region {
+        return Locale.Region.finland
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -77,8 +77,8 @@ public enum SubdivisionsIceland : String, SovereignStateSubdivision { // https:/
     case vogar
     case vopnafjaroarhreppur
     
-    public var country : Country {
-        return Country.iceland
+    public var country : Locale.Region {
+        return Locale.Region.iceland
     }
     
     public var type : SovereignStateSubdivisionType {

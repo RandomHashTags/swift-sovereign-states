@@ -31,8 +31,8 @@ public enum SubdivisionsLibya : String, SovereignStateSubdivision { // https://e
     case wadi_al_hayaa
     case wadi_al_shatii
     
-    public var country : Country {
-        return Country.libya
+    public var country : Locale.Region {
+        return Locale.Region.libya
     }
     
     public var type : SovereignStateSubdivisionType {

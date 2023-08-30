@@ -21,8 +21,8 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
     case hamilton_city
     case st_george_s_town
     
-    public var country : Country {
-        return Country.bermuda
+    public var country : Locale.Region {
+        return Locale.Region.bermuda
     }
     
     public var type : SovereignStateSubdivisionType {

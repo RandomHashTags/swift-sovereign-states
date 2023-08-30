@@ -20,8 +20,8 @@ public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
     case triesenberg
     case vaduz
     
-    public var country : Country {
-        return Country.liechtenstein
+    public var country : Locale.Region {
+        return Locale.Region.liechtenstein
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -12,8 +12,8 @@ public enum SubdivisionsComoros : String, SovereignStateSubdivision { // https:/
     case grande_comore
     case moheli
     
-    public var country : Country {
-        return Country.comoros
+    public var country : Locale.Region {
+        return Locale.Region.comoros
     }
     
     public var type : SovereignStateSubdivisionType {

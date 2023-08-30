@@ -21,8 +21,8 @@ public enum SubdivisionsAlbania : String, SovereignStateSubdivision { // https:/
     case tirana
     case vlore
     
-    public var country : Country {
-        return Country.albania
+    public var country : Locale.Region {
+        return Locale.Region.albania
     }
     
     public var type : SovereignStateSubdivisionType {

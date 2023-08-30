@@ -34,8 +34,8 @@ public enum SubdivisionsPeru : String, SovereignStateSubdivision { // https://en
     case tumbes
     case ucayali
     
-    public var country : Country {
-        return Country.peru
+    public var country : Locale.Region {
+        return Locale.Region.peru
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -37,8 +37,8 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
     
     case distrito_federal
     
-    public var country : Country {
-        return Country.brazil
+    public var country : Locale.Region {
+        return Locale.Region.brazil
     }
     
     public var type : SovereignStateSubdivisionType {

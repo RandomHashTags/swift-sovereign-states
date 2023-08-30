@@ -18,8 +18,8 @@ public enum SubdivisionsMauritius : String, SovereignStateSubdivision { // https
     case riviere_noire
     case savanne
     
-    public var country : Country {
-        return Country.mauritius
+    public var country : Locale.Region {
+        return Locale.Region.mauritius
     }
     
     public var type : SovereignStateSubdivisionType {

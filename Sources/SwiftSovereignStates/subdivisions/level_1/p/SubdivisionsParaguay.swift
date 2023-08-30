@@ -28,8 +28,8 @@ public enum SubdivisionsParaguay : String, SovereignStateSubdivision { // https:
     
     case asuncion
     
-    public var country : Country {
-        return Country.paraguay
+    public var country : Locale.Region {
+        return Locale.Region.paraguay
     }
     
     public var type : SovereignStateSubdivisionType {

@@ -31,8 +31,8 @@ public enum SubdivisionsMongolia : String, SovereignStateSubdivision { // https:
     case uvs
     case zavkhan
     
-    public var country : Country {
-        return Country.mongolia
+    public var country : Locale.Region {
+        return Locale.Region.mongolia
     }
     
     public var type : SovereignStateSubdivisionType {

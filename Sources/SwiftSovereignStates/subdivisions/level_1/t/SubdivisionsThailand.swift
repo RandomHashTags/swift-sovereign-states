@@ -87,8 +87,8 @@ public enum SubdivisionsThailand : String, SovereignStateSubdivision { // https:
     
     case bangkok
     
-    public var country : Country {
-        return Country.thailand
+    public var country : Locale.Region {
+        return Locale.Region.thailand
     }
     
     public var type : SovereignStateSubdivisionType {

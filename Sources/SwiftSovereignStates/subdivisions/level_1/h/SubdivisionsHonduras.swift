@@ -27,8 +27,8 @@ public enum SubdivisionsHonduras : String, SovereignStateSubdivision { // https:
     case valle
     case yoro
     
-    public var country : Country {
-        return Country.honduras
+    public var country : Locale.Region {
+        return Locale.Region.honduras
     }
     
     public var type : SovereignStateSubdivisionType {

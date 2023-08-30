@@ -53,8 +53,8 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
     case jelgava_city
     case ventspils_city
     
-    public var country : Country {
-        return Country.latvia
+    public var country : Locale.Region {
+        return Locale.Region.latvia
     }
     
     public var type : SovereignStateSubdivisionType {
