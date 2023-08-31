@@ -23,17 +23,6 @@
         }
       }
     },
-    "north_korea_name_short" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "North Korea"
-          }
-        }
-      }
-    },
     "northern_cyprus_name_short" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -74,28 +63,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Somaliland"
-          }
-        }
-      }
-    },
-    "sudan_name_short" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sudan"
-          }
-        }
-      }
-    },
-    "syria_name_short" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Syria"
           }
         }
       }

@@ -12,14 +12,14 @@ public extension Locale.Region {
     static var artsakh:Locale.Region = Locale.Region("artsakh")
     
     static var northernCyprus:Locale.Region = Locale.Region("northernCyprus")
-    static var northKorea:Locale.Region = Locale.Region("northKorea")
+    static var northKorea:Locale.Region = Locale.Region("KP")
     
     static var palestine:Locale.Region = Locale.Region("palestine")
     
     static var scotland:Locale.Region = Locale.Region("scotland")
     static var somaliland:Locale.Region = Locale.Region("somaliland")
-    static var sudan:Locale.Region = Locale.Region("sudan")
-    static var syria:Locale.Region = Locale.Region("syria")
+    static var sudan:Locale.Region = Locale.Region("SD")
+    static var syria:Locale.Region = Locale.Region("SY")
     
     static var transnistria:Locale.Region = Locale.Region("transnistria")
     
