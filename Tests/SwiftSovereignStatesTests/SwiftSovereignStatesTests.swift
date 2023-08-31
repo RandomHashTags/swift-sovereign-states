@@ -9,19 +9,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //generate_english_localization()
         //await generate_divisions()
         //return;
-        
-        /*let _:[Set<String>] = Country.allCases.map({ $0.keywords })
-        let _:[Set<String>] = Locale.Region.allCases.map({ $0.keywords() })
-        
-        for region in Locale.Region.allCases {
+                
+        /*for region in Locale.Region.allCases {
             print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency=" + region.currency.identifier + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
         }*/
         
-        //try await test_change(cache: false)
-        //try await test_change(cache: true)
-        //return;
-        
-        let _:[Set<String>] = Country.allCases.map({ $0.keywords })
+        let _:[Set<String>] = Locale.Region.allCases.map({ $0.keywords() })
         let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
         let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
         
@@ -36,7 +29,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         test_localization()
                 
-        //try await test_benchmarks(cache: false)
+        try await test_benchmarks(cache: false)
         //try await test_benchmarks(cache: true)
         
         /*let seconds:UInt64 = 1 * 1_000_000_000
@@ -186,25 +179,14 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     private func test_change(cache: Bool) async throws {
         let string:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, [Romania], the Bahamas, Sao Tome and Principe, and Zambia. Case Sensitive! Will not find (the new version will though) New zealand, central african republic, el Salvador, latv.a, FINLAND, \"Yemen\", OMan, dominican Republic, and Ireland"
-        if true {
-            let _ = try await benchmark(key: "Country.getAllMentioned") {
-                let _:[Country]? = Country.getAllMentioned(string, cache: cache)
-            }
-            let mentioned:[Country]? = Country.getAllMentioned(string, cache: cache)
-            XCTAssert(mentioned != nil && mentioned!.count == 16, "mentioned.count=\(mentioned!.count);mentioned=\(mentioned!.map({ $0.rawValue }))")
+        let _ = try await benchmark(key: "Locale.Region.getAllMentioned") {
+            let _:[Locale.Region] = Locale.Region.getAllMentioned(in: string)
         }
-        if cache {
-            /*let _ = try await benchmark(key: "Country.getAllMentioned") {
-                let mentioned:[Country]? = Country.get_all_mentioned(string)
-                XCTAssert(mentioned != nil && mentioned!.count == 16, "mentioned.count=\(mentioned!.count);mentioned=\(mentioned!.map({ $0.cache_id }))")
-            }*/
-        } else {
-            let _ = try await benchmark(key: "Country.getAllMentioned2") {
-                let _:[Locale.Region] = Locale.Region.get_all_mentioned(in: string)
-            }
-            let mentioned:[Locale.Region] = Locale.Region.get_all_mentioned(in: string)
-            XCTAssert(mentioned.count == 24, "mentioned.count=\(mentioned.count);mentioned=\(mentioned.map({ $0.identifier }))")
+        let _ = try await benchmark(key: "Locale.Region.getAllMentionedCached") {
+            let _:[Locale.Region] = Locale.Region.getAllMentionedCached(in: string)
         }
+        let mentioned:[Locale.Region] = Locale.Region.getAllMentioned(in: string)
+        XCTAssert(mentioned.count == 24, "mentioned.count=\(mentioned.count);mentioned=\(mentioned.map({ $0.identifier }))")
     }
     private func test_benchmarks(cache: Bool) async throws {
         print("SwiftSovereignStatesTests;test_benchmarks;cache=" + cache.description)
@@ -217,14 +199,6 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         //return;
         
-        let _ = try await benchmark(key: "Country.init(_ description) [LosslessStringConvertible]") {
-            let country:Country? = Country.init("US")
-            XCTAssert(country != nil)
-        }
-        let _ = try await benchmark(key: "Country.init(rawValue) [RawRepresentable]") {
-            let country:Country? = Country.init(rawValue: "US")
-            XCTAssert(country != nil)
-        }
         let _ = try await benchmark(key: "SubdivisionsUnitedStates.init(_ description) [LosslessStringConvertible]") {
             let subdivision:SubdivisionsUnitedStates? = SubdivisionsUnitedStates.init("US-minnesota")
             XCTAssert(subdivision != nil)
@@ -251,16 +225,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
             XCTAssert(subdivision != nil)
         }
         let _ = try await benchmark(key: "SovereignStateSubdivisions.valueOf") {
-            let all:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.valueOf("Minnesota", cache: cache)
-            XCTAssert(all != nil)
+            let all:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned("Minnesota", cache: cache)
+            XCTAssert(all.count == 1)
         }
         let _ = try await benchmark(key: "SovereignStateSubdivisions.getAllMentioned") {
-            let mentioned:[any SovereignStateSubdivision]? = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
-            XCTAssert(mentioned != nil && mentioned!.count >= 5)
-        }
-        let _ = try await benchmark(key: "SovereignStateSubdivisions.getAllMentionedParallel") {
-            let mentioned:[any SovereignStateSubdivision]? = await SovereignStateSubdivisions.getAllMentionedParallel("Wisconsin! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
-            XCTAssert(mentioned != nil && mentioned!.count >= 5)
+            let mentioned:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", cache: cache)
+            XCTAssert(mentioned.count >= 5)
         }
         
         let _ = try await benchmark(key: "SubdivisionsUnitedStates.minnesota.valueOfIdentifier") {
@@ -272,16 +242,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
             XCTAssert(city != nil)
         }
         let _ = try await benchmark(key: "SovereignStateCities.valueOf") {
-            let cities:[any SovereignStateCity]? = SovereignStateCities.valueOf("Rochester", cache: cache, ignoreCase: false)
-            XCTAssert(cities != nil && cities!.count >= 1)
+            let cities:[any SovereignStateCity] = SovereignStateCities.getAllMentioned("Rochester", cache: cache)
+            XCTAssert(cities.count >= 1)
         }
         let _ = try await benchmark(key: "SovereignStateCities.getAllMentioned") {
-            let cities:[any SovereignStateCity]? = SovereignStateCities.getAllMentioned("Rochester! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
-            XCTAssert(cities != nil && cities!.count >= 8)
-        }
-        let _ = try await benchmark(key: "SovereignStateCities.getAllMentionedParallel") {
-            let cities:[any SovereignStateCity]? = await SovereignStateCities.getAllMentionedParallel("Kasson! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
-            XCTAssert(cities != nil && cities!.count >= 8)
+            let cities:[any SovereignStateCity] = SovereignStateCities.getAllMentioned("Rochester! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", cache: cache)
+            XCTAssert(cities.count >= 8)
         }
     }
     
@@ -378,15 +344,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(kasson.rawValue.elementsEqual("kasson"))
         XCTAssert(kasson.cache_id.elementsEqual("US-minnesota-kasson"))
         
-        XCTAssert(Country.valueOf("") == nil)
+        XCTAssert(Locale.Region.getAllMentioned(in: "").isEmpty)
         XCTAssert(Country.init("") == nil)
-        XCTAssert(Country.getAllMentioned("") == nil)
-        XCTAssert(SovereignStateSubdivisions.valueOf("") == nil)
+        XCTAssert(SovereignStateSubdivisions.getAllMentioned("").isEmpty)
         XCTAssert(SovereignStateSubdivisions.valueOfCacheID("") == nil)
-        XCTAssert(SovereignStateSubdivisions.getAllMentioned("") == nil)
-        XCTAssert(SovereignStateCities.valueOf("", ignoreCase: false) == nil)
+        XCTAssert(SovereignStateCities.getAllMentioned("").isEmpty)
         XCTAssert(SovereignStateCities.valueOfCacheID("") == nil)
-        XCTAssert(SovereignStateCities.getAllMentioned("") == nil)
         
         let test2:(any SovereignStateSubdivision)? = unitedStates.valueOfSubdivision("Minnesota")
         let equalMinnesotas:Bool = minnesota.isEqual(test2)
@@ -537,31 +500,30 @@ final class SwiftSovereignStatesTests: XCTestCase {
             Locale.Region.dominica,
         ]
         let mentionedString:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, [Romania], the Bahamas, Sao Tome and Principe, and Zambia. Case Sensitive! Will not find New zealand, central african republic, el Salvador, latv.a, FINLAND, OMan, Dominica, and Ire?and."
-        let mentioned:[Locale.Region] = Locale.Region.get_all_mentioned(in: mentionedString)
+        let mentioned:[Locale.Region] = Locale.Region.getAllMentioned(in: mentionedString)
         let notFound:[Locale.Region] = targetCountries.filter({ !mentioned.contains($0) })
         if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testCountryMentions;missing \(notFound.count);=[" + notFound.map({ $0.identifier }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCountryMentions;missing \(notFound.count);=[" + notFound.map({ $0.name() }).joined(separator: ",") + "]")
         }
         let notMentioned:[Locale.Region] = mentioned.filter({ !targetCountries.contains($0)})
         if !notMentioned.isEmpty {
-            print("SwiftSovereignStatesTests;testCountryMentions;shouldn't be=[" + notMentioned.map({ $0.identifier }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCountryMentions;shouldn't be=[" + notMentioned.map({ $0.name() }).joined(separator: ",") + "]")
         }
         XCTAssert(mentioned.count == targetCountries.count)
         
-        XCTAssert(Country.valueOf("USA", cache: false, ignoreCase: false) != nil)
-        XCTAssert(Country.valueOf("usa", cache: false, ignoreCase: false) == nil)
-        XCTAssert(Country.valueOf("usa", cache: false, ignoreCase: true) != nil)
+        XCTAssert(Locale.Region.getAllMentionedISOAlpha3(in: "USA").count == 1)
+        XCTAssert(Locale.Region.getAllMentionedISOAlpha3(in: "usa").count == 0)
     }
     private func testSubdivisionMentions() {
         let targetSubdivisions:[any SovereignStateSubdivision] = [SubdivisionsMexico.baja_california, SubdivisionsUnitedStates.california]
         let mentionedString:String = "Baja California; California!"
-        let mentioned:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned(mentionedString) ?? [any SovereignStateSubdivision]()
+        let mentioned:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned(mentionedString)
         let notFound:[any SovereignStateSubdivision] = targetSubdivisions.filter({
             let subdivision:any SovereignStateSubdivision = $0
             return !mentioned.contains(where: { subdivision.isEqual($0) })
         })
         if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testSubdivisionMentions;missing " + notFound.count.description + ";=[" + notFound.map({ $0.rawValue }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testSubdivisionMentions;missing \(notFound.count);=[" + notFound.map({ $0.rawValue }).joined(separator: ",") + "]")
         }
         let notMentioned:[any SovereignStateSubdivision] = mentioned.filter({
             let subdivision:any SovereignStateSubdivision = $0
@@ -592,7 +554,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         let mentionedString:String = "Rochester; this string should find the mentioned cities: Minneapolis, (Kasson) Owatonna! [Faribault] Dallas? Des Moines; Anaconda: Oakley, Naples, Edmore's, \"Winifred\", Lost River, Summit, Upham, St. Leo, and McLean. Case Sensitive! Will not find des Moines, sum.it, ROCHESTER, EDmore, and C?shing."
         
-        let mentioned:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(mentionedString) ?? []
+        let mentioned:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(mentionedString)
         XCTAssert(mentioned.count > 0, "mentioned.count == 0")
         let notFound:[any SovereignStateCity] = targetCities.filter({
             let city:any SovereignStateCity = $0

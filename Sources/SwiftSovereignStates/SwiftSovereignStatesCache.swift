@@ -51,7 +51,6 @@ private extension SwiftSovereignStatesCache {
 public enum SwiftSovereignStateCacheType {
     case localization
     
-    case countries_valueOf
     case countries_mentioned
     case subdivisions_keywords
     case subdivisions_mentioned
@@ -72,10 +71,10 @@ public enum SwiftSovereignStateCache {
         guard let type:SwiftSovereignStateCacheType = type else {
             SwiftSovereignStateCache.localization.removeAll()
             
-            SwiftSovereignStateCacheCountries.valueOf.removeAll()
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
             SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
+            SwiftSovereignStateCacheSubdivisions.keywords2.removeAll()
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOf.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOfAll.removeAll()
@@ -91,9 +90,6 @@ public enum SwiftSovereignStateCache {
         switch type {
         case .localization:
             return SwiftSovereignStateCache.localization.removeAll()
-        case .countries_valueOf:
-            SwiftSovereignStateCacheCountries.valueOf.removeAll()
-            return
         case .countries_mentioned:
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
@@ -132,8 +128,7 @@ public enum SwiftSovereignStateCache {
     }
 }
 internal enum SwiftSovereignStateCacheCountries {
-    static var valueOf:SwiftSovereignStatesCache<Country> = SwiftSovereignStatesCache<Country>()
-    static var mentioned:SwiftSovereignStatesCache<[Country]> = SwiftSovereignStatesCache<[Country]>()
+    static var mentioned:SwiftSovereignStatesCache<[Locale.Region]> = SwiftSovereignStatesCache<[Locale.Region]>()
 }
 internal enum SwiftSovereignStateCacheSubdivisions {
     static var keywords:SwiftSovereignStatesCache<Set<String>> = SwiftSovereignStatesCache<Set<String>>()

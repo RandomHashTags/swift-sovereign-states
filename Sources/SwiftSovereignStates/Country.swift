@@ -272,45 +272,6 @@ public enum Country : String, SovereignState {
     
     case puerto_rico
     
-    /// Returns all countries that are mentioned in the `string`.
-    public static func getAllMentioned(_ string: String, cache: Bool = true) -> [Country]? {
-        let stringLowercase:String = string.lowercased()
-        if let cached:[Country] = SwiftSovereignStateCacheCountries.mentioned[stringLowercase] {
-            return cached
-        }
-        let countries:[Country] = Country.allCases.filter({ $0.isMentioned(in: string, exact: false, ignoreCase: false) })
-        if cache {
-            SwiftSovereignStateCacheCountries.mentioned[stringLowercase] = countries
-        }
-        return countries.isEmpty ? nil : countries
-    }
-    
-    /*public static func get_all_mentioned_cached(_ string: String) -> [Locale.Region]? {
-        let stringLowercase:String = string.lowercased()
-        if let cached:[Country] = SwiftSovereignStateCacheCountries.mentioned[stringLowercase] {
-            return cached
-        }
-        let countries:[Country] = Country.allCases.filter({ $0.is_mentioned(in: string) })
-        return countries.isEmpty ? nil : countries
-    }*/
-    public static func get_all_mentioned(_ string: String) -> [Country]? {
-        let countries:[Country] = Country.allCases.filter({ $0.is_mentioned(in: string) })
-        return countries.isEmpty ? nil : countries
-    }
-    
-    /// Returns the first country that is mentioned in the `string`.
-    public static func valueOf(_ string: String, cache: Bool = true, ignoreCase: Bool = false) -> Country? {
-        let stringLowercase:String = string.lowercased()
-        if let cached:Country = SwiftSovereignStateCacheCountries.valueOf[stringLowercase] {
-            return cached
-        }
-        let country:Country? = Country.allCases.first(where: { $0.isMentioned(in: string, exact: true, ignoreCase: ignoreCase) })
-        if cache {
-            SwiftSovereignStateCacheCountries.valueOf[stringLowercase] = country
-        }
-        return country
-    }
-    
     public init?(_ description: String) {
         guard let country:Country = Country.init(rawValue: description) else { return nil }
         self = country
@@ -332,28 +293,6 @@ public enum Country : String, SovereignState {
         }
         return keywords.isEmpty ? nil : keywords
     }
-    
-    /*public var wikipedia_url : String {
-        let name:String
-        switch self {
-        case .georgia:
-            name = "Georgia_(country)"
-            break
-        case .micronesia:
-            name = "Federated_States_of_Micronesia"
-            break
-        case .saint_helena_ascension_and_tristan_da_cunha:
-            name = "Saint_Helena%2C_Ascension_and_Tristan_da_Cunha"
-            break
-        case .saint_martin:
-            name = "Saint_Martin_(island)"
-            break
-        default:
-            name = self.name.replacingOccurrences(of: " ", with: "_")
-            break
-        }
-        return "https://en.wikipedia.org/wiki/" + name
-    }*/
     
     public var wikipedia_url_suffix : String {
         let shortName:String = name.replacingOccurrences(of: " ", with: "_")
@@ -409,206 +348,6 @@ public enum Country : String, SovereignState {
         }
     }
     
-    /*public var aliases : Set<String>? {
-        switch self {
-        case .afghanistan: return ["Islamic Republic of Afghanistan"]
-        case .bahamas: return ["The Bahamas", "Bahamas, the"]
-        case .bolivia: return ["Bolivia (Plurinational State of)"]
-        case .bosnia_and_herzegovina: return ["BiH", "B&H", "Bosnia–Herzegovina", "Bosnia-Herzegovina", "Bosnia"]
-        case .cape_verde: return ["Cabo Verde"]
-        case .china: return ["People's Republic of China", "China, People's Republic of"]
-        case .ivory_coast: return ["Côte d'Ivoire", "Cote d'Ivoire", "Côte d’Ivoire"]
-        case .curacao: return ["Curacao"]
-        case .czech_republic: return ["Czechia"]
-        case .democratic_republic_of_the_congo: return ["Congo, Democratic Republic of", "Congo, Democratic Republic of the", "Congo-Kinshasa", "Democratic Republic of Congo", "DR Congo", "the DRC", "DROC", "Congo, the", "Congo", "Congo, Dem.", "Congo (Democratic Republic of the)"]
-        case .eswatini: return ["Swaziland", "Eswatini (Swaziland)"]
-        case .faroe_islands: return ["Faroe Islands (Denmark)"]
-        case .gambia: return ["The Gambia", "Gambia, the"]
-        case .greenland: return ["Greenland (Denmark)"]
-        case .guinea_bissau: return ["Guinea-Bissau"]
-        case .hong_kong: return ["Hong Kong SAR", "Hong Kong (China)"]
-        case .iran: return ["Persia", "Iran, Islamic Republic of", "Iran (Islamic Republic of)"]
-        case .isle_of_man: return ["Mann", "Man, Isle of"]
-        case .luxembourg: return ["Luxemburg"]
-        case .macau: return ["Macao", "Macau, SAR of China"]
-        case .micronesia: return ["Micronesia, Federated States of", "Micronesia (Federated States of)", "F.S. Micronesia"]
-        case .moldova: return ["Moldova, Republic of", "Moldova (Republic of)"]
-        case .myanmar: return ["Burma"]
-        case .north_korea: return ["Korea, North", "Korea, Democratic People's Republic of"]
-        case .north_macedonia: return ["Macedonia"]
-        case .northern_cyprus: return ["North Cyprus"]
-        case .palestine: return ["Palestine, State of"]
-        case .philippines: return ["Philipines"]
-        case .republic_of_the_congo: return ["Congo, Republic of the", "Congo-Brazzaville", "Republic of Congo", "Congo", "Congo, the", "Congo Republic", "Congo, Rep."]
-        case .saint_barthelemy: return ["St. Barthélemy", "Saint Barthelemy"]
-        case .saint_helena_ascension_and_tristan_da_cunha: return ["Saint Helena, Ascension and Tristan da Cunha", "Saint Helena, Ascension, and Tristan da Cunha", "St. Helena, Ascension and Tristan da Cunha", "Saint Helena", "St. Helena"]
-        case .saint_kitts_and_nevis: return ["St. Kitts and Nevis"]
-        case .saint_lucia: return ["St. Lucia"]
-        case .saint_martin: return ["St. Martin"]
-        case .saint_pierre_and_miquelon: return ["St. Pierre and Miquelon"]
-        case .saint_vincent_and_the_grenadines: return ["St. Vincent and the Grenadines", "Saint Vincent", "St. Vincent"]
-        case .sao_tome_and_principe: return ["Sao Tome", "Sao Tome and Principe"]
-        case .solomon_islands: return ["Soloman Island"]
-        case .south_korea: return ["Korea, South", "Korea (Republic of)", "Korea, Republic of"]
-        case .taiwan: return ["Chinese Taipei", "Taiwan (Republic of China)"]
-        case .tanzania: return ["Tanzania, United Republic of", "Tanzania (United Republic of)"]
-        case .timor_leste: return ["Timor-Leste", "East Timor"]
-        case .united_arab_emirates: return ["UAE"]
-        case .united_states: return ["United States of America"]
-        case .united_states_virgin_islands: return ["U.S. Virgin Islands", "United States Virgin Islands", "US Virgin Islands"]
-        case .vatican_city: return ["Holy See"]
-        case .venezuela: return ["Venezuela (Bolivarian Republic of)"]
-        case .vietnam: return ["Viet Nam"]
-        default: return nil
-        }
-    }*/
-    
-    /*/// Whether or not this Country is recognized by the United Nations as a sovereign state member.
-    public var is_united_nations_member : Bool {
-        switch self {
-        case .abkhazia,
-                .american_samoa,
-                .anguilla,
-                .artsakh,
-                .aruba,
-                .bermuda,
-                .british_virgin_islands,
-                .cayman_islands,
-                .cook_islands,
-                .curacao,
-                .falkland_islands,
-                .faroe_islands,
-                .french_polynesia,
-                .gibraltar,
-                .greenland,
-                .guadeloupe,
-                .guam,
-                .guernsey,
-                .hong_kong,
-                .isle_of_man,
-                .jersey,
-                .kosovo,
-                .macau,
-                .montserrat,
-                .new_caledonia,
-                .niue,
-                .norfolk_island,
-                .northern_cyprus,
-                .northern_mariana_islands,
-                .palestine,
-                .puerto_rico,
-                .saint_barthelemy,
-                .saint_helena_ascension_and_tristan_da_cunha,
-                .saint_martin,
-                .saint_pierre_and_miquelon,
-                .scotland,
-                .somalia,
-                .taiwan,
-                .tokelau,
-                .transnistria,
-                .turks_and_caicos_islands,
-                .united_states_virgin_islands,
-                .vatican_city,
-                .wallis_and_futuna,
-                .western_sahara
-            :
-            return false
-        default:
-            return true
-        }
-    }
-    /// Whether or not this Country is only recognized by the United Nations as a sovereign state.
-    public var is_united_nations_observer_state : Bool {
-        switch self {
-        case .palestine,
-                .vatican_city:
-            return true
-        default:
-            return false
-        }
-    }
-     */
-    /*/// Whether or not this Country is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
-    public var is_nato_member : Bool {
-        switch self {
-        case .albania,
-                .belgium,
-                .bulgaria,
-                .canada,
-                .croatia,
-                .czech_republic,
-                .denmark,
-                .estonia,
-                .finland,
-                .france,
-                .germany,
-                .greece,
-                .hungary,
-                .iceland,
-                .italy,
-                .latvia,
-                .lithuania,
-                .luxembourg,
-                .montenegro,
-                .netherlands,
-                .north_macedonia,
-                .norway,
-                .poland,
-                .portugal,
-                .romania,
-                .slovakia,
-                .slovenia,
-                .spain,
-                .turkey,
-                .united_kingdom,
-                .united_states
-            :
-            return true
-        default:
-            return false
-        }
-    }
-    /// Whether or not this Country is part of the European Union. (https://en.wikipedia.org/wiki/European_Union | https://en.wikipedia.org/wiki/Member_state_of_the_European_Union)
-    public var is_european_union_member : Bool {
-        switch self {
-        case .austria,
-                .belgium,
-                .bulgaria,
-                .croatia,
-                .cyprus,
-                .czech_republic,
-                .denmark,
-                .estonia,
-                .finland,
-                .france,
-                .germany,
-                .greece,
-                .hungary,
-                .ireland,
-                .italy,
-                .latvia,
-                .lithuania,
-                .luxembourg,
-                .malta,
-                .netherlands,
-                .poland,
-                .portugal,
-                .romania,
-                .slovakia,
-                .slovenia,
-                .spain,
-                .sweden
-            :
-            return true
-        default:
-            return false
-        }
-    }*/
-    
-    /*public var official_names : Set<String>? {
-        return SovereignStateOfficialNames.get(self)
-    }*/
-    
     public var iso_alpha_2 : String? {
         return SovereignStateISOAlpha2.get(self)
     }
@@ -622,23 +361,12 @@ public enum Country : String, SovereignState {
         return nil
     }
     
-    /*public var neighbors : [Country]? {
-        return SovereignStateNeighbors.get(self)
-    }*/
-    public var government_website : String? {
-        return SovereignStateGovernmentWebsite.get(self)
-    }
-    
-    /*/// The unicode flag for this Country.
-    public var flag_emoji : String? {
-        return SovereignStateFlagEmoji.get(self)
-    }*/
     public var time_zones : [SovereignStateTimeZone]? {
-        return SovereignStateTimeZone.get(self)
+        return nil
     }
     /// The official currencies used within this country.
     public var currencies : [Currency] {
-        return SovereignStateCurrencies.get(self)
+        return []
     }
     
     public var flag_url : String? {

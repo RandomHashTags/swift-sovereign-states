@@ -155,16 +155,16 @@ public enum SovereignStateTimeZone : String {
         return TimeZone(identifier: rawValue) ?? TimeZone(abbreviation: rawValue)
     }
     
-    internal static func get(_ country: Country) -> [SovereignStateTimeZone]? {
+    internal static func get(_ country: Locale.Region) -> [SovereignStateTimeZone] {
         switch country {
         case .afghanistan: return getAfghanistan()
         case .albania,
                 .andorra,
                 .austria,
                 .belgium,
-                .bosnia_and_herzegovina,
+                .bosniaHerzegovina,
                 .croatia,
-                .czech_republic,
+                .czechia,
                 .denmark,
                 .france,
                 .germany,
@@ -177,17 +177,17 @@ public enum SovereignStateTimeZone : String {
                 .malta,
                 .monaco,
                 .montenegro,
-                .north_macedonia,
+                .northMacedonia,
                 .norway,
                 .netherlands,
                 .poland,
-                .san_marino,
+                .sanMarino,
                 .serbia,
                 .slovakia,
                 .slovenia,
                 .sweden,
                 .switzerland,
-                .vatican_city
+                .vaticanCity
             :
             return getAlbania()
         case .algeria,
@@ -196,24 +196,24 @@ public enum SovereignStateTimeZone : String {
         case .angola,
                 .benin,
                 .cameroon,
-                .central_african_republic,
+                .centralAfricanRepublic,
                 .chad,
                 .gabon,
                 .niger,
                 .nigeria,
-                .republic_of_the_congo
+                .congoBrazzaville
             :
             return getAngola()
         case .anguilla,
-                .antigua_and_barbuda,
+                .antiguaBarbuda,
                 .aruba,
                 .barbados,
                 .dominica,
-                .dominican_republic,
+                .dominicanRepublic,
                 .guadeloupe,
                 .grenada,
-                .puerto_rico,
-                .trinidad_and_tobago
+                .puertoRico,
+                .trinidadTobago
             :
             return getAnguilla()
         case .argentina: return getArgentina()
@@ -227,7 +227,7 @@ public enum SovereignStateTimeZone : String {
                 .iraq,
                 .kuwait,
                 .qatar,
-                .saudi_arabia,
+                .saudiArabia,
                 .yemen:
             return getBahrain()
         case .bangladesh: return getBangladesh()
@@ -243,15 +243,15 @@ public enum SovereignStateTimeZone : String {
                 .lebanon,
                 .lithuania,
                 .moldova,
-                .northern_cyprus,
+                .northernCyprus,
                 .romania,
                 .syria,
                 .transnistria
             :
             return getBulgaria()
         case .belize,
-                .costa_rica,
-                .el_salvador,
+                .costaRica,
+                .elSalvador,
                 .guatemala,
                 .honduras,
                 .nicaragua
@@ -265,7 +265,7 @@ public enum SovereignStateTimeZone : String {
                 .mozambique,
                 .namibia,
                 .rwanda,
-                .south_sudan,
+                .southSudan,
                 .sudan,
                 .zambia,
                 .zimbabwe
@@ -273,20 +273,20 @@ public enum SovereignStateTimeZone : String {
             return getBotswana()
         case .brazil: return getBrazil()
         case .brunei: return getBrunei()
-        case .burkina_faso,
+        case .burkinaFaso,
                 .gambia,
                 .ghana,
                 .guinea,
-                .guinea_bissau,
+                .guineaBissau,
                 .iceland,
-                .ivory_coast,
+                .côteDIvoire,
                 .liberia,
                 .mali,
                 .mauritania,
-                .saint_helena_ascension_and_tristan_da_cunha,
-                .sao_tome_and_principe,
+                .saintHelena,
+                .sãoToméPríncipe,
                 .senegal,
-                .sierra_leone,
+                .sierraLeone,
                 .togo
             :
             return getUTC()
@@ -296,10 +296,10 @@ public enum SovereignStateTimeZone : String {
                 .vietnam:
             return getCambodia()
         case .canada: return getCanada()
-        case .cape_verde: return getCapeVerde()
+        case .capeVerde: return getCapeVerde()
         case .chile: return getChile()
-        case .china,
-                .macau,
+        case .chinaMainland,
+                .macao,
                 .taiwan
             :
             return getChina()
@@ -316,37 +316,37 @@ public enum SovereignStateTimeZone : String {
                 .uganda
             :
             return getComoros()
-        case .cook_islands: return getCookIslands()
+        case .cookIslands: return getCookIslands()
         case .cuba: return getCuba()
-        case .democratic_republic_of_the_congo: return getCongoDemocratic()
+        case .congoKinshasa: return getCongoDemocratic()
         case .ecuador: return getEcuador()
         case .egypt,
                 .libya:
             return getEgypt()
         case .eswatini,
                 .lesotho,
-                .south_africa:
+                .southAfrica:
             return getEswatini()
-        case .falkland_islands: return getFalklandIslands()
-        case .faroe_islands,
+        case .falklandIslands: return getFalklandIslands()
+        case .faroeIslands,
                 .morocco,
-                .western_sahara:
+                .westernSahara:
             return getFaroeIslands()
         case .fiji: return getFiji()
         case .georgia: return getGeorgia()
         case .greenland: return getGreenland()
         case .guam,
-                .northern_mariana_islands:
+                .northernMarianaIslands:
             return getGuam()
         case .guyana: return getGuyana()
         case .india,
-                .sri_lanka:
+                .sriLanka:
             return getIndia()
         case .indonesia: return getIndonesia()
         case .iran: return getIran()
         case .ireland: return getIreland()
         case .israel: return getIsrael()
-        case .cayman_islands,
+        case .caymanIslands,
                 .jamaica,
                 .panama:
             return getCaymanIslands()
@@ -356,7 +356,7 @@ public enum SovereignStateTimeZone : String {
         case .kyrgyzstan: return getKyrgyzstan()
         case .malaysia: return getMalaysia()
         case .maldives: return getMaldives()
-        case .marshall_islands: return getMarshallIslands()
+        case .marshallIslands: return getMarshallIslands()
         case .mauritius: return getMauritius()
         case .mexico: return getMexico()
         case .micronesia: return getMicronesia()
@@ -364,17 +364,17 @@ public enum SovereignStateTimeZone : String {
         case .myanmar: return getMyanmar()
         case .nauru: return getNauru()
         case .nepal: return getNepal()
-        case .new_zealand: return getNewZealand()
+        case .newZealand: return getNewZealand()
         case .niue: return getNiue()
-        case .norfolk_island: return getNorfolkIsland()
-        case .north_korea,
-                .south_korea:
+        case .norfolkIsland: return getNorfolkIsland()
+        case .northKorea,
+                .southKorea:
             return getNorthKorea()
         case .oman,
-                .united_arab_emirates:
+                .unitedArabEmirates:
             return getOman()
         case .palau: return getPalau()
-        case .papua_new_guinea: return getPapuaNewGuinea()
+        case .papuaNewGuinea: return getPapuaNewGuinea()
         case .paraguay: return getParaguay()
         case .pakistan: return getPakistan()
         case .peru: return getPeru()
@@ -383,26 +383,26 @@ public enum SovereignStateTimeZone : String {
         case .russia: return getRussia()
         case .samoa: return getSamoa()
         case .scotland,
-                .united_kingdom:
+                .unitedKingdom:
             return getScotland()
         case .seychelles: return getSeychelles()
         case .singapore: return getSingapore()
-        case .solomon_islands: return getSolomonIslands()
+        case .solomonIslands: return getSolomonIslands()
         case .spain: return getSpain()
         case .suriname: return getSuriname()
         case .tajikistan: return getTajikistan()
-        case .timor_leste: return getTimor()
+        case .timorLeste: return getTimor()
         case .tonga: return getTonga()
         case .turkey: return getTurkey()
         case .turkmenistan: return getTurkmenistan()
         case .tuvalu: return getTuvalu()
         case .ukraine: return getUkraine()
-        case .united_states: return getUnitedStates()
+        case .unitedStates: return getUnitedStates()
         case .uruguay: return getUruguay()
         case .uzbekistan: return getUzbekistan()
         case .vanuatu: return getVanuatu()
         case .venezuela: return getVenezuela()
-        default: return nil
+        default: return []
         }
     }
     
