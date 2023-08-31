@@ -499,7 +499,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         if !notMentioned.isEmpty {
             print("SwiftSovereignStatesTests;testCountryMentions;shouldn't be=[" + notMentioned.map({ $0.name() }).joined(separator: ",") + "]")
         }
-        XCTAssert(mentioned.count == targetCountries.count)
+        XCTAssertEqual(mentioned.count, targetCountries.count)
         
         XCTAssert(Locale.Region.getAllMentionedISOAlpha3(in: "USA").count == 1)
         XCTAssert(Locale.Region.getAllMentionedISOAlpha3(in: "usa").count == 0)
@@ -555,12 +555,12 @@ final class SwiftSovereignStatesTests: XCTestCase {
             return !targetCities.contains(where: { city.isEqual($0) })
         })
         if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;missing " + notFound.count.description + ";[" + notFound.map({ $0.cache_id }).joined(separator: ",") + "]")
+            print("SwiftSovereignStatesTests;testCityMentions;missing \(notFound.count);[" + notFound.map({ $0.cache_id }).joined(separator: ",") + "]")
         }
         if !notMentioned.isEmpty {
             print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.cache_id }).joined(separator: ",") + "]")
         }
-        XCTAssert(mentioned.count == targetCities.count, "mentioned.count=" + mentioned.count.description + ", targetCities.count=" + targetCities.count.description)
+        XCTAssert(mentioned.count == targetCities.count, "mentioned.count=\(mentioned.count), targetCities.count=\(targetCities.count)")
     }
     
     func testNeighbors() {
@@ -577,17 +577,17 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 }
             }
         }
-        XCTAssert(foundAtLeastOneNeighbors, "foundAtLeastOneNeighbors=false")
+        XCTAssert(foundAtLeastOneNeighbors, "foundAtLeastOneNeighbors==false")
     }
     
     func testCities() {
         let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
         guard let cities:[any SovereignStateCity] = minnesota.cities else {
-            XCTAssert(false, "minnesota.getCities() == nil")
+            XCTAssert(false, "minnesota.cities == nil")
             return
         }
         for city in cities {
-            XCTAssert(city.subdivision.isEqual(minnesota), "minnesota city.getSubdivision != Minnesota")
+            XCTAssert(city.subdivision.isEqual(minnesota), "minnesota city.subdivision != Minnesota")
         }
     }
 }
