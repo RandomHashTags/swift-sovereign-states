@@ -35,8 +35,6 @@ public extension Locale.Region {
             Locale.Region.sudan,
             Locale.Region.syria,
             Locale.Region.transnistria,
-            Locale.Region.westernSahara,
-            
             
             Locale.Region.afghanistan,
             Locale.Region.ålandIslands,
@@ -331,7 +329,7 @@ public extension Locale.Region {
             if let parent_group:String = region.isoAlpha2ParentGroup {
                 values.insert(parent_group)
             }
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string_lowercased: string, values: values)
+            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string, values: values)
         })
     }
     
@@ -341,7 +339,7 @@ public extension Locale.Region {
         let string_end_index:String.Index = string.endIndex
         return allCases.filter({ region in
             guard let iso:String = region.isoAlpha3 else { return false }
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string_lowercased: string, values: [iso])
+            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string, values: [iso])
         })
     }
     /// - Note: Case Insensitive.
@@ -351,7 +349,7 @@ public extension Locale.Region {
         let string_end_index:String.Index = string.endIndex
         return allCases.filter({ region in
             let keywords:Set<String> = region.keywords(forLocale: locale)
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string_lowercased: string_lowercased, values: keywords)
+            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string_lowercased, values: keywords)
         })
     }
     /// - Note: Case Insensitive.
@@ -364,7 +362,7 @@ public extension Locale.Region {
         let string_end_index:String.Index = string.endIndex
         let values:[Locale.Region] = allCases.filter({ region in
             let keywords:Set<String> = region.keywords(forLocale: locale)
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string_lowercased: string_lowercased, values: keywords)
+            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string_lowercased, values: keywords)
         })
         SwiftSovereignStateCacheCountries.mentioned[string_lowercased] = values
         return values
@@ -469,7 +467,7 @@ public extension Locale.Region {
     
     func isMentioned(in string: String) -> Bool {
         let keywords:Set<String> = keywords()
-        return SovereignRegions.doesSatisfy(string_start_index: string.startIndex, string_end_index: string.endIndex, string_lowercased: string.lowercased(), values: keywords)
+        return SovereignRegions.doesSatisfy(string_start_index: string.startIndex, string_end_index: string.endIndex, string: string.lowercased(), values: keywords)
     }
     /*func is_mentioned(in string: String) -> Bool {
         let keywords:Set<String> = keywords()
@@ -1028,7 +1026,7 @@ public extension SovereignRegion {
     }
     
     func isMentioned(in string: String) -> Bool {
-        return SovereignRegions.doesSatisfy(string_start_index: string.startIndex, string_end_index: string.endIndex, string_lowercased: string.lowercased(), values: keywords)
+        return SovereignRegions.doesSatisfy(string_start_index: string.startIndex, string_end_index: string.endIndex, string: string.lowercased(), values: keywords)
     }
     func isMentionedExactly(in string: String, ignoreCase: Bool) -> Bool {
         return SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal)
@@ -1108,24 +1106,6 @@ public extension SovereignRegion {
     }
 }
 
-internal extension Sequence {
-    func filterAsync(_ transform: @escaping (Element) -> Bool) async -> [Element] {
-        var values:[Element] = [Element]()
-        await withTaskGroup(of: Element?.self, body: { group in
-            for element in self {
-                group.addTask {
-                    return transform(element) ? element : nil
-                }
-            }
-            for await value in group {
-                if let value:Element = value {
-                    values.append(value)
-                }
-            }
-        })
-        return values
-    }
-}
 internal enum SovereignRegions {    
     fileprivate static func formatTime(date: Date, timeZone: TimeZone, timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String {
         let formatter:DateFormatter = DateFormatter()
@@ -1144,12 +1124,12 @@ internal enum SovereignRegions {
     static func doesEqual(string: String, values: Set<String>, option: String.CompareOptions) -> Bool {
         return values.first(where: { string.compare($0, options: option) == .orderedSame }) != nil
     }
-    static func doesSatisfy(string_start_index: String.Index, string_end_index: String.Index, string_lowercased: String, values: Set<String>) -> Bool {
+    static func doesSatisfy(string_start_index: String.Index, string_end_index: String.Index, string: String, values: Set<String>) -> Bool {
         for value in values {
-            let ranges:Set<Range<String.Index>> = string_lowercased.all_ranges(of: value)
+            let ranges:Set<Range<String.Index>> = string.all_ranges(of: value)
             for range in ranges {
-                let prefix_index:String.Index? = string_lowercased.index(range.lowerBound, offsetBy: -1, limitedBy: string_start_index)
-                if (prefix_index == nil || !string_lowercased[prefix_index!].isLetter) && (range.upperBound == string_end_index || !string_lowercased[range.upperBound].isLetter) {
+                let prefix_index:String.Index? = string.index(range.lowerBound, offsetBy: -1, limitedBy: string_start_index)
+                if (prefix_index == nil || !string[prefix_index!].isLetter) && (range.upperBound == string_end_index || !string[range.upperBound].isLetter) {
                     return true
                 }
             }

@@ -1,1 +1,358 @@
-{"strings":{"KID_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Kiribati Dollar"}}},"extractionState":"manual"},"KMF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Comoro Franc"}}},"extractionState":"manual"},"UGX_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Ugandan Shilling"}}},"extractionState":"manual"},"CHW_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"WIR Franc"}}},"extractionState":"manual"},"UYW_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Unidad Previsional"}}},"extractionState":"manual"},"RMB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Chinese Yuan2"}}},"extractionState":"manual"},"EUR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Euro"}}},"extractionState":"manual"},"SBD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Solomon Islands Dollar"}}},"extractionState":"manual"},"XUA_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"ABD Unit of Account"}}},"extractionState":"manual"},"MUR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Mauritian Rupee"}}},"extractionState":"manual"},"QAR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Qatari Riyal"}}},"extractionState":"manual"},"AZN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Azerbaijani Manat"}}},"extractionState":"manual"},"MMK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Myanmar Kyat"}}},"extractionState":"manual"},"GEL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Georgian Lari"}}},"extractionState":"manual"},"VUV_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Vanuatu Vatu"}}},"extractionState":"manual"},"ENR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Eritrean Nakfa1"}}},"extractionState":"manual"},"USD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"United States Dollar"}}},"extractionState":"manual"},"TTD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Trinidad and Tobago Dollar"}}},"extractionState":"manual"},"ISK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Icelandic Króna"}}},"extractionState":"manual"},"DJF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Djiboutian Franc"}}},"extractionState":"manual"},"BAM_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bosnia and Herzegovina Convertible Mark"}}},"extractionState":"manual"},"ETB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Ethiopian Birr"}}},"extractionState":"manual"},"SLS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Somaliland Shilling"}}},"extractionState":"manual"},"SSP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"South Sudanese Pound"}}},"extractionState":"manual"},"ERN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Eritrean Nakfa2"}}},"extractionState":"manual"},"CLP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Chilean Peso"}}},"extractionState":"manual"},"KES_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Kenyan Shilling"}}},"extractionState":"manual"},"SGD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Singapore Dollar"}}},"extractionState":"manual"},"PAB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Panamanian Balboa"}}},"extractionState":"manual"},"CRC_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Costa Rican Colon"}}},"extractionState":"manual"},"MOP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Macanese Pataca"}}},"extractionState":"manual"},"AWG_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Aruban Florin"}}},"extractionState":"manual"},"CDF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Congolese Franc"}}},"extractionState":"manual"},"JOD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Jordanian Dinar"}}},"extractionState":"manual"},"CVE_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Cape Verdean Escudo"}}},"extractionState":"manual"},"XPF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"CFP Franc"}}},"extractionState":"manual"},"LYD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Libyan Dinar"}}},"extractionState":"manual"},"BHD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bahraini Dinar"}}},"extractionState":"manual"},"GMD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Gambian Dalasi"}}},"extractionState":"manual"},"LRD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Liberian Dollar"}}},"extractionState":"manual"},"CHE_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"WIR Euro"}}},"extractionState":"manual"},"STN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"São Tomé and Príncipe Dobra"}}},"extractionState":"manual"},"HNL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Honduran Lempira"}}},"extractionState":"manual"},"WST_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Somoan Tala"}}},"extractionState":"manual"},"XBC_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"European Unit of Account 9"}}},"extractionState":"manual"},"IRR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Iranian Rial"}}},"extractionState":"manual"},"FOK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Faroese Króna"}}},"extractionState":"manual"},"VND_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Vietnamese đồng"}}},"extractionState":"manual"},"LBP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Lebanese Pound"}}},"extractionState":"manual"},"VES_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Venezuelan Bolívar Soverano"}}},"extractionState":"manual"},"NOK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Norwegian Krone"}}},"extractionState":"manual"},"NPR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Nepalese Rupee"}}},"extractionState":"manual"},"XSU_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"SUCRE"}}},"extractionState":"manual"},"KRW_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"South Korean Won"}}},"extractionState":"manual"},"HRK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Croatian Kuna"}}},"extractionState":"manual"},"HUF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Hungarian Forint"}}},"extractionState":"manual"},"IDR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Ondonesian Rupiah"}}},"extractionState":"manual"},"MWK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Malawian Kwacha"}}},"extractionState":"manual"},"ZWB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Zimbabwean bonds"}}},"extractionState":"manual"},"GYD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Guyanese Dollar"}}},"extractionState":"manual"},"BDS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Barbados Dollar2"}}},"extractionState":"manual"},"BMD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bermudian Dollar"}}},"extractionState":"manual"},"PHP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Philippine Peso"}}},"extractionState":"manual"},"JMD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Jamaican Dollar"}}},"extractionState":"manual"},"BGN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bulgarian Lev"}}},"extractionState":"manual"},"ANG_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Netherlands Antillean Guilder"}}},"extractionState":"manual"},"XCD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"East Caribbean Dollar"}}},"extractionState":"manual"},"NIO_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Nicaraguan Córdoba"}}},"extractionState":"manual"},"TWD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"New Taiwan Dollar"}}},"extractionState":"manual"},"AUD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Australian Dollar"}}},"extractionState":"manual"},"MAD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Moroccan Dirham"}}},"extractionState":"manual"},"XPT_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Platinum"}}},"extractionState":"manual"},"ILS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Israeli New Shekel"}}},"extractionState":"manual"},"GIP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Gibraltar Pound"}}},"extractionState":"manual"},"NZD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"New Zealand Dollar"}}},"extractionState":"manual"},"MNT_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Mongolian Tögrög"}}},"extractionState":"manual"},"JPY_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Japanese Yen"}}},"extractionState":"manual"},"XXX_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"No currency"}}},"extractionState":"manual"},"GBP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Pound Sterling"}}},"extractionState":"manual"},"OMR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Omani Rial"}}},"extractionState":"manual"},"SOS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Somali Shilling"}}},"extractionState":"manual"},"PRB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Transnistrian Ruble"}}},"extractionState":"manual"},"LKR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Sri Lankan Rupee"}}},"extractionState":"manual"},"XTS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Code reserved for testing"}}},"extractionState":"manual"},"COP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Colombian Peso"}}},"extractionState":"manual"},"ZAR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"South African Rand"}}},"extractionState":"manual"},"RUB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Russian Ruble"}}},"extractionState":"manual"},"KPW_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"North Korean Won"}}},"extractionState":"manual"},"VED_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Venezuelan Bolívar Digital"}}},"extractionState":"manual"},"BWP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Botswana Pula"}}},"extractionState":"manual"},"CUC_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Cuban Convertible Peso"}}},"extractionState":"manual"},"SHP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Saint Helena Pound"}}},"extractionState":"manual"},"TZS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Tanzanian Shilling"}}},"extractionState":"manual"},"XAG_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Silver"}}},"extractionState":"manual"},"MVR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Maldivian Rufiyaa"}}},"extractionState":"manual"},"SZL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Swazi Lilangeni"}}},"extractionState":"manual"},"GGP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Guernesey Pound2"}}},"extractionState":"manual"},"TND_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Tunisian Dinar"}}},"extractionState":"manual"},"AFN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Afghan Afghani"}}},"extractionState":"manual"},"HTG_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Haitian Gourde"}}},"extractionState":"manual"},"SLL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Sierra Leonean Leone"}}},"extractionState":"manual"},"AED_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"United Arab Emirates Dirham"}}},"extractionState":"manual"},"MZN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Mozambican Metical"}}},"extractionState":"manual"},"FJD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Fiji Dollar"}}},"extractionState":"manual"},"INR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Indian Rupee"}}},"extractionState":"manual"},"LAK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Lao Kip"}}},"extractionState":"manual"},"USN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"United States Dollar (next day)"}}},"extractionState":"manual"},"TMT_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Turkmenistan Manat"}}},"extractionState":"manual"},"CLF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Unidad de Fomento"}}},"extractionState":"manual"},"CAD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Canadian Dollar"}}},"extractionState":"manual"},"XBB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"European Monetary Unit"}}},"extractionState":"manual"},"MKD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Macedonian Denar"}}},"extractionState":"manual"},"DZD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Algerian Dinar"}}},"extractionState":"manual"},"CNT_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Chinese Yan (offshore)2"}}},"extractionState":"manual"},"PGK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Papua New Guinean kina"}}},"extractionState":"manual"},"XAU_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Gold"}}},"extractionState":"manual"},"SCR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Seychelles Rupee"}}},"extractionState":"manual"},"BBD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Barbados Dollar"}}},"extractionState":"manual"},"TJS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Tajikistani Somoni"}}},"extractionState":"manual"},"THB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Thai Baht"}}},"extractionState":"manual"},"IQD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Iraqi Dinar"}}},"extractionState":"manual"},"PYG_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Paraguayan Guaraní"}}},"extractionState":"manual"},"SYP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Syrian Pound"}}},"extractionState":"manual"},"COU_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Unidad de Valor Real"}}},"extractionState":"manual"},"MXN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Mexican Peso"}}},"extractionState":"manual"},"BRL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Brazilian Real"}}},"extractionState":"manual"},"GTQ_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Guatemalan Quetzal"}}},"extractionState":"manual"},"PLN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Plish Złoty"}}},"extractionState":"manual"},"UYU_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Uruguayan Peso"}}},"extractionState":"manual"},"KZT_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Kazakhstani Tenge"}}},"extractionState":"manual"},"HKD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Hong Kong Dollar"}}},"extractionState":"manual"},"MRU_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Mauritania Ouguiya"}}},"extractionState":"manual"},"NAD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Namibian Dollar"}}},"extractionState":"manual"},"PEN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Peruvian Sol"}}},"extractionState":"manual"},"YER_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Yemeni Rial"}}},"extractionState":"manual"},"RON_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Romanian Leu"}}},"extractionState":"manual"},"CNH_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Chinese Yan (offshore)1"}}},"extractionState":"manual"},"MYR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Malaysian Ringgit"}}},"extractionState":"manual"},"BND_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Brunei Dollar"}}},"extractionState":"manual"},"KHR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Cambodian Riel"}}},"extractionState":"manual"},"XOF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"CFA Franc CVEAO"}}},"extractionState":"manual"},"EGP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Egyptian Pound"}}},"extractionState":"manual"},"ALL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Albanian Lek"}}},"extractionState":"manual"},"SAR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Saudi Riyal"}}},"extractionState":"manual"},"DOP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Dominican Peso"}}},"extractionState":"manual"},"JEP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Jersey Pound"}}},"extractionState":"manual"},"XAF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"CFA Franc BEAC"}}},"extractionState":"manual"},"ZMW_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Zambian Kwacha"}}},"extractionState":"manual"},"TOP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Tongan Pa'anga"}}},"extractionState":"manual"},"DKK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Danish Krone"}}},"extractionState":"manual"},"KYD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Cayman Islands Dollar"}}},"extractionState":"manual"},"NTD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"New Taiwan Dollar2"}}},"extractionState":"manual"},"CZK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Czech Koruna"}}},"extractionState":"manual"},"IMP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Island of Man Pound"}}},"extractionState":"manual"},"UZS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Uzbekistan Som"}}},"extractionState":"manual"},"AOA_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Angolan Kwanza"}}},"extractionState":"manual"},"NGN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Nigerian Naira"}}},"extractionState":"manual"},"FKP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Falkland Islands Pound"}}},"extractionState":"manual"},"SRD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Surinamese Dollar"}}},"extractionState":"manual"},"ZWL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Zimbabwean Dollar"}}},"extractionState":"manual"},"CKD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Cook Islands Dollar"}}},"extractionState":"manual"},"SDG_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Sudanese Pound"}}},"extractionState":"manual"},"UYI_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Uruguay Peso en Unidades Indexadas"}}},"extractionState":"manual"},"BZD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Belize Dollar"}}},"extractionState":"manual"},"BTN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bhutanese Ngultrum"}}},"extractionState":"manual"},"BOB_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Boliviano"}}},"extractionState":"manual"},"XPD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Palladium"}}},"extractionState":"manual"},"MDL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Moldovan Leu"}}},"extractionState":"manual"},"BSD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bahamian Dollar"}}},"extractionState":"manual"},"LSL_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Lesotho Loti"}}},"extractionState":"manual"},"CHF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Swiss Franc"}}},"extractionState":"manual"},"CNY_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Chinese Yuan"}}},"extractionState":"manual"},"SVC_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Salvadoran Colón"}}},"extractionState":"manual"},"RSD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Serbian Dinar"}}},"extractionState":"manual"},"SEK_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Swedish Krona"}}},"extractionState":"manual"},"RWF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Rwandan Franc"}}},"extractionState":"manual"},"ARS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Argentine Peso"}}},"extractionState":"manual"},"PKR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Pakistani Rupee"}}},"extractionState":"manual"},"XBD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"European Unit of Account 17"}}},"extractionState":"manual"},"GHS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Ghanaian Cedi"}}},"extractionState":"manual"},"TVD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Tuvalu Dollar"}}},"extractionState":"manual"},"BIF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Burundian Franc"}}},"extractionState":"manual"},"MXV_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Mexican Unidad de Inversion"}}},"extractionState":"manual"},"XDR_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Special drawing rights"}}},"extractionState":"manual"},"GNF_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Guinean Franc"}}},"extractionState":"manual"},"MGA_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Malagasy Ariary"}}},"extractionState":"manual"},"XBA_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"European Composite Unit"}}},"extractionState":"manual"},"AMD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Armenian Dram"}}},"extractionState":"manual"},"NIS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Israeli New shekel"}}},"extractionState":"manual"},"KWD_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Kuwaiti Dinar"}}},"extractionState":"manual"},"CUP_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Cuban Peso"}}},"extractionState":"manual"},"BOV_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bolician Mvdol"}}},"extractionState":"manual"},"BDT_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Bangladeshi Taka"}}},"extractionState":"manual"},"TRY_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Turkish Lira"}}},"extractionState":"manual"},"UAH_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Ukrainian Hryvnia"}}},"extractionState":"manual"},"KGS_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Kyrgyzstani Som"}}},"extractionState":"manual"},"BYN_name":{"localizations":{"en":{"stringUnit":{"state":"translated","value":"Belarusian Ruble"}}},"extractionState":"manual"}},"version":"1.0","sourceLanguage":"en"}
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "BDS_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barbados Dollar2"
+          }
+        }
+      }
+    },
+    "CKD_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cook Islands Dollar"
+          }
+        }
+      }
+    },
+    "CNH_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Yan (offshore)1"
+          }
+        }
+      }
+    },
+    "CNT_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Yan (offshore)2"
+          }
+        }
+      }
+    },
+    "ENR_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eritrean Nakfa1"
+          }
+        }
+      }
+    },
+    "FOK_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faroese Króna"
+          }
+        }
+      }
+    },
+    "GGP_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guernesey Pound2"
+          }
+        }
+      }
+    },
+    "IMP_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Island of Man Pound"
+          }
+        }
+      }
+    },
+    "JEP_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jersey Pound"
+          }
+        }
+      }
+    },
+    "KID_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiribati Dollar"
+          }
+        }
+      }
+    },
+    "LBP_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lebanese Pound"
+          }
+        }
+      }
+    },
+    "NIS_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Israeli New shekel"
+          }
+        }
+      }
+    },
+    "NTD_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Taiwan Dollar2"
+          }
+        }
+      }
+    },
+    "PRB_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transnistrian Ruble"
+          }
+        }
+      }
+    },
+    "RMB_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Yuan2"
+          }
+        }
+      }
+    },
+    "SLS_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somaliland Shilling"
+          }
+        }
+      }
+    },
+    "TVD_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuvalu Dollar"
+          }
+        }
+      }
+    },
+    "VED_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venezuelan Bolívar Digital"
+          }
+        }
+      }
+    },
+    "XAG_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silver"
+          }
+        }
+      }
+    },
+    "XAU_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gold"
+          }
+        }
+      }
+    },
+    "XBA_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "European Composite Unit"
+          }
+        }
+      }
+    },
+    "XBB_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "European Monetary Unit"
+          }
+        }
+      }
+    },
+    "XBC_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "European Unit of Account 9"
+          }
+        }
+      }
+    },
+    "XBD_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "European Unit of Account 17"
+          }
+        }
+      }
+    },
+    "XDR_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Special drawing rights"
+          }
+        }
+      }
+    },
+    "XPD_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palladium"
+          }
+        }
+      }
+    },
+    "XPT_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platinum"
+          }
+        }
+      }
+    },
+    "XSU_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUCRE"
+          }
+        }
+      }
+    },
+    "XTS_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code reserved for testing"
+          }
+        }
+      }
+    },
+    "XUA_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABD Unit of Account"
+          }
+        }
+      }
+    },
+    "XXX_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No currency"
+          }
+        }
+      }
+    },
+    "ZWB_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zimbabwean bonds"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

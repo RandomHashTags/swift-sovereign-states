@@ -232,7 +232,7 @@ public enum Currency : String, CaseIterable, LosslessStringConvertible {
     case TVD
     case ZWB
     
-    public var description: String { rawValue }
+    public var description : String { rawValue }
     
     public init?(_ description: String) {
         guard let currency:Currency = Currency.init(rawValue: description) else { return nil }
@@ -313,7 +313,10 @@ public enum Currency : String, CaseIterable, LosslessStringConvertible {
         }
     }
     
-    public var name : String {
+    public func name(forLocale locale: Locale = Locale.current) -> String {
+        if let string:String = locale.localizedString(forCurrencyCode: rawValue) {
+            return string
+        }
         let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name")
         return String(localized: key, table: "Currencies", bundle: Bundle.module)
     }

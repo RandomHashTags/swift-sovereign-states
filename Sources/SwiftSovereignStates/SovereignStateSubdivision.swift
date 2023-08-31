@@ -18,7 +18,7 @@ public enum SovereignStateSubdivisions {
             return cached
         }
         let start_index:String.Index = stringLowercase.startIndex, end_index:String.Index = stringLowercase.endIndex
-        let subdivisions:[any SovereignStateSubdivision] = all.filter({ SovereignRegions.doesSatisfy(string_start_index: start_index, string_end_index: end_index, string_lowercased: stringLowercase, values: $0.keywords) })
+        let subdivisions:[any SovereignStateSubdivision] = all.filter({ SovereignRegions.doesSatisfy(string_start_index: start_index, string_end_index: end_index, string: stringLowercase, values: $0.keywords) })
         if cache {
             SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
         }
@@ -31,7 +31,7 @@ public enum SovereignStateSubdivisions {
             return cached
         }
         let start_index:String.Index = stringLowercase.startIndex, end_index:String.Index = stringLowercase.endIndex
-        subdivisions = subdivisions.filter({ SovereignRegions.doesSatisfy(string_start_index: start_index, string_end_index: end_index, string_lowercased: stringLowercase, values: $0.keywords) })
+        subdivisions = subdivisions.filter({ SovereignRegions.doesSatisfy(string_start_index: start_index, string_end_index: end_index, string: stringLowercase, values: $0.keywords) })
         if cache {
             SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
         }

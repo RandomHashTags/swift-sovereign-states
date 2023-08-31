@@ -9,10 +9,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //generate_english_localization()
         //await generate_divisions()
         //return;
-                
-        /*for region in Locale.Region.allCases {
-            print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency=" + region.currency.identifier + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
-        }*/
+        
+        for region in Locale.Region.allCases {
+            for currency in region.currencies {
+                let currencyName:String = currency.name()
+                print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=" + region.currency.identifier + ";currency=" + currency.rawValue + ";currencyName=" + currencyName + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
+            }
+        }
         
         let _:[Set<String>] = Locale.Region.allCases.map({ $0.keywords() })
         let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
@@ -630,7 +633,7 @@ extension SwiftSovereignStatesTests {
             missing.removeAll()
             
             for currency in Currency.allCases {
-                let string:String = currency.name
+                let string:String = currency.name()
                 if string.elementsEqual("nil") {
                     missing.append(currency.rawValue)
                 }
