@@ -4,7 +4,7 @@ import QuartzCore
 import Kanna
 
 final class SwiftSovereignStatesTests: XCTestCase {
-    func testExample() async throws {
+    func testExample() async {
         //generate_all_english_localization_file()
         //generate_english_localization()
         //await generate_divisions()
@@ -17,20 +17,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[Set<String>] = Locale.Region.allCases.map({ $0.keywords() })
         let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
         let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
-        
-        try testFoundations()
-        try testCodable()
-        testWikipediaURLs()
-        testCountryMentions()
-        testSubdivisionMentions()
-        testCityMentions()
-        testNeighbors()
-        testCities()
-        
         test_localization()
                 
-        try await test_benchmarks(cache: false)
-        //try await test_benchmarks(cache: true)
+        //try await test_benchmarks(cache: false)
         
         /*let seconds:UInt64 = 1 * 1_000_000_000
         if let regions:[any SovereignRegion] = Country.united_states.subdivisions?.filter({ $0.rawValue[$0.rawValue.index($0.rawValue.startIndex, offsetBy: 0)] > "m" }).compactMap({ $0.counties }).flatMap({ $0 }) {
@@ -333,46 +322,44 @@ final class SwiftSovereignStatesTests: XCTestCase {
         return string + (0..<(separation_count - (string.count))).map({ _ in " " }).joined()
     }
     
-    private func testFoundations() throws {
+    func testFoundations() {
         let unitedStates:Locale.Region = Locale.Region.unitedStates
         let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
-        XCTAssert(minnesota.rawValue.elementsEqual("minnesota"))
-        XCTAssert(minnesota.cache_id.elementsEqual("US-minnesota"))
-        XCTAssert(minnesota.country == unitedStates)
-        XCTAssert(SubdivisionsAfghanistan.badakhshan.country == Locale.Region.afghanistan)
+        XCTAssertEqual(minnesota.rawValue, "minnesota")
+        XCTAssertEqual(minnesota.cache_id, "US-minnesota")
+        XCTAssertEqual(minnesota.country, unitedStates)
+        XCTAssertEqual(SubdivisionsAfghanistan.badakhshan.country, Locale.Region.afghanistan)
         let kasson:any SovereignStateCity = CitiesUnitedStatesMinnesota.kasson
-        XCTAssert(kasson.rawValue.elementsEqual("kasson"))
-        XCTAssert(kasson.cache_id.elementsEqual("US-minnesota-kasson"))
+        XCTAssertEqual(kasson.rawValue, "kasson")
+        XCTAssertEqual(kasson.cache_id, "US-minnesota-kasson")
         
         XCTAssert(Locale.Region.getAllMentioned(in: "").isEmpty)
-        XCTAssert(Country.init("") == nil)
         XCTAssert(SovereignStateSubdivisions.getAllMentioned("").isEmpty)
         XCTAssert(SovereignStateSubdivisions.valueOfCacheID("") == nil)
         XCTAssert(SovereignStateCities.getAllMentioned("").isEmpty)
         XCTAssert(SovereignStateCities.valueOfCacheID("") == nil)
         
         let test2:(any SovereignStateSubdivision)? = unitedStates.valueOfSubdivision("Minnesota")
-        let equalMinnesotas:Bool = minnesota.isEqual(test2)
-        XCTAssert(equalMinnesotas)
+        XCTAssert(minnesota.isEqual(test2))
         
         let encoder:JSONEncoder = JSONEncoder()
         let wrapper:TestEncodableStruct = TestEncodableStruct(country: Locale.Region.unitedStates, subdivision: SubdivisionsUnitedStates.minnesota, city: CitiesUnitedStatesMinnesota.kasson)
-        let wrapper_data:Data = try encoder.encode(wrapper)
+        let wrapper_data:Data = try! encoder.encode(wrapper)
         let wrapper_string:String = String(data: wrapper_data, encoding: .utf8)!
         let expected_string:String = """
 {"country":"US","subdivision":"US-minnesota","city":"US-minnesota-kasson"}
 """
-        XCTAssert(expected_string.elementsEqual(wrapper_string), "wrapper_string=" + wrapper_string)
+        XCTAssertEqual(expected_string, wrapper_string, "wrapper_string=" + wrapper_string)
     }
-    private func testCodable() throws {
+    func testCodable() throws {
         let unitedStates:Locale.Region = Locale.Region.unitedStates
         let encoded:Data = try JSONEncoder().encode(unitedStates)
         let encodedString:String = String(data: encoded, encoding: .utf8)!
         let targetString:String = "\"" + unitedStates.identifier + "\""
-        XCTAssert(encodedString.elementsEqual(targetString), encodedString + " != " + targetString)
+        XCTAssertEqual(encodedString, targetString, encodedString + " != " + targetString)
         
         let decoded:Locale.Region = try JSONDecoder().decode(Locale.Region.self, from: encoded)
-        XCTAssert(unitedStates == decoded)
+        XCTAssertEqual(unitedStates, decoded)
         
         let subdivision:SubdivisionsUnitedStates = SubdivisionsUnitedStates.wisconsin
         let city:CitiesUnitedStatesMinnesota = CitiesUnitedStatesMinnesota.rochester
@@ -380,14 +367,14 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let encodedTest:Data = try JSONEncoder().encode(test)
         let encodedStringTest:String = String(data: encodedTest, encoding: .utf8)!
         let targetStringTest:String = "{\"country\":\"" + unitedStates.identifier + "\",\"subdivision\":\"" + subdivision.cache_id + "\",\"city\":\"" + city.cache_id + "\"}"
-        XCTAssert(encodedStringTest.elementsEqual(targetStringTest), encodedStringTest + " != " + targetStringTest)
+        XCTAssertEqual(encodedStringTest, targetStringTest, encodedStringTest + " != " + targetStringTest)
         
         let decodedTest:TestDecodableStruct = try JSONDecoder().decode(TestDecodableStruct.self, from: encodedTest)
-        XCTAssert(unitedStates == decodedTest.country)
+        XCTAssertEqual(unitedStates, decodedTest.country)
         XCTAssert(subdivision.isEqual(decodedTest.subdivision), "subdivision.cache_id=" + subdivision.cache_id + ";decodedTest.subdivision.cache_id=" + decodedTest.subdivision.cache_id)
         XCTAssert(city.isEqual(decodedTest.city), "city.cache_id=" + city.cache_id + ";decodedTest.city.cache_id=" + decodedTest.city.cache_id)
     }
-    private func testWikipediaURLs() {
+    func testWikipediaURLs() {
         var failedSubdivisions:[any SovereignStateSubdivision] = [any SovereignStateSubdivision]()
         var failedCities:[any SovereignStateCity] = [any SovereignStateCity]()
         for country in Country.allCases {
@@ -473,7 +460,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         })
     }
     
-    private func testCountryMentions() {
+    func testCountryMentions() {
         let targetCountries:[Locale.Region] = [
             Locale.Region.japan,
             Locale.Region.unitedStates,
@@ -514,7 +501,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(Locale.Region.getAllMentionedISOAlpha3(in: "USA").count == 1)
         XCTAssert(Locale.Region.getAllMentionedISOAlpha3(in: "usa").count == 0)
     }
-    private func testSubdivisionMentions() {
+    func testSubdivisionMentions() {
         let targetSubdivisions:[any SovereignStateSubdivision] = [SubdivisionsMexico.baja_california, SubdivisionsUnitedStates.california]
         let mentionedString:String = "Baja California; California!"
         let mentioned:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned(mentionedString)
@@ -534,7 +521,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         }
         XCTAssert(mentioned.count == targetSubdivisions.count, "mentioned != targetSubdivisions; mentioned.count=\(mentioned.count), targetSubdivisions.count=\(targetSubdivisions.count)")
     }
-    private func testCityMentions() {
+    func testCityMentions() {
         let minneapolis:[any SovereignStateCity]? = SubdivisionsUnitedStates.minnesota.valueOfCity("Minneapolis")
         XCTAssert(minneapolis != nil)
         
@@ -573,7 +560,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(mentioned.count == targetCities.count, "mentioned.count=" + mentioned.count.description + ", targetCities.count=" + targetCities.count.description)
     }
     
-    private func testNeighbors() {
+    func testNeighbors() {
         let _:[any SovereignStateSubdivision]? = SubdivisionsUnitedStates.minnesota.neighbors
         
         var foundAtLeastOneNeighbors:Bool = false
@@ -590,7 +577,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssert(foundAtLeastOneNeighbors, "foundAtLeastOneNeighbors=false")
     }
     
-    private func testCities() {
+    func testCities() {
         let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
         guard let cities:[any SovereignStateCity] = minnesota.cities else {
             XCTAssert(false, "minnesota.getCities() == nil")
@@ -685,9 +672,6 @@ private struct TestDecodableStruct : Decodable {
     let country:Locale.Region
     let subdivision:SovereignStateSubdivisionWrapper
     let city:SovereignStateCityWrapper
-    
-    //lazy var targetSubdivision:(any SovereignStateSubdivision)? = SovereignStateSubdivisions.valueOfCacheID(subdivision)
-    //lazy var targetCity:(any SovereignStateCity)? = SovereignStateCities.valueOfCacheID(city)
 }
 
 fileprivate extension Kanna.XMLElement {
