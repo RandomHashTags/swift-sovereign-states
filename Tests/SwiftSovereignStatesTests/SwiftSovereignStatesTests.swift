@@ -29,11 +29,11 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //try await test_benchmarks(cache: false)
         
         /*let seconds:UInt64 = 1 * 1_000_000_000
-        if let regions:[any SovereignRegion] = Country.united_states.subdivisions?.filter({ $0.rawValue[$0.rawValue.index($0.rawValue.startIndex, offsetBy: 0)] > "m" }).compactMap({ $0.counties }).flatMap({ $0 }) {
+        if let regions:[any SovereignRegion] = Locale.Region.unitedStates.subdivisions?.filter({ $0.rawValue[$0.rawValue.index($0.rawValue.startIndex, offsetBy: 0)] > "m" }).compactMap({ $0.counties }).flatMap({ $0 }) {
             print("validating " + regions.count.description + " regions...")
             try await validate_region_wikipedia_urls(regions: regions, seconds)
         }*/
-        //try await validate_region_wikipedia_urls(regions: Country.allCases, seconds)
+        //try await validate_region_wikipedia_urls(regions: Locale.Region.allCases, seconds)
         //try await validate_region_wikipedia_urls(regions: SovereignStateSubdivisions.all, seconds)
         //try await validate_region_wikipedia_urls(regions: SovereignStateCities.all, seconds)
     }
@@ -212,7 +212,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             XCTAssert(city != nil)
         }
         
-        let _ = try await benchmark(key: "Country.united_states.valueOfSubdivisionIdentifier") {
+        let _ = try await benchmark(key: "Locale.Region.unitedStates.valueOfSubdivisionIdentifier") {
             let subdivision:(any SovereignStateSubdivision)? = Locale.Region.unitedStates.valueOfSubdivisionIdentifier("minnesota")
             XCTAssert(subdivision != nil)
         }
@@ -384,7 +384,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     func testWikipediaURLs() {
         var failedSubdivisions:[any SovereignStateSubdivision] = [any SovereignStateSubdivision]()
         var failedCities:[any SovereignStateCity] = [any SovereignStateCity]()
-        for country in Country.allCases {
+        for country in Locale.Region.allCases {
             if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
                 for subdivision in subdivisions {
                     let subdivisionWikipediaURL:String = subdivision.wikipedia_url
@@ -571,7 +571,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let _:[any SovereignStateSubdivision]? = SubdivisionsUnitedStates.minnesota.neighbors
         
         var foundAtLeastOneNeighbors:Bool = false
-        outer : for country in Country.allCases {
+        outer : for country in Locale.Region.allCases {
             if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
                 for subdivision in subdivisions {
                     if let _:[any SovereignStateSubdivision] = subdivision.neighbors {
@@ -609,10 +609,10 @@ extension SwiftSovereignStatesTests {
         let supported_language_codes:[String] = ["en"]
         for language in supported_language_codes {
             var missing:[String] = [String]()
-            for country in Country.allCases {
-                let string:String = country.name
+            for country in Locale.Region.allCases {
+                let string:String = country.name()
                 if string.elementsEqual("nil") {
-                    missing.append(country.rawValue)
+                    missing.append(country.identifier)
                 }
             }
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) country names for " + missing.description)

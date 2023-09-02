@@ -45,4 +45,21 @@ public enum SubdivisionsAlbania : String, SovereignStateSubdivision { // https:/
         case .vlore: return "f/f1/Stema_e_Qarkut_Vlorë"
         }
     }
+    
+    public var government_website : String? {
+        switch self {
+        case .berat: return "https://qarkuberat.gov.al"
+        case .diber: return "https://www.qarkudiber.gov.al"
+        case .durres: return "https://qarkudurres.gov.al"
+        case .elbasan: return "https://qarkuelbasan.gov.al"
+        case .fier: return "http://www.qarkufier.gov.al"
+        case .gjirokaster: return nil
+        case .korce: return "https://www.korcaregion.com"
+        case .kukes: return "https://kqk.gov.al"
+        case .lezhe: return "https://www.qarkulezhe.gov.al/"
+        case .shkoder: return "https://qarkushkoder.gov.al"
+        case .tirana: return "https://www.forum-al.com/"
+        case .vlore: return "https://www.qarkuvlore.gov.al"
+        }
+    }
 }

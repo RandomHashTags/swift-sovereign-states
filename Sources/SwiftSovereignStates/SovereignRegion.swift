@@ -633,7 +633,7 @@ public extension Locale.Region {
             return true
         }
     }
-    /// Whether or not this Country is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
+    /// Whether or not this Region is a member of NATO. (https://en.wikipedia.org/wiki/NATO | https://en.wikipedia.org/wiki/Member_states_of_NATO)
     var isNATOMember : Bool {
         switch self {
         case .albania,
