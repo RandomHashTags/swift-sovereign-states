@@ -11,9 +11,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //return;
         
         for region in Locale.Region.allCases {
-            for currency in region.currencies {
-                let currencyName:String = currency.name()
-                print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=" + region.currency.identifier + ";currency=" + currency.rawValue + ";currencyName=" + currencyName + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
+            if region.currencies.isEmpty {
+                print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=none;keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
+            } else {
+                for currency in region.currencies {
+                    let currencyName:String = currency.name()
+                    print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=" + region.currency.identifier + ";currency=" + currency.rawValue + ";currencyName=" + currencyName + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
+                }
             }
         }
         
