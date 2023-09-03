@@ -17,7 +17,7 @@ internal enum SovereignStateFlagEmoji {
         case .transnistria: return nil
 
         case .afghanistan: return "🇦🇫"
-        case .ålandIslands: return nil
+        case .ålandIslands: return "🇦🇽"
         case .albania: return "🇦🇱"
         case .algeria: return "🇩🇿"
         case .americanSamoa: return "🇦🇸"
@@ -28,7 +28,7 @@ internal enum SovereignStateFlagEmoji {
         case .argentina: return "🇦🇷"
         case .armenia: return "🇦🇲"
         case .aruba: return "🇦🇼"
-        case .ascensionIsland: return nil
+        case .ascensionIsland: return "🇦🇨"
         case .australia: return "🇦🇺"
         case .austria: return "🇦🇹"
         case .azerbaijan: return "🇦🇿"
@@ -46,7 +46,7 @@ internal enum SovereignStateFlagEmoji {
         case .bolivia: return "🇧🇴"
         case .bosniaHerzegovina: return "🇧🇦"
         case .botswana: return "🇧🇼"
-        case .bouvetIsland: return nil
+        case .bouvetIsland: return "🇧🇻"
         case .brazil: return "🇧🇷"
         case .britishVirginIslands: return "🇻🇬"
         case .brunei: return "🇧🇳"
@@ -57,19 +57,19 @@ internal enum SovereignStateFlagEmoji {
         case .cambodia: return "🇰🇭"
         case .cameroon: return "🇨🇲"
         case .canada: return "🇨🇦"
-        case .canaryIslands: return nil
+        case .canaryIslands: return "🇮🇨"
         case .capeVerde: return "🇨🇻"
-        case .caribbeanNetherlands: return nil
+        case .caribbeanNetherlands: return "🇧🇶"
         case .caymanIslands: return "🇰🇾"
         case .centralAfricanRepublic: return "🇨🇫"
-        case .ceutaMelilla: return nil
+        case .ceutaMelilla: return "🇪🇦"
         case .chad: return "🇹🇩"
         case .chagosArchipelago: return nil
         case .chile: return "🇨🇱"
         case .chinaMainland: return "🇨🇳"
-        case .christmasIsland: return nil
-        case .clippertonIsland: return nil
-        case .cocosIslands: return nil
+        case .christmasIsland: return "🇨🇽"
+        case .clippertonIsland: return "🇨🇵"
+        case .cocosIslands: return "🇨🇨"
         case .colombia: return "🇨🇴"
         case .comoros: return "🇰🇲"
         case .cookIslands: return "🇨🇰"
@@ -81,7 +81,7 @@ internal enum SovereignStateFlagEmoji {
         case .czechia: return "🇨🇿"
 
         case .congoKinshasa: return "🇨🇩"
-        case .diegoGarcia: return nil
+        case .diegoGarcia: return "🇩🇬"
         case .denmark: return "🇩🇰"
         case .djibouti: return "🇩🇯"
         case .dominica: return "🇩🇲"
@@ -103,7 +103,7 @@ internal enum SovereignStateFlagEmoji {
         case .france: return "🇫🇷"
         case .frenchGuiana: return nil
         case .frenchPolynesia: return "🇵🇫"
-        case .frenchSouthernTerritories: return nil
+        case .frenchSouthernTerritories: return "🇹🇫"
 
         case .gabon: return "🇬🇦"
         case .gambia: return "🇬🇲"
@@ -123,7 +123,7 @@ internal enum SovereignStateFlagEmoji {
         case .guyana: return "🇬🇾"
 
         case .haiti: return "🇭🇹"
-        case .heardMcdonaldIslands: return nil
+        case .heardMcdonaldIslands: return "🇭🇲"
         case .honduras: return "🇭🇳"
         case .hongKong: return "🇭🇰"
         case .hungary: return "🇭🇺"
@@ -169,7 +169,7 @@ internal enum SovereignStateFlagEmoji {
         case .mali: return "🇲🇱"
         case .malta: return "🇲🇹"
         case .marshallIslands: return "🇲🇭"
-        case .martinique: return nil
+        case .martinique: return "🇲🇶"
         case .mauritania: return "🇲🇷"
         case .mauritius: return "🇲🇺"
         case .mexico: return "🇲🇽"
@@ -203,8 +203,8 @@ internal enum SovereignStateFlagEmoji {
 
         case .pakistan: return "🇵🇰"
         case .palau: return "🇵🇼"
-        case .palestine: return "🇵🇸"
-        case .palestinianTerritories: return nil
+        case .palestine: return "🇵🇸" // TODO: fix?
+        case .palestinianTerritories: return "🇵🇸" // TODO: fix?
         case .panama: return "🇵🇦"
         case .papuaNewGuinea: return "🇵🇬"
         case .paraguay: return "🇵🇾"
@@ -217,7 +217,7 @@ internal enum SovereignStateFlagEmoji {
         case .qatar: return "🇶🇦"
 
         case .congoBrazzaville: return "🇨🇬"
-        case .réunion: return nil
+        case .réunion: return "🇷🇪"
         case .romania: return "🇷🇴"
         case .russia: return "🇷🇺"
         case .rwanda: return "🇷🇼"
@@ -239,20 +239,20 @@ internal enum SovereignStateFlagEmoji {
         case .seychelles: return "🇸🇨"
         case .sierraLeone: return "🇸🇱"
         case .singapore: return "🇸🇬"
-        case .sintMaarten: return nil
+        case .sintMaarten: return "🇸🇽"
         case .slovakia: return "🇸🇰"
         case .slovenia: return "🇸🇮"
         case .solomonIslands: return "🇸🇧"
         case .somalia: return "🇸🇴"
         case .southAfrica: return "🇿🇦"
-        case .southGeorgiaSouthSandwichIslands: return nil
+        case .southGeorgiaSouthSandwichIslands: return "🇬🇸"
         case .southKorea: return "🇰🇷"
         case .southSudan: return "🇸🇸"
         case .spain: return "🇪🇸"
         case .sriLanka: return "🇱🇰"
         case .sudan: return "🇸🇩"
         case .suriname: return "🇸🇷"
-        case .svalbardJanMayen: return nil
+        case .svalbardJanMayen: return "🇸🇯"
         case .sweden: return "🇸🇪"
         case .switzerland: return "🇨🇭"
         case .syria: return "🇸🇾"
@@ -277,7 +277,7 @@ internal enum SovereignStateFlagEmoji {
         case .unitedArabEmirates: return "🇦🇪"
         case .unitedKingdom: return "🇬🇧"
         case .unitedStates: return "🇺🇸"
-        case .unitedStatesOutlyingIslands: return nil
+        case .unitedStatesOutlyingIslands: return "🇺🇲"
         case .unitedStatesVirginIslands: return "🇻🇮"
         case .uruguay: return "🇺🇾"
         case .uzbekistan: return "🇺🇿"

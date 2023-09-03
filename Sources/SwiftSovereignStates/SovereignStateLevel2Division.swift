@@ -48,7 +48,7 @@ public extension SovereignStateLevel2Division {
     
     /// _Federal Information Processing Standard_ number or regional equivalent representing this division as a string, formatted as `###`.
     var fips_code_string : String {
-        return (fips_code < 10 ? "00" : fips_code < 100 ? "0" : "") + fips_code.description
+        return (fips_code < 10 ? "00" : fips_code < 100 ? "0" : "") + "\(fips_code)"
     }
     
     internal var default_wikipedia_url_suffix : String? {
