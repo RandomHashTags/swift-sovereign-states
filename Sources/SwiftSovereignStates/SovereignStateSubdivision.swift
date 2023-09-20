@@ -68,7 +68,7 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
     var type_suffix : String { get }
     
     /// The neighboring subdivisions, in relation the its administrative borders.
-    var neighbors : [any SovereignStateSubdivision]? { get }
+    var neighbors : [any SovereignStateSubdivision] { get }
     
     /// The level-2 administrative units' type this subdivision contains.
     var counties_type : (any SovereignStateLevel2Division.Type)? { get }
@@ -97,10 +97,10 @@ public extension SovereignStateSubdivision {
         return String(localized: key, table: table, bundle: Bundle.module)
     }
     
-    var iso_alpha_2 : String? {
+    var isoAlpha2 : String? {
         return nil
     }
-    var iso_alpha_3 : String? {
+    var isoAlpha3 : String? {
         return nil
     }
     var currencies : [Currency] {
@@ -114,8 +114,8 @@ public extension SovereignStateSubdivision {
         return type.name_singular.replacingOccurrences(of: " ", with: "_")
     }
     
-    var neighbors : [any SovereignStateSubdivision]? {
-        return nil
+    var neighbors : [any SovereignStateSubdivision] {
+        return []
     }
     
     var counties_type : (any SovereignStateLevel2Division.Type)? {
@@ -217,11 +217,11 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.temperate_zones
     }
     
-    public var iso_alpha_2 : String? {
-        return subdivision.iso_alpha_2
+    public var isoAlpha2 : String? {
+        return subdivision.isoAlpha2
     }
-    public var iso_alpha_3 : String? {
-        return subdivision.iso_alpha_3
+    public var isoAlpha3 : String? {
+        return subdivision.isoAlpha3
     }
     
     public var country : Locale.Region {
@@ -234,7 +234,7 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
         return subdivision.type_suffix
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         return subdivision.neighbors
     }
     public var cities : [any SovereignStateCity]? {

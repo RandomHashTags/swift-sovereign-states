@@ -76,7 +76,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .acre: return "AC"
         case .alagoas: return "AL"

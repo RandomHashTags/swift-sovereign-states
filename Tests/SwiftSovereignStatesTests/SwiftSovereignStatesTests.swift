@@ -10,6 +10,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //await generate_divisions()
         //return;
         
+        print(Locale.Region("").identifier)
+        
         for region in Locale.Region.allCases {
             if region.currencies.isEmpty {
                 print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=none;keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
@@ -512,15 +514,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
         let targetSubdivisions:[any SovereignStateSubdivision] = [SubdivisionsMexico.baja_california, SubdivisionsUnitedStates.california]
         let mentionedString:String = "Baja California; California!"
         let mentioned:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned(mentionedString)
-        let notFound:[any SovereignStateSubdivision] = targetSubdivisions.filter({
-            let subdivision:any SovereignStateSubdivision = $0
+        let notFound:[any SovereignStateSubdivision] = targetSubdivisions.filter({ subdivision in
             return !mentioned.contains(where: { subdivision.isEqual($0) })
         })
         if !notFound.isEmpty {
             print("SwiftSovereignStatesTests;testSubdivisionMentions;missing \(notFound.count);=[" + notFound.map({ $0.rawValue }).joined(separator: ",") + "]")
         }
-        let notMentioned:[any SovereignStateSubdivision] = mentioned.filter({
-            let subdivision:any SovereignStateSubdivision = $0
+        let notMentioned:[any SovereignStateSubdivision] = mentioned.filter({ subdivision in
             return !targetSubdivisions.contains(where: { subdivision.isEqual($0) })
         })
         if !notMentioned.isEmpty {
@@ -550,12 +550,10 @@ final class SwiftSovereignStatesTests: XCTestCase {
         
         let mentioned:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(mentionedString)
         XCTAssert(mentioned.count > 0, "mentioned.count == 0")
-        let notFound:[any SovereignStateCity] = targetCities.filter({
-            let city:any SovereignStateCity = $0
+        let notFound:[any SovereignStateCity] = targetCities.filter({ city in
             return !mentioned.contains(where: { city.isEqual($0) })
         })
-        let notMentioned:[any SovereignStateCity] = mentioned.filter({
-            let city:any SovereignStateCity = $0
+        let notMentioned:[any SovereignStateCity] = mentioned.filter({ city in
             return !targetCities.contains(where: { city.isEqual($0) })
         })
         if !notFound.isEmpty {
@@ -574,9 +572,9 @@ final class SwiftSovereignStatesTests: XCTestCase {
         outer : for country in Locale.Region.allCases {
             if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
                 for subdivision in subdivisions {
-                    if let _:[any SovereignStateSubdivision] = subdivision.neighbors {
-                        foundAtLeastOneNeighbors = true
-                        break outer
+                    foundAtLeastOneNeighbors = !subdivision.neighbors.isEmpty
+                    if foundAtLeastOneNeighbors {
+                        break
                     }
                 }
             }

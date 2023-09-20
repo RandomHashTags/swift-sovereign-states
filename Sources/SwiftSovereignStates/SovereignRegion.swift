@@ -402,6 +402,7 @@ public extension Locale.Region {
         if let string:String = locale.localizedString(forRegionCode: identifier) {
             return string
         } else {
+            // TODO: support locale
             let key:String
             switch self {
             case .northernCyprus:
@@ -421,7 +422,7 @@ public extension Locale.Region {
     
     func keywords(forLocale locale: Locale = Locale.current) -> Set<String> {
         let id:String = identifier
-        if let keywords:Set<String> = SwiftSovereignStateCacheSubdivisions.keywords2[id] {
+        if let keywords:Set<String> = SwiftSovereignStateCache.keywords[id] {
             return keywords
         }
         let locale_name:String = name(forLocale: locale)
@@ -456,12 +457,8 @@ public extension Locale.Region {
         if let official_names:Set<String> = officialNames(forLocale: locale) {
             keywords.formUnion(official_names)
         }
-        /*
-         if let additional:Set<String> = additional_keywords {
-         keywords.formUnion(additional)
-         }*/
         keywords = keywords.map_set({ $0.lowercased() })
-        SwiftSovereignStateCacheSubdivisions.keywords2[id] = keywords
+        SwiftSovereignStateCache.keywords[id] = keywords
         return keywords
     }
     
@@ -469,14 +466,6 @@ public extension Locale.Region {
         let keywords:Set<String> = keywords()
         return SovereignRegions.doesSatisfy(string_start_index: string.startIndex, string_end_index: string.endIndex, string: string.lowercased(), values: keywords)
     }
-    /*func is_mentioned(in string: String) -> Bool {
-        let keywords:Set<String> = keywords()
-        return SovereignRegions.doesSatisfy2(string_lowercased: string, values: keywords)
-    }
-    func is_mentioned_exactly(in string: String, ignoreCase: Bool) -> Bool {
-        let keywords:Set<String> = keywords()
-        return SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal)
-    }*/
 }
 extension Set {
     func map_set<T>(_ transform: @escaping (Element) throws -> T) rethrows -> Set<T> {
@@ -986,7 +975,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
 }
 
 public extension SovereignRegion {
-    var description: String { return cache_id }
+    var description : String { return cache_id }
     
     func encode(to encoder: Encoder) throws {
         var container:SingleValueEncodingContainer = encoder.singleValueContainer()
@@ -1001,7 +990,7 @@ public extension SovereignRegion {
     
     var keywords : Set<String> {
         let id:String = cache_id
-        if let keywords:Set<String> = SwiftSovereignStateCacheSubdivisions.keywords[id] {
+        if let keywords:Set<String> = SwiftSovereignStateCache.keywords[id] {
             return keywords
         }
         var keywords:Set<String> = [name]
@@ -1018,7 +1007,7 @@ public extension SovereignRegion {
             keywords.formUnion(additional)
         }
         keywords = Set<String>(keywords.map({ $0.lowercased() }))
-        SwiftSovereignStateCacheSubdivisions.keywords[id] = keywords
+        SwiftSovereignStateCache.keywords[id] = keywords
         return keywords
     }
     var additional_keywords : Set<String>? {

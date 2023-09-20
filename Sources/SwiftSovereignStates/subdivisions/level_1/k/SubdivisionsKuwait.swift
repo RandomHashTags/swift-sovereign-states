@@ -23,7 +23,7 @@ public enum SubdivisionsKuwait : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.governorates
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .ahmadi: return "AH"
         case .al_asimah: return "KU"

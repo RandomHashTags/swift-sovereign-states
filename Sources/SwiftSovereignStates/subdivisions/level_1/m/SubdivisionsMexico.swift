@@ -72,7 +72,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .aguascalientes: return "AG"
         case .baja_california: return "BC"
@@ -109,7 +109,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var iso_alpha_3 : String? {
+    public var isoAlpha3 : String? {
         switch self {
         case .aguascalientes: return "AGU"
         case .baja_california: return "BCN"

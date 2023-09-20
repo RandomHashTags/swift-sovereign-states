@@ -78,7 +78,7 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .andaman_and_nicobar_islands: return "AN"
         case .andhra_pradesh: return "AP"

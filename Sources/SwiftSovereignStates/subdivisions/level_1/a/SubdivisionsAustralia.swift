@@ -59,7 +59,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .new_south_wales: return "NSW"
         case .queensland: return "QLD"

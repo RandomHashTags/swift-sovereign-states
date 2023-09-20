@@ -42,7 +42,7 @@ public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://
         return "_County"
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .blekinge: return "K"
         case .dalarna: return "W"

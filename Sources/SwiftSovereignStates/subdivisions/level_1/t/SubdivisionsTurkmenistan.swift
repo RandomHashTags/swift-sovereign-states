@@ -30,7 +30,7 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .ahal: return "A"
         case .ashgabat: return "S"

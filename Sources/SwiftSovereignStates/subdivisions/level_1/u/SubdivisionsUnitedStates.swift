@@ -105,7 +105,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .alabama: return "AL"
         case .alaska: return "AK"
@@ -161,14 +161,14 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         case .washington_dc: return "DC"
         case .united_states_virgin_islands: return "VI"
 
-        case .american_samoa: return Country.american_samoa.iso_alpha_2
-        case .puerto_rico: return Country.puerto_rico.iso_alpha_2
-        case .guam: return Country.guam.iso_alpha_2
-        case .northern_mariana_islands: return Country.northern_mariana_islands.iso_alpha_2
+        case .american_samoa: return Country.american_samoa.isoAlpha2
+        case .puerto_rico: return Country.puerto_rico.isoAlpha2
+        case .guam: return Country.guam.isoAlpha2
+        case .northern_mariana_islands: return Country.northern_mariana_islands.isoAlpha2
             
-        case .marshall_islands: return Country.marshall_islands.iso_alpha_2
-        case .micronesia: return Country.micronesia.iso_alpha_2
-        case .palau: return Country.palau.iso_alpha_2
+        case .marshall_islands: return Country.marshall_islands.isoAlpha2
+        case .micronesia: return Country.micronesia.isoAlpha2
+        case .palau: return Country.palau.isoAlpha2
         }
     }
     
@@ -214,7 +214,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         case .micronesia: return Country.micronesia.government_website
         case .palau: return Country.palau.government_website
         default:
-            guard let isoAlpha2:String = iso_alpha_2 else { return nil }
+            guard let isoAlpha2:String = isoAlpha2 else { return nil }
             return "https://" + isoAlpha2 + ".gov"
         }
     }

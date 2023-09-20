@@ -59,12 +59,13 @@ public enum SwiftSovereignStateCacheType {
 }
 
 public enum SwiftSovereignStateCache {
+    internal static var keywords:SwiftSovereignStatesCache<Set<String>> = SwiftSovereignStatesCache<Set<String>>()
+    
     public static func removeAll(_ type: SwiftSovereignStateCacheType? = nil) {
         guard let type:SwiftSovereignStateCacheType = type else {
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             
-            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
-            SwiftSovereignStateCacheSubdivisions.keywords2.removeAll()
+            SwiftSovereignStateCache.keywords.removeAll()
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
             SwiftSovereignStateCacheSubdivisions.valueOfCacheID.removeAll()
             
@@ -78,8 +79,7 @@ public enum SwiftSovereignStateCache {
             SwiftSovereignStateCacheCountries.mentioned.removeAll()
             return
         case .subdivisions_keywords:
-            SwiftSovereignStateCacheSubdivisions.keywords.removeAll()
-            SwiftSovereignStateCacheSubdivisions.keywords2.removeAll()
+            SwiftSovereignStateCache.keywords.removeAll()
             return
         case .subdivisions_mentioned:
             SwiftSovereignStateCacheSubdivisions.mentioned.removeAll()
@@ -103,9 +103,6 @@ internal enum SwiftSovereignStateCacheCountries {
     static var mentioned:SwiftSovereignStatesCache<[Locale.Region]> = SwiftSovereignStatesCache<[Locale.Region]>()
 }
 internal enum SwiftSovereignStateCacheSubdivisions {
-    static var keywords:SwiftSovereignStatesCache<Set<String>> = SwiftSovereignStatesCache<Set<String>>()
-    static var keywords2:SwiftSovereignStatesCache<Set<String>> = SwiftSovereignStatesCache<Set<String>>()
-    
     static var mentioned:SwiftSovereignStatesCache<[any SovereignStateSubdivision]> = SwiftSovereignStatesCache<[any SovereignStateSubdivision]>()
     static var valueOfCacheID:SwiftSovereignStatesCache<any SovereignStateSubdivision> = SwiftSovereignStatesCache<any SovereignStateSubdivision>()
 }

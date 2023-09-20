@@ -23,7 +23,7 @@ public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         switch self {
         case .malampa: return "MAP"
         case .penama: return "PAM"

@@ -348,7 +348,7 @@ public enum Country : String, SovereignState {
         }
     }
     
-    public var iso_alpha_2 : String? {
+    public var isoAlpha2 : String? {
         return SovereignStateISOAlpha2.get(self)
     }
     public var iso_alpha_2_alias : String? {
@@ -357,7 +357,7 @@ public enum Country : String, SovereignState {
     public var iso_alpha_2_parent_group : String? {
         return SovereignStateISOAlpha2.getParentGroup(self)
     }
-    public var iso_alpha_3 : String? {
+    public var isoAlpha3 : String? {
         return nil
     }
     
@@ -370,7 +370,7 @@ public enum Country : String, SovereignState {
     }
     
     public var flag_url : String? {
-        guard let isoAlpha2:String = iso_alpha_2?.lowercased() else { return nil }
+        guard let isoAlpha2:String = isoAlpha2?.lowercased() else { return nil }
         return "https://raw.githubusercontent.com/stsrki/country-flags/master/png1000px/" + isoAlpha2 + ".png"
     }
     
