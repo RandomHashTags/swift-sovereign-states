@@ -9,9 +9,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //generate_english_localization()
         //await generate_divisions()
         //return;
-        
-        print(Locale.Region("").identifier)
-        
+                
         for region in Locale.Region.allCases {
             if region.currencies.isEmpty {
                 print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=none;keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")

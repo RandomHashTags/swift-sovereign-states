@@ -161,14 +161,14 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         case .washington_dc: return "DC"
         case .united_states_virgin_islands: return "VI"
 
-        case .american_samoa: return Country.american_samoa.isoAlpha2
-        case .puerto_rico: return Country.puerto_rico.isoAlpha2
-        case .guam: return Country.guam.isoAlpha2
-        case .northern_mariana_islands: return Country.northern_mariana_islands.isoAlpha2
+        case .american_samoa: return Locale.Region.americanSamoa.identifier
+        case .puerto_rico: return Locale.Region.puertoRico.identifier
+        case .guam: return Locale.Region.guam.identifier
+        case .northern_mariana_islands: return Locale.Region.northernMarianaIslands.identifier
             
-        case .marshall_islands: return Country.marshall_islands.isoAlpha2
-        case .micronesia: return Country.micronesia.isoAlpha2
-        case .palau: return Country.palau.isoAlpha2
+        case .marshall_islands: return Locale.Region.marshallIslands.identifier
+        case .micronesia: return Locale.Region.micronesia.identifier
+        case .palau: return Locale.Region.palau.identifier
         }
     }
     
@@ -204,15 +204,16 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         case .massachusetts: return "https://www.mass.gov"
         case .west_virginia: return "https://www.wv.gov"
         case .wyoming: return "https://www.wyo.gov"
-        case .american_samoa,
-                .guam,
-                .northern_mariana_islands,
-                .puerto_rico,
-                .united_states_virgin_islands:
-            return nil
-        case .marshall_islands: return Country.marshall_islands.government_website
-        case .micronesia: return Country.micronesia.government_website
-        case .palau: return Country.palau.government_website
+            
+        case .american_samoa: return Locale.Region.americanSamoa.governmentWebsiteURL
+        case .guam: return Locale.Region.guam.governmentWebsiteURL
+        case .northern_mariana_islands: return Locale.Region.northernMarianaIslands.governmentWebsiteURL
+        case .puerto_rico: return Locale.Region.puertoRico.governmentWebsiteURL
+        case .united_states_virgin_islands: return Locale.Region.unitedStatesVirginIslands.governmentWebsiteURL
+            
+        case .marshall_islands: return Locale.Region.marshallIslands.governmentWebsiteURL
+        case .micronesia: return Locale.Region.micronesia.governmentWebsiteURL
+        case .palau: return Locale.Region.palau.governmentWebsiteURL
         default:
             guard let isoAlpha2:String = isoAlpha2 else { return nil }
             return "https://" + isoAlpha2 + ".gov"
