@@ -237,7 +237,12 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var neighbors : [any SovereignStateSubdivision] {
         return subdivision.neighbors
     }
-    public var cities : [any SovereignStateCity]? {
-        return subdivision.cities
+    
+    public var countiesType : (any SovereignStateLevel2Division.Type)? {
+        return subdivision.countiesType
+    }
+    
+    public var citiesType : (any SovereignStateCity.Type)? {
+        return subdivision.citiesType
     }
 }

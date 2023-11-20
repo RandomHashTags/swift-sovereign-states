@@ -11,12 +11,15 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //return;
                 
         for region in Locale.Region.allCases {
+            let identifier:String = region.identifier
+            let name:String = region.name()
+            let keywords:Set<String> = region.keywords()
             if region.currencies.isEmpty {
-                print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=none;keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
+                print("region;identifier=" + identifier + ";name=" + name + ";currency identifier=none;keywords=" + keywords.description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
             } else {
                 for currency in region.currencies {
                     let currencyName:String = currency.name()
-                    print("region;identifier=" + region.identifier + ";name=" + region.name() + ";currency identifier=" + region.currency.identifier + ";currency=" + currency.rawValue + ";currencyName=" + currencyName + ";keywords=" + region.keywords().description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
+                    print("region;identifier=" + identifier + ";name=" + name + ";currency identifier=" + region.currency.identifier + ";currency=" + currency.rawValue + ";currencyName=" + currencyName + ";keywords=" + keywords.description + ";subdivisions.count=\(region.subdivisions?.count ?? 0)")
                 }
             }
         }
@@ -134,7 +137,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
                             .replacingOccurrences(of: " County", with: "")
                             .replacingOccurrences(of: " Borough", with: "")
                             .replacingOccurrences(of: " Parish", with: "")
-                        identifier = name.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (").first!.lowercased()
+                        identifier = name.replacingOccurrences(of: " †", with: "").replacingOccurrences(of: "†", with: "").components(separatedBy: " (")[0].lowercased()
                         if identifier.hasSuffix(" ") {
                             identifier = String(identifier.prefix(identifier.count-1))
                         }
