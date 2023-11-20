@@ -23,7 +23,7 @@ public protocol SovereignStateLevel2Division : SovereignRegion {
 
 public extension SovereignStateSubdivision {
     func valueOfLevel2DivisionIdentifier(_ string: String) -> (any SovereignStateLevel2Division)? {
-        return counties_type?.init(rawValue: string)
+        return countiesType?.init(rawValue: string)
     }
     
     func valueOfLevel2DivisionFIPSCode(_ code: Int) -> (any SovereignStateLevel2Division)? {

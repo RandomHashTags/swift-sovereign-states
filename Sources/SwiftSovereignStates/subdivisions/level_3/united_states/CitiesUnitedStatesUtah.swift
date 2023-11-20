@@ -287,4 +287,8 @@ public enum CitiesUnitedStatesUtah : String, SovereignStateCity { // https://en.
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.utah
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesUtah.salt_lake_city
+    }
 }

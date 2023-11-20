@@ -44,7 +44,7 @@ public enum SovereignStateCities {
             return city
         }
         let components:[Substring] = cacheID.split(separator: "-")
-        guard components.count == 3, let city:any SovereignStateCity = Locale.Region.init(String(components[0])).subdivisionType?.init(rawValue: String(components[1]))?.cities_type?.init(rawValue: String(components[2])) else { return nil }
+        guard components.count == 3, let city:any SovereignStateCity = Locale.Region.init(String(components[0])).subdivisionType?.init(rawValue: String(components[1]))?.citiesType?.init(rawValue: String(components[2])) else { return nil }
         if cache {
             SwiftSovereignStateCacheCities.valueOfCacheID[cacheID] = city
         }
@@ -55,9 +55,9 @@ public enum SovereignStateCities {
 public protocol SovereignStateCity : SovereignRegion {
     /// The subdivision that this city's administrative borders are located in.
     var subdivision : any SovereignStateSubdivision { get }
+    var capital : Self { get }
+    
     var type : SovereignStateCityType { get }
-    /// Whether or not this city is the capital in relation to its subdivision.
-    var is_capital : Bool { get }
 }
 
 public extension SovereignStateCity {
@@ -83,7 +83,7 @@ public extension SovereignStateCity {
     }
     
     var is_capital : Bool {
-        return false
+        return capital == self
     }
     
     internal func getDefaultURLSuffix() -> String {
@@ -105,7 +105,7 @@ public extension SovereignStateSubdivision {
         return SovereignStateCities.getAllMentioned(string, subdivision: self)
     }
     func valueOfCityIdentifier(_ string: String) -> (any SovereignStateCity)? {
-        return cities_type?.init(rawValue: string)
+        return citiesType?.init(rawValue: string)
     }
 }
 
@@ -195,7 +195,7 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var type : SovereignStateCityType {
         return city.type
     }
-    public var is_capital : Bool {
-        return city.is_capital
+    public var capital : Self {
+        return SovereignStateCityWrapper(city.capital)
     }
 }

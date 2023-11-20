@@ -981,4 +981,8 @@ public enum CitiesUnitedStatesIowa : String, SovereignStateCity { // https://en.
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.iowa
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesIowa.des_moines
+    }
 }

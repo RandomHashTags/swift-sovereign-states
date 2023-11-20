@@ -132,9 +132,9 @@ public enum SubdivisionsCanada : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var cities : [any SovereignStateCity]? {
+    public var citiesType : (any SovereignStateCity.Type)? {
         switch self {
-        //case .quebec: return CitiesCanadaQuebec.allCases
+        case .quebec: return CitiesCanadaQuebec.self
         default: return nil
         }
     }

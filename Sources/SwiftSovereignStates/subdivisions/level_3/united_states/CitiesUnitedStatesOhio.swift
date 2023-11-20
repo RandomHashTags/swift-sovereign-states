@@ -969,6 +969,10 @@ public enum CitiesUnitedStatesOhio : String, SovereignStateCity { // https://en.
         return SubdivisionsUnitedStates.ohio
     }
     
+    public var capital : Self {
+        return CitiesUnitedStatesOhio.columbus
+    }
+    
     public var wikipedia_url_suffix : String? {
         switch self {
         case .centerville_gallia: return ",_Gallia_County,_Ohio"

@@ -888,4 +888,8 @@ public enum CitiesUnitedStatesMinnesota : String, SovereignStateCity { // https:
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.minnesota
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesMinnesota.saint_paul
+    }
 }

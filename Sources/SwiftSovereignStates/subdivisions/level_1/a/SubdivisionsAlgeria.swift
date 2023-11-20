@@ -75,9 +75,9 @@ public enum SubdivisionsAlgeria : String, SovereignStateSubdivision {  // https:
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var cities : [any SovereignStateCity]? {
+    public var citiesType : (any SovereignStateCity.Type)? {
         switch self {
-        //case .adrar: return CitiesAlgeriaAdrar.allCases
+        case .adrar: return CitiesAlgeriaAdrar.self
         default: return nil
         }
     }

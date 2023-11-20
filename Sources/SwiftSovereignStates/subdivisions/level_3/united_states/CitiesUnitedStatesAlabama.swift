@@ -495,4 +495,8 @@ public enum CitiesUnitedStatesAlabama : String, SovereignStateCity { // https://
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.alabama
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesAlabama.montgomery
+    }
 }

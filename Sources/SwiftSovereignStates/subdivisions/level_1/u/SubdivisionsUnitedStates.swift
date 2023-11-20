@@ -478,7 +478,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var counties_type : (any SovereignStateLevel2Division.Type)? {
+    public var countiesType : (any SovereignStateLevel2Division.Type)? {
         switch self {
         case .alabama: return CountiesUnitedStatesAlabama.self
         case .alaska: return CountiesUnitedStatesAlaska.self
@@ -533,63 +533,8 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         default: return nil
         }
     }
-    public var counties : [any SovereignStateLevel2Division]? {
-        switch self {
-        case .alabama: return CountiesUnitedStatesAlabama.allCases
-        case .alaska: return CountiesUnitedStatesAlaska.allCases
-        case .arizona: return CountiesUnitedStatesArizona.allCases
-        case .arkansas: return CountiesUnitedStatesArkansas.allCases
-        case .california: return CountiesUnitedStatesCalifornia.allCases
-        case .colorado: return CountiesUnitedStatesColorado.allCases
-        case .connecticut: return CountiesUnitedStatesConnecticut.allCases
-        case .delaware: return CountiesUnitedStatesDelaware.allCases
-        case .florida: return CountiesUnitedStatesFlorida.allCases
-        case .georgia: return CountiesUnitedStatesGeorgia.allCases
-        case .hawaii: return CountiesUnitedStatesHawaii.allCases
-        case .idaho: return CountiesUnitedStatesIdaho.allCases
-        case .illinois: return CountiesUnitedStatesIllinois.allCases
-        case .indiana: return CountiesUnitedStatesIndiana.allCases
-        case .iowa: return CountiesUnitedStatesIowa.allCases
-        case .kansas: return CountiesUnitedStatesKansas.allCases
-        case .kentucky: return CountiesUnitedStatesKentucky.allCases
-        case .louisiana: return CountiesUnitedStatesLouisiana.allCases
-        case .maine: return CountiesUnitedStatesMaine.allCases
-        case .maryland: return CountiesUnitedStatesMaryland.allCases
-        case .massachusetts: return CountiesUnitedStatesMassachusetts.allCases
-        case .michigan: return CountiesUnitedStatesMichigan.allCases
-        case .minnesota: return CountiesUnitedStatesMinnesota.allCases
-        case .mississippi: return CountiesUnitedStatesMississippi.allCases
-        case .missouri: return CountiesUnitedStatesMissouri.allCases
-        case .montana: return CountiesUnitedStatesMontana.allCases
-        case .nebraska: return CountiesUnitedStatesNebraska.allCases
-        case .nevada: return CountiesUnitedStatesNevada.allCases
-        case .new_hampshire: return CountiesUnitedStatesNewHampshire.allCases
-        case .new_jersey: return CountiesUnitedStatesNewJersey.allCases
-        case .new_mexico: return CountiesUnitedStatesNewMexico.allCases
-        case .new_york: return CountiesUnitedStatesNewYork.allCases
-        case .north_carolina: return CountiesUnitedStatesNorthCarolina.allCases
-        case .north_dakota: return CountiesUnitedStatesNorthDakota.allCases
-        case .ohio: return CountiesUnitedStatesOhio.allCases
-        case .oklahoma: return CountiesUnitedStatesOklahoma.allCases
-        case .oregon: return CountiesUnitedStatesOregon.allCases
-        case .pennsylvania: return CountiesUnitedStatesPennsylvania.allCases
-        case .rhode_island: return CountiesUnitedStatesRhodeIsland.allCases
-        case .south_carolina: return CountiesUnitedStatesSouthCarolina.allCases
-        case .south_dakota: return CountiesUnitedStatesSouthDakota.allCases
-        case .tennessee: return CountiesUnitedStatesTennessee.allCases
-        case .texas: return CountiesUnitedStatesTexas.allCases
-        case .utah: return CountiesUnitedStatesUtah.allCases
-        case .vermont: return CountiesUnitedStatesVermont.allCases
-        case .virginia: return CountiesUnitedStatesVirginia.allCases
-        case .washington: return CountiesUnitedStatesWashington.allCases
-        case .west_virginia: return CountiesUnitedStatesWestVirginia.allCases
-        case .wisconsin: return CountiesUnitedStatesWisconsin.allCases
-        case .wyoming: return CountiesUnitedStatesWyoming.allCases
-        default: return nil
-        }
-    }
     
-    public var cities_type : (any SovereignStateCity.Type)? {
+    public var citiesType : (any SovereignStateCity.Type)? {
         switch self {
         case .alabama: return CitiesUnitedStatesAlabama.self
         case .arizona: return CitiesUnitedStatesArizona.self
@@ -608,28 +553,6 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         case .texas: return CitiesUnitedStatesTexas.self
         case .utah: return CitiesUnitedStatesUtah.self
         case .washington: return CitiesUnitedStatesWashington.self
-        default: return nil
-        }
-    }
-    public var cities : [any SovereignStateCity]? {
-        switch self {
-        case .alabama: return CitiesUnitedStatesAlabama.allCases
-        case .arizona: return CitiesUnitedStatesArizona.allCases
-        case .arkansas: return CitiesUnitedStatesArkansas.allCases
-        case .idaho: return CitiesUnitedStatesIdaho.allCases
-        case .iowa: return CitiesUnitedStatesIowa.allCases
-        case .kentucky: return CitiesUnitedStatesKentucky.allCases
-        case .maine: return CitiesUnitedStatesMaine.allCases
-        case .minnesota: return CitiesUnitedStatesMinnesota.allCases
-        case .montana: return CitiesUnitedStatesMontana.allCases
-        case .new_hampshire: return CitiesUnitedStatesNewHampshire.allCases
-        case .new_mexico: return CitiesUnitedStatesNewMexico.allCases
-        case .north_dakota: return CitiesUnitedStatesNorthDakota.allCases
-        case .south_dakota: return CitiesUnitedStatesSouthDakota.allCases
-        case .ohio: return CitiesUnitedStatesOhio.allCases
-        case .texas: return CitiesUnitedStatesTexas.allCases
-        case .utah: return CitiesUnitedStatesUtah.allCases
-        case .washington: return CitiesUnitedStatesWashington.allCases
         default: return nil
         }
     }

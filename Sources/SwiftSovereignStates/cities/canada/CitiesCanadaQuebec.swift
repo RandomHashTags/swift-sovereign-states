@@ -1166,6 +1166,10 @@ public enum CitiesCanadaQuebec : String, SovereignStateCity { // https://en.wiki
         return SubdivisionsCanada.quebec
     }
     
+    public var capital : Self {
+        return CitiesCanadaQuebec.québec
+    }
+    
     public var real_name : String? {
         switch self {
         case .alleyn_et_cawood: return "Alleyn-et-Cawood"

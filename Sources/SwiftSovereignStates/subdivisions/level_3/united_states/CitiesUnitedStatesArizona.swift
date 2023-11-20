@@ -485,6 +485,10 @@ public enum CitiesUnitedStatesArizona : String, SovereignStateCity { // https://
         return SubdivisionsUnitedStates.arizona
     }
     
+    public var capital : Self {
+        return CitiesUnitedStatesArizona.phoenix
+    }
+    
     public var type : SovereignStateCityType {
         switch self {
         case .aguila,

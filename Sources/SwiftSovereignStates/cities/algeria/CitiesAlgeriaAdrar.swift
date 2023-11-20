@@ -52,4 +52,8 @@ public enum CitiesAlgeriaAdrar : String, SovereignStateCity { // https://en.wiki
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsAlgeria.adrar
     }
+    
+    public var capital : Self {
+        return CitiesAlgeriaAdrar.adrar
+    }
 }

@@ -234,4 +234,8 @@ public enum CitiesUnitedStatesIdaho : String, SovereignStateCity { // https://en
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.idaho
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesIdaho.boise
+    }
 }

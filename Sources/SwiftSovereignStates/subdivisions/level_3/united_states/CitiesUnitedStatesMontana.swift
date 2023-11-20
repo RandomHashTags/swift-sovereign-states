@@ -161,4 +161,8 @@ public enum CitiesUnitedStatesMontana : String, SovereignStateCity { // https://
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.montana
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesMontana.helena
+    }
 }

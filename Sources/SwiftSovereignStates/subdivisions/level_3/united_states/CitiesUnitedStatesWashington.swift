@@ -247,4 +247,8 @@ public enum CitiesUnitedStatesWashington : String, SovereignStateCity { // https
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.washington
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesWashington.olympia
+    }
 }

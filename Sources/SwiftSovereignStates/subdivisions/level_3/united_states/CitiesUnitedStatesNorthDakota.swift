@@ -391,4 +391,8 @@ public enum CitiesUnitedStatesNorthDakota : String, SovereignStateCity { // http
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.north_dakota
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesNorthDakota.bismarck
+    }
 }

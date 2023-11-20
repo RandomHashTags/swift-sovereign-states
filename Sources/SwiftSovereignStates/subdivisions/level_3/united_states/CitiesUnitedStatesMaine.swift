@@ -501,6 +501,10 @@ public enum CitiesUnitedStatesMaine : String, SovereignStateCity {
         return SubdivisionsUnitedStates.maine
     }
     
+    public var capital : Self {
+        return CitiesUnitedStatesMaine.augusta
+    }
+    
     public var type : SovereignStateCityType {
         switch self {
         case .abbot,

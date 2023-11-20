@@ -537,4 +537,8 @@ public enum CitiesUnitedStatesArkansas : String, SovereignStateCity { // https:/
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.arkansas
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesArkansas.little_rock
+    }
 }

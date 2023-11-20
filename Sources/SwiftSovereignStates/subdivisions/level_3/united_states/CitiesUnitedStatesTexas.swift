@@ -1257,4 +1257,8 @@ public enum CitiesUnitedStatesTexas : String, SovereignStateCity { // https://en
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.texas
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesTexas.austin
+    }
 }

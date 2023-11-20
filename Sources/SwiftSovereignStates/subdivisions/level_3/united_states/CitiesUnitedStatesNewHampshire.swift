@@ -264,4 +264,8 @@ public enum CitiesUnitedStatesNewHampshire : String, SovereignStateCity { // htt
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.new_hampshire
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesNewHampshire.concord
+    }
 }

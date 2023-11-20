@@ -136,4 +136,8 @@ public enum CitiesUnitedStatesNewMexico : String, SovereignStateCity { // https:
     public var subdivision : any SovereignStateSubdivision {
         return SubdivisionsUnitedStates.new_mexico
     }
+    
+    public var capital : Self {
+        return CitiesUnitedStatesNewMexico.santa_fe
+    }
 }
