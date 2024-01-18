@@ -13,6 +13,7 @@ Implement and use real-world regional divisions. I didn't want other people inve
 ### Optional Expansions
 - [SwiftNationalParks](https://github.com/RandomHashTags/swift-national-parks)
 - [SwiftVolcanoes](https://github.com/RandomHashTags/swift-volcanoes)
+- [SwiftAirports](https://github.com/RandomHashTags/swift-airports)
 
 ### CocoaPods
 ```ruby
