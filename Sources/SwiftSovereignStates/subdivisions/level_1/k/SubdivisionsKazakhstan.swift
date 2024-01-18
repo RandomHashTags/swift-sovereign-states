@@ -18,6 +18,7 @@ public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // http
     case baikonur
     case east_kazakhstan
     case jambyl
+    case jetisu
     case karaganda
     case kostanay
     case kyzylorda
