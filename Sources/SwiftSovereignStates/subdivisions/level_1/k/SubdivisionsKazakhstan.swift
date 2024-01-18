@@ -27,6 +27,7 @@ public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // http
     case pavlodar
     case shymkent
     case turkistan
+    case ulytau
     case west_kazakhstan
     
     public var country : Locale.Region {
