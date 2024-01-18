@@ -9,7 +9,19 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //generate_english_localization()
         //await generate_divisions()
         //return;
-                
+        
+        let _:[Set<String>] = Locale.Region.allCases.map({ $0.keywords() })
+        let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
+        let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
+        
+        /*let cities_string:String = "Rochester! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine."
+        try! await benchmark_compare_is_faster(maximum_iterations: 10, key1: "isMentioned", {
+            let test:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(cities_string, cache: false)
+        }, key2: "isMentioned2") {
+            let test:[any SovereignStateCity] = SovereignStateCities.getAllMentioned2(cities_string, cache: false)
+        }
+        return;*/
+        
         for region in Locale.Region.allCases {
             let identifier:String = region.identifier
             let name:String = region.name()
@@ -24,9 +36,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
             }
         }
         
-        let _:[Set<String>] = Locale.Region.allCases.map({ $0.keywords() })
-        let _:[Set<String>] = SovereignStateSubdivisions.all.map({ $0.keywords })
-        let _:[Set<String>] = SovereignStateCities.all.map({ $0.keywords })
+        
         test_localization()
                 
         //try await test_benchmarks(cache: false)
@@ -252,7 +262,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
     
     @available(macOS 13.0, *)
     private func benchmark(key: String, _ code: @escaping () async throws -> Void, will_print: Bool = true) async throws -> (key: String, min: Int64, max: Int64, median: Int64, average: Int64, total: Int64) {
-        let iteration_count:Int = 10_00
+        let iteration_count:Int = 10
         let clock:ContinuousClock = ContinuousClock()
         let _:Duration = try await clock.measure(code)
         var timings:[Int64] = [Int64]()

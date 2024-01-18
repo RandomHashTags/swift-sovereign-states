@@ -8,6 +8,7 @@
 import Foundation
 
 public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Regions_of_Kazakhstan
+    case abai
     case akmola
     case aktobe
     case almaty
