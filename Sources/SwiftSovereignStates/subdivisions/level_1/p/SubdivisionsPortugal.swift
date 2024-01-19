@@ -19,7 +19,7 @@ public enum SubdivisionsPortugal : String, SovereignStateSubdivision { // https:
     case faro
     case guarda
     case leiria
-    case lisboa
+    case lisbon
     case madeira
     case portalegre
     case porto
