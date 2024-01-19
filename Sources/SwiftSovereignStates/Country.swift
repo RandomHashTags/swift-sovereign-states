@@ -892,6 +892,7 @@ public extension Locale.Region {
         case .kazakhstan: return SubdivisionsKazakhstan.self
         case .kenya: return SubdivisionsKenya.self
         case .kiribati: return nil
+        case .kosovo: return SubdivisionsKosovo.self
         case .kuwait: return SubdivisionsKuwait.self
         case .kyrgyzstan: return SubdivisionsKyrgyzstan.self
         
