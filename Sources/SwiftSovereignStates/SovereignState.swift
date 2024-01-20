@@ -24,7 +24,7 @@ public extension SovereignState {
         }
         return keywords.isEmpty ? nil : keywords
     }
-    var additional_keywords : Set<String>? {
+    var additionalKeywords : Set<String>? {
         return sovereign_state_additional_keywords
     }
 }

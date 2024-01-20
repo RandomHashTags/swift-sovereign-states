@@ -34,7 +34,7 @@ public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .malampa: return "d/dd/Flag_of_Malampa_Province"
         case .penama: return "a/ac/Flag_of_Penama_Province"

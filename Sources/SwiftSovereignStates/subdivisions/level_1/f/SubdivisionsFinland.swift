@@ -36,7 +36,7 @@ public enum SubdivisionsFinland : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .lapland:
             return "_(Finland)"
@@ -47,7 +47,7 @@ public enum SubdivisionsFinland : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .aland: return "5/52/Flag_of_%C3%85land"
         case .central_finland: return "9/9a/Keski-suomi_lippu"

@@ -32,7 +32,7 @@ public enum SubdivisionsEstonia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.counties
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .harju: return "2/22/Flag_of_et-Harju_maakond"
         case .hiiu: return "5/5f/Hiiumaa_lipp"

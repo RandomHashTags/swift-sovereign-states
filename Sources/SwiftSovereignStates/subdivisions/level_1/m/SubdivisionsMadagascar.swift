@@ -40,7 +40,7 @@ public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .diana,
                 .itasy,

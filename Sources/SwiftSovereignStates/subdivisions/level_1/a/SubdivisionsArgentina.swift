@@ -46,7 +46,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .tierra_del_fuego_antartida_e_islas_del_atlantico_sur:
             return "Tierra del Fuego"
@@ -55,7 +55,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .autonomous_city_of_buenos_aires:
             return nil
@@ -70,7 +70,7 @@ public enum SubdivisionsArgentina : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .autonomous_city_of_buenos_aires: return "f/f5/Bandera_de_la_Ciudad_de_Buenos_Aires"
         case .buenos_aires: return "1/15/Bandera_de_la_Provincia_de_Buenos_Aires"

@@ -29,7 +29,7 @@ public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.parishes
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .saint_lawrence,
                 .saint_clement,
@@ -46,7 +46,7 @@ public enum SubdivisionsJersey : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var flag_url : String? {
+    public var flagURL : String? {
         switch self {
         case .saint_brelade: return "https://comite.je/wp-content/uploads/sites/13/2021/11/icon-st-brelade-1.svg"
         case .saint_clement: return "https://comite.je/wp-content/uploads/sites/13/2021/09/icon-st-clement.svg"

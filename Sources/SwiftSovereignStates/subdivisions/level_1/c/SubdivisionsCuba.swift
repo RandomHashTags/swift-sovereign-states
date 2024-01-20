@@ -38,7 +38,7 @@ public enum SubdivisionsCuba : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .isla_de_la_juventud:
             return nil

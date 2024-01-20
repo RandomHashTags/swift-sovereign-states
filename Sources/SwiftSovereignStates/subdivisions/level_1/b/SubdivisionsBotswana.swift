@@ -36,7 +36,7 @@ public enum SubdivisionsBotswana : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.districts
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .central, .north_east, .south_east, .southern:
             return "_" + type_suffix + "_(Botswana)"

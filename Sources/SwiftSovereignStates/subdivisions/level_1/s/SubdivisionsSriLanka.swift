@@ -26,7 +26,7 @@ public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .sabaragamuwa,
                 .uva:
@@ -36,7 +36,7 @@ public enum SubdivisionsSriLanka : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .central: return "f/fc/Central_Province.png"
         case .eastern: return "d/dd/Eastern_Province_Flag_%28SRI_LANKA%29.png"

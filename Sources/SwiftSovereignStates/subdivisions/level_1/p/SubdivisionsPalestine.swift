@@ -33,7 +33,7 @@ public enum SubdivisionsPalestine : String, SovereignStateSubdivision { // https
         return SovereignStateSubdivisionType.governorates
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return "_Governorate"
     }
 }

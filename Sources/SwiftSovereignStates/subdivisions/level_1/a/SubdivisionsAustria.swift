@@ -26,7 +26,7 @@ public enum SubdivisionsAustria : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.states
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .salzburg, .tyrol:
             return "_(" + type_suffix.lowercased() + ")"
@@ -35,7 +35,7 @@ public enum SubdivisionsAustria : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .burgenland: return "2/29/Flag_of_Burgenland"
         case .carinthia: return "9/9b/Flag_of_Carinthia"

@@ -61,7 +61,7 @@ public enum CountiesUnitedStatesNevada : String, SovereignStateLevel2Division { 
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .carson_city:
             return ",_Nevada"

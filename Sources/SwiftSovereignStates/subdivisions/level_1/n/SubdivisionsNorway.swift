@@ -45,7 +45,7 @@ public enum SubdivisionsNorway : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .viken:
             return "_(" + type_suffix.lowercased() + ")"

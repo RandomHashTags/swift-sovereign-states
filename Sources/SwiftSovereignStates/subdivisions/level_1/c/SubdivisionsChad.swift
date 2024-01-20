@@ -40,7 +40,7 @@ public enum SubdivisionsChad : String, SovereignStateSubdivision { // https://en
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .bahr_el_gazel:
             return "_(region_of_Chad)"

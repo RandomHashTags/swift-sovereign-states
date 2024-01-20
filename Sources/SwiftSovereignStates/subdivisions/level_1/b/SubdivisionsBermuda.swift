@@ -36,7 +36,7 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .southampton,
                 .st_george_s:
@@ -49,7 +49,7 @@ public enum SubdivisionsBermuda : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .devonshire: return nil
         case .hamilton: return nil

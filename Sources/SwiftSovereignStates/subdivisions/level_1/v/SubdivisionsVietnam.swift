@@ -89,7 +89,7 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .can_tho,
                 .da_nang,
@@ -102,7 +102,7 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var government_website : String? {
+    public var governmentURL : String? {
         switch self {
         case .an_giang: return "https://www.angiang.gov.vn"
         case .ba_ria_vung_tau: return "https://baria-vungtau.gov.vn"

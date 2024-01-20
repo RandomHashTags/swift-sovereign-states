@@ -37,7 +37,7 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .aileu: return nil
         case .ainaro: return nil
@@ -57,7 +57,7 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .oecusse:
             return nil

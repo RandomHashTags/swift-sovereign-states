@@ -29,7 +29,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .minsk_city:
             return "Minsk"
@@ -38,7 +38,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .minsk_city:
             return nil
@@ -47,7 +47,7 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .brest: return "e/ec/Flag_of_Brest_Voblast%2C_Belarus"
         case .minsk_city: return "6/69/Flag_of_Minsk%2C_Belarus"

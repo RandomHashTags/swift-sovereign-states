@@ -31,7 +31,7 @@ public enum SubdivisionsNamibia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .kavango_east,
                 .kavango_west,

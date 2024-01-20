@@ -106,7 +106,7 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .shaki_city, .shaki_district:
             return "Shaki"
@@ -119,7 +119,7 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .baku,
                 .khankendi,

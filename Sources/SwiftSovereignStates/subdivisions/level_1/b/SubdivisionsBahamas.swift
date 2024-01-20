@@ -49,7 +49,7 @@ public enum SubdivisionsBahamas : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.districts
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
 }

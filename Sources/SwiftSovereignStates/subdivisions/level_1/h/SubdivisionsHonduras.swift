@@ -35,7 +35,7 @@ public enum SubdivisionsHonduras : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.departments
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .colon,
                 .la_paz:

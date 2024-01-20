@@ -40,7 +40,7 @@ public enum SubdivisionsCentralAfricanRepublic : String, SovereignStateSubdivisi
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
 }

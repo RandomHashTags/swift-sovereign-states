@@ -24,7 +24,7 @@ public enum SubdivisionsKosovo : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.districts
     }
     
-    public var wikipedia_url_prefix : String? {
+    public var wikipediaURLPrefix : String? {
         return "District_of_"
     }
 }

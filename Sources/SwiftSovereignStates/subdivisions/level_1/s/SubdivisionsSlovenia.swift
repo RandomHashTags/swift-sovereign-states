@@ -247,7 +247,7 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_prefix : String? {
+    public var wikipediaURLPrefix : String? {
         switch self {
         case .celje,
                 .koper,
@@ -267,7 +267,7 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
 }

@@ -33,7 +33,7 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .bulawayo: return "3/35/Flag_of_Bulawayo"
         case .harare: return "e/e7/Flag_of_Harare"
@@ -48,7 +48,7 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .bulawayo:
             return nil

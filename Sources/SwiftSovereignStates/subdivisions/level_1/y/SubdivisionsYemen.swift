@@ -44,7 +44,7 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .sanaa_city: return "Sanaa"
         case .amran: return "'Amran"
@@ -52,7 +52,7 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .sanaa_city:
             return nil

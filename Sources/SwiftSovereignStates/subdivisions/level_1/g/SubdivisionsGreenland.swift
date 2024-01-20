@@ -22,7 +22,7 @@ public enum SubdivisionsGreenland : String, SovereignStateSubdivision { // https
         return SovereignStateSubdivisionType.municipalities
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .avannaata: return "en/a/a6/Avannaata-coat-of-arms"
         case .kujalleq: return "0/07/Flag_of_Kujalleq_Municipality%2C_Greenland"

@@ -39,7 +39,7 @@ public enum SubdivisionsLibya : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.districts
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .benghazi:
             return nil

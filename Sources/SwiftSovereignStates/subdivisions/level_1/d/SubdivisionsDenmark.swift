@@ -22,11 +22,11 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_url_prefix : String? {
+    public var wikipediaURLPrefix : String? {
         return "Region_"
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
     

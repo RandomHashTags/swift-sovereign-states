@@ -46,7 +46,7 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .bougainville:
             return "Autonomous Region of Bougainville"
@@ -55,7 +55,7 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .bougainville:
             return nil

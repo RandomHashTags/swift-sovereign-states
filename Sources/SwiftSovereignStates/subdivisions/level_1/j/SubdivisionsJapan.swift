@@ -64,7 +64,7 @@ public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.prefectures
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .hokkaido,
                 .tokyo:
@@ -74,7 +74,7 @@ public enum SubdivisionsJapan : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .aichi: return "0/02/Flag_of_Aichi_Prefecture"
         case .akita: return "8/84/Flag_of_Akita_Prefecture"

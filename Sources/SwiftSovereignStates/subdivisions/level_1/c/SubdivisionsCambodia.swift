@@ -47,7 +47,7 @@ public enum SubdivisionsCambodia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .banteay_meanchey: return "en/1/14/Banteay_Meanchey_seal.png"
         case .battambang: return "en/a/a8/Battambang_Province_seal.png"
@@ -77,7 +77,7 @@ public enum SubdivisionsCambodia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .phnom_penh:
             return nil

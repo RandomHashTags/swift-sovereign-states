@@ -41,7 +41,7 @@ public enum SubdivisionsMalaysia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         default:
             return nil

@@ -50,7 +50,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .victoria:
             return "_(Australia)"
@@ -71,7 +71,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .new_south_wales: return "0/00/Flag_of_New_South_Wales"
         case .queensland: return "0/04/Flag_of_Queensland"

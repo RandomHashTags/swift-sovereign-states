@@ -49,7 +49,7 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .distrito_nacional:
             return "Distrito Nacional"
@@ -58,7 +58,7 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .la_romana:
             return ",_Dominican_Republic"

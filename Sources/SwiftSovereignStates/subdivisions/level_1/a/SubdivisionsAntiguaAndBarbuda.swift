@@ -31,14 +31,14 @@ public enum SubdivisionsAntiguaAndBarbuda : String, SovereignStateSubdivision { 
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .barbuda: return "4/41/Barbuda_Council_Flag"
         default: return nil
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .barbuda, .redonda:
             return nil

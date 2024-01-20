@@ -26,7 +26,7 @@ public enum SubdivisionsBolivia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.departments
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .beni: return "7/70/Flag_of_Beni"
         case .chuquisaca: return "1/18/Flag_of_Chuquisaca"

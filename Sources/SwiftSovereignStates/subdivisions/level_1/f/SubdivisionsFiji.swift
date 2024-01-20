@@ -38,7 +38,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .rotuma:
             return nil
@@ -83,7 +83,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var time_zones : [SovereignStateTimeZone]? {
+    public var timeZones : [SovereignStateTimeZone]? {
         return [SovereignStateTimeZone.fiji_time]
     }
 }

@@ -60,7 +60,7 @@ public enum SubdivisionsUruguay : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .artigas: return "b/b7/Flag_of_Artigas_Department"
         case .canelones: return "6/6f/Flag_of_Canelones_Department"

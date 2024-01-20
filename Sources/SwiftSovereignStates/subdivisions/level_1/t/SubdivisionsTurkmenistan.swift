@@ -23,7 +23,7 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .ashgabat: return nil
         default: return "_Region"
@@ -41,7 +41,7 @@ public enum SubdivisionsTurkmenistan : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .ashgabat: return "7/7e/Ashgabat_%28seal%29"
         default: return nil

@@ -53,7 +53,7 @@ public enum SubdivisionsNigeria : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.states
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .abia: return "f/ff/Abia_State_Flag.gif"
         case .adamawa: return "e/e5/Adamawa_State_Flag"
@@ -94,7 +94,7 @@ public enum SubdivisionsNigeria : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var government_website : String? {
+    public var governmentURL : String? {
         switch self {
         case .abia: return nil
         case .adamawa: return nil

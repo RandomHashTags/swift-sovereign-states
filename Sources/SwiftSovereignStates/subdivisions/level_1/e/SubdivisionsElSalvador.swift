@@ -31,7 +31,7 @@ public enum SubdivisionsElSalvador : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.departments
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .ahuachapan: return "e/e8/Bandera_del_Departamento_de_Ahuachap%C3%A1n.PNG"
         case .cabanas: return "4/47/Flag_of_the_Caba%C3%B1as_Department"

@@ -28,7 +28,7 @@ public enum SubdivisionsArmenia : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .gegharkunik: return "8/8f/Gegharkunik_Province_Coat_of_Arms.jpg"
         case .kotayk: return "5/59/Kotayk_marz_gerb.jpg"
@@ -39,7 +39,7 @@ public enum SubdivisionsArmenia : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .yerevan:
             return nil

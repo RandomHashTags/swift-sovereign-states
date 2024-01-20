@@ -9,11 +9,11 @@ import Foundation
 
 public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStringConvertible, RawRepresentable where RawValue == String { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     /// The unique identifier of this SovereignRegion used for caching.
-    var cache_id : String { get }
+    var cacheID : String { get }
     /// Cached strings this SovereignRegion is commonly recognized by.
     var keywords : Set<String> { get }
     /// Additional keywords this SovereignRegion should be recognized by.
-    var additional_keywords : Set<String>? { get }
+    var additionalKeywords : Set<String>? { get }
     /// Whether this SovereignRegion is mentioned or not in the `string`.
     func isMentioned(in string: String, options: String.CompareOptions) -> Bool
     
@@ -21,66 +21,66 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     var name : String { get }
     
     /// The slug Wikipedia has for this SovereignRegion as it would appear in the url, but the underscores are spaces.
-    var wikipedia_name : String? { get }
+    var wikipediaName : String? { get }
     /// The official names this SovereignRegion legally identifies as.
-    var official_names : Set<String>? { get }
+    var officialNames : Set<String>? { get }
     /// The names of this SovereignRegion is also known by.
     var aliases : Set<String>? { get }
     
     /// This SovereignRegion's official government website URL.
-    var government_website : String? { get }
+    var governmentURL : String? { get }
     
     /// URL that represents this SovereignRegion's official flag.
-    var flag_url : String? { get }
+    var flagURL : String? { get }
     /// This SovereignRegion's Wikipedia flag url suffix that identifies where it is located on their servers.
-    var wikipedia_flag_url_svg_id : String? { get }
-    var wikipedia_url : String { get }
-    var wikipedia_url_prefix : String? { get }
-    var wikipedia_url_suffix : String? { get }
+    var wikipediaFlagURLSvgID : String? { get }
+    var wikipediaURL : String { get }
+    var wikipediaURLPrefix : String? { get }
+    var wikipediaURLSuffix : String? { get }
     
     /// The official currencies used within this SovereignRegion.
     var currencies : [Currency] { get }
     /// All the time zones this SovereignRegion recognizes within its administrative borders.
-    var time_zones : [SovereignStateTimeZone]? { get }
+    var timeZones : [SovereignStateTimeZone]? { get }
     /// All temperate zones this SovereignRegion contains within its administrative borders.
-    var temperate_zones : [TemperateZone]? { get }
+    var temperateZones : [TemperateZone]? { get }
 }
 
 public extension SovereignRegion {
-    var description : String { return cache_id }
+    var description : String { return cacheID }
     
     func encode(to encoder: Encoder) throws {
         var container:SingleValueEncodingContainer = encoder.singleValueContainer()
-        try container.encode(cache_id)
+        try container.encode(cacheID)
     }
     
-    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
+    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cacheID``.
     func isEqual(_ region: any SovereignRegion) -> Bool {
-        return cache_id.elementsEqual(region.cache_id)
+        return cacheID.elementsEqual(region.cacheID)
     }
-    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
+    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cacheID``.
     func isEqual(_ region: (any SovereignRegion)?) -> Bool {
         guard let region:any SovereignRegion = region else { return false }
-        return cache_id.elementsEqual(region.cache_id)
+        return cacheID.elementsEqual(region.cacheID)
     }
     
     var keywords : Set<String> {
         var keywords:Set<String> = [name]
-        if let wikipedia_name:String = wikipedia_name {
+        if let wikipedia_name:String = wikipediaName {
             keywords.insert(wikipedia_name)
         }
-        if let official_names:Set<String> = official_names {
+        if let official_names:Set<String> = officialNames {
             keywords.formUnion(official_names)
         }
         if let aliases:Set<String> = aliases {
             keywords.formUnion(aliases)
         }
-        if let additional:Set<String> = additional_keywords {
+        if let additional:Set<String> = additionalKeywords {
             keywords.formUnion(additional)
         }
         return keywords
     }
-    var additional_keywords : Set<String>? {
+    var additionalKeywords : Set<String>? {
         return nil
     }
     
@@ -88,7 +88,7 @@ public extension SovereignRegion {
         return SovereignRegions.doesSatisfy(string: string, values: keywords, options: options)
     }
     
-    var official_names : Set<String>? {
+    var officialNames : Set<String>? {
         return nil
     }
     
@@ -96,18 +96,18 @@ public extension SovereignRegion {
         return nil
     }
     
-    var wikipedia_name : String? {
+    var wikipediaName : String? {
         return nil
     }
     
-    var government_website : String? {
+    var governmentURL : String? {
         return nil
     }
     
-    var flag_url : String? {
-        guard let id:String = wikipedia_flag_url_svg_id else { return nil }
+    var flagURL : String? {
+        guard let id:String = wikipediaFlagURLSvgID else { return nil }
         let idLowercase:String = id.lowercased()
-        let values:[Substring] = id.split(separator: "/"), lastValue:String = SovereignRegions.urlEncoded(String(values[values.count-1]))
+        let values:[Substring] = id.split(separator: "/"), lastValue:String = String(values[values.count-1]).urlEncoded
         let type:String, offset:Int
         if id.starts(with: "en") {
             type = "en"
@@ -123,42 +123,42 @@ public extension SovereignRegion {
         }
     }
     
-    var wikipedia_flag_url_svg_id : String? {
+    var wikipediaFlagURLSvgID : String? {
         return nil
     }
     
-    var wikipedia_url : String {
-        let name:String = (wikipedia_name ?? name).replacingOccurrences(of: " ", with: "_")
-        return "https://en.wikipedia.org/wiki/" + (wikipedia_url_prefix ?? "") + SovereignRegions.urlEncoded(name) + (wikipedia_url_suffix ?? "")
+    var wikipediaURL : String {
+        let name:String = (wikipediaName ?? name).replacingOccurrences(of: " ", with: "_")
+        return "https://en.wikipedia.org/wiki/" + (wikipediaURLPrefix ?? "") + name.urlEncoded + (wikipediaURLSuffix ?? "")
     }
-    var wikipedia_url_prefix : String? {
+    var wikipediaURLPrefix : String? {
         return nil
     }
-    var wikipedia_url_suffix : String? {
+    var wikipediaURLSuffix : String? {
         return nil
     }
     
-    var time_zones : [SovereignStateTimeZone]? {
+    var timeZones : [SovereignStateTimeZone]? {
         return nil
     }
     
     /// The formatted time of the first SovereignRegion's time zone, with a custom date and time style.
     func getTime(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String? {
-        guard let timezone:TimeZone = time_zones?.first?.getTimeZone() else { return nil }
+        guard let timezone:TimeZone = timeZones?.first?.getTimeZone() else { return nil }
         return SovereignRegions.formatTime(date: date, timeZone: timezone, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: showAbbreviation)
     }
     /// All formatted times of the SovereignRegion's time zones, with custom date and time styles.
     func getTimes(for date: Date = Date(), timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> [String]? {
-        guard let timezones:[TimeZone] = time_zones?.compactMap({ $0.getTimeZone() }) else { return nil }
+        guard let timezones:[TimeZone] = timeZones?.compactMap({ $0.getTimeZone() }) else { return nil }
         return timezones.map({ SovereignRegions.formatTime(date: date, timeZone: $0, timeStyle: timeStyle, dateStyle: dateStyle, showAbbreviation: showAbbreviation) })
     }
     
-    var temperate_zones : [TemperateZone]? {
+    var temperateZones : [TemperateZone]? {
         return nil
     }
     /// The season this SovereignRegion is experiencing at a specific month and day.
     func getSeason(type: WeatherSeasonType = .astronomical, month: Int, day: Int) -> WeatherSeason? {
-        return temperate_zones?.first?.getSeason(type: type, month: month, day: day)
+        return temperateZones?.first?.getSeason(type: type, month: month, day: day)
     }
 }
 
@@ -172,9 +172,6 @@ internal enum SovereignRegions {
         let string:String = formatter.string(from: date)
         guard showAbbreviation, let abbreviation:String = timeZone.abbreviation() else { return string }
         return string + " " + abbreviation
-    }
-    fileprivate static func urlEncoded(_ string: String) -> String {
-        return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? string
     }
     
     static func doesSatisfy(string: String, values: Set<String>, options: String.CompareOptions) -> Bool {
@@ -195,17 +192,12 @@ internal enum SovereignRegions {
         }
         return false
     }
-}
-
-extension String {
-    func all_ranges(of substring: String) -> Set<Range<Index>> {
-        var ranges:Set<Range<Index>> = []
-        var last_range:Index? = nil
-        while let range:Range<Index> = range(of: substring, range: (last_range ?? self.startIndex)..<self.endIndex) {
-            ranges.insert(range)
-            last_range = range.upperBound
-        }
-        return ranges
+    
+    static func doesSatisfySIMD(string: String, start_index: String.Index, end_index: String.Index, values: Set<String>) -> Bool {
+        let simd_size:Int = 64
+        let remaining:Int = string.count % simd_size
+        let simds:Int = (string.count + (remaining == 0 ? 0 : simd_size - remaining)) / simd_size
+        return false
     }
 }
 
@@ -218,15 +210,15 @@ public extension SovereignRegionWrapper {
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.cache_id.elementsEqual(rhs.cache_id)
+        return lhs.cacheID.elementsEqual(rhs.cacheID)
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(cache_id)
+        hasher.combine(cacheID)
     }
     
     func encode(to encoder: Encoder) throws {
         var container:SingleValueEncodingContainer = encoder.singleValueContainer()
-        try container.encode(cache_id)
+        try container.encode(cacheID)
     }
 }

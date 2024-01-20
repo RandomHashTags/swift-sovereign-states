@@ -33,7 +33,7 @@ public enum SubdivisionsMozambique : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .maputo_city:
             return nil

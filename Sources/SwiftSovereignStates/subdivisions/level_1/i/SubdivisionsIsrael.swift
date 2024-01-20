@@ -28,7 +28,7 @@ public enum SubdivisionsIsrael : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .judea_and_samaria:
             return "_Area"

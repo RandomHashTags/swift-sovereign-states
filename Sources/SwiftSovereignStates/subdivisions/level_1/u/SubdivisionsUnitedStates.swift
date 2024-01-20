@@ -93,7 +93,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .georgia:
             return "_(U.S._" + type_suffix.lowercased() + ")"
@@ -172,7 +172,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var government_website : String? {
+    public var governmentURL : String? {
         switch self {
         case .alabama,
                 .alaska,
@@ -220,7 +220,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .alabama: return "5/5c/Flag_of_Alabama"
         case .alaska: return "e/e6/Flag_of_Alaska"
@@ -285,7 +285,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var time_zones : [SovereignStateTimeZone]? {
+    public var timeZones : [SovereignStateTimeZone]? {
         let cst:SovereignStateTimeZone = SovereignStateTimeZone.america_central_standard_time
         let est:SovereignStateTimeZone = SovereignStateTimeZone.america_eastern_standard_time
         let hawaiiStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_hawaii_standard_time

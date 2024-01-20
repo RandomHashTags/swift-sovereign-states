@@ -50,7 +50,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .distrito_federal:
             return "Federal District"
@@ -59,7 +59,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .acre,
                 .parana,
@@ -108,7 +108,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .acre: return "4/4c/Bandeira_do_Acre"
         case .alagoas: return "8/88/Bandeira_de_Alagoas"

@@ -54,7 +54,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_prefix : String? {
+    public var wikipediaURLPrefix : String? {
         switch self {
         case .mexico:
             return "State_of_"
@@ -62,7 +62,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
             return nil
         }
     }
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .chihuahua,
                 .hidalgo:
@@ -146,7 +146,7 @@ public enum SubdivisionsMexico : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var time_zones : [SovereignStateTimeZone]? {
+    public var timeZones : [SovereignStateTimeZone]? {
         let centralStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_central_standard_time
         let mountainStandardTime:SovereignStateTimeZone = SovereignStateTimeZone.america_mountain_standard_time
         switch self {

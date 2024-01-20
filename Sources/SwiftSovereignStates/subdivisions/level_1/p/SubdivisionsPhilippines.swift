@@ -106,7 +106,7 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .abra: return "b/b0/PH-ABR_Flag.png"
         case .agusan_del_norte: return "9/94/PH-AGN_Flag.png"
@@ -195,7 +195,7 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .davao_de_oro,
                 .dinagat_islands,

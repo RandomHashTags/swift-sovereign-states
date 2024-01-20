@@ -43,7 +43,7 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .male:
             return nil

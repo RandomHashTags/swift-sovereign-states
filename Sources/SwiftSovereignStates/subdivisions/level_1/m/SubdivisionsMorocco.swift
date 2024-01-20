@@ -29,7 +29,7 @@ public enum SubdivisionsMorocco : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .oriental:
             return "_(Morocco)"
@@ -38,7 +38,7 @@ public enum SubdivisionsMorocco : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .beni_mellal_khenifra: return nil
         case .casablanca_settat: return nil

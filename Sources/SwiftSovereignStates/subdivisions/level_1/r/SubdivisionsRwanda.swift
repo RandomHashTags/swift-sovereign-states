@@ -22,7 +22,7 @@ public enum SubdivisionsRwanda : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .kigali:
             return nil

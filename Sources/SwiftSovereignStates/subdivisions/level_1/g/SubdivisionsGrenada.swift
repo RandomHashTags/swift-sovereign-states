@@ -30,7 +30,7 @@ public enum SubdivisionsGrenada : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .carriacou_and_petite_martinique:
             return nil

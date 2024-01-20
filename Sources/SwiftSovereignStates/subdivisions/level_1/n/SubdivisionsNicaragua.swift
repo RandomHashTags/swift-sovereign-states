@@ -40,7 +40,7 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .north_caribbean_coast: return "North Caribbean Coast Autonomous Region"
         case .south_caribbean_coast: return "South Caribbean Coast Autonomous Region"
@@ -48,7 +48,7 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .north_caribbean_coast,
                 .south_caribbean_coast:

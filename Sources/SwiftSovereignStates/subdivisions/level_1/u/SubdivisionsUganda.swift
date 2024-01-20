@@ -158,7 +158,7 @@ public enum SubdivisionsUganda : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .busia:
             return "_" + type_suffix + ",_Uganda"

@@ -38,7 +38,7 @@ public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.counties
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return "_County"
     }
     

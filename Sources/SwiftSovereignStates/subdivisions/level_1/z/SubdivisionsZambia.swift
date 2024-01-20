@@ -27,7 +27,7 @@ public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .north_western:
             return "North-Western"
@@ -36,7 +36,7 @@ public enum SubdivisionsZambia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .central,
                 .eastern,

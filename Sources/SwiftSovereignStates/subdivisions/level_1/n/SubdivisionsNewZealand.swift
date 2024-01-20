@@ -33,7 +33,7 @@ public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .bay_of_plenty,
                 .manawatu_whanganui,

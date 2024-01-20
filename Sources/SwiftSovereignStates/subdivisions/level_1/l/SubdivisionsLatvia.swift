@@ -72,7 +72,7 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .daugavpils,
                 .jurmala,
@@ -89,7 +89,7 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .adazi: return "5/51/Ādažu_novada_karogs"
         case .aizkraukle: return "3/39/Aizkraukles_novads_COA"

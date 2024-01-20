@@ -41,7 +41,7 @@ public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.municipalities
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
 }

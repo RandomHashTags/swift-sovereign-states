@@ -85,7 +85,7 @@ public enum SubdivisionsMalta : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.councils
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .attard: return "f/f5/Flag_of_Attard"
         case .balzan: return "d/d4/Flag_of_Balzan"
@@ -158,7 +158,7 @@ public enum SubdivisionsMalta : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .fontana,
                 .victoria,

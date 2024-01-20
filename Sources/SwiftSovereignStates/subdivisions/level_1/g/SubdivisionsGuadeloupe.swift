@@ -49,7 +49,7 @@ public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.communes
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .la_desirade:
             return "_(commune)"

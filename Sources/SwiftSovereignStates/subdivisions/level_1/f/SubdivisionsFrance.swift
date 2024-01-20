@@ -30,7 +30,7 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .burgundy_free_county: return "Bourgogne-Franche-Comté"
         case .great_east: return "Grand Est"
@@ -43,7 +43,7 @@ public enum SubdivisionsFrance : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .brittany,
                 .normandy,

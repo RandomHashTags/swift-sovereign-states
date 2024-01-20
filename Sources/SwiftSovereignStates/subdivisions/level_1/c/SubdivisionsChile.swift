@@ -33,7 +33,7 @@ public enum SubdivisionsChile : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .metropolitan:
             return "Santiago Metropolitan"
@@ -42,7 +42,7 @@ public enum SubdivisionsChile : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .antofagasta: return "c/cc/Flag_of_Antofagasta_Region%2C_Chile"
         case .araucania: return "f/fd/Flag_of_La_Araucan%C3%ADa_Region"

@@ -27,7 +27,7 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.departments
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .nord:
             return "_(Haitian_department)"

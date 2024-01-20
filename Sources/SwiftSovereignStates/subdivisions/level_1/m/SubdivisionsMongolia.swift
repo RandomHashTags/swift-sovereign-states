@@ -44,7 +44,7 @@ public enum SubdivisionsMongolia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .ulaanbaatar:
             return nil

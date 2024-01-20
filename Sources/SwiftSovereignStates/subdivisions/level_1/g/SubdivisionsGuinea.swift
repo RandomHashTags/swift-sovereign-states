@@ -31,7 +31,7 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .conakry:
             return nil

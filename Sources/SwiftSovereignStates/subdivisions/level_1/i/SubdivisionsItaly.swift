@@ -46,18 +46,18 @@ public enum SubdivisionsItaly : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .trentino_south_tyrol: return "Trentino-Alto_Adige/Südtirol"
         default: return nil
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .abruzzo: return "4/45/Flag_of_Abruzzo"
         case .aosta_valley: return "9/90/Flag_of_Valle_d%27Aosta"

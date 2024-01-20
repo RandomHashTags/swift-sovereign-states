@@ -64,7 +64,7 @@ public enum SubdivisionsKenya : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.counties
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .baringo: return "d/da/Flag_of_Baringo_County.png"
         case .bomet: return "f/f5/Flag_of_Bomet_County.png"

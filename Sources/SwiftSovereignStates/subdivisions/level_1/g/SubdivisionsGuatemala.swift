@@ -38,7 +38,7 @@ public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https
         return SovereignStateSubdivisionType.departments
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .santa_rosa:
             return ",_Guatemala"

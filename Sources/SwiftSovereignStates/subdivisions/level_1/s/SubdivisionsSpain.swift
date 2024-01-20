@@ -41,7 +41,7 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .basque_country:
             return "_(autonomous_community)"
@@ -52,7 +52,7 @@ public enum SubdivisionsSpain : String, SovereignStateSubdivision { // https://e
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .andalusia: return "2/20/Flag_of_Andaluc%C3%ADa"
         case .aragon: return "1/18/Flag_of_Aragon"

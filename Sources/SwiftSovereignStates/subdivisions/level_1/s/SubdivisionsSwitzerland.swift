@@ -43,7 +43,7 @@ public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // htt
         return SovereignStateSubdivisionType.cantons
     }
     
-    public var wikipedia_url_prefix : String? {
+    public var wikipediaURLPrefix : String? {
         switch self {
         case .aargau,
                 .appenzell_ausserrhoden,
@@ -63,7 +63,7 @@ public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // htt
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
 }

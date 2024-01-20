@@ -37,7 +37,7 @@ public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .south_west:
             return "South West Ethiopia"
@@ -46,7 +46,7 @@ public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .oromia,
                 .addis_ababa,

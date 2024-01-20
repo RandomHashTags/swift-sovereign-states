@@ -25,7 +25,7 @@ public enum SubdivisionsSlovakia : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .bratislava: return "4/4c/Bratislavsky_vlajka"
         case .trnava: return "d/d4/Trnavsky_vlajka"

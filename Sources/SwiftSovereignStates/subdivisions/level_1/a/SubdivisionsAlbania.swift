@@ -29,7 +29,7 @@ public enum SubdivisionsAlbania : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.counties
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .berat: return "c/c1/Stema_e_Qarkut_Berat"
         case .diber: return "6/69/ALB_Qarku_i_Dibrës_COA"
@@ -46,7 +46,7 @@ public enum SubdivisionsAlbania : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var government_website : String? {
+    public var governmentURL : String? {
         switch self {
         case .berat: return "https://qarkuberat.gov.al"
         case .diber: return "https://www.qarkudiber.gov.al"

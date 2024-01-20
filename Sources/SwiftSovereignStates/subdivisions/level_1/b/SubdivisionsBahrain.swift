@@ -21,7 +21,7 @@ public enum SubdivisionsBahrain : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.governorates
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .capital: return "b/bb/Bahrain_Capital_Governorate_Flag"
         case .muharraq: return "3/3d/Bahrain_Muharraq_Governorate_Flag"

@@ -28,14 +28,14 @@ public enum SubdivisionsLiechtenstein : String, SovereignStateSubdivision {
         return SovereignStateSubdivisionType.municipalities
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         default:
             return nil
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .balzers: return "e/e0/Flag_of_Balzers_Liechtenstein-1"
         case .eschen: return "5/52/Flag_of_Eschen_Liechtenstein-1"

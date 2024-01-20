@@ -8,15 +8,14 @@
 import Foundation
 
 public enum SovereignStateCities {
-    public static var all:[any SovereignStateCity] = {
-        return SovereignStateSubdivisions.all.compactMap({ $0.cities }).flatMap({ $0 })
-    }()
+    public static let all:[any SovereignStateCity] = SovereignStateSubdivisions.all.compactMap({ $0.cities }).flatMap({ $0 })
     
     public static func getAllMentioned(_ string: String, options: String.CompareOptions) -> [any SovereignStateCity] {
         let string:String = string.folding(options: options, locale: nil)
         let start_index:String.Index = string.startIndex, end_index:String.Index = string.endIndex
         return all.filter({ SovereignRegions.doesSatisfy(string: string, start_index: start_index, end_index: end_index, values: $0.keywords.map_set({ $0.folding(options: options, locale: nil) })) })
     }
+    
     public static func getAllMentioned(_ string: String, subdivision: any SovereignStateSubdivision, options: String.CompareOptions) -> [any SovereignStateCity] {
         guard let cities:[any SovereignStateCity] = subdivision.cities else { return [] }
         let string:String = string.folding(options: options, locale: nil)
@@ -45,8 +44,8 @@ public extension SovereignStateCity {
         self = city as! Self
     }
     
-    var cache_id : String {
-        return subdivision.cache_id + "-" + rawValue
+    var cacheID : String {
+        return subdivision.cacheID + "-" + rawValue
     }
     var name : String {
         let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: rawValue + "_name_short")
@@ -69,7 +68,7 @@ public extension SovereignStateCity {
         let subdivision:any SovereignStateSubdivision = subdivision
         return ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")
     }
-    var wikipedia_url_suffix : String? {
+    var wikipediaURLSuffix : String? {
         return getDefaultURLSuffix()
     }
     
@@ -115,14 +114,14 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
         rawValue = city.rawValue
     }
     
-    public var cache_id : String {
-        return city.cache_id
+    public var cacheID : String {
+        return city.cacheID
     }
     public var keywords : Set<String> {
         return city.keywords
     }
-    public var additional_keywords : Set<String>? {
-        return city.additional_keywords
+    public var additionalKeywords : Set<String>? {
+        return city.additionalKeywords
     }
     public func isMentioned(in string: String, options: String.CompareOptions) -> Bool {
         return city.isMentioned(in: string, options: options)
@@ -131,41 +130,41 @@ public struct SovereignStateCityWrapper : SovereignStateCity, SovereignRegionWra
     public var name : String {
         return city.name
     }
-    public var wikipedia_name : String? {
-        return city.wikipedia_name
+    public var wikipediaName : String? {
+        return city.wikipediaName
     }
-    public var official_names : Set<String>? {
-        return city.official_names
+    public var officialNames : Set<String>? {
+        return city.officialNames
     }
     public var aliases : Set<String>? {
         return city.aliases
     }
     
-    public var government_website : String? {
-        return city.government_website
+    public var governmentURL : String? {
+        return city.governmentURL
     }
     
-    public var flag_url : String? {
-        return city.flag_url
+    public var flagURL : String? {
+        return city.flagURL
     }
-    public var wikipedia_flag_url_svg_id : String? {
-        return city.wikipedia_flag_url_svg_id
+    public var wikipediaFlagURLSvgID : String? {
+        return city.wikipediaFlagURLSvgID
     }
-    public var wikipedia_url : String {
-        return city.wikipedia_url
+    public var wikipediaURL : String {
+        return city.wikipediaURL
     }
-    public var wikipedia_url_prefix : String? {
-        return city.wikipedia_url_prefix
+    public var wikipediaURLPrefix : String? {
+        return city.wikipediaURLPrefix
     }
-    public var wikipedia_url_suffix : String? {
-        return city.wikipedia_url_suffix
+    public var wikipediaURLSuffix : String? {
+        return city.wikipediaURLSuffix
     }
     
-    public var time_zones : [SovereignStateTimeZone]? {
-        return city.time_zones
+    public var timeZones : [SovereignStateTimeZone]? {
+        return city.timeZones
     }
-    public var temperate_zones : [TemperateZone]? {
-        return city.temperate_zones
+    public var temperateZones : [TemperateZone]? {
+        return city.temperateZones
     }
     
     public var subdivision : any SovereignStateSubdivision {

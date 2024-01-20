@@ -32,7 +32,7 @@ public enum SubdivisionsKyrgyzstan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .bishkek, .osh_city:
             return nil

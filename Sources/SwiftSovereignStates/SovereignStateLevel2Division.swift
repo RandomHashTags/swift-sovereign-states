@@ -36,8 +36,8 @@ public extension SovereignStateLevel2Division {
         return nil
     }
     
-    var cache_id : String {
-        return subdivision.cache_id + "-" + rawValue
+    var cacheID : String {
+        return subdivision.cacheID + "-" + rawValue
     }
     
     var name : String {
@@ -55,7 +55,7 @@ public extension SovereignStateLevel2Division {
         let type_suffix:String = (type == .independent_cities ? "City" : type.name_singular.replacingOccurrences(of: " ", with: "_"))
         return "_" + type_suffix + ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")
     }
-    var wikipedia_url_suffix : String? {
+    var wikipediaURLSuffix : String? {
         return default_wikipedia_url_suffix
     }
     

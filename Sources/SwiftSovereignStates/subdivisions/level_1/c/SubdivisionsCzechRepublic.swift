@@ -34,7 +34,7 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .prague: return "d/d2/Flag_of_Prague"
         case .central_bohemian: return "0/06/Flag_of_Central_Bohemian_Region"
@@ -53,7 +53,7 @@ public enum SubdivisionsCzechRepublic : String, SovereignStateSubdivision { // h
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .prague:
             return nil

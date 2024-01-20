@@ -100,7 +100,7 @@ public enum SubdivisionsThailand : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .amnat_charoen: return "9/9b/Flag_Amnatcharoen_Province.png"
         case .ang_thong: return "7/7a/Ang_Thong_Flag.png"
@@ -182,7 +182,7 @@ public enum SubdivisionsThailand : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .bangkok:
             return nil

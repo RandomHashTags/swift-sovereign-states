@@ -21,7 +21,7 @@ public enum SubdivisionsMicronesia : String, SovereignStateSubdivision {
         return SovereignStateSubdivisionType.states
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .kosrae:
             return nil
@@ -30,7 +30,7 @@ public enum SubdivisionsMicronesia : String, SovereignStateSubdivision {
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .chuuk: return "5/55/Flag_of_Chuuk"
         case .kosrae: return "2/23/Flag_of_Kosrae"

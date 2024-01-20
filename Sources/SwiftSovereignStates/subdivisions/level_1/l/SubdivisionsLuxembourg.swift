@@ -29,14 +29,14 @@ public enum SubdivisionsLuxembourg : String, SovereignStateSubdivision { // http
         return SovereignStateSubdivisionType.cantons
     }
     
-    public var wikipedia_url_prefix : String? {
+    public var wikipediaURLPrefix : String? {
         return "Canton_of_"
     }
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         return nil
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .capellen: return "7/7b/Armoiries_de_Septfontaines_1"
         case .clervaux: return "2/2c/Armoiries_Clervaux_2"

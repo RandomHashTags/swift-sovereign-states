@@ -34,7 +34,7 @@ public enum SubdivisionsMali : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .bamako:
             return nil

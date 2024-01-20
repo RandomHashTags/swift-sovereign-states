@@ -41,7 +41,7 @@ public enum SubdivisionsParaguay : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_flag_url_svg_id : String? {
+    public var wikipediaFlagURLSvgID : String? {
         switch self {
         case .concepcion: return "a/ac/Flag_of_Concepci%C3%B3n_Department"
         case .san_pedro: return "a/a5/Bandera_del_Departamento_de_San_Pedro.JPG"
@@ -65,7 +65,7 @@ public enum SubdivisionsParaguay : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .asuncion:
             return nil

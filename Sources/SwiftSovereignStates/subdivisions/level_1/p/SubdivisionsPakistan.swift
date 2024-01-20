@@ -29,7 +29,7 @@ public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_name : String? {
+    public var wikipediaName : String? {
         switch self {
         case .azad_jammu_and_kashmir:
             return "Azad Kashmir"
@@ -38,7 +38,7 @@ public enum SubdivisionsPakistan : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipedia_url_suffix : String? {
+    public var wikipediaURLSuffix : String? {
         switch self {
         case .balochistan,
                 .punjab:
