@@ -45,7 +45,7 @@ public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .malampa:
             return [SubdivisionsVanuatu.sanma, SubdivisionsVanuatu.penama, SubdivisionsVanuatu.shefa]

@@ -141,7 +141,7 @@ public enum SubdivisionsBrazil : String, SovereignStateSubdivision { // https://
         }
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .acre:
             return [SubdivisionsBrazil.amazonas, SubdivisionsBrazil.rondonia]

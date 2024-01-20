@@ -47,7 +47,7 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .ba:
             return [SubdivisionsFiji.rotuma, SubdivisionsFiji.ra, SubdivisionsFiji.naitasiri, SubdivisionsFiji.nadroga_navosa]

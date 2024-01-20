@@ -57,7 +57,7 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .bulawayo:
             return [SubdivisionsZimbabwe.matabeleland_north, SubdivisionsZimbabwe.matabeleland_south]

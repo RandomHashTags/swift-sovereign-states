@@ -359,7 +359,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         }
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .arizona:
             return [
@@ -474,7 +474,7 @@ public enum SubdivisionsUnitedStates : String, SovereignStateSubdivision { // ht
         case .west_virginia: return [SubdivisionsUnitedStates.ohio, SubdivisionsUnitedStates.pennsylvania, SubdivisionsUnitedStates.maryland, SubdivisionsUnitedStates.virginia, SubdivisionsUnitedStates.kentucky]
         case .wisconsin: return [SubdivisionsUnitedStates.minnesota, SubdivisionsUnitedStates.michigan, SubdivisionsUnitedStates.illinois, SubdivisionsUnitedStates.iowa]
         case .wyoming: return [SubdivisionsUnitedStates.montana, SubdivisionsUnitedStates.south_dakota, SubdivisionsUnitedStates.nebraska, SubdivisionsUnitedStates.colorado, SubdivisionsUnitedStates.utah, SubdivisionsUnitedStates.idaho]
-        default: return nil
+        default: return []
         }
     }
     

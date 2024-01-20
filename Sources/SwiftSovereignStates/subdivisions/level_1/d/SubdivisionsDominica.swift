@@ -31,7 +31,7 @@ public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https:
         return "_" + type_suffix + ",_Dominica"
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .saint_andrew:
             return [SubdivisionsDominica.saint_john, SubdivisionsDominica.saint_peter, SubdivisionsDominica.saint_joseph, SubdivisionsDominica.saint_david]

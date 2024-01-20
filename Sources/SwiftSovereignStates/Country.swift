@@ -329,7 +329,7 @@ public extension Locale.Region {
             if let parent_group:String = region.isoAlpha2ParentGroup {
                 values.insert(parent_group)
             }
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string, values: values)
+            return SovereignRegions.doesSatisfy(string: string, start_index: string_start_index, end_index: string_end_index, values: values)
         })
     }
     
@@ -339,33 +339,18 @@ public extension Locale.Region {
         let string_end_index:String.Index = string.endIndex
         return allCases.filter({ region in
             guard let iso:String = region.isoAlpha3 else { return false }
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string, values: [iso])
+            return SovereignRegions.doesSatisfy(string: string, start_index: string_start_index, end_index: string_end_index, values: [iso])
         })
     }
     /// - Note: Case Insensitive.
-    static func getAllMentioned(in string: String, locale: Locale = Locale.current) -> [Locale.Region] {
-        let string_lowercased:String = string.lowercased()
+    static func getAllMentioned(in string: String, locale: Locale = Locale.current, options: String.CompareOptions) -> [Locale.Region] {
+        let string:String = string.folding(options: options, locale: locale)
         let string_start_index:String.Index = string.startIndex
         let string_end_index:String.Index = string.endIndex
         return allCases.filter({ region in
-            let keywords:Set<String> = region.keywords(forLocale: locale)
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string_lowercased, values: keywords)
+            let keywords:Set<String> = region.keywords(forLocale: locale).map_set({ $0.folding(options: options, locale: nil) })
+            return SovereignRegions.doesSatisfy(string: string, start_index: string_start_index, end_index: string_end_index, values: keywords)
         })
-    }
-    /// - Note: Case Insensitive.
-    static func getAllMentionedCached(in string: String, locale: Locale = Locale.current) -> [Locale.Region] {
-        let string_lowercased:String = string.lowercased()
-        if let cached:[Locale.Region] = SwiftSovereignStateCacheCountries.mentioned[string_lowercased] {
-            return cached
-        }
-        let string_start_index:String.Index = string.startIndex
-        let string_end_index:String.Index = string.endIndex
-        let values:[Locale.Region] = allCases.filter({ region in
-            let keywords:Set<String> = region.keywords(forLocale: locale)
-            return SovereignRegions.doesSatisfy(string_start_index: string_start_index, string_end_index: string_end_index, string: string_lowercased, values: keywords)
-        })
-        SwiftSovereignStateCacheCountries.mentioned[string_lowercased] = values
-        return values
     }
     
     /// The unicode flag for this Region.
@@ -420,10 +405,6 @@ public extension Locale.Region {
     }
     
     func keywords(forLocale locale: Locale = Locale.current) -> Set<String> {
-        let id:String = identifier
-        if let keywords:Set<String> = SwiftSovereignStateCache.keywords[id] {
-            return keywords
-        }
         let locale_name:String = name(forLocale: locale)
         var keywords:Set<String> = [
             locale_name,
@@ -456,14 +437,11 @@ public extension Locale.Region {
         if let official_names:Set<String> = officialNames(forLocale: locale) {
             keywords.formUnion(official_names)
         }
-        keywords = keywords.map_set({ $0.lowercased() })
-        SwiftSovereignStateCache.keywords[id] = keywords
         return keywords
     }
     
-    func isMentioned(in string: String) -> Bool {
-        let keywords:Set<String> = keywords()
-        return SovereignRegions.doesSatisfy(string_start_index: string.startIndex, string_end_index: string.endIndex, string: string.lowercased(), values: keywords)
+    func isMentioned(in string: String, options: String.CompareOptions) -> Bool {
+        return SovereignRegions.doesSatisfy(string: string, values: keywords(), options: options)
     }
 }
 extension Set {

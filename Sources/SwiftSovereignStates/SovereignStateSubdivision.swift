@@ -12,49 +12,29 @@ public enum SovereignStateSubdivisions {
         return Locale.Region.allCases.compactMap({ $0.subdivisions }).flatMap({ $0 })
     }()
     
-    public static func getAllMentioned(_ string: String, cache: Bool = true) -> [any SovereignStateSubdivision] {
-        let stringLowercase:String = string.lowercased()
-        if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
-            return cached
-        }
-        let start_index:String.Index = stringLowercase.startIndex, end_index:String.Index = stringLowercase.endIndex
-        let subdivisions:[any SovereignStateSubdivision] = all.filter({ SovereignRegions.doesSatisfy(string_start_index: start_index, string_end_index: end_index, string: stringLowercase, values: $0.keywords) })
-        if cache {
-            SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
-        }
+    public static func getAllMentioned(_ string: String, options: String.CompareOptions) -> [any SovereignStateSubdivision] {
+        let subdivisions:[any SovereignStateSubdivision] = all.filter({ SovereignRegions.doesSatisfy(string: string, values: $0.keywords, options: options) })
         return subdivisions
     }
-    public static func getAllMentioned(_ string: String, country: Locale.Region, cache: Bool = true) -> [any SovereignStateSubdivision] {
+    public static func getAllMentioned(_ string: String, country: Locale.Region, options: String.CompareOptions) -> [any SovereignStateSubdivision] {
         guard var subdivisions:[any SovereignStateSubdivision] = country.subdivisions else { return [] }
-        let stringLowercase:String = string.lowercased()
-        if let cached:[any SovereignStateSubdivision] = SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] {
-            return cached
-        }
-        let start_index:String.Index = stringLowercase.startIndex, end_index:String.Index = stringLowercase.endIndex
-        subdivisions = subdivisions.filter({ SovereignRegions.doesSatisfy(string_start_index: start_index, string_end_index: end_index, string: stringLowercase, values: $0.keywords) })
-        if cache {
-            SwiftSovereignStateCacheSubdivisions.mentioned[stringLowercase] = subdivisions
-        }
+        let string:String = string.folding(options: options, locale: nil)
+        let start_index:String.Index = string.startIndex, end_index:String.Index = string.endIndex
+        subdivisions = subdivisions.filter({ SovereignRegions.doesSatisfy(string: string, start_index: start_index, end_index: end_index, values: $0.keywords.map_set({ $0.folding(options: options, locale: nil) })) })
         return subdivisions
     }
     
-    public static func valueOfCacheID(_ cacheID: String, cache: Bool = true) -> (any SovereignStateSubdivision)? {
-        if let subdivision:any SovereignStateSubdivision = SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] {
-            return subdivision
-        }
+    public static func valueOfCacheID(_ cacheID: String) -> (any SovereignStateSubdivision)? {
         let components:[Substring] = cacheID.split(separator: "-")
         guard components.count == 2, let subdivision:any SovereignStateSubdivision = Locale.Region.init(String(components[0])).subdivisionType?.init(rawValue: String(components[1])) else { return nil }
-        if cache {
-            SwiftSovereignStateCacheSubdivisions.valueOfCacheID[cacheID] = subdivision
-        }
         return subdivision
     }
 }
 
 public extension Locale.Region {
-    func valueOfSubdivision(_ string: String?) -> (any SovereignStateSubdivision)? {
+    func valueOfSubdivision(_ string: String?, options: String.CompareOptions) -> (any SovereignStateSubdivision)? {
         guard let string:String = string else { return nil }
-        return SovereignStateSubdivisions.getAllMentioned(string, country: self).first
+        return SovereignStateSubdivisions.getAllMentioned(string, country: self, options: options).first
     }
     func valueOfSubdivisionIdentifier(_ string: String) -> (any SovereignStateSubdivision)? {
         return subdivisionType?.init(rawValue: string)
@@ -173,8 +153,8 @@ public struct SovereignStateSubdivisionWrapper : SovereignStateSubdivision, Sove
     public var additional_keywords : Set<String>? {
         return subdivision.additional_keywords
     }
-    public func isMentioned(in string: String) -> Bool {
-        return subdivision.isMentioned(in: string)
+    public func isMentioned(in string: String, options: String.CompareOptions) -> Bool {
+        return subdivision.isMentioned(in: string, options: options)
     }
     
     public var name : String {

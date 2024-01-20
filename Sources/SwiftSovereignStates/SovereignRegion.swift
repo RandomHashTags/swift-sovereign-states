@@ -15,7 +15,7 @@ public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStrin
     /// Additional keywords this SovereignRegion should be recognized by.
     var additional_keywords : Set<String>? { get }
     /// Whether this SovereignRegion is mentioned or not in the `string`.
-    func isMentioned(in string: String) -> Bool
+    func isMentioned(in string: String, options: String.CompareOptions) -> Bool
     
     /// The common short name of this SovereignRegion.
     var name : String { get }
@@ -55,16 +55,16 @@ public extension SovereignRegion {
     }
     
     /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
+    func isEqual(_ region: any SovereignRegion) -> Bool {
+        return cache_id.elementsEqual(region.cache_id)
+    }
+    /// Compares whether this SovereignRegion is equal to another SovereignRegion based on ``cache_id``.
     func isEqual(_ region: (any SovereignRegion)?) -> Bool {
         guard let region:any SovereignRegion = region else { return false }
         return cache_id.elementsEqual(region.cache_id)
     }
     
     var keywords : Set<String> {
-        let id:String = cache_id
-        if let keywords:Set<String> = SwiftSovereignStateCache.keywords[id] {
-            return keywords
-        }
         var keywords:Set<String> = [name]
         if let wikipedia_name:String = wikipedia_name {
             keywords.insert(wikipedia_name)
@@ -78,19 +78,14 @@ public extension SovereignRegion {
         if let additional:Set<String> = additional_keywords {
             keywords.formUnion(additional)
         }
-        keywords = keywords.map_set({ $0.lowercased() })
-        SwiftSovereignStateCache.keywords[id] = keywords
         return keywords
     }
     var additional_keywords : Set<String>? {
         return nil
     }
     
-    func isMentioned(in string: String) -> Bool {
-        return SovereignRegions.doesSatisfy(string_start_index: string.startIndex, string_end_index: string.endIndex, string: string.lowercased(), values: keywords)
-    }
-    func isMentionedExactly(in string: String, ignoreCase: Bool) -> Bool {
-        return SovereignRegions.doesEqual(string: string, values: keywords, option: ignoreCase ? .caseInsensitive : .literal)
+    func isMentioned(in string: String, options: String.CompareOptions) -> Bool {
+        return SovereignRegions.doesSatisfy(string: string, values: keywords, options: options)
     }
     
     var official_names : Set<String>? {
@@ -182,15 +177,18 @@ internal enum SovereignRegions {
         return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? string
     }
     
-    static func doesEqual(string: String, values: Set<String>, option: String.CompareOptions) -> Bool {
-        return values.first(where: { string.compare($0, options: option) == .orderedSame }) != nil
+    static func doesSatisfy(string: String, values: Set<String>, options: String.CompareOptions) -> Bool {
+        let string:String = string.folding(options: options, locale: nil)
+        let start_index:String.Index = string.startIndex, end_index:String.Index = string.endIndex
+        let values:Set<String> = values.map_set({ $0.folding(options: options, locale: nil) })
+        return doesSatisfy(string: string, start_index: start_index, end_index: end_index, values: values)
     }
-    static func doesSatisfy(string_start_index: String.Index, string_end_index: String.Index, string: String, values: Set<String>) -> Bool {
+    static func doesSatisfy(string: String, start_index: String.Index, end_index: String.Index, values: Set<String>) -> Bool {
         for value in values {
             let ranges:Set<Range<String.Index>> = string.all_ranges(of: value)
             for range in ranges {
-                let prefix_index:String.Index? = string.index(range.lowerBound, offsetBy: -1, limitedBy: string_start_index)
-                if (prefix_index == nil || !string[prefix_index!].isLetter) && (range.upperBound == string_end_index || !string[range.upperBound].isLetter) {
+                let prefix_index:String.Index? = string.index(range.lowerBound, offsetBy: -1, limitedBy: start_index)
+                if (prefix_index == nil || !string[prefix_index!].isLetter) && (range.upperBound == end_index || !string[range.upperBound].isLetter) {
                     return true
                 }
             }

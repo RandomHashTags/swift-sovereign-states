@@ -45,7 +45,7 @@ public enum SubdivisionsBulgaria : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.provinces
     }
     
-    public var neighbors : [any SovereignStateSubdivision]? {
+    public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .blagoevgrad:
             return [SubdivisionsBulgaria.kyustendil, SubdivisionsBulgaria.sofia, SubdivisionsBulgaria.pazardzhik, SubdivisionsBulgaria.smolyan]
