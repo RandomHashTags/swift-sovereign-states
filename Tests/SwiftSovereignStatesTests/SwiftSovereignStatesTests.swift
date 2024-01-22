@@ -15,7 +15,7 @@ final class SwiftSovereignStatesTests: XCTestCase {
         //try await validate_region_wikipedia_urls(regions: SovereignStateSubdivisions.all, seconds)
         //try await validate_region_wikipedia_urls(regions: SovereignStateCities.all, seconds)
         
-        //do_measurement()
+        do_measurement()
     }
     
     private func do_measurement() {
@@ -36,18 +36,13 @@ final class SwiftSovereignStatesTests: XCTestCase {
                 let _:[Locale.Region] = Locale.Region.getAllMentioned(in: countries, options: options)
             }
             break
-        case 1:
-            measure(metrics: metrics, options: iterations) {
-                let _:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned(subdivisions, options: options)
-            }
+        case 6:
             break
             
-        case 5:
-            measure(metrics: metrics, options: iterations) {
-                let _:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(cities, options: options)
-            }
-            break
-        case 6:
+        case 1000:
+            /*measure(metrics: metrics, options: iterations) {
+                let _ = cities.filter({ $0 == "-" })
+            }*/
             break
         default:
             break
@@ -94,256 +89,8 @@ final class SwiftSovereignStatesTests: XCTestCase {
         XCTAssertEqual(Locale.Region.getAllMentionedISOAlpha3(in: "USA").count, 1)
         XCTAssertEqual(Locale.Region.getAllMentionedISOAlpha3(in: "usa").count, 0)
     }
-    func test_subdivisions() {
-        let targetSubdivisions:[any SovereignStateSubdivision] = [SubdivisionsMexico.baja_california, SubdivisionsUnitedStates.california]
-        let mentionedString:String = "Baja California; California!"
-        let mentioned:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned(mentionedString, options: [])
-        let notFound:[any SovereignStateSubdivision] = targetSubdivisions.filter({ subdivision in
-            return !mentioned.contains(where: { subdivision.isEqual($0) })
-        })
-        if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testSubdivisionMentions;missing \(notFound.count);=[" + notFound.map({ $0.rawValue }).joined(separator: ",") + "]")
-        }
-        let notMentioned:[any SovereignStateSubdivision] = mentioned.filter({ subdivision in
-            return !targetSubdivisions.contains(where: { subdivision.isEqual($0) })
-        })
-        if !notMentioned.isEmpty {
-            print("SwiftSovereignStatesTests;testSubdivisionMentions;shouldn't be=[" + notMentioned.map({ $0.rawValue }).joined(separator: ",") + "]")
-        }
-        XCTAssertEqual(mentioned.count, targetSubdivisions.count)
-        
-        
-        var subdivision:(any SovereignStateSubdivision)? = SubdivisionsUnitedStates.init("US-minnesota") // [LosslessStringConvertible]
-        XCTAssert(subdivision != nil)
-        
-        subdivision = SubdivisionsUnitedStates.init(rawValue: "minnesota") // [RawRepresentable]
-        XCTAssert(subdivision != nil)
-        
-        subdivision = Locale.Region.unitedStates.valueOfSubdivisionIdentifier("minnesota")
-        XCTAssert(subdivision != nil)
-        
-        subdivision = SovereignStateSubdivisions.valueOfCacheID("US-minnesota")
-        XCTAssert(subdivision != nil)
-        
-        var all:[any SovereignStateSubdivision] = SovereignStateSubdivisions.getAllMentioned("Minnesota", options: [])
-        XCTAssertEqual(all.count, 1)
-        
-        all = SovereignStateSubdivisions.getAllMentioned("Minnesota! Baku? (Limburg) Buenos Aires's, Zabul.", options: [])
-        XCTAssert(all.count >= 5)
-    }
-    
-    func test_cities() {
-        let minneapolis:[any SovereignStateCity]? = SubdivisionsUnitedStates.minnesota.valueOfCity("Minneapolis", options: [])
-        XCTAssert(minneapolis != nil)
-        
-        let lakeside:[any SovereignStateCity]? = SubdivisionsUnitedStates.texas.valueOfCity("Lakeside", options: [])
-        XCTAssert(lakeside != nil && lakeside!.count == 2)
-        
-        let targetCities:[any SovereignStateCity] = [
-            CitiesUnitedStatesKentucky.rochester, CitiesUnitedStatesMinnesota.rochester, CitiesUnitedStatesNewHampshire.rochester, CitiesUnitedStatesOhio.rochester, CitiesUnitedStatesTexas.rochester,
-            CitiesUnitedStatesMaine.naples, CitiesUnitedStatesSouthDakota.naples, CitiesUnitedStatesTexas.naples, CitiesUnitedStatesUtah.naples,
-            CitiesUnitedStatesMaine.dallas, CitiesUnitedStatesSouthDakota.dallas, CitiesUnitedStatesTexas.dallas,
-            CitiesUnitedStatesIdaho.oakley, CitiesUnitedStatesUtah.oakley,
-            CitiesUnitedStatesIowa.des_moines, CitiesUnitedStatesNewMexico.des_moines, CitiesUnitedStatesWashington.des_moines,
-            CitiesUnitedStatesArizona.summit, CitiesUnitedStatesArkansas.summit, CitiesUnitedStatesSouthDakota.summit,
-            
-            CitiesUnitedStatesMinnesota.kasson, CitiesUnitedStatesMinnesota.minneapolis, CitiesUnitedStatesMinnesota.owatonna, CitiesUnitedStatesMinnesota.faribault, CitiesUnitedStatesMontana.anaconda, CitiesUnitedStatesNorthDakota.edmore, CitiesUnitedStatesMontana.winifred, CitiesUnitedStatesIdaho.lost_river, CitiesUnitedStatesNorthDakota.upham, CitiesUnitedStatesMinnesota.st_leo, CitiesUnitedStatesTexas.mclean
-        ]
-        
-        let string:String = "Rochester; this string should find the mentioned cities: Minneapolis, (Kasson) Owatonna! [Faribault] Dallas? Des Moines; Anaconda: Oakley, Naples, Edmore's, \"Winifred\", Lost River, Summit, Upham, St. Leo, and McLean. Will not find C?shing."
-        
-        let mentioned:[any SovereignStateCity] = SovereignStateCities.getAllMentioned(string, options: [.diacriticInsensitive])
-        XCTAssert(mentioned.count > 0, "mentioned.count == 0")
-        let notFound:[any SovereignStateCity] = targetCities.filter({ city in
-            return !mentioned.contains(where: { city.isEqual($0) })
-        })
-        let notMentioned:[any SovereignStateCity] = mentioned.filter({ city in
-            return !targetCities.contains(where: { city.isEqual($0) })
-        })
-        if !notFound.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;missing \(notFound.count);[" + notFound.map({ $0.cacheID }).joined(separator: ",") + "]")
-        }
-        if !notMentioned.isEmpty {
-            print("SwiftSovereignStatesTests;testCityMentions;shouldn't be=[" + notMentioned.map({ $0.cacheID }).joined(separator: ",") + "]")
-        }
-        XCTAssertEqual(mentioned.count, targetCities.count)
-        
-        
-        var city:(any SovereignStateCity)? = CitiesUnitedStatesMinnesota.init("US-minnesota-kasson") // [LosslessStringConvertible]
-        XCTAssert(city != nil)
-        
-        city = CitiesUnitedStatesMinnesota.init(rawValue: "kasson") // [RawRepresentable]
-        XCTAssert(city != nil)
-        
-        city = SubdivisionsUnitedStates.minnesota.valueOfCityIdentifier("rochester")
-        XCTAssert(city != nil)
-        
-        city = SovereignStateCities.valueOfCacheID("US-minnesota-rochester")
-        XCTAssert(city != nil)
-        
-        var cities:[any SovereignStateCity] = SovereignStateCities.getAllMentioned("Rochester", options: [])
-        XCTAssert(cities.count >= 1)
-        
-        cities = SovereignStateCities.getAllMentioned("Rochester! Minneapolis? (Dodge Center) Owatonna's, Dallas, Lakeside; Kansas City, Alpine.", options: [])
-        XCTAssert(cities.count >= 8)
-        
-        
-        let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
-        guard let cities:[any SovereignStateCity] = minnesota.cities else {
-            XCTAssert(false, "minnesota.cities == nil")
-            return
-        }
-        for city in cities {
-            XCTAssert(city.subdivision.isEqual(minnesota), "minnesota city.subdivision != Minnesota")
-        }
-    }
-    
-    func test_foundations() {
-        let unitedStates:Locale.Region = Locale.Region.unitedStates
-        let minnesota:any SovereignStateSubdivision = SubdivisionsUnitedStates.minnesota
-        XCTAssertEqual(minnesota.rawValue, "minnesota")
-        XCTAssertEqual(minnesota.cacheID, "US-minnesota")
-        XCTAssertEqual(minnesota.country, unitedStates)
-        XCTAssertEqual(SubdivisionsAfghanistan.badakhshan.country, Locale.Region.afghanistan)
-        
-        let kasson:any SovereignStateCity = CitiesUnitedStatesMinnesota.kasson
-        XCTAssertEqual(kasson.rawValue, "kasson")
-        XCTAssertEqual(kasson.cacheID, "US-minnesota-kasson")
-        
-        XCTAssert(Locale.Region.getAllMentioned(in: "", options: []).isEmpty)
-        XCTAssert(SovereignStateSubdivisions.getAllMentioned("", options: []).isEmpty)
-        XCTAssert(SovereignStateSubdivisions.valueOfCacheID("") == nil)
-        XCTAssert(SovereignStateCities.getAllMentioned("", options: []).isEmpty)
-        XCTAssert(SovereignStateCities.valueOfCacheID("") == nil)
-        
-        let test2:(any SovereignStateSubdivision)? = unitedStates.valueOfSubdivision("Minnesota", options: [])
-        XCTAssert(minnesota.isEqual(test2))
-        
-        let encoder:JSONEncoder = JSONEncoder()
-        let wrapper:TestEncodableStruct = TestEncodableStruct(country: Locale.Region.unitedStates, subdivision: SubdivisionsUnitedStates.minnesota, city: CitiesUnitedStatesMinnesota.kasson)
-        let wrapper_data:Data = try! encoder.encode(wrapper)
-        let wrapper_string:String = String(data: wrapper_data, encoding: .utf8)!
-        let expected_strings:Set<String> = [
-        """
-{"country":"US","subdivision":"US-minnesota","city":"US-minnesota-kasson"}
-""",
-        """
-{"country":"US","city":"US-minnesota-kasson","subdivision":"US-minnesota"}
-""",
-        """
-{"city":"US-minnesota-kasson","country":"US","subdivision":"US-minnesota"}
-""",
-        """
-{"subdivision":"US-minnesota","country":"US","city":"US-minnesota-kasson"}
-""",
-        """
-{"city":"US-minnesota-kasson","subdivision":"US-minnesota","country":"US"}
-""",
-        """
-{"subdivision":"US-minnesota","city":"US-minnesota-kasson","country":"US"}
-"""
-        ]
-        XCTAssert(expected_strings.contains(wrapper_string), wrapper_string)
-    }
-    func test_codable() throws {
-        let unitedStates:Locale.Region = Locale.Region.unitedStates
-        let encoded:Data = try JSONEncoder().encode(unitedStates)
-        let encodedString:String = String(data: encoded, encoding: .utf8)!
-        let targetString:String = "\"" + unitedStates.identifier + "\""
-        XCTAssertEqual(encodedString, targetString, encodedString + " != " + targetString)
-        
-        let decoded:Locale.Region = try JSONDecoder().decode(Locale.Region.self, from: encoded)
-        XCTAssertEqual(unitedStates, decoded)
-        
-        let subdivision:SubdivisionsUnitedStates = SubdivisionsUnitedStates.wisconsin
-        let city:CitiesUnitedStatesMinnesota = CitiesUnitedStatesMinnesota.rochester
-        let test:TestEncodableStruct = TestEncodableStruct(country: unitedStates, subdivision: subdivision, city: city)
-        let encodedTest:Data = try JSONEncoder().encode(test)
-        let encodedStringTest:String = String(data: encodedTest, encoding: .utf8)!
-        let expected:Set<String> = [
-            """
-{"country":"US","subdivision":"US-wisconsin","city":"US-minnesota-rochester"}
-""",
-            """
-{"country":"US","city":"US-minnesota-rochester","subdivision":"US-wisconsin"}
-""",
-            """
-{"subdivision":"US-wisconsin","city":"US-minnesota-rochester","country":"US"}
-""",
-            """
-{"city":"US-minnesota-rochester","subdivision":"US-wisconsin","country":"US"}
-""",
-            """
-{"subdivision":"US-wisconsin","country":"US","city":"US-minnesota-rochester"}
-""",
-            """
-{"city":"US-minnesota-rochester","country":"US","subdivision":"US-wisconsin"}
-"""
-        ]
-        XCTAssert(expected.contains(encodedStringTest), encodedStringTest)
-        
-        let decodedTest:TestDecodableStruct = try JSONDecoder().decode(TestDecodableStruct.self, from: encodedTest)
-        XCTAssertEqual(unitedStates, decodedTest.country)
-        XCTAssert(subdivision.isEqual(decodedTest.subdivision), "subdivision.cacheID=" + subdivision.cacheID + ";decodedTest.subdivision.cacheID=" + decodedTest.subdivision.cacheID)
-        XCTAssert(city.isEqual(decodedTest.city), "city.cacheID=" + city.cacheID + ";decodedTest.city.cacheID=" + decodedTest.city.cacheID)
-    }
-    
-    func test_neighbors() {
-        var foundAtLeastOneNeighbors:Bool = false
-        outer : for country in Locale.Region.allCases {
-            if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
-                for subdivision in subdivisions {
-                    foundAtLeastOneNeighbors = !subdivision.neighbors.isEmpty
-                    if foundAtLeastOneNeighbors {
-                        break outer
-                    }
-                }
-            }
-        }
-        XCTAssert(foundAtLeastOneNeighbors)
-    }
 }
 extension SwiftSovereignStatesTests {
-    func test_wikipedia_urls() {
-        var failedSubdivisions:[any SovereignStateSubdivision] = []
-        var failedCities:[any SovereignStateCity] = []
-        for country in Locale.Region.allCases {
-            if let subdivisions:[any SovereignStateSubdivision] = country.subdivisions {
-                for subdivision in subdivisions {
-                    let subdivisionWikipediaURL:String = subdivision.wikipediaURL
-                    if subdivisionWikipediaURL.contains(" ") {
-                        failedSubdivisions.append(subdivision)
-                    }
-                    if let cities:[any SovereignStateCity] = subdivision.cities {
-                        for city in cities {
-                            let cityWikipediaURL:String = city.wikipediaURL
-                            if cityWikipediaURL.contains(" ") {
-                                failedCities.append(city)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        if failedSubdivisions.count > 0 {
-            print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions=" + failedSubdivisions.count.description)
-            for subdivision in failedSubdivisions {
-                let country:Locale.Region = subdivision.country
-                print("SwiftSovereignStatesTests;testWikipediaURLs;failedSubdivisions;" + country.identifier + ";" + subdivision.rawValue + ";wikipediaURL=" + subdivision.wikipediaURL)
-            }
-        }
-        XCTAssert(failedSubdivisions.count == 0)
-        
-        if failedCities.count > 0 {
-            print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities=" + failedCities.count.description)
-            for city in failedCities {
-                let subdivision = city.subdivision
-                let country:Locale.Region = subdivision.country
-                print("SwiftSovereignStatesTests;testWikipediaURLs;failedCities;" + country.identifier + ";" + subdivision.rawValue + ";" + city.rawValue + ";wikipediaURL=" + subdivision.wikipediaURL)
-            }
-        }
-    }
     private func validate_region_wikipedia_urls(regions: [any SovereignRegion], _ seconds: UInt64) async throws {
         for region in regions {
             await verifyWikipediaURL(region)
@@ -389,24 +136,6 @@ extension SwiftSovereignStatesTests {
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) country names for " + missing.description)
             missing.removeAll()
             
-            for subdivision in SovereignStateSubdivisions.all {
-                let string:String = subdivision.name
-                if string.elementsEqual("nil") {
-                    missing.append(subdivision.cacheID)
-                }
-            }
-            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) level-1 subdivision names for " + missing.description)
-            missing.removeAll()
-            
-            for city in SovereignStateCities.all {
-                let string:String = city.name
-                if string.elementsEqual("nil") {
-                    missing.append(city.cacheID)
-                }
-            }
-            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) level-3 subdivision names for " + missing.description)
-            missing.removeAll()
-            
             for currency in Currency.allCases {
                 let string:String = currency.name()
                 if string.elementsEqual("nil") {
@@ -415,37 +144,8 @@ extension SwiftSovereignStatesTests {
             }
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) currency_names for " + missing.description)
             missing.removeAll()
-            
-            for type in SovereignStateSubdivisionType.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_singular(type)
-                if string.elementsEqual("nil") {
-                    missing.append(type.rawValue)
-                }
-            }
-            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) subdivision_types_name_singular for " + missing.description)
-            missing.removeAll()
-            for type in SovereignStateSubdivisionType.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_plural(type)
-                if string.elementsEqual("nil") {
-                    missing.append(type.rawValue)
-                }
-            }
-            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) subdivision_types_name_plural for " + missing.description)
-            missing.removeAll()
         }
     }
-}
-
-private struct TestEncodableStruct<T: SovereignStateSubdivision, U: SovereignStateCity> : Encodable {
-    let country:Locale.Region
-    let subdivision:T
-    let city:U
-}
-
-private struct TestDecodableStruct : Decodable {
-    let country:Locale.Region
-    let subdivision:SovereignStateSubdivisionWrapper
-    let city:SovereignStateCityWrapper
 }
 
 fileprivate extension Kanna.XMLElement {

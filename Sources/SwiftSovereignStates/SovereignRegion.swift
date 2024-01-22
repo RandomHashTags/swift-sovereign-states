@@ -162,7 +162,7 @@ public extension SovereignRegion {
     }
 }
 
-internal enum SovereignRegions {    
+public enum SovereignRegions {
     fileprivate static func formatTime(date: Date, timeZone: TimeZone, timeStyle: DateFormatter.Style, dateStyle: DateFormatter.Style, showAbbreviation: Bool) -> String {
         let formatter:DateFormatter = DateFormatter()
         formatter.timeStyle = timeStyle
@@ -190,13 +190,6 @@ internal enum SovereignRegions {
                 }
             }
         }
-        return false
-    }
-    
-    static func doesSatisfySIMD(string: String, start_index: String.Index, end_index: String.Index, values: Set<String>) -> Bool {
-        let simd_size:Int = 64
-        let remaining:Int = string.count % simd_size
-        let simds:Int = (string.count + (remaining == 0 ? 0 : simd_size - remaining)) / simd_size
         return false
     }
 }

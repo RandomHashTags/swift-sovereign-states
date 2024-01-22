@@ -22,6 +22,3 @@ extension String {
         return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? self
     }
 }
-
-extension Substring : RandomAccessCollection {
-}
