@@ -174,13 +174,13 @@ public enum SovereignRegions {
         return string + " " + abbreviation
     }
     
-    static func doesSatisfy(string: String, values: Set<String>, options: String.CompareOptions) -> Bool {
+    public static func doesSatisfy(string: String, values: Set<String>, options: String.CompareOptions) -> Bool {
         let string:String = string.folding(options: options, locale: nil)
         let start_index:String.Index = string.startIndex, end_index:String.Index = string.endIndex
         let values:Set<String> = values.map_set({ $0.folding(options: options, locale: nil) })
         return doesSatisfy(string: string, start_index: start_index, end_index: end_index, values: values)
     }
-    static func doesSatisfy(string: String, start_index: String.Index, end_index: String.Index, values: Set<String>) -> Bool {
+    public static func doesSatisfy(string: String, start_index: String.Index, end_index: String.Index, values: Set<String>) -> Bool {
         for value in values {
             let ranges:Set<Range<String.Index>> = string.all_ranges(of: value)
             for range in ranges {
