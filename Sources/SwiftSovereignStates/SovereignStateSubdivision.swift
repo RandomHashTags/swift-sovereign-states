@@ -16,6 +16,7 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
     /// The neighboring subdivisions, in relation the its administrative borders.
     var neighbors : [any SovereignStateSubdivision] { get }
     
+    /*
     /// The level-2 administrative units' type this subdivision contains.
     var countiesType : (any SovereignStateLevel2Division.Type)? { get }
     /// The level-2 administrative units this subdivision contains.
@@ -24,7 +25,7 @@ public protocol SovereignStateSubdivision : SovereignState { // https://en.wikip
     /// The level-3 administrative units' type this subdivision contains.
     var citiesType : (any SovereignStateCity.Type)? { get }
     /// The level-3 administrative units this subdivision contains.
-    var cities : [any SovereignStateCity]? { get }
+    var cities : [any SovereignStateCity]? { get }*/
 }
 
 public extension SovereignStateSubdivision {
@@ -53,11 +54,17 @@ public extension SovereignStateSubdivision {
         return []
     }
     
+    /*var countiesType : (any SovereignStateLevel2Division.Type)? {
+        return nil
+    }
     var counties : [any SovereignStateLevel2Division]? {
         return countiesType?.allCases as? [any SovereignStateLevel2Division]
     }
     
+    var citiesType : (any SovereignStateCity.Type)? {
+        return nil
+    }
     var cities : [any SovereignStateCity]? {
         return citiesType?.allCases as? [any SovereignStateCity]
-    }
+    }*/
 }

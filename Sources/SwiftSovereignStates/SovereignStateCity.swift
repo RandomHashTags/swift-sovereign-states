@@ -39,9 +39,3 @@ public extension SovereignStateCity {
         return getDefaultWikipediaURLSuffix()
     }
 }
-
-public extension SovereignStateSubdivision {
-    func valueOfCityIdentifier(_ string: String) -> (any SovereignStateCity)? {
-        return citiesType?.init(rawValue: string)
-    }
-}
