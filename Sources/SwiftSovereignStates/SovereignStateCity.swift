@@ -31,12 +31,12 @@ public extension SovereignStateCity {
         return capital == self
     }
     
-    internal func getDefaultURLSuffix() -> String {
+    func getDefaultWikipediaURLSuffix() -> String {
         let subdivision:any SovereignStateSubdivision = subdivision
         return ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")
     }
     var wikipediaURLSuffix : String? {
-        return getDefaultURLSuffix()
+        return getDefaultWikipediaURLSuffix()
     }
 }
 
