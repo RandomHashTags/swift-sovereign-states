@@ -52,4 +52,12 @@ public extension SovereignStateSubdivision {
     var neighbors : [any SovereignStateSubdivision] {
         return []
     }
+    
+    var counties : [any SovereignStateLevel2Division]? {
+        return countiesType?.allCases as? [any SovereignStateLevel2Division]
+    }
+    
+    var cities : [any SovereignStateCity]? {
+        return citiesType?.allCases as? [any SovereignStateCity]
+    }
 }
