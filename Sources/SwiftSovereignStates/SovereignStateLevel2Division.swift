@@ -39,7 +39,7 @@ public extension SovereignStateLevel2Division {
         return (fips_code < 10 ? "00" : fips_code < 100 ? "0" : "") + "\(fips_code)"
     }
     
-    internal var default_wikipedia_url_suffix : String? {
+    var default_wikipedia_url_suffix : String {
         let type_suffix:String = (type == .independent_cities ? "City" : type.name_singular.replacingOccurrences(of: " ", with: "_"))
         return "_" + type_suffix + ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")
     }
