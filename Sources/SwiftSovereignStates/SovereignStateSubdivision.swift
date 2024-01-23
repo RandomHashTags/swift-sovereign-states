@@ -52,18 +52,4 @@ public extension SovereignStateSubdivision {
     var neighbors : [any SovereignStateSubdivision] {
         return []
     }
-    
-    var countiesType : (any SovereignStateLevel2Division.Type)? {
-        return nil
-    }
-    var counties : [any SovereignStateLevel2Division]? {
-        return countiesType?.allCases as? [any SovereignStateLevel2Division]
-    }
-    
-    var citiesType : (any SovereignStateCity.Type)? {
-        return nil
-    }
-    var cities : [any SovereignStateCity]? {
-        return citiesType?.allCases as? [any SovereignStateCity]
-    }
 }
