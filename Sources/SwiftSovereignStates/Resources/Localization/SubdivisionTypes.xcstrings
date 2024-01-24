@@ -408,6 +408,28 @@
         }
       }
     },
+    "self_administered_division_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Self Administered Division"
+          }
+        }
+      }
+    },
+    "self_administered_zone_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Self Administered Zone"
+          }
+        }
+      }
+    },
     "special_administrative_areas_name" : {
       "extractionState" : "manual",
       "localizations" : {

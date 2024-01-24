@@ -45,6 +45,8 @@ public enum SovereignStateSubdivisionType : String, CaseIterable {
     case prefectures
     case provinces
     case regions
+    case self_administered_division
+    case self_administered_zone
     case special_administrative_areas
     case special_administrative_regions
     case special_cities

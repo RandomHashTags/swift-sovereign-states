@@ -144,6 +144,23 @@ extension SwiftSovereignStatesTests {
             }
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) currency_names for " + missing.description)
             missing.removeAll()
+            
+            for type in SovereignStateSubdivisionType.allCases {
+                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_singular(type)
+                if string.elementsEqual("nil") {
+                    missing.append(type.rawValue)
+                }
+            }
+            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) subdivision_types_name_singular for " + missing.description)
+            missing.removeAll()
+            for type in SovereignStateSubdivisionType.allCases {
+                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_plural(type)
+                if string.elementsEqual("nil") {
+                    missing.append(type.rawValue)
+                }
+            }
+            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) subdivision_types_name_plural for " + missing.description)
+            missing.removeAll()
         }
     }
 }
