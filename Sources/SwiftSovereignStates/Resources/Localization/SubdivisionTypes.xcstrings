@@ -414,7 +414,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Self Administered Division"
+            "value" : "Self-Administered Division"
           }
         }
       }
@@ -425,7 +425,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Self Administered Zone"
+            "value" : "Self-Administered Zone"
           }
         }
       }
