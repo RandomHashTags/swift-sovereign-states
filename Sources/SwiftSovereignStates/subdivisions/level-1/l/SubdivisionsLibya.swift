@@ -38,15 +38,4 @@ public enum SubdivisionsLibya : String, SovereignStateSubdivision { // https://e
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .benghazi:
-            return nil
-        case .tripoli:
-            return "_" + type_suffix + ",_Libya"
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

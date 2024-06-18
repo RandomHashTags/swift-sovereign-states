@@ -23,14 +23,4 @@ public enum SubdivisionsNepal : String, SovereignStateSubdivision { // https://e
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .madhesh,
-                .province_1:
-            return nil
-        default:
-            return nil
-        }
-    }
 }

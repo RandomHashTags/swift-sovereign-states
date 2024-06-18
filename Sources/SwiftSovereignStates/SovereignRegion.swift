@@ -19,25 +19,11 @@ public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible {
     
     /// The common short name of this SovereignRegion.
     var name : String { get }
-    
-    /// The slug Wikipedia has for this SovereignRegion as it would appear in the url, but the underscores are spaces.
-    var wikipediaName : String? { get }
+
     /// The official names this SovereignRegion legally identifies as.
     var officialNames : Set<String>? { get }
     /// The names of this SovereignRegion is also known by.
     var aliases : Set<String>? { get }
-    
-    /// This SovereignRegion's official government website URL.
-    var governmentURL : String? { get }
-    
-    /// URL that represents this SovereignRegion's official flag.
-    var flagURL : String? { get }
-    /// This SovereignRegion's Wikipedia flag url suffix that identifies where it is located on their servers.
-    var wikipediaFlagURLSvgID : String? { get }
-    var wikipediaURL : String { get }
-    var wikipediaURLPrefix : String? { get }
-    var wikipediaURLSuffix : String? { get }
-    
     /// The official currencies used within this SovereignRegion.
     var currencies : [Currency] { get }
     /// All the time zones this SovereignRegion recognizes within its administrative borders.
@@ -66,9 +52,6 @@ public extension SovereignRegion {
     
     var keywords : Set<String> {
         var keywords:Set<String> = [name]
-        if let wikipedia_name:String = wikipediaName {
-            keywords.insert(wikipedia_name)
-        }
         if let official_names:Set<String> = officialNames {
             keywords.formUnion(official_names)
         }
@@ -93,44 +76,6 @@ public extension SovereignRegion {
     }
     
     var aliases : Set<String>? {
-        return nil
-    }
-    
-    var wikipediaName : String? {
-        return nil
-    }
-    
-    var flagURL : String? {
-        guard let id:String = wikipediaFlagURLSvgID else { return nil }
-        let idLowercase:String = id.lowercased()
-        let values:[Substring] = id.split(separator: "/"), lastValue:String = String(values[values.count-1]).urlEncoded
-        let type:String, offset:Int
-        if id.starts(with: "en") {
-            type = "en"
-            offset = 1
-        } else {
-            type = "commons"
-            offset = 0
-        }
-        if idLowercase.hasSuffix(".png") || idLowercase.hasSuffix(".jpg") || idLowercase.hasSuffix(".gif") {
-            return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + String(values[offset]) + "/" + String(values[offset + 1]) + "/" + lastValue + "/%quality%px-" + lastValue
-        } else {
-            return "https://upload.wikimedia.org/wikipedia/" + type + "/thumb/" + String(values[offset]) + "/" + String(values[offset + 1]) + "/" + lastValue + ".svg/%quality%px-" + lastValue + ".svg.png"
-        }
-    }
-    
-    var wikipediaFlagURLSvgID : String? {
-        return nil
-    }
-    
-    var wikipediaURL : String {
-        let name:String = (wikipediaName ?? name).replacingOccurrences(of: " ", with: "_")
-        return "https://en.wikipedia.org/wiki/" + (wikipediaURLPrefix ?? "") + name.urlEncoded + (wikipediaURLSuffix ?? "")
-    }
-    var wikipediaURLPrefix : String? {
-        return nil
-    }
-    var wikipediaURLSuffix : String? {
         return nil
     }
     

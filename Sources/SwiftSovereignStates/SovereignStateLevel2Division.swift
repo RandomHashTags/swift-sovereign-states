@@ -28,15 +28,6 @@ public extension SovereignStateLevel2Division {
         return (fips_code < 10 ? "00" : fips_code < 100 ? "0" : "") + "\(fips_code)"
     }
     
-    var default_wikipedia_url_suffix : String {
-        return ""/*
-        let type_suffix:String = (type == .independentCities ? "City" : type.name_singular.replacingOccurrences(of: " ", with: "_"))
-        return "_" + type_suffix + ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")*/
-    }
-    var wikipediaURLSuffix : String? {
-        return default_wikipedia_url_suffix
-    }
-    
     var currencies : [Currency] {
         return subdivision.currencies
     }

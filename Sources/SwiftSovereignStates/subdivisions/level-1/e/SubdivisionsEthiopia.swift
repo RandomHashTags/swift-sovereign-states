@@ -36,24 +36,4 @@ public enum SubdivisionsEthiopia : String, SovereignStateSubdivision { // https:
             return SovereignStateSubdivisionType.states
         }
     }
-    
-    public var wikipediaName : String? {
-        switch self {
-        case .south_west:
-            return "South West Ethiopia"
-        default:
-            return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .oromia,
-                .addis_ababa,
-                .dire_dawa:
-            return nil
-        default:
-            return "_Region"
-        }
-    }
 }

@@ -27,8 +27,4 @@ public enum SubdivisionsSamoa : String, SovereignStateSubdivision { // https://e
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
-    
-    public var wikipediaURLSuffix : String? {
-        return nil
-    }
 }

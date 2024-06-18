@@ -24,13 +24,4 @@ public enum SubdivisionsQatar : String, SovereignStateSubdivision { // https://e
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.municipalities
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .ad_dawhah:
-            return "_(" + type_suffix.lowercased() + ")"
-        default:
-            return nil
-        }
-    }
 }

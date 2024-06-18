@@ -29,13 +29,4 @@ public enum SubdivisionsSaoTomeAndPrincipe : String, SovereignStateSubdivision {
             return SovereignStateSubdivisionType.districts
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .autonomous_region_of_principe:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

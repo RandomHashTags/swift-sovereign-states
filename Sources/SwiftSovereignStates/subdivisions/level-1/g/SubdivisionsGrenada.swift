@@ -29,13 +29,4 @@ public enum SubdivisionsGrenada : String, SovereignStateSubdivision { // https:/
             return SovereignStateSubdivisionType.parishes
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .carriacou_and_petite_martinique:
-            return nil
-        default:
-            return "_" + type_suffix + ",_Grenada"
-        }
-    }
 }

@@ -46,17 +46,4 @@ public enum SubdivisionsPanama : String, SovereignStateSubdivision { // https://
             return SovereignStateSubdivisionType.provinces
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .embera,
-                .ngabe_bugle,
-                .naso_tjer_di:
-            return "_Comarca"
-        case .bocas_del_toro:
-            return "_" + type_suffix
-        default:
-            return nil
-        }
-    }
 }

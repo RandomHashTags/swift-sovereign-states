@@ -44,13 +44,4 @@ public enum SubdivisionsNorway : String, SovereignStateSubdivision { // https://
             return SovereignStateSubdivisionType.counties
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .viken:
-            return "_(" + type_suffix.lowercased() + ")"
-        default:
-            return nil
-        }
-    }
 }

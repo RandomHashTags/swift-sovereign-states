@@ -32,22 +32,4 @@ public enum SubdivisionsGermany : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.states
     }
-    
-    public var wikipediaName : String? {
-        switch self {
-        case .mecklenburg_western_pomerania:
-            return "Mecklenburg-Vorpommern"
-        default:
-            return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .bremen:
-            return "_(state)"
-        default:
-            return nil
-        }
-    }
 }

@@ -33,13 +33,4 @@ public enum SubdivisionsKuwait : String, SovereignStateSubdivision { // https://
         case .mubarak_al_kabeer: return "MU"
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .al_asimah:
-            return "_(Kuwait)"
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

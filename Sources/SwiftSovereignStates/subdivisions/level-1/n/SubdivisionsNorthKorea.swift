@@ -25,13 +25,4 @@ public enum SubdivisionsNorthKorea : String, SovereignStateSubdivision { // http
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .kangwon:
-            return "_Province,_North_Korea"
-        default:
-            return "_Province"
-        }
-    }
 }

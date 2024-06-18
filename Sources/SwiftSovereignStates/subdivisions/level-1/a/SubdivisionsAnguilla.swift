@@ -30,14 +30,4 @@ public enum SubdivisionsAnguilla : String, SovereignStateSubdivision { // https:
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .stoney_ground,
-                .the_farrington:
-            return nil
-        default:
-            return ",_Anguilla"
-        }
-    }
 }

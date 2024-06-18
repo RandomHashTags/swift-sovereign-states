@@ -34,17 +34,6 @@ public enum SubdivisionsVanuatu : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .malampa: return "d/dd/Flag_of_Malampa_Province"
-        case .penama: return "a/ac/Flag_of_Penama_Province"
-        case .sanma: return "d/d0/Flag_of_Sanma_Province"
-        case .shefa: return "d/df/Flag_of_Shefa_Province"
-        case .tafea: return "5/55/Tafea_Province_Flag"
-        case .torba: return "en/a/af/Flag_of_Torba_%28Vanuatu%29_Province"
-        }
-    }
-    
     public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .malampa:

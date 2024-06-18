@@ -38,10 +38,6 @@ public enum SubdivisionsSweden : String, SovereignStateSubdivision { // https://
         return SovereignStateSubdivisionType.counties
     }
     
-    public var wikipediaURLSuffix : String? {
-        return "_County"
-    }
-    
     public var isoAlpha2 : String? {
         switch self {
         case .blekinge: return "K"

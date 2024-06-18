@@ -39,20 +39,4 @@ public enum SubdivisionsNetherlands : String, SovereignStateSubdivision { // htt
             return SovereignStateSubdivisionType.provinces
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .groningen,
-                .utrecht:
-            return "_(province)"
-        case .limburg:
-            return "_(Netherlands)"
-        case .bonaire,
-                .saba,
-                .sint_eustatius:
-            return nil
-        default:
-            return nil
-        }
-    }
 }

@@ -29,36 +29,6 @@ public enum SubdivisionsBelarus : String, SovereignStateSubdivision { // https:/
         }
     }
     
-    public var wikipediaName : String? {
-        switch self {
-        case .minsk_city:
-            return "Minsk"
-        default:
-            return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .minsk_city:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
-    
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .brest: return "e/ec/Flag_of_Brest_Voblast%2C_Belarus"
-        case .minsk_city: return "6/69/Flag_of_Minsk%2C_Belarus"
-        case .gomel: return "4/49/Flag_of_Homyel_Voblast"
-        case .grodno: return "f/f8/Flag_of_Hrodna_Voblasts"
-        case .minsk: return "2/2e/Flag_of_Minsk_Voblast"
-        case .mogilev: return "b/ba/Flag_of_Mahilyow_Voblast"
-        case .vitebsk: return "4/45/Flag_of_Viciebsk%2C_Belarus"
-        }
-    }
-    
     public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .brest:

@@ -27,10 +27,6 @@ public enum SubdivisionsDominica : String, SovereignStateSubdivision { // https:
         return SovereignStateSubdivisionType.parishes
     }
     
-    public var wikipediaURLSuffix : String? {
-        return "_" + type_suffix + ",_Dominica"
-    }
-    
     public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .saint_andrew:

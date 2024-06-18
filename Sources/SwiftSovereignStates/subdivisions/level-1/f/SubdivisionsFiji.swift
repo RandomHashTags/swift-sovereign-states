@@ -38,15 +38,6 @@ public enum SubdivisionsFiji : String, SovereignStateSubdivision { // https://en
         }
     }
     
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .rotuma:
-            return nil
-        default:
-            return nil
-        }
-    }
-    
     public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .ba:

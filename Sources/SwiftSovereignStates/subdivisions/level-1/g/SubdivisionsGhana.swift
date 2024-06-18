@@ -32,18 +32,4 @@ public enum SubdivisionsGhana : String, SovereignStateSubdivision { // https://e
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var wikipediaURLSuffix: String? {
-        switch self {
-        case .central,
-                .eastern,
-                .northern,
-                .western:
-            return "_Region_(Ghana)"
-        case .north_east:
-            return "_Region,_Ghana"
-        default:
-            return "_Region"
-        }
-    }
 }

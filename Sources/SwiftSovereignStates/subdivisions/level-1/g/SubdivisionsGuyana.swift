@@ -26,8 +26,4 @@ public enum SubdivisionsGuyana : String, SovereignStateSubdivision { // https://
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var wikipediaURLSuffix : String? {
-        return nil
-    }
 }

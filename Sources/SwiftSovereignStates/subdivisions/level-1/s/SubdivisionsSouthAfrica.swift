@@ -25,15 +25,4 @@ public enum SubdivisionsSouthAfrica : String, SovereignStateSubdivision { // htt
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .free_state:
-            return "_(province)"
-        case .north_west:
-            return "_(South_African_province)"
-        default:
-            return nil
-        }
-    }
 }

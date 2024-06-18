@@ -27,17 +27,6 @@ public enum SubdivisionsHaiti : String, SovereignStateSubdivision { // https://e
         return SovereignStateSubdivisionType.departments
     }
     
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .nord:
-            return "_(Haitian_department)"
-        case .nippes:
-            return nil
-        default:
-            return "_(department)"
-        }
-    }
-    
     public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .artibonite:

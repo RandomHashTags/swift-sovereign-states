@@ -42,17 +42,4 @@ public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // http
             return SovereignStateSubdivisionType.regions
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .almaty,
-                .almaty_region,
-                .astana,
-                .baikonur,
-                .shymkent:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

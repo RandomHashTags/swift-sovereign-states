@@ -41,22 +41,4 @@ public enum SubdivisionsPeru : String, SovereignStateSubdivision { // https://en
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.departments
     }
-    
-    public var wikipediaURLPrefix : String? {
-        switch self {
-        case .callao:
-            return nil
-        default:
-            return "Department_of_"
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .amazonas:
-            return ",_Peru"
-        default:
-            return nil
-        }
-    }
 }

@@ -24,12 +24,4 @@ public extension SovereignStateCity {
     var isCapital : Bool {
         return capital == self
     }
-    
-    func getDefaultWikipediaURLSuffix() -> String {
-        let subdivision:any SovereignStateSubdivision = subdivision
-        return ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")
-    }
-    var wikipediaURLSuffix : String? {
-        return getDefaultWikipediaURLSuffix()
-    }
 }

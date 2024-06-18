@@ -33,30 +33,6 @@ public enum SubdivisionsZimbabwe : String, SovereignStateSubdivision { // https:
         }
     }
     
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .bulawayo: return "3/35/Flag_of_Bulawayo"
-        case .harare: return "e/e7/Flag_of_Harare"
-        case .manicaland: return nil
-        case .mashonaland_central: return nil
-        case .mashonaland_east: return nil
-        case .mashonaland_west: return nil
-        case .masvingo: return nil
-        case .matabeleland_north: return nil
-        case .matabeleland_south: return nil
-        case .midlands: return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .bulawayo:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
-    
     public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .bulawayo:

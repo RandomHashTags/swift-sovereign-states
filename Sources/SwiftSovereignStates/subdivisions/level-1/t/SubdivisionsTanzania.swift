@@ -47,13 +47,4 @@ public enum SubdivisionsTanzania : String, SovereignStateSubdivision { // https:
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .dar_es_salaam:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

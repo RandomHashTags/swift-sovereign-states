@@ -246,28 +246,4 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
             return SovereignStateSubdivisionType.municipalities
         }
     }
-    
-    public var wikipediaURLPrefix : String? {
-        switch self {
-        case .celje,
-                .koper,
-                .kranj,
-                .krsko,
-                .ljubljana,
-                .maribor,
-                .murska_sobota,
-                .nova_gorica,
-                .novo_mesto,
-                .ptuj,
-                .slovenj_gradec,
-                .velenje:
-            return nil
-        default:
-            return type_suffix + "_of_"
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        return nil
-    }
 }

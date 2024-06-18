@@ -34,16 +34,4 @@ public enum SubdivisionsHonduras : String, SovereignStateSubdivision { // https:
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.departments
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .colon,
-                .la_paz:
-            return "_" + type_suffix + "_(Honduras)"
-        case .santa_barabara:
-            return "_" + type_suffix + ",_Honduras"
-        default:
-            return nil
-        }
-    }
 }

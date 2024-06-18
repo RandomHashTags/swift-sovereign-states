@@ -42,28 +42,4 @@ public enum SubdivisionsSwitzerland : String, SovereignStateSubdivision { // htt
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.cantons
     }
-    
-    public var wikipediaURLPrefix : String? {
-        switch self {
-        case .aargau,
-                .appenzell_ausserrhoden,
-                .appenzell_innerrhoden,
-                .basel_landschaft,
-                .basel_stadt,
-                .grisons,
-                .nidwalden,
-                .obwalden,
-                .thurgau,
-                .ticino,
-                .vaud,
-                .valais:
-            return nil
-        default:
-            return "Canton_of_"
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        return nil
-    }
 }

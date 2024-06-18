@@ -43,21 +43,4 @@ public enum SubdivisionsYemen : String, SovereignStateSubdivision { // https://e
             return SovereignStateSubdivisionType.governorates
         }
     }
-    
-    public var wikipediaName : String? {
-        switch self {
-        case .sanaa_city: return "Sanaa"
-        case .amran: return "'Amran"
-        default: return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .sanaa_city:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

@@ -53,23 +53,4 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
             return SovereignStateSubdivisionType.provinces
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .busan,
-                .daegu,
-                .daejeon,
-                .gwangju,
-                .incheon,
-                .seoul,
-                .ulsan:
-            return nil
-        case .gangwon:
-            return "_" + type_suffix + ",_South_Korea"
-        case .sejong:
-            return "_City"
-        default:
-            return nil
-        }
-    }
 }

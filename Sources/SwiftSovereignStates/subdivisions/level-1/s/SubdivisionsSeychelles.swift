@@ -43,23 +43,4 @@ public enum SubdivisionsSeychelles : String, SovereignStateSubdivision { // http
     public var type: SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.districts
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .beau_vallon,
-                .bel_air,
-                .bel_ombre,
-                .cascade,
-                .english_river,
-                .glacis,
-                .plaisance,
-                .saint_louis,
-                .takamaka:
-            return ",_Seychelles"
-        case .outer_islands:
-            return "_Seychelles"
-        default:
-            return nil
-        }
-    }
 }

@@ -30,15 +30,4 @@ public enum SubdivisionsNamibia : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .kavango_east,
-                .kavango_west,
-                .oshana:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

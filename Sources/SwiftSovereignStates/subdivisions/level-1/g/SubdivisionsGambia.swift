@@ -27,15 +27,4 @@ public enum SubdivisionsGambia : String, SovereignStateSubdivision { // https://
             return SovereignStateSubdivisionType.regions
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .banjul:
-            return nil
-        case .west_coast:
-            return "_Division_(The_Gambia)"
-        default:
-            return "_Division"
-        }
-    }
 }

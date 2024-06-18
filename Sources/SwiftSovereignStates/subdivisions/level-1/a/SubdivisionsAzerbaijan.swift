@@ -106,44 +106,6 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         }
     }
     
-    public var wikipediaName : String? {
-        switch self {
-        case .shaki_city, .shaki_district:
-            return "Shaki"
-        case .shirvan:
-            return "Şirvan"
-        case .yevlakh_city, .yevlakh_district:
-            return "Yevlakh"
-        default:
-            return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .baku,
-                .khankendi,
-                .lankaran,
-                .mingachevir,
-                .sumqayit,
-                .yevlakh_city:
-            return nil
-        case .ganja,
-                .naftalan,
-                .shaki_city,
-                .shirvan:
-            return ",_Azerbaijan"
-        case .nakhchivan:
-            return "_(city)"
-        case .jalilabad,
-                .quba,
-                .salyan:
-            return "_" + type_suffix + "_(Azerbaijan)"
-        default:
-            return "_" + type_suffix
-        }
-    }
-    
     public var isoAlpha2 : String? {
         switch self {
         case .absheron: return "ABS"

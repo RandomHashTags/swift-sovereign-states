@@ -20,8 +20,4 @@ public enum SubdivisionsIreland : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaURLSuffix : String? {
-        return nil
-    }
 }

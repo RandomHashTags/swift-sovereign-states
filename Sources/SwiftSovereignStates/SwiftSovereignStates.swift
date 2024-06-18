@@ -392,8 +392,8 @@ public extension Locale.Region {
         case .afghanistan: return SubdivisionsAfghanistanLevel1.self
         case .albania: return SubdivisionsAlbaniaLevel1.self
         case .algeria: return SubdivisionsAlgeriaLevel1.self
-        /*case .andorra: return SubdivisionsAndorra.self
-        case .angola: return SubdivisionsAngola.self
+        case .andorra: return SubdivisionsAndorraLevel1.self
+        /*case .angola: return SubdivisionsAngola.self
         case .anguilla: return SubdivisionsAnguilla.self
         case .antarctica: return nil
         case .antiguaBarbuda: return SubdivisionsAntiguaAndBarbuda.self

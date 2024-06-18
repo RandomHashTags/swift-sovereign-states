@@ -40,21 +40,4 @@ public enum SubdivisionsEcuador : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaName : String? {
-        switch self {
-        case .morona_santigao: return "Morona-Santiago"
-        case .zamora_chinchipe: return "Zamora-Chinchipe"
-        default: return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .bolivar:
-            return "_" + type_suffix + "_(Ecuador)"
-        default:
-            return nil
-        }
-    }
 }

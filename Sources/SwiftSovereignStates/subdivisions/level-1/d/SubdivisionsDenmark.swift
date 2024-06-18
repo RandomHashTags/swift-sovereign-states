@@ -22,14 +22,6 @@ public enum SubdivisionsDenmark : String, SovereignStateSubdivision { // https:/
         return SovereignStateSubdivisionType.regions
     }
     
-    public var wikipediaURLPrefix : String? {
-        return "Region_"
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        return nil
-    }
-    
     public var neighbors : [any SovereignStateSubdivision] {
         switch self {
         case .hovedstaden:

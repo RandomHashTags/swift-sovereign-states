@@ -42,14 +42,4 @@ public enum SubdivisionsPortugal : String, SovereignStateSubdivision { // https:
             return SovereignStateSubdivisionType.districts
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .azores,
-                .madeira:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

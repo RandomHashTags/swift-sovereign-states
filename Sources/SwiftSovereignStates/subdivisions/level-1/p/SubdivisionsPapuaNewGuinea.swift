@@ -46,29 +46,6 @@ public enum SubdivisionsPapuaNewGuinea : String, SovereignStateSubdivision { // 
         }
     }
     
-    public var wikipediaName : String? {
-        switch self {
-        case .bougainville:
-            return "Autonomous Region of Bougainville"
-        default:
-            return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .bougainville:
-            return nil
-        case .central,
-                .western:
-            return "_" + type_suffix + "_(Papua_New_Guinea)"
-        case .national_capital_district:
-            return "_(Papua_New_Guinea)"
-        default:
-            return "_" + type_suffix
-        }
-    }
-    
     public var isoAlpha2 : String? {
         switch self {
         case .bougainville: return "NSB"

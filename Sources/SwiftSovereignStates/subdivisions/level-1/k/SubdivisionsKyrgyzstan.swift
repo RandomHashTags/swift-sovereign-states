@@ -31,13 +31,4 @@ public enum SubdivisionsKyrgyzstan : String, SovereignStateSubdivision { // http
             return SovereignStateSubdivisionType.regions
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .bishkek, .osh_city:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

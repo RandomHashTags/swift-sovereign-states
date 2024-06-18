@@ -30,17 +30,4 @@ public enum SubdivisionsJamaica : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.parishes
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .saint_james,
-                .clarendon,
-                .saint_andrew,
-                .saint_mary,
-                .saint_thomas:
-            return "_" + type_suffix + ",_Jamaica"
-        default:
-            return nil
-        }
-    }
 }

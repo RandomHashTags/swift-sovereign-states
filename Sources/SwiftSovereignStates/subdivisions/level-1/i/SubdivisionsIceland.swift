@@ -84,13 +84,4 @@ public enum SubdivisionsIceland : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.municipalities
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .vogar:
-            return "_(" + type_suffix.lowercased() + ")"
-        default:
-            return nil
-        }
-    }
 }

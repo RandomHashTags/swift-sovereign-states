@@ -36,13 +36,4 @@ public enum SubdivisionsHungary : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.counties
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .budapest:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

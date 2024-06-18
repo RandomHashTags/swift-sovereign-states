@@ -34,11 +34,4 @@ public enum SubdivisionsAngola : String, SovereignStateSubdivision { // https://
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .cabinda: return "6/6c/Flag_of_Cabinda_Province"
-        default: return nil
-        }
-    }
 }

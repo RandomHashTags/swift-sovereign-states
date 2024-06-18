@@ -36,33 +36,4 @@ public enum SubdivisionsTimorLeste : String, SovereignStateSubdivision { // http
             return SovereignStateSubdivisionType.municipalities
         }
     }
-    
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .aileu: return nil
-        case .ainaro: return nil
-        case .atauro: return nil
-        case .baucau: return "d/d8/Flag_of_Baucau_%28municipality%29.png"
-        case .bobonaro: return nil
-        case .cova_lima: return nil
-        case .dili: return nil
-        case .ermera: return nil
-        case .lautem: return nil
-        case .liquica: return nil
-        case .manatuto: return nil
-        case .manufahi: return nil
-        case .viqueque: return nil
-        
-        case .oecusse: return "b/bc/Raeoa.png"
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .oecusse:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

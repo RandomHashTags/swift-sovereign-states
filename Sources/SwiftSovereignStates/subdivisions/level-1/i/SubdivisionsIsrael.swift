@@ -27,13 +27,4 @@ public enum SubdivisionsIsrael : String, SovereignStateSubdivision { // https://
         default: return SovereignStateSubdivisionType.districts
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .judea_and_samaria:
-            return "_Area"
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

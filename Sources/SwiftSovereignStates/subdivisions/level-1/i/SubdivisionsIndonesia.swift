@@ -50,15 +50,4 @@ public enum SubdivisionsIndonesia : String, SovereignStateSubdivision { // https
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .maluku,
-                .papua,
-                .west_papua:
-            return "_(" + type_suffix.lowercased() + ")"
-        default:
-            return nil
-        }
-    }
 }

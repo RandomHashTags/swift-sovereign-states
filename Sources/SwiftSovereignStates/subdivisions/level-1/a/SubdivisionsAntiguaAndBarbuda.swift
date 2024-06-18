@@ -30,20 +30,4 @@ public enum SubdivisionsAntiguaAndBarbuda : String, SovereignStateSubdivision { 
             return SovereignStateSubdivisionType.parishes
         }
     }
-    
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .barbuda: return "4/41/Barbuda_Council_Flag"
-        default: return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .barbuda, .redonda:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

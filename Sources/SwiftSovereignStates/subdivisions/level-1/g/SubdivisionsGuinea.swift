@@ -30,13 +30,4 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
             return SovereignStateSubdivisionType.regions
         }
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .conakry:
-            return nil
-        default:
-            return "_Region"
-        }
-    }
 }

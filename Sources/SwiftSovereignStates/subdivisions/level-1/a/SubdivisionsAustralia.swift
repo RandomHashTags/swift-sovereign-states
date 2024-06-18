@@ -50,15 +50,6 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .victoria:
-            return "_(Australia)"
-        default:
-            return nil
-        }
-    }
-    
     public var isoAlpha2 : String? {
         switch self {
         case .new_south_wales: return "NSW"
@@ -68,29 +59,6 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         case .victoria: return "VIC"
         case .western_australia: return "WA"
         default: return nil
-        }
-    }
-    
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .new_south_wales: return "0/00/Flag_of_New_South_Wales"
-        case .queensland: return "0/04/Flag_of_Queensland"
-        case .south_australia: return "f/fd/Flag_of_South_Australia"
-        case .tasmania: return "4/46/Flag_of_Tasmania"
-        case .victoria: return "0/08/Flag_of_Victoria_%28Australia%29"
-        case .western_australia: return "a/a5/Flag_of_Western_Australia"
-
-        case .australian_capital_territory: return "8/8c/Flag_of_the_Australian_Capital_Territory"
-        case .jervis_bay_territory: return nil
-        case .northern_territory: return "b/b7/Flag_of_the_Northern_Territory"
-
-        case .ashmore_and_cartier_islands: return nil
-        case .australian_antarctic_territory: return nil
-        case .christmas_island: return "6/67/Flag_of_Christmas_Island"
-        case .cocos_keeling_islands: return "7/74/Flag_of_the_Cocos_%28Keeling%29_Islands"
-        case .coral_sea_islands: return nil
-        case .heard_island_and_mcdonald_islands: return nil
-        case .norfolk_island: return "4/48/Flag_of_Norfolk_Island"
         }
     }
     

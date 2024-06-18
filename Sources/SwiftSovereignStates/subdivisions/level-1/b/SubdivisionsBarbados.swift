@@ -27,8 +27,4 @@ public enum SubdivisionsBarbados : String, SovereignStateSubdivision { // https:
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.parishes
     }
-    
-    public var wikipediaURLSuffix : String? {
-        return ",_Barbados"
-    }
 }

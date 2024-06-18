@@ -30,21 +30,4 @@ public enum SubdivisionsGreece : String, SovereignStateSubdivision { // https://
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .central_macedonia,
-                .crete,
-                .eastern_macedonia_and_thrace,
-                .mount_athos,
-                .north_aegean,
-                .south_aegean,
-                .thessaly,
-                .western_greece,
-                .western_macedonia:
-            return nil
-        default:
-            return "_(region)"
-        }
-    }
 }

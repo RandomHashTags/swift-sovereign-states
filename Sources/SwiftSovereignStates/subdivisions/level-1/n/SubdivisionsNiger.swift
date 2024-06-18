@@ -24,13 +24,4 @@ public enum SubdivisionsNiger : String, SovereignStateSubdivision { // https://e
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .niamey:
-            return nil
-        default:
-            return "_" + type_suffix
-        }
-    }
 }

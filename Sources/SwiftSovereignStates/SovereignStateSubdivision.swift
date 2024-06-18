@@ -17,11 +17,4 @@ public extension SovereignStateSubdivision {
     var cacheID : String {
         return region.identifier + "-"// + rawValue
     }
-    
-    var wikipediaURLSuffix : String? {
-        return "_" + type_suffix
-    }
-    var type_suffix : String {
-        return ""//type.name_singular.replacingOccurrences(of: " ", with: "_")
-    }
 }

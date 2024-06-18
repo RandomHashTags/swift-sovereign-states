@@ -32,22 +32,4 @@ public enum SubdivisionsNewZealand : String, SovereignStateSubdivision { // http
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.regions
     }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .bay_of_plenty,
-                .manawatu_whanganui,
-                .otago,
-                .taranaki,
-                .waikato:
-            return nil
-        case .canterbury,
-                .nelson,
-                .southland,
-                .west_coast:
-            return ",_New_Zealand"
-        default:
-            return nil
-        }
-    }
 }

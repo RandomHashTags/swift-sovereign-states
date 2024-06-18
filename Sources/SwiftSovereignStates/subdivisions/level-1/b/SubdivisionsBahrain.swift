@@ -20,13 +20,4 @@ public enum SubdivisionsBahrain : String, SovereignStateSubdivision { // https:/
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.governorates
     }
-    
-    public var wikipediaFlagURLSvgID : String? {
-        switch self {
-        case .capital: return "b/bb/Bahrain_Capital_Governorate_Flag"
-        case .muharraq: return "3/3d/Bahrain_Muharraq_Governorate_Flag"
-        case .northern: return "1/19/Bahrain_Northern_Governorate_Flag"
-        case .southern: return "2/2b/Bahrain_Southern_Governorate_Flag"
-        }
-    }
 }

@@ -48,25 +48,4 @@ public enum SubdivisionsDominicanRepublic : String, SovereignStateSubdivision { 
     public var type : SovereignStateSubdivisionType {
         return SovereignStateSubdivisionType.provinces
     }
-    
-    public var wikipediaName : String? {
-        switch self {
-        case .distrito_nacional:
-            return "Distrito Nacional"
-        default:
-            return nil
-        }
-    }
-    
-    public var wikipediaURLSuffix : String? {
-        switch self {
-        case .la_romana:
-            return ",_Dominican_Republic"
-        case .san_juan,
-                .santiago:
-            return "_(Dominican_Republic)"
-        default:
-            return nil
-        }
-    }
 }
