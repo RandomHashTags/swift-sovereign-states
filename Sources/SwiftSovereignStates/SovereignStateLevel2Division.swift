@@ -10,7 +10,6 @@ import Foundation
 public protocol SovereignStateLevel2Division : SovereignRegion {
     /// The level-1 administrative unit this division is located in or claimed by.
     var subdivision : any SovereignStateSubdivision { get }
-    var type : SovereignStateLevel2DivisionType { get }
     /// _Federal Information Processing Standard_ number or regional equivalent representing this division.
     var fips_code : Int { get }
 }
@@ -21,7 +20,7 @@ public extension SovereignStateLevel2Division {
     }
     
     var cacheID : String {
-        return subdivision.cacheID + "-" + rawValue
+        return subdivision.cacheID + "-"// + rawValue
     }
     
     /// _Federal Information Processing Standard_ number or regional equivalent representing this division as a string, formatted as `###`.
@@ -30,8 +29,9 @@ public extension SovereignStateLevel2Division {
     }
     
     var default_wikipedia_url_suffix : String {
-        let type_suffix:String = (type == .independent_cities ? "City" : type.name_singular.replacingOccurrences(of: " ", with: "_"))
-        return "_" + type_suffix + ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")
+        return ""/*
+        let type_suffix:String = (type == .independentCities ? "City" : type.name_singular.replacingOccurrences(of: " ", with: "_"))
+        return "_" + type_suffix + ",_" + subdivision.name.replacingOccurrences(of: " ", with: "_")*/
     }
     var wikipediaURLSuffix : String? {
         return default_wikipedia_url_suffix

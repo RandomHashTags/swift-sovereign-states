@@ -7,9 +7,10 @@
 
 import Foundation
 
-internal enum SovereignStateFlagEmoji {
-    static func get(_ country: Locale.Region) -> String? {
-        switch country {
+public extension Locale.Region {
+    /// The unicode flag for this Region.
+    var flagEmoji : String? {
+        switch self {
         case .artsakh: return nil
         case .abkhazia: return nil
         case .northernCyprus: return nil

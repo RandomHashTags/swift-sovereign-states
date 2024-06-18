@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SovereignRegion : Codable, Hashable, CaseIterable, LosslessStringConvertible, RawRepresentable where RawValue == String { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
+public protocol SovereignRegion : Codable, Hashable, LosslessStringConvertible { // https://en.wikipedia.org/wiki/Category:Administrative_divisions_by_level_and_country
     /// The unique identifier of this SovereignRegion used for caching.
     var cacheID : String { get }
     /// Cached strings this SovereignRegion is commonly recognized by.
@@ -97,10 +97,6 @@ public extension SovereignRegion {
     }
     
     var wikipediaName : String? {
-        return nil
-    }
-    
-    var governmentURL : String? {
         return nil
     }
     

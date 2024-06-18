@@ -1,7 +1,8 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+import CompilerPluginSupport
 
 let package = Package(
     name: "swift-sovereign-states",
@@ -19,11 +20,23 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/tid-kijyun/Kanna.git", from: "5.2.7")
+        .package(url: "https://github.com/apple/swift-syntax.git", from: "510.0.2")
     ],
     targets: [
+        .macro(
+            name: "Macros",
+            dependencies: [
+                .product(name: "SwiftSyntax", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
+            ]
+        ),
+
         .target(
             name: "SwiftSovereignStates",
+            dependencies: [
+                "Macros"
+            ],
             resources: [
                 .process("Resources")
             ]
@@ -31,8 +44,7 @@ let package = Package(
         .testTarget(
             name: "SwiftSovereignStatesTests",
             dependencies: [
-                "SwiftSovereignStates",
-                "Kanna"
+                "SwiftSovereignStates"
             ]
         ),
     ]

@@ -350,14 +350,6 @@ public extension Locale.Region {
         })
     }
     
-    /// The unicode flag for this Region.
-    var flagEmoji : String? {
-        return SovereignStateFlagEmoji.get(self)
-    }
-    var neighbors : [Locale.Region]? {
-        return SovereignStateNeighbors.get(self)
-    }
-    
     func aliases(forLocale locale: Locale = Locale.current) -> Set<String>? {
         // TODO: support locale
         return SovereignStateAliases.get(self)
@@ -451,10 +443,6 @@ public extension Locale.Region {
         }
     }
     
-    var governmentWebsiteURL : String? {
-        return SovereignStateGovernmentWebsite.get(self)
-    }
-    
     var isoAlpha2Alias : String? {
         switch self {
         case .greece: return "EL"
@@ -498,10 +486,6 @@ public extension Locale.Region {
             default:
                 return nil
         }
-    }
-    
-    var isoAlpha3 : String? {
-        return SovereignStateISOAlpha3.get(self)
     }
     
     func wikipediaURL(forLocale locale: Locale) -> String {

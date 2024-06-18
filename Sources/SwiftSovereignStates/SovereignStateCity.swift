@@ -11,20 +11,14 @@ public protocol SovereignStateCity : SovereignRegion {
     /// The subdivision that this city's administrative borders are located in.
     var subdivision : any SovereignStateSubdivision { get }
     var capital : Self { get }
-    
-    var type : SovereignStateCityType { get }
 }
 
 public extension SovereignStateCity {
     var cacheID : String {
-        return subdivision.cacheID + "-" + rawValue
+        return subdivision.cacheID + "-"// + rawValue
     }
     var currencies : [Currency] {
         return subdivision.currencies
-    }
-    
-    var type : SovereignStateCityType {
-        return SovereignStateCityType.city
     }
     
     var isCapital : Bool {

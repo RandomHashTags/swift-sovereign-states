@@ -7,9 +7,9 @@
 
 import Foundation
 
-internal enum SovereignStateNeighbors { // https://en.wikipedia.org/wiki/List_of_countries_and_territories_by_land_and_maritime_borders
-    static func get(_ country: Locale.Region) -> [Locale.Region]? {
-        switch country {
+public extension Locale.Region { // https://en.wikipedia.org/wiki/List_of_countries_and_territories_by_land_and_maritime_borders
+    var neighbors : [Locale.Region]? {
+        switch self {
         case .abkhazia: return [Locale.Region.russia, Locale.Region.georgia, Locale.Region.turkey]
         case .afghanistan: return [Locale.Region.chinaMainland, Locale.Region.iran, Locale.Region.pakistan, Locale.Region.tajikistan, Locale.Region.turkmenistan, Locale.Region.uzbekistan]
         case .albania: return [Locale.Region.greece, Locale.Region.italy, Locale.Region.kosovo, Locale.Region.montenegro, Locale.Region.northMacedonia]

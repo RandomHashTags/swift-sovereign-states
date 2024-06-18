@@ -7,9 +7,9 @@
 
 import Foundation
 
-internal enum SovereignStateISOAlpha3 {
-    static func get(_ country: Locale.Region) -> String? {
-        switch country {
+public extension Locale.Region {
+    var isoAlpha3 : String? {
+        switch self {
         case .abkhazia: return nil
         case .artsakh: return nil
         case .kosovo: return nil
