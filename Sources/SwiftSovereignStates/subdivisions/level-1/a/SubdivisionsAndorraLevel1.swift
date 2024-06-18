@@ -10,17 +10,8 @@ import Foundation
 public typealias SubdivisionsAndorraLevel1 = Locale.Region.Subdivision.Level1.Andorra
 
 public extension Locale.Region.Subdivision.Level1 {
+    @SubdivisionLevel1(region: Locale.Region.andorra, allSameType: true, type: Locale.Region.SubdivisionType.parish)
     struct Andorra : Locale.Region.Subdivision.Level1Protocol {
-        public var region : Locale.Region { Locale.Region.andorra }
-        public let identifier:String
-
-        public init(_ identifier: String) {
-            self.identifier = identifier
-        }
-
-        public var type : Locale.Region.SubdivisionType {
-            return Locale.Region.SubdivisionType.parish
-        }
     }
 }
 

@@ -7,8 +7,9 @@
 
 import Foundation
 
-@freestanding(declaration)
-macro ListSubdivisionLevel1(_ value: SubdivisionLevel1Details) = #externalMacro(module: "Macros", type: "SubdivisionLevel1")
+//@attached(extension)
+@attached(member, names: arbitrary)
+macro SubdivisionLevel1(region: Locale.Region, allSameType: Bool, type: Locale.Region.SubdivisionType) = #externalMacro(module: "Macros", type: "SubdivisionLevel1")
 
 struct SubdivisionLevel1Details {
     let region:Locale.Region
@@ -393,42 +394,42 @@ public extension Locale.Region {
         case .albania: return SubdivisionsAlbaniaLevel1.self
         case .algeria: return SubdivisionsAlgeriaLevel1.self
         case .andorra: return SubdivisionsAndorraLevel1.self
-        /*case .angola: return SubdivisionsAngola.self
-        case .anguilla: return SubdivisionsAnguilla.self
+        case .angola: return SubdivisionsAngolaLevel1.self
+        /*case .anguilla: return SubdivisionsAnguilla.self
         case .antarctica: return nil
         case .antiguaBarbuda: return SubdivisionsAntiguaAndBarbuda.self
         case .argentina: return SubdivisionsArgentina.self
-        case .armenia: return SubdivisionsArmenia.self
+        case .armenia: return SubdivisionsArmeniaLevel1.self
         case .aruba: return nil
         case .ålandIslands: return nil
         case .australia: return SubdivisionsAustralia.self
-        case .austria: return SubdivisionsAustria.self
+        case .austria: return SubdivisionsAustriaLevel1.self
         case .azerbaijan: return SubdivisionsAzerbaijan.self
         
-        case .bahamas: return SubdivisionsBahamas.self
-        case .bahrain: return SubdivisionsBahrain.self
-        case .bangladesh: return SubdivisionsBangladesh.self
-        case .barbados: return SubdivisionsBarbados.self
+        case .bahamas: return SubdivisionsBahamasLevel1.self
+        case .bahrain: return SubdivisionsBahrainLevel1.self
+        case .bangladesh: return SubdivisionsBangladeshLevel1.self
+        case .barbados: return SubdivisionsBarbadosLevel1.self
         case .belarus: return SubdivisionsBelarus.self
-        case .belize: return SubdivisionsBelize.self
-        case .benin: return SubdivisionsBenin.self
+        case .belize: return SubdivisionsBelizeLevel1.self
+        case .benin: return SubdivisionsBeninLevel1.self
         case .bermuda: return SubdivisionsBermuda.self
-        case .bhutan: return SubdivisionsBhutan.self
-        case .bolivia: return SubdivisionsBolivia.self
+        case .bhutan: return SubdivisionsBhutanLevel1.self
+        case .bolivia: return SubdivisionsBoliviaLevel1.self
         case .bosniaHerzegovina: return nil
-        case .botswana: return SubdivisionsBotswana.self
+        case .botswana: return SubdivisionsBotswanaLevel1.self
         case .bouvetIsland: return nil
         case .brazil: return SubdivisionsBrazil.self
         case .britishVirginIslands: return nil
-        case .brunei: return SubdivisionsBrunei.self
-        case .bulgaria: return SubdivisionsBulgaria.self
+        case .brunei: return SubdivisionsBruneiLevel1.self
+        case .bulgaria: return SubdivisionsBulgariaLevel1.self
         case .burkinaFaso: return SubdivisionsBurkinaFaso.self
         case .burundi: return SubdivisionsBurundi.self
         
         case .cambodia: return SubdivisionsCambodia.self
-        case .cameroon: return SubdivisionsCameroon.self
+        case .cameroon: return SubdivisionsCameroon.self*/
         case .canada: return SubdivisionsCanadaLevel1.self
-        case .capeVerde: return SubdivisionsCapeVerde.self
+        /*case .capeVerde: return SubdivisionsCapeVerde.self
         case .caymanIslands: return nil
         case .centralAfricanRepublic: return SubdivisionsCentralAfricanRepublic.self
         case .chad: return SubdivisionsChad.self

@@ -10,17 +10,8 @@ import Foundation
 public typealias SubdivisionsAlbaniaLevel1 = Locale.Region.Subdivision.Level1.Albania
 
 public extension Locale.Region.Subdivision.Level1 {
+    @SubdivisionLevel1(region: Locale.Region.albania, allSameType: true, type: Locale.Region.SubdivisionType.county)
     struct Albania : Locale.Region.Subdivision.Level1Protocol {
-        public var region : Locale.Region { Locale.Region.albania }
-        public let identifier:String
-
-        public init(_ identifier: String) {
-            self.identifier = identifier
-        }
-
-        public var type : Locale.Region.SubdivisionType {
-            return Locale.Region.SubdivisionType.county
-        }
     }
 }
 
