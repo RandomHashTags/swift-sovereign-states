@@ -385,9 +385,9 @@ public extension Locale.Region {
 
 #endif
 
-// MARK: Locale.Region subdivisionType
+// MARK: Locale.Region subdivisionLevel1Type
 public extension Locale.Region {
-    var subdivisionType : (any Locale.Region.Subdivision.Level1Protocol.Type)? {
+    var subdivisionLevel1Type : (any Locale.Region.Subdivision.Level1Protocol.Type)? {
         switch self {
         case .abkhazia: return SubdivisionsAbkhaziaLevel1.self
         case .afghanistan: return SubdivisionsAfghanistanLevel1.self
@@ -395,39 +395,39 @@ public extension Locale.Region {
         case .algeria: return SubdivisionsAlgeriaLevel1.self
         case .andorra: return SubdivisionsAndorraLevel1.self
         case .angola: return SubdivisionsAngolaLevel1.self
-        /*case .anguilla: return SubdivisionsAnguilla.self
+        //case .anguilla: return SubdivisionsAnguilla.self
         case .antarctica: return nil
-        case .antiguaBarbuda: return SubdivisionsAntiguaAndBarbuda.self
-        case .argentina: return SubdivisionsArgentina.self
+        //case .antiguaBarbuda: return SubdivisionsAntiguaAndBarbuda.self
+        //case .argentina: return SubdivisionsArgentina.self
         case .armenia: return SubdivisionsArmeniaLevel1.self
         case .aruba: return nil
         case .ålandIslands: return nil
-        case .australia: return SubdivisionsAustralia.self
+        //case .australia: return SubdivisionsAustralia.self
         case .austria: return SubdivisionsAustriaLevel1.self
-        case .azerbaijan: return SubdivisionsAzerbaijan.self
+        //case .azerbaijan: return SubdivisionsAzerbaijan.self
         
         case .bahamas: return SubdivisionsBahamasLevel1.self
         case .bahrain: return SubdivisionsBahrainLevel1.self
         case .bangladesh: return SubdivisionsBangladeshLevel1.self
         case .barbados: return SubdivisionsBarbadosLevel1.self
-        case .belarus: return SubdivisionsBelarus.self
+        //ase .belarus: return SubdivisionsBelarus.self
         case .belize: return SubdivisionsBelizeLevel1.self
         case .benin: return SubdivisionsBeninLevel1.self
-        case .bermuda: return SubdivisionsBermuda.self
+        //case .bermuda: return SubdivisionsBermuda.self
         case .bhutan: return SubdivisionsBhutanLevel1.self
         case .bolivia: return SubdivisionsBoliviaLevel1.self
         case .bosniaHerzegovina: return nil
         case .botswana: return SubdivisionsBotswanaLevel1.self
         case .bouvetIsland: return nil
-        case .brazil: return SubdivisionsBrazil.self
+        //case .brazil: return SubdivisionsBrazil.self
         case .britishVirginIslands: return nil
         case .brunei: return SubdivisionsBruneiLevel1.self
         case .bulgaria: return SubdivisionsBulgariaLevel1.self
-        case .burkinaFaso: return SubdivisionsBurkinaFaso.self
-        case .burundi: return SubdivisionsBurundi.self
+        case .burkinaFaso: return SubdivisionsBurkinaFasoLevel1.self
+        case .burundi: return SubdivisionsBurundiLevel1.self
         
-        case .cambodia: return SubdivisionsCambodia.self
-        case .cameroon: return SubdivisionsCameroon.self*/
+        //case .cambodia: return SubdivisionsCambodia.self
+        //case .cameroon: return SubdivisionsCameroon.self
         case .canada: return SubdivisionsCanadaLevel1.self
         /*case .capeVerde: return SubdivisionsCapeVerde.self
         case .caymanIslands: return nil
@@ -447,23 +447,23 @@ public extension Locale.Region {
         case .cuba: return SubdivisionsCuba.self
         case .curaçao: return nil
         case .cyprus: return nil
-        case .czechia: return SubdivisionsCzechRepublic.self
+        case .czechia: return SubdivisionsCzechRepublic.self*/
         
-        case .denmark: return SubdivisionsDenmark.self
-        case .djibouti: return SubdivisionsDjibouti.self
-        case .dominica: return SubdivisionsDominica.self
-        case .dominicanRepublic: return SubdivisionsDominicanRepublic.self
+        case .denmark: return SubdivisionsDenmarkLevel1.self
+        case .djibouti: return SubdivisionsDjiboutiLevel1.self
+        case .dominica: return SubdivisionsDominicaLevel1.self
+        case .dominicanRepublic: return SubdivisionsDominicanRepublicLevel1.self
             
-        case .ecuador: return SubdivisionsEcuador.self
-        case .egypt: return SubdivisionsEgypt.self
-        case .elSalvador: return SubdivisionsElSalvador.self
+        case .ecuador: return SubdivisionsEcuadorLevel1.self
+        case .egypt: return SubdivisionsEgyptLevel1.self
+        case .elSalvador: return SubdivisionsElSalvadorLevel1.self
         case .equatorialGuinea: return nil
-        case .eritrea: return SubdivisionsEritrea.self
-        case .estonia: return SubdivisionsEstonia.self
+        case .eritrea: return SubdivisionsEritreaLevel1.self
+        case .estonia: return SubdivisionsEstoniaLevel1.self
         case .eswatini: return nil
-        case .ethiopia: return SubdivisionsEthiopia.self
+        //case .ethiopia: return SubdivisionsEthiopia.self
         
-        case .falklandIslands: return nil
+        /*case .falklandIslands: return nil
         case .faroeIslands: return nil
         case .fiji: return SubdivisionsFiji.self
         case .finland: return SubdivisionsFinland.self
@@ -504,14 +504,14 @@ public extension Locale.Region {
         case .isleOfMan: return nil
         case .israel: return SubdivisionsIsrael.self
         case .italy: return SubdivisionsItaly.self
-        case .côteDIvoire: return SubdivisionsIvoryCoast.self
+        case .côteDIvoire: return SubdivisionsIvoryCoast.self*/
         
-        case .jamaica: return SubdivisionsJamaica.self
-        case .japan: return SubdivisionsJapan.self
-        case .jersey: return SubdivisionsJersey.self
-        case .jordan: return SubdivisionsJordan.self
+        case .jamaica: return SubdivisionsJamaicaLevel1.self
+        case .japan: return SubdivisionsJapanLevel1.self
+        case .jersey: return SubdivisionsJerseyLevel1.self
+        case .jordan: return SubdivisionsJordanLevel1.self
         
-        case .kazakhstan: return SubdivisionsKazakhstan.self
+        /*case .kazakhstan: return SubdivisionsKazakhstan.self
         case .kenya: return SubdivisionsKenya.self
         case .kiribati: return nil
         case .kosovo: return SubdivisionsKosovo.self
@@ -549,12 +549,12 @@ public extension Locale.Region {
         case .montserrat: return nil
         case .morocco: return SubdivisionsMorocco.self
         case .mozambique: return SubdivisionsMozambique.self
-        case .myanmar: return SubdivisionsMyanmar.self
+        case .myanmar: return SubdivisionsMyanmar.self*/
         
-        case .namibia: return SubdivisionsNamibia.self
-        case .nauru: return SubdivisionsNauru.self
-        case .nepal: return SubdivisionsNepal.self
-        case .netherlands: return SubdivisionsNetherlands.self
+        case .namibia: return SubdivisionsNamibiaLevel1.self
+        case .nauru: return SubdivisionsNauruLevel1.self
+        case .nepal: return SubdivisionsNepalLevel1.self
+        /*case .netherlands: return SubdivisionsNetherlands.self
         case .newCaledonia: return nil
         case .newZealand: return SubdivisionsNewZealand.self
         case .nicaragua: return SubdivisionsNicaragua.self
@@ -566,11 +566,11 @@ public extension Locale.Region {
         case .northernMarianaIslands: return nil
         case .northKorea: return SubdivisionsNorthKorea.self
         case .northMacedonia: return nil
-        case .norway: return SubdivisionsNorway.self
+        case .norway: return SubdivisionsNorway.self*/
             
-        case .oman: return SubdivisionsOman.self
+        case .oman: return SubdivisionsOmanLevel1.self
             
-        case .pakistan: return SubdivisionsPakistan.self
+        /*case .pakistan: return SubdivisionsPakistan.self
         case .palau: return SubdivisionsPalau.self
         case .palestine: return SubdivisionsPalestine.self
         case .panama: return SubdivisionsPanama.self
@@ -640,18 +640,18 @@ public extension Locale.Region {
         case .unitedArabEmirates: return nil
         case .unitedKingdom: return nil*/
         case .unitedStates: return SubdivisionsUnitedStatesLevel1.self
-        /*case .uruguay: return SubdivisionsUruguay.self
-        case .uzbekistan: return SubdivisionsUzbekistan.self
+        //case .uruguay: return SubdivisionsUruguay.self
+        //case .uzbekistan: return SubdivisionsUzbekistan.self
         
-        case .vanuatu: return SubdivisionsVanuatu.self
+        case .vanuatu: return SubdivisionsVanuatuLevel1.self
         case .vaticanCity: return nil
-        case .venezuela: return SubdivisionsVenezuela.self
-        case .vietnam: return SubdivisionsVietnam.self
+        //case .venezuela: return SubdivisionsVenezuela.self
+        //case .vietnam: return SubdivisionsVietnam.self
         
-        case .yemen: return SubdivisionsYemen.self
+        //case .yemen: return SubdivisionsYemen.self
         
-        case .zambia: return SubdivisionsZambia.self
-        case .zimbabwe: return SubdivisionsZimbabwe.self*/
+        case .zambia: return SubdivisionsZambiaLevel1.self
+        //case .zimbabwe: return SubdivisionsZimbabwe.self
         default: return nil
         }
     }
