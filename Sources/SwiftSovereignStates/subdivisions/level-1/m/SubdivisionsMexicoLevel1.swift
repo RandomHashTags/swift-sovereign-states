@@ -10,13 +10,8 @@ import Foundation
 public typealias SubdivisionsMexicoLevel1 = Locale.Region.Subdivision.Level1.Mexico
 
 public extension Locale.Region.Subdivision.Level1 {
+    @SubdivisionLevel1(region: Locale.Region.mexico, allSameType: false, type: Locale.Region.SubdivisionType.state)
     struct Mexico : Locale.Region.Subdivision.Level1Protocol {
-        public var region : Locale.Region { Locale.Region.mexico }
-        public let identifier:String
-
-        init(_ identifier: String) {
-            self.identifier = identifier
-        }
 
         public var type : Locale.Region.SubdivisionType {
             switch self {
@@ -30,9 +25,6 @@ public extension Locale.Region.Subdivision.Level1 {
 }
 
 public extension Locale.Region.Subdivision.Level1.Mexico { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Mexico
-    static func get(_ identifier: String) -> SubdivisionsMexicoLevel1 {
-        return SubdivisionsMexicoLevel1(identifier)
-    }
     static let aguascalientes = get("AG")
     static let bajaCalifornia = get("BC")
     static let bajaCaliforniaSur = get("BS")

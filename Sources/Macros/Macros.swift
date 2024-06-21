@@ -13,7 +13,7 @@ import SwiftDiagnostics
 
 @main
 struct MacrosPlugin : CompilerPlugin {
-    let providingMacros:[Macro.Type] = [SubdivisionLevel1.self]
+    let providingMacros:[Macro.Type] = [SubdivisionLevel1.self, SubdivisionLevel1Cases.self]
 }
 
 struct SubdivisionLevel1 : MemberMacro {
@@ -69,5 +69,17 @@ struct ErrorDiagnostic : DiagnosticMessage {
         self.diagnosticID = MessageID(domain: "Macros", id: id)
     }
 
-    static let notAStruct:ErrorDiagnostic = ErrorDiagnostic(id: "notAStruct", message: "Can only be applied to a 'struct")
+    static let notAStruct:ErrorDiagnostic = ErrorDiagnostic(id: "notAStruct", message: "Can only be applied to a 'struct'")
+    static let notAnExtension:ErrorDiagnostic = ErrorDiagnostic(id: "notAnExtension", message: "Can only be applied to an 'extension'")
+}
+
+struct SubdivisionLevel1Cases : MemberMacro {
+   static func expansion(of node: AttributeSyntax, providingMembersOf declaration: some DeclGroupSyntax, in context: some MacroExpansionContext) throws -> [DeclSyntax] {
+        guard declaration.is(ExtensionDeclSyntax.self) else {
+            context.diagnose(Diagnostic(node: node, message: ErrorDiagnostic.notAnExtension))
+            return []
+        }
+        
+        return ["\(raw: declaration)"]
+    }
 }
