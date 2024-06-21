@@ -225,3 +225,33 @@ public extension SubdivisionsUnitedStatesLevel1 {
         }
     }
 }
+
+// MARK: Zip Code Prefix
+public extension SubdivisionsUnitedStatesLevel1 {
+    var zipCodePrefix : Int { // https://en.wikipedia.org/wiki/ZIP_Code
+        switch self {
+        case .connecticut, .massachusetts, .maine, .newHampshire, .newJersey, .puertoRico,. rhodeIsland, .vermont, .unitedStatesVirginIslands:
+            return 0
+        case .delaware, .newYork, .pennsylvania:
+            return 1
+        case .washingtonDC, .maryland, .northCarolina, .southCarolina, .virginia, .westVirginia:
+            return 2
+        case .alabama, .florida, .georgia, .mississippi, .tennessee:
+            return 3
+        case .indiana, .kentucky, .michigan, .ohio:
+            return 4
+        case .iowa, .minnesota, .montana, .northDakota, .southDakota, .wisconsin:
+            return 5
+        case .illinois, .kansas, .missouri, .nebraska:
+            return 6
+        case .arkansas, .louisiana, .oklahoma, .texas:
+            return 7
+        case .arizona, .colorado, .idaho, .newMexico, .nevada, .utah, .wyoming:
+            return 8
+        case .alaska, .americanSamoa, .california, .guam, .hawaii, .marshallIslands, .micronesia, .northernMarianaIslands, .oregon, .palau, .washington:
+            return 9
+        default:
+            return -1
+        }
+    }
+}
