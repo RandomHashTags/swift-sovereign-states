@@ -76,16 +76,16 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
         return Locale.Region.vietnam
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .can_tho,
                 .da_nang,
                 .haiphong,
                 .hanoi,
                 .ho_chi_minh_city:
-            return SovereignStateSubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipalities
         default:
-            return SovereignStateSubdivisionType.provinces
+            return Locale.Region.SubdivisionType.provinces
         }
     }
 }

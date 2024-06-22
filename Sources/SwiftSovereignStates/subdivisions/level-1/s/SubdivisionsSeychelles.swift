@@ -40,7 +40,7 @@ public enum SubdivisionsSeychelles : String, SovereignStateSubdivision { // http
         return Locale.Region.seychelles
     }
     
-    public var type: SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.districts
+    public var type: Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.districts
     }
 }

@@ -34,12 +34,12 @@ public enum SubdivisionsKazakhstan : String, SovereignStateSubdivision { // http
         return Locale.Region.kazakhstan
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .almaty, .astana, .shymkent:
-            return SovereignStateSubdivisionType.cities
+            return Locale.Region.SubdivisionType.cities
         default:
-            return SovereignStateSubdivisionType.regions
+            return Locale.Region.SubdivisionType.regions
         }
     }
 }

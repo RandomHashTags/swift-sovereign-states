@@ -10,11 +10,11 @@ import Foundation
 public enum SwiftSovereignStateLocalization {
 }
 public extension SwiftSovereignStateLocalization {
-    /*static func get_release_subdivision_type_name_singular(_ type: SovereignStateSubdivisionType) -> String {
+    /*static func get_release_subdivision_type_name_singular(_ type: Locale.Region.SubdivisionType) -> String {
         let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: type.rawValue + "_name")
         return String(localized: key, table: "SubdivisionTypes", bundle: Bundle.module)
     }
-    static func get_release_subdivision_type_name_plural(_ type: SovereignStateSubdivisionType) -> String {
+    static func get_release_subdivision_type_name_plural(_ type: Locale.Region.SubdivisionType) -> String {
         let key:String.LocalizationValue = String.LocalizationValue(stringLiteral: type.rawValue + "_name")
         return String(localized: key, table: "SubdivisionTypes", bundle: Bundle.module)
     }*/

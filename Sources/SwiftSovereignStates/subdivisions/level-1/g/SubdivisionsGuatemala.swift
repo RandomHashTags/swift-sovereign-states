@@ -34,7 +34,7 @@ public enum SubdivisionsGuatemala : String, SovereignStateSubdivision { // https
         return Locale.Region.guatemala
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.departments
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.departments
     }
 }

@@ -50,7 +50,7 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
         return Locale.Region.india
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .andaman_and_nicobar_islands,
                 .chandigarh,
@@ -60,9 +60,9 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
                 .ladakh,
                 .lakshadweep,
                 .puducherry:
-            return SovereignStateSubdivisionType.union_territories
+            return Locale.Region.SubdivisionType.union_territories
         default:
-            return SovereignStateSubdivisionType.states
+            return Locale.Region.SubdivisionType.states
         }
     }
     

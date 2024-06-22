@@ -49,7 +49,7 @@ public enum SubdivisionsNigeria : String, SovereignStateSubdivision { // https:/
         return Locale.Region.nigeria
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.states
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.states
     }
 }

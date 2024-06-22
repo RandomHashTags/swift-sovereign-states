@@ -81,7 +81,7 @@ public enum SubdivisionsIceland : String, SovereignStateSubdivision { // https:/
         return Locale.Region.iceland
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.municipalities
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.municipalities
     }
 }

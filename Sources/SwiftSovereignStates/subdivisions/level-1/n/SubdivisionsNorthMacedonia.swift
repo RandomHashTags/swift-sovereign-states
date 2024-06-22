@@ -14,7 +14,7 @@ public enum SubdivisionsNorthMacedonia : String, SovereignStateSubdivision { // 
         return Locale.Region.northMacedonia
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.municipalities
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.municipalities
     }
 }

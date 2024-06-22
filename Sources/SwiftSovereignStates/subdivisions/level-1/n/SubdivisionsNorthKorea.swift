@@ -22,7 +22,7 @@ public enum SubdivisionsNorthKorea : String, SovereignStateSubdivision { // http
         return Locale.Region.northKorea
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.provinces
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.provinces
     }
 }

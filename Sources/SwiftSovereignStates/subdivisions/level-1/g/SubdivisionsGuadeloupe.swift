@@ -45,7 +45,7 @@ public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // http
         return Locale.Region.guadeloupe
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.communes
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.communes
     }
 }

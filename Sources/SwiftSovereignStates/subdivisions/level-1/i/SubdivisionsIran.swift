@@ -44,7 +44,7 @@ public enum SubdivisionsIran : String, SovereignStateSubdivision { // https://en
         return Locale.Region.iran
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.provinces
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.provinces
     }
 }

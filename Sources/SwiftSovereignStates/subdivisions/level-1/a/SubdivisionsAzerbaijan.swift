@@ -88,7 +88,7 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
         return Locale.Region.azerbaijan
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .baku,
                 .ganja,
@@ -100,9 +100,9 @@ public enum SubdivisionsAzerbaijan : String, SovereignStateSubdivision { // http
                 .shirvan,
                 .sumqayit,
                 .yevlakh_city:
-            return SovereignStateSubdivisionType.cities
+            return Locale.Region.SubdivisionType.cities
         default:
-            return SovereignStateSubdivisionType.districts
+            return Locale.Region.SubdivisionType.districts
         }
     }
     

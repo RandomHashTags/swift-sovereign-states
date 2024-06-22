@@ -31,7 +31,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         return Locale.Region.australia
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .australian_capital_territory,
                 .jervis_bay_territory,
@@ -46,7 +46,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
                 .norfolk_island:
             return .federal_territories
         default:
-            return SovereignStateSubdivisionType.states
+            return Locale.Region.SubdivisionType.states
         }
     }
     
@@ -62,7 +62,7 @@ public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https
         }
     }
     
-    public var neighbors : [any SovereignStateSubdivision] {
+    public var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .new_south_wales:
             return [SubdivisionsAustralia.queensland, SubdivisionsAustralia.south_australia, SubdivisionsAustralia.victoria, SubdivisionsAustralia.australian_capital_territory, SubdivisionsAustralia.jervis_bay_territory, SubdivisionsAustralia.coral_sea_islands]

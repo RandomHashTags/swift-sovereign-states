@@ -29,7 +29,7 @@ public enum SubdivisionsGhana : String, SovereignStateSubdivision { // https://e
         return Locale.Region.ghana
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.regions
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.regions
     }
 }

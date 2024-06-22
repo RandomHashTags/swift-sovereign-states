@@ -23,12 +23,12 @@ public enum SubdivisionsKyrgyzstan : String, SovereignStateSubdivision { // http
         return Locale.Region.kyrgyzstan
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .bishkek, .osh_city:
-            return SovereignStateSubdivisionType.independent_cities
+            return Locale.Region.SubdivisionType.independent_cities
         default:
-            return SovereignStateSubdivisionType.regions
+            return Locale.Region.SubdivisionType.regions
         }
     }
 }

@@ -227,7 +227,7 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
         return Locale.Region.slovenia
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .celje,
                 .koper,
@@ -241,9 +241,9 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
                 .ptuj,
                 .slovenj_gradec,
                 .velenje:
-            return SovereignStateSubdivisionType.city_municipalities
+            return Locale.Region.SubdivisionType.city_municipalities
         default:
-            return SovereignStateSubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipalities
         }
     }
 }

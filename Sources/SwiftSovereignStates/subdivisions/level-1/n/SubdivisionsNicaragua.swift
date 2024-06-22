@@ -30,13 +30,13 @@ public enum SubdivisionsNicaragua : String, SovereignStateSubdivision { // https
         return Locale.Region.nicaragua
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .north_caribbean_coast,
                 .south_caribbean_coast:
-            return SovereignStateSubdivisionType.autonomous_regions
+            return Locale.Region.SubdivisionType.autonomous_regions
         default:
-            return SovereignStateSubdivisionType.departments
+            return Locale.Region.SubdivisionType.departments
         }
     }
     

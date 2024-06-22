@@ -27,7 +27,7 @@ public enum SubdivisionsGreece : String, SovereignStateSubdivision { // https://
         return Locale.Region.greece
     }
     
-    public var type : SovereignStateSubdivisionType {
-        return SovereignStateSubdivisionType.regions
+    public var type : Locale.Region.SubdivisionType {
+        return Locale.Region.SubdivisionType.regions
     }
 }

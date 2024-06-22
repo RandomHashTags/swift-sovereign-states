@@ -21,10 +21,10 @@ public enum SubdivisionsIsrael : String, SovereignStateSubdivision { // https://
         return Locale.Region.israel
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
-        case .judea_and_samaria: return SovereignStateSubdivisionType.administrative_areas
-        default: return SovereignStateSubdivisionType.districts
+        case .judea_and_samaria: return Locale.Region.SubdivisionType.administrative_areas
+        default: return Locale.Region.SubdivisionType.districts
         }
     }
 }

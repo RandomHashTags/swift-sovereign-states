@@ -57,7 +57,7 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
         return Locale.Region.latvia
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .daugavpils,
                 .jurmala,
@@ -66,9 +66,9 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
                 .riga,
                 .jelgava_city,
                 .ventspils_city:
-            return SovereignStateSubdivisionType.cities
+            return Locale.Region.SubdivisionType.cities
         default:
-            return SovereignStateSubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipalities
         }
     }
 }

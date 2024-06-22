@@ -21,12 +21,12 @@ public enum SubdivisionsGrenada : String, SovereignStateSubdivision { // https:/
         return Locale.Region.grenada
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .carriacou_and_petite_martinique:
-            return SovereignStateSubdivisionType.dependencies
+            return Locale.Region.SubdivisionType.dependencies
         default:
-            return SovereignStateSubdivisionType.parishes
+            return Locale.Region.SubdivisionType.parishes
         }
     }
 }

@@ -36,7 +36,7 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
         return Locale.Region.southKorea
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .busan,
                 .daegu,
@@ -44,13 +44,13 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
                 .gwangju,
                 .incheon,
                 .ulsan:
-            return SovereignStateSubdivisionType.metropolitan_cities
+            return Locale.Region.SubdivisionType.metropolitan_cities
         case .sejong:
-            return SovereignStateSubdivisionType.special_self_governing_cities
+            return Locale.Region.SubdivisionType.special_self_governing_cities
         case .seoul:
-            return SovereignStateSubdivisionType.special_cities
+            return Locale.Region.SubdivisionType.special_cities
         default:
-            return SovereignStateSubdivisionType.provinces
+            return Locale.Region.SubdivisionType.provinces
         }
     }
 }

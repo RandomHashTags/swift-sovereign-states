@@ -22,12 +22,12 @@ public enum SubdivisionsGuinea : String, SovereignStateSubdivision {
         return Locale.Region.guinea
     }
     
-    public var type : SovereignStateSubdivisionType {
+    public var type : Locale.Region.SubdivisionType {
         switch self {
         case .conakry:
-            return SovereignStateSubdivisionType.special_cities
+            return Locale.Region.SubdivisionType.special_cities
         default:
-            return SovereignStateSubdivisionType.regions
+            return Locale.Region.SubdivisionType.regions
         }
     }
 }
