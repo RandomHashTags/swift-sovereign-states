@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_territories_of_Australia
+public enum SubdivisionsAustralia : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/States_and_territories_of_Australia | https://en.wikipedia.org/wiki/ISO_3166-2:AU
     case new_south_wales
     case queensland
     case south_australia
