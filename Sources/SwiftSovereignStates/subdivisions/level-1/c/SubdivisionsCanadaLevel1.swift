@@ -7,60 +7,45 @@
 
 import Foundation
 
-public extension Locale.Region.Subdivision {
-    protocol Canada : Locale.Region.Subdivision.Level1Protocol {
+public typealias SubdivisionsCanadaLevel1 = Locale.Region.Subdivision.Level1.Canada
+
+public extension Locale.Region.Subdivision.Level1 {
+    @SubdivisionLevel1(region: Locale.Region.canada, allSameType: false, type: Locale.Region.SubdivisionType.province)
+    struct Canada : Locale.Region.Subdivision.Level1Protocol {
+
+        public var type : Locale.Region.SubdivisionType {
+            switch self {
+            case .northwestTerritories,
+                    .nunavut,
+                    .yukon:
+                return Locale.Region.SubdivisionType.territory
+            default:
+                return Locale.Region.SubdivisionType.province
+            }
+        }
     }
-}
-public extension Locale.Region.Subdivision.Canada {
-    var region : Locale.Region { Locale.Region.canada }
 }
 
-public enum SubdivisionsCanadaLevel1 : String, Locale.Region.Subdivision.Canada { // https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada
-    case alberta
-    case britishColumbia
-    case manitoba
-    case newBrunswick
-    case newfoundlandLabrador
-    case novaScotia
-    case ontario
-    case princeEdwardIsland
-    case quebec
-    case saskatchewan
-    
-    case northwestTerritories
-    case nunavut
-    case yukon
-    
-    public var type : Locale.Region.SubdivisionType {
-        switch self {
-        case .northwestTerritories,
-                .nunavut,
-                .yukon:
-            return Locale.Region.SubdivisionType.territory
-        default:
-            return Locale.Region.SubdivisionType.province
-        }
-    }
-    
-    public var identifier : String {
-        switch self {
-        case .alberta: return "AB"
-        case .britishColumbia: return "BC"
-        case .manitoba: return "MB"
-        case .newBrunswick: return "NB"
-        case .newfoundlandLabrador: return "NL"
-        case .northwestTerritories: return "NT"
-        case .novaScotia: return "NS"
-        case .nunavut: return "NU"
-        case .ontario: return "ON"
-        case .princeEdwardIsland: return "PE"
-        case .quebec: return "QC"
-        case .saskatchewan: return "SK"
-        case .yukon: return "YK"
-        }
-    }
-    
-    public var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
+public extension SubdivisionsCanadaLevel1 { // https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada | https://en.wikipedia.org/wiki/ISO_3166-2:CA
+    static let alberta = get("AB")
+    static let britishColumbia = get("BC")
+    static let manitoba = get("MB")
+    static let newBrunswick = get("NB")
+    static let newfoundlandLabrador = get("NL")
+    static let novaScotia = get("NS")
+    static let ontario = get("ON")
+    static let princeEdwardIsland = get("PE")
+    static let quebec = get("QC")
+    static let saskatchewan = get("SK")
+
+    static let northwestTerritories = get("NT")
+    static let nunavut = get("NU")
+    static let yukon = get("YK")
+}
+
+// MARK: Neighbors
+public extension SubdivisionsCanadaLevel1 {
+    var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .alberta: return [SubdivisionsCanadaLevel1.northwestTerritories, SubdivisionsCanadaLevel1.saskatchewan, SubdivisionsCanadaLevel1.britishColumbia, SubdivisionsUnitedStatesLevel1.montana]
         case .britishColumbia:
@@ -104,6 +89,8 @@ public enum SubdivisionsCanadaLevel1 : String, Locale.Region.Subdivision.Canada 
                 SubdivisionsCanadaLevel1.northwestTerritories, SubdivisionsCanadaLevel1.britishColumbia,
                 SubdivisionsUnitedStatesLevel1.alaska
             ]
+        default:
+            return []
         }
     }
 }
