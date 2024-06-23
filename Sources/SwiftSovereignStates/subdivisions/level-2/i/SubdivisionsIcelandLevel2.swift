@@ -1,5 +1,5 @@
 //
-//  SubdivisionsIceland.swift
+//  SubdivisionsIcelandLevel2.swift
 //  
 //
 //  Created by Evan Anderson on 9/30/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubdivisionsIceland : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Municipalities_of_Iceland
+public enum SubdivisionsIcelandLevel2 : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Municipalities_of_Iceland
     case akrahreppur
     case akranes
     case akureyri

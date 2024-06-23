@@ -474,17 +474,17 @@ public extension Locale.Region {
         case .gabon: return SubdivisionsGabonLevel1.self
         case .gambia: return SubdivisionsGambiaLevel1.self
         case .georgia: return nil
-        //case .germany: return SubdivisionsGermany.self
-        //case .ghana: return SubdivisionsGhana.self
+        case .germany: return SubdivisionsGermanyLevel1.self
+        case .ghana: return SubdivisionsGhanaLevel1.self
         case .gibraltar: return nil
-        //case .greece: return SubdivisionsGreece.self
+        case .greece: return SubdivisionsGreeceLevel1.self
         case .greenland: return SubdivisionsGreenlandLevel1.self
-        //case .grenada: return SubdivisionsGrenada.self
+        case .grenada: return SubdivisionsGrenadaLevel1.self
         case .guam: return nil
         //case .guadeloupe: return SubdivisionsGuadeloupe.self
-        //case .guatemala: return SubdivisionsGuatemala.self
+        case .guatemala: return SubdivisionsGuatemalaLevel1.self
         case .guernsey: return nil
-        //case .guinea: return SubdivisionsGuinea.self
+        case .guinea: return SubdivisionsGuineaLevel1.self
         case .guineaBissau: return nil
         case .guyana: return SubdivisionsGuyanaLevel1.self
             
@@ -494,14 +494,14 @@ public extension Locale.Region {
         case .hongKong: return nil
         case .hungary: return SubdivisionsHungaryLevel1.self
         
-        //case .iceland: return SubdivisionsIceland.self
+        case .iceland: return SubdivisionsIcelandLevel1.self
         //case .india: return SubdivisionsIndia.self
         case .indonesia: return SubdivisionsIndonesiaLevel1.self
         case .iraq: return SubdivisionsIraqLevel1.self
-        //case .iran: return SubdivisionsIran.self
+        case .iran: return SubdivisionsIranLevel1.self
         case .ireland: return SubdivisionsIrelandLevel1.self
         case .isleOfMan: return nil
-        //case .israel: return SubdivisionsIsrael.self
+        case .israel: return SubdivisionsIsraelLevel1.self
         case .italy: return SubdivisionsItalyLevel1.self
         case .côteDIvoire: return SubdivisionsIvoryCoastaLevel1.self
         
