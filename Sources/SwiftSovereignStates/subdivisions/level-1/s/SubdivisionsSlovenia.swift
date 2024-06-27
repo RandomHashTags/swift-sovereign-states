@@ -241,9 +241,9 @@ public enum SubdivisionsSlovenia : String, SovereignStateSubdivision { // https:
                 .ptuj,
                 .slovenj_gradec,
                 .velenje:
-            return Locale.Region.SubdivisionType.city_municipalities
+            return Locale.Region.SubdivisionType.cityMunicipality
         default:
-            return Locale.Region.SubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipality
         }
     }
 }

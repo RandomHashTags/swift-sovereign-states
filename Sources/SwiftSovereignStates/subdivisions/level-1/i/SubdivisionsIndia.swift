@@ -60,7 +60,7 @@ public enum SubdivisionsIndia : String, SovereignStateSubdivision { // https://e
                 .ladakh,
                 .lakshadweep,
                 .puducherry:
-            return Locale.Region.SubdivisionType.union_territories
+            return Locale.Region.SubdivisionType.unionTerritory
         default:
             return Locale.Region.SubdivisionType.states
         }

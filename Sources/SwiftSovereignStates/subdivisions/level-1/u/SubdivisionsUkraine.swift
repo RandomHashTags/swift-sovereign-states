@@ -45,12 +45,12 @@ public enum SubdivisionsUkraine : String, SovereignStateSubdivision { // https:/
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .crimea:
-            return Locale.Region.SubdivisionType.autonomous_republics
+            return Locale.Region.SubdivisionType.autonomousRepublic
         case .kyiv_city,
                 .sevastopol:
-            return Locale.Region.SubdivisionType.special_self_governing_cities
+            return Locale.Region.SubdivisionType.specialSelfGoverningCity
         default:
-            return Locale.Region.SubdivisionType.oblasts
+            return Locale.Region.SubdivisionType.oblast
         }
     }
 }

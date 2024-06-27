@@ -152,9 +152,9 @@ public enum SubdivisionsUganda : String, SovereignStateSubdivision { // https://
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .kampala:
-            return Locale.Region.SubdivisionType.cities
+            return Locale.Region.SubdivisionType.city
         default:
-            return Locale.Region.SubdivisionType.districts
+            return Locale.Region.SubdivisionType.district
         }
     }
 }

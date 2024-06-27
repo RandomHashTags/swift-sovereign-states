@@ -82,6 +82,6 @@ public enum SubdivisionsMalta : String, SovereignStateSubdivision { // https://e
     }
     
     public var type : Locale.Region.SubdivisionType {
-        return Locale.Region.SubdivisionType.councils
+        return Locale.Region.SubdivisionType.council
     }
 }

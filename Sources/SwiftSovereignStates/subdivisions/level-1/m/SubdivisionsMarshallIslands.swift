@@ -38,6 +38,6 @@ public enum SubdivisionsMarshallIslands : String, SovereignStateSubdivision { //
     }
     
     public var type : Locale.Region.SubdivisionType {
-        return Locale.Region.SubdivisionType.atolls
+        return Locale.Region.SubdivisionType.atoll
     }
 }

@@ -59,9 +59,9 @@ public enum SubdivisionsRomania : String, SovereignStateSubdivision { // https:/
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .bucharest:
-            return Locale.Region.SubdivisionType.cities
+            return Locale.Region.SubdivisionType.city
         default:
-            return Locale.Region.SubdivisionType.counties
+            return Locale.Region.SubdivisionType.county
         }
     }
 }

@@ -100,9 +100,9 @@ public enum SubdivisionsPhilippines : String, SovereignStateSubdivision { // htt
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .metro_manila:
-            return Locale.Region.SubdivisionType.administrative_areas
+            return Locale.Region.SubdivisionType.administrativeArea
         default:
-            return Locale.Region.SubdivisionType.provinces
+            return Locale.Region.SubdivisionType.province
         }
     }
 }

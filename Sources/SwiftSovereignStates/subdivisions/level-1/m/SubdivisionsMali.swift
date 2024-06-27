@@ -28,9 +28,9 @@ public enum SubdivisionsMali : String, SovereignStateSubdivision { // https://en
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .bamako:
-            return Locale.Region.SubdivisionType.cities
+            return Locale.Region.SubdivisionType.city
         default:
-            return Locale.Region.SubdivisionType.regions
+            return Locale.Region.SubdivisionType.region
         }
     }
 }

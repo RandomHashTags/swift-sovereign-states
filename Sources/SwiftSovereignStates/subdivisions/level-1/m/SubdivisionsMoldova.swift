@@ -54,11 +54,11 @@ public enum SubdivisionsMoldova : String, SovereignStateSubdivision {
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .balti, .chisinau, .bender:
-            return Locale.Region.SubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipality
         case .gagauzia, .left_bank_of_the_dniester:
-            return Locale.Region.SubdivisionType.autonomous_territorial_units
+            return Locale.Region.SubdivisionType.autonomousTerritorialUnit
         default:
-            return Locale.Region.SubdivisionType.districts
+            return Locale.Region.SubdivisionType.district
         }
     }
 }

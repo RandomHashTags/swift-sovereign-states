@@ -38,6 +38,6 @@ public enum SubdivisionsMontenegro : String, SovereignStateSubdivision { // http
     }
     
     public var type : Locale.Region.SubdivisionType {
-        return Locale.Region.SubdivisionType.municipalities
+        return Locale.Region.SubdivisionType.municipality
     }
 }

@@ -44,7 +44,7 @@ public enum SubdivisionsMyanmar : String, SovereignStateSubdivision { // https:/
                 .sagaing,
                 .tanintharyi,
                 .yangon:
-            return Locale.Region.SubdivisionType.regions
+            return Locale.Region.SubdivisionType.region
         case .chin,
                 .kachin,
                 .kayah,
@@ -52,18 +52,18 @@ public enum SubdivisionsMyanmar : String, SovereignStateSubdivision { // https:/
                 .mon,
                 .rakhine,
                 .shan:
-            return Locale.Region.SubdivisionType.states
+            return Locale.Region.SubdivisionType.state
         case .naypyidaw:
-            return Locale.Region.SubdivisionType.union_territories
+            return Locale.Region.SubdivisionType.unionTerritory
             
         case .danu,
                 .kokang,
                 .naga,
                 .pa_laung,
                 .pa_o:
-            return Locale.Region.SubdivisionType.self_administered_zone
+            return Locale.Region.SubdivisionType.selfAdministeredZone
         case .wa:
-            return Locale.Region.SubdivisionType.self_administered_division
+            return Locale.Region.SubdivisionType.selfAdministeredDivision
         }
     }
 }

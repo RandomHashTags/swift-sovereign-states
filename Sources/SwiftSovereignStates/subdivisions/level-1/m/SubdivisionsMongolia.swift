@@ -38,9 +38,9 @@ public enum SubdivisionsMongolia : String, SovereignStateSubdivision { // https:
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .ulaanbaatar:
-            return Locale.Region.SubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipality
         default:
-            return Locale.Region.SubdivisionType.provinces
+            return Locale.Region.SubdivisionType.province
         }
     }
 }

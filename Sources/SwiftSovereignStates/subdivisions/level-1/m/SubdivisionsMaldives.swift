@@ -37,9 +37,9 @@ public enum SubdivisionsMaldives : String, SovereignStateSubdivision { // https:
     public var type : Locale.Region.SubdivisionType {
         switch self {
         case .male:
-            return Locale.Region.SubdivisionType.cities
+            return Locale.Region.SubdivisionType.city
         default:
-            return Locale.Region.SubdivisionType.atolls
+            return Locale.Region.SubdivisionType.atoll
         }
     }
 }

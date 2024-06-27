@@ -35,9 +35,9 @@ public enum SubdivisionsMalaysia : String, SovereignStateSubdivision { // https:
         case .kuala_lumpur,
                 .labuan,
                 .putrajaya:
-            return .federal_territories
+            return .federalTerritory
         default:
-            return Locale.Region.SubdivisionType.states
+            return Locale.Region.SubdivisionType.state
         }
     }
 }

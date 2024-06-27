@@ -23,6 +23,6 @@ public enum SubdivisionsMauritius : String, SovereignStateSubdivision { // https
     }
     
     public var type : Locale.Region.SubdivisionType {
-        return Locale.Region.SubdivisionType.districts
+        return Locale.Region.SubdivisionType.district
     }
 }

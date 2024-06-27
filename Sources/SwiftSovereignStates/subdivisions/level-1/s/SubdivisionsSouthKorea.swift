@@ -44,13 +44,13 @@ public enum SubdivisionsSouthKorea : String, SovereignStateSubdivision { // http
                 .gwangju,
                 .incheon,
                 .ulsan:
-            return Locale.Region.SubdivisionType.metropolitan_cities
+            return Locale.Region.SubdivisionType.metropolitanCity
         case .sejong:
-            return Locale.Region.SubdivisionType.special_self_governing_cities
+            return Locale.Region.SubdivisionType.specialSelfGoverningCity
         case .seoul:
-            return Locale.Region.SubdivisionType.special_cities
+            return Locale.Region.SubdivisionType.specialCity
         default:
-            return Locale.Region.SubdivisionType.provinces
+            return Locale.Region.SubdivisionType.province
         }
     }
 }

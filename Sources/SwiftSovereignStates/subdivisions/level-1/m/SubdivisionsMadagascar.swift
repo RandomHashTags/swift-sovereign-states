@@ -37,6 +37,6 @@ public enum SubdivisionsMadagascar : String, SovereignStateSubdivision { // http
     }
     
     public var type : Locale.Region.SubdivisionType {
-        return Locale.Region.SubdivisionType.regions
+        return Locale.Region.SubdivisionType.region
     }
 }

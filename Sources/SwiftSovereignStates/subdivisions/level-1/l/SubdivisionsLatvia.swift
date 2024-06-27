@@ -66,9 +66,9 @@ public enum SubdivisionsLatvia : String, SovereignStateSubdivision { // https://
                 .riga,
                 .jelgava_city,
                 .ventspils_city:
-            return Locale.Region.SubdivisionType.cities
+            return Locale.Region.SubdivisionType.city
         default:
-            return Locale.Region.SubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipality
         }
     }
 }

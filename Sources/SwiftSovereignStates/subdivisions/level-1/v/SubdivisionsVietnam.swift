@@ -83,9 +83,9 @@ public enum SubdivisionsVietnam : String, SovereignStateSubdivision { // https:/
                 .haiphong,
                 .hanoi,
                 .ho_chi_minh_city:
-            return Locale.Region.SubdivisionType.municipalities
+            return Locale.Region.SubdivisionType.municipality
         default:
-            return Locale.Region.SubdivisionType.provinces
+            return Locale.Region.SubdivisionType.province
         }
     }
 }
