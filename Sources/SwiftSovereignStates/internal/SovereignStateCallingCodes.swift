@@ -7,9 +7,9 @@
 
 import Foundation
 
-internal enum SovereignStateCallingCodes { // https://en.wikipedia.org/wiki/List_of_country_calling_codes
-    static func get(_ region: Locale.Region) -> Set<String> {
-        switch region {
+public extension Locale.Region { // https://en.wikipedia.org/wiki/List_of_country_calling_codes
+    var callingCodes : [String] {
+        switch self {
             
         case .afghanistan: return ["93"]
         case .ålandIslands: return ["358 (18)", "358 (475)"]
@@ -56,12 +56,36 @@ internal enum SovereignStateCallingCodes { // https://en.wikipedia.org/wiki/List
         case .canada: return ["1"]
         case .capeVerde: return ["238"]
         case .caribbeanNetherlands: return ["599 (3)", "599 (4)", "599 (7)"]
+        case .caymanIslands: return ["1 (345)"]
+
+        case .dominica: return ["1 (767)"]
+        case .dominicanRepublic: return ["1 (809)", "1 (829)", "1 (849)"]
+
+        case .grenada: return ["1 (473)"]
+        case .guam: return ["1 (671)"]
+
+        case .jamaica: return ["1 (658)", "1 (876)"]
+
+        case .montserrat: return ["1 (664)"]
+
+        case .northernMarianaIslands: return ["1 (670)"]
+
+        case .puertoRico: return ["1 (787)", "1 (939)"]
+
+        case .saintKittsNevis: return ["1 (869)"]
+        case .saintLucia: return ["1 (758)"]
+        case .saintVincentGrenadines: return ["1 (784)"]
+        case .sintMaarten: return ["1 (721)"]
+
+        case .trinidadTobago: return ["1 (868)"]
+        case .turksCaicosIslands: return ["1 (649)"]
             
         case .uganda: return ["256"]
         case .ukraine: return ["380"]
         case .unitedArabEmirates: return ["971"]
         case .unitedKingdom: return ["44"]
         case .unitedStates: return ["1"]
+        case .unitedStatesVirginIslands: return ["1 (340)"]
             
         default: return []
         }
