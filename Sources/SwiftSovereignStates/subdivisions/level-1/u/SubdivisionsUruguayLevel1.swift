@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsUruguayLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Uruguay | https://en.wikipedia.org/wiki/ISO_3166-2:UY
     static let artigas = get("AR")
     static let canelones = get("CA")

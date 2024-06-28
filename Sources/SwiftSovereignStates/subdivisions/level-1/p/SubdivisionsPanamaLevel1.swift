@@ -27,6 +27,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPanamaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Panama | https://en.wikipedia.org/wiki/ISO_3166-2:PA
     static let bocasDelToro = get("1")
     static let chiriquí = get("4")

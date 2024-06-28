@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsJapanLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Japan | https://en.wikipedia.org/wiki/Prefectures_of_Japan | https://en.wikipedia.org/wiki/ISO_3166-2:JP
     static let aichi = get("23")
     static let akita = get("05")

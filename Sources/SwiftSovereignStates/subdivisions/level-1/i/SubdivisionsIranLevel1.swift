@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIranLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Iran | https://en.wikipedia.org/wiki/ISO_3166-2:IR
     static let alborz = get("30")
     static let ardabil = get("24")

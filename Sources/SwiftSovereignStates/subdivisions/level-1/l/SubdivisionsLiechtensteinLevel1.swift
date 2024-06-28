@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLiechtensteinLevel1 { // https://en.wikipedia.org/wiki/Municipalities_of_Liechtenstein | https://en.wikipedia.org/wiki/ISO_3166-2:LI
     static let balzers = get("01")
     static let eschen = get("02")

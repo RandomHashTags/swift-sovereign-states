@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIndonesiaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Indonesia | https://en.wikipedia.org/wiki/ISO_3166-2:ID
     static let aceh = get("AC")
     static let bali = get("BA")

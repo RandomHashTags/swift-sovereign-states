@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBarbadosLevel1 { // https://en.wikipedia.org/wiki/Parishes_of_Barbados | https://en.wikipedia.org/wiki/ISO_3166-2:BB
     static let christChurch = get("01")
     static let saintAndrew = get("02")

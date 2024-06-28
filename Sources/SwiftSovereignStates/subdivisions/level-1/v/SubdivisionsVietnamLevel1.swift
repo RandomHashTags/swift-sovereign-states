@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsVietnamLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Vietnam | https://en.wikipedia.org/wiki/ISO_3166-2:VN
     static let an_giang = get("44")
     static let ba_ria_vung_tau = get("43")

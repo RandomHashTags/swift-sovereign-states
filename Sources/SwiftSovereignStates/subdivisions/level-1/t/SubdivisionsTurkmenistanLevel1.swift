@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsTurkmenistanLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Turkmenistan | https://en.wikipedia.org/wiki/ISO_3166-2:TM
     static let ahal = get("A")
     static let ashgabat = get("S")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsFinlandLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Finland | https://en.wikipedia.org/wiki/ISO_3166-2:FI
     static let aland = get("01")
     static let central_finland = get("08")

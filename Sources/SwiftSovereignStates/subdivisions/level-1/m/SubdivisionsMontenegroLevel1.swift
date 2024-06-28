@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMontenegroLevel1 { // https://en.wikipedia.org/wiki/Municipalities_of_Montenegro | https://en.wikipedia.org/wiki/ISO_3166-2:ME
     static let andrijevica = get("01")
     static let bar = get("02")

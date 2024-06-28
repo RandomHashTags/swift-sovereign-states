@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMauritaniaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Mauritania | https://en.wikipedia.org/wiki/ISO_3166-2:MR
     static let adrar = get("07")
     static let assaba = get("03")

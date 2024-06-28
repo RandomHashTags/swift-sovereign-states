@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMadagascarLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Madagascar | https://en.wikipedia.org/wiki/ISO_3166-2:MG
     static let alaotra_mangoro = get("01")
     static let amoron_i_mania = get("02")

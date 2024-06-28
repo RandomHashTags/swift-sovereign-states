@@ -28,6 +28,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsItalyLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Italy | https://en.wikipedia.org/wiki/ISO_3166-2:IT
     static let abruzzo = get("65")
     static let aosta_valley = get("23")

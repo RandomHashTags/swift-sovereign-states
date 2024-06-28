@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsHungaryLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Hungary | https://en.wikipedia.org/wiki/ISO_3166-2:HU | // TODO: add `city with county rights` values
     static let bacs_kiskun = get("BK")
     static let baranya = get("BA")

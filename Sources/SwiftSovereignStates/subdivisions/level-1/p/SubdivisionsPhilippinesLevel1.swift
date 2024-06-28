@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPhilippinesLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_the_Philippines | https://en.wikipedia.org/wiki/ISO_3166-2:PH
     static let abra = get("ABR")
     static let agusan_del_norte = get("AGN")

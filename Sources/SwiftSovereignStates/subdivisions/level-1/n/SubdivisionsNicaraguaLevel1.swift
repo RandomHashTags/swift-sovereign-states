@@ -25,6 +25,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNicaraguaLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Nicaragua | https://en.wikipedia.org/wiki/ISO_3166-2:NI
     static let boaco = get("BO")
     static let carazo = get("CA")

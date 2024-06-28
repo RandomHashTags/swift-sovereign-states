@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGuineaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Guinea | https://en.wikipedia.org/wiki/ISO_3166-2:GN
     static let boke = get("B")
     static let faranah = get("F")

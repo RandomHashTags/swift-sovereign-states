@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGermanyLevel1 { // https://en.wikipedia.org/wiki/States_of_Germany | https://en.wikipedia.org/wiki/ISO_3166-2:DE
     static let baden_wurttemberg = get("BW")
     static let bavaria = get("BY")

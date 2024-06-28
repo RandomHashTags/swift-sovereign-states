@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMoroccoLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Morocco | https://en.wikipedia.org/wiki/ISO_3166-2:MA
     static let beni_mellal_khenifra = get("05")
     static let casablanca_settat = get("06")

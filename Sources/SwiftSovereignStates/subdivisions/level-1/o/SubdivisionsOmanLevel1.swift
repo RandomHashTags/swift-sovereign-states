@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsOmanLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Oman | https://en.wikipedia.org/wiki/ISO_3166-2:OM
     static let interior = get("DA")
     static let dhahira = get("ZA")

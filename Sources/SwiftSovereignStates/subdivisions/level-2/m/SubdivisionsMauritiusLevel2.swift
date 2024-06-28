@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level2 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMauritiusLevel2 { // https://en.wikipedia.org/wiki/Districts_of_Mauritius | https://en.wikipedia.org/wiki/ISO_3166-2:MU
     static let flacq = get("FL")
     static let grand_port = get("GP")

@@ -39,6 +39,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsUnitedStatesLevel1 { // https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States
     static let alabama = get("AL")
     static let alaska = get("AK")

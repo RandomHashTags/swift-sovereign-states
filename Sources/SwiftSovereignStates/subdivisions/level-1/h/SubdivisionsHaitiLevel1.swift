@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsHaitiLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Haiti | https://en.wikipedia.org/wiki/ISO_3166-2:HT
     static let artibonite = get("AR")
     static let centre = get("CE")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGuyanaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Guyana | https://en.wikipedia.org/wiki/ISO_3166-2:GY
     static let barima_waini = get("BA")
     static let cuyuni_mazaruni = get("CU")

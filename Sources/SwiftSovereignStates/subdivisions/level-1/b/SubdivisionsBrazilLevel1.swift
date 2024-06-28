@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBrazilLevel1 { // https://en.wikipedia.org/wiki/Federative_units_of_Brazil | https://en.wikipedia.org/wiki/ISO_3166-2:BR
     static let acre = get("AC")
     static let alagoas = get("AL")

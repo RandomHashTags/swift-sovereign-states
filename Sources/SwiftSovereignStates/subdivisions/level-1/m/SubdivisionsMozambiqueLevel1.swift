@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMozambiqueLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Mozambique | https://en.wikipedia.org/wiki/ISO_3166-2:MZ
     static let cabo_delgado = get("P")
     static let gaza = get("G")

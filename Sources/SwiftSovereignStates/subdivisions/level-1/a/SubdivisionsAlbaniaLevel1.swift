@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAlbaniaLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Albania
     static let berat = get("01")
     static let diber = get("02")

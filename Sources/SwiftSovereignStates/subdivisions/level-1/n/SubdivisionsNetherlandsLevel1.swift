@@ -26,6 +26,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNetherlandsLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_the_Netherlands | https://en.wikipedia.org/wiki/ISO_3166-2:NL
     static let drenthe = get("DR")
     static let flevoland = get("FL")

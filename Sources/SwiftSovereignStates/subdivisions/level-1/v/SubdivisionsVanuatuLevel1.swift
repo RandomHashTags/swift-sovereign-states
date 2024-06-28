@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsVanuatuLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Vanuatu | https://en.wikipedia.org/wiki/ISO_3166-2:VU
     static let malampa = get("MAP")
     static let pénama = get("PAM")
@@ -22,7 +23,10 @@ public extension SubdivisionsVanuatuLevel1 { // https://en.wikipedia.org/wiki/Pr
     static let shéfa = get("SEE")
     static let taféa = get("TAE")
     static let torba = get("TOB")
-    
+}
+
+// MARK: Neighbors
+public extension SubdivisionsVanuatuLevel1 {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .malampa:

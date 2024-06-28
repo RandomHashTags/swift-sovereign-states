@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsYemenLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Yemen | https://en.wikipedia.org/wiki/ISO_3166-2:YE
     static let aden = get("AD")
     static let amran = get("AM")

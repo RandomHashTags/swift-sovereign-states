@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPakistanLevel1 { // https://en.wikipedia.org/wiki/Administrative_units_of_Pakistan | https://en.wikipedia.org/wiki/ISO_3166-2:PK
     static let azadJammuKashmir = get("JK")
     static let balochistan = get("BA")

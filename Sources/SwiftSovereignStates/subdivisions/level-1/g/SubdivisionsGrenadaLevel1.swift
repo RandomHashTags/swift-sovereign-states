@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGrenadaLevel1 { // https://en.wikipedia.org/wiki/Parishes_of_Grenada | https://en.wikipedia.org/wiki/ISO_3166-2:GD
     static let saint_andrew = get("01")
     static let saint_david = get("02")

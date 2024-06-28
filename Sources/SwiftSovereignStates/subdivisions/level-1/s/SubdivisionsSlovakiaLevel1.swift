@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSlovakiaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Slovakia | https://en.wikipedia.org/wiki/ISO_3166-2:SK
     static let banskaBystrica = get("BC")
     static let bratislava = get("BL")

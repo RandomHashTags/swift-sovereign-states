@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCzechRepublicLevel1 { // https://en.wikipedia.org/wiki/Regions_of_the_Czech_Republic | https://en.wikipedia.org/wiki/ISO_3166-2:CZ
     static let central_bohemian = get("20")
     static let hradec_kralove = get("52")

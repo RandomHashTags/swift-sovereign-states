@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBelizeLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Belize | https://en.wikipedia.org/wiki/ISO_3166-2:BZ
     static let belize = get("BZ")
     static let cayo = get("CY")

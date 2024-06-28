@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLebanonLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Lebanon | https://en.wikipedia.org/wiki/ISO_3166-2:LB
     static let akkar = get("AK")
     static let baalbekHermel = get("BH")

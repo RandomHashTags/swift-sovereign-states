@@ -35,6 +35,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAzerbaijanLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Azerbaijan | https://en.wikipedia.org/wiki/ISO_3166-2:AZ
     static let absheron = get("ABS")
     static let agdash = get("AGS")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIraqLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Iraq | https://en.wikipedia.org/wiki/ISO_3166-2:IQ
     static let al_anbar = get("AN")
     static let al_qadisiyyah = get("QA")

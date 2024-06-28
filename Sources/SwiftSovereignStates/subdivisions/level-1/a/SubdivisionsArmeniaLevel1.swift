@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsArmeniaLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Armenia | https://en.wikipedia.org/wiki/ISO_3166-2:AM
     static let aragatsotn = get("AG")
     static let ararat = get("AR")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGhanaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Ghana | https://en.wikipedia.org/wiki/ISO_3166-2:GH
     static let ahafo = get("AF")
     static let ashanti = get("AH")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsHondurasLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Honduras | https://en.wikipedia.org/wiki/ISO_3166-2:HN
     static let atlantida = get("AT")
     static let choluteca = get("CH")

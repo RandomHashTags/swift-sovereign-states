@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPalestineLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Palestine | https://en.wikipedia.org/wiki/ISO_3166-2:PS
     static let bethlehem = get("BTH")
     static let deirAlBalah = get("DEB")

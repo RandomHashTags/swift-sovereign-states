@@ -25,6 +25,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIvoryCoastaLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast | https://en.wikipedia.org/wiki/ISO_3166-2:CI
     static let bas_sassandra = get("BS")
     static let comoe = get("CM")

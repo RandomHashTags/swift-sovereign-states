@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBotswanaLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Botswana | https://en.wikipedia.org/wiki/ISO_3166-2:BW
     static let central = get("CE")
     static let chobe = get("CH")

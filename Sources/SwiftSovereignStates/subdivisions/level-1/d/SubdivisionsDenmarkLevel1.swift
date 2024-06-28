@@ -15,13 +15,17 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsDenmarkLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Denmark | https://en.wikipedia.org/wiki/ISO_3166-2:DK
     static let hovedstaden = get("84")
     static let midtjylland = get("82")
     static let nordjylland = get("81")
     static let sjaelland = get("85")
     static let syddanmark = get("83")
-    
+}
+
+// MARK: Neighbors
+public extension SubdivisionsDenmarkLevel1 {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .hovedstaden:

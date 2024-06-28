@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsFranceLevel1 { // https://en.wikipedia.org/wiki/Regions_of_France | https://en.wikipedia.org/wiki/ISO_3166-2:FR
     static let auvergneRhoneAlpes = get("ARA")
     static let burgundyFreeCounty = get("BFC")

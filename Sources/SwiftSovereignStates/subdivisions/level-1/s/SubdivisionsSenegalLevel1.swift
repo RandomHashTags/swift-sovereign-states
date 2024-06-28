@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSenegalLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Senegal | https://en.wikipedia.org/wiki/ISO_3166-2:SN
     static let dakar = get("DK")
     static let diourbel = get("DB")

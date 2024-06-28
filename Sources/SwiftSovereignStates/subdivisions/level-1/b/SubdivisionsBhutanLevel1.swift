@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBhutanLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Bhutan | https://en.wikipedia.org/wiki/ISO_3166-2:BT
     static let bumthang = get("33")
     static let chhukha = get("12")

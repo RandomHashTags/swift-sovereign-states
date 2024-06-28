@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBahamasLevel1 { // https://en.wikipedia.org/wiki/Local_government_in_The_Bahamas | https://en.wikipedia.org/wiki/ISO_3166-2:BS
     static let acklins = get("AK")
     static let berryIslands = get("BY")

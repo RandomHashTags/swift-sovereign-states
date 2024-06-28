@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBulgariaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Bulgaria | https://en.wikipedia.org/wiki/ISO_3166-2:BG
     static let blagoevgrad = get("01")
     static let burgas = get("02")
@@ -44,7 +45,10 @@ public extension SubdivisionsBulgariaLevel1 { // https://en.wikipedia.org/wiki/P
     static let vidin = get("05")
     static let vratsa = get("06")
     static let yambol = get("28")
-    
+}
+
+// MARK: Neighbors
+public extension SubdivisionsBulgariaLevel1 {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .blagoevgrad:

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBurkinaFasoLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Burkina_Faso | https://en.wikipedia.org/wiki/ISO_3166-2:BF
     static let boucleMouhoun = get("01")
     static let cascades = get("02")

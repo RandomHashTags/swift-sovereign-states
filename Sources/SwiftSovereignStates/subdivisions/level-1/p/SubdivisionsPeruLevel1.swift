@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPeruLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Peru | https://en.wikipedia.org/wiki/ISO_3166-2:PE
     static let amazonas = get("AMA")
     static let ancash = get("ANC")

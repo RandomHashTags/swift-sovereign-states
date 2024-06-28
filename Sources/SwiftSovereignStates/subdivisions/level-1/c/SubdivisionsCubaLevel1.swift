@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCubaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Cuba | https://en.wikipedia.org/wiki/ISO_3166-2:CU
     static let artemisa = get("15")
     static let camaguey = get("09")

@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBelarusLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Belarus | https://en.wikipedia.org/wiki/ISO_3166-2:BY
     static let brest = get("BR")
     static let gomel = get("HO")

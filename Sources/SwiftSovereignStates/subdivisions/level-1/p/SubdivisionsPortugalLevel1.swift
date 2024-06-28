@@ -25,6 +25,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPortugalLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Portugal | https://en.wikipedia.org/wiki/ISO_3166-2:PT
     static let aveiro = get("01")
     static let azores = get("20")

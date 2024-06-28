@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSomaliaLevel1 { // https://en.wikipedia.org/wiki/States_and_regions_of_Somalia | https://en.wikipedia.org/wiki/ISO_3166-2:SO
     static let galmudug = get("1")
     static let hirshabelle = get("2")

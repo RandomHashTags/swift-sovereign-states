@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSpainLevel1 { // https://en.wikipedia.org/wiki/Autonomous_communities_of_Spain | https://en.wikipedia.org/wiki/ISO_3166-2:ES
     static let andalusia = get("AN")
     static let aragon = get("AR")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsTogoLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Togo | https://en.wikipedia.org/wiki/ISO_3166-2:TG
     static let centrale = get("C")
     static let kara = get("K")

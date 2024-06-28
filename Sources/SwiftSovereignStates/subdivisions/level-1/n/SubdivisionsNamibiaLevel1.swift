@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNamibiaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Namibia | https://en.wikipedia.org/wiki/ISO_3166-2:NA
     static let erongo = get("ER")
     static let hardap = get("HA")

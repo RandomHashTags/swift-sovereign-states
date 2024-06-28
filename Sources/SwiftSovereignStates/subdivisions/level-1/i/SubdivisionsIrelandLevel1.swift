@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIrelandLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Ireland | https://en.wikipedia.org/wiki/ISO_3166-2:IE
     static let connacht = get("C")
     static let leinster = get("L")

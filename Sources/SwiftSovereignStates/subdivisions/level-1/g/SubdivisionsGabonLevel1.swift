@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGabonLevel1 { // https://en.wikipedia.org/wiki/Subdivisions_of_Gabon | https://en.wikipedia.org/wiki/ISO_3166-2:GA
     static let estuaire = get("1")
     static let haut_ogooue = get("2")

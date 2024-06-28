@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias SubdivisionsIcelandLevel1 = Locale.Region.Subdivision.Level1.Angola
+public typealias SubdivisionsIcelandLevel1 = Locale.Region.Subdivision.Level1.Iceland
 
 public extension Locale.Region.Subdivision.Level1 {
     @SubdivisionLevel1(region: Locale.Region.iceland, allSameType: true, type: Locale.Region.SubdivisionType.region)
@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIcelandLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Iceland | https://en.wikipedia.org/wiki/ISO_3166-2:IS
     static let capital = get("1")
     static let southernPeninsula = get("2")

@@ -26,6 +26,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPapuaNewGuineaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Papua_New_Guinea | https://en.wikipedia.org/wiki/ISO_3166-2:PG
     static let bougainville = get("NSB")
     static let central = get("CPM")

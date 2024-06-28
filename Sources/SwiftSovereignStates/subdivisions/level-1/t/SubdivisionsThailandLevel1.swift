@@ -26,6 +26,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsThailandLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Thailand | https://en.wikipedia.org/wiki/ISO_3166-2:TH
     static let amnat_charoen = get("37")
     static let ang_thong = get("15")

@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGambiaLevel1 { // https://en.wikipedia.org/wiki/Subdivisions_of_the_Gambia | https://en.wikipedia.org/wiki/ISO_3166-2:GM
     static let banjul = get("B")
     static let central_river = get("M")

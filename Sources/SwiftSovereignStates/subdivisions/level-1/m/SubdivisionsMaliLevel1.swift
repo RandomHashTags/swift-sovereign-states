@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMaliLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Mali | https://en.wikipedia.org/wiki/ISO_3166-2:ML
     static let gao = get("7")
     static let kayes = get("1")

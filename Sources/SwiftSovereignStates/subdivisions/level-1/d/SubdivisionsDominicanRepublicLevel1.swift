@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsDominicanRepublicLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_the_Dominican_Republic | https://en.wikipedia.org/wiki/ISO_3166-2:DO
     static let azua = get("02")
     static let baoruco = get("03")

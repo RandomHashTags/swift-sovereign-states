@@ -27,6 +27,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsUkraineLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Ukraine | https://en.wikipedia.org/wiki/ISO_3166-2:UA
     static let cherkasy = get("71")
     static let chernihiv = get("74")

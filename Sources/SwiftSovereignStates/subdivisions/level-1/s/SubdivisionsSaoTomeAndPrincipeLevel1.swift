@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSaoTomeAndPrincipeLevel1 { // https://en.wikipedia.org/wiki/Districts_of_São_Tomé_and_Príncipe | https://en.wikipedia.org/wiki/ISO_3166-2:ST
     static let agua_grande = get("01")
     static let cantagalo = get("02")

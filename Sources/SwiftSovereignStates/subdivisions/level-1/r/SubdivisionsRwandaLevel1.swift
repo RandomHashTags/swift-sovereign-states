@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsRwandaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Rwanda | https://en.wikipedia.org/wiki/ISO_3166-2:RW
     static let eastern = get("02")
     static let kigali = get("01")

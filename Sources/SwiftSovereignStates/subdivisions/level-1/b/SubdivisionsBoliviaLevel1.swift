@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBoliviaLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Bolivia | https://en.wikipedia.org/wiki/ISO_3166-2:BO
     static let beni = get("B")
     static let chuquisaca = get("H")

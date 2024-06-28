@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsTimorLesteLevel1 { // https://en.wikipedia.org/wiki/Municipalities_of_East_Timor | https://en.wikipedia.org/wiki/ISO_3166-2:TL
     static let aileu = get("AL")
     static let ainaro = get("AN")

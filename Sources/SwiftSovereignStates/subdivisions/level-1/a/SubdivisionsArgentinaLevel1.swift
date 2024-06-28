@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsArgentinaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Argentina | https://en.wikipedia.org/wiki/ISO_3166-2:AR
     static let autonomous_city_of_buenos_aires = get("C")
     static let buenos_aires = get("B")

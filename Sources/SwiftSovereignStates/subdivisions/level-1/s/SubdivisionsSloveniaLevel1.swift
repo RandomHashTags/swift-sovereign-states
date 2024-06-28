@@ -35,6 +35,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSloveniaLevel1 { // https://en.wikipedia.org/wiki/Municipalities_of_Slovenia | https://en.wikipedia.org/wiki/ISO_3166-2:SI
     static let ajdovscina = get("001")
     static let ankaran = get("213")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBangladeshLevel1 { // https://en.wikipedia.org/wiki/Divisions_of_Bangladesh | https://en.wikipedia.org/wiki/ISO_3166-2:BD
     static let barishal = get("A")
     static let chattogram = get("B")

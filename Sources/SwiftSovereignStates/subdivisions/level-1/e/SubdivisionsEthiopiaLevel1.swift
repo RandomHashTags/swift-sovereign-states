@@ -25,6 +25,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsEthiopiaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Ethiopia | https://en.wikipedia.org/wiki/ISO_3166-2:ET
     static let afar = get("AF")
     static let amhara = get("AM")

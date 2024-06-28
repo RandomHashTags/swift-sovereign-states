@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsJordanLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Jordan | https://en.wikipedia.org/wiki/ISO_3166-2:JO
     static let ajloun: Locale.Region.Subdivision.Level1.Jordan = get("AJ")
     static let amman = get("AM")

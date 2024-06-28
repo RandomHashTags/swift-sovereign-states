@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLesothoLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Lesotho | https://en.wikipedia.org/wiki/ISO_3166-2:LS
     static let berea = get("D")
     static let buthaButhe = get("B")

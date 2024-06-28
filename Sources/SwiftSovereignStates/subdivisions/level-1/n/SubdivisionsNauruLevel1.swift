@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNauruLevel1 { // https://en.wikipedia.org/wiki/List_of_settlements_in_Nauru | https://en.wikipedia.org/wiki/ISO_3166-2:NR
     static let aiwo = get("01")
     static let anabar = get("02")

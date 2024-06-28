@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsEgyptLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Egypt | https://en.wikipedia.org/wiki/ISO_3166-2:EG
     static let alexandria = get("ALX")
     static let aswan = get("ASN")

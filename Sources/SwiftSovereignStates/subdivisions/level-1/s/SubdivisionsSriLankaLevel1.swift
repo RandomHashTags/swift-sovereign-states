@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSriLankaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Sri_Lanka | https://en.wikipedia.org/wiki/ISO_3166-2:LK
     static let central = get("2")
     static let eastern = get("5")

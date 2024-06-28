@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsQatarLevel1 { // https://en.wikipedia.org/wiki/Municipalities_of_Qatar
     static let doha = get("DA")
     static let daayen = get("ZA")

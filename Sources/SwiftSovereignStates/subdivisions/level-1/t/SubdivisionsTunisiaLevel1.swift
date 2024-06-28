@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsTunisiaLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Tunisia | https://en.wikipedia.org/wiki/ISO_3166-2:TN
     static let ariana = get("11")
     static let beja = get("31")

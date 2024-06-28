@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSwitzerlandLevel1 { // https://en.wikipedia.org/wiki/Cantons_of_Switzerland | https://en.wikipedia.org/wiki/ISO_3166-2:CH
     static let aargau = get("AG")
     static let appenzell_ausserrhoden = get("AR")

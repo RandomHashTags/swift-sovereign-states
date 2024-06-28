@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNigerLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Niger | https://en.wikipedia.org/wiki/ISO_3166-2:NE
     static let agadez = get("1")
     static let diffa = get("2")

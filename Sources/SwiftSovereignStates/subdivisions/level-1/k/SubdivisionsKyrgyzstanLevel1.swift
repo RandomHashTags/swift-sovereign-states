@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsKyrgyzstanLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Kyrgyzstan | https://en.wikipedia.org/wiki/ISO_3166-2:KG
     static let batken = get("B")
     static let chuy = get("C")

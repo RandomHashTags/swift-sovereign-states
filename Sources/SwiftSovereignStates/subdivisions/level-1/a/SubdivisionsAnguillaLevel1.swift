@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAnguillaLevel1 { // https://en.wikipedia.org/wiki/Geography_of_Anguilla#Districts | https://en.wikipedia.org/wiki/ISO_3166-2:AI
     static let blowing_point = get("01")
     static let east_end = get("02")

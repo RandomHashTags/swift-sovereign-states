@@ -26,6 +26,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCanadaLevel1 { // https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada | https://en.wikipedia.org/wiki/ISO_3166-2:CA
     static let alberta = get("AB")
     static let britishColumbia = get("BC")

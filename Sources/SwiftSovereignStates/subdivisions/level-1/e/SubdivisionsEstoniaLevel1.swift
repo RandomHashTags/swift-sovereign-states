@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsEstoniaLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Estonia | https://en.wikipedia.org/wiki/ISO_3166-2:EE
     static let harju = get("37")
     static let hiiu = get("39")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBurundiLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Burundi | https://en.wikipedia.org/wiki/ISO_3166-2:BI
     static let bubanza = get("BB")
     static let bujumburaMairie = get("BM")

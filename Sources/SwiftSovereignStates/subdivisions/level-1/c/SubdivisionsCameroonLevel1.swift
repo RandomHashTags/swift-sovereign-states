@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCameroonLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Cameroon | https://en.wikipedia.org/wiki/ISO_3166-2:CM
     static let adamawa = get("AD")
     static let centre = get("CE")

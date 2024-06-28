@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCentralAfricanRepublicLevel1 { // https://en.wikipedia.org/wiki/Prefectures_of_the_Central_African_Republic | https://en.wikipedia.org/wiki/ISO_3166-2:CF
     static let bamingui_bangoran = get("BB")
     static let basse_kotto = get("BK")

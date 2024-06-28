@@ -26,6 +26,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMoldovaLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Moldova | https://en.wikipedia.org/wiki/ISO_3166-2:MD
     static let anenii_noi = get("AN")
     static let basarabeasca = get("BS")

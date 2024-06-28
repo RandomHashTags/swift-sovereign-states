@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNigeriaLevel1 { // https://en.wikipedia.org/wiki/States_of_Nigeria | https://en.wikipedia.org/wiki/ISO_3166-2:NG
     static let abia = get("AB")
     static let adamawa = get("AD")

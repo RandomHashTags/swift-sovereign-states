@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsKazakhstanLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Kazakhstan | https://en.wikipedia.org/wiki/ISO_3166-2:KZ
     static let abai = get("10")
     static let akmola = get("11")

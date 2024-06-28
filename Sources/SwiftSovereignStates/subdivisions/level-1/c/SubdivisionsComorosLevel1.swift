@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsComorosLevel1 { // https://en.wikipedia.org/wiki/Politics_of_the_Comoros#Autonomous_islands | https://en.wikipedia.org/wiki/ISO_3166-2:KM
     static let anjouan = get("A")
     static let grande_comore = get("G")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSwedenLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Sweden | https://en.wikipedia.org/wiki/ISO_3166-2:SE
     static let blekinge = get("K")
     static let dalarna = get("W")

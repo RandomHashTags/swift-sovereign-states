@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGuatemalaLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Guatemala | https://en.wikipedia.org/wiki/ISO_3166-2:GT
     static let alta_verapaz = get("16")
     static let baja_verapaz = get("15")

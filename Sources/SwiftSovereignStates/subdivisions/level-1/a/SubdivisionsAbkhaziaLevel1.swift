@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAbkhaziaLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Abkhazia
     static let gagra = get("1")
     static let gali = get("2")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAfghanistanLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Afghanistan
     static let badakhshan = get("BDS")
     static let badghis = get("BDG")

@@ -28,6 +28,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNorthKoreaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_North_Korea | https://en.wikipedia.org/wiki/ISO_3166-2:KP
     static let chagang = get("04")
     static let kangwon = get("07")

@@ -11,8 +11,8 @@ import Foundation
 @attached(member, names: arbitrary)
 macro SubdivisionLevel1(region: Locale.Region, allSameType: Bool, type: Locale.Region.SubdivisionType) = #externalMacro(module: "Macros", type: "SubdivisionLevel1")
 
-@attached(member)
-macro SubdivisionLevel1Cases() = #externalMacro(module: "Macros", type: "SubdivisionLevel1Cases")
+@attached(member, names: arbitrary)
+macro SubdivisionCases() = #externalMacro(module: "Macros", type: "SubdivisionCases")
 
 //@attached(extension)
 @attached(member, names: arbitrary)

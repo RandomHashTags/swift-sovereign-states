@@ -26,6 +26,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsUzbekistanLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Uzbekistan | https://en.wikipedia.org/wiki/ISO_3166-2:UZ
     static let andijan = get("AN")
     static let bukhara = get("BU")

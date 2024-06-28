@@ -13,7 +13,7 @@ import SwiftDiagnostics
 
 @main
 struct MacrosPlugin : CompilerPlugin {
-    let providingMacros:[Macro.Type] = [SubdivisionLevel1.self, SubdivisionLevel1Cases.self]
+    let providingMacros:[Macro.Type] = [SubdivisionLevel1.self, SubdivisionCases.self]
 }
 
 struct SubdivisionLevel1 : MemberMacro {
@@ -59,15 +59,17 @@ extension SubdivisionLevel1 : ExtensionMacro {
     }
 }*/
 
-// MARK: SubdivisionLevel1Cases
-struct SubdivisionLevel1Cases : MemberMacro {
+// MARK: SubdivisionCases
+struct SubdivisionCases : MemberMacro {
    static func expansion(of node: AttributeSyntax, providingMembersOf declaration: some DeclGroupSyntax, in context: some MacroExpansionContext) throws -> [DeclSyntax] {
-        guard declaration.is(ExtensionDeclSyntax.self) else {
+        guard let decl:ExtensionDeclSyntax = declaration.as(ExtensionDeclSyntax.self) else {
             context.diagnose(Diagnostic(node: node, message: ErrorDiagnostic.notAnExtension))
             return []
         }
-        
-        return ["\(raw: declaration)"]
+        let values:[String] = decl.memberBlock.members.compactMap({ $0.decl.as(VariableDeclSyntax.self)?.bindings.first?.pattern.as(IdentifierPatternSyntax.self)?.identifier.text })
+        return [
+            "static let isoRegions:[Self] = [\(raw: values.map({ "." + $0 }).joined(separator: ","))]"
+        ]
     }
 }
 

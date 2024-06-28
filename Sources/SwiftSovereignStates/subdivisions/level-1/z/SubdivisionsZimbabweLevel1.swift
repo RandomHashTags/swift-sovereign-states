@@ -25,6 +25,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsZimbabweLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Zimbabwe | https://en.wikipedia.org/wiki/ISO_3166-2:ZW
     static let bulawayo = get("BU")
     static let harare = get("HA")

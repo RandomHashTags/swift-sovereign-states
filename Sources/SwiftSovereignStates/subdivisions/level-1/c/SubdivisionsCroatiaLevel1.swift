@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCroatiaLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Croatia | https://en.wikipedia.org/wiki/ISO_3166-2:HR
     static let bjelovar_bilogora = get("07")
     static let brod_posavina = get("12")

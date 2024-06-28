@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLibyaLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Libya | https://en.wikipedia.org/wiki/ISO_3166-2:LY
     static let butnan = get("BU")
     static let jabal_al_akhdar = get("JA")

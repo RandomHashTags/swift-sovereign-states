@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNewZealandLevel1 { // https://en.wikipedia.org/wiki/Regions_of_New_Zealand | https://en.wikipedia.org/wiki/ISO_3166-2:NZ
     static let auckland = get("AUK")
     static let bay_of_plenty = get("BOP")

@@ -34,6 +34,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAustraliaLevel1 { // https://en.wikipedia.org/wiki/States_and_territories_of_Australia | https://en.wikipedia.org/wiki/ISO_3166-2:AU
     static let new_south_wales = get("NSW")
     static let queensland = get("QLD")

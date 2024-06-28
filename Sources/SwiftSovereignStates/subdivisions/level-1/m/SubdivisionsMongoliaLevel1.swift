@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMongoliaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Mongolia | https://en.wikipedia.org/wiki/ISO_3166-2:MN
     static let arkhangai = get("073")
     static let bayan_olgii = get("069")

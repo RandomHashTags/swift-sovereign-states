@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMaltaLevel1 { // https://en.wikipedia.org/wiki/Local_councils_of_Malta | https://en.wikipedia.org/wiki/ISO_3166-2:MT
     static let attard = get("01")
     static let balzan = get("02")

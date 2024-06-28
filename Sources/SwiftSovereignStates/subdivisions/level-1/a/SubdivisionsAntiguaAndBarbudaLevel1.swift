@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAntiguaAndBarbudaLevel1 { // https://en.wikipedia.org/wiki/Parishes_and_dependencies_of_Antigua_and_Barbuda | https://en.wikipedia.org/wiki/ISO_3166-2:AG
     static let saint_george = get("03")
     static let saint_john = get("04")

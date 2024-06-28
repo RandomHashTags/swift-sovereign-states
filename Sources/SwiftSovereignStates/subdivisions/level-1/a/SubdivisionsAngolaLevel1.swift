@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAngolaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Angola | https://en.wikipedia.org/wiki/ISO_3166-2:AO
     static let bengo = get("BGO")
     static let benguela = get("BGU")

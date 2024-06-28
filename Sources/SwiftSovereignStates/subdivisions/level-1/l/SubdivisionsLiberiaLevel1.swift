@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLiberiaLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Liberia | https://en.wikipedia.org/wiki/ISO_3166-2:LR
     static let bomi = get("BM")
     static let bong = get("BG")

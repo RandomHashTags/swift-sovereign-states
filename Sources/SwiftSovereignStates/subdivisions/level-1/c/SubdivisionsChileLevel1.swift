@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsChileLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Chile | https://en.wikipedia.org/wiki/ISO_3166-2:CL
     static let antofagasta = get("AN")
     static let araucania = get("AR")

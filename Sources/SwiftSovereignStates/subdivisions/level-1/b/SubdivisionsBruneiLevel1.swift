@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBruneiLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Brunei | https://en.wikipedia.org/wiki/ISO_3166-2:BN
     static let belait = get("BE")
     static let bruneiMuara = get("BM")

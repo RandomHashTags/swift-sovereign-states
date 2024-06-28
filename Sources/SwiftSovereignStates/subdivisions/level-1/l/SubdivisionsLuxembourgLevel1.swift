@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLuxembourgLevel1 { // https://en.wikipedia.org/wiki/Cantons_of_Luxembourg | https://en.wikipedia.org/wiki/ISO_3166-2:LU
     static let capellen = get("CA")
     static let clervaux = get("CL")

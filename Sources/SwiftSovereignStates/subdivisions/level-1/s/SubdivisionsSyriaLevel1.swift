@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSyriaLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Syria | https://en.wikipedia.org/wiki/ISO_3166-2:SY
     static let alHasakah = get("HA")
     static let aleppo = get("HL")

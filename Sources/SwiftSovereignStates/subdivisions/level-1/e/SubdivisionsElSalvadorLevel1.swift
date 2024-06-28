@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsElSalvadorLevel1 { // https://en.wikipedia.org/wiki/Departments_of_El_Salvador | https://en.wikipedia.org/wiki/ISO_3166-2:SV
     static let ahuachapán = get("AH")
     static let cabañas = get("CA")

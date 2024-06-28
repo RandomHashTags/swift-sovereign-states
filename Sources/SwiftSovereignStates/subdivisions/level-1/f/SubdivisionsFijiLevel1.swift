@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsFijiLevel1 { // https://en.wikipedia.org/wiki/Local_government_in_Fiji | https://en.wikipedia.org/wiki/ISO_3166-2:FJ
     static let central = get("C")
     static let eastern = get("E")

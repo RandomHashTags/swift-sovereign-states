@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsRomaniaLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Romania | https://en.wikipedia.org/wiki/ISO_3166-2:RO
     static let alba = get("AB")
     static let arad = get("AR")

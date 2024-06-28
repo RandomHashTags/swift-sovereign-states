@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSouthAfricaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_South_Africa | https://en.wikipedia.org/wiki/ISO_3166-2:ZA
     static let easternCape = get("EC")
     static let freeState = get("FS")

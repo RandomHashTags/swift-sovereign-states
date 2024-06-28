@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMalaysiaLevel1 { // https://en.wikipedia.org/wiki/States_and_federal_territories_of_Malaysia | https://en.wikipedia.org/wiki/ISO_3166-2:MY
     static let johor = get("01")
     static let kedah = get("02")

@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsColombiaLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Colombia | https://en.wikipedia.org/wiki/ISO_3166-2:CO
     static let amazonas = get("AMA")
     static let antioquia = get("ANT")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsKosovoLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Kosovo | TODO: find ISO
     static let ferizaj = get("1")
     static let gjakova = get("2")

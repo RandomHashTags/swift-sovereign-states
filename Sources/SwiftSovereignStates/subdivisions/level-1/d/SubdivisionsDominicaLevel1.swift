@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsDominicaLevel1 { // https://en.wikipedia.org/wiki/Parishes_of_Dominica | https://en.wikipedia.org/wiki/ISO_3166-2:DM
     static let saintAndrew = get("02")
     static let saintDavid = get("03")
@@ -26,7 +27,10 @@ public extension SubdivisionsDominicaLevel1 { // https://en.wikipedia.org/wiki/P
     static let saintPatrick = get("09")
     static let saintPaul = get("10")
     static let saintPeter = get("11")
-    
+}
+
+// MARK: Neighbors
+public extension SubdivisionsDominicaLevel1 {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .saintAndrew:

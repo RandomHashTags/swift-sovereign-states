@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSaintKittsAndNevisLevel1 { // https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis#Administrative_divisions | https://en.wikipedia.org/wiki/ISO_3166-2:KN
     static let christChurchNicholaTown = get("01")
     static let saintAnneSandyPoint = get("02")

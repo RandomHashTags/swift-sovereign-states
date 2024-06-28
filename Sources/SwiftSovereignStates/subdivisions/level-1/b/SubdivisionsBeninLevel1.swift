@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBeninLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Benin | https://en.wikipedia.org/wiki/ISO_3166-2:BJ
     static let alibori = get("AL")
     static let atakora = get("AK")

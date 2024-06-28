@@ -26,6 +26,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBermudaLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Bermuda | https://en.wikipedia.org/wiki/ISO_3166-2:BM
     static let devonshire = get("01")
     static let hamilton = get("02")

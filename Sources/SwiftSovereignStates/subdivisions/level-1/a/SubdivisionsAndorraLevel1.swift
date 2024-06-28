@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAndorraLevel1 { // https://en.wikipedia.org/wiki/Parishes_of_Andorra
     static let andorra_la_vella = get("7")
     static let canillo = get("2")

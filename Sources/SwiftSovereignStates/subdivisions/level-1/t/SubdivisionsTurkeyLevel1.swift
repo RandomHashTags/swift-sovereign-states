@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsTurkeyLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Turkey
     static let adana = get("01")
     static let adiyaman = get("02")

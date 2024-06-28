@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsTanzaniaLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Tanzania | https://en.wikipedia.org/wiki/ISO_3166-2:TZ
     static let arusha = get("01")
     static let dar_es_salaam = get("02")

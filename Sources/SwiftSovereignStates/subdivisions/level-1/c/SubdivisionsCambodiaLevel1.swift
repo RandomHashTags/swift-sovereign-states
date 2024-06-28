@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCambodiaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Cambodia | https://en.wikipedia.org/wiki/ISO_3166-2:KH
     static let banteay_meanchey = get("1")
     static let battambang = get("2")

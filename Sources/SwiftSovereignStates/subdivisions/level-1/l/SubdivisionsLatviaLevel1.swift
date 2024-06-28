@@ -30,6 +30,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLatviaLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Latvia | https://en.wikipedia.org/wiki/ISO_3166-2:LV
     static let adazi = get("011")
     static let aizkraukle = get("002")

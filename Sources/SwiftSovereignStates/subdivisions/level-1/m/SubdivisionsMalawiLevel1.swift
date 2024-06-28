@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMalawiLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Malawi | https://en.wikipedia.org/wiki/ISO_3166-2:MW
     static let northern = get("N")
     static let central = get("C")

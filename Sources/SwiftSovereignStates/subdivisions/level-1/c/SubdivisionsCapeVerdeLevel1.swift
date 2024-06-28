@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCapeVerdeLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde | https://en.wikipedia.org/wiki/ISO_3166-2:CV
     static let boa_vista = get("BV")
     static let brava = get("BR")

@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIsraelLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Israel | https://en.wikipedia.org/wiki/ISO_3166-2:IL
     static let central = get("M")
     static let haifa = get("HA")

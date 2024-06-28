@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMonacoLevel1 { // https://en.wikipedia.org/wiki/Monaco#Administrative_divisions | https://en.wikipedia.org/wiki/ISO_3166-2:MC
     static let monaco = get("1")
 }

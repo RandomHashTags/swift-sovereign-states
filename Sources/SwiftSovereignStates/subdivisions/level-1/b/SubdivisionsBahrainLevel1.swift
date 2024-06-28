@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsBahrainLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Bahrain | https://en.wikipedia.org/wiki/ISO_3166-2:BH
     static let capital = get("13")
     static let muharraq = get("15")

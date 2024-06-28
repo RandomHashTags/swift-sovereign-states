@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsAustriaLevel1 { // https://en.wikipedia.org/wiki/States_of_Austria | https://en.wikipedia.org/wiki/ISO_3166-2:AT
     static let burgenland = get("1")
     static let carinthia = get("2")

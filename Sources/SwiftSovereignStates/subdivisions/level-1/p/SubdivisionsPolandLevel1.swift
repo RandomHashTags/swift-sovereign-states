@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsPolandLevel1 { // https://en.wikipedia.org/wiki/Voivodeships_of_Poland | https://en.wikipedia.org/wiki/ISO_3166-2:PL
     static let greaterPoland = get("30")
     static let holyCross = get("26")

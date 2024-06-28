@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGreeceLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Greece | https://en.wikipedia.org/wiki/ISO_3166-2:GR
     static let attica = get("I")
     static let central_greece = get("H")

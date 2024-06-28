@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsJerseyLevel1 { // https://en.wikipedia.org/wiki/Parishes_of_Jersey | https://en.wikipedia.org/wiki/ISO_3166-2:JE
     static let grouville = get("01")
     static let saintLawrence = get("02")

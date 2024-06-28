@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsJamaicaLevel1 { // https://en.wikipedia.org/wiki/Parishes_of_Jamaica | https://en.wikipedia.org/wiki/ISO_3166-2:JM
     static let hanover = get("09")
     static let saintElizabeth = get("11")

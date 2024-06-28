@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNepalLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Nepal
     static let bagmati = get("P3")
     static let gandaki = get("P4")

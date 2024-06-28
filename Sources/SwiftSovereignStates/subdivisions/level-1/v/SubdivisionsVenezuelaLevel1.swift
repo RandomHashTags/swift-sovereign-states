@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsVenezuelaLevel1 { // https://en.wikipedia.org/wiki/States_of_Venezuela | https://en.wikipedia.org/wiki/ISO_3166-2:VE
     static let amazonas = get("Z")
     static let anzoategui = get("B")

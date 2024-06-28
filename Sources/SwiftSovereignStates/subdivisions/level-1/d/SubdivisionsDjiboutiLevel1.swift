@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsDjiboutiLevel1 { // https://en.wikipedia.org/wiki/Regions_of_Djibouti | https://en.wikipedia.org/wiki/ISO_3166-2:DJ
     static let ali_sabieh = get("AS")
     static let arta = get("AR")
@@ -22,7 +23,10 @@ public extension SubdivisionsDjiboutiLevel1 { // https://en.wikipedia.org/wiki/R
     static let djibouti = get("DJ")
     static let obock = get("OB")
     static let tadjourah = get("TA")
-    
+}
+
+// MARK: Neighbors
+public extension SubdivisionsDjiboutiLevel1 {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .ali_sabieh:

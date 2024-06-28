@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNorthMacedoniaLevel1 { // https://en.wikipedia.org/wiki/Municipalities_of_North_Macedonia | https://en.wikipedia.org/wiki/ISO_3166-2:MK
     static let aerodrom = get("801")
     static let aracinovo = get("802")

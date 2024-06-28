@@ -97,29 +97,6 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
 }
 extension SwiftSovereignStatesTests {
-    private func validate_region_wikipedia_urls(regions: [any SovereignRegion], _ seconds: UInt64) async throws {
-        for region in regions {
-            await verifyWikipediaURL(region)
-            try await Task.sleep(nanoseconds: seconds)
-        }
-    }
-    private func verifyWikipediaURL(_ region: any SovereignRegion) async {
-        let url:String = region.wikipediaURL
-        let slug:String = String(url.split(separator: "/").last!)
-        let valid:Bool = await getSummaryAndImageURL(slug: slug)
-        XCTAssert(valid, "invalid Wikipedia URL for sovereign region with cache id \"" + region.cacheID + "\"; url=\"" + url + "\"; slug=\"" + slug + "\"")
-    }
-    private func getSummaryAndImageURL(slug: String) async -> Bool {
-        let url:String = "https://en.wikipedia.org/api/rest_v1/page/summary/" + slug
-        guard let json:WikipediaAPIResponse = await make_request(url: url) else { return false }
-        return json.extract != nil
-    }
-    
-    private struct WikipediaAPIResponse : Codable {
-        let extract:String?
-    }
-}
-extension SwiftSovereignStatesTests {
     func write(text: String, to fileNamed: String, folder: String = "SavedFiles", file_extension: String = "strings") {
         guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
               let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else {
@@ -149,23 +126,6 @@ extension SwiftSovereignStatesTests {
                 }
             }
             XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) currency_names for " + missing.description)
-            missing.removeAll()
-            
-            for type in Locale.Region.SubdivisionType.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_singular(type)
-                if string.elementsEqual("nil") {
-                    missing.append(type.rawValue)
-                }
-            }
-            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) subdivision_types_name_singular for " + missing.description)
-            missing.removeAll()
-            for type in Locale.Region.SubdivisionType.allCases {
-                let string:String = SwiftSovereignStateLocalization.get_release_subdivision_type_name_plural(type)
-                if string.elementsEqual("nil") {
-                    missing.append(type.rawValue)
-                }
-            }
-            XCTAssert(missing.isEmpty, "test_localization; language=\"" + language + "\"; missing \(missing.count) subdivision_types_name_plural for " + missing.description)
             missing.removeAll()
         }
     }

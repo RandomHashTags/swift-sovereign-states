@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsZambiaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Zambia | https://en.wikipedia.org/wiki/ISO_3166-2:ZM
     static let central = get("02")
     static let copperbelt = get("08")
@@ -26,7 +27,10 @@ public extension SubdivisionsZambiaLevel1 { // https://en.wikipedia.org/wiki/Pro
     static let northern = get("05")
     static let southern = get("07")
     static let western = get("01")
-    
+}
+
+// MARK: Neighbors
+public extension SubdivisionsZambiaLevel1 {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {
         case .central:

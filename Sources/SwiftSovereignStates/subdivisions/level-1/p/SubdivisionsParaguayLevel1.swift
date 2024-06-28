@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsParaguayLevel1 { // https://en.wikipedia.org/wiki/Departments_of_Paraguay | https://en.wikipedia.org/wiki/ISO_3166-2:PY
     static let alto_paraguay = get("16")
     static let alto_parana = get("10")

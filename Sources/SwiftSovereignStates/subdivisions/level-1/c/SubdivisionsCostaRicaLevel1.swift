@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsCostaRicaLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Costa_Rica | https://en.wikipedia.org/wiki/ISO_3166-2:CR
     static let alajuela = get("A")
     static let cartago = get("C")
@@ -25,6 +26,7 @@ public extension SubdivisionsCostaRicaLevel1 { // https://en.wikipedia.org/wiki/
     static let san_jose = get("SJ")
 }
 
+// MARK: Neighbors
 public extension SubdivisionsCostaRicaLevel1 {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] {
         switch self {

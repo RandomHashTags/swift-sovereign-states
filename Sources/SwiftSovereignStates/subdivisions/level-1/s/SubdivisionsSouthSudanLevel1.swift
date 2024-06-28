@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSouthSudanLevel1 { // https://en.wikipedia.org/wiki/States_of_South_Sudan | https://en.wikipedia.org/wiki/ISO_3166-2:SS
     static let central_equatoria = get("EC")
     static let eastern_equatoria = get("EE")

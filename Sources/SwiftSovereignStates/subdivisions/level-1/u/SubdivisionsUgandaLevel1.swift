@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsUgandaLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Uganda | https://en.wikipedia.org/wiki/ISO_3166-2:UG
     static let abim = get("314")
     static let adjumani = get("301")

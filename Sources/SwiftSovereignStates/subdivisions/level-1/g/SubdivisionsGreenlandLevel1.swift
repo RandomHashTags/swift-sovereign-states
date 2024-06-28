@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsGreenlandLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Greenland | https://en.wikipedia.org/wiki/ISO_3166-2:GL
     static let avannaata = get("AV")
     static let kujalleq = get("KU")

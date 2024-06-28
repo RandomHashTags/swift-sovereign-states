@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsTongaLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Tonga | https://en.wikipedia.org/wiki/ISO_3166-2:TO
     static let eua = get("01")
     static let haapai = get("02")

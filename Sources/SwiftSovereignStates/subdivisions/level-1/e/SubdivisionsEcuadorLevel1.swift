@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsEcuadorLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Ecuador | https://en.wikipedia.org/wiki/ISO_3166-2:EC
     static let azuay = get("A")
     static let bolívar = get("B")

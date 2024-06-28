@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSeychellesLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Seychelles | https://en.wikipedia.org/wiki/ISO_3166-2:SC
     static let anse_aux_pins = get("01")
     static let anse_boileau = get("02")

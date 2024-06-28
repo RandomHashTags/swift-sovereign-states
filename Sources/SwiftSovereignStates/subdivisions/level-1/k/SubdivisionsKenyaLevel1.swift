@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsKenyaLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Kenya | https://en.wikipedia.org/wiki/ISO_3166-2:KE
     static let baringo = get("01")
     static let bomet = get("02")

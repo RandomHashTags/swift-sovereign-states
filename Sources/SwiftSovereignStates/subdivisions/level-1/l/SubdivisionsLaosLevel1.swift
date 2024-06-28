@@ -24,6 +24,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLaosLevel1 { // https://en.wikipedia.org/wiki/Provinces_of_Laos | https://en.wikipedia.org/wiki/ISO_3166-2:LA
     static let attapeu = get("AT")
     static let bokeo = get("BK")

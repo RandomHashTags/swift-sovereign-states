@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsLithuaniaLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Lithuania | https://en.wikipedia.org/wiki/ISO_3166-2:LT
     static let alytus: Locale.Region.Subdivision.Level1.Lithuania = get("AL")
     static let kaunas = get("KU")

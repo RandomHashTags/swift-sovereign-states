@@ -35,6 +35,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSouthKoreaLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea | https://en.wikipedia.org/wiki/ISO_3166-2:KR
     static let busan = get("26")
     static let daegu = get("27")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMicronesiaLevel1 { // https://en.wikipedia.org/wiki/States_of_the_Federated_States_of_Micronesia | https://en.wikipedia.org/wiki/ISO_3166-2:FM
     static let chuuk = get("TRK")
     static let kosrae = get("KSA")

@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsKuwaitLevel1 { // https://en.wikipedia.org/wiki/Governorates_of_Kuwait | https://en.wikipedia.org/wiki/ISO_3166-2:KW
     static let ahmadi = get("AH")
     static let al_asimah = get("KU")

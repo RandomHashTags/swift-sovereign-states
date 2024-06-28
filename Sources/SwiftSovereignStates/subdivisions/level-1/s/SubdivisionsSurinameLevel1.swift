@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSurinameLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Suriname | https://en.wikipedia.org/wiki/ISO_3166-2:SR
     static let brokopondo = get("BR")
     static let commewijne = get("CM")

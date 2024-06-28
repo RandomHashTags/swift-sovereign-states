@@ -31,6 +31,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsIndiaLevel1 { // https://en.wikipedia.org/wiki/States_and_union_territories_of_India
     static let andhra_pradesh = get("AP")
     static let arunachal_pradesh = get("AR")

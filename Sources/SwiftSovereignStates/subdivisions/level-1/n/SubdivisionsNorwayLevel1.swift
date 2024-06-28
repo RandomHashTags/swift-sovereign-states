@@ -29,6 +29,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsNorwayLevel1 { // https://en.wikipedia.org/wiki/Counties_of_Norway | https://en.wikipedia.org/wiki/ISO_3166-2:NO
     static let agder = get("42")
     static let innlandet = get("34")

@@ -32,6 +32,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsMyanmarLevel1 { // https://en.wikipedia.org/wiki/Administrative_divisions_of_Myanmar | https://en.wikipedia.org/wiki/ISO_3166-2:MM
     static let ayeyarwady = get("07")
     static let bago = get("02")

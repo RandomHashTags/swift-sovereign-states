@@ -15,6 +15,7 @@ public extension Locale.Region.Subdivision.Level1 {
     }
 }
 
+@SubdivisionCases
 public extension SubdivisionsSamoaLevel1 { // https://en.wikipedia.org/wiki/Districts_of_Samoa | https://en.wikipedia.org/wiki/ISO_3166-2:WS
     static let aana = get("AA")
     static let aigaileTai = get("AL")
