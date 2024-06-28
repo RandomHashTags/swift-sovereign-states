@@ -547,7 +547,7 @@ public extension Locale.Region {
         case .micronesia: return SubdivisionsMicronesiaLevel1.self
         case .moldova: return SubdivisionsMoldovaLevel1.self
         case .monaco: return SubdivisionsMonacoLevel1.self
-        //case .mongolia: return SubdivisionsMongolia.self
+        case .mongolia: return SubdivisionsMongoliaLevel1.self
         case .montenegro: return SubdivisionsMontenegroLevel1.self
         case .montserrat: return nil
         case .morocco: return SubdivisionsMoroccoLevel1.self
@@ -580,7 +580,7 @@ public extension Locale.Region {
         case .papuaNewGuinea: return SubdivisionsPapuaNewGuineaLevel1.self
         case .paraguay: return SubdivisionsParaguayLevel1.self
         case .peru: return SubdivisionsPeruLevel1.self
-        //case .philippines: return SubdivisionsPhilippines.self
+        case .philippines: return SubdivisionsPhilippinesLevel1.self
         case .pitcairnIslands: return nil
         case .poland: return SubdivisionsPolandLevel1.self
         case .portugal: return SubdivisionsPortugalLevel1.self
@@ -608,7 +608,7 @@ public extension Locale.Region {
         case .singapore: return nil
         case .sintMaarten: return nil
         case .slovakia: return SubdivisionsSlovakiaLevel1.self
-        //case .slovenia: return SubdivisionsSlovenia.self
+        case .slovenia: return SubdivisionsSloveniaLevel1.self
         case .solomonIslands: return nil
         case .somalia: return SubdivisionsSomaliaLevel1.self
         case .southAfrica: return SubdivisionsSouthAfricaLevel1.self
@@ -649,7 +649,7 @@ public extension Locale.Region {
         case .vanuatu: return SubdivisionsVanuatuLevel1.self
         case .vaticanCity: return nil
         case .venezuela: return SubdivisionsVenezuelaLevel1.self
-        //case .vietnam: return SubdivisionsVietnam.self
+        case .vietnam: return SubdivisionsVietnamLevel1.self
         
         case .yemen: return SubdivisionsYemenLevel1.self
         

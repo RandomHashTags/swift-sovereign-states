@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Guadeloupe#Governance
+/*
+public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Communes_of_the_Guadeloupe_department
     case anse_bertrand
     case baie_manhault
     case baillif
@@ -49,3 +50,4 @@ public enum SubdivisionsGuadeloupe : String, SovereignStateSubdivision { // http
         return Locale.Region.SubdivisionType.commune
     }
 }
+*/
