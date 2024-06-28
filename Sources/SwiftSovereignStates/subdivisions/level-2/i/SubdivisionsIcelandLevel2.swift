@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 public enum SubdivisionsIcelandLevel2 : String, SovereignStateSubdivision { // https://en.wikipedia.org/wiki/Municipalities_of_Iceland
     case akrahreppur
     case akranes
@@ -85,3 +86,4 @@ public enum SubdivisionsIcelandLevel2 : String, SovereignStateSubdivision { // h
         return Locale.Region.SubdivisionType.municipalities
     }
 }
+*/

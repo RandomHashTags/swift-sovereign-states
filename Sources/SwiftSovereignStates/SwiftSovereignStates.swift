@@ -14,6 +14,10 @@ macro SubdivisionLevel1(region: Locale.Region, allSameType: Bool, type: Locale.R
 @attached(member)
 macro SubdivisionLevel1Cases() = #externalMacro(module: "Macros", type: "SubdivisionLevel1Cases")
 
+//@attached(extension)
+@attached(member, names: arbitrary)
+macro SubdivisionLevel2<T : Locale.Region.Subdivision.Level1Protocol>(level1: T, allSameType: Bool, type: Locale.Region.SubdivisionType) = #externalMacro(module: "Macros", type: "SubdivisionLevel2")
+
 #if !(os(macOS) || os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) )
 
 // MARK: Locale.Region
@@ -528,7 +532,7 @@ public extension Locale.Region {
         case .luxembourg: return SubdivisionsLuxembourgLevel1.self
         
         case .macao: return nil
-        //case .madagascar: return SubdivisionsMadagascar.self
+        case .madagascar: return SubdivisionsMadagascarLevel1.self
         case .malawi: return SubdivisionsMalawiLevel1.self
         case .malaysia: return SubdivisionsMalaysiaLevel1.self
         case .maldives: return SubdivisionsMaldivesLevel1.self
@@ -541,7 +545,7 @@ public extension Locale.Region {
         case .mayotte: return nil
         case .mexico: return SubdivisionsMexicoLevel1.self
         case .micronesia: return SubdivisionsMicronesiaLevel1.self
-        //case .moldova: return SubdivisionsMoldova.self
+        case .moldova: return SubdivisionsMoldovaLevel1.self
         case .monaco: return SubdivisionsMonacoLevel1.self
         //case .mongolia: return SubdivisionsMongolia.self
         case .montenegro: return SubdivisionsMontenegroLevel1.self
@@ -564,7 +568,7 @@ public extension Locale.Region {
         case .northernCyprus: return nil
         case .northernMarianaIslands: return nil
         case .northKorea: return SubdivisionsNorthKoreaLevel1.self
-        case .northMacedonia: return nil
+        case .northMacedonia: return SubdivisionsNorthMacedoniaLevel1.self
         case .norway: return SubdivisionsNorwayLevel1.self
             
         case .oman: return SubdivisionsOmanLevel1.self
@@ -634,7 +638,7 @@ public extension Locale.Region {
         case .turksCaicosIslands: return nil
         case .tuvalu: return nil
         
-        //case .uganda: return SubdivisionsUganda.self
+        case .uganda: return SubdivisionsUgandaLevel1.self
         case .ukraine: return SubdivisionsUkraineLevel1.self
         case .unitedArabEmirates: return nil
         case .unitedKingdom: return nil
@@ -660,7 +664,6 @@ public extension Locale.Region {
 public extension Locale.Region {
     protocol SubdivisionProtocol : Hashable {
         var region : Locale.Region { get }
-        var subdivision : (any Locale.Region.SubdivisionProtocol)? { get }
         var identifier : String { get }
         var type : Locale.Region.SubdivisionType { get }
     }
@@ -677,6 +680,11 @@ public extension Locale.Region.Subdivision {
 
     enum Level2 {
     }
+    protocol Level2Protocol : Locale.Region.SubdivisionProtocol {
+        init(_ identifier: String)
+        var subdivision : (any Locale.Region.SubdivisionProtocol)? { get }
+        var neighbors : [any Locale.Region.Subdivision.Level2Protocol] { get }
+    }
     
     enum Level3 {
     }
@@ -688,14 +696,18 @@ public extension Locale.Region.Subdivision.Level1Protocol {
 }
 
 public extension Locale.Region.SubdivisionProtocol {
-    var subdivision : (any Locale.Region.SubdivisionProtocol)? { nil }
-
+    static func == (left: Self, right: Self) -> Bool {
+        return left.identifier == right.identifier
+    }
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }
 }
 public extension Locale.Region.Subdivision.Level1Protocol {
     var neighbors : [any Locale.Region.Subdivision.Level1Protocol] { [] }
+}
+public extension Locale.Region.Subdivision.Level2Protocol {
+    var neighbors : [any Locale.Region.Subdivision.Level2Protocol] { [] }
 }
 
 public extension Locale.Region {
