@@ -15,7 +15,7 @@ let package = Package(
     ],
     products: [
         .library(name: "SwiftSovereignStates", targets: ["SwiftSovereignStates"]),
-        .library(name: "SwiftSovereignStates", targets: ["SwiftSovereignStatesMacros"])
+        .library(name: "SwiftSovereignStatesMacros", targets: ["SwiftSovereignStatesMacros"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-syntax.git", from: "510.0.2")
