@@ -134,25 +134,3 @@ public enum SovereignRegions {
         return false
     }
 }
-
-
-public protocol SovereignRegionWrapper : SovereignRegion {
-}
-public extension SovereignRegionWrapper {
-    static var allCases : [Self] {
-        return []
-    }
-    
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.cacheID.elementsEqual(rhs.cacheID)
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(cacheID)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container:SingleValueEncodingContainer = encoder.singleValueContainer()
-        try container.encode(cacheID)
-    }
-}

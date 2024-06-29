@@ -7,20 +7,9 @@
 
 import XCTest
 @testable import SwiftSovereignStates
-import QuartzCore
 
 final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async {
-        //generate_all_english_localization_file()
-        //generate_english_localization()
-        //await generate_divisions()
-        //return;
-        
-        /*let seconds:UInt64 = 1 * 1_000_000_000*/
-        //try await validate_region_wikipedia_urls(regions: Locale.Region.allCases, seconds)
-        //try await validate_region_wikipedia_urls(regions: SovereignStateSubdivisions.all, seconds)
-        //try await validate_region_wikipedia_urls(regions: SovereignStateCities.all, seconds)
-        
         do_measurement()
     }
     
@@ -97,15 +86,6 @@ final class SwiftSovereignStatesTests: XCTestCase {
     }
 }
 extension SwiftSovereignStatesTests {
-    func write(text: String, to fileNamed: String, folder: String = "SavedFiles", file_extension: String = "strings") {
-        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
-              let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else {
-            return
-        }
-        try? FileManager.default.createDirectory(atPath: writePath.path, withIntermediateDirectories: true)
-        let file = writePath.appendingPathComponent(fileNamed + "." + file_extension)
-        try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
-    }
     func test_localization() {
         let supported_language_codes:[String] = ["en"]
         for language in supported_language_codes {

@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Locale.Region { // https://en.wikipedia.org/wiki/List_of_countries_and_territories_by_land_and_maritime_borders
-    var neighbors : [Locale.Region]? {
+    var neighbors : [Locale.Region] {
         switch self {
         case .abkhazia: return [Locale.Region.russia, Locale.Region.georgia, Locale.Region.turkey]
         case .afghanistan: return [Locale.Region.chinaMainland, Locale.Region.iran, Locale.Region.pakistan, Locale.Region.tajikistan, Locale.Region.turkmenistan, Locale.Region.uzbekistan]
@@ -36,7 +36,7 @@ public extension Locale.Region { // https://en.wikipedia.org/wiki/List_of_countr
         case .belgium: return [Locale.Region.france, Locale.Region.germany, Locale.Region.luxembourg, Locale.Region.netherlands, Locale.Region.unitedKingdom]
         case .belize: return [Locale.Region.guatemala, Locale.Region.honduras, Locale.Region.mexico]
         case .benin: return [Locale.Region.burkinaFaso, Locale.Region.niger, Locale.Region.nigeria, Locale.Region.togo]
-        case .bermuda: return nil
+        case .bermuda: return []
         case .bhutan: return [Locale.Region.chinaMainland, Locale.Region.india]
         case .bolivia: return [Locale.Region.argentina, Locale.Region.brazil, Locale.Region.chile, Locale.Region.paraguay, Locale.Region.peru]
         case .bosniaHerzegovina: return [Locale.Region.croatia, Locale.Region.montenegro, Locale.Region.serbia]
@@ -199,7 +199,7 @@ public extension Locale.Region { // https://en.wikipedia.org/wiki/List_of_countr
         case .rwanda: return [Locale.Region.burundi, Locale.Region.congoKinshasa, Locale.Region.tanzania, Locale.Region.uganda]
 
         case .saintBarthélemy: return [Locale.Region.anguilla, Locale.Region.antiguaBarbuda, Locale.Region.netherlands, Locale.Region.saintKittsNevis, Locale.Region.saintMartin]
-        case .saintHelena: return nil
+        case .saintHelena: return []
         case .saintKittsNevis: return [Locale.Region.antiguaBarbuda, Locale.Region.montserrat, Locale.Region.netherlands, Locale.Region.saintBarthélemy, Locale.Region.venezuela]
         case .saintLucia: return [Locale.Region.barbados, Locale.Region.france, Locale.Region.saintVincentGrenadines, Locale.Region.venezuela]
         case .saintPierreMiquelon: return [Locale.Region.canada]
@@ -264,7 +264,7 @@ public extension Locale.Region { // https://en.wikipedia.org/wiki/List_of_countr
 
         case .zambia: return [Locale.Region.angola, Locale.Region.botswana, Locale.Region.congoKinshasa, Locale.Region.malawi, Locale.Region.mozambique, Locale.Region.namibia, Locale.Region.tanzania, Locale.Region.zimbabwe]
         case .zimbabwe: return [Locale.Region.botswana, Locale.Region.mozambique, Locale.Region.southAfrica, Locale.Region.zambia]
-        default: return nil
+        default: return []
         }
     }
     
