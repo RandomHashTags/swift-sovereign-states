@@ -14,8 +14,7 @@ let package = Package(
         .watchOS(.v9)
     ],
     products: [
-        .library(name: "SwiftSovereignStates", targets: ["SwiftSovereignStates"]),
-        .library(name: "SwiftSovereignStatesMacros", targets: ["SwiftSovereignStatesMacros"])
+        .library(name: "SwiftSovereignStates", targets: ["SwiftSovereignStates"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-syntax.git", from: "510.0.2")

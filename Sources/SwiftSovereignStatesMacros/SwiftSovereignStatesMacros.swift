@@ -38,7 +38,7 @@ public struct ErrorDiagnostic : DiagnosticMessage {
 
     public init(id: String, message: String) {
         self.message = message
-        self.diagnosticID = MessageID(domain: "Macros", id: id)
+        self.diagnosticID = MessageID(domain: "SwiftSovereignStatesMacros", id: id)
     }
 
     public static let notAStruct:ErrorDiagnostic = ErrorDiagnostic(id: "notAStruct", message: "Can only be applied to a 'struct'")
