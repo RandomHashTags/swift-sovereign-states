@@ -24,7 +24,7 @@ let package = Package(
     ],
     targets: [
         .macro(
-            name: "Macros",
+            name: "SwiftSovereignStatesMacros",
             dependencies: [
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
@@ -36,7 +36,7 @@ let package = Package(
         .target(
             name: "SwiftSovereignStates",
             dependencies: [
-                "Macros"
+                "SwiftSovereignStatesMacros"
             ],
             resources: [
                 .process("Resources")

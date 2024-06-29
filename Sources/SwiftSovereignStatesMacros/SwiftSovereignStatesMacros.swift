@@ -1,5 +1,5 @@
 //
-//  Macros.swift
+//  SwiftSovereignStatesMacros.swift
 //  
 //
 //  Created by Evan Anderson on 6/18/24.

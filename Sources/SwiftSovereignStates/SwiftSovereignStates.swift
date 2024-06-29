@@ -8,7 +8,7 @@
 import Foundation
 
 @attached(member, names: arbitrary)
-public macro SubdivisionCases() = #externalMacro(module: "Macros", type: "SubdivisionCases")
+public macro SubdivisionCases() = #externalMacro(module: "SwiftSovereignStatesMacros", type: "SubdivisionCases")
 
 #if !(os(macOS) || os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) )
 
