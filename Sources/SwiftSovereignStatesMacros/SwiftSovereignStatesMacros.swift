@@ -31,16 +31,16 @@ struct SubdivisionCases : MemberMacro {
 }
 
 // MARK: ErrorDiagnostic
-public struct ErrorDiagnostic : DiagnosticMessage {
-    public let message:String
-    public let diagnosticID:MessageID
-    public let severity:DiagnosticSeverity = DiagnosticSeverity.error
+struct ErrorDiagnostic : DiagnosticMessage {
+    let message:String
+    let diagnosticID:MessageID
+    let severity:DiagnosticSeverity = DiagnosticSeverity.error
 
-    public init(id: String, message: String) {
+    init(id: String, message: String) {
         self.message = message
         self.diagnosticID = MessageID(domain: "SwiftSovereignStatesMacros", id: id)
     }
 
-    public static let notAStruct:ErrorDiagnostic = ErrorDiagnostic(id: "notAStruct", message: "Can only be applied to a 'struct'")
-    public static let notAnExtension:ErrorDiagnostic = ErrorDiagnostic(id: "notAnExtension", message: "Can only be applied to an 'extension'")
+    static let notAStruct:ErrorDiagnostic = ErrorDiagnostic(id: "notAStruct", message: "Can only be applied to a 'struct'")
+    static let notAnExtension:ErrorDiagnostic = ErrorDiagnostic(id: "notAnExtension", message: "Can only be applied to an 'extension'")
 }
