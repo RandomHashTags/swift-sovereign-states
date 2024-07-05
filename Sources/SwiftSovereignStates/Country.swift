@@ -10,6 +10,8 @@ import Foundation
 public extension Locale.Region {
     static let abkhazia:Locale.Region = Locale.Region("abkhazia")
     static let artsakh:Locale.Region = Locale.Region("artsakh")
+
+    static let isleofMan = Locale.Region("IM")
     
     static let northernCyprus:Locale.Region = Locale.Region("northernCyprus")
     static let northKorea:Locale.Region = Locale.Region("KP")
@@ -247,7 +249,7 @@ public extension Locale.Region {
                 .guam,
                 .guernsey,
                 .hongKong,
-                .isleofMan,
+                .isleOfMan,
                 .jersey,
                 .kosovo,
                 .macao,
@@ -310,7 +312,7 @@ public extension Locale.Region {
                 .slovakia,
                 .slovenia,
                 .spain,
-                .türkiye,
+                .turkey,
                 .unitedKingdom,
                 .unitedStates
             :
@@ -392,7 +394,7 @@ public extension Locale.Region {
                 .guam,
                 .guadeloupe,
                 .guernsey,
-                .isleofMan,
+                .isleOfMan,
                 .jersey,
                 .montserrat,
                 .newCaledonia,

@@ -237,7 +237,7 @@ internal enum SovereignStateCurrencies {
         case .transnistria: return [Currency.PRB]
         case .trinidadTobago: return [Currency.TTD]
         case .tunisia: return [Currency.TND]
-        case .türkiye: return [Currency.TRY]
+        case .turkey: return [Currency.TRY]
         case .turkmenistan: return [Currency.TMT]
         case .turksCaicosIslands: return [Currency.USD]
         case .tuvalu: return [Currency.AUD, Currency.TVD]

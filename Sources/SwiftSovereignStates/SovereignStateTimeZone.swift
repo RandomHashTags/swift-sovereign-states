@@ -393,7 +393,7 @@ public enum SovereignStateTimeZone : String {
         case .tajikistan: return getTajikistan()
         case .timorLeste: return getTimor()
         case .tonga: return getTonga()
-        case .türkiye: return getTurkey()
+        case .turkey: return getTurkey()
         case .turkmenistan: return getTurkmenistan()
         case .tuvalu: return getTuvalu()
         case .ukraine: return getUkraine()

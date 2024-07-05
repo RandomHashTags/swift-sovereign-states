@@ -17,7 +17,7 @@ public extension Locale {
     struct Region : Hashable, Codable, Sendable, ExpressibleByStringLiteral, CustomDebugStringConvertible {
         public let identifier:String
 
-        public init(identifier: String) {
+        public init(_ identifier: String) {
             self.identifier = identifier
         }
 
@@ -30,7 +30,7 @@ public extension Locale {
 // MARK: Locale.Region Declarations
 private extension Locale.Region {
     static func get(_ identifier: String) -> Locale.Region {
-        return Locale.Region(identifier: identifier)
+        return Locale.Region(identifier)
     }
 }
 public extension Locale.Region {
@@ -162,7 +162,6 @@ public extension Locale.Region {
     static let indonesia = get("ID")
     static let ireland = get("IE")
     static let israel = get("IL")
-    static let isleofMan = get("IM")
     static let india = get("IN")
     static let chagosArchipelago = get("IO")
     static let iraq = get("IQ")
@@ -284,7 +283,7 @@ public extension Locale.Region {
     static let turkmenistan = get("TM")
     static let tunisia = get("TN")
     static let tonga = get("TO")
-    static let türkiye = get("TR")
+    static let turkey = get("TR")
     static let trinidadTobago = get("TT")
     static let tuvalu = get("TV")
     static let taiwan = get("TW")

@@ -255,7 +255,7 @@ public extension Locale.Region {
         case .tonga: return "TON"
         case .trinidadTobago: return "TTO"
         case .tunisia: return "TUN"
-        case .türkiye: return "TUR"
+        case .turkey: return "TUR"
         case .turkmenistan: return "TKM"
         case .turksCaicosIslands: return "TCA"
         case .tuvalu: return "TUV"

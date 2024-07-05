@@ -249,7 +249,7 @@ internal enum SovereignStateOfficialNames {
         case .tonga: return ["Kingdom of Tonga"]
         case .trinidadTobago: return ["Republic of Trinidad and Tobago"]
         case .tunisia: return ["Republic of Tunisia"]
-        case .türkiye: return ["Republic of Turkey"]
+        case .turkey: return ["Republic of Turkey"]
         case .turkmenistan: return nil
         case .turksCaicosIslands: return nil
         case .tuvalu: return nil
