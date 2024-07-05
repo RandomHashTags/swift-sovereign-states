@@ -12,6 +12,23 @@ final class SwiftSovereignStatesTests: XCTestCase {
     func testExample() async {
         do_measurement()
     }
+
+    func test_all_cases() {
+        XCTAssertEqual(Locale.Region.isoRegions.count, 286)
+        var counts:[String:Int] = [:]
+        for region in Locale.Region.allCases {
+            if counts[region.identifier] == nil {
+                counts[region.identifier] = 0
+            }
+            counts[region.identifier]! += 1
+        }
+        for region in Locale.Region.allCases {
+            if counts[region.identifier] == 1 {
+                counts.removeValue(forKey: region.identifier)
+            }
+        }
+        XCTAssertEqual(Set(Locale.Region.allCases.map({ $0.identifier })).count, Locale.Region.allCases.count, "counts=\(counts)")
+    }
     
     private func do_measurement() {
         let countries:String = "Japan; this string should find the mentioned countries: United States, (Canada) Russia! China? Taiwan; Kenya: Mexico, Luxembourg, Switzerland's, \"Egypt\", Poland, [Romania], the Bahamas, Sao Tome and Principe, and Zambia. New zealand, central african republic, el Salvador, latv.a, FINLAND, OMan, and Ire?and."
