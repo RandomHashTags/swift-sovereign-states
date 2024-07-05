@@ -247,7 +247,7 @@ public extension Locale.Region {
                 .guam,
                 .guernsey,
                 .hongKong,
-                .isleOfMan,
+                .isleofMan,
                 .jersey,
                 .kosovo,
                 .macao,
@@ -310,7 +310,7 @@ public extension Locale.Region {
                 .slovakia,
                 .slovenia,
                 .spain,
-                .turkey,
+                .türkiye,
                 .unitedKingdom,
                 .unitedStates
             :
@@ -392,7 +392,7 @@ public extension Locale.Region {
                 .guam,
                 .guadeloupe,
                 .guernsey,
-                .isleOfMan,
+                .isleofMan,
                 .jersey,
                 .montserrat,
                 .newCaledonia,

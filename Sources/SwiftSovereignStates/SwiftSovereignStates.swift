@@ -14,7 +14,7 @@ public macro SubdivisionCases() = #externalMacro(module: "SwiftSovereignStatesMa
 
 // MARK: Locale.Region
 public extension Locale {
-    public struct Region : Hashable, Codable, Sendable, ExpressibleByStringLiteral, CustomDebugStringConvertible {
+    struct Region : Hashable, Codable, Sendable, ExpressibleByStringLiteral, CustomDebugStringConvertible {
         public let identifier:String
 
         public init(identifier: String) {
@@ -30,7 +30,7 @@ public extension Locale {
 // MARK: Locale.Region Declarations
 private extension Locale.Region {
     static func get(_ identifier: String) -> Locale.Region {
-        return Locale.Region(identifier)
+        return Locale.Region(identifier: identifier)
     }
 }
 public extension Locale.Region {

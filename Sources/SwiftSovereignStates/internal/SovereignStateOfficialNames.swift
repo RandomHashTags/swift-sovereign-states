@@ -128,7 +128,7 @@ internal enum SovereignStateOfficialNames {
         case .iraq: return ["Republic of Iraq"]
         case .ireland: return nil
         case .israel: return ["State of Israel"]
-        case .isleOfMan: return nil
+        case .isleofMan: return nil
         case .italy: return ["Italian Republic"]
         case .côteDIvoire: return ["Republic of Côte d'Ivoire"]
 
@@ -249,7 +249,7 @@ internal enum SovereignStateOfficialNames {
         case .tonga: return ["Kingdom of Tonga"]
         case .trinidadTobago: return ["Republic of Trinidad and Tobago"]
         case .tunisia: return ["Republic of Tunisia"]
-        case .turkey: return ["Republic of Turkey"]
+        case .türkiye: return ["Republic of Turkey"]
         case .turkmenistan: return nil
         case .turksCaicosIslands: return nil
         case .tuvalu: return nil

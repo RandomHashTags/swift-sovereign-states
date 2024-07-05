@@ -129,7 +129,7 @@ public extension Locale.Region {
         case .iraq: return "IRQ"
         case .ireland: return "IRL"
         case .israel: return "ISR"
-        case .isleOfMan: return "IMN"
+        case .isleofMan: return "IMN"
         case .italy: return "ITA"
         case .côteDIvoire: return "CIV"
 
@@ -255,7 +255,7 @@ public extension Locale.Region {
         case .tonga: return "TON"
         case .trinidadTobago: return "TTO"
         case .tunisia: return "TUN"
-        case .turkey: return "TUR"
+        case .türkiye: return "TUR"
         case .turkmenistan: return "TKM"
         case .turksCaicosIslands: return "TCA"
         case .tuvalu: return "TUV"

@@ -27,7 +27,7 @@ internal enum SovereignStateAliases {
         case .guineaBissau: return ["Guinea-Bissau"]
         case .hongKong: return ["Hong Kong SAR", "Hong Kong (China)"]
         case .iran: return ["Persia", "Iran, Islamic Republic of", "Iran (Islamic Republic of)"]
-        case .isleOfMan: return ["Mann", "Man, Isle of"]
+        case .isleofMan: return ["Mann", "Man, Isle of"]
         case .luxembourg: return ["Luxemburg"]
         case .macao: return ["Macao", "Macau, SAR of China"]
         case .micronesia: return ["Micronesia, Federated States of", "Micronesia (Federated States of)", "F.S. Micronesia"]
