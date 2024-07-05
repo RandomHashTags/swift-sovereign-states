@@ -4,21 +4,17 @@ Implement and use real-world regional divisions. I didn't want other people inve
 
 ## Installation
 ### Requirements
-* Swift >= 5.5
-* macOS >= 12.0
-* iOS >= 15.0
-* tvOS >= 15.0
-* watchOS >= 8.0
+* Swift >= 5.9
+* macOS >= 13.0
+* iOS >= 16.0
+* tvOS >= 16.0
+* watchOS >= 9.0
 
 ### Optional Expansions
+- [SwiftSovereignStateSubdivisionsLevel1](https://github.com/RandomHashTags/swift-sovereign-state-subdivisions-level-1)
 - [SwiftNationalParks](https://github.com/RandomHashTags/swift-national-parks)
 - [SwiftVolcanoes](https://github.com/RandomHashTags/swift-volcanoes)
 - [SwiftAirports](https://github.com/RandomHashTags/swift-airports)
-
-### CocoaPods
-```ruby
-pod 'SwiftSovereignStates', '~> 1.2.1'
-```
 
 ### Swift Package Manager
 ```swift
@@ -27,7 +23,6 @@ pod 'SwiftSovereignStates', '~> 1.2.1'
 
 ## Current Limitations
 - only supports English localization
-- only a few level-2 supported subdivisions
 
 ## Contributing
 Adding/improving functionality is always welcome, just make a PR.
